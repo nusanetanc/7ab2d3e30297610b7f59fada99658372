@@ -4,8 +4,8 @@ var Emp = require('../models/employee')
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {
-     Sub.find(function(err, subs) {
-       console.log( subs );
+     Sub.find(function(err, emps) {
+       console.log( emps );
        res.json(subs);
    });
 });
@@ -13,8 +13,8 @@ router.get('/listemp', function(req, res, next) {
 /* GET detail employe. */
 router.get('/emp/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
-       console.log( subs );
-       res.json(subs);
+       console.log( emps );
+       res.json(emps);
    });
 });
 
