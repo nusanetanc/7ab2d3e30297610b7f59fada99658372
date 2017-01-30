@@ -30,7 +30,7 @@ router.post('/addemp', function(req, res, next) {
     accessrole: req.body.accessrole,
     photo: req.body.photo
 
-  })
+  });
     emp.save(function(err) {
       if (err)
           res.send(err);
