@@ -20,14 +20,14 @@ Emp.findById(req.params.id, function(err, subs) {
 
 /* Add employe */
 router.post('/addemp', function(req, res, next) {
-    emp.idemployee= req.body.idemployee,
-    emp.name= req.body.name,
-    emp.email= req.body.email,
-    emp.password= passwordHash.generate(req.body.password),
-    emp.departement= req.body.departement,
-    emp.titlejob= req.body.titlejob,
-    emp.accessrole= req.body.accessrole,
-    emp.photo= req.body.photo
+    emp.idemployee= req.body.idemployee;
+    emp.name= req.body.name;
+    emp.email= req.body.email;
+    emp.password= passwordHash.generate(req.body.password);
+    emp.departement= req.body.departement;
+    emp.titlejob= req.body.titlejob;
+    emp.accessrole= req.body.accessrole;
+    emp.photo= req.body.photo;
 
     emp.save(function(err) {
       if (err)
