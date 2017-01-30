@@ -37,17 +37,24 @@ router.post('/addemp', function(req, res, next) {
   });
 });
 
-router.put('/putsubs/:id', function(req, res, next) {
+router.put('/putemp/:id', function(req, res, next) {
 
         Sub.findById(req.params.id, function(err, sub) {
 
             if (err)
                 res.send(err);
 
-            sub.name = req.body.name;
+                emp.idemployee= req.body.idemployee;
+                emp.name= req.body.name;
+                emp.email= req.body.email;
+                //emp.password= passwordHash.generate(req.body.password);
+                emp.departement= req.body.departement;
+                emp.titlejob= req.body.titlejob;
+                emp.accessrole= req.body.accessrole;
+                emp.photo= req.body.photo;
 
             // save the bear
-            sub.save(function(err) {
+            emp.save(function(err) {
                 if (err)
                     res.send(err);
 
