@@ -28,7 +28,7 @@ router.post('/addemp', function(req, res, next) {
     departement: req.body.departement,
     titlejob: req.body.titlejob,
     accessrole: req.body.accessrole,
-    photo: req.body.photo,
+    photo: req.body.photo
 
   })
     sub.save(function(err) {
