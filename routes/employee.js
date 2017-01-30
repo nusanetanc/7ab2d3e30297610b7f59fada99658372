@@ -6,7 +6,7 @@ var Emp = require('../models/employee')
 router.get('/listemp', function(req, res, next) {
      Sub.find(function(err, emps) {
        console.log( emps );
-       res.json(subs);
+       res.json(emps);
    });
 });
 
