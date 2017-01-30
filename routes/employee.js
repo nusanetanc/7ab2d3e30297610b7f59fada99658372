@@ -39,7 +39,7 @@ router.post('/addemp', function(req, res, next) {
 
 router.put('/putemp/:id', function(req, res, next) {
 
-        Sub.findById(req.params.id, function(err, sub) {
+        Emp.findById(req.params.id, function(err, emp) {
 
             if (err)
                 res.send(err);
