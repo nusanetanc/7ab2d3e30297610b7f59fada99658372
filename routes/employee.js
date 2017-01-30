@@ -11,8 +11,8 @@ router.get('/listemp', function(req, res, next) {
 });
 
 /* GET detail employe. */
-router.get('/emp/:id', function(req, res, next) {
-Emp.findById(req.params.id, function(err, subs) {
+router.get('/emp/:idemployee', function(req, res, next) {
+Emp.findById(req.params.idemployee, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
@@ -35,6 +35,25 @@ router.post('/addemp', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+});
+
+router.put('/putsubs/:id', function(req, res, next) {
+
+        Sub.findById(req.params.id, function(err, sub) {
+
+            if (err)
+                res.send(err);
+
+            sub.name = req.body.name;
+
+            // save the bear
+            sub.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
 });
 
 module.exports = router;
