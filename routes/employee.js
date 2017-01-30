@@ -31,10 +31,10 @@ router.post('/addemp', function(req, res, next) {
     photo: req.body.photo
 
   })
-    sub.save(function(err) {
+    emp.save(function(err) {
       if (err)
           res.send(err);
-      res.json({ message: 'SUB created!' });
+      res.json({ message: 'Data created!' });
   });
 });
 
