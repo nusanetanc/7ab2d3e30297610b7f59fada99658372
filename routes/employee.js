@@ -20,7 +20,6 @@ Emp.findById(req.params.id, function(err, subs) {
 
 /* Add employe */
 router.post('/addemp', function(req, res, next) {
-  var emp = new Emp({"name": "yudi"});
     emp.idemployee= req.body.idemployee;
     emp.name= req.body.name;
     //emp.email= req.body.email;
