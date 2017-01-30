@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/groovy');
+
 var index = require('./routes/index');
 //var subscribe = require('./routes/subscribe');
 var employee = require('./routes/employee');
