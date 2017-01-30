@@ -20,7 +20,7 @@ Home.findById(req.params.id, function(err, homes) {
 
 /* Add home */
 router.post('/addhome', function(req, res, next) {
-  var Home = new home();
+  var home = new Home();
 
     home.homeid= req.body.homeid;
     home.propertiname= req.body.propertiname;
