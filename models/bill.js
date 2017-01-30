@@ -1,8 +1,8 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
-var  = require('../models/subs');
+var Sub = require('../models/subs');
 
-var SubSchema   = new Schema({
+var BillSchema   = new Schema({
   pricepack: Number,
   priceinstal: Number,
   pricerouter: Number,
@@ -14,9 +14,9 @@ var SubSchema   = new Schema({
   billdate: Date,
   duedate: Date,
   paydate: Date
-  Status: String
+  status: String
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'}
 
 });
 
-module.exports = mongoose.model('Sub', SubSchema);
+module.exports = mongoose.model('Bill', BillSchema);

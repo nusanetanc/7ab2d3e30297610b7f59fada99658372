@@ -12,7 +12,8 @@ var SubSchema   = new Schema({
     jobs: String,
     packlev: String,
     cardid: String,
-    nova: Number
+    nova: Number,
+    billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}]
 
 });
 
