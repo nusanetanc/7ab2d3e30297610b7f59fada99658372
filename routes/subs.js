@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var sub = require('../models/sub')
+var sub = require('../models/subs')
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
