@@ -24,7 +24,7 @@ router.post('/addemp', function(req, res, next) {
     idemployee: req.body.idemployee,
     name: req.body.name,
     email: req.body.email,
-    password: passwordHash.generate(req.body.password)
+    password: passwordHash.generate(req.body.password),
     departement: req.body.departement,
     titlejob: req.body.titlejob,
     accessrole: req.body.accessrole,
