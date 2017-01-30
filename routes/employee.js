@@ -3,7 +3,7 @@ var router = express.Router();
 var Sub = require('../models/subs')
 
 /* GET employe listing. */
-router.get('/list-employee', function(req, res, next) {
+router.get('/list', function(req, res, next) {
      Sub.find(function(err, subs) {
        console.log( subs );
        res.json(subs);
@@ -11,7 +11,7 @@ router.get('/list-employee', function(req, res, next) {
 });
 
 /* GET detail employe listing. */
-router.get('/employee/:id', function(req, res, next) {
+router.get('/emp/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
        console.log( subs );
        res.json(subs);
