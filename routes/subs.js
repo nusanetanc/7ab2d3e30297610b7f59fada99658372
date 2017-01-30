@@ -20,7 +20,7 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
-  var sub = new sub();
+  var sub = new Sub();
     sub.subid= req.body.subid;
     sub.name= req.body.name;
     sub.email= req.body.email;
