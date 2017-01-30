@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/groovy');
 
 var index = require('./routes/index');
-//var subscribe = require('./routes/subscribe');
+var subscribe = require('./routes/subs');
 var employee = require('./routes/employee');
 
 var app = express();
@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-//app.use('/subscribe', users);
+app.use('/subscribe', subscribe);
 app.use('/employee', employee);
 
 // catch 404 and forward to error handler

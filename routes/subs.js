@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var sub = require('../models/subloyee')
+var sub = require('../models/sub')
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -10,7 +10,7 @@ router.get('/listsub', function(req, res, next) {
    });
 });
 
-/* GET detail subloye. */
+/* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
        console.log( subs );
@@ -18,7 +18,7 @@ Sub.findById(req.params.id, function(err, subs) {
    });
 });
 
-/* Add subloye */
+/* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new sub();
     sub.subid= req.body.subid;
@@ -61,7 +61,6 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.cardid= req.body.cardid;
                 sub.nova= req.body.nova;
 
-            // save the bear
             sub.save(function(err) {
                 if (err)
                     res.send(err);
