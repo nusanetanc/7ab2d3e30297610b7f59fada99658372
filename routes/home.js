@@ -31,7 +31,7 @@ router.post('/addhome', function(req, res, next) {
     home.city= req.body.city;
     home.fo= req.body.fo;
 
-    Home.save(function(err) {
+    home.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
