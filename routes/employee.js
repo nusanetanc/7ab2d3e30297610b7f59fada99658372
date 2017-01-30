@@ -11,8 +11,8 @@ router.get('/listemp', function(req, res, next) {
 });
 
 /* GET detail employe. */
-router.get('/emp/:idemployee', function(req, res, next) {
-Emp.findById(req.params.idemployee, function(err, emps) {
+router.get('/emp/:id', function(req, res, next) {
+Emp.findById(req.params.id, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
