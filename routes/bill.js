@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
 
+
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
@@ -50,14 +51,21 @@ router.put('/putbill/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
+                bill.idinvoice= req.body.idinvoice;
+                bill.pricepack= req.body.pricepack;
+                bill.priceinstal= req.body.priceinstal;
+                bill.pricerouter= req.body.pricerouter;
+                bill.pricestb= req.body.pricestb;
+                bill.promoname= req.body.promoname;
+                bill.pricepromo= req.body.pricepromo;
                 bill.billid= req.body.billid;
                 bill.propertiname= req.body.propertiname;
-                bill.type= req.body.type;
-                //bill.passwth= req.body.datebrith;
-                bill.blokfloor= req.body.blokfloor;
-                bill.nobill= req.body.nobill;
-                bill.city= req.body.city;
-                bill.fo= req.body.fo;
+                bill.changetax= req.body.changetax;
+                bill.total= req.body.total;
+                bill.billdate= req.body.billdate;
+                bill.duedate= req.body.duedate;
+                bill.paydate= req.body.paydate;
+                bill.status= req.body.status;
               if (err)
                 res.send(err);
 
