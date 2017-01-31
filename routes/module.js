@@ -21,9 +21,6 @@ Module.findById(req.params.id, function(err, modules) {
 /* Add module */
 router.post('/addmodule', function(req, res, next) {
   var module = new Module();
-  accsess: String,
-  page: [String],
-  menu: [String]
     module.accsess= req.body.accsess;
     module.page= req.body.page;
     module.menu= req.body.menu;
