@@ -21,7 +21,6 @@ Bill.findById(req.params.id, function(err, bills) {
 /* Add bill */
 router.post('/addbill', function(req, res, next) {
   var bill = new Bill();
-  sub: {type: Schema.Types.ObjectId, ref: 'Sub'}
     bill.idinvoice= req.body.idinvoice;
     bill.pricepack= req.body.pricepack;
     bill.priceinstal= req.body.priceinstal;
