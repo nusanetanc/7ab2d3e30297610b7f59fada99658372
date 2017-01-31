@@ -20,7 +20,7 @@ Package.findById(req.params.id, function(err, packages) {
 
 /* Add package */
 router.post('/addpackage', function(req, res, next) {
-  var package = new package();
+  var package = new Package();
 
     package.level= req.body.level;
     package.price= req.body.price;
