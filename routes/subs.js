@@ -26,7 +26,7 @@ router.post('/addsub', function(req, res, next) {
     sub.subid= shortid.generate();
     sub.name= req.body.name;
     sub.email= req.body.email;
-    sub.password: passwordHash.generate(req.body.password);
+    sub.password= passwordHash.generate(req.body.password);
     sub.homeid= req.body.homeid;
     sub.homedesc= req.body.homedesc;
     sub.jobs= req.body.jobs;
@@ -47,13 +47,10 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-
-                sub.subid= req.body.subid;
+                sub.subid= shortid.generate();
                 sub.name= req.body.name;
                 sub.email= req.body.email;
-                //sub.password= passwordHash.generate(req.body.password);
-                sub.nohp= req.body.nohp;
-                sub.datebrith= req.body.datebrith;
+                sub.password= passwordHash.generate(req.body.password);
                 sub.homeid= req.body.homeid;
                 sub.homedesc= req.body.homedesc;
                 sub.jobs= req.body.jobs;
