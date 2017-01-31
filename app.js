@@ -14,9 +14,9 @@ var employee = require('./routes/employee');
 var home = require('./routes/home');
 var package = require('./routes/package');
 var complaint = require('./routes/complaint');
-var chatcomplaint = require('./routes/chatcomplaint');
+//var chatcomplaint = require('./routes/chatcomplaint');
 var module = require('./routes/module');
-var bill = require('./routes/bill');
+//var bill = require('./routes/bill');
 
 var app = express();
 
@@ -38,9 +38,9 @@ app.use('/employee', employee);
 app.use('/home', home);
 app.use('/package', package);
 app.use('/complaint', complaint);
-app.use('/chatcomplaint', chatcomplaint);
+//app.use('/chatcomplaint', chatcomplaint);
 app.use('/module', module);
-app.use('/bill', bill);
+//app.use('/bill', bill);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
