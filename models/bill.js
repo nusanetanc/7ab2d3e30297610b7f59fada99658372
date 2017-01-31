@@ -3,6 +3,7 @@ var Schema       = mongoose.Schema;
 var Sub = require('../models/subs');
 
 var BillSchema   = new Schema({
+  idinvoice: String,
   pricepack: Number,
   priceinstal: Number,
   pricerouter: Number,

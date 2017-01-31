@@ -22,14 +22,13 @@ Complaint.findById(req.params.id, function(err, compalints) {
 router.post('/addcompalint', function(req, res, next) {
   var compalint = new Compalint();
 
-    compalint.compalintid= req.body.compalintid;
-    compalint.propertiname= req.body.propertiname;
-    compalint.type= req.body.type;
-    //compalint.passwth= req.body.datebrith;
-    compalint.blokfloor= req.body.blokfloor;
-    compalint.nocompalint= req.body.nocompalint;
-    compalint.city= req.body.city;
-    compalint.fo= req.body.fo;
+    compalint.idcompalint= req.body.idcompalint;
+    compalint.subject= req.body.subject;
+    compalint.category= req.body.category;
+    compalint.dateopen= req.body.dateopen;
+    compalint.dateclose= req.body.dateclose;
+    compalint.status= req.body.status;
+    compalint.lastchat= req.body.lastchat;
 
     compalint.save(function(err) {
       if (err)
@@ -45,14 +44,13 @@ router.put('/putcompalint/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                compalint.compalintid= req.body.compalintid;
-                compalint.propertiname= req.body.propertiname;
-                compalint.type= req.body.type;
-                //compalint.passwth= req.body.datebrith;
-                compalint.blokfloor= req.body.blokfloor;
-                compalint.nocompalint= req.body.nocompalint;
-                compalint.city= req.body.city;
-                compalint.fo= req.body.fo;
+                compalint.idcompalint= req.body.idcompalint;
+                compalint.subject= req.body.subject;
+                compalint.category= req.body.category;
+                compalint.dateopen= req.body.dateopen;
+                compalint.dateclose= req.body.dateclose;
+                compalint.status= req.body.status;
+                compalint.lastchat= req.body.lastchat;
               if (err)
                 res.send(err);
 
