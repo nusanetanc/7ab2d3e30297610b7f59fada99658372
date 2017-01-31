@@ -3,7 +3,7 @@ var Schema       = mongoose.Schema;
 
 var PackageSchema   = new Schema({
   level: Number,
-  harga: Number,
+  price: Number,
   detail: String,
   information : [String]
 });

@@ -22,14 +22,10 @@ Package.findById(req.params.id, function(err, packages) {
 router.post('/addpackage', function(req, res, next) {
   var package = new package();
 
-    package.packageid= req.body.packageid;
-    package.propertiname= req.body.propertiname;
-    package.type= req.body.type;
-    //package.passwth= req.body.datebrith;
-    package.blokfloor= req.body.blokfloor;
-    package.nopackage= req.body.nopackage;
-    package.city= req.body.city;
-    package.fo= req.body.fo;
+    package.level= req.body.level;
+    package.price= req.body.price;
+    package.detail= req.body.detail;
+    package.information= req.body.information;
 
     package.save(function(err) {
       if (err)
@@ -45,14 +41,10 @@ router.put('/putpackage/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                package.packageid= req.body.packageid;
-                package.propertiname= req.body.propertiname;
-                package.type= req.body.type;
-                //package.passwth= req.body.datebrith;
-                package.blokfloor= req.body.blokfloor;
-                package.nopackage= req.body.nopackage;
-                package.city= req.body.city;
-                package.fo= req.body.fo;
+                package.level= req.body.level;
+                package.price= req.body.price;
+                package.detail= req.body.detail;
+                package.information= req.body.information;
               if (err)
                 res.send(err);
 
