@@ -63,4 +63,15 @@ router.put('/putemp/:id', function(req, res, next) {
         });
 });
 
+router.delete('/delemp/:id', function(req, res, next) {
+        Emp.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
 module.exports = router;
