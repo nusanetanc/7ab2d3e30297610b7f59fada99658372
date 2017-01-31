@@ -65,4 +65,15 @@ router.put('/puthome/:id', function(req, res, next) {
         });
 });
 
+router.delete('/delhome/:id', function(req, res, next) {
+        Home.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
 module.exports = router;

@@ -65,4 +65,15 @@ router.put('/putpackage/:id', function(req, res, next) {
         });
 });
 
+router.delete('/delpackage/:id', function(req, res, next) {
+        Package.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
 module.exports = router;

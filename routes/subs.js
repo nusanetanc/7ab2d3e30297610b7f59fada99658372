@@ -70,4 +70,15 @@ router.put('/putsub/:id', function(req, res, next) {
         });
 });
 
+router.delete('/delsub/:id', function(req, res, next) {
+        Sub.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
 module.exports = router;
