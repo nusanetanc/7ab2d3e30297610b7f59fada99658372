@@ -1,7 +1,7 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
-var moduleSchema   = new Schema({
+var ModuleSchema   = new Schema({
   accsess: String,
   page: [String],
   menu: [String]
