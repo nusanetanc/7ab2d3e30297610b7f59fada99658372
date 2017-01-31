@@ -5,6 +5,7 @@ var SubSchema   = new Schema({
     subid: String,
     name: String,
     email: String,
+    password: String,
     nohp: String,
     datebrith: String,
     homeid: String,

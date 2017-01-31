@@ -21,17 +21,23 @@ Bill.findById(req.params.id, function(err, bills) {
 /* Add bill */
 router.post('/addbill', function(req, res, next) {
   var bill = new Bill();
-
+  sub: {type: Schema.Types.ObjectId, ref: 'Sub'}
+    bill.idinvoice= req.body.idinvoice;
+    bill.pricepack= req.body.pricepack;
+    bill.priceinstal= req.body.priceinstal;
+    bill.pricerouter= req.body.pricerouter;
+    bill.pricestb= req.body.pricestb;
+    bill.promoname= req.body.promoname;
+    bill.pricepromo= req.body.pricepromo;
     bill.billid= req.body.billid;
     bill.propertiname= req.body.propertiname;
-    bill.type= req.body.type;
-    //bill.passwth= req.body.datebrith;
-    bill.blokfloor= req.body.blokfloor;
-    bill.nobill= req.body.nobill;
-    bill.city= req.body.city;
-    bill.fo= req.body.fo;
-
-    bill.save(function(err) {
+    bill.changetax= req.body.changetax;
+    bill.total= req.body.total;
+    bill.billdate= req.body.billdate;
+    bill.duedate= req.body.duedate;
+    bill.paydate= req.body.paydate;
+    bill.status= req.body.status;
+    Bill.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });

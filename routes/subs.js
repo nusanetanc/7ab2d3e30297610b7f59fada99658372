@@ -1,4 +1,6 @@
 var express = require('express');
+var passwordHash = require('password-hash');
+var shortid = require('shortid');
 var router = express.Router();
 var Sub = require('../models/subs')
 
@@ -21,10 +23,10 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.subid= req.body.subid;
+    sub.subid= shortid.generate();
     sub.name= req.body.name;
     sub.email= req.body.email;
-    //sub.passwth= req.body.datebrith;
+    sub.password: passwordHash.generate(req.body.password);
     sub.homeid= req.body.homeid;
     sub.homedesc= req.body.homedesc;
     sub.jobs= req.body.jobs;
