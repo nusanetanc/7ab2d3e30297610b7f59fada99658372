@@ -3,8 +3,7 @@ var passwordHash = require('password-hash');
 var shortid = require('shortid');
 var router = express.Router();
 var Sub = require('../models/subs');
-var GenerateId = require("generate-id");
-
+var alphanumeric = require('alphanumeric-id');
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
      Sub.find(function(err, subs) {
@@ -24,7 +23,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.subid= new GenerateId();
+    sub.subid= alphanumeric(5);
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
