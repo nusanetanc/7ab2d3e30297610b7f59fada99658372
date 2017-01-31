@@ -12,7 +12,7 @@ var index = require('./routes/index');
 var subscribe = require('./routes/subs');
 var employee = require('./routes/employee');
 var home = require('./routes/home');
-var home = require('./routes/package');
+var package = require('./routes/package');
 var app = express();
 
 // view engine setup
