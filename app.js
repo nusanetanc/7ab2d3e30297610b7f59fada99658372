@@ -61,5 +61,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 app.use(subdomain('api', router));
-app.listen(3000);
 module.exports = app;
