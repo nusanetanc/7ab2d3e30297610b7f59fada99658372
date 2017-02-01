@@ -8,4 +8,4 @@ var ChatSchema   = new Schema({
   complaint: {type: Schema.Types.ObjectId, ref: 'Complaint'}
 });
 
-module.exports = mongoose.model('ChatComplaint', ChatSchema);
+module.exports = mongoose.model('Chat', ChatSchema);

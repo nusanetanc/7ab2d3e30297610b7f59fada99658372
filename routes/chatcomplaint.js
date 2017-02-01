@@ -1,49 +1,50 @@
 var express = require('express');
 var router = express.Router();
-var Complaint = require('../models/complaint');
+var Chat = require('../models/chatcomplaint');
+var Complaint = require('../models/complaint');                                                                         = require('../models/complaint');
 
-/* GET compalintloye listing. */
-router.get('/listcomplaint', function(req, res, next) {
-     Complaint.find(function(err, compalints) {
-       console.log( compalints );
-       res.json(compalints);
+/* GET chatloye listing. */
+router.get('/listchat', function(req, res, next) {
+     Chat.find(function(err, chats) {
+       console.log( chats );
+       res.json(chats);
    });
 });
 
-/* GET detail compalint. */
-router.get('/compalint/:id', function(req, res, next) {
-Complaint.findById(req.params.id, function(err, compalints) {
-       console.log( compalints );
-       res.json(compalints);
+/* GET detail chat. */
+router.get('/chat/:id', function(req, res, next) {
+Chat.findById(req.params.id, function(err, chats) {
+       console.log( chats );
+       res.json(chats);
    });
 });
 
-/* Add compalint */
-router.post('/addcompalint', function(req, res, next) {
-  var compalint = new Compalint();
-    compalint.message= req.body.message;
-    compalint.date= req.body.date;
+/* Add chat */
+router.post('/addchat', function(req, res, next) {
+  var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= req.body.date;
 
-    compalint.save(function(err) {
+    Chat.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
   });
 });
 
-router.put('/putcompalint/:id', function(req, res, next) {
+router.put('/putchat/:id', function(req, res, next) {
 
-        Complaint.findById(req.params.id, function(err, compalint) {
+        Chat.findById(req.params.id, function(err, chat) {
 
             if (err)
                 res.send(err);
 
-                compalint.message= req.body.message;
-                compalint.date= req.body.date;
+                chat.message= req.body.message;
+                chat.date= req.body.date;
               if (err)
                 res.send(err);
 
-            compalint.save(function(err) {
+            Chat.save(function(err) {
                 if (err)
                     res.send(err);
 
@@ -52,8 +53,8 @@ router.put('/putcompalint/:id', function(req, res, next) {
         });
 });
 
-router.delete('/delcompalint/:id', function(req, res, next) {
-        compalint.remove({
+router.delete('/delchat/:id', function(req, res, next) {
+        Chat.remove({
             _id: req.params.id
         }, function(err, bear) {
             if (err)
