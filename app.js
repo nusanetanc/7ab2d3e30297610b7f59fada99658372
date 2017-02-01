@@ -60,5 +60,17 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+var router = express.Router();
+
+router.get('/', function(req, res) {
+    res.send('Welcome to our API!');
+});
+
+router.get('/users', function(req, res) {
+    res.json([
+        { name: "Brian" }
+    ]);
+});
 app.use(subdomain('api', router));
 module.exports = app;
