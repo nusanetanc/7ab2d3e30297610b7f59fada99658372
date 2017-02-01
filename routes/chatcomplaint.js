@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Chat = require('../models/chatcomplaint');
-var Complaint = require('../models/complaint');                                                                    = require('../models/complaint');
+//var Complaint = require('../models/complaint');                                                                    = require('../models/complaint');
 
 /* GET chatloye listing. */
 router.get('/listchat', function(req, res, next) {
