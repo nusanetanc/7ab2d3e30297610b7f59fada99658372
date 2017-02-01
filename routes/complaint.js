@@ -2,59 +2,59 @@ var express = require('express');
 var router = express.Router();
 var Complaint = require('../models/complaint');
 
-/* GET compalintloye listing. */
+/* GET complaintloye listing. */
 router.get('/listcomplaint', function(req, res, next) {
-     Complaint.find(function(err, compalints) {
-       console.log( compalints );
-       res.json(compalints);
+     Complaint.find(function(err, complaints) {
+       console.log( complaints );
+       res.json(complaints);
    });
 });
 
-/* GET detail compalint. */
-router.get('/compalint/:id', function(req, res, next) {
-Complaint.findById(req.params.id, function(err, compalints) {
-       console.log( compalints );
-       res.json(compalints);
+/* GET detail complaint. */
+router.get('/complaint/:id', function(req, res, next) {
+Complaint.findById(req.params.id, function(err, complaints) {
+       console.log( complaints );
+       res.json(complaints);
    });
 });
 
-/* Add compalint */
-router.post('/addcompalint', function(req, res, next) {
-  var compalint = new Compalint();
+/* Add complaint */
+router.post('/addcomplaint', function(req, res, next) {
+  var complaint = new Complaint();
 
-    compalint.idcompalint= req.body.idcompalint;
-    compalint.subject= req.body.subject;
-    compalint.category= req.body.category;
-    compalint.dateopen= req.body.dateopen;
-    compalint.dateclose= req.body.dateclose;
-    compalint.status= req.body.status;
-    compalint.lastchat= req.body.lastchat;
+    complaint.idcomplaint= req.body.idcomplaint;
+    complaint.subject= req.body.subject;
+    complaint.category= req.body.category;
+    complaint.dateopen= req.body.dateopen;
+    complaint.dateclose= req.body.dateclose;
+    complaint.status= req.body.status;
+    complaint.lastchat= req.body.lastchat;
 
-    compalint.save(function(err) {
+    complaint.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
   });
 });
 
-router.put('/putcompalint/:id', function(req, res, next) {
+router.put('/putcomplaint/:id', function(req, res, next) {
 
-        Complaint.findById(req.params.id, function(err, compalint) {
+        Complaint.findById(req.params.id, function(err, complaint) {
 
             if (err)
                 res.send(err);
 
-                compalint.idcompalint= req.body.idcompalint;
-                compalint.subject= req.body.subject;
-                compalint.category= req.body.category;
-                compalint.dateopen= req.body.dateopen;
-                compalint.dateclose= req.body.dateclose;
-                compalint.status= req.body.status;
-                compalint.lastchat= req.body.lastchat;
+                complaint.idcomplaint= req.body.idcomplaint;
+                complaint.subject= req.body.subject;
+                complaint.category= req.body.category;
+                complaint.dateopen= req.body.dateopen;
+                complaint.dateclose= req.body.dateclose;
+                complaint.status= req.body.status;
+                complaint.lastchat= req.body.lastchat;
               if (err)
                 res.send(err);
 
-            compalint.save(function(err) {
+            complaint.save(function(err) {
                 if (err)
                     res.send(err);
 
@@ -63,8 +63,8 @@ router.put('/putcompalint/:id', function(req, res, next) {
         });
 });
 
-router.delete('/delcompalint/:id', function(req, res, next) {
-        compalint.remove({
+router.delete('/delcomplaint/:id', function(req, res, next) {
+        complaint.remove({
             _id: req.params.id
         }, function(err, bear) {
             if (err)
