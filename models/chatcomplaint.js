@@ -3,8 +3,8 @@ var Schema       = mongoose.Schema;
 var Complaint = require('../models/complaint');
 
 var ChatSchema   = new Schema({
-  Message: Number,
-  date: Number,
+  message: String,
+  date: Date,
   complaint: {type: Schema.Types.ObjectId, ref: 'Complaint'}
 });
 

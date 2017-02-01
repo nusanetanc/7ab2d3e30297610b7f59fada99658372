@@ -1,6 +1,5 @@
 var express = require('express');
 var passwordHash = require('password-hash');
-var shortid = require('shortid');
 var router = express.Router();
 var Sub = require('../models/subs');
 var alphanumeric = require('alphanumeric-id');
@@ -23,7 +22,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.subid= alphanumeric(5);
+    sub.subid= alphanumeric(7);
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);

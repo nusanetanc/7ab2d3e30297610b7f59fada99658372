@@ -14,7 +14,7 @@ var employee = require('./routes/employee');
 var home = require('./routes/home');
 var package = require('./routes/package');
 var complaint = require('./routes/complaint');
-//var chatcomplaint = require('./routes/chatcomplaint');
+var chatcomplaint = require('./routes/chatcomplaint');
 var modul = require('./routes/modul');
 var bill = require('./routes/bill');
 
@@ -38,7 +38,7 @@ app.use('/employee', employee);
 app.use('/home', home);
 app.use('/package', package);
 app.use('/complaint', complaint);
-//app.use('/chatcomplaint', chatcomplaint);
+app.use('/chatcomplaint', chatcomplaint);
 app.use('/modul', modul);
 app.use('/bill', bill);
 
