@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var subdomain = require('express-subdomain');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/groovy');
@@ -60,4 +61,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(subdomain('api', router));
 module.exports = app;
