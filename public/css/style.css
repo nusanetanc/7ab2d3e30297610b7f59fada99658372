@@ -1,0 +1,189 @@
+body{
+    font-family: Roboto;
+}
+/* Homepage */
+.navbar-homepage{
+    background-color: #fff;
+    font-size: 12px;
+    border: none;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #fc592e;
+}
+
+.navbar-nav > li > a {
+    padding-top: 20px;
+    height: 60px;
+}
+
+.navbar-nav > li > a > .navbar-menus {
+    margin: 0 10px 0 10px;
+}
+
+.navbar-nav > li > a > .sign-in-only {
+    margin: 0 20px 0 20px;
+}
+
+.navbar-logo{
+    height:40px;
+    margin:10px 0 10px 0;
+}
+
+.wall-home{
+    height:500px;
+    background-image: url("../images/all-entertainment.jpg");
+    background-position:center;
+    background-size:cover;
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 60px;
+}
+
+.wall-container{
+    margin: 0px 100px 0px 110px;
+}
+
+.wall-content{
+    margin-top:80px;
+}
+
+.wall-title{
+    font-size: 38px;
+}
+
+.btn-subscribe{
+    text-decoration: none;
+    background-color: #fc592e;
+    color: white;
+    border-radius: 0px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.wall-home-content{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.wall-home-content-container{
+    margin-top: 120px;
+}
+
+.wall-content-title{
+    font-size: 38px;
+    color: #fc592e;
+}
+
+.wall-home-content-2{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #fff;
+}
+
+.home-footer{
+    height: 200px;
+    background-color: #fc592e;
+    margin-bottom: 0px;
+}
+/*------------------- End Homepage -----------------*/
+
+.subscribe-text{
+    margin: 0px 20px 0px 20px;
+}
+
+/* Form Authentication */
+.form-auth-is{
+    background-color: rgb(202, 134, 65);
+}
+
+.container-auth{
+    width: 500px;
+}
+
+.top-margin{
+    margin-top: 70px;
+}
+
+.logo-size{
+    width: 200px;
+}
+
+.form{
+    margin-top: 70px;
+    text-align: left;
+}
+
+.form .text{
+    color: white;
+    text-align: center;
+}
+
+.form .form-group{
+    margin-top: 25px;
+}
+
+.form input{
+    border-radius: 0px;
+    border: 0px;
+    height: 50px;
+    box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+}
+
+.form button{
+    border-radius: 0px;
+    border: 0px;
+    background-color: rgb(227, 71, 28);
+    color: white;
+    font-size: 13px;
+    height: 40px;
+    width: 25%;
+    box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+}
+
+.form .button-resend{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form .text-other{
+    float: right;
+    text-align: right;
+}
+
+.form a{
+    color:white;
+}
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+
+.footer footer p{
+    margin: 15px;
+}
+/* End Form Authentication */
+
+@media only screen and (max-width : 768px){
+    .container-auth{
+        width:90%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .wall-home{
+        height:20%;
+    }
+
+    .navbar-logo{
+        margin-left: 20px;
+    }
+}
