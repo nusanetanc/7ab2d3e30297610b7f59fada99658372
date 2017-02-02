@@ -15,7 +15,7 @@ var SubSchema   = new Schema({
     cardid: String,
     nova: Number,
     status: String,
-    billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}]
+    billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}],
     history: [{type: Schema.Types.ObjectId, ref: 'History'}]
 
 });
