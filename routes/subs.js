@@ -23,15 +23,14 @@ Sub.findById(req.params.id, function(err, subs) {
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
     sub.subid= alphanumeric(7);
+    sub.groovyid= req.body.groovyid;
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
-    sub.homeid= req.body.homeid;
-    sub.homedesc= req.body.homedesc;
-    sub.jobs= req.body.jobs;
     sub.packlev= req.body.packlev;
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
+    sub.status= req.body.status;
 
     sub.save(function(err) {
       if (err)
