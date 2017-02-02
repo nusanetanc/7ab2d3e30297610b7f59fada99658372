@@ -1,11 +1,14 @@
 body{
     font-family: Roboto;
 }
-/* Homepage */
+/*----------------------- Homepage --------------------------*/
+
+/*------------------------Navbar----------------------------*/
 .navbar-homepage{
     background-color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     border: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07)
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -30,9 +33,11 @@ body{
 
 .navbar-logo{
     height:40px;
-    margin:10px 0 10px 0;
+    margin:10px 15px 10px 15px;
 }
+/*--------------------End Navbar----------------------------*/
 
+/*----------------------Content-----------------------------*/
 .wall-home{
     height:500px;
     background-image: url("../images/all-entertainment.jpg");
@@ -62,6 +67,7 @@ body{
     border-radius: 0px;
     border: 0;
     vertical-align: middle;
+    padding: 20px 20px 20px 20px;
 }
 
 .wall-home-content{
@@ -81,22 +87,62 @@ body{
 
 .wall-home-content-2{
     margin-bottom: 0px;
-    height: 500px;
+    height: 100%;
     background-color: #fff;
 }
 
+/*---------------------------End Content----------------------------*/
+
+/*-------------------------------Footer-------------------------------*/
 .home-footer{
-    height: 200px;
+    height: 100%;
     background-color: #fc592e;
     margin-bottom: 0px;
+    margin-top: 0;
+    color: white;
 }
+
+.home-footer-header-text{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.home-footer-body-text{
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.home-footer-body-text > a {
+    color: white;
+}
+
+.home-footer-body-text > a:hover {
+    text-decoration: none;
+}
+
+.home-content-text{
+    font-size: 18px;
+}
+
+.footer-home{
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #e3471c;
+}
+
+.footer-home-text{
+    color: #fff;
+    padding-top: 20px;
+    opacity: 0.9;
+    font-size: 16px;
+}
+/*----------------------------End Footer---------------------------*/
+
 /*------------------- End Homepage -----------------*/
 
-.subscribe-text{
-    margin: 0px 20px 0px 20px;
-}
 
-/* Form Authentication */
+/*--------------------- Form Authentication ---------------------*/
 .form-auth-is{
     background-color: rgb(202, 134, 65);
 }
@@ -170,7 +216,7 @@ body{
 .footer footer p{
     margin: 15px;
 }
-/* End Form Authentication */
+/*-------------------- End Form Authentication -------------------------*/
 
 @media only screen and (max-width : 768px){
     .container-auth{
