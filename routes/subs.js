@@ -2,7 +2,6 @@ var express = require('express');
 var passwordHash = require('password-hash');
 var router = express.Router();
 var Sub = require('../models/subs');
-var rndm = require('rndm');
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
      Sub.find(function(err, subs) {
@@ -22,7 +21,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.groovyid = rndm(6);
+    sub.groovyid = require('node-sid')().create();
     sub.groovyid= req.body.groovyid;
     sub.name= req.body.name;
     sub.email= req.body.email;
