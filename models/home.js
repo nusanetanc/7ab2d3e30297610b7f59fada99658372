@@ -1,6 +1,8 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var City = require('../models/city');
+var Type = require('../models/type');
+var Blokfloor = require('../models/blokfloor');
 var Property = require('../models/property');
 var Cluster = require('../models/cluster');
 
