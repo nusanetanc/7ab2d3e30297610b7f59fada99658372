@@ -45,7 +45,6 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                sub.subid= shortid.generate();
                 sub.name= req.body.name;
                 sub.email= req.body.email;
                 sub.password= passwordHash.generate(req.body.password);
