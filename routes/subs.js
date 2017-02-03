@@ -22,7 +22,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    var salt = rndm(6);
+    sub.groovyid = rndm(6);
     sub.groovyid= req.body.groovyid;
     sub.name= req.body.name;
     sub.email= req.body.email;
@@ -45,6 +45,7 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
+                sub.subid= shortid.generate();
                 sub.name= req.body.name;
                 sub.email= req.body.email;
                 sub.password= passwordHash.generate(req.body.password);
