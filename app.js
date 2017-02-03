@@ -18,11 +18,11 @@ var chatcomplaint = require('./routes/chatcomplaint');
 var modul = require('./routes/modul');
 var bill = require('./routes/bill');
 
-var city = require('./routes/city');
-var proprety = require('./routes/proprety');
-var type = require('./routes/type');
-var cluster = require('./routes/cluster');
-var blokfloor = require('./routes/blokfloor');
+///var city = require('./routes/city');
+//var proprety = require('./routes/proprety');
+//var type = require('./routes/type');
+//var cluster = require('./routes/cluster');
+//var blokfloor = require('./routes/blokfloor');
 
 var app = express();
 
