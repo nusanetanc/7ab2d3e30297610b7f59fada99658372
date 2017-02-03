@@ -21,7 +21,11 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.groovyid = require('node-sid')().create();
+    sub.groovyid = require('node-sid')({
+   seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+   len:6,
+   headerField:'x-node-sid'
+ }).create();
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
