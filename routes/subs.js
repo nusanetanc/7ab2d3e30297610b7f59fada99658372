@@ -48,6 +48,7 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
+                sub.groovyid= req.body.groovyid;
                 sub.subid= req.body.subid;
                 sub.name= req.body.name;
                 sub.email= req.body.email;
