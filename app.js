@@ -11,7 +11,6 @@ mongoose.connect('mongodb://localhost/groovy');
 var index = require('./routes/index');
 var subscribe = require('./routes/subs');
 var employee = require('./routes/employee');
-//var home = require('./routes/home');
 var package = require('./routes/package');
 var complaint = require('./routes/complaint');
 var chatcomplaint = require('./routes/chatcomplaint');
@@ -22,6 +21,7 @@ var property = require('./routes/property');
 var type = require('./routes/type');
 var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
+var home = require('./routes/home');
 
 var app = express();
 
@@ -40,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/subscribe', subscribe);
 app.use('/employee', employee);
-//app.use('/home', home);
 app.use('/package', package);
 app.use('/complaint', complaint);
 app.use('/chatcomplaint', chatcomplaint);
@@ -51,6 +50,7 @@ app.use('/property', property);
 app.use('/type', type);
 app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
+app.use('/home', home);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
