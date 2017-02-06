@@ -37,7 +37,8 @@ router.post('/addbill', function(req, res, next) {
     bill.duedate= req.body.duedate;
     bill.paydate= req.body.paydate;
     bill.status= req.body.status;
-    Bill.save(function(err) {
+    bill.sub= req.body.sub;
+    bill.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });

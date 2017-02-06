@@ -2,7 +2,6 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var Sub = require('../models/subs');
 
-
 var BillSchema   = new Schema({
   noinvoice: Number,
   pricepack: Number,
