@@ -22,7 +22,8 @@ Sub.findById(req.params.id, function(err, subs) {
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
     sub.subid = require('node-sid')({
-   len:6
+   len:6,
+   headerField:'x-node-sid'
  }).create();
     sub.name= req.body.name;
     sub.email= req.body.email;
