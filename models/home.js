@@ -7,7 +7,7 @@ var Cluster = require('../models/cluster');
 var Blokfloor = require('../models/blokfloor');
 
 var HomeSchema   = new Schema({
-  groovyid: Number,
+  groovyid: String,
   city: {type: Schema.Types.ObjectId, ref: 'City'},
   property: {type: Schema.Types.ObjectId, ref: 'Property'},
   typeproperty: {type: Schema.Types.ObjectId, ref: 'typeproperty'},
