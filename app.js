@@ -49,6 +49,7 @@ app.use('/bill', bill);
 app.use('/city', city);
 app.use('/property', property);
 app.use('/type', type);
+app.use('/cluster', cluster);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
