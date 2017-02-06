@@ -25,7 +25,7 @@ router.post('/addsub', function(req, res, next) {
    seed:'0123456789abcdefghijklmnopqrstuvwxyz',
    len:6,
    headerField:'x-node-sid'
- }).create();
+ }).create(); 
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
