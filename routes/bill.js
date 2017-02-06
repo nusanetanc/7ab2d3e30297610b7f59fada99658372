@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
-
+var randomInt = require('random-int');
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
@@ -22,7 +22,7 @@ Bill.findById(req.params.id, function(err, bills) {
 /* Add bill */
 router.post('/addbill', function(req, res, next) {
   var bill = new Bill();
-    bill.noinvoice= req.body.noinvoice;
+    bill.noinvoice= randomInt(100000, 999999)
     bill.pricepack= req.body.pricepack;
     bill.priceinstal= req.body.priceinstal;
     bill.pricerouter= req.body.pricerouter;
