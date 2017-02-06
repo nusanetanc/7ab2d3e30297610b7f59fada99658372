@@ -23,8 +23,8 @@ router.post('/addcluster', function(req, res, next) {
   var cluster = new Cluster();
     cluster.name= req.body.name;
     cluster.typeproperty= req.body.typeproperty;
-    
-    Cluster.save(function(err) {
+
+    cluster.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
@@ -42,7 +42,7 @@ router.put('/putcluster/:id', function(req, res, next) {
               if (err)
                 res.send(err);
 
-            Cluster.save(function(err) {
+            cluster.save(function(err) {
                 if (err)
                     res.send(err);
 
