@@ -21,9 +21,7 @@ Property.findById(req.params.id, function(err, propertys) {
 /* Add property */
 router.post('/addproperty', function(req, res, next) {
   var property = new Property();
-    property.accsess= req.body.accsess;
-    property.page= req.body.page;
-    property.menu= req.body.menu;
+    property.name= req.body.name;
 
     Property.save(function(err) {
       if (err)
@@ -39,9 +37,7 @@ router.put('/putproperty/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                property.accsess= req.body.accsess;
-                property.page= req.body.page;
-                property.menu= req.body.menu;
+                property.name= req.body.name;
               if (err)
                 res.send(err);
 

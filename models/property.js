@@ -3,7 +3,7 @@ var Schema       = mongoose.Schema;
 var City = require('../models/city');
 
 var PropertySchema   = new Schema({
-  property: String,
+  name : String,
   city: {type: Schema.Types.ObjectId, ref: 'City'}
 });
 
