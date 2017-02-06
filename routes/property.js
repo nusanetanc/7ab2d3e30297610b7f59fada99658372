@@ -41,7 +41,7 @@ router.put('/putproperty/:id', function(req, res, next) {
               if (err)
                 res.send(err);
 
-            Property.save(function(err) {
+            property.save(function(err) {
                 if (err)
                     res.send(err);
 
