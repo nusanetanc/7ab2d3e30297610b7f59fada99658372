@@ -21,11 +21,9 @@ City.findById(req.params.id, function(err, citys) {
 /* Add city */
 router.post('/addcity', function(req, res, next) {
   var city = new City();
-    city.accsess= req.body.accsess;
-    city.page= req.body.page;
-    city.menu= req.body.menu;
+    city.name= req.body.name;
 
-    City.save(function(err) {
+    city.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
@@ -39,13 +37,11 @@ router.put('/putcity/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                city.accsess= req.body.accsess;
-                city.page= req.body.page;
-                city.menu= req.body.menu;
+            city.name= req.body.name;
               if (err)
                 res.send(err);
 
-            City.save(function(err) {
+            city.save(function(err) {
                 if (err)
                     res.send(err);
 
@@ -55,7 +51,7 @@ router.put('/putcity/:id', function(req, res, next) {
 });
 
 router.delete('/delcity/:id', function(req, res, next) {
-        City.remove({
+        city.remove({
             _id: req.params.id
         }, function(err, bear) {
             if (err)
