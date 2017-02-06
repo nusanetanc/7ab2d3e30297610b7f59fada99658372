@@ -22,7 +22,7 @@ TypeProperty.findById(req.params.id, function(err, typepropertys) {
 router.post('/addtypeproperty', function(req, res, next) {
   var typeproperty = new TypeProperty();
     typeproperty.name= req.body.name;
-
+    typeproperty.property= req.body.property;
     typeproperty.save(function(err) {
       if (err)
           res.send(err);
