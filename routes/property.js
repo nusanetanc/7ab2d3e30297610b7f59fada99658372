@@ -23,7 +23,7 @@ router.post('/addproperty', function(req, res, next) {
   var property = new Property();
     property.name= req.body.name;
     property.city= req.body.city;
-    Property.save(function(err) {
+    property.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
@@ -36,7 +36,6 @@ router.put('/putproperty/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-
                 property.name= req.body.name;
                 property.city= req.body.city;
               if (err)
