@@ -51,7 +51,7 @@ router.put('/putcity/:id', function(req, res, next) {
 });
 
 router.delete('/delcity/:id', function(req, res, next) {
-        city.remove({
+        City.remove({
             _id: req.params.id
         }, function(err, bear) {
             if (err)
