@@ -19,7 +19,7 @@ var modul = require('./routes/modul');
 var bill = require('./routes/bill');
 var city = require('./routes/city');
 var property = require('./routes/property');
-//var type = require('./routes/type');
+var type = require('./routes/type');
 //var cluster = require('./routes/cluster');
 //var blokfloor = require('./routes/blokfloor');
 
@@ -48,6 +48,7 @@ app.use('/modul', modul);
 app.use('/bill', bill);
 app.use('/city', city);
 app.use('/property', property);
+app.use('/type', type);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
