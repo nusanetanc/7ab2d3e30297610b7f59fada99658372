@@ -20,12 +20,13 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
-  var sub = new Sub();
+  var sub = new Sub(); /*
     sub.subid = require('node-sid')({
    seed:'0123456789abcdefghijklmnopqrstuvwxyz',
    len:6,
    headerField:'x-node-sid'
- }).create();
+ }).create(); */
+    sub.subid= req.body.subid;
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
@@ -47,16 +48,14 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                sub.subid= shortid.generate();
+                sub.subid= req.body.subid;
                 sub.name= req.body.name;
                 sub.email= req.body.email;
                 sub.password= passwordHash.generate(req.body.password);
-                sub.homeid= req.body.homeid;
-                sub.homedesc= req.body.homedesc;
-                sub.jobs= req.body.jobs;
                 sub.packlev= req.body.packlev;
                 sub.cardid= req.body.cardid;
                 sub.nova= req.body.nova;
+                sub.status= req.body.status;
               if (err)
                 res.send(err);
 
