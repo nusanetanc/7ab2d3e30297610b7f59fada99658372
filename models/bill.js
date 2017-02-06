@@ -1,9 +1,10 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var Sub = require('../models/subs');
+var randomInt = require('random-int');
 
 var BillSchema   = new Schema({
-  idinvoice: String,
+  idinvoice: randomInt(100000, 999999);,
   pricepack: Number,
   priceinstal: Number,
   pricerouter: Number,
