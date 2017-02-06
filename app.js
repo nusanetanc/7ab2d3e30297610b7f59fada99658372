@@ -20,7 +20,7 @@ var bill = require('./routes/bill');
 var city = require('./routes/city');
 var property = require('./routes/property');
 var type = require('./routes/type');
-//var cluster = require('./routes/cluster');
+var cluster = require('./routes/cluster');
 //var blokfloor = require('./routes/blokfloor');
 
 var app = express();
