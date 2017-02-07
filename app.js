@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var api = express.Router();
+
 app.use(subdomain('api', index));
 app.use('/', index);
 app.use('/subscribe', subscribe);
