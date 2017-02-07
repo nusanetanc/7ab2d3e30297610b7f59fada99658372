@@ -26,4 +26,9 @@ router.get('/support', function(req, res, next) {
 router.get('/signin', function(req, res, next) {
   res.render('signin', { title: 'Groovy - Signin' });
 });
+
+/* GET is groovy. */
+router.get('/is', function(req, res, next) {
+  res.render('is', { title: 'Groovy - IS' });
+});
 module.exports = router;

@@ -1,5 +1,4 @@
 var express = require('express');
-var subdomain = require('express-subdomain-router');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -24,9 +23,6 @@ var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
 
-//angular untuk is
-var index = require('./routes/is');
-
 var app = express();
 
 // view engine setup
@@ -41,8 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use(subdomain('api', index));
 app.use('/', index);
 app.use('/subscribe', subscribe);
 app.use('/employee', employee);
