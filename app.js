@@ -52,8 +52,6 @@ app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
 app.use('/home', home);
 
-//angular untuk is
-app.use('/is', is);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
