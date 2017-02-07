@@ -11,7 +11,6 @@ api.get('/', function(req, res, next) {
 });
 
 
-
 router.get('/features', function(req, res, next) {
   res.render('features', { title: 'Groovy - Features' });
 });
