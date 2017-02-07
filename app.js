@@ -24,6 +24,9 @@ var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
 
+//angular untuk is
+var index = require('./routes/is');
+
 var app = express();
 
 // view engine setup
@@ -54,6 +57,9 @@ app.use('/type', type);
 app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
 app.use('/home', home);
+
+//angular untuk is
+app.use('/is', is);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
