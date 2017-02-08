@@ -2,7 +2,7 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var SubSchema   = new Schema({
-    subid: String,
+    subid: Number,
     groovyid: String,
     name: String,
     nohp: String,
