@@ -24,7 +24,8 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.subid = damm.append('45353');
+    var Random = randomInt(10000, 99999);
+    sub.subid = damm.append(Random);
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
