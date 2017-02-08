@@ -2,6 +2,9 @@ var express = require('express');
 var passwordHash = require('password-hash');
 var router = express.Router();
 var Sub = require('../models/subs');
+var randomInt = require('random-int');
+var checkdigit = require('checkdigit');
+
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
      Sub.find(function(err, subs) {
@@ -21,11 +24,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
-    sub.subid = require('node-sid')({
-   seed:'0123456789abcdefghijklmnopqrstuvwxyz',
-   len:6,
-   headerField:'x-node-sid'
- }).create();
+    sub.subid = checkdigit.mod10.apply(randomInt(10000, 99999));
     sub.name= req.body.name;
     sub.email= req.body.email;
     sub.password= passwordHash.generate(req.body.password);
