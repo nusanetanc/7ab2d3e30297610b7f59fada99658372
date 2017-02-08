@@ -3,7 +3,7 @@ var passwordHash = require('password-hash');
 var router = express.Router();
 var Sub = require('../models/subs');
 var randomInt = require('random-int');
-var checkdigit = require('checkdigit');
+var damm = require('damm');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -25,7 +25,7 @@ Sub.findById(req.params.id, function(err, subs) {
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
   var Int = randomInt(10000, 99999);
-  var id = checkdigit.mod10.create(Int);
+  var id = damm.append(Int);
     sub.subid = id;
     sub.name= req.body.name;
     sub.email= req.body.email;
