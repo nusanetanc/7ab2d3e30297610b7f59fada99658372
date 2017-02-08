@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
-
+var randomInt = require('random-int');
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
