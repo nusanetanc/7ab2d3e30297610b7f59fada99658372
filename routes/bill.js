@@ -22,7 +22,7 @@ Bill.findById(req.params.id, function(err, bills) {
 /* Add bill */
 router.post('/addbill', function(req, res, next) {
   var bill = new Bill();
-    //bill.noinvoice= randomInt(100000, 999999);
+    bill.noinvoice= randomInt(100000000, 9999999999);
     bill.pricepack= req.body.pricepack;
     bill.priceinstal= req.body.priceinstal;
     bill.pricerouter= req.body.pricerouter;
