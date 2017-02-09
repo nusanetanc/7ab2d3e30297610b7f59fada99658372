@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
-var appDev = 'assets/app/';
-var appProd = 'public/js/app/';
+var appIsDev = 'assets/app/is'/;
+var appIsProd = 'public/js/app/is/';
 
 /* JS & TS */
 var jsuglify = require('gulp-uglify');
@@ -15,7 +15,7 @@ var tsProject = typescript.createProject('tsconfig.json');
 
 
 gulp.task('build-ts', function () {
-    return gulp.src(appDev + '**/*.ts')
+    return gulp.src(appIsDev + '**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(typescript(tsProject))
         .pipe(sourcemaps.write())
