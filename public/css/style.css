@@ -93,21 +93,6 @@ body{
 
 /*---------------------------End Content----------------------------*/
 
-/*--------------- Client Authentication --------------*/
-.container-auth-client{
-    width: 500px;
-    padding: 130px 0px 250px 0px;
-}
-
-.resend-link{
-    font-size: 16px;
-}
-
-.resend-link a{
-    text-decoration: underline;
-}
-/*--------------- /end Client Authentication --------------*/
-
 
 /*-------------------------------Footer-------------------------------*/
 .home-footer{
@@ -159,6 +144,8 @@ body{
 
 
 /*--------------------- Form Authentication ---------------------*/
+
+/*---------------------- IS Authentication -------------------*/
 .form-auth-is{
     background-color: rgb(202, 134, 65);
 }
@@ -196,15 +183,15 @@ body{
     box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
 }
 
-.form button{
+.form .button-submit{
     border-radius: 0px;
     border: 0px;
-    background-color: rgb(227, 71, 28);
+    background-color: #fc592e;
     color: white;
     font-size: 13px;
-    height: 40px;
     width: 25%;
     box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+    padding: 15px;
 }
 
 .form .button-resend{
@@ -232,6 +219,23 @@ body{
 .footer footer p{
     margin: 15px;
 }
+/*----------- /end IS Authentication -------------------*/
+/*--------------- Client Authentication --------------*/
+.container-auth-client{
+    width: 500px;
+    padding: 130px 0px 250px 0px;
+}
+
+.resend-link{
+    font-size: 16px;
+}
+
+.resend-link a{
+    text-decoration: underline;
+}
+/*--------------- /end Client Authentication --------------*/
+
+
 /*-------------------- End Form Authentication -------------------------*/
 
 @media only screen and (max-width : 768px){
