@@ -256,8 +256,7 @@ body{
 .wall-package{
     background-image:url(../images/package-groovy.png);
     height:560px;
-    background-position:center;
-    background-size:cover;
+    background-position:bottom center;
     margin-bottom: 0px;
 }
 
