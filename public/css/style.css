@@ -126,19 +126,16 @@ body{
 }
 
 .footer-home{
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
     background-color: #e3471c;
+    padding: 15px 0 10px 0;
 }
 
 .footer-home-text{
     color: #fff;
-    padding-top: 20px;
     opacity: 0.9;
     font-size: 16px;
 }
-/*----------------------------End Footer---------------------------*/
+/*----------------------------/End Footer---------------------------*/
 
 /*------------------- End Homepage -----------------*/
 
