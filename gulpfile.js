@@ -24,7 +24,7 @@ gulp.task('build-ts', function () {
         .pipe(gulp.dest(appProd));
 });
 gulp.task('watch', function () {
-    gulp.watch(appDev + '**/*.ts', ['build-ts']);
+    gulp.watch(appIsDev + '**/*.ts', ['build-ts']);
 });
 
 gulp.task('default', ['watch', 'build-ts']);
