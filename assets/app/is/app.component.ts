@@ -9,10 +9,7 @@ import {SigninComponent}  from "./user/signin.component";
     `
 })
 @Routes([
-    { path: '/', component: MessagesComponent },
-    { path: '/signin', component: SigninComponent },
-    { path: '/signup', component: SignupComponent },
-    { path: '/profile', component: ProfileComponent }
+    { path: '/signin', component: SigninComponent }
 ])
 
 export class AppComponentIs {
