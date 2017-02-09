@@ -5,8 +5,9 @@ import {SigninComponent}  from "./user/signin.component";
 @Component({
     selector: 'my-app',
     template: `
-        <h1>Hello World!</h1>
-    `
+        <router-outlet></router-outlet>
+    `,
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, ErrorComponent]
 })
 @Routes([
     { path: '/signin', component: SigninComponent }
