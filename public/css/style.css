@@ -254,6 +254,7 @@ body{
 
 /*---------------------- Package ---------------------*/
 .wall-package{
+    background-image:url(../images/background-package.jpg);
     height:560px;
     background-position:center;
     background-size:cover;
