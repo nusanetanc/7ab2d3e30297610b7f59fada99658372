@@ -1,6 +1,4 @@
 import {Component} from "angular2/core";
-import {SigninComponent} from "user/signin.component";
-import {ROUTER_DIRECTIVES} from "angular2/router";
 
 @Component({
    selector: 'my-app',
@@ -18,8 +16,7 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
              </div>
          </div>
-     </div>',
-   directives: [ROUTER_DIRECTIVES, SigninComponent]
+     </div>'
 })
 
 export class AppComponent {
