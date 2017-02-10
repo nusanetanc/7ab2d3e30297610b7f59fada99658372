@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { Routes, ROUTER_DIRECTIVES } from 'angular2/router';
 import {SigninComponent}  from "./user/signin.component";
 
 @Component({
