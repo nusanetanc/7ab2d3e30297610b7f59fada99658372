@@ -7,7 +7,10 @@ import {SigninComponent} from "./user/signin.component";
 @Component({
    selector: 'my-app',
    template: `
-
+        <a [routerLink]=" ['Home'] ">Login</a>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
 `
 })
 
