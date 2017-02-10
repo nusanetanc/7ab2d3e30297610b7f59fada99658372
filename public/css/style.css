@@ -249,6 +249,14 @@ body{
     .navbar-logo{
         margin-left: 20px;
     }
+
+    .wall-title {
+        font-size: 28px;
+    }
+
+    .home-content-text{
+        font-size: 18px;
+    }
 }
 
 
