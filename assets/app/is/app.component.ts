@@ -2,7 +2,7 @@ import {Component} from "angular2/core";
 
 @Component({
    selector: 'my-app',
-   template: '<div>
+   template: '
     <div class="container container-auth">
         <div class="top-margin text-center">
             <img class="logo-size" src="images/groovy.png">
@@ -16,8 +16,7 @@ import {Component} from "angular2/core";
                 <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
             </div>
         </div>
-    </div>
-  </div>'
+    </div>'
 })
 
 export class AppComponent {
