@@ -9,7 +9,7 @@ import {SigninComponent} from "./user/signin.component";
    directives: [ROUTER_DIRECTIVES],
    template: `
    <h1>Tes</h1>
-        <a [routerLink]="./signin">Login</a>
+        <a [routerLink]=" ['SignIn'] ">Login</a>
         <main>
           <router-outlet></router-outlet>
         </main>
