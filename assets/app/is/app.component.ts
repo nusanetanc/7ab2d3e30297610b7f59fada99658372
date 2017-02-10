@@ -1,31 +1,18 @@
 import {Component} from "angular2/core";
+import {ROUTER_DIRECTIVES, RouteConfig, Router} from 'angular2/router';
+import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {Http} from 'angular2/http';
 
 @Component({
    selector: 'my-app',
    template: `
-<div class="form-auth-is">
-   <div class="container container-auth">
-        <div class="top-margin text-center">
-            <img class="logo-size" src="images/groovy.png">
-            <div class="form">
-                <div class="text">Sign in to continue to Information System</div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="email" placeholder="Email">
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <a href="#" class="btn button-submit">SIGN IN</a>
-                <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid footer">
-        <footer class="text-center">
-            <p>Copyright 2016 Groovy. All right reserved.</p>
-        </footer>
-    </div>
-</div>
+
 `
 })
+
+@RouteConfig([
+  { path: '/signin', component: SigninComponent, name: 'Sign In Is' },
+])
 
 export class AppComponent {
 
