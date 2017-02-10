@@ -33,7 +33,8 @@ router.post('/addbill', function(req, res, next) {
     bill.billid= req.body.billid;
     bill.propertiname= req.body.propertiname;
     bill.changetax= req.body.changetax;
-    bill.total= req.body.total;
+    bill.totalprice= req.body.totalprice;
+    bill.totalpay= req.body.totalpay;
     bill.billdate= req.body.billdate;
     bill.duedate= req.body.duedate;
     bill.paydate= req.body.paydate;
