@@ -16,7 +16,7 @@ import {SigninComponent} from "./user/signin.component";
 })
 
 @RouteConfig([
-  { path: '/signin', component: SigninComponent, name: 'SignIn' },
+  { path: '/signin', component: SigninComponent, name: 'SignIn' }
 ])
 
 export class AppComponent {
