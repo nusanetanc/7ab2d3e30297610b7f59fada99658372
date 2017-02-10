@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { Routes, ROUTER_DIRECTIVES } from 'angular/2router';
+import { Routes, ROUTER_DIRECTIVES } from 'angular2/router';
 import {SigninComponent}  from "./user/signin.component";
 
 @Component({
@@ -7,7 +7,7 @@ import {SigninComponent}  from "./user/signin.component";
     template: `
         <router-outlet></router-outlet>
     `,
-    directives: [ROUTER_DIRECTIVES, HeaderComponent, ErrorComponent]
+    directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
     { path: '/signin', component: SigninComponent }

@@ -19,6 +19,6 @@ import {Component} from 'angular2/core';
       </div>
     `
 })
-export class AppComponentIs {
+export class SigninComponent {
 
 }
