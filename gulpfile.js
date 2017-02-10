@@ -21,7 +21,7 @@ gulp.task('build-ts', function () {
         .pipe(sourcemaps.write())
         // .pipe(jsuglify())
         .pipe(concat('bundle.js'))
-        .pipe(gulp.dest(appProd));
+        .pipe(gulp.dest(appIsProd));
 });
 gulp.task('watch', function () {
     gulp.watch(appIsDev + '**/*.ts', ['build-ts']);
