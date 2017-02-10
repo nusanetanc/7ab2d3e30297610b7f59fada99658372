@@ -18,6 +18,11 @@ import {Component} from "angular2/core";
             </div>
         </div>
     </div>
+    <div class="container-fluid footer">
+        <footer class="text-center">
+            <p>Copyright 2016 Groovy. All right reserved.</p>
+        </footer>
+    </div>
 </body>
 `
 })
