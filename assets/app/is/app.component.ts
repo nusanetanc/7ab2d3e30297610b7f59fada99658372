@@ -1,18 +1,13 @@
-import { Component } from 'angular2/core';
-import { Routes, ROUTER_DIRECTIVES } from 'angular2/router';
-import {SigninComponent}  from "./user/signin.component";
+import {Component, View} from "angular2/core";
 
 @Component({
-    selector: 'my-app',
-    template: `
-        <router-outlet></router-outlet>
-    `,
-    directives: [ROUTER_DIRECTIVES]
+   selector: 'my-app'
 })
-@Routes([
-    { path: '/signin', component: SigninComponent }
-])
 
-export class AppComponentIs {
+@View({
+  template: '<h2>My First Angular 2 App</h2>'
+})
+
+export class AppComponent {
 
 }
