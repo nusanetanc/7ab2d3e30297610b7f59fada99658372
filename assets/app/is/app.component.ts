@@ -3,7 +3,7 @@ import {Component} from "angular2/core";
 @Component({
    selector: 'my-app',
    template: `
-<body class="form-auth-is">
+<div class="form-auth-is">
    <div class="container container-auth">
         <div class="top-margin text-center">
             <img class="logo-size" src="images/groovy.png">
@@ -23,7 +23,7 @@ import {Component} from "angular2/core";
             <p>Copyright 2016 Groovy. All right reserved.</p>
         </footer>
     </div>
-</body>
+</div>
 `
 })
 
