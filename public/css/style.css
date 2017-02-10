@@ -45,7 +45,12 @@ body{
     background-size:cover;
     color: #fff;
     margin-bottom: 0px;
-    margin-top: 60px;
+    margin-top: 35px;
+}
+
+.wall-home-text{
+    margin-top: -10px;
+    margin-bottom: 25px;
 }
 
 .wall-container{
@@ -57,7 +62,8 @@ body{
 }
 
 .wall-title{
-    font-size: 38px;
+    font-size: 35px;
+    line-height: 50px;
 }
 
 .btn-subscribe{
@@ -91,7 +97,7 @@ body{
     background-color: #fff;
 }
 
-/*---------------------------End Content----------------------------*/
+/*---------------------------/End Content----------------------------*/
 
 
 /*-------------------------------Footer-------------------------------*/
