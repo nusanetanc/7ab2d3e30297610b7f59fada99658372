@@ -16,7 +16,8 @@ import {Component} from "angular2/core";
                 <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
             </div>
         </div>
-    </div>'
+    </div>
+  </div>'
 })
 
 export class AppComponent {
