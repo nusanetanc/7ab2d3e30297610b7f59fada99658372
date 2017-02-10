@@ -6,7 +6,7 @@ import {SigninComponent} from "./user/signin.component";
 
 @Component({
    selector: 'my-app',
-   directives: [ROUTER_DIRECTIVES]
+   directives: [ROUTER_DIRECTIVES],
    template: `
    <h1>Tes</h1>
         <a [routerLink]=" ['SignIn'] ">Login</a>
