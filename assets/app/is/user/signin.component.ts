@@ -3,7 +3,7 @@ import {Component} from 'angular2/core';
     selector: 'my-app',
     template: `
     <div>
-      <div class="container container-auth">
+      <div class="container">
           <div class="top-margin text-center">
               <img class="logo-size" src="images/groovy.png">
               <div class="form">
