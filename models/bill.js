@@ -4,7 +4,7 @@ var Sub = require('../models/subs');
 
 var BillSchema   = new Schema({
   noinvoice: Number,
-  pricename: String,
+  namepack: String,
   pricepack: Number,
   priceinstal: Number,
   pricerouter: Number,
