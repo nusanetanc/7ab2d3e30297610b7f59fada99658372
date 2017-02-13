@@ -9,7 +9,7 @@ import {SigninComponent} from "./user/signin.component";
    template: `
    <h1>Tes</h1>
        <header>
-            <a [routerLink]=" ['SignIn'] ">Login</a>
+            <a [routerLink]=" ['Signin'] ">Login</a>
        </header>
         <main>
           <router-outlet></router-outlet>
@@ -19,7 +19,7 @@ import {SigninComponent} from "./user/signin.component";
 })
 
 @RouteConfig([
-  { path: '/login', component: SigninComponent, name: 'SignIn', useAsDefault: true}
+  { path: '/login', component: SigninComponent, name: 'Signin', useAsDefault: true}
 ])
 
 export class AppComponent {
