@@ -9,7 +9,7 @@ import {SigninComponent} from "./user/signin.component";
    template: `
    <h1>Tes</h1>
        <header>
-            <a [routerLink]=" ['Signin'] ">Login</a>
+            <a [routerLink]="['Signin']">Login</a>
        </header>
         <main>
           <router-outlet></router-outlet>
