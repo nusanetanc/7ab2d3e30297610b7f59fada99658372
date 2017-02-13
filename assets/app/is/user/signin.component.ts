@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from "angular2/router";
 @Component({
-    selector: 'signin',
+    selector: 'my-signin',
     template: `
     <div class="form-auth-is">
        <div class="container container-auth">

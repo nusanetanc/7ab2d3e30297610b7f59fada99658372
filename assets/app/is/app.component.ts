@@ -8,7 +8,7 @@ import {SigninComponent} from "./user/signin.component";
    selector: 'my-app',
    template: `
    <h1>Tes</h1>
-   <signin></signin>
+   <my-signin></my-signin>
        <header>
             <a [routerLink]="['Signin']">Login</a>
        </header>
