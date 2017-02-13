@@ -6,14 +6,16 @@ import {SigninComponent} from "./user/signin.component";
 
 @Component({
    selector: 'my-app',
-   directives: [SigninComponent, ROUTER_DIRECTIVES],
    template: `
    <h1>Tes</h1>
-        <a [routerLink]=" ['SignIn'] ">Login</a>
+       <header>
+            <a [routerLink]=" ['SignIn'] ">Login</a>
+       </header>
         <main>
           <router-outlet></router-outlet>
         </main>
-`
+`,
+    directives: [SigninComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
