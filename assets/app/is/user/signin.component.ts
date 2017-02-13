@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular/router';
 @Component({
     selector: 'my-app',
     template: `
@@ -23,7 +24,8 @@ import {Component} from 'angular2/core';
             </footer>
         </div>
     </div>
-    `
+    `,
+    directives: [ROUTER_DIRECTIVES],
 })
 export class SigninComponent {
 

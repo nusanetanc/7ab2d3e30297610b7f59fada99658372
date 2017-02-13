@@ -19,7 +19,7 @@ import {SigninComponent} from "./user/signin.component";
 })
 
 @RouteConfig([
-  { path: '/signin', component: SigninComponent, name: 'SignIn', useAsDefault: true}
+  { path: '/login', component: SigninComponent, name: 'SignIn', useAsDefault: true}
 ])
 
 export class AppComponent {
