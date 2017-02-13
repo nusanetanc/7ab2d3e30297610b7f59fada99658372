@@ -7,21 +7,20 @@ import {SigninComponent} from "./user/signin.component";
 @Component({
    selector: 'my-app',
    template: `
-   <my-signin></my-signin>
    <h1>Tes</h1>
        <header>
             <a [routerLink]="['Signin']">Login</a>
        </header>
         <main>
           <router-outlet></router-outlet>
-        </main>-->
+        </main>
 `,
     directives: [SigninComponent, ROUTER_DIRECTIVES]
 })
 
-/*@RouteConfig([
+@RouteConfig([
   { path: '/login', component:SigninComponent, name:'Signin', useAsDefault:true}
-])*/
+])
 
 export class AppComponent {
 

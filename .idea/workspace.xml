@@ -49,13 +49,14 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/app/is/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="66">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
-                <marker date="1486978878780" expanded="true" signature="359:531" ph="..." />
-                <marker date="1486978878780" expanded="true" signature="391:531" ph="..." />
-                <marker date="1486978878780" expanded="true" signature="472:530" ph="..." />
+                <marker date="1486978982762" expanded="true" signature="348:504" ph="..." />
+                <marker date="1486978982762" expanded="true" signature="355:504" ph="..." />
+                <marker date="1486978982762" expanded="true" signature="364:504" ph="..." />
+                <marker date="1486978982762" expanded="true" signature="445:503" ph="..." />
               </folding>
             </state>
           </provider>
@@ -271,12 +272,12 @@
       <updated>1484023051827</updated>
       <workItem from="1484023054339" duration="3086000" />
       <workItem from="1484749985673" duration="102000" />
-      <workItem from="1486958879285" duration="8643000" />
+      <workItem from="1486958879285" duration="8747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11831000" />
+    <option name="totallyTimeSpent" value="11935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -411,13 +412,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/app/is/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="66">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-            <marker date="1486978878780" expanded="true" signature="359:531" ph="..." />
-            <marker date="1486978878780" expanded="true" signature="391:531" ph="..." />
-            <marker date="1486978878780" expanded="true" signature="472:530" ph="..." />
+            <marker date="1486978982762" expanded="true" signature="348:504" ph="..." />
+            <marker date="1486978982762" expanded="true" signature="355:504" ph="..." />
+            <marker date="1486978982762" expanded="true" signature="364:504" ph="..." />
+            <marker date="1486978982762" expanded="true" signature="445:503" ph="..." />
           </folding>
         </state>
       </provider>
