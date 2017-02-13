@@ -8,6 +8,7 @@ import {SigninComponent} from "./user/signin.component";
    selector: 'my-app',
    template: `
    <h1>Tes</h1>
+   <signin></signin>
        <header>
             <a [routerLink]="['Signin']">Login</a>
        </header>
@@ -19,7 +20,7 @@ import {SigninComponent} from "./user/signin.component";
 })
 
 @RouteConfig([
-  { path: '/login', component: SigninComponent, name: 'Signin', useAsDefault: true}
+  { path: '/login', component:SigninComponent, name:'Signin', useAsDefault:true}
 ])
 
 export class AppComponent {
