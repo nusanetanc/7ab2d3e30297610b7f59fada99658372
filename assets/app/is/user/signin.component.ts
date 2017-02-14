@@ -3,8 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
     selector: 'authentication',
     template: `
-    <body class="form-auth-is">
-    <div class="form-auth-is">
+    <div>
        <div class="container container-auth">
             <div class="top-margin text-center">
                 <img class="logo-size" src="images/groovy.png">
@@ -25,7 +24,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
             </footer>
         </div>
     </div>
-    </body>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
