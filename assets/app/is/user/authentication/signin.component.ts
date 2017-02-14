@@ -1,12 +1,8 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
-    selector: 'authentication',
+    selector: 'form-login',
     template: `
-    <div>
-       <div class="container container-auth">
-            <div class="top-margin text-center">
-                <img class="logo-size" src="images/groovy.png">
                 <div class="form">
                     <div class="text">Sign in to continue to Information System</div>
                     <div class="form-group">
@@ -16,14 +12,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                     <a href="#" class="btn button-submit">SIGN IN</a>
                     <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid footer">
-            <footer class="text-center">
-                <p>Copyright 2016 Groovy. All right reserved.</p>
-            </footer>
-        </div>
-    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })

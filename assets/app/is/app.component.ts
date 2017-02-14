@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig, Router} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
-import {SigninComponent} from "./user/signin.component";
+import {AuthenticationComponent} from "./user/authentication/authentication.component";
 
 @Component({
    selector: 'my-app',
@@ -17,7 +17,7 @@ import {SigninComponent} from "./user/signin.component";
           <router-outlet></router-outlet>
         </main>-->
 `,
-    directives: [SigninComponent, ROUTER_DIRECTIVES]
+    directives: [AuthenticationComponent, ROUTER_DIRECTIVES]
 })
 
 /*@RouteConfig([
