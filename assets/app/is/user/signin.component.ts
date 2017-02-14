@@ -1,8 +1,9 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
-    selector: 'my-signin',
+    selector: 'authentication',
     template: `
+    <body class="form-auth-is">
     <div class="form-auth-is">
        <div class="container container-auth">
             <div class="top-margin text-center">
@@ -24,6 +25,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
             </footer>
         </div>
     </div>
+    </body>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
