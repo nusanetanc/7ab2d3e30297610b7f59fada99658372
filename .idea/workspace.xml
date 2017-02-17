@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3870b041-f624-4e69-bdb5-78936c34db53" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/email-verification.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/forgot-password.hbs" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/email_verification.hbs" afterPath="$PROJECT_DIR$/views/is_email_verification.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signin.hbs" afterPath="$PROJECT_DIR$/views/signin.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/forgot-password.hbs" afterPath="$PROJECT_DIR$/views/forgot-password.hbs" />
     </list>
     <ignored path="7ab2d3e30297610b7f59fada99658372.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="signin.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signin.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/signin.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forgot-password.hbs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="forgot-password.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/forgot-password.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="238">
+              <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -161,9 +157,9 @@
         <option value="$PROJECT_DIR$/views/signup-package.hbs" />
         <option value="$PROJECT_DIR$/views/signup-provide.hbs" />
         <option value="$PROJECT_DIR$/views/email-verification.hbs" />
-        <option value="$PROJECT_DIR$/views/forgot-password.hbs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/signin.hbs" />
+        <option value="$PROJECT_DIR$/views/forgot-password.hbs" />
       </list>
     </option>
   </component>
@@ -446,12 +442,12 @@
       <workItem from="1484749985673" duration="102000" />
       <workItem from="1486958879285" duration="10096000" />
       <workItem from="1487044130243" duration="2804000" />
-      <workItem from="1487313610725" duration="6644000" />
+      <workItem from="1487313610725" duration="6807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22732000" />
+    <option name="totallyTimeSpent" value="22895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -958,18 +954,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/forgot-password.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/email-verification.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="43" column="73" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signin.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -982,10 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/signin.hbs">
+    <entry file="file://$PROJECT_DIR$/views/forgot-password.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+        <state relative-caret-position="238">
+          <caret line="47" column="12" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
           <folding />
         </state>
       </provider>
