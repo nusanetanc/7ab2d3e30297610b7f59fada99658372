@@ -27,6 +27,10 @@ router.get('/signin', function(req, res, next) {
   res.render('signin', { title: 'Groovy - Signin' });
 });
 
+router.get('/signup', function(req, res, next) {
+  res.render('signup', { title: 'Groovy - Signup' });
+});
+
 /* GET is groovy. */
 router.get('/is', function(req, res, next) {
   res.render('is', { title: 'Groovy - IS' });
