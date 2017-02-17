@@ -413,3 +413,65 @@ body{
     font-size: 15px;
 }
 /*--------------------/End Package ---------------------*/
+
+/*----------------------- Sign Up --------------------------*/
+/*----------------------- Start Content --------------------------*/
+.signup-jumbotron {
+    background-color: #FFF;
+    margin-top: 61px;
+    margin-bottom: 0px;
+    padding-bottom: 220px;
+}
+
+.jumbotron > div > div > div > h3 {
+    color: #666C6E;
+    margin-bottom: 60px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.row > .col-md-4 > form {
+    margin: 0;
+    padding: 0;
+}
+
+.row > .col-md-4 > form > select {
+    background-color: #f0f0f0;
+    border: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0;
+    padding: 22px 0px 26px 5px;
+    width: 100%;
+}
+
+.row > .col-md-4 > form > select > .option {
+    height: 30px;
+}
+
+.row > .col-md-4 > .back {
+    background-color: #E2E2E2;
+    border: none;
+    border-radius: 0px;
+    color: #000;
+    float: left;
+    margin-top: 20px;
+    padding: 12.5px 40px 12.5px 40px;
+}
+
+.row > .col-md-4 > .next {
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    float: right;
+    margin-top: 20px;
+    padding: 12.5px 40px 12.5px 40px;
+}
+
+
+.jumbotron > .container > .row > .col-md-4 {
+    margin-bottom: 20px;
+}
+/*----------------------- End Content --------------------------*/
+/*----------------------- /Sign Up --------------------------*/
