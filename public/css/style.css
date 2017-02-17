@@ -475,3 +475,66 @@ body{
 }
 /*----------------------- End Content --------------------------*/
 /*----------------------- /Sign Up --------------------------*/
+
+/*----------------------- installdate --------------------------*/
+.row > .col-md-4 > p {
+    font-size: 14px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.row > .col-md-4 > .col-sm-6 > form {
+    font-size: 14px;
+}
+/*----------------------- /insatalldate --------------------------*/
+
+/*----------------------- provide.html --------------------------*/
+.jumbotron > .container > .row > .col-md-12 > p {
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.row > .col-md-4 > form > div > input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+.row > .col-md-4 > form > div > p {
+    font-size: 12px;
+}
+
+.row > .col-md-4 > form > div > div {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.row > .col-md-4 > form > div > div > button {
+    float: left;
+}
+
+.row > .col-md-4 > form > div > div > p {
+    float: left;
+    font-size: 14px;
+    margin-left: 5px;
+}
+/*----------------------- /provide.html --------------------------*/
+
+/*----------------------- done.html --------------------------*/
+.row > .col-md-8 {
+    margin-bottom: 20px;
+}
+/*----------------------- /done.html --------------------------*/
