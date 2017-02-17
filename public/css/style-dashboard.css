@@ -1,0 +1,390 @@
+/*--- Body ---*/
+html, body {
+    background-color: #F0F0F0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+#wrapper {
+    padding-left: 250px;
+    transition: all 0.4s ease 0s;
+}
+/*--- /Body ---*/
+
+
+/*--- Sidebar ---*/
+#sidebar-wrapper {
+    background: #E3471C;
+    height: 100%;
+    left: 250px;
+    margin-left: -250px;
+    overflow-y: auto;
+    position: fixed;
+    transition: all 0.4s ease 0s;
+    width: 250px;
+}
+
+#wrapper.active {
+    padding-left: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+    left: 0;
+}
+
+/*-- Icon --*/
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    direction: ltr;
+    line-height: 1;
+    margin-right: 15px;
+    margin-top: -4px;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    vertical-align: middle;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+/*-- /Icons --*/
+
+.sidebar-nav > li {
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sidebar-nav > li > a {
+    color: #F4B5A4;
+    display: block;
+    font-size: 13px;
+    margin-left: -30px;
+    text-decoration: none;
+}
+
+.active {
+    background: rgba(255,255,255,0.2);
+    color: #FFF;
+    text-decoration: none;
+}
+
+.sidebar-nav > li > a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-nav > li > div > div > a {
+    color: #F4B5A4;
+    display: block;
+    font-size: 12px;
+    height: 60px;
+    padding-left: 35px;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+.sidebar-nav > li > div > div > a:hover {
+    background: none;
+    color: #FFF;
+    text-decoration: none;
+}
+
+/*.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    color: #FFF;
+    text-decoration: rgba(255,255,255,0.2);
+    text-decoration: none;
+}*/
+
+.sidebar-nav > .sidebar-brand > a {
+    background: none;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand > a:hover {
+    background: none;
+}
+
+.title {
+    background-color: #FC592E;
+    height: 100px;
+}
+
+.sidebar-nav > .sidebar-brand > .title > img {
+    border-radius: 50%;
+    float: left;
+    height: 60px;
+    margin: 20px 0px 10px 20px;
+    width: 60px;
+}
+
+.sidebar-nav > .sidebar-brand > .title > a {
+    color: #FFF;
+    float: left;
+    font-size: 14px;
+    margin-left: -5px;
+    text-decoration: none;
+}
+
+.listsub {
+    background-color: #CF4119;
+}
+
+.sidebar-nav > .sidebar-footer {
+    bottom: 0px;
+    position: fixed;
+}
+
+.sidebar-nav > .sidebar-footer > div {
+    border-top: 0.3px solid rgba(255, 255, 255, 0.4);
+    height: 60px;
+    width: 250px;
+}
+
+.sidebar-nav > .sidebar-footer > div > img {
+    float: left;
+    height: 23.75px;
+    margin-left: 25px;
+    margin-top: 19px;
+    width: 76.5px;
+}
+
+.sidebar-nav > .sidebar-footer > div > a {
+    background:none;
+    color: #FFF;
+    float: left;
+    font-size: 12px;
+    margin-left: -10px;
+    margin-top: 9px;
+    text-decoration: none;
+}
+/*--- /Sidebar ---*/
+
+
+/*--- Content ---*/
+#page-content-wrapper {
+    width: 100%;
+}
+
+.content-header {
+    background-color: #FFF;
+    height: 100px;
+    padding: 15px;
+}
+
+.content-header > h3 {
+    color: #666C6E;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.content-header > h3 > a {
+    color: #666C6E;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    text-decoration: none;
+}
+
+.inset {
+    padding: 20px;
+}
+
+.page-content > .row > .col-lg-12 > div > a {
+    background-color:#E2E2E2;
+    border: none;
+    border-radius: 0px;
+    padding: 12.5px 30px 12.5px 30px;
+}
+
+/*--- /Content ---*/
+
+/*----- All Subscribers Page -----*/
+/*--- Search ---*/
+.form-group > div > i {
+    color:#666C6E;
+}
+
+.form-group > div > input {
+    border: none;
+    border-radius: 0px;
+    height: 60px;
+}
+
+.sort-down {
+    background-color: #E2E2E2;
+    border: none;
+    border-radius: 0px;
+    color: #333;
+    float: right;
+    margin-left: 15px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.sort-down:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+/*--- Subscriber List ---*/
+.subscriber-list > li {
+    background-color: #FFF;
+    display: block;
+    margin: 0px 0 0 -40px;
+    padding: 20px 0 20px 20px;
+}
+
+.subscriber-list > li > div > .list-nik > span{
+    color: #666C6E;
+}
+
+.subscriber-list > li > div > .list-name > span{
+    color: #666C6E;
+}
+
+.subscriber-list > li > div > .list-activ > span{
+    margin-left: 10px;
+}
+
+.subscriber-list > li > div > .list-paid > span{
+    margin-left: -10px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .subscriber-list {
+        margin-top: 65px;
+    }
+
+    .subscriber-list > li {
+        background-color: #F0F0F0;
+    }
+
+    .subscriber-list > li > .row {
+        background-color: #FFFFFF;
+        margin-right: 0px;
+        padding: 25px 0px 25px 0px;
+    }
+
+    .subscriber-list > li > div > .list-activ > span{
+        margin: 0px;
+    }
+
+    .subscriber-list > li > div > .list-paid > span{
+        margin: 0px;
+    }
+}
+/*--- /Subscriber List ---*/
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+    margin-right: 15px;
+    margin-top: 13px;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+}
+
+/* align glyph */
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.right-addon input { padding-right: 30px; }
+/*--- /Search ---*/
+
+@media only screen and (max-width: 767px) {
+
+}
+/*----- /All Subscribers Page -----*/
+
+/*----- New Subscribers Page ------*/
+.col-md-6 >.row > .col-md-12 > form > div > input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > p {
+    font-size: 12px;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div > button {
+    float: left;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div > p {
+    float: left;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.col-md-6 > .row > .col-md-12 > form {
+    margin: 0;
+    padding: 0;
+}
+
+.col-md-6 > .row > .col-md-12 > form > select {
+    background-color: #f0f0f0;
+    border: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0;
+    padding: 22px 0px 26px 5px;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > select > .option {
+    height: 30px;
+}
+
+.col-md-6 > .row > .col-md-12 > .next {
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    margin-top: 20px;
+    padding: 12.5px 40px 12.5px 40px;
+}
+
+/*----------------------- /New Subscribers Page--------------------------*/

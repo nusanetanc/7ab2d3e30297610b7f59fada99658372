@@ -51,12 +51,30 @@ router.get('/signup-done', function(req, res, next) {
   res.render('signup-done', { title: 'Groovy - Signup' });
 });
 
-router.get('/dashboard', function(req, res, next) {
-  res.render('./dashboard/index', { title: 'Groovy - Signup' });
-});
-
 /* GET is groovy. */
+
 router.get('/is', function(req, res, next) {
   res.render('is', { title: 'Groovy - IS' });
 });
+
+router.get('/dashboard', function(req, res, next) {
+  res.render('./dashboard/index', { title: 'Groovy - Dashboard' });
+});
+
+router.get('/dashboard/allsubscribers', function(req, res, next) {
+  res.render('./dashboard/allsubscribers', { title: 'Groovy - Dashboard' });
+});
+
+router.get('/dashboard/reports', function(req, res, next) {
+  res.render('./dashboard/reports', { title: 'Groovy - Dashboard' });
+});
+
+router.get('/dashboard/information', function(req, res, next) {
+  res.render('./dashboard/information', { title: 'Groovy - Dashboard' });
+});
+
+router.get('/dashboard/newsubscribers', function(req, res, next) {
+  res.render('./dashboard/newsubscribers', { title: 'Groovy - Dashboard' });
+});
+
 module.exports = router;
