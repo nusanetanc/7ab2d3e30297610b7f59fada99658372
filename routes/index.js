@@ -27,6 +27,14 @@ router.get('/signin', function(req, res, next) {
   res.render('signin', { title: 'Groovy - Signin' });
 });
 
+router.get('/forgot-password', function(req, res, next) {
+  res.render('forgot-password', { title: 'Groovy - Forgot Password' });
+});
+
+router.get('/email-verification', function(req, res, next) {
+  res.render('email-verification', { title: 'Groovy - Forgot Password' });
+});
+
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
