@@ -6,7 +6,6 @@ import {ContentDashboardComponent} from "./content/content.component";
     selector: 'dashboard',
     template: `
     <sidebar></sidebar>
-    <form-dashboard></form-dashboard>
     `,
     directives: [SidebarComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
