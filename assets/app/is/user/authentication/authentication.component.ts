@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SigninComponent} from "./signin.component";
+import {IsForgotComponent} from "./isforgot.component";
 @Component({
     selector: 'authentication',
     template: `
@@ -9,6 +10,7 @@ import {SigninComponent} from "./signin.component";
             <div class="top-margin text-center">
                 <img class="logo-size" src="images/groovy.png">
                 <form-login></form-login>
+                <form-forgot></form-forgot>
             </div>
         </div>
         <div class="container-fluid footer">
@@ -18,7 +20,7 @@ import {SigninComponent} from "./signin.component";
         </div>
     </div>
     `,
-    directives: [SigninComponent, ROUTER_DIRECTIVES],
+    directives: [SigninComponent, IsforgotComponent, ROUTER_DIRECTIVES],
 })
 export class AuthenticationComponent {
 

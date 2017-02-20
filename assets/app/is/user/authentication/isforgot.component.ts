@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
-    selector: 'form-login',
+    selector: 'form-forgot',
     template: `
     <div class="container container-auth">
         <div class="top-margin text-center">
@@ -17,6 +17,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class SigninComponent {
+export class IsforgotComponent {
 
 }

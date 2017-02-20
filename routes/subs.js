@@ -34,6 +34,8 @@ router.post('/addsub', function(req, res, next) {
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
     sub.status= req.body.status;
+    sub.regisby= req.body.regisby;
+    sub.regisref= req.body.regisref;
 
     sub.save(function(err) {
       if (err)
