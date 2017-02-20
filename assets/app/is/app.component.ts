@@ -9,20 +9,14 @@ import {AuthenticationComponent} from "./user/authentication/authentication.comp
    template: `
     <authentication></authentication>
     <dashboard></dashboard>
-       <header>
-            <a [routerLink]="['Signin']">Login</a>
-       </header>
-        <main>
-          <router-outlet></router-outlet>
-        </main>-->
 `,
-    directives: [AuthenticationComponent, ROUTER_DIRECTIVES]
+    directives: [AuthenticationComponent]
 })
 
-@RouteConfig([
-  { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true},
+/*@RouteConfig([
+  { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true}
   { path: '/is/isforgot', component:IsForgotComponent, name:'isforgot', useAsDefault:true}
-])
+])*/
 
 export class AppComponent {
 
