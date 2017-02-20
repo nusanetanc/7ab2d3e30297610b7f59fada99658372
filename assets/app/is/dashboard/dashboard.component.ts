@@ -9,11 +9,16 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
     <!-- START CONTENT -->
     <div id="wrapper">
       <sidebar></sidebar>
-      <form-dashboard></form-dashboard>
+      <router-outlet></router-outlet>
     </div><!-- END CONTENT -->
     `,
     directives: [ContentDashboardComponent,ContentAllSubsComponent, SidebarComponent,ROUTER_DIRECTIVES],
 })
+
+@Routes([
+    { path: '/', component: ContentDashboardComponent },
+    { path: '/allsubs', component: ContentAllSubsComponent }
+])
 export class DashboardComponent {
 
 }

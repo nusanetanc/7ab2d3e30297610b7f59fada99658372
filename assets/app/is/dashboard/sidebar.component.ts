@@ -16,10 +16,10 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
             </li>
 
             <li class="active" style="margin-top: 20px;">
-              <a href="index.html" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+              <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
             </li>
             <li>
-              <a role="button" data-toggle="collapse" href="#subscribers" aria-expanded="false" aria-controls="collapseExample">
+              <a role="button" data-toggle="collapse" routerLink="/" aria-expanded="false" aria-controls="collapseExample">
                 <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
               </a>
               <div class="collapse" id="subscribers">
