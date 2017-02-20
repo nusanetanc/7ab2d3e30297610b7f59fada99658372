@@ -47,13 +47,14 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         <div>
                           <img src="./images/groovy-grayscale.png" alt="ava">
                           <a href="">Privacy</a>
-                          <a [routerLink]="['All']">INFORMATION</a>
+
                           <a href="">Terms</a>
                         </div>
                       </li>
                     </ul>
                   </nav>
                 </div>
+                <a [routerLink]="['All']">INFORMATION</a>
            </header>
               <router-outlet></router-outlet>
     `,
