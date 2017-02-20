@@ -4,7 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 //import {SidebarComponent} from "./sidebar.component";
 //import {ContentDashboardComponent} from "./content/dashboard.component";
-import {ContentAllSubsComponent} from "dashboard/content/allsubs.component";
+import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
