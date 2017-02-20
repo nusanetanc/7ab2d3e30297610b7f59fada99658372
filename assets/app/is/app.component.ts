@@ -10,6 +10,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
     template: `
             <header>
                 <a [routerLink]="['All']">Login</a>
+            </header>
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
                   <nav id="spy">
@@ -54,6 +55,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
+            <header>
                 <a [routerLink]="['All']">Login</a>
            </header>
               <router-outlet></router-outlet>
