@@ -10,7 +10,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
           <ul class="sidebar-nav nav">
             <li class="sidebar-brand">
               <div class="title">
-                <img src="ava.png" alt="ava">
+                <img src="./images/ava.png" alt="ava">
                 <a href="" style="margin-top: 20px;"><strong>John Doe</strong></a>
                 <a href="" style="margin-top: -20px;">Acount Manager</a>
               </div>
@@ -39,7 +39,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 
             <li class="sidebar-footer">
               <div>
-                <img src="groovy-grayscale.png" alt="ava">
+                <img src="./images/groovy-grayscale.png" alt="ava">
                 <a href="">Privacy</a>
                 <a href="">Terms</a>
               </div>
