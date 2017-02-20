@@ -54,9 +54,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                   </nav>
                 </div>
            </header>
-            <main>
               <router-outlet></router-outlet>
-            </main>
     `,
     directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
