@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {Routes, ROUTER_DIRECTIVES} from 'angular2/router';
 import {SidebarComponent} from "./sidebar.component";
 import {ContentDashboardComponent} from "./content/dashboard.component";
@@ -15,10 +15,11 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
     directives: [ContentDashboardComponent,ContentAllSubsComponent, SidebarComponent,ROUTER_DIRECTIVES],
 })
 
-@Routes([
-    { path: '/', component: ContentDashboardComponent },
-    { path: '/allsubs', component: ContentAllSubsComponent }
-])
+export const routes: Routes = [
+  { path: '', component: HomeComponent }
+  { path: 'allsub', component: AboutComponent }
+];
+
 export class DashboardComponent {
 
 }
