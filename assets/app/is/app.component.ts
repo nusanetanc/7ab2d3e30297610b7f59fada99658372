@@ -36,10 +36,10 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
-                      <li>
                       <header>
                           <a [routerLink]="['All']">Login</a>
                       </header>
+                      <li>
                       </li>
                         <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
