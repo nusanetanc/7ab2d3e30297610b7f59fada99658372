@@ -151,6 +151,7 @@ body{
 /*---------------------- IS Authentication -------------------*/
 .form-auth-is{
     background-image: url(../images/background-groovy-2.png);
+    background-size: cover;
 }
 
 .container-auth{
