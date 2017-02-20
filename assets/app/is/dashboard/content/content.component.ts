@@ -16,13 +16,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
   </div>
 
   <div class="page-content inset" data-spy="scroll" data-target="#spy">
-    <!-- <div class="row">
-
-      <div class="jumbotron text-center" >
-        <h1>Hello Beautiful!</h1>
-        <p>This is a sidebar navigation responsive template built off of Bootstrap 3.0 and simple sidebar template. It includes anchors, scroll spy, smooth scroll, and Awesome icon fonts.</p>
-
-      </div> -->
 
     </div>
   </div>
