@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Routes, ROUTER_DIRECTIVES} from 'angular2/router';
 import {SidebarComponent} from "./sidebar.component";
 import {ContentDashboardComponent} from "./content/dashboard.component";
 import {ContentAllSubsComponent} from "./content/allsubs.component";
