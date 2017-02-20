@@ -16,8 +16,8 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
 })
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent }
-  { path: 'allsub', component: AboutComponent }
+  { path: '', component: ContentDashboardComponent }
+  { path: 'allsub', component: ContentAllSubsComponent }
 ];
 
 export class DashboardComponent {
