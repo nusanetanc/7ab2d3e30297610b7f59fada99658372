@@ -50,7 +50,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
         </ul>
       </nav>
     </div>
-    </div><!-- END CONTENT -->
+    <!-- </div> END CONTENT -->
     <main>
     <router-outlet></router-outlet>
     </main>
