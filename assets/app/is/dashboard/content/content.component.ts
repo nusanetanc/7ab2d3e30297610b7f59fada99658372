@@ -90,6 +90,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
         </div>
     </div>
 </div><!-- Page content -->
+</div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })

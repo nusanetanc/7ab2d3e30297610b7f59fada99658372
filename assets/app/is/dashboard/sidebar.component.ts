@@ -3,7 +3,8 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
     selector: 'sidebar',
     template: `
-
+    <!-- START CONTENT -->
+    <div id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <nav id="spy">
