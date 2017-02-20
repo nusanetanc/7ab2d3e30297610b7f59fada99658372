@@ -5,8 +5,11 @@ import {ContentDashboardComponent} from "./content/content.component";
 @Component({
     selector: 'dashboard',
     template: `
-    <sidebar></sidebar>
-    <form-dashboard></form-dashboard>
+    <!-- START CONTENT -->
+    <div id="wrapper">
+      <sidebar></sidebar>
+      <form-dashboard></form-dashboard>
+    </div><!-- END CONTENT -->
     `,
     directives: [ContentDashboardComponent,SidebarComponent,ROUTER_DIRECTIVES],
 })
