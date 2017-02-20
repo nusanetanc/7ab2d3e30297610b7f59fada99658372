@@ -51,6 +51,9 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
         </ul>
       </nav>
     </div>
+    <header>
+                <a [routerLink]="['All']">Login</a>
+           </header>
             <main>
               <router-outlet></router-outlet>
             </main>
