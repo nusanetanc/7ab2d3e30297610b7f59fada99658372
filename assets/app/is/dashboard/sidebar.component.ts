@@ -20,7 +20,7 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
               <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
             </li>
             <li>
-              <a role="button" data-toggle="collapse" [routerLink]="['AllSubs']"aria-expanded="false" aria-controls="collapseExample">
+              <a role="button" data-toggle="collapse" [routerLink]="['AllSubs']" aria-expanded="false" aria-controls="collapseExample">
                 <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
               </a>
               <div class="collapse" id="subscribers">
@@ -49,7 +49,7 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
       </div>
 
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, ContentAllSubsComponent],
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'}
