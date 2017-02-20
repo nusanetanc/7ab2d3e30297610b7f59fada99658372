@@ -12,7 +12,7 @@ import {ContentAllSubComponent} from "./content/allsub.component";
       <form-dashboard></form-dashboard>
     </div><!-- END CONTENT -->
     `,
-    directives: [ContentDashboardComponent,SidebarComponent,ROUTER_DIRECTIVES],
+    directives: [ContentDashboardComponent,ContentAllSubComponent, SidebarComponent,ROUTER_DIRECTIVES],
 })
 export class DashboardComponent {
 
