@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SidebarComponent} from "./sidebar.component";
 import {ContentDashboardComponent} from "./content/dashboard.component";
-import {ContentAllSubComponent} from "./content/allsub.component";
+import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
@@ -12,7 +12,7 @@ import {ContentAllSubComponent} from "./content/allsub.component";
       <form-dashboard></form-dashboard>
     </div><!-- END CONTENT -->
     `,
-    directives: [ContentDashboardComponent,ContentAllSubComponent, SidebarComponent,ROUTER_DIRECTIVES],
+    directives: [ContentDashboardComponent,ContentAllSubsComponent, SidebarComponent,ROUTER_DIRECTIVES],
 })
 export class DashboardComponent {
 
