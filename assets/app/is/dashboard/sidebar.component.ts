@@ -47,6 +47,7 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
           </ul>
         </nav>
       </div>
+      <router-outlet></router-outlet>
 
     `,
     directives: [ROUTER_DIRECTIVES, ContentAllSubsComponent],
