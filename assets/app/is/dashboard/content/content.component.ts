@@ -18,9 +18,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
   <div class="page-content inset" data-spy="scroll" data-target="#spy">
 
     </div>
-  </div>
-
-</div>
 
 </div><!-- END CONTENT -->
     `,
