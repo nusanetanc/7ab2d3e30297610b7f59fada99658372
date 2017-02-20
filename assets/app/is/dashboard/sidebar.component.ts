@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteConfig, Router} from 'angular2/router';
+import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'sidebar',
     template: `
@@ -19,7 +20,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
               <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
             </li>
             <li>
-              <a role="button" data-toggle="collapse" routerLink="/allsubs" aria-expanded="false" aria-controls="collapseExample">
+              <a role="button" data-toggle="collapse" [routerLink]="['AllSubs']"aria-expanded="false" aria-controls="collapseExample">
                 <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
               </a>
               <div class="collapse" id="subscribers">
@@ -50,6 +51,9 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
+@RouteConfig([
+  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'}
+])
 export class SidebarComponent {
 
 }
