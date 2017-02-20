@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SigninComponent} from "./signin.component";
-import {IsForgotComponent} from "./isforgot.component";
+import {ForgotComponent} from "./forgot.component";
 @Component({
     selector: 'authentication',
     template: `
@@ -20,7 +20,7 @@ import {IsForgotComponent} from "./isforgot.component";
         </div>
     </div>
     `,
-    directives: [SigninComponent, IsforgotComponent, ROUTER_DIRECTIVES],
+    directives: [SigninComponent, ForgotComponent, ROUTER_DIRECTIVES],
 })
 export class AuthenticationComponent {
 
