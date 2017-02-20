@@ -241,8 +241,289 @@ body{
 
 /*-------------------- End Form Authentication -------------------------*/
 
+
+/*---------------------- Package ---------------------*/
+.wall-package{
+background-image:url(../images/package-groovy.png);
+height:560px;
+background-position:bottom center;
+background-repeat: no-repeat;
+margin-bottom: 0px;
+}
+
+.wall-package-content{
+background-position:center;
+background-size:cover;
+background-color: #fff;
+margin-bottom: 0px;
+}
+
+.wall-package-content-title{
+font-size:38px;
+color: #ea442d;
+}
+
+.package-content{
+padding-bottom: 50px;
+}
+
+.price-box{
+padding-top: 10px;
+}
+
+.price-box-container{
+box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.price-box-header{
+background-color: #ea442d;
+padding: 30px 30px 90px 30px;
+color: #fff;
+}
+
+.price-box-header-level{
+font-size: 12px;
+}
+
+.price-box-header-currency{
+font-size: 16px;
+vertical-align: top;
+}
+
+.price-box-header-number{
+font-size: 60px;
+font-weight: 300;
+line-height: 55px;
+vertical-align: top;
+}
+.price-box-header-month{
+line-height: 23px;
+}
+.price-box-header-number-2{
+font-size: 30px;
+line-height:29px;
+}
+
+.price-box-body{
+padding: 30px ;
+}
+
+.price-box-body-list{
+padding-left: 10px;
+}
+
+.price-box-body-list ul{
+line-height: 25px;
+font-weight: 700;
+margin-left: -50px
+}
+
+.price-box-body-list ul li{
+list-style: none;
+}
+
+.price-box-body-list ul li:before {
+content:"· ";
+font-size:50px;
+vertical-align:middle;
+line-height:20px;
+}
+
+.price-box-body-list-keterangan ul{
+line-height: 25px;
+font-weight: 100;
+margin-left: -15px
+}
+
+.price-box-body-list-keterangan ul li {
+list-style: none;
+}
+
+.price-box-body-button{
+margin-top: 20px;
+}
+
+.price-box-body-button{
+}
+
+.price-box-btn-subscribe{
+background-color: #ea442d;
+color: white;
+border-radius: 0px;
+border: 0;
+vertical-align: middle;
+padding: 15px 20px 15px 20px;
+width: 100%;
+}
+
+⁠⁠⁠.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;  /* Preferred icon size */
+display: inline-block;
+line-height: 1;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+direction: ltr;
+
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+
+/* Support for IE. */
+font-feature-settings: 'liga';
+}
+
+.icon {
+color: #ea442d;
+}
+
+.tv-list-text{
+font-size: 15px;
+}
+/*--------------------/End Package ---------------------*/
+
+/*----------------------- Sign Up --------------------------*/
+/*----------------------- Start Content --------------------------*/
+.signup-jumbotron {
+background-color: #FFF;
+margin-top: 61px;
+margin-bottom: 0px;
+padding-bottom: 220px;
+}
+
+.jumbotron > div > div > div > h3 {
+color: #666C6E;
+margin-bottom: 60px;
+margin-top: 10px;
+text-align: center;
+}
+
+.row > .col-md-4 > form {
+margin: 0;
+padding: 0;
+}
+
+.row > .col-md-4 > form > select {
+background-color: #f0f0f0;
+border: 0px;
+font-size: 14px;
+height: 70px;
+margin: 0;
+padding: 22px 0px 26px 5px;
+width: 100%;
+}
+
+.row > .col-md-4 > form > select > .option {
+height: 30px;
+}
+
+.row > .col-md-4 > .back {
+background-color: #E2E2E2;
+border: none;
+border-radius: 0px;
+color: #000;
+float: left;
+margin-top: 20px;
+padding: 12.5px 40px 12.5px 40px;
+}
+
+.row > .col-md-4 > .next {
+background-color: #FC592E;
+border: none;
+border-radius: 0px;
+color: #FFF;
+float: right;
+margin-top: 20px;
+padding: 12.5px 40px 12.5px 40px;
+}
+
+
+.jumbotron > .container > .row > .col-md-4 {
+margin-bottom: 20px;
+}
+/*----------------------- End Content --------------------------*/
+/*----------------------- /Sign Up --------------------------*/
+
+/*----------------------- installdate --------------------------*/
+.row > .col-md-4 > p {
+font-size: 14px;
+margin-bottom: 50px;
+text-align: center;
+}
+
+.row > .col-md-4 > .col-sm-6 > form {
+font-size: 14px;
+}
+/*----------------------- /insatalldate --------------------------*/
+
+/*----------------------- provide.html --------------------------*/
+.jumbotron > .container > .row > .col-md-12 > p {
+font-size: 14px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.row > .col-md-4 > form > div > input {
+background-color: #f0f0f0;
+border: none;
+border-radius: 0px;
+font-size:14px;
+height: 70px;
+margin: 0 0 20px 0;
+padding: 22px 0px 26px 20px;
+width: 100%;
+}
+
+.row > .col-md-4 > form > div > p {
+font-size: 12px;
+}
+
+.row > .col-md-4 > form > div > div {
+background-color: #f0f0f0;
+border: none;
+border-radius: 0px;
+font-size: 14px;
+height: 70px;
+margin: 0 0 20px 0;
+padding: 22px 0px 26px 20px;
+vertical-align: middle;
+width: 100%;
+}
+
+.row > .col-md-4 > form > div > div > button {
+float: left;
+}
+
+.row > .col-md-4 > form > div > div > p {
+float: left;
+font-size: 14px;
+margin-left: 5px;
+}
+/*----------------------- /provide.html --------------------------*/
+
+/*----------------------- done.html --------------------------*/
+.row > .col-md-8 {
+margin-bottom: 20px;
+}
+/*----------------------- /done.html --------------------------*/
+
+
 @media only screen and (max-width : 768px){
     .container-auth{
+        width:90%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .container-auth-client{
         width:90%;
         padding-left:10px;
         padding-right:10px;
@@ -264,277 +545,3 @@ body{
         font-size: 18px;
     }
 }
-
-
-/*---------------------- Package ---------------------*/
-.wall-package{
-    background-image:url(../images/package-groovy.png);
-    height:560px;
-    background-position:bottom center;
-    background-repeat: no-repeat;
-    margin-bottom: 0px;
-}
-
-.wall-package-content{
-    background-position:center;
-    background-size:cover;
-    background-color: #fff;
-    margin-bottom: 0px;
-}
-
-.wall-package-content-title{
-    font-size:38px;
-    color: #ea442d;
-}
-
-.package-content{
-    padding-bottom: 50px;
-}
-
-.price-box{
-    padding-top: 10px;
-}
-
-.price-box-container{
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-}
-
-.price-box-header{
-    background-color: #ea442d;
-    padding: 30px 30px 90px 30px;
-    color: #fff;
-}
-
-.price-box-header-level{
-    font-size: 12px;
-}
-
-.price-box-header-currency{
-    font-size: 16px;
-    vertical-align: top;
-}
-
-.price-box-header-number{
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 55px;
-    vertical-align: top;
-}
-.price-box-header-month{
-    line-height: 23px;
-}
-.price-box-header-number-2{
-    font-size: 30px;
-    line-height:29px;
-}
-
-.price-box-body{
-    padding: 30px ;
-}
-
-.price-box-body-list{
-    padding-left: 10px;
-}
-
-.price-box-body-list ul{
-    line-height: 25px;
-    font-weight: 700;
-    margin-left: -50px
-}
-
-.price-box-body-list ul li{
-    list-style: none;
-}
-
-.price-box-body-list ul li:before {
-    content:"· ";
-    font-size:50px;
-    vertical-align:middle;
-    line-height:20px;
-}
-
-.price-box-body-list-keterangan ul{
-    line-height: 25px;
-    font-weight: 100;
-    margin-left: -15px
-}
-
-.price-box-body-list-keterangan ul li {
-    list-style: none;
-}
-
-.price-box-body-button{
-    margin-top: 20px;
-}
-
-.price-box-body-button{
-}
-
-.price-box-btn-subscribe{
-    background-color: #ea442d;
-    color: white;
-    border-radius: 0px;
-    border: 0;
-    vertical-align: middle;
-    padding: 15px 20px 15px 20px;
-    width: 100%;
-}
-
-⁠⁠⁠.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: 'liga';
-}
-
-.icon {
-    color: #ea442d;
-}
-
-.tv-list-text{
-    font-size: 15px;
-}
-/*--------------------/End Package ---------------------*/
-
-/*----------------------- Sign Up --------------------------*/
-/*----------------------- Start Content --------------------------*/
-.signup-jumbotron {
-    background-color: #FFF;
-    margin-top: 61px;
-    margin-bottom: 0px;
-    padding-bottom: 220px;
-}
-
-.jumbotron > div > div > div > h3 {
-    color: #666C6E;
-    margin-bottom: 60px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.row > .col-md-4 > form {
-    margin: 0;
-    padding: 0;
-}
-
-.row > .col-md-4 > form > select {
-    background-color: #f0f0f0;
-    border: 0px;
-    font-size: 14px;
-    height: 70px;
-    margin: 0;
-    padding: 22px 0px 26px 5px;
-    width: 100%;
-}
-
-.row > .col-md-4 > form > select > .option {
-    height: 30px;
-}
-
-.row > .col-md-4 > .back {
-    background-color: #E2E2E2;
-    border: none;
-    border-radius: 0px;
-    color: #000;
-    float: left;
-    margin-top: 20px;
-    padding: 12.5px 40px 12.5px 40px;
-}
-
-.row > .col-md-4 > .next {
-    background-color: #FC592E;
-    border: none;
-    border-radius: 0px;
-    color: #FFF;
-    float: right;
-    margin-top: 20px;
-    padding: 12.5px 40px 12.5px 40px;
-}
-
-
-.jumbotron > .container > .row > .col-md-4 {
-    margin-bottom: 20px;
-}
-/*----------------------- End Content --------------------------*/
-/*----------------------- /Sign Up --------------------------*/
-
-/*----------------------- installdate --------------------------*/
-.row > .col-md-4 > p {
-    font-size: 14px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.row > .col-md-4 > .col-sm-6 > form {
-    font-size: 14px;
-}
-/*----------------------- /insatalldate --------------------------*/
-
-/*----------------------- provide.html --------------------------*/
-.jumbotron > .container > .row > .col-md-12 > p {
-    font-size: 14px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.row > .col-md-4 > form > div > input {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 0px;
-    font-size:14px;
-    height: 70px;
-    margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
-    width: 100%;
-}
-
-.row > .col-md-4 > form > div > p {
-    font-size: 12px;
-}
-
-.row > .col-md-4 > form > div > div {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 0px;
-    font-size: 14px;
-    height: 70px;
-    margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
-    vertical-align: middle;
-    width: 100%;
-}
-
-.row > .col-md-4 > form > div > div > button {
-    float: left;
-}
-
-.row > .col-md-4 > form > div > div > p {
-    float: left;
-    font-size: 14px;
-    margin-left: 5px;
-}
-/*----------------------- /provide.html --------------------------*/
-
-/*----------------------- done.html --------------------------*/
-.row > .col-md-8 {
-    margin-bottom: 20px;
-}
-/*----------------------- /done.html --------------------------*/
