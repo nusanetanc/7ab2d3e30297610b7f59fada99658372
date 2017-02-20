@@ -56,7 +56,7 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
     <router-outlet></router-outlet>
     </main>
     `,
-    directives: [ContentDashboardComponent,ContentAllSubsComponent, SidebarComponent,ROUTER_DIRECTIVES],
+    directives: [ContentDashboardComponent,ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'}
