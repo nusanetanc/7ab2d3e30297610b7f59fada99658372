@@ -19,10 +19,10 @@ import {AuthenticationComponent} from "./user/authentication/authentication.comp
     directives: [AuthenticationComponent, ROUTER_DIRECTIVES]
 })
 
-/*@RouteConfig([
+@RouteConfig([
   { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true}
   { path: '/is/isforgot', component:IsForgotComponent, name:'isforgot', useAsDefault:true}
-])*/
+])
 
 export class AppComponent {
 

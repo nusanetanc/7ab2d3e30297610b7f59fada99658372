@@ -22,6 +22,7 @@ var type = require('./routes/type');
 var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
+var home = require('./routes/home');
 
 var app = express();
 
