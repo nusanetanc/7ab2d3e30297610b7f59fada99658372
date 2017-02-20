@@ -40,9 +40,9 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li>
-                        <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        <a [routerLink]="['All']">INFORMATION</a>
                       </li>
-
+<a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
                         <div>
                           <img src="./images/groovy-grayscale.png" alt="ava">
