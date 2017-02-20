@@ -6,7 +6,7 @@ import {Http} from 'angular2/http';
 //import {ContentDashboardComponent} from "./content/dashboard.component";
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
-    selector: 'dashboard',
+    selector: 'is-app',
     template: `
     <!-- START CONTENT -->
     <div id="wrapper">
