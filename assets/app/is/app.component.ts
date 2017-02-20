@@ -40,7 +40,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li>
-                        <a [routerLink]="['All']">INFORMATION</a>
+                        <a [routerLink]="['All']">Login</a>
                       </li>
 <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
@@ -54,7 +54,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
-                <a [routerLink]="['All']">INFORMATION</a>
+                <a [routerLink]="['All']">Login</a>
            </header>
               <router-outlet></router-outlet>
     `,
