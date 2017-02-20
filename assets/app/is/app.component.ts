@@ -19,7 +19,9 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a href="" style="margin-top: -20px;">Acount Manager</a>
                         </div>
                       </li>
-
+                      <header>
+                          <a [routerLink]="['All']">Login</a>
+                      </header>
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
@@ -52,9 +54,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
-            <header>
-                <a [routerLink]="['All']">Login</a>
-           </header>
               <router-outlet></router-outlet>
     `,
     directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
