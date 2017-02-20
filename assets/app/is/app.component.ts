@@ -4,7 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 //import {SidebarComponent} from "./sidebar.component";
 //import {ContentDashboardComponent} from "./content/dashboard.component";
-import {ContentAllSubsComponent} from ".dashboard/content/allsubs.component";
+import {ContentAllSubsComponent} from "dashboard/content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
@@ -58,12 +58,12 @@ import {ContentAllSubsComponent} from ".dashboard/content/allsubs.component";
     <router-outlet></router-outlet>
     </main>
     `,
-    directives: [ContentDashboardComponent,ContentAllSubsComponent, ROUTER_DIRECTIVES],
+    directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'}
 ])
 
-export class DashboardComponent {
+export class AppComponent {
 
 }
