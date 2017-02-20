@@ -14,9 +14,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
             <main>
               <router-outlet></router-outlet>
             </main>
-    <main>
-    <router-outlet></router-outlet>
-    </main>
     `,
     directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
