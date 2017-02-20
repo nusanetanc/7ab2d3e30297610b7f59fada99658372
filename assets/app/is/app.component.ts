@@ -42,9 +42,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
           <li>
             <a [routerLink]="['All']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
           </li>
-
-          <li class="sidebar-footer">
-            <div>
               <img src="./images/groovy-grayscale.png" alt="ava">
               <a href="">Privacy</a>
               <a href="">Terms</a>
