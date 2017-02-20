@@ -8,9 +8,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
     selector: 'is-app',
     template: `
-            <header>
-                <a [routerLink]="['All']">Login</a>
-            </header>
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
                   <nav id="spy">
