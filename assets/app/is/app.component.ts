@@ -20,7 +20,7 @@ import {AuthenticationComponent} from "./user/authentication/authentication.comp
 })
 
 @RouteConfig([
-  { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true}
+  { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true},
   { path: '/is/isforgot', component:IsForgotComponent, name:'isforgot', useAsDefault:true}
 ])
 
