@@ -6,7 +6,7 @@ import {AuthenticationComponent} from "./authentication/authentication.component
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @Component({
-   selector: 'app',
+   selector: 'is-app',
    template: `
     <dashboard></dashboard>
 `,
