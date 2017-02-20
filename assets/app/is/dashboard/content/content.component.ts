@@ -23,9 +23,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 
           </div> -->
 
-        </div>
-      </div>
-
     </div>
 
     </div>
