@@ -10,13 +10,8 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
    template: `
     <dashboard></dashboard>
 `,
-    directives: [AuthenticationComponent, DashboardComponent]
+    directives: [DashboardComponent, ROUTER_DIRECTIVES]
 })
-
-/*@RouteConfig([
-  { path: '/is/login', component:SigninComponent, name:'Signin', useAsDefault:true}
-  { path: '/is/isforgot', component:IsForgotComponent, name:'isforgot', useAsDefault:true}
-])*/
 
 export class AppComponent {
 
