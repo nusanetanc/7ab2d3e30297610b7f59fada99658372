@@ -10,7 +10,6 @@ import {ForgotComponent} from "./forgot.component";
             <div class="top-margin text-center">
                 <img class="logo-size" src="images/groovy.png">
                 <form-login></form-login>
-                <form-forgot></form-forgot>
             </div>
         </div>
         <div class="container-fluid footer">
