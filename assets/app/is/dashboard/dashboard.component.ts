@@ -1,13 +1,14 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {SidebarComponent} from "./sidebar.component";
-//import {ContentDashboardComponent} from "./content/content.component";
+import {ContentDashboardComponent} from "./content/content.component";
 @Component({
     selector: 'dashboard',
     template: `
     <sidebar></sidebar>
+    <form-dashboard></form-dashboard>
     `,
-    directives: [SidebarComponent,ROUTER_DIRECTIVES],
+    directives: [ContentDashboardComponent,SidebarComponent,ROUTER_DIRECTIVES],
 })
 export class DashboardComponent {
 
