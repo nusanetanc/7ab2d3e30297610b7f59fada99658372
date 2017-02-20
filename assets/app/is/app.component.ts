@@ -19,9 +19,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a href="" style="margin-top: -20px;">Acount Manager</a>
                         </div>
                       </li>
-                      <header>
-                          <a [routerLink]="['All']">Login</a>
-                      </header>
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
@@ -40,9 +37,11 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li>
-                        <a [routerLink]="['All']">Login</a>
+                      <header>
+                          <a [routerLink]="['All']">Login</a>
+                      </header>
                       </li>
-<a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
                         <div>
                           <img src="./images/groovy-grayscale.png" alt="ava">
