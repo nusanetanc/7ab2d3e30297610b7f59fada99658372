@@ -5,7 +5,7 @@ var randomInt = require('random-int');
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
-     bill.find(function(err, bills) {
+     Bill.find(function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
