@@ -28,6 +28,7 @@ router.post('/addbill', function(req, res, next) {
     bill.priceinstal= req.body.priceinstal;
     bill.pricerouter= req.body.pricerouter;
     bill.pricestb= req.body.pricestb;
+    bill.pricerj45cable= req.body.pricerj45cable;
     bill.promoname= req.body.promoname;
     bill.pricepromo= req.body.pricepromo;
     bill.billid= req.body.billid;

@@ -11,6 +11,7 @@ var BillSchema   = new Schema({
   pricestb: Number,
   promoname : String,
   pricepromo: Number,
+  pricerj45cable: Number,
   changetax: Number,
   totalprice: Number,
   totalpay: Number,
