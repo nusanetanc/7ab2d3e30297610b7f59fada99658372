@@ -22,7 +22,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li class="active" style="margin-top: 20px;">
                           <a class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
-                      <li>
                         <div class="dropdown">
                           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
                           <span class="caret"></span></button>
@@ -31,7 +30,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                             <li><a [routerLink]="['All']"><strong>ADD NEW</strong></a></li>
                           </ul>
                         </div>
-                      </li>
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
