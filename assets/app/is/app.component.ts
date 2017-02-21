@@ -37,7 +37,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
-                      <li>
+                      <li [class.active]="router.isRouteActive(router.generate(['//is/allsubs']))">
                         <a [routerLink]="['All']">Login</a>
                       </li>
 <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
