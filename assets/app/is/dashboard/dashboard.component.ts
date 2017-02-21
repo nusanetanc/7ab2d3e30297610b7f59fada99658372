@@ -45,7 +45,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
-              <router-outlet></router-outlet>
+              <form-dashboard></form-dashboard>
         </div><!-- END CONTENT -->
     `,
     directives: [ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
