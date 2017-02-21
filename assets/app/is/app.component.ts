@@ -20,7 +20,9 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         </div>
                       </li>
                       <header>
+                      <li class="active" style="margin-top: 20px;">
                           <a [routerLink]="['All']">Login</a>
+                      </li>
                       </header>
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/is/allsubs"  ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
