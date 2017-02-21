@@ -22,14 +22,18 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li class="active" style="margin-top: 20px;">
                           <a class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
-                        <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-                          <span class="caret"></span></button>
-                          <ul class="collapse dropdown-menu">
-                            <li><a [routerLink]="['All']"><strong>ALL SUBSCRIBERS</strong></a></li>
-                            <li><a [routerLink]="['All']"><strong>ADD NEW</strong></a></li>
-                          </ul>
-                        </div>
+                      <li class="active" style="margin-top: 20px;">
+                          <a [routerLink]="['Dashboard']" class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
+                      </li>
+                      <li class="active" style="margin-top: 20px;">
+                          <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>ALL SUBSCRIBERS</strong></a>
+                      </li>
+                      <li class="active" style="margin-top: 20px;">
+                          <a [routerLink]="['AddSubs']" class="collapse"><i class="material-icons">add_account</i><strong>ADD SUBSCRIBERS</strong></a>
+                      </li>
+                      <li>
+                        <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                      </li>
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
@@ -49,7 +53,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
     directives: [ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'All'},
+  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
 ])
 
