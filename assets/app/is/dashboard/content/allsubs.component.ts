@@ -56,5 +56,5 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
-  subs = ['0123456', 'Yudi Nurhandi', 'Active', 'Not Paid'];
+  subs = [new Sub('0123456', 'Yudi Nurhandi', 'Active', 'Not Paid')];
 }
