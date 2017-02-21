@@ -45,32 +45,8 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
-                <!-- Page content -->
-                    <div id="page-content-wrapper">
-                        <div class="content-header">
-                            <h3 id="home">
-                                <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                                </a>
-                                &nbsp; Reports
-                            </h3>
-
-                        </div>
-
-                        <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                            <!-- <div class="row">
-
-                              <div class="jumbotron text-center" >
-                                <h1>Hello Beautiful!</h1>
-                                <p>This is a sidebar navigation responsive template built off of Bootstrap 3.0 and simple sidebar template. It includes anchors, scroll spy, smooth scroll, and Awesome icon fonts.</p>
-
-                              </div> -->
-
-                        </div>
-                    </div>
-
-                </div>
-
-                </div><!-- END CONTENT -->
+              <router-outlet></router-outlet>
+        </div><!-- END CONTENT -->
     `,
     directives: [ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
