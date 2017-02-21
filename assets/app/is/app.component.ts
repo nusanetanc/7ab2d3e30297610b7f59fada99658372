@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 //import {SidebarComponent} from "./sidebar.component";
-//import {ContentDashboardComponent} from "./content/dashboard.component";
+import {ContentDashboardComponent} from "./content/dashboard.component";
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
     selector: 'is-app',
@@ -20,11 +20,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         </div>
                       </li>
                       <li class="active" style="margin-top: 20px;">
-                          <a [routerLink]="['All']"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
-                      </li>
-
-                      <li class="active" style="margin-top: 20px;">
-                        <a routerLink="/is/allsubs"  ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                          <a [routerLink]="['dashboard']"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
                       <li>
                         <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
@@ -32,7 +28,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         </a>
                         <div class="collapse" id="subscribers">
                           <div class="listsub">
-                            <a href="allsubscribers"><strong>ALL SUBSCRIBERS</strong></a>
+                            <a [routerLink]="['dashboard']"><strong>ALL SUBSCRIBERS</strong></a>
                             <a href="newsubscribers"><strong>ADD NEW</strong></a>
                           </div>
                         </div>
@@ -40,10 +36,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
-                      <li>
-                        <a [routerLink]="['All']">Login</a>
-                      </li>
-<a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
                         <div>
                           <img src="./images/groovy-grayscale.png" alt="ava">
@@ -57,10 +49,11 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                 </div>
               <router-outlet></router-outlet>
     `,
-    directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
+    directives: [ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'All'}
+  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'All'},
+  { path: '/is', component:ContentDashboardComponent, name:'dashboard'}
 ])
 
 export class AppComponent {
