@@ -11,9 +11,14 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
    selector: 'is-app',
    template: `
     <dashboard></dashboard>
+    <router-outlet></router-outlet>
 `,
     directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
+@RouteConfig([
+  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
+  { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
+])
 
 export class AppComponent {
 

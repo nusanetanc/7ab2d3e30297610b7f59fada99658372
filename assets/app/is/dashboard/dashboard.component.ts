@@ -2,8 +2,8 @@ import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
-import {ContentDashboardComponent} from "./content/dashboard.component";
-import {ContentAllSubsComponent} from "./content/allsubs.component";
+//import {ContentDashboardComponent} from "./content/dashboard.component";
+//import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
@@ -44,15 +44,11 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
                     </ul>
                   </nav>
                 </div>
-                <router-outlet></router-outlet>
         </div><!-- END CONTENT -->
     `,
-    directives: [ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
+    directives: [ ROUTER_DIRECTIVES],
 })
-@RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
-  { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
-])
+
 
 export class DashboardComponent {
 
