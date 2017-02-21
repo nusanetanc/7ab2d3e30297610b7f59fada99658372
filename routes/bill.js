@@ -56,20 +56,24 @@ router.put('/putbill/:id', function(req, res, next) {
                 res.send(err);
 
                 bill.idinvoice= req.body.idinvoice;
+                bill.namepack= req.body.namepack;
                 bill.pricepack= req.body.pricepack;
                 bill.priceinstal= req.body.priceinstal;
                 bill.pricerouter= req.body.pricerouter;
                 bill.pricestb= req.body.pricestb;
+                bill.pricerj45cable= req.body.pricerj45cable;
                 bill.promoname= req.body.promoname;
                 bill.pricepromo= req.body.pricepromo;
                 bill.billid= req.body.billid;
                 bill.propertiname= req.body.propertiname;
                 bill.changetax= req.body.changetax;
-                bill.total= req.body.total;
+                bill.totalprice= req.body.totalprice;
+                bill.totalpay= req.body.totalpay;
                 bill.billdate= req.body.billdate;
                 bill.duedate= req.body.duedate;
                 bill.paydate= req.body.paydate;
                 bill.status= req.body.status;
+                bill.sub= req.body.sub;
               if (err)
                 res.send(err);
 
