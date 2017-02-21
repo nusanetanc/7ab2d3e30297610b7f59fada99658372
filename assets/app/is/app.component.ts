@@ -20,17 +20,16 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         </div>
                       </li>
                       <li class="active" style="margin-top: 20px;">
-                          <a [routerLink]="['All']"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
+                          <a class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
                       <li>
-                        <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
-                          <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
-                        </a>
-                        <div class="collapse" id="subscribers">
-                          <div class="listsub">
-                            <a [routerLink]="['dashboard']"><strong>ALL SUBSCRIBERS</strong></a>
-                            <a href="newsubscribers"><strong>ADD NEW</strong></a>
-                          </div>
+                        <div class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                          <span class="caret"></span></button>
+                          <ul class="collapse dropdown-menu">
+                            <li><a [routerLink]="['All']"><strong>ALL SUBSCRIBERS</strong></a></li>
+                            <li><a [routerLink]="['All']"><strong>ADD NEW</strong></a></li>
+                          </ul>
                         </div>
                       </li>
                       <li>
