@@ -19,12 +19,14 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a href="" style="margin-top: -20px;">Acount Manager</a>
                         </div>
                       </li>
+                      <header>
                           <a [routerLink]="['All']">Login</a>
-                      <li class="active" style="margin-top: 20px;" [routerLink]="['/is/allsubs']">
-                        <a ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                      </header>
+                      <li class="active" style="margin-top: 20px;">
+                        <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
                       <li>
-                        <a role="button" data-toggle="collapse" [routerLink]="['All']" aria-expanded="false" aria-controls="collapseExample">
+                        <a role="button" data-toggle="collapse" routerLink="/is/allsubs" aria-expanded="false" aria-controls="collapseExample">
                           <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
                         </a>
                         <div class="collapse" id="subscribers">
@@ -37,8 +39,8 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
-                      <li [routerLink]="['All']">
-                        <a>Login</a>
+                      <li>
+                        <a [routerLink]="['All']">Login</a>
                       </li>
 <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
