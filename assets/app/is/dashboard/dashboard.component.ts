@@ -6,7 +6,7 @@ import {Http} from 'angular2/http';
 import {ContentDashboardComponent} from "./content/dashboard.component";
 import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
-    selector: 'is-app',
+    selector: 'dashboard',
     template: `
     <!-- START CONTENT -->
       <div id="wrapper">
@@ -55,6 +55,6 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
 ])
 
-export class AppComponent {
+export class DashboardComponent {
 
 }
