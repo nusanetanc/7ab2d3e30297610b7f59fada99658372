@@ -13,7 +13,7 @@ router.get('/listbill', function(req, res, next) {
 
 /* GET detail bill. */
 router.get('/bill/:id', function(req, res, next) {
-Bill.findById(req.params.id, function(err, bills) {
+bill.findById(req.params.id, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
