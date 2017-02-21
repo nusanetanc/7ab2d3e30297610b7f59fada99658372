@@ -21,7 +21,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       </li>
                           <a [routerLink]="['All']">Login</a>
                       <li class="active" style="margin-top: 20px;">
-                        <a routerLink="/is/allsubs" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                        <a [routerLink]="['/is/allsubs']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
                       <li>
                         <a role="button" data-toggle="collapse" [routerLink]="['All']" aria-expanded="false" aria-controls="collapseExample">
