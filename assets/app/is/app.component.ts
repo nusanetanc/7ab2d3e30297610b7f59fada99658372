@@ -57,7 +57,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
     directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'All'}
+  { path: '/is', component:ContentAllSubsComponent, name:'All'}
 ])
 
 export class AppComponent {
