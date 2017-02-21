@@ -36,9 +36,9 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                 </div>
             </div>
             <div class="col-lg-12" style="margin-top: 20px;">
-                <ul class="subscriber-list">
+                <ul class="subscriber-list" *ngFor="#fruit of fruits">
                     <li>
-                        <div class="row" *ngFor="#fruit of fruits">
+                        <div class="row">
                             <div class="col-md-1 list-nik"><span>{{ fruit }}</span></div>
                             <div class="col-md-9 list-name"><span>{{ fruit }}</span></div>
                             <div class="col-md-1 list-activ"><span style="color: green;">{{ fruit }}</span></div>
