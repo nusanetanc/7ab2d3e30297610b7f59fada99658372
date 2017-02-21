@@ -38,53 +38,14 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
             <div class="col-lg-12" style="margin-top: 20px;">
                 <ul class="subscriber-list">
                     <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: red;">Not Paid</span></div>
+                        <div class="row" *ngFor="#fruit of fruits">
+                            <div class="col-md-1 list-nik"><span>{{ fruit }}</span></div>
+                            <div class="col-md-9 list-name"><span>{{ fruit }}</span></div>
+                            <div class="col-md-1 list-activ"><span style="color: green;">{{ fruit }}</span></div>
+                            <div class="col-md-1 list-paid"><span style="color: red;">{{ fruit }}</span></div>
                         </div>
                     </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: green;">Paid</span></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: red;">Not Paid</span></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: green;">Paid</span></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: green;">Paid</span></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>0123456</span></div>
-                            <div class="col-md-9 list-name"><span>Yudi Nurhandi</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">Active</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: red;">Not Paid</span></div>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -94,5 +55,5 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
-
+  fruits = ['0123456', 'Yudi Nurhandi', 'Active', 'Not Paid'];
 }
