@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 //import {SidebarComponent} from "./sidebar.component";
-import {ContentDashboardComponent} from "./content/dashboard.component";
+import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
     selector: 'is-app',
