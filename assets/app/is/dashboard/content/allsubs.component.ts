@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-allsubs',
@@ -36,13 +37,13 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                 </div>
             </div>
             <div class="col-lg-12" style="margin-top: 20px;">
-                <ul class="subscriber-list" *ngFor="#fruit of fruits">
+                <ul class="subscriber-list" *ngFor="#sub of subs">
                     <li>
                         <div class="row">
-                            <div class="col-md-1 list-nik"><span>{{ fruit }}</span></div>
-                            <div class="col-md-9 list-name"><span>{{ fruit }}</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">{{ fruit }}</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: red;">{{ fruit }}</span></div>
+                            <div class="col-md-1 list-nik"><span>{{ sub.subid }}</span></div>
+                            <div class="col-md-9 list-name"><span>{{ sub.name }}</span></div>
+                            <div class="col-md-1 list-activ"><span style="color: green;">{{ sub.groovyid }}</span></div>
+                            <div class="col-md-1 list-paid"><span style="color: red;">{{ sub.nohp }}</span></div>
                         </div>
                     </li>
 
@@ -55,5 +56,5 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
-  fruits = ['0123456', 'Yudi Nurhandi', 'Active', 'Not Paid'];
+  subs = ['0123456', 'Yudi Nurhandi', 'Active', 'Not Paid'];
 }

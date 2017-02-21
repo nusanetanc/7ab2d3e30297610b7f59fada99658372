@@ -1,4 +1,4 @@
-export class Contact {
+export class Sub {
   constructor(
   public subid: String,
   public groovyid: String,
