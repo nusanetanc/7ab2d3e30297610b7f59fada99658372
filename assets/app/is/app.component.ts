@@ -12,7 +12,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
    template: `
     <dashboard></dashboard>
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES, ROUTER_PROVIDERS]
+    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES, [ROUTER_PROVIDERS]],
 })
 
 export class AppComponent {
