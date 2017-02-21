@@ -23,10 +23,10 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a [routerLink]="['All']">Login</a>
                       </header>
                       <li class="active" style="margin-top: 20px;">
-                        <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                        <a routerLink="/is/allsubs"  ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
                       <li>
-                        <a role="button" data-toggle="collapse" routerLink="/is/allsubs" aria-expanded="false" aria-controls="collapseExample">
+                        <a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
                           <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
                         </a>
                         <div class="collapse" id="subscribers">
