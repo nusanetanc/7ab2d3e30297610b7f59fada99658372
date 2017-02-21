@@ -23,6 +23,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
+                      <li [routerLinkActive]="['active']"> <a [routerLink]="['All']">One</a></li>
                       <li>
                         <a role="button" data-toggle="collapse" [routerLink]="['All']" aria-expanded="false" aria-controls="collapseExample">
                           <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
@@ -57,7 +58,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
     directives: [ContentAllSubsComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is', component:ContentAllSubsComponent, name:'All'}
+  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'All'}
 ])
 
 export class AppComponent {
