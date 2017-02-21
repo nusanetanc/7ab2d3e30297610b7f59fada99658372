@@ -20,8 +20,8 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                         </div>
                       </li>
                           <a [routerLink]="['All']">Login</a>
-                      <li class="active" style="margin-top: 20px;">
-                        <a [routerLink]="['/is/allsubs']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                      <li class="active" style="margin-top: 20px;" [routerLink]="['/is/allsubs']">
+                        <a ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
                       <li>
                         <a role="button" data-toggle="collapse" [routerLink]="['All']" aria-expanded="false" aria-controls="collapseExample">
@@ -37,8 +37,8 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li>
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
-                      <li [class.active]="router.isRouteActive(router.generate(['/is/allsubs']))">
-                        <a [routerLink]="['All']">Login</a>
+                      <li [routerLink]="['All']">
+                        <a>Login</a>
                       </li>
 <a [routerLink]="['All']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       <li class="sidebar-footer">
