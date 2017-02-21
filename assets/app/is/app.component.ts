@@ -19,11 +19,10 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a href="" style="margin-top: -20px;">Acount Manager</a>
                         </div>
                       </li>
-                      <header>
                       <li class="active" style="margin-top: 20px;">
-                          <a [routerLink]="['All']"><i class="material-icons">dashboard</i><strong>Login</strong></a>
+                          <a [routerLink]="['All']"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
-                      </header>
+
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/is/allsubs"  ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
