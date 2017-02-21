@@ -6,6 +6,7 @@ import {AuthenticationComponent} from "./authentication/authentication.component
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
+import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 
 @Component({
    selector: 'is-app',
@@ -20,6 +21,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
+  { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
 ])
 
