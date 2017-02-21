@@ -23,10 +23,6 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                       <li class="active" style="margin-top: 20px;">
                         <a routerLink="/" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
-                      <ul class="nav navbar-nav">
-                        <li [routerLinkActive]="['active']"> <a [routerLink]="['one']">One</a></li>
-                        <li [routerLinkActive]="['active']"> <a [routerLink]="['second']">Second</a></li>
-                      </ul>
                       <li>
                         <a role="button" data-toggle="collapse" [routerLink]="['All']" aria-expanded="false" aria-controls="collapseExample">
                           <i class="material-icons">supervisor_account</i> <strong>SUBSCRIBERS</strong>
