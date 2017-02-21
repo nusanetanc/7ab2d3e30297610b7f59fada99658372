@@ -4,4 +4,4 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ROUTER_PROVIDERS} from "angular2/router"
 
-bootstrap(AppComponent, DashboardComponent, [ROUTER_PROVIDERS]);
+bootstrap(AppComponent, [ROUTER_PROVIDERS]);

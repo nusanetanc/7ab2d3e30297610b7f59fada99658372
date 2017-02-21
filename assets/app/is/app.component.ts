@@ -10,8 +10,11 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 @Component({
    selector: 'is-app',
    template: `
+   <!-- START CONTENT -->
+     <div id="wrapper">
     <dashboard></dashboard>
     <router-outlet></router-outlet>
+  </div><!-- END CONTENT -->
 `,
     directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })

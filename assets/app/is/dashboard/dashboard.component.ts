@@ -7,8 +7,6 @@ import {Http} from 'angular2/http';
 @Component({
     selector: 'dashboard',
     template: `
-    <!-- START CONTENT -->
-      <div id="wrapper">
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
                   <nav id="spy">
@@ -44,9 +42,8 @@ import {Http} from 'angular2/http';
                     </ul>
                   </nav>
                 </div>
-        </div><!-- END CONTENT -->
     `,
-    directives: [ ROUTER_DIRECTIVES],
+    directives: [ ROUTER_DIRECTIVES], providers: [],
 })
 
 
