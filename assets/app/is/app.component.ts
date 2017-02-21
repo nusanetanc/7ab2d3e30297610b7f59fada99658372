@@ -19,16 +19,16 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
                           <a href="" style="margin-top: -20px;">Acount Manager</a>
                         </div>
                       </li>
-                      <li style="margin-top: 20px;">
+                      <li style="margin-top: 10px;">
                           <a [routerLink]="['Dashboard']" class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
-                      <li  style="margin-top: 20px;">
+                      <li  style="margin-top: 10px;">
                           <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>ALL SUBSCRIBERS</strong></a>
                       </li>
-                      <li style="margin-top: 20px;">
-                          <a [routerLink]="['AddSubs']" class="collapse"><i class="material-icons">add_account</i><strong>ADD SUBSCRIBERS</strong></a>
+                      <li style="margin-top: 10px;">
+                          <a [routerLink]="['AddSubs']" class="collapse"><i class="material-icons">dashboard</i><strong>ADD SUBSCRIBERS</strong></a>
                       </li>
-                      <li style="margin-top: 20px;">
+                      <li style="margin-top: 10px;">
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
 
