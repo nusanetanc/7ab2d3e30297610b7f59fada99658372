@@ -157,6 +157,14 @@ export class ContentAddSubsComponent {
   ngOnInit() {
     this.getAllSub();
   }
+  // Get all users from the API
+  getAllSub() {
+    this.http.get(`${this.API}/subscribe/listsub`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+      })
+  }
 
 // Add one person to the API
   addSub(name) {
