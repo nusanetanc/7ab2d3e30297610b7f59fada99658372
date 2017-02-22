@@ -42,7 +42,7 @@ import { Sub } from './subs';
                 <ul class="subscriber-list" *ngFor="#sub of subs">
                     <li>
                         <div class="row">
-                            <div class="col-md-1 list-nik"><span>{{subs.name}}</span></div>
+                            <div class="col-md-1 list-nik"><span>{{ sub.subid }}</span></div>
                             <div class="col-md-9 list-name"><span></span></div>
                             <div class="col-md-1 list-activ"><span style="color: green;"></span></div>
                             <div class="col-md-1 list-paid"><span style="color: red;"></span></div>
