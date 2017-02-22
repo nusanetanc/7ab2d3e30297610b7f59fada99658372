@@ -130,7 +130,7 @@ import 'rxjs/add/operator/map';
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addPerson(name.value)">
+                                <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addSub(name.value)">
                                     REGISTER
                                 </button>
                             </div>
