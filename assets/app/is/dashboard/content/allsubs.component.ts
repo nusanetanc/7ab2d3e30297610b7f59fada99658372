@@ -63,7 +63,7 @@ export class ContentAllSubsComponent {
     API = 'http://http://202.162.207.164:3000';
 
     // Declare empty list of people
-    subs: any[] = [];
+    sub: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -78,7 +78,7 @@ export class ContentAllSubsComponent {
       .map(res => res.json())
       .subscribe(sub => {
         console.log(sub)
-        this.subs = sub
+        this.sub = sub
       })
   }
 }
