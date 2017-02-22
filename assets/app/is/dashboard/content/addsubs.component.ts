@@ -26,7 +26,7 @@ import 'rxjs/add/operator/map';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" >
+                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" value="yudi">
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -160,7 +160,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub(name) {
-    this.http.post(`${this.API}/subscribe/listsub`, {name})
+    this.http.post(`${this.API}/subscribe/addsub`, {name})
       .map(res => res.json())
       .subscribe(() => {
         this.getAllSub();
