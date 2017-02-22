@@ -65,6 +65,10 @@ router.get('/is', function(req, res, next) {
   res.render('is', { title: 'Groovy - IS' });
 });
 
+router.get('/is/*', function(req, res, next) {
+  res.render('is/*', { title: 'Groovy - IS' });
+});
+
 router.get('/dashboard', function(req, res, next) {
   res.render('./dashboard/index', { title: 'Groovy - Dashboard' });
 });
