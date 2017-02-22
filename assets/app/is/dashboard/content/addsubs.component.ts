@@ -175,6 +175,4 @@ export class ContentAddSubsComponent {
         console.log('input sukses');
       })
   }
-
-
 }

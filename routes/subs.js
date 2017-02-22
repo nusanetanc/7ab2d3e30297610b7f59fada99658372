@@ -29,7 +29,6 @@ router.post('/addsub', function(req, res, next) {
     sub.subid = "GR"+checkdigit;
     sub.name= req.body.name;
     sub.email= req.body.email;
-    sub.password= passwordHash.generate(req.body.password);
     sub.packlev= req.body.packlev;
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
