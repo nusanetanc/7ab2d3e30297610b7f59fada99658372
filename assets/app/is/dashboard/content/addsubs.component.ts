@@ -160,7 +160,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub(name) {
-    this.http.post(`${this.API}/subscribe/addsub`, {name})
+    this.http.post(`${this.API}/subscribe/listsub`, {name})
       .map(res => res.json())
       .subscribe(() => {
         this.getAllSub();
