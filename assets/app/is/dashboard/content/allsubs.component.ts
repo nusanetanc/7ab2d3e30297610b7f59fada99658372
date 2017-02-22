@@ -65,8 +65,10 @@ export class ContentAllSubsComponent {
     // Declare empty list of people
     sub: any[] = [];
 
+  @Injectable()
+  export class GithubService {
     constructor(private http: Http) {}
-
+    }
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getAllSub();
