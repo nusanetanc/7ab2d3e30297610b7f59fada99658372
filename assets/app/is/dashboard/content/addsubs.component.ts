@@ -26,7 +26,7 @@ import 'rxjs/add/operator/map';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name"  id="name" #name>
+                                        <input type="text" class="form-control" placeholder="Full Name"  id="name" #name>
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
