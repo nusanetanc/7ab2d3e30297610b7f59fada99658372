@@ -130,9 +130,9 @@ import 'rxjs/add/operator/map';
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <a href="#" class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addPerson(name.value)">
+                                <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addPerson(name.value)">
                                     REGISTER
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -164,6 +164,7 @@ export class ContentAddSubsComponent {
       .map(res => res.json())
       .subscribe(() => {
         this.getAllSub();
+        console.log('input sukses');
       })
   }
 
