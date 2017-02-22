@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
@@ -75,9 +76,9 @@ export class ContentAllSubsComponent {
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
-      .subscribe(subs => {
-        console.log(subs)
-        this.subs = sub
+      .subscribe(sub => {
+        console.log(sub)
+        this.sub = sub
       })
   }
 }
