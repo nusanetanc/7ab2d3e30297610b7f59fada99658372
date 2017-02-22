@@ -77,8 +77,8 @@ export class ContentAllSubsComponent {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
       .subscribe(sub => {
-        console.log(sub)
-        this.sub = sub
+        console.log(subs)
+        this.subs = sub
       })
   }
 }
