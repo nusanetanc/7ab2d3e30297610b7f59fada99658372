@@ -26,7 +26,7 @@ import 'rxjs/add/operator/map';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Full Name"  id="name" #name>
+                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" >
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -130,7 +130,7 @@ import 'rxjs/add/operator/map';
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addSub(name.value)">
+                                <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addSub(name.value)">
                                     REGISTER
                                 </button>
                             </div>
@@ -143,7 +143,7 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddSubsComponent {
+export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -157,14 +157,6 @@ export class ContentAddSubsComponent {
   ngOnInit() {
     this.getAllSub();
   }
-  // Get all users from the API
-  getAllSub() {
-    this.http.get(`${this.API}/subscribe/listsub`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-      })
-  }
 
 // Add one person to the API
   addSub(name) {
@@ -173,6 +165,15 @@ export class ContentAddSubsComponent {
       .subscribe(() => {
         this.getAllSub();
         console.log('input sukses');
+      })
+  }
+
+  // Get all users from the API
+  getAllSub() {
+    this.http.get(`${this.API}/subscribe/listsub`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
       })
   }
 }
