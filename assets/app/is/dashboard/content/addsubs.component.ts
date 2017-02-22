@@ -1,5 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Http } from 'angular2/http';
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'form-addsubs',
@@ -24,7 +26,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                        <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name"  id="name" #name>
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -128,7 +130,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <a href="#" class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;">
+                                <a href="#" class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="button" (click)="addPerson(name.value)">
                                     REGISTER
                                 </a>
                             </div>
@@ -142,5 +144,28 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent {
+
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+
+  // Declare empty list of people
+  subs: any[] = [];
+
+  constructor(private http: Http) {}
+
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllSub();
+  }
+
+// Add one person to the API
+  addSub(name) {
+    this.http.post(`${this.API}/subscribe/addsub`, {name, age})
+      .map(res => res.json())
+      .subscribe(() => {
+        this.getAllSub();
+      })
+  }
+
 
 }
