@@ -39,7 +39,7 @@ import { Sub } from './subs';
                 </div>
             </div>
             <div class="col-lg-12" style="margin-top: 20px;">
-                <ul class="subscriber-list" *ngFor="let subs of sub">
+                <ul class="subscriber-list" *ngFor="let sub of subs">
                     <li>
                         <div class="row">
                             <div class="col-md-1 list-nik"><span>{{sub.name}}</span></div>
