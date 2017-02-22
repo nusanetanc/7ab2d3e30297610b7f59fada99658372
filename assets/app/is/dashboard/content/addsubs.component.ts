@@ -129,7 +129,6 @@ import 'rxjs/add/operator/map';
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                    {{ name.value }}
                                     <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addSub(name.value)">
                                         REGISTER
                                     </button>
@@ -160,7 +159,7 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(name) {
+  addSub(name.value) {
     this.http.post(`${this.API}/subscribe/addsub`, {name})
       .map(res => res.json())
       .subscribe(() => {
