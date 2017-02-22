@@ -43,8 +43,8 @@ import { Sub } from './subs';
                     <li>
                         <div class="row">
                             <div class="col-md-1 list-nik"><span>{{ sub.subid }}</span></div>
-                            <div class="col-md-9 list-name"><span></span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;"></span></div>
+                            <div class="col-md-9 list-name"><span>{{ sub.name }}</span></div>
+                            <div class="col-md-1 list-activ"><span style="color: green;">{{ sub.status }}</span></div>
                             <div class="col-md-1 list-paid"><span style="color: red;"></span></div>
                         </div>
                     </li>
@@ -77,7 +77,6 @@ export class ContentAllSubsComponent {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
       .subscribe(subs => {
-        console.log(subs)
         this.subs = subs
       })
   }
