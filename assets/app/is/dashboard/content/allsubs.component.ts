@@ -42,7 +42,7 @@ import { Sub } from './subs';
                 <ul class="subscriber-list" *ngFor="#sub of subs">
                     <li>
                         <div class="row">
-                            <div class="col-md-1 list-nik"><span>{{sub.name}}</span></div>
+                            <div class="col-md-1 list-nik"><span>{{subs.name}}</span></div>
                             <div class="col-md-9 list-name"><span></span></div>
                             <div class="col-md-1 list-activ"><span style="color: green;"></span></div>
                             <div class="col-md-1 list-paid"><span style="color: red;"></span></div>
@@ -63,7 +63,7 @@ export class ContentAllSubsComponent {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    subs: any[] = [];
+    sub: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -78,7 +78,7 @@ export class ContentAllSubsComponent {
       .map(res => res.json())
       .subscribe(sub => {
         console.log(sub)
-        this.sub = subs
+        this.sub = sub
       })
   }
 }
