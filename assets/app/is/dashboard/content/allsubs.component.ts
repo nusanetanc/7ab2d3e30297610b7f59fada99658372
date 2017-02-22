@@ -78,7 +78,7 @@ export class ContentAllSubsComponent {
       .map(res => res.json())
       .subscribe(sub => {
         console.log(sub)
-        this.sub = sub
+        this.subs = sub
       })
   }
 }
