@@ -60,7 +60,7 @@ import { Sub } from './subs';
 export class ContentAllSubsComponent {
 
   // Link to our api, pointing to localhost
-    API = 'http://http://202.162.207.164:3000';
+    API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
     sub: any[] = [];
