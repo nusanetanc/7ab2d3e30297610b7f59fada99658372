@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var appIsDev = 'assets/app/is/';
+var appMyDev = 'assets/app/my/';
 var appIsProd = 'public/js/app/is/';
 var appMyProd = 'public/js/app/my/';
 
