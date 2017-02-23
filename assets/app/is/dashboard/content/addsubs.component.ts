@@ -1,5 +1,3 @@
-import {Injectable} from
-
 import {Component, OnInit, Injectable} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, headers } from 'angular2/http';
@@ -167,10 +165,10 @@ export class ContentAddSubsComponent implements OnInit {
   var headers = new Headers();
 
   headers.append('Content-Type', 'application/X-www-form-urlencoded');
-  var sub = 'name=' + newsubs.name;
-    this.http.post(`${this.API}/subscribe/addsub`, , creds, {headers: headers}) {name})
+  var subs = 'name=' + newsubs.name;
+    this.http.post(`${this.API}/subscribe/addsub`, subs, {headers: headers})
       .map(res => res.json())
-      .subscribe((data) => {
+      .subscribe(() => {
         this.getAllSub();
         console.log('Sent successfully');
       })
