@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 var appIsDev = 'assets/app/is/';
 var appIsProd = 'public/js/app/is/';
+var appMyProd = 'public/js/app/my/';
 
 /* JS & TS */
 var jsuglify = require('gulp-uglify');
@@ -25,6 +26,19 @@ gulp.task('build-ts', function () {
 });
 gulp.task('watch', function () {
     gulp.watch(appIsDev + '**/*.ts', ['build-ts']);
+});
+
+gulp.task('build-ts', function () {
+    return gulp.src(appMyDev + '**/*.ts')
+        .pipe(sourcemaps.init())
+        .pipe(typescript(tsProject))
+        .pipe(sourcemaps.write())
+        // .pipe(jsuglify())
+        .pipe(concat('bundle.js'))
+        .pipe(gulp.dest(appMyProd));
+});
+gulp.task('watch', function () {
+    gulp.watch(appMyDev + '**/*.ts', ['build-ts']);
 });
 
 gulp.task('default', ['watch', 'build-ts']);
