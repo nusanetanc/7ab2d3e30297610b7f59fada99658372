@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
@@ -161,9 +161,9 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub(name) {
-  var body = 'name=name;
+  var body = 'name=name';
   var headers = new Headers();
-  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'};
     this.http.post(`${this.API}/subscribe/addsub`, {name})
       .map(res => res.json())
       .subscribe(() => {
