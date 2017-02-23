@@ -5,8 +5,6 @@ import {Http} from 'angular2/http';
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
-import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
-import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 
 @Component({
    selector: 'is-app',
@@ -17,11 +15,9 @@ import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
-  { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
 ])
 
