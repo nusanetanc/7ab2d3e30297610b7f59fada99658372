@@ -1,7 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
-import {NgForm} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
@@ -28,7 +27,7 @@ import { Sub } from './subs';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input id="name" [(ngModel)]="element.name" type="text" class="form-control" placeholder="Full Name" value="yudi">
+                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" value="yudi">
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -131,7 +130,7 @@ import { Sub } from './subs';
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                    <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit">
+                                    <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addSub(name.value)">
                                         REGISTER
                                     </button>
                                 </form>
@@ -147,48 +146,29 @@ import { Sub } from './subs';
 })
 export class ContentAddSubsComponent implements OnInit {
 
-constructor: [
-      ng.http.Http,
-      function(http) {
-        this.http = http;
-        this.element = {
-          name: 'some name'
-        };
-    }],
-
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
   // Declare empty list of people
   subs: any[] = [];
 
-
+  constructor(private http: Http) {}
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
   }
-  submitForm: function() {
-      var headers = new ng.http.Headers();
-      headers.append('Content-Type', 'application/json');
-
-      this.http.post(`${this.API}/subscribe/addsub`, JSON.stringify(this.element), {
-        headers: headers
-      }).subscribe(function(data) {
-        console.log('received response');
-      });
-    }
-
+/*
 // Add one person to the API
-//  addSub(name) {
-//    this.http.post(`${this.API}/subscribe/addsub`, {name})
-//      .map(res => res.json())
-//      .subscribe(() => {
-//        this.getAllSub();
-//        console.log(name.value);
-//      })
-//  }
-
+  addSub(name) {
+    this.http.post(`${this.API}/subscribe/addsub`, {this.name})
+      .map(res => res.json())
+      .subscribe(() => {
+        this.getAllSub();
+        console.log(name.value);
+      })
+  }
+*/
   // Get all users from the API
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
@@ -198,7 +178,3 @@ constructor: [
       })
   }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  ng.platform.browser.bootstrap(Cmp, [ ng.http.HTTP_PROVIDERS ]);
-});
