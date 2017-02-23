@@ -157,7 +157,7 @@ export class ContentAddSubsComponent implements OnInit {
   ngOnInit() {
     this.getAllSub();
   }
-// Add one person to the API
+
 var body = 'name=name';
 var headers = new Headers();
 headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -170,7 +170,6 @@ headers.append('Content-Type', 'application/x-www-form-urlencoded');
       })
   }
 
-  // Get all users from the API
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
