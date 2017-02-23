@@ -1,6 +1,8 @@
-import {Component, OnInit} from 'angular2/core';
+import {Injectable} from
+
+import {Component, OnInit, Injectable} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
@@ -27,7 +29,7 @@ import { Sub } from './subs';
                                 <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
                                 <form style="padding: 20px;">
                                     <div class="form-group">
-                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" value="yudi">
+                                        <input id="name" [(ngModel)]="newUser.name" type="text" class="form-control" placeholder="Full Name" value="yudi">
                                         <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -130,7 +132,7 @@ import { Sub } from './subs';
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                    <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addSub(name.value)">
+                                    <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addUser()">
                                         REGISTER
                                     </button>
                                 </form>
@@ -160,12 +162,17 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(name) {
-    this.http.post(`${this.API}/subscribe/addsub`, {name})
+  addSub(newsubs) {
+
+  var headers = new Headers();
+
+  headers.append('Content-Type', 'application/X-www-form-urlencoded');
+  var sub = 'name=' + newsubs.name;
+    this.http.post(`${this.API}/subscribe/addsub`, , creds, {headers: headers}) {name})
       .map(res => res.json())
-      .subscribe(() => {
+      .subscribe((data) => {
         this.getAllSub();
-        console.log(name.value);
+        console.log('Sent successfully');
       })
   }
 
