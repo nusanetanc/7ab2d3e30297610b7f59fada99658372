@@ -158,14 +158,18 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllSub();
   }
 // Add one person to the API
+var body = 'name=name';
+var headers = new Headers();
+headers.append('Content-Type', 'application/x-www-form-urlencoded');
   addSub(name) {
     this.http.post(`${this.API}/subscribe/addsub`, {name})
       .map(res => res.json())
-      .subscribe(() => {
+      .subscribe((data) => {
         this.getAllSub();
         console.log(name.value);
       })
   }
+
   // Get all users from the API
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
