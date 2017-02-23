@@ -146,6 +146,7 @@ import { Sub } from './subs';
 })
 export class ContentAddSubsComponent implements OnInit {
 
+// Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
   // Declare empty list of people
@@ -158,18 +159,17 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllSub();
   }
 
-var body = 'name=name';
-var headers = new Headers();
-headers.append('Content-Type', 'application/x-www-form-urlencoded');
+// Add one person to the API
   addSub(name) {
     this.http.post(`${this.API}/subscribe/addsub`, {name})
       .map(res => res.json())
-      .subscribe((data) => {
+      .subscribe(() => {
         this.getAllSub();
         console.log(name.value);
       })
   }
 
+  // Get all users from the API
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
