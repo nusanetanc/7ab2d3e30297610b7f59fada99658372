@@ -5,6 +5,6 @@ export class Information {
   public subject: String,
   public desc: String,
   public status: String,
-  public status: String,
+  public status: String
   ) {  }
 }
