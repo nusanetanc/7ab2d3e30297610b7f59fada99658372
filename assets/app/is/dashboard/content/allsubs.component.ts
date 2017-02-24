@@ -38,7 +38,7 @@ import { Sub } from './subs';
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-12" style="margin-top: 0px;">
+            <div class="col-lg-12">
                 <ul class="subscriber-list" *ngFor="#sub of subs">
                     <li>
                         <div class="row">
