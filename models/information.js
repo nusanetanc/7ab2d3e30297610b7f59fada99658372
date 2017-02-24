@@ -12,4 +12,4 @@ var InformationSchema   = new Schema({
 
 });
 
-module.exports = mongoose.model('Emp', EmployeeSchema);
+module.exports = mongoose.model('Information', InformationSchema);

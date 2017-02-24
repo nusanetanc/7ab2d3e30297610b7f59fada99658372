@@ -22,6 +22,7 @@ var type = require('./routes/type');
 var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
+var information = require('./routes/information');
 
 var app = express();
 
@@ -59,6 +60,7 @@ app.use('/type', type);
 app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
 app.use('/home', home);
+app.use('/information', information);
 
 
 // catch 404 and forward to error handler

@@ -1,0 +1,76 @@
+var express = require('express');
+var passwordHash = require('password-hash');
+var router = express.Router();
+var Information = require('../models/information');
+
+/* GET subloye listing. */
+router.get('/listinformation', function(req, res, next) {
+     Information.find(function(err, informations) {
+       console.log( informations );
+       res.json(informations);
+   });
+});
+
+/* GET detail sub. */
+router.get('/information/:id', function(req, res, next) {
+Information.findById(req.params.id, function(err, informations) {
+       console.log( informations );
+       res.json(informations);
+   });
+});
+
+/* Add sub */
+router.post('/addinformation', function(req, res, next) {
+  var information = new Information();
+    information.for= req.body.for;
+    information.date= req.body.date;
+    information.subject= req.body.subject;
+    information.desc= req.body.desc;
+    information.status= req.body.status;
+    information.usercreate= req.body.usercreate;
+    information.regisref= req.body.regisref;
+
+    information.save(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
+
+router.put('/putinformation/:id', function(req, res, next) {
+
+        Information.findById(req.params.id, function(err, information) {
+
+            if (err)
+                res.send(err);
+                information.for= req.body.for;
+                information.date= req.body.date;
+                information.subject= req.body.subject;
+                information.desc= req.body.desc;
+                information.status= req.body.status;
+                information.usercreate= req.body.usercreate;
+                information.regisref= req.body.regisref;
+              if (err)
+                res.send(err);
+
+            information.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
+router.delete('/delinformation/:id', function(req, res, next) {
+        Information.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
+module.exports = router;
