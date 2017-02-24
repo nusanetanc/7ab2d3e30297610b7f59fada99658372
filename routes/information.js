@@ -22,7 +22,7 @@ Information.findById(req.params.id, function(err, informations) {
 /* Add sub */
 router.post('/addinformation', function(req, res, next) {
   var information = new Information();
-    information.for= req.body.for;
+    information.to= req.body.to;
     information.date= req.body.date;
     information.subject= req.body.subject;
     information.desc= req.body.desc;
@@ -42,7 +42,7 @@ router.put('/putinformation/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                information.for= req.body.for;
+                information.to= req.body.to;
                 information.date= req.body.date;
                 information.subject= req.body.subject;
                 information.desc= req.body.desc;
