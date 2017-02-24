@@ -388,3 +388,75 @@ html, body {
 }
 
 /*----------------------- /New Subscribers Page--------------------------*/
+
+/*----- /Information Page -----*/
+
+/*------ Account Page ------*/
+
+.subInfo > .col-sm-12 > .row > .col-sm-12 > h4 {
+    color: #333;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.subInfo > .col-sm-12 > .row > .col-sm-12 > .row {
+    margin: 10px 0px 10px 0px;
+}
+
+.subInfo > div > div > div > div > div > p {
+    padding: 22px 0px 26px 0px;
+}
+
+.subInfo > div > div > div > div > .col-sm-2 {
+    margin-left: 20px;
+}
+
+.subInfo > div > div > div > div > div > .form-control {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+.subInfo > div > div > div > div > div > div > button {
+    float: left;
+}
+
+.subInfo > div > div > div > div > div > div > p {
+    float: left;
+    margin-left: 5px;
+}
+
+.subInfo > div > div > div > div > form {
+    margin-left: 35px;
+}
+
+.subInfo > div > div > div > div > a {
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    margin: 40px 0px 20px 35px;
+    padding: 12.5px 50px 12.5px 50px;
+}
+
+.subInfo > .col-sm-12 > .row > div > div > div  > input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+@media only screen  and (max-width: 767px) {
+    .subInfo > div > div > div > div > .col-sm-2 {
+        margin-left: 0px;
+    }
+}
