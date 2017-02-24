@@ -27,15 +27,18 @@ import { Sub } from './subs';
                 </div>
             </div>
             <div class="col-lg-12" style="margin: -7px 0 -12px 0;">
-                <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                <div class="dropdown" style="float: right;">
-                    <a class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Name
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">Date</a></li>
-                        <li><a href="#">ID</a></li>
-                    </ul>
+            <div class="row marginB20 marginR0">
+                <div class="col-sm-12">
+                  <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                  <div class="dropdown right">
+                      <a class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: #E2E2E2; border: none; border-radius: 0px; color: #676767; padding: 12.5px 40px 12.5px 40px; text-decoration: none;">
+                          DATE
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="#">NAME</a></li>
+                          <li><a href="#">ID</a></li>
+                      </ul>
+                  </div>
                 </div>
             </div>
             <div class="col-lg-12">
