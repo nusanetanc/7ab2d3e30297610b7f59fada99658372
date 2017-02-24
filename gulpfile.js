@@ -24,22 +24,18 @@ gulp.task('build-ts', function () {
         // .pipe(jsuglify())
         .pipe(concat('bundle.js'))
         .pipe(gulp.dest(appIsProd));
+
+        return gulp.src(appMyDev + '**/*.ts')
+            .pipe(sourcemaps.init())
+            .pipe(typescript(tsProject))
+            .pipe(sourcemaps.write())
+            // .pipe(jsuglify())
+            .pipe(concat('bundle.js'))
+            .pipe(gulp.dest(appMyProd));
 });
 gulp.task('watch', function () {
     gulp.watch(appIsDev + '**/*.ts', ['build-ts']);
-});
-
-gulp.task('build-ts', function () {
-    return gulp.src(appMyDev + '**/*.ts')
-        .pipe(sourcemaps.init())
-        .pipe(typescript(tsProject))
-        .pipe(sourcemaps.write())
-        // .pipe(jsuglify())
-        .pipe(concat('bundle.js'))
-        .pipe(gulp.dest(appMyProd));
-});
-gulp.task('watch', function () {
-    gulp.watch(appMyDev + '**/*.ts', ['build-ts']);
+      gulp.watch(appMyDev + '**/*.ts', ['build-ts']);
 });
 
 gulp.task('default', ['watch', 'build-ts']);
