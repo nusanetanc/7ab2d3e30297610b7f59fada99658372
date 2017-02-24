@@ -30,6 +30,9 @@ import {Http} from 'angular2/http';
                       <li style="margin-top: 10px;">
                         <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
+                      <li style="margin-top: 10px;">
+                        <a [routerLink]="['information']"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
+                      </li>
 
                       <li class="sidebar-footer">
                         <div>
