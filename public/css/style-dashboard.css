@@ -13,6 +13,19 @@ html, body {
 
 
 /*--- Sidebar ---*/
+
+.name {
+    margin-top: 20px;
+}
+
+.user {
+    margin-top: -20px;
+}
+
+.firstLiSidebar {
+    margin-top: 20px;
+}
+
 #sidebar-wrapper {
     background: #E3471C;
     height: 100%;
@@ -38,16 +51,12 @@ html, body {
     font-weight: normal;
     font-style: normal;
     font-size: 24px;  /* Preferred icon size */
-    display: inline-block;
     direction: ltr;
     line-height: 1;
-    margin-right: 15px;
-    margin-top: -4px;
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
     white-space: nowrap;
-    vertical-align: middle;
 
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
@@ -145,13 +154,19 @@ html, body {
     background-color: #CF4119;
 }
 
+.sidebar-nav > li > a > i {
+    margin-right: 15px;
+    margin-top: -4px;
+    vertical-align: middle;
+}
+
 .sidebar-nav > .sidebar-footer {
      bottom: 0px;
      position: fixed;
  }
 
 .sidebar-nav > .sidebar-footer > div {
-    border-top: 0.3px solid rgba(255, 255, 255, 0.4);
+    border-top: 0.3px solid white;
     height: 60px;
     width: 250px;
 }
@@ -160,7 +175,7 @@ html, body {
     float: left;
     height: 23.75px;
     margin-left: 25px;
-    margin-top: 19px;
+    margin-top: 20px;
     width: 76.5px;
 }
 
@@ -170,9 +185,10 @@ html, body {
     float: left;
     font-size: 12px;
     margin-left: -10px;
-    margin-top: 9px;
+    margin-top: 10px;
     text-decoration: none;
 }
+
 /*--- /Sidebar ---*/
 
 
@@ -209,13 +225,28 @@ html, body {
 }
 
 .page-content > .row > .col-lg-12 > div > a {
-    background-color:#E2E2E2;
+    background-color: #E2E2E2;
     border: none;
     border-radius: 0px;
     padding: 12.5px 30px 12.5px 30px;
 }
 
 /*--- /Content ---*/
+
+/*----- Dashboard Page -----*/
+
+.cardDashboardSub {
+    background-color: #FC592E;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .cardDashboardSub {
+        height: 250px;
+    }
+}
+/*----- /Dashboard Page -----*/
 
 /*----- All Subscribers Page -----*/
 /*--- Search ---*/
@@ -269,30 +300,6 @@ html, body {
     margin-left: -10px;
 }
 
-@media only screen and (max-width: 767px) {
-
-    .subscriber-list {
-        margin-top: 65px;
-    }
-
-    .subscriber-list > li {
-        background-color: #F0F0F0;
-    }
-
-    .subscriber-list > li > .row {
-        background-color: #FFFFFF;
-        margin-right: 0px;
-        padding: 25px 0px 25px 0px;
-    }
-
-    .subscriber-list > li > div > .list-activ > span{
-        margin: 0px;
-    }
-
-    .subscriber-list > li > div > .list-paid > span{
-        margin: 0px;
-    }
-}
 /*--- /Subscriber List ---*/
 
 /* enable absolute positioning */
@@ -315,56 +322,209 @@ html, body {
 /* add padding  */
 .right-addon input { padding-right: 30px; }
 /*--- /Search ---*/
-
-@media only screen and (max-width: 767px) {
-
-}
 /*----- /All Subscribers Page -----*/
 
-/*----- New Subscribers Page ------*/
-.col-md-6 >.row > .col-md-12 > form > div > input {
-    background-color: #f0f0f0;
+/*----- Billing Page -----*/
+.inset > .row > .col-lg-12 > .row > .col-md-6 > .col-md-12 {
+    background-color: #FFF;
+    color: #333;
+    height: 270px;
+}
+
+.inset > .row > .col-lg-12 > .row > .col-md-12 {
+    background-color: #FFF;
+    color: #333;
+}
+
+.inset > .row > .col-lg-12 > .row > .col-md-6 > .col-md-12 > .next {
+    background-color: #FC592E;
     border: none;
     border-radius: 0px;
-    font-size:14px;
-    height: 70px;
-    margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
-    width: 100%;
+    color: #FFF;
+    margin: 20px 0 0 25px;
+    padding: 12.5px 40px 12.5px 40px;
 }
 
-.col-md-6 > .row > .col-md-12 > form > div > p {
-    font-size: 12px;
+.contCard {
+    margin-bottom: 20px;
 }
 
-.col-md-6 > .row > .col-md-12 > form > div > div {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 0px;
-    font-size: 14px;
-    height: 70px;
-    margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
-    vertical-align: middle;
-    width: 100%;
+.contList {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.col-md-6 > .row > .col-md-12 > form > div > div > button {
+.contPage {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.inset > div > div > div > div > div > h4 {
+    padding: 40px 15px 15px 25px;
+}
+
+.inset > div > div > div > div > div > h4 > a {
+    color: #333;
+    text-decoration: none;
+}
+
+.inset > div > div > div > div > div > div > .col-sm-3 {
+    margin-bottom: 10px;
+    padding-left: 40px;
+}
+
+.inset > div > div > div > div > div > div > .col-sm-1 {
+    margin-bottom: 10px;
+}
+
+.inset > div > div > div > div > div > div > .col-sm-8 {
+    margin-bottom: 10px;
+}
+
+.inset > div > div > div > div > div > div > .col-sm-4 {
+    margin-bottom: 10px;
+    padding-left: 40px;
+}
+
+.inset > div > div > div > div > div > div > .col-sm-7 {
+    margin-bottom: 10px;
+}
+
+.invoiceId {
+    padding: 20px 0px 20px 35px;
+}
+
+.invoiceList {
+    padding: 20px 0px 20px 0px;
+}
+
+.invoiceIdHeader {
+    background-color: #FC592E;
+    color: #FFF;
+    height: 60px;
+    padding: 20px 0px 20px 35px;
+}
+
+.invoiceListHeader {
+    background-color: #FC592E;
+    height: 60px;
+    color: #FFF;
+    padding: 20px 0px 20px 0px;
+}
+
+.inset > div > div > .contPage > div {
+    margin: 0px;
+    padding: 0px;
+}
+
+.inset > div > div > .contPage > div > nav {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+.inset > div > div > .contPage > div > nav > ul > .prevBillPage {
+    background-color: #E2E2E2;
+    display: block;
     float: left;
+    height: 40px;
+    margin: 0 5px 0 5px;
+    padding: 7px 15px 10px 10px;
+    width: 40px;
 }
 
-.col-md-6 > .row > .col-md-12 > form > div > div > p {
+.inset > div > div > .contPage > div > nav > ul > .nextBillPage {
+    background-color: #E2E2E2;
+    display: block;
     float: left;
-    font-size: 14px;
-    margin-left: 5px;
+    height: 40px;
+    margin: 0 0px 0 5px;
+    padding: 7px 15px 10px 10px;
+    width: 40px;
 }
 
-.col-md-6 > .row > .col-md-12 > form {
+.inset > div > div > .contPage > div > nav > ul > li {
+    background-color: #E2E2E2;
+    display: block;
+    float: left;
+    height: 40px;
+    margin: 0 5px 0 5px;
+    padding: 10px 15px 10px 15px;
+    width: 40px;
+}
+
+.inset > div > div > .contPage > div > nav > ul > li > a {
+    color: #9B9B9B;
+    text-decoration: none;
+}
+
+.contList > div > div > .invoiceId {
+    background-color: #FFF;
+    color: #333;
+}
+
+@media only screen and (max-width: 767px) {
+    .inset > .row > .col-lg-12 > .row > .col-md-6 > .col-md-12 {
+        height: 400px;
+    }
+
+    .inset > .row > .col-lg-12 > .row > .col-md-6 > .col-md-12 > .row > .col-sm-7 {
+        padding-left: 40px;
+    }
+
+    .inset > .row > .col-lg-12 > .row > .col-md-6 > .col-md-12 > .row > .col-sm-8 {
+        padding-left: 40px;
+    }
+
+    .invoiceList {
+        margin-left: 35px;
+    }
+
+    .inset > div > div > div > div > div > .paddingL35 {
+        margin-left: 0px;
+    }
+
+    .inset > .row > .col-lg-12 > .row > .col-md-12 {
+        background-color: #F0F0F0;
+    }
+
+    .inset > .row > .col-lg-12 > .row > .col-md-12 > .row {
+        background-color: #FFF;
+        margin-bottom: 10px;
+    }
+}
+/*----- /Billing Page -----*/
+
+/*----- Billing Information Page ------*/
+
+.bildate {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .hid {
+        display: none;
+    }
+
+    .c1 {
+        height: 700px;
+    }
+
+    .bildate {
+        display: flex;
+    }
+}
+/*------ /Biling Information Page ------*/
+
+/*----- New Report Page -----*/
+.row > .col-sm-6 > .formNewReport > form {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
-.col-md-6 > .row > .col-md-12 > form > select {
+.row > .col-sm-6 > .formNewReport > form > select {
     background-color: #f0f0f0;
     border: 0px;
     font-size: 14px;
@@ -374,21 +534,39 @@ html, body {
     width: 100%;
 }
 
-.col-md-6 > .row > .col-md-12 > form > select > .option {
+.row > .col-sm-6 > .formNewReport > form > select > .option {
     height: 30px;
 }
 
-.col-md-6 > .row > .col-md-12 > .next {
+.formNewReport > a {
     background-color: #FC592E;
     border: none;
     border-radius: 0px;
     color: #FFF;
-    margin-top: 20px;
-    padding: 12.5px 40px 12.5px 40px;
+    float: right;
+    margin: 20px 0px 20px 0px;
+    padding: 12.5px 50px 12.5px 50px;
 }
 
-/*----------------------- /New Subscribers Page--------------------------*/
+@media only screen and (max-width: 767px) {
+    .alertNewReports {
+        display: none;
+    }
+}
+/*----- /New Report Page -----*/
 
+/*----- Information Page -----*/
+.subInfo {
+    background-color: #FFF;
+    margin: 0px 15px 0px 15px;
+    color: #333;
+}
+
+@media only screen and (max-width: 767px) {
+    .subInfo {
+      margin-bottom: 20px;
+    }
+}
 /*----- /Information Page -----*/
 
 /*------ Account Page ------*/
@@ -460,3 +638,208 @@ html, body {
         margin-left: 0px;
     }
 }
+/*----- /Account Page ------*/
+
+/*----- Billing Information ------*/
+.inset > div > div > .rowButton {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+
+.inset > div > div > div > div > .billInfoBack {
+    background-color: #E2E2E2;
+    border: none;
+    border-radius: 0px;
+    color: #676767;
+    padding: 12.5px 40px 12.5px 40px;
+    text-decoration: none;
+}
+
+.inset > div > div > div > div > .billInfoPrint {
+    background-color: #E2E2E2;
+    border: none;
+    border-radius: 0px;
+    color: #676767;
+    float: right;
+    padding: 12.5px 40px 12.5px 40px;
+    text-decoration: none;
+}
+
+.inset > div > div > .rowBillInfoContList {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.inset > div > div > div > div > .headerList {
+    margin-bottom: 30px;
+}
+
+.inset > div > div > div > div > div > .invoiceId {
+    background-color: #FC592E;
+    color: #FFF;
+    height: 60px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+.rowBillInfoContList > div > div > .col-sm-12 {
+    background-color: #FFF;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-sm-6 {
+    height: 200px;
+}
+
+.rowBillInfoContList > div > div > div > div > div > .rowBillInfoAddr {
+    margin-top: 90px;
+}
+
+.rowBillInfoContList > div > div > div > div > div > div > div > .row {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rowBillInfoContList > div > div > div > div > div > .rowBillinfoDate {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rowBillInfoContList > div > div > div > div > div > .rowBillinfoDate > .col-sm-12 {
+    background-color: #FC592E;
+    color: #FFF;
+}
+
+.rowBillInfoContList > div > div > div > div > div > .rowBillinfoDate > div > div {
+    padding: 15px 0px 15px 0px;
+}
+
+.rowBillInfoContList > div > div > div > div > div > .rowBillinfoDate > .billInfoDateList {
+    background-color: #F0F0F0;
+    color: #333;
+}
+
+.rowBillInfoContList > div > div > div > .rowBillInfoP1 {
+    padding: 20px 0px 20px 10px;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row > .col-sm-12 {
+    background-color: #FC592E;
+    color: #FFF;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row > div > div {
+    padding: 15px 10px 15px 10px;
+}
+
+.right {
+    float: right;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row > .listWhite {
+    background-color: #FFF;
+    color: #333;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row > .listGrey {
+    background-color: #E2E2E2;
+    color: #333;
+}
+
+.rowBillInfoContList > div > div > div > div > .col-md-12 > .row > .listGrey > div {
+    padding: 20px 10px 20px 10px;
+}
+
+.rowBillInfoContList > div > div > div > .rowBillInfoP2 {
+    padding: 20px 0px 20px 10px;
+}
+
+.rowBillInfoContList > div > div > div > .rowBillInfoP2 > div > ul {
+    list-style-type:none;
+    margin-left: 15px;
+    padding: 0px;
+}
+/*----- /Billing Information ------*/
+
+/*----- Index Subscriber ------*/
+.headerSubList {
+    background-color: #FC592E;
+    color: #FFF;
+    height: 60px;
+}
+
+
+/*----- Index Subscriber ------*/
+
+/*----- New Class ------*/
+.marginLR15 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.margin10White {
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.font100Margin30 {
+    font-size: 100px !important;
+    margin-top: 30px;
+}
+
+.marginTop40 {
+    margin-top: 40px;
+}
+
+.marginBL10White {
+    color: #FFF;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.marginB10White {
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+.paddingLR15Margin20 {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.paddingLR30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.paddingL35 {
+    padding-left: 35px;
+}
+
+.linkGrey {
+    color: #333;
+    text-decoration: none;
+}
+
+.linkViewAll {
+    color: #ACACAC;
+    text-decoration: none;
+}
+
+.marginB20 {
+    margin-bottom: 20px;
+}
+
+.marginR0 {
+    margin-right: 0px;
+}
+
+/*----- /New Class ------*/
