@@ -2,9 +2,10 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Information } from './informations';
 
 @Component({
-    selector: 'form-allsubs',
+    selector: 'form-allinformations',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
@@ -33,11 +34,11 @@ import 'rxjs/add/operator/map';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12" *ngFor="#information of informations">
                   <div class="row subInfo">
-                      <div class="col-sm-2 invoiceId" style="padding: 20px 0px 20px 35px;"><span>21 Jan 2017</span></div>
-                      <div class="col-sm-8 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Welcome to Groovy</span></div>
-                      <div class="col-sm-2 invoiceList" style="padding: 20px 0px 20px 0px;"><span></span></div>
+                      <div class="col-sm-2 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ sub.date }}</span></div>
+                      <div class="col-sm-8 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ sub.subject }}</span></div>
+                      <div class="col-sm-2 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ sub.status }}</span></div>
                   </div>
                 </div>
             </div>
@@ -47,5 +48,25 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  // Declare empty list of people
+  informations: any[] = [];
+
+  constructor(private http: Http) {}
+
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllInformation();
+  }
+
+// Get all users from the API
+getAllInformation() {
+  this.http.get(`${this.API}/information/listinformation`)
+    .map(res => res.json())
+    .subscribe(informations => {
+      this.informations = informations
+    })
+}
 }
