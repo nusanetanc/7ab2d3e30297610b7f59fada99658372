@@ -4,7 +4,6 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-//import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 
 @Component({
    selector: 'my-app',
@@ -12,7 +11,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
    <!-- START CONTENT -->
      <div id="wrapper">
     <dashboard></dashboard>
-    
+
   </div><!-- END CONTENT -->
 `,
     directives: [DashboardComponent,ROUTER_DIRECTIVES],
