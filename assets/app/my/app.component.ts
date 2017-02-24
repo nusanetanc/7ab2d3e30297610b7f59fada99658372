@@ -15,7 +15,7 @@ import {ContentDashboardComponent} from "./dashboard/content/dashboard.component
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentDashboardComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'}
