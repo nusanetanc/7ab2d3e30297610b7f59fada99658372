@@ -7,7 +7,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 
 @Component({
-   selector: 'is-app',
+   selector: 'my-app',
    template: `
    <!-- START CONTENT -->
      <div id="wrapper">
@@ -18,7 +18,7 @@ import {ContentDashboardComponent} from "./dashboard/content/dashboard.component
     directives: [DashboardComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is', component:ContentDashboardComponent, name:'Dashboard'}
+  { path: '/my', component:ContentDashboardComponent, name:'Dashboard'}
 ])
 
 export class AppComponent {
