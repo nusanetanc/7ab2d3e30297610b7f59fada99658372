@@ -173,11 +173,11 @@ export class ContentBillingComponent {
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.getAllbills();
+    this.getAllBills();
   }
 
 // Get all users from the API
-getAllInformation() {
+getAllBills() {
   this.http.get(`${this.API}/bill/listbill`)
     .map(res => res.json())
     .subscribe(bills => {
