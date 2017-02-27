@@ -12,8 +12,16 @@ router.get('/listbill', function(req, res, next) {
 });
 
 /* GET detail bill. */
-router.get('/bill/:id', function(req, res, next) {
+router.get('/idbill/:id', function(req, res, next) {
 Bill.findById(req.params.id, function(err, bills) {
+       console.log( bills );
+       res.json(bills);
+   });
+});
+
+/* GET detail bill one account. */
+router.get('/subbill/:sub', function(req, res, next) {
+Bill.findById(req.params.sub, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });

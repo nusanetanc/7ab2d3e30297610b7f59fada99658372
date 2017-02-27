@@ -167,6 +167,7 @@ import { Bill } from './bills';
 export class ContentBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
 
   bills: any[] = [];
 
@@ -178,7 +179,7 @@ export class ContentBillingComponent {
 
 // Get all users from the API
 getAllBills() {
-  this.http.get(`${this.API}/bill/listbill`)
+  this.http.get(`${this.API}/bill/subbill/${this.Session_ID}`)
     .map(res => res.json())
     .subscribe(bills => {
       this.bills = bills
