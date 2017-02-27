@@ -4,8 +4,6 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
-//import {AuthenticationComponent} from "./authentication/authentication.component";
-/import {ContentDashboardComponent} from "./dashboard/dashboard.component";
 
 @Component({
    selector: 'my-app',
