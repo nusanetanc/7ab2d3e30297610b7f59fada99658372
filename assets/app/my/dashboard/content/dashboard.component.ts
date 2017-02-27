@@ -42,7 +42,7 @@ import { Information } from './informations';
                                   </div>
                               </div>
                           </div>
-                          <div class="col-sm-4">
+                          <div class="col-sm-4" *ngFor="#sub of subs">
                               <div class="cardDashboardSub">
                                   <div class="row">
                                       <div class="col-sm-12 marginTop40">
@@ -54,7 +54,7 @@ import { Information } from './informations';
                                                   :
                                               </div>
                                               <div class="col-xs-6 col-sm-5">
-                                                  Level 4
+                                                  Level {{ sub.packlev}}
                                               </div>
                                           </div>
                                           <div class="row marginBL10White">
@@ -65,7 +65,7 @@ import { Information } from './informations';
                                                   :
                                               </div>
                                               <div class="col-xs-6 col-sm-5">
-                                                  Active
+                                                  {{ sub.status}}
                                               </div>
                                           </div>
                                           <div class="row marginBL10White">
@@ -100,7 +100,7 @@ import { Information } from './informations';
                       </div>
                       <div *ngFor="#information of informations">
                         <div class="row subInfo">
-                            <div class="col-sm-2 invoiceId"><span><a href="information-detail.html" class="grey333">{{ information.date }}</a></span></div>
+                            <div class="col-sm-2 invoiceId"><span><a class="grey333">{{ information.date }}</a></span></div>
                             <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">{{ information.subject }}</a></span></div>
                             <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                         </div>
@@ -120,6 +120,7 @@ import { Information } from './informations';
 export class ContentDashboardComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
 
   informations: any[] = [];
 
@@ -129,12 +130,19 @@ export class ContentDashboardComponent {
     this.getAllInformation();
   }
 
-// Get all users from the API
+// Get all information from the API
 getAllInformation() {
   this.http.get(`${this.API}/information/listinformation`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations
+    })
+}
+getAcountSubs() {
+  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
     })
 }
 }
