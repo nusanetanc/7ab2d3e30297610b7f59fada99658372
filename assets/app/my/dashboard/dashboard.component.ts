@@ -11,7 +11,7 @@ import {Http} from 'angular2/http';
                   <ul class="sidebar-nav nav">
                       <li class="sidebar-brand">
                           <div class="title">
-                              <img src="ava.png" alt="ava">
+                              <img src="./images/ava.png" alt="ava">
                               <a class="name" href="account.html"><strong>John Doe</strong></a>
                               <a class="user" href="account.html">Subscriber - Level 1</a>
                           </div>
