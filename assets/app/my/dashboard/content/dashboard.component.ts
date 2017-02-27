@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Information } from './informations';
 
 @Component({
     selector: 'form-dashboard',
@@ -95,20 +96,12 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                       <div class="row headerList paddingLR30">
                           <div class="col-sm-12 invoiceId hid headerSubList"><strong>INFORMATION</strong></div>
                       </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span><a href="information-detail.html" class="grey333">11 Feb 2017</a></span></div>
-                          <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">Fiber Optic Network Disruption</a></span></div>
-                          <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                          <div class="col-sm-8 invoiceList"><span>Network Server Maintenance</span></div>
-                          <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span>21 Jan 2017</span></div>
-                          <div class="col-sm-8 invoiceList"><span>Welcome to Groovy</span></div>
-                          <div class="col-sm-2 invoiceList"><span></span></div>
+                      <div *ngFor="#information of informations">
+                        <div class="row subInfo">
+                            <div class="col-sm-2 invoiceId"><span><a href="information-detail.html" class="grey333">{{ information.date }}</a></span></div>
+                            <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">{{ information.subject }}</a></span></div>
+                            <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
+                        </div>
                       </div>
                       <div class="row subInfo">
                           <div class="col-sm-12 invoiceId"><span><a href="information.html" class="linkViewAll"><b>View all informaiton</b></a></span></div>
@@ -123,5 +116,23 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  informations: any[] = [];
+
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAllInformation();
+  }
+
+// Get all users from the API
+getAllInformation() {
+  this.http.get(`${this.API}/information/listinformation`)
+    .map(res => res.json())
+    .subscribe(informations => {
+      this.informations = informations
+    })
+}
 }
