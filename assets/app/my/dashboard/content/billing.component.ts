@@ -167,7 +167,7 @@ import { Bill } from './bills';
 export class ContentBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = '58b3cdac45912d052e2c85a5';
+  Session_ID = '58b3f1ba54952b0a50ff865d';
 
   bills: any[] = [];
 
