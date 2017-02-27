@@ -16,7 +16,7 @@ var concat = require('gulp-concat');
 var tsProject = typescript.createProject('tsconfig.json');
 
 
-gulp.task('build-ts', function () {
+gulp.task('build-ts1', function () {
     return gulp.src(appIsDev + '**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(typescript(tsProject))
@@ -24,7 +24,9 @@ gulp.task('build-ts', function () {
         // .pipe(jsuglify())
         .pipe(concat('bundle.js'))
         .pipe(gulp.dest(appIsProd));
+});
 
+gulp.task('build-ts2', function () {
         return gulp.src(appMyDev + '**/*.ts')
             .pipe(sourcemaps.init())
             .pipe(typescript(tsProject))
