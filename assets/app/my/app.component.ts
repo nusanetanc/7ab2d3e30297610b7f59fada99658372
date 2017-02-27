@@ -19,7 +19,7 @@ import {ContentBillingComponent} from "./dashboard/content/billing.component";
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
-  { path: '/my/billing', component:ContentBillingComponent, name:'Dashboard'}
+  { path: '/my/billing', component:ContentBillingComponent, name:'Billing'}
 ])
 
 export class AppComponent {
