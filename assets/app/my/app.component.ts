@@ -5,6 +5,8 @@ import {Http} from 'angular2/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 import {ContentBillingComponent} from "./dashboard/content/billing.component";
+import {ContentReportComponent} from "./dashboard/content/report.component";
+import {ContentInformationComponent} from "./dashboard/content/information.component";
 
 @Component({
    selector: 'my-app',
@@ -15,11 +17,13 @@ import {ContentBillingComponent} from "./dashboard/content/billing.component";
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent,  ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent, ContentReportComponent, ContentInformationComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'}
+  { path: '/my/reports', component:ContentReportComponent, name:'Reports'}
+  { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 ])
 
 export class AppComponent {

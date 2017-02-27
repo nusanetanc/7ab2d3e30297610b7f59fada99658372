@@ -29,7 +29,7 @@ import { Sub } from './content/subs';
                           <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li>
-                          <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                          <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                       </li>
 
                       <li class="sidebar-footer">
