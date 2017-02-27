@@ -2,6 +2,7 @@ import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
+import 'rxjs/add/operator/map';
 import { Sub } from './content/subs';
 @Component({
     selector: 'dashboard',
@@ -13,8 +14,8 @@ import { Sub } from './content/subs';
                       <li class="sidebar-brand">
                           <div class="title">
                               <img src="./images/ava.png" alt="ava">
-                              <a class="name" href="account.html"><strong>{{ subs.name}}</strong></a>
-                              <a class="user" href="account.html">Subscriber - Level {{ subs.packlev}}</a>
+                              <a class="name" href="account.html"><strong>{{ subs.name }}</strong></a>
+                              <a class="user" href="account.html">Subscriber - Level {{ subs.packlev }}</a>
                           </div>
                       </li>
 
