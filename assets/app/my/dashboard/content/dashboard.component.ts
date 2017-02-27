@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-dashboard',
@@ -123,11 +124,12 @@ export class ContentDashboardComponent {
   Session_ID = '58b3cdac45912d052e2c85a5';
 
   informations: any[] = [];
-
+subs: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllInformation();
+    this.getAcountSub();
   }
 
 // Get all information from the API
@@ -138,7 +140,7 @@ getAllInformation() {
       this.informations = informations
     })
 }
-getAcountSubs() {
+getAcountSub() {
   this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
     .map(res => res.json())
     .subscribe(subs => {
