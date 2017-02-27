@@ -843,3 +843,70 @@ html, body {
 }
 
 /*----- /New Class ------*/
+/*----- New Subscribers Page ------*/
+.col-md-6 >.row > .col-md-12 > form > div > input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > p {
+    font-size: 12px;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div > button {
+    float: left;
+}
+
+.col-md-6 > .row > .col-md-12 > form > div > div > p {
+    float: left;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.col-md-6 > .row > .col-md-12 > form {
+    margin: 0;
+    padding: 0;
+}
+
+.col-md-6 > .row > .col-md-12 > form > select {
+    background-color: #f0f0f0;
+    border: 0px;
+    font-size: 14px;
+    height: 70px;
+    margin: 0;
+    padding: 22px 0px 26px 5px;
+    width: 100%;
+}
+
+.col-md-6 > .row > .col-md-12 > form > select > .option {
+    height: 30px;
+}
+
+.col-md-6 > .row > .col-md-12 > .next {
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    margin-top: 20px;
+    padding: 12.5px 40px 12.5px 40px;
+}
+
+/*----------------------- /New Subscribers Page--------------------------*/
