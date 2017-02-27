@@ -5,123 +5,167 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-      <div id="page-content-wrapper">
-          <div class="content-header">
-              <h3 id="home">
-                  <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                  </a>
-                  &nbsp; Dashboard
-              </h3>
+    <div id="page-content-wrapper">
+        <div class="content-header">
+            <h3 id="home">
+                <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                </a>
+                &nbsp; Billing
+            </h3>
 
-          </div>
+        </div>
 
-          <div class="page-content inset" data-spy="scroll" data-target="#spy">
-              <div class="row">
-                  <div class="col-sm-12">
-                      <div class="row marginLR15">
-                          <div class="col-sm-4">
-                              <div class="cardDashboardSub">
-                                  <div class="row margin10White">
-                                      <div class="col-sm-12 text-center">
-                                          <i class="material-icons font100Margin30">announcement</i>
-                                          <h4>REPORT PROBLEM</h4>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="cardDashboardSub">
-                                  <div class="row margin10White">
-                                      <div class="col-sm-12 text-center">
-                                          <i class="material-icons font100Margin30">credit_card</i>
-                                          <h4>BILLING</h4>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="col-sm-4">
-                              <div class="cardDashboardSub">
-                                  <div class="row">
-                                      <div class="col-sm-12 marginTop40">
-                                          <div class="row marginBL10White">
-                                              <div class="col-xs-6 col-sm-5">
-                                                  Current Plan
-                                              </div>
-                                              <div class="col-xs-6 col-sm-1">
-                                                  :
-                                              </div>
-                                              <div class="col-xs-6 col-sm-5">
-                                                  Level 4
-                                              </div>
-                                          </div>
-                                          <div class="row marginBL10White">
-                                              <div class="col-xs-6 col-sm-5">
-                                                  Account Status
-                                              </div>
-                                              <div class="col-xs-6 col-sm-1">
-                                                  :
-                                              </div>
-                                              <div class="col-xs-6 col-sm-5">
-                                                  Active
-                                              </div>
-                                          </div>
-                                          <div class="row marginBL10White">
-                                              <div class="col-xs-6 col-sm-5">
-                                                  Next Billing Date
-                                              </div>
-                                              <div class="col-xs-6 col-sm-1">
-                                                  :
-                                              </div>
-                                              <div class="col-xs-6 col-sm-5">
-                                                  March, 12 2017
-                                              </div>
-                                          </div>
-                                          <div class="row marginB10White">
-                                              <div class="col-sm-12">
-                                                  <h4 class="text-center">SUBSCRIPTION PLAN</h4>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+        <div class="page-content inset" data-spy="scroll" data-target="#spy">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Content Card -->
+                    <div class="row contCard">
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <h4>SUBSCRIBBER PLAN</h4>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-4">
+                                        Current Plan
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-7">
+                                        Level 4 (Internet & TV)
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-4">
+                                        Account Status
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-7">
+                                        <span style="color: #92C889;">Active</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-4">
+                                        Next Billing Date
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-7">
+                                        March, 12 2017
+                                    </div>
+                                </div>
+                                <a href="#" class="next btn btn-default">
+                                    REGISTER
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <h4><a href="billing-information.html">BILLING INFO</a></h4>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-3">
+                                        Fullname
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-8">
+                                        Jhon Doe
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-3">
+                                        Email
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-8">
+                                        jhondoe@gmail.com
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-3">
+                                        Address
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        :
+                                    </div>
+                                    <div class="col-xs-6 col-sm-8">
+                                        Jln. Nusantara Block E, Grogol, Jakarta, Indonesia
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Content Card -->
 
-              <!-- Content List -->
-              <div class="row paddingLR15Margin20">
-                  <div class="col-sm-12">
-                      <div class="row headerList paddingLR30">
-                          <div class="col-sm-12 invoiceId hid headerSubList"><strong>INFORMATION</strong></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span><a href="information-detail.html" class="grey333">11 Feb 2017</a></span></div>
-                          <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">Fiber Optic Network Disruption</a></span></div>
-                          <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                          <div class="col-sm-8 invoiceList"><span>Network Server Maintenance</span></div>
-                          <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-2 invoiceId"><span>21 Jan 2017</span></div>
-                          <div class="col-sm-8 invoiceList"><span>Welcome to Groovy</span></div>
-                          <div class="col-sm-2 invoiceList"><span></span></div>
-                      </div>
-                      <div class="row subInfo">
-                          <div class="col-sm-12 invoiceId"><span><a href="information.html" class="linkViewAll"><b>View all informaiton</b></a></span></div>
-                      </div>
-                  </div>
-              </div>
-              <!-- /Content List -->
+                    <!-- Content List -->
+                    <div class="row contList">
+                        <div class="col-md-12">
+                            <div class="row hid">
+                                <div class="col-sm-2 invoiceIdHeader"><strong>Invoice ID</strong></div>
+                                <div class="col-sm-4 invoiceListHeader"><strong>Description</strong></div>
+                                <div class="col-sm-2 invoiceListHeader"><strong>Invoice Date</strong></div>
+                                <div class="col-sm-2 invoiceListHeader"><strong>Total</strong></div>
+                                <div class="col-sm-2 invoiceListHeader"><strong>Status</strong></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 invoiceList paddingL35"><span>0123456789</span></div>
+                                <div class="col-sm-4 invoiceList"><span>Level 4 (Internet & TV)</span></div>
+                                <div class="col-sm-2 invoiceList"><span>17 Feb 2017</span></div>
+                                <div class="col-sm-2 invoiceList"><span>Rp. 540.123</span></div>
+                                <div class="col-sm-2 invoiceList"><span class="red">Waiting For Payment</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 invoiceList paddingL35"><span>1230896782</span></div>
+                                <div class="col-sm-4 invoiceList"><span>Level 4 (Internet & TV)</span></div>
+                                <div class="col-sm-2 invoiceList"><span>17 Feb 2017</span></div>
+                                <div class="col-sm-2 invoiceList"><span>Rp. 540.123</span></div>
+                                <div class="col-sm-2 invoiceList"><span class="green">Paid</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Content List -->
 
-          </div>
-      </div>
+                    <!-- Paging -->
+                    <div class="row contPage">
+                        <div class="col-sm-12">
+                            <nav aria-label="Page navigation">
+                                <ul>
+                                    <li class="prevBillPage">
+                                        <a href="billing-detail.html" aria-label="Previous">
+                                            <i class="material-icons">chevron_left</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="billing-detail.html">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="billing-detail.html">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="billing-detail.html">3</a>
+                                    </li>
+                                    <li class="nextBillPage">
+                                        <a href="billing-detail.html" aria-label="Next">
+                                            <i class="material-icons">chevron_right</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /Paging -->
+                </div>
+            </div>
+        </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDashboardComponent {
+export class ContentBillingComponent {
 
 }

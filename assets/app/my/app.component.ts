@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
+import {ContentBillingComponent} from "./dashboard/content/billing.component";
 
 @Component({
    selector: 'my-app',
@@ -14,10 +15,11 @@ import {ContentDashboardComponent} from "./dashboard/content/dashboard.component
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentDashboardComponent,  ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent,  ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/my', component:ContentDashboardComponent, name:'Dashboard'}
+  { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
+  { path: '/my/billing', component:ContentBillingComponent, name:'Dashboard'}
 ])
 
 export class AppComponent {
