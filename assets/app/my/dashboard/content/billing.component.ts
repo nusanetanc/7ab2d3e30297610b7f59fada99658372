@@ -1,5 +1,8 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Http } from 'angular2/http';
+import 'rxjs/add/operator/map';
+import { Bill } from './bills';
 
 @Component({
     selector: 'form-dashboard',
@@ -112,19 +115,14 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                 <div class="col-sm-2 invoiceListHeader"><strong>Total</strong></div>
                                 <div class="col-sm-2 invoiceListHeader"><strong>Status</strong></div>
                             </div>
+                            <div *ngFor="#bill of bills">
                             <div class="row">
-                                <div class="col-sm-2 invoiceList paddingL35"><span>0123456789</span></div>
-                                <div class="col-sm-4 invoiceList"><span>Level 4 (Internet & TV)</span></div>
-                                <div class="col-sm-2 invoiceList"><span>17 Feb 2017</span></div>
-                                <div class="col-sm-2 invoiceList"><span>Rp. 540.123</span></div>
+                                <div class="col-sm-2 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
+                                <div class="col-sm-4 invoiceList"><span>Payment Februari 2017</span></div>
+                                <div class="col-sm-2 invoiceList"><span>{{ bill.billdate }}</span></div>
+                                <div class="col-sm-2 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
                                 <div class="col-sm-2 invoiceList"><span class="red">Waiting For Payment</span></div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-2 invoiceList paddingL35"><span>1230896782</span></div>
-                                <div class="col-sm-4 invoiceList"><span>Level 4 (Internet & TV)</span></div>
-                                <div class="col-sm-2 invoiceList"><span>17 Feb 2017</span></div>
-                                <div class="col-sm-2 invoiceList"><span>Rp. 540.123</span></div>
-                                <div class="col-sm-2 invoiceList"><span class="green">Paid</span></div>
                             </div>
                         </div>
                     </div>
@@ -167,5 +165,23 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentBillingComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  bills: any[] = [];
+
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAllbills();
+  }
+
+// Get all users from the API
+getAllInformation() {
+  this.http.get(`${this.API}/bill/listbill`)
+    .map(res => res.json())
+    .subscribe(bills => {
+      this.bills = bills
+    })
+}
 }
