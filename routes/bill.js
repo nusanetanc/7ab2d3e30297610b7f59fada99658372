@@ -21,7 +21,7 @@ Bill.findById(req.params.id, function(err, bills) {
 
 /* GET detail bill one account. */
 router.get('/subbill/:sub', function(req, res, next) {
-Bill.findBysub(req.params.sub, function(err, bills) {
+Bill.findSub(req.params.sub, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
