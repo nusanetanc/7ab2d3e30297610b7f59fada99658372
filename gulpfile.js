@@ -34,8 +34,9 @@ gulp.task('build-ts', function () {
             .pipe(gulp.dest(appMyProd));
 });
 gulp.task('watch', function () {
-    gulp.watch(appIsDev + '**/*.ts', ['build-ts']);
-      gulp.watch(appMyDev + '**/*.ts', ['build-ts']);
+    gulp.watch(appIsDev + '**/*.ts', ['build-ts1']);
+      gulp.watch(appMyDev + '**/*.ts', ['build-ts2']);
 });
 
-gulp.task('default', ['watch', 'build-ts']);
+gulp.task('default', ['watch', 'build-ts1']);
+gulp.task('default', ['watch', 'build-ts2']);
