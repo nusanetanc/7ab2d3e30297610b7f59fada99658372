@@ -43,7 +43,7 @@ import { Sub } from './subs';
                                   </div>
                               </div>
                           </div>
-                          <div class="col-sm-4" *ngFor="#sub of subs">
+                          <div class="col-sm-4">
                               <div class="cardDashboardSub">
                                   <div class="row">
                                       <div class="col-sm-12 marginTop40">
@@ -55,7 +55,7 @@ import { Sub } from './subs';
                                                   :
                                               </div>
                                               <div class="col-xs-6 col-sm-5">
-                                                  Level {{ sub.packlev}}
+                                                  Level {{ subs.packlev}}
                                               </div>
                                           </div>
                                           <div class="row marginBL10White">
@@ -66,7 +66,7 @@ import { Sub } from './subs';
                                                   :
                                               </div>
                                               <div class="col-xs-6 col-sm-5">
-                                                  {{ sub.status}}
+                                                  {{ subs.status}}
                                               </div>
                                           </div>
                                           <div class="row marginBL10White">
