@@ -30,6 +30,7 @@ import {ContentNewReportComponent} from "./dashboard/content/newreport.component
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
+  { path: '/my/newreport', component:ContentNewReportComponent, name:'newreport'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 ])
 
