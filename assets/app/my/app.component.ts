@@ -7,7 +7,7 @@ import {ContentDashboardComponent} from "./dashboard/content/dashboard.component
 import {ContentBillingComponent} from "./dashboard/content/billing.component";
 import {ContentReportComponent} from "./dashboard/content/report.component";
 import {ContentInformationComponent} from "./dashboard/content/information.component";
-//import {ContentNewReportComponent} from "./dashboard/content/newreport.component";
+import {ContentNewReportComponent} from "./dashboard/content/newreport.component";
 
 @Component({
    selector: 'my-app',
@@ -18,7 +18,13 @@ import {ContentInformationComponent} from "./dashboard/content/information.compo
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent, ContentReportComponent, ContentInformationComponent,ROUTER_DIRECTIVES],
+    directives: [DashboardComponent,
+                  ContentDashboardComponent,
+                  ContentBillingComponent,
+                  ContentReportComponent,
+                  ContentInformationComponent,
+                  ContentNewReportComponent,
+                  ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
