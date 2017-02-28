@@ -12,11 +12,13 @@ import { Sub } from './content/subs';
               <nav id="spy">
                   <ul class="sidebar-nav nav">
                       <li class="sidebar-brand">
+                        <a [routerLink]="['Account']" >
                           <div class="title">
                               <img src="./images/ava.png" alt="ava">
-                              <a class="name" href="account.html"><strong>{{ subs.name }}</strong></a>
-                              <a class="user" href="account.html">Subscriber - Level {{ subs.packlev }}</a>
+                              <a class="name"><strong>{{ subs.name }}</strong></a>
+                              <a class="user">Subscriber - Level {{ subs.packlev }}</a>
                           </div>
+                          </a>
                       </li>
 
                       <li>

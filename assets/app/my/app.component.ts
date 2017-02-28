@@ -11,6 +11,7 @@ import {ContentNewReportComponent} from "./dashboard/content/newreport.component
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
+import {ContentAccountComponent} from "./dashboard/content/account.component";
 
 @Component({
    selector: 'my-app',
@@ -30,6 +31,7 @@ import {ContentDetailReportComponent} from "./dashboard/content/detailreport.com
                   ContentDetailBillingComponent,
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
+                  ContentAccountComponent,
                   ROUTER_DIRECTIVES],
 })
 @RouteConfig([
@@ -40,6 +42,7 @@ import {ContentDetailReportComponent} from "./dashboard/content/detailreport.com
   { path: '/my/detailbilling', component:ContentDetailBillingComponent, name:'Detailbilling'},
   { path: '/my/detailinformation', component:ContentDetailInformationComponent, name:'Detailinformation'},
   { path: '/my/detailreport', component:ContentDetailReportComponent, name:'Detailreport'},
+  { path: '/my/account', component:ContentAccountComponent, name:'Account'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 ])
 
