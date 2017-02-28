@@ -36,7 +36,7 @@ import { Sub } from './subs';
                           </a>
                           </div>
                           <div class="col-sm-4">
-                          <a [routerLink]="['Billing']">
+                          <a [routerLink]="['Report']">
                               <div class="cardDashboardSub">
                                   <div class="row margin10White">
                                       <div class="col-sm-12 text-center">
@@ -45,7 +45,7 @@ import { Sub } from './subs';
                                       </div>
                                   </div>
                               </div>
-                              </a>
+                          </a>
                           </div>
                           <div class="col-sm-4">
                               <div class="cardDashboardSub">
