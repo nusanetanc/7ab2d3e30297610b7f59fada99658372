@@ -24,6 +24,7 @@ import { Sub } from './subs';
                   <div class="col-sm-12">
                       <div class="row marginLR15">
                           <div class="col-sm-4">
+                          <a [routerLink]="['Dashboard']">
                               <div class="cardDashboardSub">
                                   <div class="row margin10White">
                                       <div class="col-sm-12 text-center">
@@ -32,6 +33,7 @@ import { Sub } from './subs';
                                       </div>
                                   </div>
                               </div>
+                          </a>
                           </div>
                           <div class="col-sm-4">
                               <div class="cardDashboardSub">
