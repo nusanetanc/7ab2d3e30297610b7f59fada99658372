@@ -21,7 +21,7 @@ import { Complaint } from './complaints';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a href="newreports.html" class="btn btn-default buttonOrange">
+                    <a [routerLink]="['newreport']" class="btn btn-default buttonOrange">
                         NEW REPORT
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
