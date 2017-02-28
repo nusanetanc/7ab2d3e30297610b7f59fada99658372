@@ -34,7 +34,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        
+                                        {{ subs.level }}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -45,7 +45,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        <span style="color: #92C889;">Active</span>
+                                        <span style="color: #92C889;">{{ subs.status }}</span>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -60,7 +60,7 @@ import { Bill } from './bills';
                                     </div>
                                 </div>
                                 <a href="#" class="next btn btn-default">
-                                    REGISTER
+                                    UPGRADE
                                 </a>
                             </div>
                         </div>
@@ -86,7 +86,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-8">
-                                        jhondoe@gmail.com
+                                        {{ subs.email }}
                                     </div>
                                 </div>
                                 <div class="row">
