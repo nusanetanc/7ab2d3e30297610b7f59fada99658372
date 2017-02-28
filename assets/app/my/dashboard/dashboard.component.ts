@@ -34,7 +34,7 @@ import { Sub } from './content/subs';
 
                       <li class="sidebar-footer">
                           <div>
-                              <img src="groovy-grayscale.png" alt="ava">
+                              <img src="./images/groovy-grayscale.png" alt="ava">
                               <a href="">Privacy</a>
                               <a href="">Terms</a>
                           </div>
