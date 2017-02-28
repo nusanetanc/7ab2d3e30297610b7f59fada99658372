@@ -34,7 +34,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        Level 4 (Internet & TV)
+                                        
                                     </div>
                                 </div>
                                 <div class="row">

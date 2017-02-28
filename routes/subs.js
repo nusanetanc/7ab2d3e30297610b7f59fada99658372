@@ -49,9 +49,7 @@ router.put('/putsub/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                var Random = String(randomInt(10000, 99999));
-                var checkdigit = damm.append(Random);
-                sub.subid = "GR"+checkdigit;
+                sub.subid= req.body.subid;
                 sub.name= req.body.name;
                 sub.email= req.body.email;
                 sub.password= passwordHash.generate(req.body.password);
