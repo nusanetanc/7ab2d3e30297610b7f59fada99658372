@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Information
+                &nbsp; Report
             </h3>
 
         </div>
