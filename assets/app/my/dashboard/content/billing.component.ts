@@ -167,7 +167,7 @@ import { Bill } from './bills';
 export class ContentBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = '58b3f1ba54952b0a50ff865d';
+  Session_ID = '58b3cdac45912d052e2c85a5';
 
   bills: any[] = [];
 
@@ -183,6 +183,21 @@ getAllBills() {
     .map(res => res.json())
     .subscribe(bills => {
       this.bills = bills
+    })
+}
+
+subs: any[] = [];
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAcountSub();
+  }
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
     })
 }
 }
