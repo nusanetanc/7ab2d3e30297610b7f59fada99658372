@@ -50,4 +50,23 @@ import { Sub } from './content/subs';
 
 export class DashboardComponent {
 
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
+
+subs: any[] = [];
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAcountSub();
+  }
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
+}
+
 }
