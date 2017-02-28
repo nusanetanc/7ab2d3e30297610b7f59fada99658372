@@ -35,6 +35,7 @@ router.post('/addsub', function(req, res, next) {
     sub.status= req.body.status;
     sub.regisby= req.body.regisby;
     sub.regisref= req.body.regisref;
+    sub.groovyid= req.body.groovyid;
 
     sub.save(function(err) {
       if (err)
@@ -57,6 +58,7 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.cardid= req.body.cardid;
                 sub.nova= req.body.nova;
                 sub.status= req.body.status;
+                sub.groovyid= req.body.groovyid;
               if (err)
                 res.send(err);
 

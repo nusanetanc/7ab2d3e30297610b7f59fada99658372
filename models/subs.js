@@ -3,7 +3,7 @@ var Schema       = mongoose.Schema;
 
 var SubSchema   = new Schema({
     subid: String,
-    groovyid: String,
+    groovyid: {type: Schema.Types.ObjectId, ref: 'Home'},
     name: String,
     nohp: String,
     email: String,
