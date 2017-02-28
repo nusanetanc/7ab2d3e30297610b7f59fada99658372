@@ -4,7 +4,7 @@ var Menu = require('../models/menu');
 
 /* GET menu listing. */
 router.get('/listmenu', function(req, res, next) {
-    City.find(function(err, menus) {
+    Menu.find(function(err, menus) {
         console.log( menus );
         res.json(menus);
     });
@@ -12,13 +12,13 @@ router.get('/listmenu', function(req, res, next) {
 
 /* GET detail menu. */
 router.get('/menu/:id', function(req, res, next) {
-    City.findById(req.params.id, function(err, menus) {
+    Menu.findById(req.params.id, function(err, menus) {
         console.log( menus );
         res.json(menus);
     });
 });
 
-/* Add city */
+/* Add Menu */
 router.post('/addmenu', function(req, res, next) {
     var menu = new Menu();
     menu.title= req.body.title;
