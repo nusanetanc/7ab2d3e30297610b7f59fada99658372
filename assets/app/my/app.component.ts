@@ -18,7 +18,7 @@ import {ContentNewReportComponent} from "./dashboard/content/newreport.component
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent, ContentReportComponent, ContentInformationComponent, ContentNewReportComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentDashboardComponent, ContentBillingComponent, ContentReportComponent, ContentInformationComponent,ContentNewReportComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
