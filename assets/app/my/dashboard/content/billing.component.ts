@@ -170,11 +170,13 @@ export class ContentBillingComponent {
   Session_ID = '58b3cdac45912d052e2c85a5';
 
   bills: any[] = [];
+  subs: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllBills();
+    this.getAcountSub();
   }
 
 // Get all users from the API
@@ -185,19 +187,11 @@ getAllBills() {
       this.bills = bills
     })
 }
-
-subs: any[] = [];
-  constructor(private http: Http) {}
-
-  ngOnInit() {
-    this.getAcountSub();
+  getAcountSub() {
+    this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+      })
   }
-
-getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
 }
