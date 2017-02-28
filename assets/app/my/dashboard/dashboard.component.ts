@@ -19,7 +19,7 @@ import { Sub } from './content/subs';
                           </div>
                       </li>
 
-                      <li class="active firstLiSidebar">
+                      <li>
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                       </li>
                       <li>
