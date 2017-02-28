@@ -21,8 +21,7 @@ Complaint.findById(req.params.id, function(err, complaints) {
 /* Add complaint */
 router.post('/addcomplaint', function(req, res, next) {
   var complaint = new Complaint();
-
-    complaint.idcomplaint= req.body.idcomplaint;
+    bill.sub= req.body.sub;
     complaint.subject= req.body.subject;
     complaint.category= req.body.category;
     complaint.dateopen= req.body.dateopen;
@@ -44,7 +43,6 @@ router.put('/putcomplaint/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                complaint.idcomplaint= req.body.idcomplaint;
                 complaint.subject= req.body.subject;
                 complaint.category= req.body.category;
                 complaint.dateopen= req.body.dateopen;

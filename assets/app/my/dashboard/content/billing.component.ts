@@ -75,7 +75,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-8">
-                                        Jhon Doe
+                                        {{ subs.name }}
                                     </div>
                                 </div>
                                 <div class="row">

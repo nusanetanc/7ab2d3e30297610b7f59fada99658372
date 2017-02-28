@@ -2,13 +2,13 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var ComplaintSchema   = new Schema({
-  idcompalint: Number,
   subject: String,
   category: String,
   dateopen: Date,
   dateclose: Date,
   status: String,
-  lastchat: [String]
+  lastchat: [String],
+  sub: {type: Schema.Types.ObjectId, ref: 'Sub'}
 });
 
 module.exports = mongoose.model('Complaint', ComplaintSchema);
