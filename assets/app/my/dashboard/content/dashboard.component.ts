@@ -104,16 +104,14 @@ import { Sub } from './subs';
                           <div class="col-sm-12 invoiceId hid headerSubList"><strong>INFORMATION</strong></div>
                       </div>
                       <div *ngFor="#information of informations">
-                      <a [routerLink]="['Informationdetail']">
                         <div class="row subInfo">
-                            <div class="col-sm-2 invoiceId"><span class="grey333">{{ information.date }}</span></div>
-                            <div class="col-sm-8 invoiceList"><span class="grey333">{{ information.subject }}</span></div>
+                            <div class="col-sm-2 invoiceId"><span><a class="grey333">{{ information.date }}</a></span></div>
+                            <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">{{ information.subject }}</a></span></div>
                             <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                         </div>
-                      </a>
                       </div>
                       <div class="row subInfo">
-                          <div class="col-sm-12 invoiceId"><span><a [routerLink]="['Information']" class="linkViewAll"><b>View all informaiton</b></a></span></div>
+                          <div class="col-sm-12 invoiceId"><span><a href="information.html" class="linkViewAll"><b>View all informaiton</b></a></span></div>
                       </div>
                   </div>
               </div>
