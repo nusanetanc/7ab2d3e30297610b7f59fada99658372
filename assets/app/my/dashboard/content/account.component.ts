@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Sub } from './content/subs';
 
 @Component({
     selector: 'form-account',
@@ -34,7 +35,7 @@ import 'rxjs/add/operator/map';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <p>Jhon Doe</p>
+                                    <p>{{ subs.name }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -45,7 +46,7 @@ import 'rxjs/add/operator/map';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="jhondoe@gmail.com">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="{{ subs.email }}">
                                 </div>
                             </div>
                             <div class="row">
@@ -56,7 +57,7 @@ import 'rxjs/add/operator/map';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone" value="+62 812 1234 2222">
+                                    <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone" value="{{ subs.phone }}">
                                 </div>
                             </div>
                             <div class="row">
@@ -113,4 +114,22 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAccountComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
+
+subs: any[] = [];
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAcountSub();
+  }
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
+}
 }
