@@ -234,7 +234,7 @@ import { Bill } from './bills';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentBillingComponent {
+export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';

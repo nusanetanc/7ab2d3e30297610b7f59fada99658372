@@ -116,6 +116,7 @@ import { Bill } from './bills';
                                 <div class="col-sm-2 invoiceListHeader"><strong>Status</strong></div>
                             </div>
                             <div *ngFor="#bill of bills">
+                            <a [routerLink]="['Detailbilling']">
                             <div class="row">
                                 <div class="col-sm-2 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
                                 <div class="col-sm-4 invoiceList"><span>Payment Februari 2017</span></div>
@@ -123,6 +124,7 @@ import { Bill } from './bills';
                                 <div class="col-sm-2 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
                                 <div class="col-sm-2 invoiceList"><span class="red">Waiting For Payment</span></div>
                             </div>
+                            </a>
                             </div>
                         </div>
                     </div>
