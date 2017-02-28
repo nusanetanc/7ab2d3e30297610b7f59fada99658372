@@ -21,8 +21,8 @@ import {ContentInformationComponent} from "./dashboard/content/information.compo
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
-  { path: '/my/billing', component:ContentBillingComponent, name:'Billing'}
-  { path: '/my/reports', component:ContentReportComponent, name:'Reports'}
+  { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
+  { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 ])
 
