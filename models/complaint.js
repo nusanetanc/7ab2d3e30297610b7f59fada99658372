@@ -1,5 +1,6 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
+var Sub = require('../models/subs');
 
 var ComplaintSchema   = new Schema({
   subject: String,
