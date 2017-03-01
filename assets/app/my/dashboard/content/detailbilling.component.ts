@@ -95,7 +95,7 @@ import { Bill } from './bills';
                                                    </div>
                                                    <div class="col-sm-4">
                                                        <span class="bildate"><b>Billing Number</b></span><br>
-                                                       <span>1234567890</span>
+                                                       <span>{{ bills.noinvoice }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -238,6 +238,7 @@ export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';
+  Billing_ID = '589d3b8f3b4dc715dcc29104';
 
   bills: any[] = [];
   subs: any[] = [];
@@ -251,7 +252,7 @@ export class ContentDetailBillingComponent {
 
 // Get all users from the API
 getAllBills() {
-  this.http.get(`${this.API}/bill/listbill`)
+  this.http.get(`${this.API}/bill/idbill/${this.Billing_ID}`)
     .map(res => res.json())
     .subscribe(bills => {
       this.bills = bills
