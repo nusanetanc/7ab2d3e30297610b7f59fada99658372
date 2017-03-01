@@ -3,7 +3,7 @@ export class Sub {
   public subid: String,
   public groovyid: String,
   public name: String,
-  public nohp: String,
+  public phone: Number,
   public email: String,
   public dateinst: Date,
   public timeinst: Date,
