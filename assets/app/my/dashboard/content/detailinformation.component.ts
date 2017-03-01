@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
-import { Emp } from './emps';
+import { Emp } from './emp';
 @Component({
     selector: 'form-dashboard',
     template: `
@@ -51,7 +51,7 @@ export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Information_ID = '58afac48129a7b7bfcddb735';
-  Information_Emp = '589d3dd43b4dc715dcc29106';
+  Information_Emp = '58b6a0d77dfd7052a9fe53c9';
 
 informations: any[] = [];
 emps: any[] = [];
