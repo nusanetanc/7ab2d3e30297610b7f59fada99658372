@@ -32,7 +32,7 @@ import 'rxjs/add/operator/map';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>11 Feb 2017 - 11.00 PM</b> by <b>{{ informations.usercreate }}</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>11 Feb 2017 - 11.00 PM</b> by <b>{{ emps.name }} ({{ emps.titlejob }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
@@ -50,12 +50,15 @@ export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Information_ID = '58afac48129a7b7bfcddb735';
+  Information_Emp = informations.usercreate;
 
 informations: any[] = [];
+emps: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getDetailInformation();
+    this.getUserCreate();
   }
 
 getDetailInformation() {
@@ -65,4 +68,13 @@ getDetailInformation() {
       this.informations = informations
     })
 }
+
+getUserCreate() {
+  this.http.get(`${this.API}/emp/emp/${this.Information_Emp}`)
+    .map(res => res.json())
+    .subscribe(emps => {
+      this.emps = emps
+    })
+}
+
 }
