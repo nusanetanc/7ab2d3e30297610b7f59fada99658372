@@ -122,10 +122,10 @@ subs: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.getAcountSub();
+    this.getAccountSub();
   }
 
-getAcountSub() {
+getAccountSub() {
   this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
     .map(res => res.json())
     .subscribe(subs => {

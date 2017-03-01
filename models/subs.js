@@ -5,7 +5,7 @@ var SubSchema   = new Schema({
     subid: String,
     groovyid: {type: Schema.Types.ObjectId, ref: 'Home'},
     name: String,
-    nohp: String,
+    phone: String,
     email: String,
     dateinst: Date,
     timeinst: Date,
