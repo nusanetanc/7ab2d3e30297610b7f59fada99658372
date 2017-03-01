@@ -50,7 +50,7 @@ export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Information_ID = '58afac48129a7b7bfcddb735';
-  Information_Emp = informations.usercreate;
+  Information_Emp = {informations.usercreate};
 
 informations: any[] = [];
 emps: any[] = [];
