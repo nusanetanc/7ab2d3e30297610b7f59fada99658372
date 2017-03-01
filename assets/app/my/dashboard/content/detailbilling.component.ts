@@ -48,7 +48,7 @@ import { Bill } from './bills';
                                                <div class="col-sm-12">
                                                    <div class="row">
                                                        <div class="col-sm-5">
-                                                           <span><b>Rahmanto Wifajar</b></span>
+                                                           <span><b>{{ subs.name }}</b></span>
                                                        </div>
                                                    </div>
                                                    <div class="row">
@@ -68,7 +68,7 @@ import { Bill } from './bills';
                                                        <span>Subscriber ID</span>
                                                    </div>
                                                    <div class="col-sm-5">
-                                                       <span>GR123456</span>
+                                                       <span>{{ subs.subid }}</span>
                                                    </div>
                                                </div>
                                            </div>
