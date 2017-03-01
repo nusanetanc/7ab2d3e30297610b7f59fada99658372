@@ -2,6 +2,9 @@ import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
+import 'rxjs/add/operator/map';
+import {Emp} from "./emp";
+
 //import {ContentDashboardComponent} from "./content/dashboard.component";
 //import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
@@ -14,8 +17,8 @@ import {Http} from 'angular2/http';
                       <li class="sidebar-brand">
                         <div class="title">
                           <img src="./images/ava.png" alt="ava">
-                          <a href="" style="margin-top: 20px;"><strong>John Doe</strong></a>
-                          <a href="" style="margin-top: -20px;">Acount Manager</a>
+                          <a href="" style="margin-top: 20px;"><strong>{{emps.name}}</strong></a>
+                          <a href="" style="margin-top: -20px;">{{emps.titlejob}}</a>
                         </div>
                       </li>
                       <li style="margin-top: 10px;">
@@ -51,5 +54,22 @@ import {Http} from 'angular2/http';
 
 
 export class DashboardComponent {
+// Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+    Session_ID = '58b643a046ed031c0fdda220';
 
+    ngOnInit() {
+        this.getAcountEmp()
+    }
+
+    emps: any[] = [];
+    constructor(private http: Http) {}
+
+    getAcountEmp() {
+        this.http.get(`${this.API}/employee/emp/${this.Session_ID}`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            })
+    }
 }

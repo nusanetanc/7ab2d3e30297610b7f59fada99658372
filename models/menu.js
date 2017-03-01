@@ -5,7 +5,7 @@ var MenuSchema   = new Schema({
   title: String,
   file: String,
   icons: String,
-  access: String, 
+  access: String,
 });
 
 module.exports = mongoose.model('Menu', MenuSchema);
