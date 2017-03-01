@@ -55,7 +55,7 @@ informations: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.();
+    this.getDetailInformation();
   }
 
 getDetailInformation() {
