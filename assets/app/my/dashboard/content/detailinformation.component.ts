@@ -70,7 +70,7 @@ getDetailInformation() {
 }
 
 getUserCreate() {
-  this.http.get(`${this.API}/emp/emp/${this.Information_Emp}`)
+  this.http.get(`${this.API}/employee/emp/${this.Information_Emp}`)
     .map(res => res.json())
     .subscribe(emps => {
       this.emps = emps
