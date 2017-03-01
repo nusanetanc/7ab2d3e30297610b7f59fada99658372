@@ -35,7 +35,7 @@ import { Information } from './informations';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#information of informations">
-                <a href="./my/detailinformation">
+                <a [routerLink]="['Detailinformation']">
                   <div class="row subInfo">
                       <div class="col-sm-2 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ information.date }}</span></div>
                       <div class="col-sm-8 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.subject }}</span></div>
