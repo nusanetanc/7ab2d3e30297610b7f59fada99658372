@@ -17,8 +17,8 @@ import {Emp} from "./emp";
                       <li class="sidebar-brand">
                         <div class="title">
                           <img src="./images/ava.png" alt="ava">
-                          <a href="" style="margin-top: 20px;"><strong>{{emp.name}}</strong></a>
-                          <a href="" style="margin-top: -20px;">{{emp.titlejob}}</a>
+                          <a href="" style="margin-top: 20px;"><strong>{{emps.name}}</strong></a>
+                          <a href="" style="margin-top: -20px;">{{emps.titlejob}}</a>
                         </div>
                       </li>
                       <li style="margin-top: 10px;">
