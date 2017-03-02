@@ -28,7 +28,7 @@ import {Emp} from "./emp";
                           <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>SUBSCRIBERS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
-                        <a [routerLink]="['Report']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                        <a href="report" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
@@ -53,7 +53,7 @@ import {Emp} from "./emp";
 export class DashboardComponent {
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    Session_ID = '58b643a046ed031c0fdda220';
+    Session_ID = '58b6a0d77dfd7052a9fe53c9';
 
     ngOnInit() {
         this.getAcountEmp()
