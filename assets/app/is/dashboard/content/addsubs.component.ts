@@ -21,7 +21,7 @@ import { Sub } from './subs';
     <div class="page-content inset" data-spy="scroll" data-target="#spy">
         <div class="row subInfo">
             <div class="col-sm-12">
-
+            <form *ngIf="active" (ngSubmit)="onSubmit()" #contactForm="ngForm">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="row">
@@ -33,7 +33,7 @@ import { Sub } from './subs';
                             <div class="col-sm-12 paddingL35">
                                 <div class="paddingTB20 paddingR30">
                                     <div class="form-group">
-                                        <input id="subname" #subname type="text" class="form-control inputForm" placeholder="Full Name">
+                                        <input  [(ngModel)]="addSub.subname" ngControl="subname"  #subname="ngForm" type="text" class="form-control inputForm" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -164,6 +164,7 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -188,7 +189,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub() {
-  var body = 'name=myname';
+  var body = 'name=this.subname';
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
