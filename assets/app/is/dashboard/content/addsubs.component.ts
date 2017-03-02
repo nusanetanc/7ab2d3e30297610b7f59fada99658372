@@ -174,7 +174,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  subname = subname.value;
+
   // Declare empty list of people
   subs: any[] = [];
 
@@ -187,7 +187,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub(subname) {
-  var body = `name=${this.subname}`;
+  var body = `name=${subname}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
