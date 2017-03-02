@@ -183,7 +183,7 @@ export class ContentAddSubsComponent implements OnInit {
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
-    this.addSub();
+    this.addSub(name);
   }
 
 // Add one person to the API
