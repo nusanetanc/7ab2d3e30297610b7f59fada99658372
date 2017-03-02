@@ -7,7 +7,6 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-addsubs',
     template: `
-    <!-- Page content -->
 <div id="page-content-wrapper">
     <div class="content-header">
         <h3 id="home">
@@ -156,7 +155,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub()" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(subname.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -183,11 +182,11 @@ export class ContentAddSubsComponent implements OnInit {
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
-    this.addSub();
+    this.addSub(subname);
   }
 
 // Add one person to the API
-  addSub() {
+  addSub(subname) {
   var body = 'name=subname';
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
