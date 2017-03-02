@@ -8,55 +8,46 @@ import { Sub } from './subs';
     selector: 'form-allsubs',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
-      <div class="content-header">
-          <h3 id="home">
-            <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-            </a>
-              &nbsp; Dashboard
-          </h3>
+        <div id="page-content-wrapper">
+            <div class="content-header">
+                <h3 id="home">
+                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                    </a>
+                    &nbsp; Subscribers
+                </h3>
 
-      </div>
+            </div>
 
-    <div class="page-content inset" data-spy="scroll" data-target="#spy">
-        <div class="row">
-            <div class="form-group col-lg-12">
-                <div class="inner-addon right-addon">
-                    <i class="glyphicon glyphicon-search"></i>
-                    <input type="text" class="form-control" placeholder="Search" />
-                </div>
-            </div>
-            <div class="col-lg-12" style="margin: -7px 0 -12px 0;">
-            <div class="row marginB20 marginR0">
-                <div class="col-sm-12">
-                  <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                  <div class="dropdown right">
-                      <a class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="background-color: #E2E2E2; border: none; border-radius: 0px; color: #676767; padding: 12.5px 40px 12.5px 40px; text-decoration: none;">
-                          DATE
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li><a href="#">NAME</a></li>
-                          <li><a href="#">ID</a></li>
-                      </ul>
-                  </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <ul class="subscriber-list" *ngFor="#sub of subs">
-                    <li>
-                        <div class="row">
-                            <div class="col-md-1 list-nik"><span>{{ sub.subid }}</span></div>
-                            <div class="col-md-9 list-name"><span>{{ sub.name }}</span></div>
-                            <div class="col-md-1 list-activ"><span style="color: green;">{{ sub.status }}</span></div>
-                            <div class="col-md-1 list-paid"><span style="color: red;"></span></div>
+            <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                <div class="row marginB20 marginR0">
+                    <div class="col-sm-12">
+                        <a href="newsubscriber.html" class="btn btn-default buttonOrange">
+                            NEW SUBSCRIBER
+                        </a>
+                        <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                        <div class="dropdown right">
+                            <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                NAME
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">NAME</a></li>
+                                <li><a href="#">ID</a></li>
+                            </ul>
                         </div>
-                    </li>
-
-                </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row subInfo">
+                            <div class="col-sm-2 invoiceId"><span>GR-123456</span></div>
+                            <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">Yudi Nurhandi</a></span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div><!-- Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
