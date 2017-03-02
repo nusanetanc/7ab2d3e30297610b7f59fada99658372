@@ -7,6 +7,7 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-addsubs',
     template: `
+    <!-- Page content -->
 <div id="page-content-wrapper">
     <div class="content-header">
         <h3 id="home">
@@ -20,7 +21,7 @@ import { Sub } from './subs';
     <div class="page-content inset" data-spy="scroll" data-target="#spy">
         <div class="row subInfo">
             <div class="col-sm-12">
-            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="row">
@@ -30,7 +31,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <div class="paddingTB20 paddingR30">
+                                <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
                                         <input id="subname" #subname type="text" class="form-control inputForm" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
@@ -41,7 +42,7 @@ import { Sub } from './subs';
                                             <p class="left marginL5">No choose file</p>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row">
@@ -83,7 +84,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <div class="marginT20 paddingR30">
+                                <form class="marginT20 paddingR30">
                                     <select name="package" class="inputForm">
                                         <option disabled="true" selected="true">-- Select Package --</option>
                                         <option value="level1">Level 1 - Monthly - IDR 349 K</option>
@@ -93,7 +94,7 @@ import { Sub } from './subs';
                                         <option value="level5">Level 1 - Monthly - IDR 699 K</option>
                                         <option value="level6">Level 1 - Monthly - IDR 999 K</option>
                                     </select><br/>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row">
@@ -103,59 +104,59 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <div class="marginT20 paddingR30">
+                                <form class="marginT20 paddingR30">
                                     <select class="inputForm" name="cars">
                                         <option disabled="true" selected="true" style="height: 30px;">-- Select your city --</option>
                                         <option value="volvo" >Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
-                                <div class="paddingR30">
+                                </form>
+                                <form class="paddingR30">
                                     <select class="inputForm" name="property">
                                         <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
-                                <div class="paddingR30">
+                                </form>
+                                <form class="paddingR30">
                                     <select class="inputForm" name="type">
                                         <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
-                                <div class="paddingR30">
+                                </form>
+                                <form class="paddingR30">
                                     <select class="inputForm" name="cluster">
                                         <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
-                                <div class="paddingR30">
+                                </form>
+                                <form class="paddingR30">
                                     <select class="inputForm" name="block">
                                         <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
-                                <div class="paddingR30">
+                                </form>
+                                <form class="paddingR30">
                                     <select class="inputForm" name="no">
                                         <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub(subname.value)" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub()" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -182,12 +183,12 @@ export class ContentAddSubsComponent implements OnInit {
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
-    this.addSub(subname);
+    this.addSub(myname);
   }
 
 // Add one person to the API
-  addSub(subname) {
-  var body = 'name=subname';
+  addSub(myname) {
+  var body = 'name=myname';
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
