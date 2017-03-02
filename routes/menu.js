@@ -25,6 +25,7 @@ router.post('/addmenu', function(req, res, next) {
     menu.file= req.body.file;
     menu.icons= req.body.icons;
     menu.access= req.body.access;
+    menu.emp_id= req.body.emp_id;
 
     menu.save(function(err) {
         if (err)
@@ -44,6 +45,7 @@ router.put('/putmenu/:id', function(req, res, next) {
         menu.file= req.body.file;
         menu.icons= req.body.icons;
         menu.access= req.body.access;
+        menu.emp_id= req.body.emp_id;
         if (err)
             res.send(err);
 
