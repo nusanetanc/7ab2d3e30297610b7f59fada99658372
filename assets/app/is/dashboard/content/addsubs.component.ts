@@ -8,53 +8,62 @@ import { Sub } from './subs';
     selector: 'form-addsubs',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
-        <div class="content-header">
-            <h3 id="home">
-                <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                </a>
-                &nbsp; Add New Subscribers
-            </h3>
+<div id="page-content-wrapper">
+    <div class="content-header">
+        <h3 id="home">
+            <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+            </a>
+            &nbsp; Subscribers
+        </h3>
 
-        </div>
+    </div>
 
-        <div class="page-content inset" data-spy="scroll" data-target="#spy">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-md-6" style="background-color: #FFF; color: #333; height: 1100px;">
+    <div class="page-content inset" data-spy="scroll" data-target="#spy">
+        <div class="row subInfo">
+            <div class="col-sm-12">
+
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="row">
-                            <div class="col-md-12">
-                                <h4 style="padding: 40px 15px 15px 20px;">PERSONAL INFORMATION</h4>
-                                <form style="padding: 20px;">
+                            <div class="col-sm-12">
+                                <h4 class="titleH4">PERSONAL INFORMATION</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 paddingL35">
+                                <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
-                                        <input id="name" #name type="text" class="form-control" placeholder="Full Name" value="yudi">
-                                        <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
+                                        <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
+                                        <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
-                                        <div class="form-control">
-                                            <button type="button">choose file</button>
-                                            <p>No choose file</p>
+                                        <div class="form-control inputForm">
+                                            <button class="left" type="button">choose file</button>
+                                            <p class="left marginL5">No choose file</p>
                                         </div>
                                     </div>
                                 </form>
-                                <h4 style="padding: 40px 15px 15px 20px;">INSTALLATION DATE</h4>
-                                <p  style="padding: 20px;">Please select a installation date</p>
-                                <div class="form-group" style="padding: 20px;">
-                                    <div class='input-group date' id='datetimepicker1'>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="titleH4">INSTALLATION DATE</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 paddingL35">
+                                <p>Please select a installation date</p>
+                                <div class="form-group">
+                                    <div class="input-group date paddingR30" id="datetimepicker1">
                                         <input type='text' class="form-control" />
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
-                                        </span>
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
                                     </div>
                                 </div>
 
-                                <script type="text/javascript">
-                                    $(function () {
-                                        $('#datetimepicker1').datetimepicker();
-                                    });
-                                </script>
-                                <p  style="padding: 20px;">Please select a available timeslot for that date</p>
-                                <form style="padding: 20px;" action="">
+                                <p>Please select a available timeslot for that date</p>
+                                <form class="marginB20">
                                     <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
@@ -67,12 +76,16 @@ import { Sub } from './subs';
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" style="background-color: #FFF; color: #333; height: 1100px;">
+                    <div class="col-sm-6">
                         <div class="row">
-                            <div class="col-md-12">
-                                <h4 style="padding: 40px 15px 15px 20px;">SUBSCRIPTION PLAN</h4>
-                                <form style="padding: 20px;">
-                                    <select name="package">
+                            <div class="col-sm-12">
+                                <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 paddingL35">
+                                <form class="marginT20 paddingR30">
+                                    <select name="package" class="inputForm">
                                         <option disabled="true" selected="true">-- Select Package --</option>
                                         <option value="level1">Level 1 - Monthly - IDR 349 K</option>
                                         <option value="level2">Level 1 - Monthly - IDR 549 K</option>
@@ -82,58 +95,70 @@ import { Sub } from './subs';
                                         <option value="level6">Level 1 - Monthly - IDR 999 K</option>
                                     </select><br/>
                                 </form>
-                                <h4 style="padding: 40px 15px 15px 20px;">ADDRESS</h4>
-                                <form style="padding: 20px;">
-                                    <select style="" name="cars">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="titleH4">ADDRESS</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 paddingL35">
+                                <form class="marginT20 paddingR30">
+                                    <select class="inputForm" name="cars">
                                         <option disabled="true" selected="true" style="height: 30px;">-- Select your city --</option>
                                         <option value="volvo" >Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <form style="padding: 20px;">
-                                    <select name="property">
+                                <form class="paddingR30">
+                                    <select class="inputForm" name="property">
                                         <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <form style="padding: 20px;">
-                                    <select name="type">
+                                <form class="paddingR30">
+                                    <select class="inputForm" name="type">
                                         <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <form style="padding: 20px;">
-                                    <select name="cluster">
+                                <form class="paddingR30">
+                                    <select class="inputForm" name="cluster">
                                         <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <form style="padding: 20px;">
-                                    <select name="block">
+                                <form class="paddingR30">
+                                    <select class="inputForm" name="block">
                                         <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
                                 </form>
-                                <form style="padding: 20px;">
-                                    <select name="no">
+                                <form class="paddingR30">
+                                    <select class="inputForm" name="no">
                                         <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                    <button class="next btn btn-default dropdown-toggle" style="margin: 70px 20px 0 0;" type="submit" (click)="addSub(name.value)">
-                                        REGISTER
-                                    </button>
                                 </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 paddingR45">
+                                <a href="newsubscriber.html" class="btn btn-default buttonOrange right marginT125">
+                                    REGISTER
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -141,6 +166,7 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
+</div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
