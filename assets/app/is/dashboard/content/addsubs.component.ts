@@ -33,7 +33,7 @@ import { Sub } from './subs';
                             <div class="col-sm-12 paddingL35">
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
-                                        <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
+                                        <input id="name" #name type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -156,9 +156,9 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <a href="newsubscriber.html" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(name.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
