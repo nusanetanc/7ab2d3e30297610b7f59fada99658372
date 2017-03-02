@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Complaint } from './complaint';
 
 @Component({
     selector: 'form-newreport',
@@ -71,4 +72,33 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
+
+  complaints: any[] = [];
+
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAllComplaint();
+    this.addComplaint();
+  }
+// Add one person to the API
+  addComplaint(name) {
+    this.http.post(`${this.API}/complaint/addcomplaint`, {name})
+      .map(res => res.json())
+      .subscribe(() => {
+        this.getAllReports();
+        console.log('sukses');
+      })
+  }
+
+  getAllComplaint() {
+    this.http.get(`${this.API}/complaint/listcomplaint`)
+      .map(res => res.json())
+      .subscribe(complaints => {
+        this.complaints = complaints
+      })
+  }
 }
