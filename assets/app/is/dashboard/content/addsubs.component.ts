@@ -31,7 +31,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <form class="paddingTB20 paddingR30">
+                                <div class="paddingTB20 paddingR30">
                                     <div class="form-group">
                                         <input id="subname" #subname type="text" class="form-control inputForm" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
@@ -42,7 +42,7 @@ import { Sub } from './subs';
                                             <p class="left marginL5">No choose file</p>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -63,7 +63,7 @@ import { Sub } from './subs';
                                 </div>
 
                                 <p>Please select a available timeslot for that date</p>
-                                <form class="marginB20">
+                                <div class="marginB20">
                                     <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
@@ -72,7 +72,7 @@ import { Sub } from './subs';
                                     <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
                                     <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <form class="marginT20 paddingR30">
+                                <div class="marginT20 paddingR30">
                                     <select name="package" class="inputForm">
                                         <option disabled="true" selected="true">-- Select Package --</option>
                                         <option value="level1">Level 1 - Monthly - IDR 349 K</option>
@@ -94,7 +94,7 @@ import { Sub } from './subs';
                                         <option value="level5">Level 1 - Monthly - IDR 699 K</option>
                                         <option value="level6">Level 1 - Monthly - IDR 999 K</option>
                                     </select><br/>
-                                </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -104,54 +104,54 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
-                                <form class="marginT20 paddingR30">
+                                <div class="marginT20 paddingR30">
                                     <select class="inputForm" name="cars">
                                         <option disabled="true" selected="true" style="height: 30px;">-- Select your city --</option>
                                         <option value="volvo" >Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
-                                <form class="paddingR30">
+                                </div>
+                                <div class="paddingR30">
                                     <select class="inputForm" name="property">
                                         <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
-                                <form class="paddingR30">
+                                </div>
+                                <div class="paddingR30">
                                     <select class="inputForm" name="type">
                                         <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
-                                <form class="paddingR30">
+                                </div>
+                                <div class="paddingR30">
                                     <select class="inputForm" name="cluster">
                                         <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
-                                <form class="paddingR30">
+                                </div>
+                                <div class="paddingR30">
                                     <select class="inputForm" name="block">
                                         <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
-                                <form class="paddingR30">
+                                </div>
+                                <div class="paddingR30">
                                     <select class="inputForm" name="no">
                                         <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
                                         <option value="fiat">Medan</option>
                                     </select><br/>
-                                </form>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub() {
-  var body = 'myname=name';
+  var body = 'name=myname';
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
