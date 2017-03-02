@@ -192,7 +192,7 @@ export class ContentAddSubsComponent implements OnInit {
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
-        .post('`${this.API}/subscribe/addsub`',
+        .post(`${this.API}/subscribe/addsub`,
           body, {
             headers: headers
           })
