@@ -33,7 +33,7 @@ import { Sub } from './subs';
                             <div class="col-sm-12 paddingL35">
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
-                                        <input id="subname" #subname type="text" class="form-control inputForm" placeholder="Full Name">
+                                        <input ng-control="subname" type="text" class="form-control inputForm" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Add one person to the API
   addSub(myname) {
-  var body = 'name='+{this.myname};
+  var body = 'name=subname';
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
