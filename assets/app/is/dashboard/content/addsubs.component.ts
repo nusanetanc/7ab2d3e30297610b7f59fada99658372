@@ -174,7 +174,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-
+  subname = subname.value;
   // Declare empty list of people
   subs: any[] = [];
 
