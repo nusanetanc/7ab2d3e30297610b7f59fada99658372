@@ -25,10 +25,7 @@ import {Emp} from "./emp";
                           <a [routerLink]="['Dashboard']" class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
                       </li>
                       <li  style="margin-top: 10px;">
-                          <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>ALL SUBSCRIBERS</strong></a>
-                      </li>
-                      <li style="margin-top: 10px;">
-                          <a [routerLink]="['AddSubs']" class="collapse"><i class="material-icons">dashboard</i><strong>ADD SUBSCRIBERS</strong></a>
+                          <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>SUBSCRIBERS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Report']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
