@@ -28,10 +28,14 @@ import {Emp} from "./emp";
                           <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>ALL SUBSCRIBERS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
+<<<<<<< HEAD
                           <a [routerLink]="['AddSubs']" class="collapse"><i class="material-icons">dashboard</i><strong>ADD SUBSCRIBERS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Report']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+=======
+                        <a href="reports"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+>>>>>>> b413f60f24dc603dbefefebe7dcfb921e9d81878
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
