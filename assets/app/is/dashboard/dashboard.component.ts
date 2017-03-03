@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Emp} from "./emp";
+import {Menu} from "./dashboard_menu";
 
 //import {ContentDashboardComponent} from "./content/dashboard.component";
 //import {ContentAllSubsComponent} from "./content/allsubs.component";
@@ -33,6 +34,7 @@ import {Emp} from "./emp";
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
                       </li>
+                      <p *ngFor="#menu of menus">{{menu.title}}</p>
 
                       <li class="sidebar-footer">
                         <div>
@@ -54,12 +56,15 @@ export class DashboardComponent {
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     Session_ID = '58b6a0d77dfd7052a9fe53c9';
+    content_access = '202';
 
     ngOnInit() {
-        this.getAcountEmp()
+        this.getAcountEmp();
+        this.getContentMenu()
     }
 
     emps: any[] = [];
+    menus: any[] = [];
     constructor(private http: Http) {}
 
     getAcountEmp() {
@@ -67,6 +72,14 @@ export class DashboardComponent {
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
+            })
+    }
+
+    getContentMenu() {
+        this.http.get(`${this.API}/menu/listmenu`)
+            .map(res => res.json())
+            .subscribe(menu => {
+                this.menus = menu
             })
     }
 }
