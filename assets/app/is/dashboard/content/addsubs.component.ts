@@ -190,8 +190,7 @@ export class ContentAddSubsComponent implements OnInit {
 
   let body = new FormData();
   body.append('name', this.subname);
-
-  var body = 'name='+subname.value;
+  
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
