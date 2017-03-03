@@ -33,7 +33,7 @@ import { Sub } from './subs';
                             <div class="col-sm-12 paddingL35">
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
-                                        <input #subname type="text" class="form-control inputForm" placeholder="Full Name">
+                                        <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name">
                                         <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                         <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
@@ -156,7 +156,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub(Registrasi)" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(subname.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -186,7 +186,7 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(Registrasi) {
+  addSub(subname) {
   var body = 'name='+subname.value;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
