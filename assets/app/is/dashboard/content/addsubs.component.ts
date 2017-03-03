@@ -168,7 +168,7 @@ import { Sub } from './subs';
     </div>
 </div>
     `,
-    directives: [ROUTER_DIRECTIVES, forms, Http, Headers,  Sub],
+    directives: [ROUTER_DIRECTIVES, Http, Headers,  Sub],
 })
 export class ContentAddSubsComponent implements OnInit {
 
