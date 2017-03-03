@@ -32,7 +32,7 @@ template: `
                         <a href="report" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
-                        <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
+                        <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATIONS</strong></a>
                       </li>
                       <li style="margin-top: 10px;">
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>test</strong></a>
