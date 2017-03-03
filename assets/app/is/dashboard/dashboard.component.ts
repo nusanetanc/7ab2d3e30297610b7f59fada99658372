@@ -10,7 +10,7 @@ import {Menu} from "./dashboard_menu";
 //import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
-    template: `
+template: `
                 <!-- Sidebar -->
                 <div id="sidebar-wrapper">
                   <nav id="spy">
@@ -33,8 +33,8 @@ import {Menu} from "./dashboard_menu";
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
+                        <p *ngFor="#menu of menus" style="color: #fff;">test{{menu.title}}</p>
                       </li>
-                      <p *ngFor="#menu of menus">{{menu.title}}</p>
 
                       <li class="sidebar-footer">
                         <div>
@@ -78,8 +78,8 @@ export class DashboardComponent {
     getContentMenu() {
         this.http.get(`${this.API}/menu/listmenu`)
             .map(res => res.json())
-            .subscribe(menu => {
-                this.menus = menu
+            .subscribe(menus => {
+                this.menus = menus
             })
     }
 }
