@@ -33,8 +33,8 @@ template: `
                       </li>
                       <li style="margin-top: 10px;">
                         <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
+                        <p *ngFor="#menu of menus" style="color: #fff;">test{{menu.title}}</p>
                       </li>
-                        <p *ngFor="#menu of menus">test{{menu.title}}</p>
 
                       <li class="sidebar-footer">
                         <div>
