@@ -1,7 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
-import {forms, required} from 'angular2/forms';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
