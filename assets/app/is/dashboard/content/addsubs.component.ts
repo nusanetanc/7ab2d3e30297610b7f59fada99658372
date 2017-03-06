@@ -186,9 +186,9 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subpacklev) {
+  addSub(subname, subphone, subemail, subdateinst) {
 
-  var body = `name=${subname}&phone=${subphone}&email=${subemail}&packlev=${subpacklev}`;
+  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
