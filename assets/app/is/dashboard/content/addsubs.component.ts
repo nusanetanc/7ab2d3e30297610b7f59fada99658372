@@ -107,9 +107,9 @@ import { Sub } from './subs';
                                 <form class="marginT20 paddingR30">
                                     <select class="inputForm" name="cars">
                                         <option disabled="true" selected="true" style="height: 30px;">-- Select your city --</option>
-                                        <option value="volvo" >Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <div *ngFor="#citi of cities">
+                                        <option value="{{ citi._id }}">{{ citi.name }}</option>
+                                        </div>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
@@ -177,12 +177,14 @@ export class ContentAddSubsComponent implements OnInit {
 
   // Declare empty list of people
   subs: any[] = [];
+  cities: any[] = [];
 
   constructor(private http: Http) {}
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
+    this.getAllCities();
   }
 
 // Add one person to the API
@@ -204,12 +206,19 @@ export class ContentAddSubsComponent implements OnInit {
           });
   }
 
-  // Get all users from the API
+  // Get all Sub from the API
   getAllSub() {
     this.http.get(`${this.API}/subscribe/listsub`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
+      })
+  }
+  getAllSub() {
+    this.http.get(`${this.API}/city/listcity`)
+      .map(res => res.json())
+      .subscribe(cities => {
+        this.cities = cities
       })
   }
 }
