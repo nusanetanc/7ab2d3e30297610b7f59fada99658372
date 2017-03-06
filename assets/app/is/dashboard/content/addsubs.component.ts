@@ -105,11 +105,8 @@ import { Sub } from './subs';
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
                                 <form class="marginT20 paddingR30">
-                                    <select class="inputForm" name="cars">
-                                        <option disabled="true" selected="true" style="height: 30px;">-- Select your city --</option>
-                                        <div *ngFor="#citi of cities">
-                                        <option value="{{ citi._id }}">{{ citi.name }}</option>
-                                        </div>
+                                    <select class="inputForm" name="cars" *ngFor="#city of cities">
+                                        <option value="{{ city._id }}">{{ city.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
