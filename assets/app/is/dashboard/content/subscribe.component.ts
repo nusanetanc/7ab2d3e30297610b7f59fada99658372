@@ -146,16 +146,18 @@ export class ContentSubscribeComponent {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http,
+     private routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
+      let id = this.routeParams.get('id');
     }
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.req.params.id}`)
+    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
