@@ -38,7 +38,7 @@ import { Sub } from './subs';
                 </div>
                 <div class="row">
                     <div class="col-sm-12"  *ngFor="#sub of subs">
-                      <a [routerLink]="['Subscribe']">
+                      <a [routerLink]="['Subscribe', {id: sub.id}]">
                         <div class="row subInfo">
                             <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
                             <div class="col-sm-8 invoiceList"><span><a class="grey333">{{ sub.name }}</a></span></div>

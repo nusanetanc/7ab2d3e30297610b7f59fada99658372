@@ -25,7 +25,7 @@ import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
   { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
-  { path: '/is/subscribe', component:ContentSubscribeComponent, name:'Subscribe'},
+  { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
   { path: '/is/information', component:ContentInformationComponent, name:'Information'}
 ])
 
