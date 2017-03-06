@@ -3,7 +3,6 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
-
 @Component({
     selector: 'form-dashboard',
     template: `
@@ -143,7 +142,7 @@ import { Sub } from './subs';
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    GET_Id = this._routeParams.get('id');
+    GET_Id = this.RouteParams.get('id');
 
     // Declare empty list of people
     subs: any[] = [];
