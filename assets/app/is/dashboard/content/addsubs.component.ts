@@ -156,7 +156,7 @@ import { Sub } from './subs';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subpacklev.value)" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -186,9 +186,9 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subdateinst, subpacklev) {
+  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev) {
 
-  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&packlev=${subpacklev}`;
+  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
