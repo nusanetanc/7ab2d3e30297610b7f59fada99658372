@@ -184,7 +184,7 @@ export class ContentAddSubsComponent implements OnInit {
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllSub();
-    this.getAllCities();
+    this.getAllCity();
   }
 
 // Add one person to the API
@@ -214,7 +214,8 @@ export class ContentAddSubsComponent implements OnInit {
         this.subs = subs
       })
   }
-  getAllSub() {
+// Get all City from the API
+  getAllCity() {
     this.http.get(`${this.API}/city/listcity`)
       .map(res => res.json())
       .subscribe(cities => {
