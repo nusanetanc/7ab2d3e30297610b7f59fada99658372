@@ -143,7 +143,7 @@ import { Sub } from './subs';
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    GET_Id = '58bce3932973b2146b49d20e';
+    GET_Id = this._routeParams.get('id');
 
     // Declare empty list of people
     subs: any[] = [];
@@ -157,7 +157,7 @@ export class ContentSubscribeComponent {
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/{this.routeParam.params.id}`)
+    this.http.get(`${this.API}/subscribe/sub/{GET_Id}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
