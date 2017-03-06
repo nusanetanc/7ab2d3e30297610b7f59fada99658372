@@ -8,7 +8,7 @@ import {ContentDashboardComponent} from "./dashboard/content/dashboard.component
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 import {ContentInformationComponent} from "./dashboard/content/information.component";
-import {ContentSubscribeComponent} from "./dashboard/content/subscribe";
+import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component";
 
 @Component({
    selector: 'is-app',
