@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
+import { City } from './cities';
 
 @Component({
     selector: 'form-addsubs',
