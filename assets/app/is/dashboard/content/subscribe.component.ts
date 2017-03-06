@@ -157,7 +157,7 @@ export class ContentSubscribeComponent {
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/:id`)
+    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
