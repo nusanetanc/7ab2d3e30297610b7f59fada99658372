@@ -8,7 +8,7 @@ var SubSchema   = new Schema({
     phone: Number,
     email: String,
     dateinst: Date,
-    timeinst: Date,
+    timeinst: String,
     password: String,
     datebrith: String,
     packlev: String,

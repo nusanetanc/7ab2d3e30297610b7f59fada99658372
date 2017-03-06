@@ -34,8 +34,8 @@ import { Sub } from './subs';
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
                                         <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name">
-                                        <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
-                                        <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
+                                        <input #subhandphone id="subhandphone" type="text" class="form-control inputForm" placeholder="Handphone">
+                                        <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email">
                                         <p>Upload your National Identity Card</p>
                                         <div class="form-control inputForm">
                                             <button class="left" type="button">choose file</button>
@@ -55,7 +55,7 @@ import { Sub } from './subs';
                                 <p>Please select a installation date</p>
                                 <div class="form-group">
                                     <div class="input-group date paddingR30" id="datetimepicker1">
-                                        <input type='text' class="form-control" />
+                                        <input #subdateinst id="subdateinst" type='text' class="form-control" />
                                         <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
@@ -64,14 +64,14 @@ import { Sub } from './subs';
 
                                 <p>Please select a available timeslot for that date</p>
                                 <div class="marginB20">
-                                    <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
+                                    <input type="radio" name="vehicle" value="9:00 am" /> 9:00 am PST<br>
+                                    <input type="radio" name="vehicle" value="10:00 am" /> 10:00 am PST<br>
+                                    <input type="radio" name="vehicle" value="11:00 am" /> 11:00 am PST<br>
+                                    <input type="radio" name="vehicle" value="12:00 am" /> 12:00 am PST<br>
+                                    <input type="radio" name="vehicle" value="1:00 pm" /> 1:00 pm PST<br>
+                                    <input type="radio" name="vehicle" value="2:00 pm" /> 2:00 pm PST<br>
+                                    <input type="radio" name="vehicle" value="3:00 pm" /> 3:00 pm PST<br>
+                                    <input type="radio" name="vehicle" value="4:00 pm" /> 4:00 pm PST
                                 </div>
                             </div>
                         </div>
@@ -85,14 +85,14 @@ import { Sub } from './subs';
                         <div class="row">
                             <div class="col-sm-12 paddingL35">
                                 <form class="marginT20 paddingR30">
-                                    <select name="package" class="inputForm">
+                                    <select #subpacklev id="subpacklev" name="package" class="inputForm">
                                         <option disabled="true" selected="true">-- Select Package --</option>
-                                        <option value="level1">Level 1 - Monthly - IDR 349 K</option>
-                                        <option value="level2">Level 1 - Monthly - IDR 549 K</option>
-                                        <option value="level3">Level 1 - Monthly - IDR 899 K</option>
-                                        <option value="level4">Level 1 - Monthly - IDR 499 K</option>
-                                        <option value="level5">Level 1 - Monthly - IDR 699 K</option>
-                                        <option value="level6">Level 1 - Monthly - IDR 999 K</option>
+                                        <option value="1">Level 1 - Monthly - IDR 349 K</option>
+                                        <option value="2">Level 1 - Monthly - IDR 549 K</option>
+                                        <option value="3">Level 1 - Monthly - IDR 899 K</option>
+                                        <option value="4">Level 1 - Monthly - IDR 499 K</option>
+                                        <option value="5">Level 1 - Monthly - IDR 699 K</option>
+                                        <option value="6">Level 1 - Monthly - IDR 999 K</option>
                                     </select><br/>
                                 </form>
                             </div>
@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
 // Add one person to the API
   addSub(subname.value) {
 
-  var body = `name=${subname}`;
+  var body = `name=${subname}&phone=${subhandphone}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
@@ -197,7 +197,7 @@ export class ContentAddSubsComponent implements OnInit {
             headers: headers
           })
           .subscribe(data => {
-                alert('ok');
+                alert('Add New Subscribe Success');
                 this.getAllReports();
           }, error => {
               console.log(JSON.stringify(error.json()));
