@@ -89,11 +89,11 @@ import { City } from './cities';
                                     <select #subpacklev id="subpacklev" name="package" class="inputForm">
                                         <option disabled="true" selected="true">-- Select Package --</option>
                                         <option value="1">Level 1 - Monthly - IDR 349 K</option>
-                                        <option value="2">Level 1 - Monthly - IDR 549 K</option>
-                                        <option value="3">Level 1 - Monthly - IDR 899 K</option>
-                                        <option value="4">Level 1 - Monthly - IDR 499 K</option>
-                                        <option value="5">Level 1 - Monthly - IDR 699 K</option>
-                                        <option value="6">Level 1 - Monthly - IDR 999 K</option>
+                                        <option value="2">Level 2 - Monthly - IDR 549 K</option>
+                                        <option value="3">Level 3 - Monthly - IDR 899 K</option>
+                                        <option value="4">Level 4 - Monthly - IDR 499 K</option>
+                                        <option value="5">Level 5 - Monthly - IDR 699 K</option>
+                                        <option value="6">Level 6 - Monthly - IDR 999 K</option>
                                     </select><br/>
                                 </form>
                             </div>
@@ -107,7 +107,7 @@ import { City } from './cities';
                             <div class="col-sm-12 paddingL35">
                                 <form class="marginT20 paddingR30">
                                     <select class="inputForm" name="cars" *ngFor="#city of cities">
-                                        <option value="{{ city._id }}">{{ city.name }}</option>
+                                        <option value="">{{ city.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
