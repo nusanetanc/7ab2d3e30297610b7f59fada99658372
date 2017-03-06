@@ -64,14 +64,14 @@ import { Sub } from './subs';
 
                                 <p>Please select a available timeslot for that date</p>
                                 <div class="marginB20">
-                                    <input type="radio" name="vehicle" value="9:00 am" /> 9:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="10:00 am" /> 10:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="11:00 am" /> 11:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="12:00 am" /> 12:00 am PST<br>
-                                    <input type="radio" name="vehicle" value="1:00 pm" /> 1:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="2:00 pm" /> 2:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="3:00 pm" /> 3:00 pm PST<br>
-                                    <input type="radio" name="vehicle" value="4:00 pm" /> 4:00 pm PST
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm PST<br>
+                                    <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm PST
                                 </div>
                             </div>
                         </div>
