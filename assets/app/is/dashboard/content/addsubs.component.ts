@@ -108,7 +108,7 @@ import { City } from './cities';
                                 <form class="marginT20 paddingR30">
                                     <select class="inputForm" name="cars">
                                       <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                        <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                      <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
