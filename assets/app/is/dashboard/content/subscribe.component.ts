@@ -17,7 +17,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
           <div class="page-content inset" data-spy="scroll" data-target="#spy">
               <div class="row marginB20 marginR0">
                   <div class="col-sm-12">
-                      <a href="subscribers.html" class="btn btn-default buttonBack" type="button">
+                      <a [routerLink]="['AllSubs']" class="btn btn-default buttonBack" type="button">
                           BACK
                       </a>
                   </div>
@@ -40,7 +40,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>Jhon Doe</span>
+                                      <span>{{ subs.name }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -51,7 +51,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>johndoe@example.com</span>
+                                      <span>{{ subs.email }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -62,7 +62,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>+62 812 1234 2222</span>
+                                      <span>{{ subs.phone }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -114,7 +114,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>Level 4 (Internet & TV)</span>
+                                      <span>Level {{ subs.packlev }} (Internet & TV)</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -125,7 +125,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span class="green">Active</span>
+                                      <span class="green">{{ subs.status }}</span>
                                   </div>
                               </div>
                           </div>
@@ -138,5 +138,26 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentSubscribeComponent {
+  // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+    GET_Id = '58bce3932973b2146b49d20e';
 
+    // Declare empty list of people
+    subs: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+      this.getSub();
+    }
+
+  // Get all users from the API
+  getSub() {
+    this.http.get(`${this.API}/subscribe/sub/${this.GET_Id}`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+      })
+  }
 }
