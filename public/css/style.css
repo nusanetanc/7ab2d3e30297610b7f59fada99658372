@@ -515,6 +515,90 @@ margin-bottom: 20px;
 }
 /*----------------------- /done.html --------------------------*/
 
+/*-------------------------features---------------------------*/
+.wall-features{
+    text-align: center;
+    margin-bottom: 0px;
+    background-color: #fff;
+}
+
+.wall-features-content{
+    margin-top:200px;
+}
+
+.wall-features-title{
+    font-size: 35px;
+}
+
+.wall-features-text{
+    font-size: 18px;
+}
+
+.features-content1{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.features-content1-container{
+    margin-top: 120px;
+}
+
+.features-content2{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #000;
+    color: white;
+}
+
+.wall-content{
+    margin-top:120px;
+}
+
+.features-content2-title{
+    opacity: 0.9;
+}
+
+.features-content2-text{
+    opacity: 0.7;
+}
+
+.features-content3{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #fff;
+}
+
+.features-content3-container{
+    margin-top: 120px;
+}
+
+.features-content3-title{
+    color: #000;
+}
+
+.features-content4{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.features-content4-container{
+    margin-top: 120px;
+}
+
+.features-content5{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #fff;
+}
+
+.features-content5-container{
+    margin-top: 120px;
+}
+
+/*-------------------------/end features---------------------------*/
+
 
 @media only screen and (max-width : 768px){
     .container-auth{
@@ -543,5 +627,13 @@ margin-bottom: 20px;
 
     .home-content-text{
         font-size: 18px;
+    }
+
+    .wall-features-title{
+        font-size: 28px !important;
+    }
+
+    .wall-features-text{
+        font-size: 15px !important;
     }
 }
