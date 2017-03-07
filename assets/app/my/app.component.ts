@@ -19,7 +19,6 @@ import {AuthenticationComponent} from "./auth/authentication.component";
    template: `
    <!-- START CONTENT -->
      <div id="wrapper">
-    <dashboard></dashboard>
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
