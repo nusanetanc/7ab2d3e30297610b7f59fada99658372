@@ -100,4 +100,8 @@ router.get('/dashboard/newsubscribers', function(req, res, next) {
   res.render('./dashboard/newsubscribers', { title: 'Groovy - Dashboard' });
 });
 
+router.get('/public', function(req, res, next) {
+  res.render('./index.js', {title: 'Groovy'});
+});
+
 module.exports = router;
