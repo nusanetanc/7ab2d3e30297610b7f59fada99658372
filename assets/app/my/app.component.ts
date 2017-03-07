@@ -48,13 +48,5 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
 ])
 
 export class AppComponent {
-constructor (private _authService: AuthService){}
-
-isLoggedIn(){
-  return this._authService.isLoggedIn();
-}
-onLogout(){
-  this._authService.logout();
-}
 
 }
