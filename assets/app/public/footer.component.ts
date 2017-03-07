@@ -6,7 +6,7 @@ import {Http} from 'angular2/http';
     selector: 'my-footer',
     template: `
     <div class="jumbotron home-footer">
-        <div class="container-fluid home-content">
+        <div class="container home-content">
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>

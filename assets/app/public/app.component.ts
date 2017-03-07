@@ -8,12 +8,9 @@ import {FooterComponent} from "./footer.component";
 @Component({
     selector: 'my-app',
     template: `
-   <!-- START CONTENT -->
-     <div class="container">
             <my-header></my-header><br>
             <router-outlet></router-outlet>
             <my-footer></my-footer>
-        </div>
 `,
     directives: [HeaderComponent, FooterComponent]
 })
