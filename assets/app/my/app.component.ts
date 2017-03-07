@@ -39,7 +39,7 @@ import {PrivateComponent} from './auth/private.component';
                   ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/home', name: 'Home', component: PrivateComponent, useAsDefault:true },
+  { path: '/home', name: 'Home', component: PrivateComponent},
   { path: '/my/signin', component:AuthenticationComponent, name:'Signin'},
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
