@@ -19,10 +19,10 @@ import {AuthenticationService} from "./auth/auth.service";
    selector: 'my-app',
    template: `
    <!-- START CONTENT -->
-     <div id="wrapper" *ngIf="!isLoggedIn()">
+  <div id="wrapper">
     <dashboard ></dashboard>
     <router-outlet></router-outlet>
-  </div *ngIf="!isLoggedIn()" ><!-- END CONTENT -->
+  </div ><!-- END CONTENT -->
 `,
     directives: [DashboardComponent,
                   ContentDashboardComponent,
