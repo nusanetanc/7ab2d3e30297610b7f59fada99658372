@@ -12,7 +12,8 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
-import {AuthenticationComponent} from "./authentication/authentication.component";
+import {AuthenticationComponent} from "./auth/authentication.component";
+import {PrivateComponent} from './auth/private.component';
 
 @Component({
    selector: 'my-app',
@@ -33,11 +34,14 @@ import {AuthenticationComponent} from "./authentication/authentication.component
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
                   ContentAccountComponent,
+                  AuthenticationComponent,
+                  PrivateComponent,
                   ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
+  { path: '/home', name: 'Home', component: PrivateComponent, useAsDefault:true },
   { path: '/my/signin', component:AuthenticationComponent, name:'Signin'},
+  { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
   { path: '/my/newreport', component:ContentNewReportComponent, name:'Newreport'},
@@ -49,5 +53,13 @@ import {AuthenticationComponent} from "./authentication/authentication.component
 ])
 
 export class AppComponent {
+constructor (private _authService: AuthService){}
+
+isLoggedIn(){
+  return this._authService.isLoggedIn();
+}
+onLogout(){
+  this._authService.logout();
+}
 
 }

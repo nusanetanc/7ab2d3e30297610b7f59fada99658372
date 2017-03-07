@@ -1,8 +1,9 @@
-import {Component, ElementRef} from 'angular2/core';
-import {AuthenticationService, User} from './auth.service'
+import {Component} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {AuthenticationComponent, User} from './auth.service';
 
 @Component({
-    selector: 'login-form',
+    selector: 'form-login',
     providers: [AuthenticationService],
     template: `
         <div class="container" >
@@ -32,20 +33,19 @@ import {AuthenticationService, User} from './auth.service'
                     type="submit" name="action">Login</button>
             </div>
         </div>
-    	`
 })
-
 export class SigninComponent {
 
-    public user = new User('','');
-    public errorMsg = '';
+public user = new User('','');
+ public errorMsg = '';
 
-    constructor(
-        private _service:AuthenticationService) {}
+ constructor(
+     private _service:AuthenticationService) {}
 
-    login() {
-        if(!this._service.login(this.user)){
-            this.errorMsg = 'Failed to login';
-        }
-    }
+ login() {
+     if(!this._service.login(this.user)){
+         this.errorMsg = 'Failed to login';
+     }
+ }
+
 }
