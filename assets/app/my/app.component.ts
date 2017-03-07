@@ -12,7 +12,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
-import {AuthenticationComponent} from "./auth/authentication.component";
+//import {AuthenticationComponent} from "./auth/authentication.component";
 
 @Component({
    selector: 'my-app',
@@ -33,11 +33,9 @@ import {AuthenticationComponent} from "./auth/authentication.component";
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
                   ContentAccountComponent,
-                  AuthenticationComponent,
                   ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/my/signin', component:AuthenticationComponent, name:'Signin'},
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
