@@ -2,8 +2,10 @@ var gulp = require('gulp');
 
 var appIsDev = 'assets/app/is/';
 var appMyDev = 'assets/app/my/';
+var appPublicDev = 'assets/app/public/';
 var appIsProd = 'public/js/app/is/';
 var appMyProd = 'public/js/app/my/';
+var appPublicProd = 'public/js/app/public/';
 
 /* JS & TS */
 var jsuglify = require('gulp-uglify');
