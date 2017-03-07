@@ -141,7 +141,7 @@ import { Home } from './home';
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
-                                    <select class="inputForm" name="no">
+                                    <select class="inputForm" name="subgroovyid" id="subgroovyid" #subgroovyid>
                                         <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                         <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                     </select><br/>
@@ -150,7 +150,7 @@ import { Home } from './home';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value)" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, groovyid.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -192,9 +192,9 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev) {
+  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, groovyid) {
 
-  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}`;
+  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
