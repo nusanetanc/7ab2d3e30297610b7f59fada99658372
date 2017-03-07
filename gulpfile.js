@@ -37,10 +37,22 @@ gulp.task('build-ts2', function () {
             .pipe(concat('bundle.js'))
             .pipe(gulp.dest(appMyProd));
 });
+gulp.task('build-ts3', function () {
+        return gulp.src(appPublicDev + '**/*.ts')
+            .pipe(sourcemaps.init())
+            .pipe(typescript(tsProject))
+            .pipe(sourcemaps.write())
+            // .pipe(jsuglify())
+            .pipe(concat('bundle.js'))
+            .pipe(gulp.dest(appPublicProd));
+});
+
 gulp.task('watch', function () {
     gulp.watch(appIsDev + '**/*.ts', ['build-ts1']);
-      gulp.watch(appMyDev + '**/*.ts', ['build-ts2']);
+    gulp.watch(appMyDev + '**/*.ts', ['build-ts2']);
+    gulp.watch(appPublicDev + '**/*.ts', ['build-ts3']);
 });
 
 gulp.task('default', ['watch', 'build-ts1']);
 gulp.task('default', ['watch', 'build-ts2']);
+gulp.task('default', ['watch', 'build-ts3']);
