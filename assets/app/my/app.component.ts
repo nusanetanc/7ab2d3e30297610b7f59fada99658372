@@ -12,6 +12,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
+import {SigninComponent} from "./authentication/signin.component";
 
 @Component({
    selector: 'my-app',
@@ -36,6 +37,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
+  { path: '/my/signin', component:SigninComponent, name:'Signin'},
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
   { path: '/my/newreport', component:ContentNewReportComponent, name:'Newreport'},
