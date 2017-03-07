@@ -150,7 +150,7 @@ import { Home } from './home';
                         </div>
                         <div class="row">
                             <div class="col-sm-12 paddingR45">
-                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, groovyid.value)" class="btn btn-default buttonOrange right marginT125">
+                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="btn btn-default buttonOrange right marginT125">
                                     REGISTER
                                 </button>
                             </div>
@@ -192,7 +192,7 @@ export class ContentAddSubsComponent implements OnInit {
   }
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, groovyid) {
+  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
 
   var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
   var headers = new Headers();
