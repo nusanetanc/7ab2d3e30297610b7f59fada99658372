@@ -19,7 +19,7 @@ import {SigninComponent} from "./signin.component";
         </div>
     </div>
     `,
-    directives: [SigninComponent, ForgotComponent, ROUTER_DIRECTIVES],
+    directives: [SigninComponent, ROUTER_DIRECTIVES],
 })
 export class AuthenticationComponent {
 
