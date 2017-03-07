@@ -20,7 +20,7 @@ import {AuthenticationService} from "./auth/auth.service";
    template: `
    <!-- START CONTENT -->
      <div id="wrapper" *ngIf="!isLoggedIn()">
-    <dashboard *ngIf="!isLoggedIn()" ></dashboard>
+    <dashboard ></dashboard>
     <router-outlet></router-outlet>
   </div *ngIf="!isLoggedIn()" ><!-- END CONTENT -->
 `,
