@@ -12,7 +12,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
-import {AuthenticationComponent} from "./authentication/authentication.component";
+import {AuthenticationComponent} from "./auth/authentication.component";
 
 @Component({
    selector: 'my-app',
