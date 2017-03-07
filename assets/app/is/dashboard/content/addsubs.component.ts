@@ -4,6 +4,11 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 import { City } from './cities';
+import { Property } from './property';
+import { Type } from './type';
+import { Cluster } from './cluster';
+import { Blokfloor } from './blokfloor';
+import { Home } from './home';
 
 @Component({
     selector: 'form-addsubs',
@@ -114,41 +119,31 @@ import { City } from './cities';
                                 <form class="paddingR30">
                                     <select class="inputForm" name="property">
                                         <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                        <option value="volvo">Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <option *ngFor="#property of properties" value="{{ property._id }}">{{ property.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
                                     <select class="inputForm" name="type">
                                         <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                        <option value="volvo">Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
                                     <select class="inputForm" name="cluster">
                                         <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                        <option value="volvo">Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
                                     <select class="inputForm" name="block">
                                         <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                        <option value="volvo">Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form class="paddingR30">
                                     <select class="inputForm" name="no">
                                         <option class="option" disabled="true" selected="true">-- Select No. --</option>
-                                        <option value="volvo">Jakarta</option>
-                                        <option value="saab">Bandung</option>
-                                        <option value="fiat">Medan</option>
+                                        <option *ngFor="#home of homes" value="{{ home._id }}">{{ home.name }}</option>
                                     </select><br/>
                                 </form>
                             </div>
@@ -177,6 +172,11 @@ export class ContentAddSubsComponent implements OnInit {
   // Declare empty list of people
   subs: any[] = [];
   cities: any[] = [];
+  properties: any[] = [];
+  typeproperties: any[] = [];
+  clusters: any[] = [];
+  blokfloors: any[] = [];
+  homes: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -184,6 +184,11 @@ export class ContentAddSubsComponent implements OnInit {
   ngOnInit() {
     this.getAllSub();
     this.getAllCity();
+    this.getAllProperty();
+    this.getAllType();
+    this.getAllCluster();
+    this.getAllBLokfloor();
+    this.getAllHome();
   }
 
 // Add one person to the API
@@ -221,4 +226,44 @@ export class ContentAddSubsComponent implements OnInit {
         this.cities = cities
       })
   }
+  // Get all Property from the API
+    getAllProperty() {
+      this.http.get(`${this.API}/property/listproperty`)
+        .map(res => res.json())
+        .subscribe(properties => {
+          this.properties = properties
+        })
+    }
+    // Get all Type from the API
+      getAllType() {
+        this.http.get(`${this.API}/type/listtypeproperty`)
+          .map(res => res.json())
+          .subscribe(typeproperties => {
+            this.typeproperties = typeproperties
+          })
+      }
+// Get all Cluster from the API
+getAllCluster() {
+  this.http.get(`${this.API}/cluster/listcluster`)
+    .map(res => res.json())
+    .subscribe(clusters => {
+      this.clusters = clusters
+    })
+}
+// Get all BLokfloor from the API
+  getAllBLokfloor() {
+    this.http.get(`${this.API}/blokfloor/listblokfloor`)
+      .map(res => res.json())
+      .subscribe(blokfloors => {
+        this.blokfloors = blokfloors
+      })
+  }
+// Get all Home from the API
+getAllHome() {
+this.http.get(`${this.API}/home/listhome`)
+  .map(res => res.json())
+  .subscribe(homes => {
+    this.homes = homes
+  })
+}
 }
