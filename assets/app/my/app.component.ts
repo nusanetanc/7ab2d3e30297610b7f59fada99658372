@@ -13,14 +13,16 @@ import {ContentDetailInformationComponent} from "./dashboard/content/detailinfor
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
+import {AuthenticationService} from "./auth/auth.service";
 
 @Component({
    selector: 'my-app',
    template: `
    <!-- START CONTENT -->
-     <div id="wrapper">
+     <div id="wrapper" *ngIf="!isLoggedIn()">
+    <dashboard *ngIf="!isLoggedIn()" ></dashboard>
     <router-outlet></router-outlet>
-  </div><!-- END CONTENT -->
+  </div *ngIf="!isLoggedIn()" ><!-- END CONTENT -->
 `,
     directives: [DashboardComponent,
                   ContentDashboardComponent,
@@ -49,5 +51,9 @@ import {AuthenticationComponent} from "./auth/authentication.component";
 ])
 
 export class AppComponent {
+constructor (private _authService: AuthenticationService){}
 
+  isLoggedIn(){
+    return this._authService.isLoggedIn();
+  }
 }
