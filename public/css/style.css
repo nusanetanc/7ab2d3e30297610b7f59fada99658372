@@ -548,6 +548,10 @@ margin-bottom: 20px;
     margin-bottom: 0px;
     height: 500px;
     background-color: #000;
+    background-image: url("../images/optical-fiber.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 50%;
     color: white;
 }
 
