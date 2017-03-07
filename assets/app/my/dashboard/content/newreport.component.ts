@@ -82,17 +82,26 @@ export class ContentNewReportComponent {
 
   ngOnInit() {
     this.getAllComplaint();
-    this.addComplaint();
   }
-// Add one person to the API
-  addComplaint(name) {
-    this.http.post(`${this.API}/complaint/addcomplaint`, {name})
-      .map(res => res.json())
-      .subscribe(() => {
-        this.getAllReports();
-        console.log('sukses');
-      })
-  }
+
+  // Add one report to the API
+    addSub(subname, subphone, subemail) {
+
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/subscribe/addsub`,
+            body, {
+              headers: headers
+            })
+            .subscribe(data => {
+                  alert('Add New Subscribe Success');
+                  this.getAllSub();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
 
   getAllComplaint() {
     this.http.get(`${this.API}/complaint/listcomplaint`)
