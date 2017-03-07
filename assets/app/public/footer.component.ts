@@ -41,7 +41,7 @@ import {Http} from 'angular2/http';
             </div>
             <div class="col-xs-6 col-sm-6 col-sm-3">
                 <p style="line-height:25px;"><span class="home-footer-header-text"><img src="images/groovy.png" alt="" width="120px"></span><br>
-                    <span class="home-footer-body-text">Layanan Internet terbaik untuk komplek perumahan dan apartemen dengan mengkombinasikan layanan hiburan terlengkap mullai dari live TV, video on demand, social TV, catch-up TV dan radio streaming
+                    <span class="home-footer-body-text">Layanan Internet terbaik untuk komplek perumahan dan apartemen dengan mengkombinasikan layanan hiburan terlengkap mullai dari live TV, video on demand, social TV, catch-up TV dan radio streaming</span>
                 </p>
             </div>
         </div>
