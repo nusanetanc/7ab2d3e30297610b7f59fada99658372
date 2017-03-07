@@ -34,6 +34,7 @@ import {PrivateComponent} from './auth/private.component';
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
                   ContentAccountComponent,
+                  AuthenticationComponent,
                   PrivateComponent,
                   ROUTER_DIRECTIVES],
 })
