@@ -32,8 +32,20 @@ import {AuthenticationService, User} from './auth.service';
                     class="btn waves-effect waves-light"
                     type="submit" name="action">Login</button>
             </div>
-        </div>
+        </div>`
 })
 export class SigninComponent {
+
+public user = new User('','');
+ public errorMsg = '';
+
+ constructor(
+     private _service:AuthenticationService) {}
+
+ login() {
+     if(!this._service.login(this.user)){
+         this.errorMsg = 'Failed to login';
+     }
+ }
 
 }
