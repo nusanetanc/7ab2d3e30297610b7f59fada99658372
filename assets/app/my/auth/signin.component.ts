@@ -6,33 +6,19 @@ import {AuthenticationService, User} from './auth.service';
     selector: 'form-login',
     providers: [AuthenticationService],
     template: `
-        <div class="container" >
-            <div class="title">
-                Welcome
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input [(ngModel)]="user.email" id="email"
-                            type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
+    <div class="container container-auth-client">
+        <div class="top-margin text-center">
+            <div class="form">
+                <div class="form-group">
+                    <input class="form-control" [(ngModel)]="user.email" id="email" type="email" placeholder="Email">
+                    <input type="password" class="form-control" [(ngModel)]="user.password" id="password" placeholder="Password">
                 </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input [(ngModel)]="user.password" id="password"
-                            type="password" class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-
                 <span>{{errorMsg}}</span>
-                <button (click)="login()"
-                    class="btn waves-effect waves-light"
-                    type="submit" name="action">Login</button>
+                <button type="submit" (click)="login()" class="btn button-submit">SIGN IN</button>
+                <div class="text text-other"><a href="/forgot-password">I forgot password</a></div>
             </div>
-        </div>`
+        </div>
+    </div>`
 })
 export class SigninComponent {
 
