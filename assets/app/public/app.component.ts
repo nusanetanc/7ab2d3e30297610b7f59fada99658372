@@ -5,6 +5,7 @@ import {FooterComponent} from "./footer.component";
 import {HomeComponent} from "./content/home.component";
 import {FeaturesComponent} from "./content/features.component";
 import {PackagesComponent} from "./content/packages.component";
+import {SupportComponent} from "./content/support.component";
 
 @Component({
     selector: 'my-app',
@@ -13,13 +14,14 @@ import {PackagesComponent} from "./content/packages.component";
             <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent, FeaturesComponent, PackagesComponent]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent, FeaturesComponent, PackagesComponent, SupportComponent]
 })
 
 @RouteConfig([
     {path: '/public', name: 'Home', component: HomeComponent, useAsDefault: true},
     {path: '/public/features', name: 'Features', component: FeaturesComponent},
     {path: '/public/packages', name: 'Packages', component: PackagesComponent},
+    {path: '/public/support', name: 'Support', component: SupportComponent},
 ])
 export class AppComponent{
 

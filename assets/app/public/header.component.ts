@@ -19,7 +19,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                     <ul class="nav navbar-nav navbar-right">
                       <li><a [routerLink]="['Features']"><span class="navbar-menus"><strong>FEATURES</strong></span></a></li>
                       <li><a [routerLink]="['Packages']"><span class="navbar-menus"><strong>PACKAGES</strong></span></a></li>
-                      <li><a><span class="navbar-menus"><strong>SUPPORT</strong></span></a></li>
+                      <li><a [routerLink]="['Support']"><span class="navbar-menus"><strong>SUPPORT</strong></span></a></li>
                         <li class="active"><a><span class="sign-in-only"><strong>SIGN IN</strong></span></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
