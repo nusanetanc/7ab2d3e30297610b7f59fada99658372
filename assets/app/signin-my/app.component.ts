@@ -13,10 +13,10 @@ import {FooterComponent} from "./footer.component";
                 <div class="top-margin text-center">
                     <div class="form">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="email" placeholder="Email">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
+                            <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                         </div>
-                        <a href="#" class="btn button-submit">SIGN IN</a>
+                        <button type="submit" (click)="signSub(email.value, password.value) class="btn button-submit">SIGN IN</button>
                         <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
                     </div>
                 </div>
@@ -34,9 +34,9 @@ export class AppComponent{
 subs: any[] = [];
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
+  signSub(signEmail, signPassword) {
 
-  var body = `email=${email}&password=${password}`;
+  var body = `email=${signEmail}&password=${signPassword}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
