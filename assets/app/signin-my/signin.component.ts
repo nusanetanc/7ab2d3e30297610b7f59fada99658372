@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Router, Location} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
@@ -28,7 +28,7 @@ export class SigninComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-constructor(private http: Http, private router:Router) {}
+constructor(private http: Http) {}
 
 
   // Angular 2 Life Cycle event when component has been initialized
@@ -62,7 +62,7 @@ getAllSub() {
     .subscribe(
             data => {
               alert('Login Sukses');
-              this.router.navigate('/my');
+              window.location.href = `${signEmail}/my`;
             },
             error => {
               alert(error.text());
