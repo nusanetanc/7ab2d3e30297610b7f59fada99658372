@@ -36,18 +36,18 @@ subs: any[] = [];
 // Add one person to the API
   addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
 
-  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
+  var body = `email=${email}&password=${password}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
-        .post(`${this.API}/subscribe/addsub`,
+        .post(`${this.API}/subscribe/signin`,
           body, {
             headers: headers
           })
           .subscribe(data => {
-                alert('Add New Subscribe Success');
+                alert('Login Success');
           }, error => {
-              console.log(JSON.stringify(error.json()));
+              alert('Login Error');
           });
   }
 }
