@@ -6,6 +6,7 @@ import {HomeComponent} from "./content/home.component";
 import {FeaturesComponent} from "./content/features.component";
 import {PackagesComponent} from "./content/packages.component";
 import {SupportComponent} from "./content/support.component";
+import {AppComponent} from "../signin-my/app.component";
 
 @Component({
     selector: 'my-app',
@@ -14,7 +15,7 @@ import {SupportComponent} from "./content/support.component";
             <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent, FeaturesComponent, PackagesComponent, SupportComponent]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent, FeaturesComponent, PackagesComponent, SupportComponent, AppComponent]
 })
 
 @RouteConfig([
@@ -22,6 +23,7 @@ import {SupportComponent} from "./content/support.component";
     {path: '/public/features', name: 'Features', component: FeaturesComponent},
     {path: '/public/packages', name: 'Packages', component: PackagesComponent},
     {path: '/public/support', name: 'Support', component: SupportComponent},
+    {path: '/public/signin', name: 'Signin', component: AppComponent},
 ])
 export class AppComponent{
 
