@@ -101,7 +101,11 @@ router.get('/dashboard/newsubscribers', function(req, res, next) {
 });
 
 router.get('/public', function(req, res, next) {
-  res.render('./index', {title: 'Groovy'});
+  res.render('index', {title: 'Groovy'});
+});
+
+router.get('/public/**', function(req, res, next) {
+  res.render('index', {title: 'Groovy'});
 });
 
 module.exports = router;
