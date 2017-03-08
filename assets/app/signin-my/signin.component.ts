@@ -62,7 +62,7 @@ getAllSub() {
     .subscribe(
             data => {
               alert('Login Sukses');
-              window.location.href = `${signEmail}/my`;
+              window.location.href = `/my`;
             },
             error => {
               alert(error.text());
