@@ -11,11 +11,11 @@ import {HomeComponent} from "./content/home.component";
             <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [HeaderComponent, FooterComponent]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent]
 })
 
 @RouteConfig([
-    {path: '/', name: 'Home', component: HomeComponent, useAsDefault: true},
+    {path: '/public', name: 'Home', component: HomeComponent, useAsDefault: true},
 ])
 export class AppComponent{
 
