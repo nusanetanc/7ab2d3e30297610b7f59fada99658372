@@ -61,13 +61,10 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              localStorage.setItem('id_token', response.json().id_token);
               alert('Login Sukses');
-              this.router.navigate(['home']);
             },
             error => {
               alert(error.text());
-              console.log(error.text());
             }
           );
   }
