@@ -1,9 +1,8 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
-import {Http} from 'angular2/http';
+import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
+import {HomeComponent} from "./content/home.component";
 
 @Component({
     selector: 'my-app',
@@ -14,6 +13,10 @@ import {FooterComponent} from "./footer.component";
 `,
     directives: [HeaderComponent, FooterComponent]
 })
+
+@RouteConfig([
+    {path: '/', name: 'Home', component: HomeComponent, useAsDefault: true},
+])
 export class AppComponent{
 
 }
