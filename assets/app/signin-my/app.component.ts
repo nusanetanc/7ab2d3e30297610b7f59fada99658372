@@ -2,6 +2,7 @@ import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
+import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
 
@@ -26,4 +27,27 @@ import {FooterComponent} from "./footer.component";
 })
 export class AppComponent{
 
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+
+// Declare empty list of people
+subs: any[] = [];
+
+// Add one person to the API
+  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
+
+  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+        .post(`${this.API}/subscribe/addsub`,
+          body, {
+            headers: headers
+          })
+          .subscribe(data => {
+                alert('Add New Subscribe Success');
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
 }
