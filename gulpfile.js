@@ -2,9 +2,11 @@ var gulp = require('gulp');
 
 var appIsDev = 'assets/app/is/';
 var appMyDev = 'assets/app/my/';
+var appMySignDev = 'assets/app/signin-my/';
 var appPublicDev = 'assets/app/public/';
 var appIsProd = 'public/js/app/is/';
 var appMyProd = 'public/js/app/my/';
+var appMySignProd = 'public/js/app/signin/';
 var appPublicProd = 'public/js/app/public/';
 
 /* JS & TS */
@@ -46,13 +48,24 @@ gulp.task('build-ts3', function () {
             .pipe(concat('bundle.js'))
             .pipe(gulp.dest(appPublicProd));
 });
+gulp.task('build-ts4', function () {
+        return gulp.src(appMySignDev + '**/*.ts')
+            .pipe(sourcemaps.init())
+            .pipe(typescript(tsProject))
+            .pipe(sourcemaps.write())
+            // .pipe(jsuglify())
+            .pipe(concat('bundle.js'))
+            .pipe(gulp.dest(appMySignProd));
+});
 
 gulp.task('watch', function () {
     gulp.watch(appIsDev + '**/*.ts', ['build-ts1']);
     gulp.watch(appMyDev + '**/*.ts', ['build-ts2']);
     gulp.watch(appPublicDev + '**/*.ts', ['build-ts3']);
+    gulp.watch(appMySignDev + '**/*.ts', ['build-ts4']);
 });
 
 gulp.task('default', ['watch', 'build-ts1']);
 gulp.task('default', ['watch', 'build-ts2']);
 gulp.task('default', ['watch', 'build-ts3']);
+gulp.task('default', ['watch', 'build-ts4']);
