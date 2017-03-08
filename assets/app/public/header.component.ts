@@ -1,7 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
-import {Http} from 'angular2/http';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'my-header',
@@ -15,14 +13,14 @@ import {Http} from 'angular2/http';
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href=""><img class="navbar-logo" src="images/logo-groovy.png" alt="logo-groovy"/></a>
+                    <a [routerLink]="['Home']"><img class="navbar-logo" src="images/logo-groovy.png" alt="logo-groovy"/></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="features"><span class="navbar-menus"><strong>FEATURES</strong></span></a></li>
-                      <li><a href="packages"><span class="navbar-menus"><strong>PACKAGES</strong></span></a></li>
-                      <li><a href="support"><span class="navbar-menus"><strong>SUPPORT</strong></span></a></li>
-                        <li class="active"><a href="signin"><span class="sign-in-only"><strong>SIGN IN</strong></span></a></li>
+                      <li><a [routerLink]="['Features']"><span class="navbar-menus"><strong>FEATURES</strong></span></a></li>
+                      <li><a [routerLink]="['Packages']"><span class="navbar-menus"><strong>PACKAGES</strong></span></a></li>
+                      <li><a [routerLink]="['Support']"><span class="navbar-menus"><strong>SUPPORT</strong></span></a></li>
+                        <li class="active"><a [routerLink]="['Signin']"><span class="sign-in-only"><strong>SIGN IN</strong></span></a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
