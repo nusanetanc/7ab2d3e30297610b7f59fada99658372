@@ -60,7 +60,7 @@ getAllSub() {
             headers: headers
           })
     .subscribe(
-            response => {
+            data => {
               localStorage.setItem('id_token', response.json().id_token);
               alert('Login Sukses');
               this.router.navigate(['home']);
