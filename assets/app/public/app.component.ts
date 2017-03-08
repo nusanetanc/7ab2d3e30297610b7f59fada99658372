@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
 import {HomeComponent} from "./content/home.component";
+import {FeaturesComponent} from "./content/features.component";
 
 @Component({
     selector: 'my-app',
@@ -11,11 +12,12 @@ import {HomeComponent} from "./content/home.component";
             <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent, FeaturesComponent]
 })
 
 @RouteConfig([
     {path: '/public', name: 'Home', component: HomeComponent, useAsDefault: true},
+    {path: '/public/features', name: 'Features', component: FeaturesComponent},
 ])
 export class AppComponent{
 
