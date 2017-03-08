@@ -66,7 +66,6 @@ getAllSub() {
               this.router.navigate(['home']);
             },
             error => {
-            this.router.navigate(['home']);
               alert(error.text());
               console.log(error.text());
             }
