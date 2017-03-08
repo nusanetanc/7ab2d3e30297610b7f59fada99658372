@@ -6,7 +6,7 @@ import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
 
 @Component({
-    selector: 'my-app',
+    selector: 'my-signin',
     template: `
             <my-header></my-header><br>
             <router-outlet></router-outlet>
