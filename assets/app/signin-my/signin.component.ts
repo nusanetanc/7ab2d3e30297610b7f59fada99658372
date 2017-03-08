@@ -59,13 +59,11 @@ getAllSub() {
           body, {
             headers: headers
           })
-          .subscribe(
-                  data => {
-                    localStorage.setItem('token', data.obj);
-                    localStorage.setItem('userId', data.userId);
-                    this._router.navigateByUrl('/');
-                  },
-                  error => this._errorService.handleError(error)
-                );
+          .subscribe(data => {
+                alert('Login Sukses');
+                this.getAllSub();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
   }
 }

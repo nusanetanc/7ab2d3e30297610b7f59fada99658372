@@ -190,6 +190,7 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllBLokfloor();
     this.getAllHome();
   }
+  
 
 // Add one person to the API
   addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
