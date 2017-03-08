@@ -6,67 +6,16 @@ import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
+import {SigninComponent} from "./signin.component";
 
 @Component({
     selector: 'my-signin',
     template: `
-            <my-header></my-header><div class="container container-auth-client">
-                <div class="top-margin text-center">
-                    <div class="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                            <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
-                        </div>
-                        <button type="submit" (click)="signSub(signEmail.value, signEmail.value)" class="btn button-submit">SIGN IN</button>
-                        <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-                    </div>
-                </div>
-            </div>
+            <my-header></my-header>
+              <form-signin></form-signin>
             <my-footer></my-footer>
 `,
-    directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
+    directives: [HeaderComponent, FooterComponent, SigninComponent, ROUTER_DIRECTIVES]
 })
 export class AppComponent{
-
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
-
-constructor(private http: Http) {}
-
-
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllSub();
-  }
-
-// Declare empty list of people
-subs: any[] = [];
-
-// Get all Sub from the API
-getAllSub() {
-  this.http.get(`${this.API}/subscribe/listsub`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
-
-// Add one person to the API
-  signSub(signEmail, signPassword) {
-
-  var body = `email=${signEmail}&password=${signPassword}`;
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http
-        .post(`${this.API}/subscribe/signin`,
-          body, {
-            headers: headers
-          })
-          .subscribe(data => {
-                alert('Login Success');
-                this.getAllSub();
-          }, error => {
-              alert('Login Error');
-          });
-  }
 }
