@@ -105,7 +105,7 @@ router.get('/public', function(req, res, next) {
 });
 
 router.get('/public/**', function(req, res, next) {
-  res.render('index', {title: 'Groovy'});
+  res.render('public', {title: 'Groovy'});
 });
 
 module.exports = router;
