@@ -63,6 +63,7 @@ getAllSub() {
                 alert('Login Sukses');
                 this.getAllSub();
           }, error => {
+          alert('Login Failed');
               console.log(JSON.stringify(error.json()));
           });
   }
