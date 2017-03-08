@@ -11,7 +11,7 @@ import {HomeComponent} from "./content/home.component";
             <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [HeaderComponent, FooterComponent, HomeComponent]
+    directives: [ROUTER_DIRECTIVES, HeaderComponent, FooterComponent, HomeComponent]
 })
 
 @RouteConfig([
