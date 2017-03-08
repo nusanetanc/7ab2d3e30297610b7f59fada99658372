@@ -522,16 +522,15 @@ margin-bottom: 20px;
     background-color: #fff;
 }
 
-.wall-features-content{
-    margin-top:200px;
-}
-
 .wall-features-title{
     font-size: 35px;
+    margin-top:80px;
+    margin-bottom:30px;
+    font-weight: 100;
 }
 
 .wall-features-text{
-    font-size: 18px;
+    font-size: 18px !important;
 }
 
 .features-content1{
