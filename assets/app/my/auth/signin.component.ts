@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import {AuthenticationService, User} from './auth.service';
+//import {AuthenticationService, User} from './auth.service';
 
 @Component({
     selector: 'form-login',
