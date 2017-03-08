@@ -51,9 +51,5 @@ import {AuthenticationService} from "./auth/auth.service";
 ])
 
 export class AppComponent {
-constructor (private _authService: AuthenticationService){}
 
-  isLoggedIn(){
-    return this._authService.isLoggedIn();
-  }
 }
