@@ -26,11 +26,11 @@ import {FooterComponent} from "./footer.component";
 `,
     directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  
+
 constructor(private http: Http) {}
 
 // Declare empty list of people
