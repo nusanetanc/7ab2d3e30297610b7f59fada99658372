@@ -1,6 +1,7 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
@@ -16,19 +17,21 @@ import {FooterComponent} from "./footer.component";
                             <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
                             <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                         </div>
-                        <button type="submit" (click)="signSub(email.value, password.value) class="btn button-submit">SIGN IN</button>
+                        <button type="submit" (click)="signSub(signEmail.value, signEmail.value)" class="btn button-submit">SIGN IN</button>
                         <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
                     </div>
                 </div>
             </div>
             <my-footer></my-footer>
 `,
-    directives: [HeaderComponent, FooterComponent]
+    directives: [HeaderComponent, FooterComponent, ROUTER_DIRECTIVES]
 })
 export class AppComponent{
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+
+constructor(private http: Http) {}
 
 // Declare empty list of people
 subs: any[] = [];
