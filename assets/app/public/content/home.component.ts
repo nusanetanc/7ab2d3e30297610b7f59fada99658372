@@ -48,7 +48,7 @@ import {Http} from 'angular2/http';
                 </div>
             </div>
 `,
-    directives: []
+    directives: [ROUTER_DIRECTIVES]
 })
 export class HomeComponent{
 
