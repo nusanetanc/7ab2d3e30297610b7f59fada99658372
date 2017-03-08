@@ -16,15 +16,4 @@ import {AuthenticationService} from './auth.service'
 })
 
 export class PrivateComponent {
-
-    constructor(
-        private _service:AuthenticationService){}
-
-    ngOnInit(){
-        this._service.checkCredentials();
-    }
-
-    logout() {
-        this._service.logout();
-    }
 }
