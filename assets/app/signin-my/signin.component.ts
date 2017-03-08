@@ -6,7 +6,7 @@ import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
 
 @Component({
-    selector: 'my-signin',
+    selector: 'form-signin',
     template: `
             <div class="container container-auth-client">
                 <div class="top-margin text-center">
