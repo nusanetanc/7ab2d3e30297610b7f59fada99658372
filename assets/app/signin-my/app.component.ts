@@ -1,7 +1,7 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
-import {Http} from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
