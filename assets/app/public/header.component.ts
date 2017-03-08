@@ -26,7 +26,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
             </div>
         </nav>
 `,
-    directives: []
+    directives: [ROUTER_DIRECTIVES]
 })
 export class HeaderComponent{
 
