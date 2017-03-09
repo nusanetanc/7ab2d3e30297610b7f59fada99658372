@@ -40,7 +40,7 @@ import { Problem } from './problem';
                                 <form>
                                     <select name="internetProblem" (click)="getDescProblem(subcategory.value)"  #subcategory id="subcategory" >
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" value = "{{ problem.subcategory }}" >{{ problem.subcategory }}</option>
+                                        <option *ngFor="#problem of problems" value = "{problem.subcategory}" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
