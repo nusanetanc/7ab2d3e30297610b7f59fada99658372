@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                        *ngFor="#descproblem of descproblems" {{ descproblem.subcategory }}
+                                         {{ descproblem.desc }}
                                     </div>
                                 </div>
                             </div>
