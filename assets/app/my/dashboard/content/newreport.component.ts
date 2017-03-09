@@ -55,9 +55,9 @@ import { Problem } from './problem';
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
-                                    <div class="col-sm-11">
+                                    <div class="col-sm-11" *ngFor="#descproblem of descproblems">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                        *ngFor="#descproblem of descproblems" {{ descproblems.desc }}
+                                         {{ descproblem.desc }}
                                     </div>
                                 </div>
                             </div>
