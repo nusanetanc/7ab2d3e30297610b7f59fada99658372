@@ -78,6 +78,7 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
+  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
