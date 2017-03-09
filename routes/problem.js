@@ -67,8 +67,8 @@ router.delete('/delproblem/:id', function(req, res, next) {
 /* GET detail city. */
 router.post('/desc', function(req, res, next) {
 Problem.findOne({subcategory: req.body.subcategory}, function(err, descproblem) {
-       console.log( descproblem );
-       res.json(descproblem);
+       console.log( descproblems );
+       res.json(descproblems);
    });
 });
 

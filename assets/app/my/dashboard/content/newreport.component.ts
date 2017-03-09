@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                        {{descproblem.desc}}
+                                        *ngFor="#problem of problems" {{ problem.subcategory }}
                                     </div>
                                 </div>
                             </div>
@@ -129,8 +129,8 @@ export class ContentNewReportComponent implements OnInit {
         headers: headers
       })
       .map(res => res.json())
-      .subscribe(descproblem => {
-        this.descproblem = descproblem
+      .subscribe(descproblems => {
+        this.descproblems = descproblems
       })
   }
 }
