@@ -4,15 +4,15 @@ var Problem = require('../models/problem');
 
 /* GET cityloye listing. */
 router.get('/listproblem', function(req, res, next) {
-     Problem.find(function(err, citys) {
+     Problem.find(function(err, problems) {
        console.log( problems );
-       res.json(citys);
+       res.json(problems);
    });
 });
 
 /* GET detail city. */
 router.get('/problem/:id', function(req, res, next) {
-Problem.findById(req.params.id, function(err, citys) {
+Problem.findById(req.params.id, function(err, problems) {
        console.log( problems );
        res.json(problems);
    });
@@ -24,7 +24,8 @@ router.post('/addproblem', function(req, res, next) {
     problem.category= req.body.category;
     problem.subcategory= req.body.subcategory;
     problem.desc= req.body.desc;
-    problem.problem(function(err) {
+
+    problem.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
