@@ -1,8 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaint';
+import { Problem } from './problem';
 
 @Component({
     selector: 'form-newreport',
@@ -37,9 +38,9 @@ import { Complaint } from './complaint';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select name="internetProblem" (click)="getDescProblem(subcategory.value)" #subcategory id="subcategory">
+                                    <select name="internetProblem" (click)="getDescProblem(subcategory.value)"  #subcategory id="subcategory" >
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option [value]="problem.subcategory" *ngFor="#problem of problems">{{ problem.subcategory }}</option>
+                                        <option *ngFor="#problem of problems">{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
@@ -69,7 +70,8 @@ import { Complaint } from './complaint';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentNewReportComponent {
+export class ContentNewReportComponent implements OnInit {
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';
@@ -86,7 +88,7 @@ export class ContentNewReportComponent {
   // Add one report to the API
     addSub(subname, subphone, subemail) {
 
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
+    var body = ``;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http
