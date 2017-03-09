@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #subcategory id="subcategory"  (click)="getDescProblem(subcategory.value)">
+                                    <select  #inputsubcategory id="inputsubcategory"  (click)="getDescProblem(subcategory.value)">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" value = "{{problem.subcategory}}" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -55,9 +55,9 @@ import { Problem } from './problem';
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
-                                    <div class="col-sm-11">
+                                    <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                        *ngFor="#descproblem of descproblems" {{ descproblem.subcategory }}
+                                         <div>  </div>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ export class ContentNewReportComponent implements OnInit {
 
   ngOnInit() {
     this.getAllComplaint();
-      this.getProblem()
+      this.getProblem();
   }
 
   getAllComplaint() {
@@ -101,8 +101,8 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-  getDescProblem(subcategory) {
-  var body = `subcategory=${subcategory}`;
+  getDescProblem(inputsubcategory) {
+  var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
@@ -110,7 +110,6 @@ export class ContentNewReportComponent implements OnInit {
       body, {
         headers: headers
       })
-      .map(res => res.json())
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
