@@ -38,9 +38,9 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select name="internetProblem" (click)="getDescProblem(subcategory.value)"  #subcategory id="subcategory" >
+                                    <select  #subcategory id="subcategory"  (click)="getDescProblem(subcategory.value)">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" value = "{problem.subcategory}" >{{ problem.subcategory }}</option>
+                                        <option *ngFor="#problem of problems" value = "{{problem.subcategory}}" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
@@ -57,6 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
+                                        *ngFor="#descproblem of descproblems" {{ descproblem.subcategory }}
                                     </div>
                                 </div>
                             </div>
@@ -77,6 +78,7 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
+  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -84,25 +86,6 @@ export class ContentNewReportComponent implements OnInit {
     this.getAllComplaint();
       this.getProblem()
   }
-
-  // Add one report to the API
-    addSub(subname, subphone, subemail) {
-
-    var body = ``;
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      this.http
-          .post(`${this.API}/subscribe/addsub`,
-            body, {
-              headers: headers
-            })
-            .subscribe(data => {
-                  alert('Add New Subscribe Success');
-                  this.getAllSub();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
-    }
 
   getAllComplaint() {
     this.http.get(`${this.API}/complaint/listcomplaint`)
@@ -118,7 +101,7 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-  getDescProblem() {
+  getDescProblem(subcategory) {
   var body = `subcategory=${subcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -128,9 +111,8 @@ export class ContentNewReportComponent implements OnInit {
         headers: headers
       })
       .map(res => res.json())
-      .subscribe(descproblem => {
-      alert(descproblem.text());
-        this.descproblem = descproblem
+      .subscribe(descproblems => {
+        this.descproblems = descproblems
       })
   }
 }
