@@ -78,6 +78,7 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
+  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -85,25 +86,6 @@ export class ContentNewReportComponent implements OnInit {
     this.getAllComplaint();
       this.getProblem()
   }
-
-  // Add one report to the API
-    addSub(subname, subphone, subemail) {
-
-    var body = ``;
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      this.http
-          .post(`${this.API}/subscribe/addsub`,
-            body, {
-              headers: headers
-            })
-            .subscribe(data => {
-                  alert('Add New Subscribe Success');
-                  this.getAllSub();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
-    }
 
   getAllComplaint() {
     this.http.get(`${this.API}/complaint/listcomplaint`)
