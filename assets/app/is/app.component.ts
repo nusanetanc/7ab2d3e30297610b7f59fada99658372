@@ -38,7 +38,7 @@ import {SigninComponent} from "./authentication/signin.component";
         
    </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, SigninComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, AuthenticationComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
@@ -46,7 +46,7 @@ import {SigninComponent} from "./authentication/signin.component";
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
   { path: '/is/information', component:ContentInformationComponent, name:'Information'},
-  { path: '/is/signin', component:SigninComponent, name:'Signin'},
+  { path: '/is/signin', component:AuthenticationComponent, name:'Signin'},
 ])
 
 export class AppComponent {

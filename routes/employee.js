@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var Emp = require('../models/employee')
+var passwordHash = require('password-hash');
+var jwt = require('jsonwebtoken');
+
+var Emp = require('../models/employee');
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {
@@ -24,7 +27,7 @@ router.post('/addemp', function(req, res, next) {
     emp.idemployee= req.body.idemployee;
     emp.name= req.body.name;
     emp.email= req.body.email;
-    //emp.password= passwordHash.generate(req.body.password);
+    emp.password= passwordHash.generate(req.body.password);
     emp.departement= req.body.departement;
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
@@ -47,7 +50,7 @@ router.put('/putemp/:id', function(req, res, next) {
                 emp.idemployee= req.body.idemployee;
                 emp.name= req.body.name;
                 emp.email= req.body.email;
-                //emp.password= passwordHash.generate(req.body.password);
+                emp.password= passwordHash.generate(req.body.password);
                 emp.departement= req.body.departement;
                 emp.titlejob= req.body.titlejob;
                 emp.accessrole= req.body.accessrole;
@@ -72,6 +75,36 @@ router.delete('/delemp/:id', function(req, res, next) {
 
             res.json({ message: 'Successfully deleted' });
    });
+});
+
+//signin employee
+router.post('/signin', function(req, res, next){
+    Emp.findOne({email: req.body.email}, function(err, doc){
+        if (err) {
+            return res.status(404).json({
+                title: 'An error occured',
+                error: err
+            });
+        }
+        if (!doc) {
+            return res.status(404).json({
+                title: 'No user found',
+                error: {message: 'User could not be found'}
+            });
+        }
+        if (!passwordHash.verify(req.body.password, doc.password)){
+            return res.status(404).json({
+                title: 'Could not sign you in',
+                error: {message: 'Invalid password'}
+            });
+        }
+        var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
+        res.status(200).json({
+            message: 'Success',
+            token: token,
+            sessionId: doc._id
+        })
+    })
 });
 
 module.exports = router;
