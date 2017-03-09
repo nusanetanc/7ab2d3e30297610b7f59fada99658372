@@ -17,7 +17,7 @@ template: `
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="ava.png" alt="ava">
-                            <a class="name"><b>{{emps.name}}</b></a>
+                            <a class="name"><b>rifki</b></a>
                             <!-- Extra small button group -->
                             <div class="btn-group navbar-right">
                                 <a class="dropdown-toggle name" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
