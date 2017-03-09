@@ -27,11 +27,37 @@ hr {
 
 /*--- Sidebar ---*/
 
+.navbar-right {
+    margin-right: 35px;
+    margin-top: 17px;
+}
+
 .name {
     margin-top: 20px;
+    color: #FFF;
+}
+
+.name:hover {
+    color: #FFF;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.name:active {
+    color: #FFF;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.title > div {
+    margin-left: -25px;
+    margin-top: 20px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .user {
+    font-size: 12px !important;
     margin-top: -20px;
     padding-right: 30px;
 }
@@ -126,13 +152,18 @@ hr {
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand > a {
+.sidebar-brand {
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sidebar-brand > a {
     background: none;
     color: #FFF;
     text-decoration: none;
 }
 
-.sidebar-nav > .sidebar-brand > a:hover {
+.sidebar-brand > a:hover {
     background: none;
 }
 
@@ -141,7 +172,7 @@ hr {
     height: 100px;
 }
 
-.sidebar-nav > .sidebar-brand > .title > img {
+.sidebar-brand > .title > img {
     border-radius: 50%;
     float: left;
     height: 60px;
@@ -149,7 +180,7 @@ hr {
     width: 60px;
 }
 
-.sidebar-nav > .sidebar-brand > .title > a {
+.sidebar-brand > .title > a {
     color: #FFF;
     float: left;
     font-size: 14px;
@@ -163,18 +194,20 @@ hr {
     vertical-align: middle;
 }
 
-.sidebar-nav > .sidebar-footer {
-     bottom: 0px;
-     position: fixed;
- }
+.sidebar-footer {
+    bottom: 0px;
+    position: absolute;
+    line-height: 40px;
+    text-indent: 20px;
+}
 
-.sidebar-nav > .sidebar-footer > div {
+.sidebar-footer > div {
     border-top: 0.3px solid white;
     height: 60px;
     width: 250px;
 }
 
-.sidebar-nav > .sidebar-footer > div > img {
+.sidebar-footer > div > img {
     float: left;
     height: 23.75px;
     margin-left: 25px;
@@ -182,7 +215,7 @@ hr {
     width: 76.5px;
 }
 
-.sidebar-nav > .sidebar-footer > div > a {
+.sidebar-footer > div > a {
     background:none;
     color: #FFF;
     float: left;
@@ -415,11 +448,11 @@ hr {
 }
 
 .invoiceId {
-    padding: 20px 0px 20px 35px;
+    padding: 10px 0px 10px 35px;
 }
 
 .invoiceList {
-    padding: 20px 0px 20px 0px;
+    padding: 10px 0px 10px 0px;
 }
 
 .invoiceIdHeader {
@@ -601,7 +634,7 @@ hr {
 
 @media only screen and (max-width: 767px) {
     .subInfo {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 }
 /*----- /Information Page -----*/
@@ -713,6 +746,12 @@ hr {
     margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 767px) {
+    .headerList {
+        margin-bottom: 20px;
+    }
+}
+
 .inset > div > div > div > div > div > .invoiceId {
     background-color: #FC592E;
     color: #FFF;
@@ -822,6 +861,16 @@ hr {
 .reportDetail > div > .row {
     padding-left: 15px;
     padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .cardDown {
+        margin-top: 20px !important;
+    }
+
+    .font70MarginT-20 {
+        margin-top: 20px !important;
+    }
 }
 
 /*----- New Class ------*/
@@ -972,6 +1021,18 @@ a.buttonOrange:hover {
     text-decoration: none;
 }
 
+button.buttonOrange:hover {
+    background-color: #FC592E !important;
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+button.buttonOrange:active {
+    background-color: #FC592E !important;
+    color: #FFF !important;
+    text-decoration: none;
+}
+
 .ava {
     border-radius: 50%;
     height: 50px;
@@ -1040,5 +1101,33 @@ a.buttonOrange:hover {
 
 .marginT125 {
     margin-top: 125px;
+}
+
+.numberInCardBilling {
+    font-size: 70px;
+    margin-top: -30px;
+}
+
+.marginL20 {
+    margin-left: 20px;
+}
+
+.marginL35 {
+    margin-left: 35px;
+}
+
+.avaProfile {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+
+.font70MarginT-20 {
+    font-size: 70px !important;
+    margin-top: -20px !important;
+}
+
+.marginL40sen {
+    margin-left: 40%;
 }
 /*----- /New Class ------*/

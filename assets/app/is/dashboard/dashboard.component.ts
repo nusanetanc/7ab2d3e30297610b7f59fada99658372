@@ -11,45 +11,58 @@ import {Menu} from "./dashboard_menu";
 @Component({
     selector: 'dashboard',
 template: `
-                <!-- Sidebar -->
-                <div id="sidebar-wrapper">
-                  <nav id="spy">
-                    <ul class="sidebar-nav nav">
-                      <li class="sidebar-brand">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <nav id="spy">
+                    <div class="sidebar-brand">
                         <div class="title">
-                          <img src="./images/ava.png" alt="ava">
-                          <a href="" style="margin-top: 20px;"><strong>{{emps.name}}</strong></a>
-                          <a href="" style="margin-top: -20px;">{{emps.titlejob}}</a>
+                            <img src="ava.png" alt="ava">
+                            <a class="name"><b>rifki</b></a>
+                            <!-- Extra small button group -->
+                            <div class="btn-group navbar-right">
+                                <a class="dropdown-toggle name" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="account.html">account</a></li>
+                                    <li><a href="">logout</a></li>
+                                </ul>
+                            </div>
+                            <a class="user">{{emps.titlejob}}</a>
                         </div>
-                      </li>
-                      <li style="margin-top: 10px;">
-                          <a [routerLink]="['Dashboard']" class="collapse"><i class="material-icons">dashboard</i><strong>DASHBOARD</strong></a>
-                      </li>
-                      <li  style="margin-top: 10px;">
-                          <a [routerLink]="['AllSubs']" class="collapse"><i class="material-icons">supervisor_account</i><strong>SUBSCRIBERS</strong></a>
-                      </li>
-                      <li style="margin-top: 10px;">
-                        <a href="report" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
-                      </li>
-                      <li style="margin-top: 10px;">
-                        <a [routerLink]="['Information']" class="collapse"><i class="material-icons">announcement</i> <strong>INFORMATION</strong></a>
-                      </li>
-                      <!--
-                      <li *ngFor="#menu of menus" style="margin-top: 10px;">
+                    </div>
+                    <ul class="sidebar-nav nav">
+            
+                        <li class="active firstLiSidebar">
+                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['AllSubs']"><i class="material-icons">people</i> <strong>SUBSCRIBERS</strong></a>
+                        </li>
+                        <li>
+                            <a href="reportshistory.html"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        </li>
+                        
+                        <!--
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>{{menu.title}}</strong></a>
-                      </li>
-                      -->
-                      <li class="sidebar-footer">
-                        <div>
-                          <img src="./images/groovy-grayscale.png" alt="ava">
-                          <a href="">Privacy</a>
-
-                          <a href="">Terms</a>
-                        </div>
-                      </li>
+                        <li *ngFor="#menu of menus" style="margin-top: 10px;">
+                        </li>
+                        -->
+                        
                     </ul>
-                  </nav>
-                </div>
+                    <div class="sidebar-footer">
+                        <div>
+                            <img src="./images/groovy-grayscale.png" alt="ava">
+                            <a href="">Privacy</a>
+                            <a href="">Terms</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- /Sidebar -->
     `,
     directives: [ ROUTER_DIRECTIVES], providers: [],
 })
