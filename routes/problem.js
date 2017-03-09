@@ -22,7 +22,8 @@ Problem.findById(req.params.id, function(err, citys) {
 router.post('/addproblem', function(req, res, next) {
   var problem = new Problem();
     problem.category= req.body.category;
-
+    problem.subcategory= req.body.subcategory;
+    problem.desc= req.body.desc;
     problem.problem(function(err) {
       if (err)
           res.send(err);
@@ -37,7 +38,8 @@ router.put('/putproblem/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-            problem.name= req.body.category;
+                problem.subcategory= req.body.subcategory;
+                problem.desc= req.body.desc;
               if (err)
                 res.send(err);
 
