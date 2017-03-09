@@ -64,4 +64,12 @@ router.delete('/delproblem/:id', function(req, res, next) {
    });
 });
 
+/* GET detail city. */
+router.post('/problem/:subcategory', function(req, res, next) {
+Problem.findOne({subcategory: req.body.subcategory}, function(err, problems) {
+       console.log( problems );
+       res.json(problems);
+   });
+});
+
 module.exports = router;
