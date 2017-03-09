@@ -80,7 +80,6 @@ export class ContentNewReportComponent {
 
   ngOnInit() {
     this.getAllComplaint();
-    this.getProblem();
   }
 
   // Add one report to the API
@@ -114,6 +113,20 @@ export class ContentNewReportComponent {
       .map(res => res.json())
       .subscribe(problems => {
         this.problems = problems
+      })
+  }
+  getDescProblem() {
+  var body = `subcategory=${subcategory}`;
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+      .post(`${this.API}/problem/desc`,
+      body, {
+        headers: headers
+      })
+      .map(res => res.json())
+      .subscribe(descproblem => {
+        this.descproblem = descproblem
       })
   }
 }
