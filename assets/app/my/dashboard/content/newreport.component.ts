@@ -78,14 +78,12 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
-  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
       this.getProblem();
-      this.getDescProblem(subcategory)
   }
 
   getAllComplaint() {
@@ -112,6 +110,7 @@ export class ContentNewReportComponent implements OnInit {
         headers: headers
       })
       .subscribe(descproblems => {
+      alert(descproblems);
         this.descproblems = descproblems
       })
   }
