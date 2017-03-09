@@ -16,7 +16,7 @@ template: `
                 <nav id="spy">
                     <div class="sidebar-brand">
                         <div class="title">
-                            <img src="ava.png" alt="ava">
+                            <img src="./images/ava.png" alt="ava">
                             <a class="name"><b>{{emps.name}}</b></a>
                             <!-- Extra small button group -->
                             <div class="btn-group navbar-right">
@@ -45,13 +45,13 @@ template: `
                         <li>
                             <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
-                        
+            
                         <!--
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>{{menu.title}}</strong></a>
                         <li *ngFor="#menu of menus" style="margin-top: 10px;">
                         </li>
                         -->
-                        
+            
                     </ul>
                     <div class="sidebar-footer">
                         <div>
