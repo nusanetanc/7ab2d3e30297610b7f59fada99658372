@@ -110,7 +110,6 @@ export class ContentNewReportComponent implements OnInit {
       body, {
         headers: headers
       })
-      .map(res => res.json())
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
