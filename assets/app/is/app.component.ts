@@ -9,6 +9,7 @@ import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 import {ContentInformationComponent} from "./dashboard/content/information.component";
 import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component";
+import {SigninComponent} from "./authentication/signin.component";
 
 @Component({
    selector: 'is-app',
@@ -19,14 +20,15 @@ import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component
     <router-outlet></router-outlet>
   </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, SigninComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
   { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
   { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
-  { path: '/is/information', component:ContentInformationComponent, name:'Information'}
+  { path: '/is/information', component:ContentInformationComponent, name:'Information'},
+  { path: '/is/signin', component:SigninComponent, name:'Signin'},
 ])
 
 export class AppComponent {
