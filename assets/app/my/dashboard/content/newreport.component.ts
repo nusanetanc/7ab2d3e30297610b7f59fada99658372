@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Complaint } from './complaint';
+import { Complaint } from './complaints';
 import { Problem } from './problem';
 
 @Component({
@@ -83,6 +83,7 @@ export class ContentNewReportComponent implements OnInit {
 
   ngOnInit() {
     this.getAllComplaint();
+      this.getProblem()
   }
 
   // Add one report to the API
