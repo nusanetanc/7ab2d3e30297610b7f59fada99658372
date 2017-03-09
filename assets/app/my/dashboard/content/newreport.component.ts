@@ -57,7 +57,6 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                        *ngFor="#descproblem of descproblems" {{ descproblem.subcategory }}
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +77,6 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
-  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -110,7 +108,6 @@ export class ContentNewReportComponent implements OnInit {
       body, {
         headers: headers
       })
-      .map(res => res.json())
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
