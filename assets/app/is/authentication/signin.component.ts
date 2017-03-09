@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
     selector: 'form-login',
     template: `
-                <form>
+                <form style="width:50%">
                     <div class="text">Sign in to continue to Information System</div>
                     <div class="form-group">
                         <input type="text" class="form-control" id="email" placeholder="Email">
