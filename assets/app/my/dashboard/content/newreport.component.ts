@@ -110,8 +110,8 @@ export class ContentNewReportComponent implements OnInit {
         headers: headers
       })
       .subscribe(descproblems => {
-      alert(descproblems.desc);
         this.descproblems = descproblems
+        alert(this.descproblems);
       })
   }
 }
