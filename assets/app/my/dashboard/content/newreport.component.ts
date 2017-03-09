@@ -37,7 +37,7 @@ import { Complaint } from './complaint';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select #subcategory id="subcategory" (click)="getDescProblem(subcategory.value)">
+                                    <select (click)="getDescProblem(subcategory.value)">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
                                         <option [value]="problem.subcategory" *ngFor="#problem of problems">{{ problem.subcategory }}</option>
                                     </select><br/>
