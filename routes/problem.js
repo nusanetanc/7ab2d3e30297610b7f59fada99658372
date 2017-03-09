@@ -6,7 +6,7 @@ var Problem = require('../models/problem');
 router.get('/listproblem', function(req, res, next) {
      Problem.find(function(err, citys) {
        console.log( problems );
-       res.json(citys);
+       res.json(problems);
    });
 });
 
