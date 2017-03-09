@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #subcategory id="subcategory"  (click)="getDescProblem(subcategory.value)">
+                                    <select  #inputsubcategory id="inputsubcategory"  (click)="getDescProblem(subcategory.value)">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" value = "{{problem.subcategory}}" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div> {{ subcategory }} </div>
+                                         <div> {{ inputsubcategory }} </div>
                                     </div>
                                 </div>
                             </div>
