@@ -1,0 +1,710 @@
+body{
+    font-family: Roboto;
+}
+/*----------------------- Homepage --------------------------*/
+
+/*------------------------Navbar----------------------------*/
+.navbar-homepage{
+    background-color: #fff;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07)
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #fc592e;
+}
+
+.navbar-nav > li > a {
+    padding-top: 20px;
+    height: 60px;
+}
+
+.navbar-nav > li > a > .navbar-menus {
+    margin: 0 10px 0 10px;
+}
+
+.navbar-nav > li > a > .sign-in-only {
+    margin: 0 20px 0 20px;
+}
+
+.navbar-logo{
+    height:40px;
+    margin:10px 15px 10px 15px;
+}
+/*--------------------End Navbar----------------------------*/
+
+/*----------------------Content-----------------------------*/
+.wall-home{
+    height:500px;
+    background-image: url("../images/all-entertainment.jpg");
+    background-position:center;
+    background-size:cover;
+    color: #fff;
+    margin-bottom: 0px;
+    margin-top: 35px;
+}
+
+.wall-home-text{
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.wall-container{
+    margin: 0px 100px 0px 110px;
+}
+
+.wall-content{
+    margin-top:80px;
+}
+
+.wall-title{
+    font-size: 35px;
+    line-height: 50px;
+}
+
+.btn-subscribe{
+    text-decoration: none;
+    background-color: #fc592e;
+    color: white;
+    border-radius: 0px;
+    border: 0;
+    vertical-align: middle;
+    padding: 20px 20px 20px 20px;
+}
+
+.wall-home-content{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.wall-home-content-container{
+    margin-top: 120px;
+}
+
+.wall-content-title{
+    font-size: 38px;
+    color: #fc592e;
+}
+
+.wall-home-content-2{
+    margin-bottom: 0px;
+    height: 100%;
+    background-color: #fff;
+}
+
+/*---------------------------/End Content----------------------------*/
+
+
+/*-------------------------------Footer-------------------------------*/
+.home-footer{
+    height: 100%;
+    background-color: #fc592e;
+    margin-bottom: 0px;
+    margin-top: 0;
+    color: white;
+}
+
+.home-footer-header-text{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.home-footer-body-text{
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.home-footer-body-text > a {
+    color: white;
+}
+
+.home-footer-body-text > a:hover {
+    text-decoration: none;
+}
+
+.home-content-text{
+    font-size: 18px;
+}
+
+.footer-home{
+    background-color: #e3471c;
+    padding: 15px 0 10px 0;
+}
+
+.footer-home-text{
+    color: #fff;
+    opacity: 0.9;
+    font-size: 16px;
+}
+/*----------------------------/End Footer---------------------------*/
+
+/*------------------- End Homepage -----------------*/
+
+
+/*--------------------- Form Authentication ---------------------*/
+
+/*---------------------- IS Authentication -------------------*/
+.form-auth-is{
+    background-image: url(../images/background-groovy-2.png);
+    background-size: cover;
+}
+
+.container-auth{
+    width: 500px;
+}
+
+.top-margin{
+    margin-top: 70px;
+}
+.logo-size{
+    width: 200px;
+}
+
+.form{
+    margin-top: 70px;
+    text-align: left;
+}
+
+.form .text{
+    color: white;
+    text-align: center;
+}
+
+.form .form-group{
+    margin-top: 25px;
+}
+
+.form input{
+    border-radius: 0px;
+    border: 0px;
+    height: 50px;
+    box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+}
+
+.form .button-submit{
+    border-radius: 0px;
+    border: 0px;
+    background-color: #fc592e;
+    color: white;
+    font-size: 13px;
+    width: 25%;
+    box-shadow: 4px 0 7px 0 rgba(0, 0, 0, 0.15), 0 4px 7px 0 rgba(0, 0, 0, 0.15), 0px 0px 7px 0px rgba(0, 0, 0, 0.20);
+    padding: 15px;
+}
+
+.form .button-resend{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form .text-other{
+    float: right;
+    text-align: right;
+}
+
+.form a{
+    color:white;
+}
+
+.footer{
+    bottom: 0;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 50px;
+}
+
+.footer footer p{
+    margin: 15px;
+}
+/*----------- /end IS Authentication -------------------*/
+/*--------------- Client Authentication --------------*/
+.container-auth-client{
+    width: 500px;
+    padding: 130px 0px 250px 0px;
+}
+
+.resend-link{
+    font-size: 16px;
+}
+
+.resend-link a{
+    text-decoration: underline;
+}
+/*--------------- /end Client Authentication --------------*/
+
+
+/*-------------------- End Form Authentication -------------------------*/
+
+
+/*---------------------- Package ---------------------*/
+.wall-package{
+background-image:url(../images/package-groovy.png);
+height:560px;
+background-position:bottom center;
+background-repeat: no-repeat;
+margin-bottom: 0px;
+}
+
+.wall-package-content{
+background-position:center;
+background-size:cover;
+background-color: #fff;
+margin-bottom: 0px;
+}
+
+.wall-package-content-title{
+font-size:38px;
+color: #ea442d;
+}
+
+.package-content{
+padding-bottom: 50px;
+}
+
+.price-box{
+padding-top: 10px;
+}
+
+.price-box-container{
+box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.price-box-header{
+background-color: #ea442d;
+padding: 30px 30px 90px 30px;
+color: #fff;
+}
+
+.price-box-header-level{
+font-size: 12px;
+}
+
+.price-box-header-currency{
+font-size: 16px;
+vertical-align: top;
+}
+
+.price-box-header-number{
+font-size: 60px;
+font-weight: 300;
+line-height: 55px;
+vertical-align: top;
+}
+.price-box-header-month{
+line-height: 23px;
+}
+.price-box-header-number-2{
+font-size: 30px;
+line-height:29px;
+}
+
+.price-box-body{
+padding: 30px ;
+}
+
+.price-box-body-list{
+padding-left: 10px;
+}
+
+.price-box-body-list ul{
+line-height: 25px;
+font-weight: 700;
+margin-left: -50px
+}
+
+.price-box-body-list ul li{
+list-style: none;
+}
+
+.price-box-body-list ul li:before {
+content:"· ";
+font-size:50px;
+vertical-align:middle;
+line-height:20px;
+}
+
+.price-box-body-list-keterangan ul{
+line-height: 25px;
+font-weight: 100;
+margin-left: -15px
+}
+
+.price-box-body-list-keterangan ul li {
+list-style: none;
+}
+
+.price-box-body-button{
+margin-top: 20px;
+}
+
+.price-box-body-button{
+}
+
+.price-box-btn-subscribe{
+background-color: #ea442d;
+color: white;
+border-radius: 0px;
+border: 0;
+vertical-align: middle;
+padding: 15px 20px 15px 20px;
+width: 100%;
+}
+
+⁠⁠⁠.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;  /* Preferred icon size */
+display: inline-block;
+line-height: 1;
+text-transform: none;
+letter-spacing: normal;
+word-wrap: normal;
+white-space: nowrap;
+direction: ltr;
+
+/* Support for all WebKit browsers. */
+-webkit-font-smoothing: antialiased;
+/* Support for Safari and Chrome. */
+text-rendering: optimizeLegibility;
+
+/* Support for Firefox. */
+-moz-osx-font-smoothing: grayscale;
+
+/* Support for IE. */
+font-feature-settings: 'liga';
+}
+
+.icon {
+color: #ea442d;
+}
+
+.tv-list-text{
+font-size: 15px;
+}
+/*--------------------/End Package ---------------------*/
+
+/*----------------------- Sign Up --------------------------*/
+/*----------------------- Start Content --------------------------*/
+.signup-jumbotron {
+background-color: #FFF;
+margin-top: 61px;
+margin-bottom: 0px;
+padding-bottom: 220px;
+}
+
+.jumbotron > div > div > div > h3 {
+color: #666C6E;
+margin-bottom: 60px;
+margin-top: 10px;
+text-align: center;
+}
+
+.row > .col-md-4 > form {
+margin: 0;
+padding: 0;
+}
+
+.row > .col-md-4 > form > select {
+background-color: #f0f0f0;
+border: 0px;
+font-size: 14px;
+height: 70px;
+margin: 0;
+padding: 22px 0px 26px 5px;
+width: 100%;
+}
+
+.row > .col-md-4 > form > select > .option {
+height: 30px;
+}
+
+.row > .col-md-4 > .back {
+background-color: #E2E2E2;
+border: none;
+border-radius: 0px;
+color: #000;
+float: left;
+margin-top: 20px;
+padding: 12.5px 40px 12.5px 40px;
+}
+
+.row > .col-md-4 > .next {
+background-color: #FC592E;
+border: none;
+border-radius: 0px;
+color: #FFF;
+float: right;
+margin-top: 20px;
+padding: 12.5px 40px 12.5px 40px;
+}
+
+
+.jumbotron > .container > .row > .col-md-4 {
+margin-bottom: 20px;
+}
+/*----------------------- End Content --------------------------*/
+/*----------------------- /Sign Up --------------------------*/
+
+/*----------------------- installdate --------------------------*/
+.row > .col-md-4 > p {
+font-size: 14px;
+margin-bottom: 50px;
+text-align: center;
+}
+
+.row > .col-md-4 > .col-sm-6 > form {
+font-size: 14px;
+}
+/*----------------------- /insatalldate --------------------------*/
+
+/*----------------------- provide.html --------------------------*/
+.jumbotron > .container > .row > .col-md-12 > p {
+font-size: 14px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.row > .col-md-4 > form > div > input {
+background-color: #f0f0f0;
+border: none;
+border-radius: 0px;
+font-size:14px;
+height: 70px;
+margin: 0 0 20px 0;
+padding: 22px 0px 26px 20px;
+width: 100%;
+}
+
+.row > .col-md-4 > form > div > p {
+font-size: 12px;
+}
+
+.row > .col-md-4 > form > div > div {
+background-color: #f0f0f0;
+border: none;
+border-radius: 0px;
+font-size: 14px;
+height: 70px;
+margin: 0 0 20px 0;
+padding: 22px 0px 26px 20px;
+vertical-align: middle;
+width: 100%;
+}
+
+.row > .col-md-4 > form > div > div > button {
+float: left;
+}
+
+.row > .col-md-4 > form > div > div > p {
+float: left;
+font-size: 14px;
+margin-left: 5px;
+}
+/*----------------------- /provide.html --------------------------*/
+
+/*----------------------- done.html --------------------------*/
+.row > .col-md-8 {
+margin-bottom: 20px;
+}
+/*----------------------- /done.html --------------------------*/
+
+/*-------------------------features---------------------------*/
+.wall-features{
+    text-align: center;
+    margin-bottom: 0px;
+    background-color: #fff;
+}
+
+.wall-features-title{
+    font-size: 35px;
+    margin-top:80px;
+    margin-bottom:30px;
+    font-weight: 100;
+}
+
+.wall-features-text{
+    font-size: 18px !important;
+}
+
+.features-content1{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.features-content1-container{
+    margin-top: 120px;
+}
+
+.features-content2{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #000;
+    background-image: url("../images/optical-fiber.jpg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    color: white;
+}
+
+.wall-content{
+    margin-top:120px;
+}
+
+.features-content2-title{
+    opacity: 0.9;
+}
+
+.features-content2-text{
+    opacity: 0.7;
+}
+
+.features-content3{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #fff;
+}
+
+.features-content3-container{
+    margin-top: 120px;
+}
+
+.features-content3-title{
+    color: #000;
+}
+
+.features-content4{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #f0f0f0;
+}
+
+.features-content4-container{
+    margin-top: 120px;
+}
+
+.features-content5{
+    margin-bottom: 0px;
+    height: 500px;
+    background-color: #fff;
+}
+
+.features-content5-container{
+    margin-top: 120px;
+}
+/*-------------------------/end features---------------------------*/
+
+/*-----------------------------support--------------------------------*/
+.support{
+    padding-top: 100px;
+}
+
+.support-content-header{
+    opacity: 0.9;
+}
+
+.support-content-text{
+    opacity: 0.9;
+    font-size: 15px;
+}
+.support > p{
+    margin-top: 20px;
+}
+
+.support-menu{
+    margin: 30px 0 100px 0;
+}
+
+.support-content{
+    background-color:#f0f0f0;
+    border-radius:5px;
+    margin-top:15px;
+}
+
+.support-button-faq{
+    font-weight:600;
+    border:0px;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0);
+    font-size:16px;
+    border-radius:5px;
+    padding:25px 0 25px 15px;
+    text-align:left;
+}
+
+.support-paragraph-faq{
+    padding:15px;
+    color:#555;
+    font-size:16px;
+}
+
+.support-content-2{
+    background-color: #f0f0f0;
+    padding: 70px 0 70px 0;
+}
+
+.support-content2-text{
+    font-size: 18px;
+    line-height:45px;
+}
+
+.support-link-contact{
+    float:right;
+    border:2px solid black;
+    background-color:rgba(0, 0, 0, 0);
+    padding:10px 40px 10px 40px;
+    color:#000;
+    font-size:20px;
+}
+
+.support-link-contact:hover{
+    text-decoration: none;
+    color: #000;
+}
+/*----------------------------/support-----------------------------------*/
+
+
+@media only screen and (max-width : 768px){
+    .container-auth{
+        width:90%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .container-auth-client{
+        width:90%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .wall-home{
+        height:20%;
+    }
+
+    .navbar-logo{
+        margin-left: 20px;
+    }
+
+    .wall-title {
+        font-size: 28px;
+    }
+
+    .home-content-text{
+        font-size: 18px;
+    }
+
+    .wall-features-title{
+        font-size: 28px !important;
+    }
+
+    .wall-features-text{
+        font-size: 15px !important;
+    }
+}
