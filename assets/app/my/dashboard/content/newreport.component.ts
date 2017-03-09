@@ -57,6 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11">
                                         Whats up..! What is going on ? <br> Please select the category of your problem
+                                        {{descproblem.desc}}
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +130,6 @@ export class ContentNewReportComponent implements OnInit {
       })
       .map(res => res.json())
       .subscribe(descproblem => {
-      alert(descproblem.text());
         this.descproblem = descproblem
       })
   }
