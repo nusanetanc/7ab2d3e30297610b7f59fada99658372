@@ -15,7 +15,7 @@ import { Sub } from './subs';
                                 <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
                                 <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                             </div>
-                            <button type="submit" (click)="signSub(signEmail.value, signEmail.value)" class="btn button-submit">SIGN IN</button>
+                            <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                             <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
                     </div>
                 </div>
@@ -61,12 +61,10 @@ getAllSub() {
           })
     .subscribe(
             data => {
+              window.location.href = `/my`;
               localStorage.setItem('id_token', response.json().id_token);
-              alert('Login Sukses');
-              this.router.navigate(['home']);
             },
             error => {
-            this.router.navigate(['home']);
               alert(error.text());
               console.log(error.text());
             }
