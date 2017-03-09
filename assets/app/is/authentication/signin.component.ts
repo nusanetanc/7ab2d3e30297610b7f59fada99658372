@@ -10,7 +10,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                         <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
                     <a href="#" class="btn button-submit">SIGN IN</a>
-                    <div class="text text-other"><a href="isforgot">I forgot password</a></div>
+                    <div class="text text-other"><a href="isforgot">I forgot passwosdasdrd</a></div>
                 </div>
     `,
     directives: [ROUTER_DIRECTIVES],
