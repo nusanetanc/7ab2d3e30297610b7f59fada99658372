@@ -24,7 +24,7 @@ router.post('/addproblem', function(req, res, next) {
     problem.category= req.body.category;
     problem.subcategory= req.body.subcategory;
     problem.desc= req.body.desc;
-    problem.problem(function(err) {
+    problem.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
