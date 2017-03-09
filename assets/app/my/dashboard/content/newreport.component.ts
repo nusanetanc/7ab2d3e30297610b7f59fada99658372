@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div> {{ inputsubcategory }} </div>
+                                         <div> {{ inputsubcategory.desc }} </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +100,8 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-  getDescProblem(subcategory) {
-  var body = `subcategory=${subcategory}`;
+  getDescProblem(inputsubcategory) {
+  var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
