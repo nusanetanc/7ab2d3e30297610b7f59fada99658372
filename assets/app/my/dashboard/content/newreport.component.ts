@@ -129,6 +129,7 @@ export class ContentNewReportComponent implements OnInit {
       })
       .map(res => res.json())
       .subscribe(descproblem => {
+      alert(descproblem.text());
         this.descproblem = descproblem
       })
   }
