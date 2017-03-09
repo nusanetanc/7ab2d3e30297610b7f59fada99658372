@@ -1,5 +1,7 @@
-export class City {
+export class Problem {
   constructor(
-  public name: String
+  public category: String,
+  public subcategory: String,
+  public desc: String
   ) {  }
 }
