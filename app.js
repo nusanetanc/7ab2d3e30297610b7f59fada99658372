@@ -23,7 +23,8 @@ var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
 var information = require('./routes/information');
-var menu = require('./routes/menu')
+var menu = require('./routes/menu');
+var problem = require('./routes/problem');
 
 var app = express();
 
@@ -63,6 +64,7 @@ app.use('/blokfloor', blokfloor);
 app.use('/home', home);
 app.use('/information', information);
 app.use('/menu', menu);
+app.use('/problem', problem);
 
 
 // catch 404 and forward to error handler

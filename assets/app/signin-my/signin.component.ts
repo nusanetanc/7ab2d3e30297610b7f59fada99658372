@@ -61,7 +61,6 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              alert('Login Sukses');
               window.location.href = `/my`;
             },
             error => {

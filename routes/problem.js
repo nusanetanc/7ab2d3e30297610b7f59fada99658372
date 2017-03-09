@@ -1,0 +1,64 @@
+var express = require('express');
+var router = express.Router();
+var Problem = require('../models/problem');
+
+/* GET cityloye listing. */
+router.get('/listproblem', function(req, res, next) {
+     Problem.find(function(err, citys) {
+       console.log( problems );
+       res.json(citys);
+   });
+});
+
+/* GET detail city. */
+router.get('/problem/:id', function(req, res, next) {
+Problem.findById(req.params.id, function(err, citys) {
+       console.log( problems );
+       res.json(problems);
+   });
+});
+
+/* Add city */
+router.post('/addproblem', function(req, res, next) {
+  var problem = new Problem();
+    problem.category= req.body.category;
+
+    problem.problem(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
+
+router.put('/putproblem/:id', function(req, res, next) {
+
+        Problem.findById(req.params.id, function(err, problem) {
+
+            if (err)
+                res.send(err);
+
+            problem.name= req.body.category;
+              if (err)
+                res.send(err);
+
+            problem.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
+router.delete('/delproblem/:id', function(req, res, next) {
+        Problem.remove({
+            _id: req.params.id
+        }, function(err, problem) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Successfully deleted' });
+   });
+});
+
+module.exports = router;
