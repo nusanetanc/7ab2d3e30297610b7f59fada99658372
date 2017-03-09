@@ -39,7 +39,7 @@ import { Complaint } from './complaint';
                                 <form>
                                     <select name="internetProblem">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" value="{{ problem._id }}">{{ problem.name }}</option>
+                                        <option *ngFor="#problem of problems">{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
