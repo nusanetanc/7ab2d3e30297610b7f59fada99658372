@@ -4,15 +4,15 @@ var Problem = require('../models/problem');
 
 /* GET cityloye listing. */
 router.get('/listproblem', function(req, res, next) {
-     Problem.find(function(err, citys) {
+     Problem.find(function(err, problems) {
        console.log( problems );
-       res.json(citys);
+       res.json(problems);
    });
 });
 
 /* GET detail city. */
 router.get('/problem/:id', function(req, res, next) {
-Problem.findById(req.params.id, function(err, citys) {
+Problem.findById(req.params.id, function(err, problems) {
        console.log( problems );
        res.json(problems);
    });

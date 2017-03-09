@@ -39,10 +39,7 @@ import { Complaint } from './complaint';
                                 <form>
                                     <select name="internetProblem">
                                         <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option value="volvo">Internet Problem</option>
-                                        <option value="saab">TV Problem</option>
-                                        <option value="fiat">Billing Problem</option>
-                                        <option value="fiat">Account Problem</option>
+                                        <option *ngFor="#problem of problems">{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
@@ -77,11 +74,13 @@ export class ContentNewReportComponent {
   Session_ID = '58b3cdac45912d052e2c85a5';
 
   complaints: any[] = [];
+  problems: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
+    this.getProblem();
   }
 
   // Add one report to the API
@@ -108,6 +107,13 @@ export class ContentNewReportComponent {
       .map(res => res.json())
       .subscribe(complaints => {
         this.complaints = complaints
+      })
+  }
+  getProblem() {
+    this.http.get(`${this.API}/problem/listproblem`)
+      .map(res => res.json())
+      .subscribe(problems => {
+        this.problems = problems
       })
   }
 }
