@@ -13,7 +13,7 @@ import {Emp} from "../dashboard/emp";
                         <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
                         <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                     </div>
-                    <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                    <button type="submit" (click)="signEmp(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                     <div class="text text-other"><a href="isforgot">I forgot passwosdasdrd</a></div>
                 </div>
     `,
