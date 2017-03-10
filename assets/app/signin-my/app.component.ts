@@ -12,10 +12,15 @@ import {SigninComponent} from "./signin.component";
     selector: 'my-app',
     template: `
             <my-header></my-header><br>
-              <form-signin></form-signin>
+              <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
     directives: [HeaderComponent, FooterComponent, SigninComponent, ROUTER_DIRECTIVES]
 })
+
+@RouteConfig([
+    {path: '/signin', name: 'Signin', component: SigninComponent, useAsDefault: true}
+])
+
 export class AppComponent{
 }
