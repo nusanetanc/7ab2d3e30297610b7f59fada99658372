@@ -62,9 +62,9 @@ router.put('/putcomplaint/:id', function(req, res, next) {
 });
 
 router.delete('/delcomplaint/:id', function(req, res, next) {
-        complaint.remove({
+        Complaint.remove({
             _id: req.params.id
-        }, function(err, bear) {
+        }, function(err, complaint) {
             if (err)
                 res.send(err);
 
