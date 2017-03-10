@@ -19,7 +19,7 @@ import {Http} from 'angular2/http';
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="features"><span class="navbar-menus"><strong>FEATURESsa</strong></span></a></li>
+                    <li><a href="features"><span class="navbar-menus"><strong>FEATURES</strong></span></a></li>
                     <li><a href="packages"><span class="navbar-menus"><strong>PACKAGES</strong></span></a></li>
                     <li><a href="support"><span class="navbar-menus"><strong>SUPPORT</strong></span></a></li>
                     <li class="active"><a href="signin"><span class="sign-in-only"><strong>SIGN IN</strong></span></a></li>
