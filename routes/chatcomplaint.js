@@ -24,6 +24,9 @@ router.post('/addchat', function(req, res, next) {
   var chat = new Chat();
     chat.message= req.body.message;
     chat.date= req.body.date;
+    chat.sub= req.body.sub;
+    chat.emp= req.body.emp;
+    chat.complaint= req.body.complaint;
 
     Chat.save(function(err) {
       if (err)
@@ -41,6 +44,10 @@ router.put('/putchat/:id', function(req, res, next) {
 
                 chat.message= req.body.message;
                 chat.date= req.body.date;
+                chat.sub= req.body.sub;
+                chat.emp= req.body.emp;
+                chat.complaint= req.body.complaint;
+
               if (err)
                 res.send(err);
 
