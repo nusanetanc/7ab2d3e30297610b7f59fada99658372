@@ -55,6 +55,8 @@ export class ContentDetailReportComponent {
   Report_ID = '58c24c1948bfc66fd001dbb8';
 
 complaints: any[] = [];
+chatcomplaints: any[] = [];
+
   constructor(private http: Http) {}
 
   ngOnInit() {
