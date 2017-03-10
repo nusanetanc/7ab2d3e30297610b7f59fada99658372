@@ -48,6 +48,7 @@ router.post('/addbill', function(req, res, next) {
     bill.duedate= req.body.duedate;
     bill.paydate= req.body.paydate;
     bill.status= req.body.status;
+    bill.desc= req.body.desc;
     bill.sub= req.body.sub;
     bill.save(function(err) {
       if (err)
