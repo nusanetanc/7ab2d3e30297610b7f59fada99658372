@@ -13,7 +13,7 @@ import { Sub } from './subs';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Subscribers
+                &nbsp; All Subscribers
             </h3>
     
         </div>

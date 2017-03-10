@@ -12,7 +12,7 @@ import { Http } from 'angular2/http';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Billing
+                &nbsp; All Billing
             </h3>
 
         </div>
@@ -39,12 +39,6 @@ import { Http } from 'angular2/http';
                         <div class="col-sm-8 invoiceList"><span>Yudi Nurhandi</span></div>
                         <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
                         <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
-                    </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>GR-123457</span></div>
-                        <div class="col-sm-8 invoiceList"><span>Yudi Nurhandi</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="green">Paid</span></div>
                     </div>
                 </div>
             </div>

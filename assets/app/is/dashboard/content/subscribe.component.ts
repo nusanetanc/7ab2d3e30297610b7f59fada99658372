@@ -4,7 +4,7 @@ import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 @Component({
-    selector: 'form-dashboard',
+    selector: 'form-subscriber',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
@@ -12,7 +12,7 @@ import { Sub } from './subs';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Account
+                &nbsp; Subscriber
             </h3>
         </div>
     

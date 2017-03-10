@@ -6,57 +6,13 @@ import { Http } from 'angular2/http';
 @Component({
     selector: 'form-profileemployee',
     template: `
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <nav id="spy">
-            <div class="sidebar-brand">
-                <div class="title">
-                    <img src="ava.png" alt="ava">
-                    <a class="name"><b>Ahmad Rifki</b></a>
-                    <!-- Extra small button group -->
-                    <div class="btn-group navbar-right">
-                        <a class="dropdown-toggle name" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="employeeprofil.html">account</a></li>
-                            <li><a href="employeeprofil.html">logout</a></li>
-                        </ul>
-                    </div>
-                    <a class="user">Svp. Technical Support</a>
-                </div>
-            </div>
-            <ul class="sidebar-nav nav">
-
-                <li class="firstLiSidebar">
-                    <a href="index.html" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
-                </li>
-                <li class="active">
-                    <a href="employee.html"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
-                </li>
-                <li>
-                    <a href="stock.html"><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
-                </li>
-
-            </ul>
-            <div class="sidebar-footer">
-                <div>
-                    <img src="groovy-grayscale.png" alt="ava">
-                    <a href="">Privacy</a>
-                    <a href="">Terms</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- /Sidebar -->
-
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Employee
+                &nbsp; Employee Profile
             </h3>
         </div>
 

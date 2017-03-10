@@ -19,7 +19,7 @@ import { Home } from './home';
                 <h3 id="home">
                     <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
-                    &nbsp; Subscribers
+                    &nbsp; New Subscribers
                 </h3>
             </div>
         

@@ -4,7 +4,7 @@ import { Http } from 'angular2/http';
 
 
 @Component({
-    selector: 'form-addinformation',
+    selector: 'form-addreport',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
@@ -12,7 +12,7 @@ import { Http } from 'angular2/http';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; New Information
+                &nbsp; New Report
             </h3>
 
         </div>
@@ -56,10 +56,10 @@ import { Http } from 'angular2/http';
             </div>
         </div>
     </div>
-    <!-- Page content -->
+    <!-- /Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddInformationComponent {
+export class ContentAddReportComponent {
 
 }

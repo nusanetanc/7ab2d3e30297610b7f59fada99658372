@@ -12,7 +12,7 @@ import { Http } from 'angular2/http';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Reports
+                &nbsp; All Reports
             </h3>
 
         </div>
@@ -38,11 +38,6 @@ import { Http } from 'angular2/http';
                         <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">11 Feb 2017</a></span></div>
                         <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Account can't login in other devices</a></span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
-                    </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                        <div class="col-sm-8 invoiceList"><span>Unstable internet connection</span></div>
-                        <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
                     </div>
                 </div>
             </div>

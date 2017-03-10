@@ -40,10 +40,22 @@ template: `
                             <a [routerLink]="['AllSubs']"><i class="material-icons">people</i> <strong>SUBSCRIBERS</strong></a>
                         </li>
                         <li>
+                            <a href="billing.html"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
+                        </li>
+                        <li>
                             <a href="reportshistory.html"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
                             <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        </li>
+                        <li class="active">
+                            <a href="engineer.html"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
+                        </li>
+                        <li>
+                            <a href="employee.html"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                        </li>
+                        <li>
+                            <a href="stock.html"><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
             
                         <!--

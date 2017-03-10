@@ -13,7 +13,7 @@ import { Http } from 'angular2/http';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Engineer
+                &nbsp; Engineer Profile
             </h3>
         </div>
 

@@ -13,7 +13,7 @@ import { Information } from './allinformation';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Information
+                &nbsp; All Information
             </h3>
 
         </div>
@@ -42,16 +42,6 @@ import { Information } from './allinformation';
                         <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">11 Feb 2017</a></span></div>
                         <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Fiber Optic Network Disruption</a></span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
-                    </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                        <div class="col-sm-8 invoiceList"><span>Network Server Maintenance</span></div>
-                        <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                    </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>21 Jan 2017</span></div>
-                        <div class="col-sm-8 invoiceList"><span>Welcome to Groovy</span></div>
-                        <div class="col-sm-2 invoiceList"><span></span></div>
                     </div>
                 </div>
             </div>
