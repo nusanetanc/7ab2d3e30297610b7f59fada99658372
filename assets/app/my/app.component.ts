@@ -38,7 +38,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
   { path: '/my/billing', component:ContentBillingComponent, name:'Billing'},
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
   { path: '/my/newreport', component:ContentNewReportComponent, name:'Newreport'},
-  { path: '/my/detailbilling', component:ContentDetailBillingComponent, name:'Detailbilling'},
+  { path: '/my/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
   { path: '/my/detailinformation', component:ContentDetailInformationComponent, name:'Detailinformation'},
   { path: '/my/detailreport', component:ContentDetailReportComponent, name:'Detailreport'},
   { path: '/my/account', component:ContentAccountComponent, name:'Account'},

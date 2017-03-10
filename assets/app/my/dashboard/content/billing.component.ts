@@ -116,7 +116,7 @@ import { Bill } from './bills';
                                 <div class="col-sm-2 invoiceListHeader"><strong>Status</strong></div>
                             </div>
                             <div *ngFor="#bill of bills">
-                            <a [routerLink]="['Detailbilling']">
+                            <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="row">
                                 <div class="col-sm-2 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
                                 <div class="col-sm-4 invoiceList"><span>{{ bill.desc }}</span></div>
