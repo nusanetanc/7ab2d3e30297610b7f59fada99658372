@@ -24,6 +24,7 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.sub= req.body.sub;
     complaint.subject= req.body.subject;
     complaint.category= req.body.category;
+    complaint.subcategory= req.body.subcategory;
     complaint.dateopen= req.body.dateopen;
     complaint.dateclose= req.body.dateclose;
     complaint.status= req.body.status;
@@ -45,6 +46,7 @@ router.put('/putcomplaint/:id', function(req, res, next) {
 
                 complaint.subject= req.body.subject;
                 complaint.category= req.body.category;
+                complaint.subcategory= req.body.subcategory;
                 complaint.dateopen= req.body.dateopen;
                 complaint.dateclose= req.body.dateclose;
                 complaint.status= req.body.status;

@@ -28,7 +28,7 @@ import 'rxjs/add/operator/map';
             <div class="row subInfo roboto grey8b">
                 <div class="col-sm-12">
                   <div class="row">
-                      <div class="col-sm-10 invoiceId"><span><b class="grey333">Account can't login in other devices</b><br>Internet - Account Problem</span></div>
+                      <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subject }}</b><br>{{ complaints.category }} - {{ complaints.subcategory }}</span></div>
                       <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">On progress</span></span></div>
                   </div>
                   <div class="row">
@@ -47,4 +47,22 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailReportComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  Report_ID = '58b50338f58c3518225a4bb4';
+
+complaints: any[] = [];
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getDetailReport();
+  }
+
+getDetailReport() {
+  this.http.get(`${this.API}/complaint/complaint/${this.Report_ID}`)
+    .map(res => res.json())
+    .subscribe(complaints => {
+      this.complaints = complaints
+    })
+}
 }
