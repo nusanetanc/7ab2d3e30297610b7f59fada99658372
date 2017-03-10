@@ -24,31 +24,9 @@
     <script src="https://npmcdn.com/angular2@2.0.0-beta.14/es6/dev/src/testing/shims_for_IE.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.13/http.dev.js"></script>
     <script src="/js/app/signin/bundle.js"></script>
-    <style>
-      .loader {
-        border: 16px solid #fff;
-        border-radius: 50%;
-        border-top: 16px solid white;
-        border-bottom: 16px solid white;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-      }
-
-      @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      </style>
 </head>
 <body class="form-auth-is">
-<my-signin></my-signin>
+<my-app></my-app>
 
 <script>
     System.import('boot')
