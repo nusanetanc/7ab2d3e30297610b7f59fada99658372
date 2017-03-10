@@ -130,7 +130,7 @@ import { Home } from './home';
                                         <div class="paddingR30">
                                             <select class="inputForm" name="cluster">
                                                 <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                                <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster._id }</option>
+                                                <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster._id }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="paddingR30">

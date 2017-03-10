@@ -7,7 +7,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ContentDashboardComponent} from "./dashboard/content/dashboard.component";
 import {ContentAllSubsComponent} from "./dashboard/content/allsubs.component";
 import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
-import {ContentInformationComponent} from "./dashboard/content/information.component";
+import {ContentInformationComponent} from "./dashboard/content/allinformations.component";
 import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component";
 import {SigninComponent} from "./authentication/signin.component";
 
