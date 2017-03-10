@@ -28,7 +28,7 @@ router.post('/addchat', function(req, res, next) {
     chat.emp= req.body.emp;
     chat.complaint= req.body.complaint;
 
-    Chat.save(function(err) {
+    chat.save(function(err) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
