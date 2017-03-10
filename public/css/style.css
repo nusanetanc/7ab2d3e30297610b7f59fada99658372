@@ -670,6 +670,56 @@ margin-bottom: 20px;
 }
 /*----------------------------/support-----------------------------------*/
 
+/*---------------------------contact us-------------------------------------*/
+.contact-input{
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size: 14px;
+    height: 50px;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}
+
+.contact-input-text{
+    line-height: 30px;
+    font-weight: lighter;
+}
+
+.contact-send-button{
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    padding: 15px 40px 15px 40px;
+}
+
+.contact-send-button:hover{
+    color: white;
+}
+
+.contact-info-title{
+    font-weight: bold;
+}
+
+.contact-info-text{
+    opacity: 0.9;
+}
+
+.contact-header{
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.contact-maps{
+    margin-top: 60px;
+}
+
+.contact-content{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+/*---------------------------/contact us-------------------------------------*/
 
 @media only screen and (max-width : 768px){
     .container-auth{
