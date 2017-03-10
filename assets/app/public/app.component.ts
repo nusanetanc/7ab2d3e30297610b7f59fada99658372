@@ -23,7 +23,7 @@ import {SigninComponent} from "./content/signin.component";
     {path: '/public/features', name: 'Features', component: FeaturesComponent},
     {path: '/public/packages', name: 'Packages', component: PackagesComponent},
     {path: '/public/support', name: 'Support', component: SupportComponent},
-    {path: '/public/signin', name: 'Siginin', component: SigninComponent},
+    {path: '/public/signin', name: 'Signin', component: SigninComponent},
 ])
 export class AppComponent{
 
