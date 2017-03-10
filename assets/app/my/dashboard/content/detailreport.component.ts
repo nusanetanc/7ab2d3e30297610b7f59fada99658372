@@ -49,7 +49,7 @@ import 'rxjs/add/operator/map';
 export class ContentDetailReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Report_ID = '58b50338f58c3518225a4bb4';
+  Report_ID = '58c24c1948bfc66fd001dbb8';
 
 complaints: any[] = [];
   constructor(private http: Http) {}
