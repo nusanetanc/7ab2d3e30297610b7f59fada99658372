@@ -29,7 +29,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                   <div class="row">
                       <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subject }}</b><br>{{ complaints.category }} - {{ complaints.subcategory }}</span></div>
-                      <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">On progress</span></span></div>
+                      <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">{{ complaints.status }}s</span></span></div>
                   </div>
                   <div class="row">
                       <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">11 Feb 2017 - 11.00 PM</b> by <b class="grey333">Jhon Doe</b></span></div>
