@@ -9,7 +9,7 @@ import {FooterComponent} from "./footer.component";
 import {SigninComponent} from "./signin.component";
 
 @Component({
-    selector: 'my-signin',
+    selector: 'my-app',
     template: `
             <my-header></my-header>
               <form-signin></form-signin>
