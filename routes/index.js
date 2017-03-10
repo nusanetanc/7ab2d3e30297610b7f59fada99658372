@@ -59,6 +59,10 @@ router.get('/signup-done', function(req, res, next) {
   res.render('signup-done', { title: 'Groovy - Signup' });
 });
 
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Groovy - Contact' });
+});
+
 /* GET is groovy. */
 
 router.get('/is', function(req, res, next) {
