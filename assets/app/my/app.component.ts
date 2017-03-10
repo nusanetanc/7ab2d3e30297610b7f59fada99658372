@@ -40,7 +40,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
   { path: '/my/newreport', component:ContentNewReportComponent, name:'Newreport'},
   { path: '/my/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
   { path: '/my/detailinformation', component:ContentDetailInformationComponent, name:'Detailinformation'},
-  { path: '/my/detailreport', component:ContentDetailReportComponent, name:'Detailreport'},
+  { path: '/my/detailreport/:id', component:ContentDetailReportComponent, name:'Detailreport'},
   { path: '/my/account', component:ContentAccountComponent, name:'Account'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 ])
