@@ -125,10 +125,10 @@ import { Bill } from './bills';
                                            <div class="row">
                                                <div class="col-sm-12 listWhite">
                                                    <div class="col-sm-10">
-                                                       <span>Level 4 Package (Internet & UserTV)</span>
+                                                       <span>{{ bills.namepack }}</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">499.000</span>
+                                                       <span class="right">{{ bills.pricepack }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -138,7 +138,7 @@ import { Bill } from './bills';
                                                        <span>Router rent</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">40.000</span>
+                                                       <span class="right">{{ bills.pricerouter }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -148,17 +148,17 @@ import { Bill } from './bills';
                                                        <span>STB Rent</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">45.000</span>
+                                                       <span class="right">{{ bills.pricestb }}</span>
                                                    </div>
                                                </div>
                                            </div>
                                            <div class="row">
                                                <div class="col-sm-12 listWhite">
                                                    <div class="col-sm-10">
-                                                       <span>Cable</span>
+                                                       <span>Cable & RJ45</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">0</span>
+                                                       <span class="right">{{ bills.pricerj45cable }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -168,7 +168,7 @@ import { Bill } from './bills';
                                                        <span>Instalation Charge</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">75.000</span>
+                                                       <span class="right">{{ bills.priceinstal }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -181,7 +181,7 @@ import { Bill } from './bills';
                                                        <span class="right">TOTAL PRICE</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">659.000</span>
+                                                       <span class="right">{{ bills.totalprice }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -191,7 +191,7 @@ import { Bill } from './bills';
                                                        <span class="right">TAX 10%</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">65.900</span>
+                                                       <span class="right">{{ bills.changetax }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -201,7 +201,7 @@ import { Bill } from './bills';
                                                        <span class="right">TOTAL PAYMENT</span>
                                                    </div>
                                                    <div class="col-sm-2">
-                                                       <span class="right">563.000</span>
+                                                       <span class="right">{{ bills.totalpay }}</span>
                                                    </div>
                                                </div>
                                            </div>
@@ -238,7 +238,7 @@ export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';
-  Billing_ID = '589d3b8f3b4dc715dcc29104';
+  Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
   subs: any[] = [];

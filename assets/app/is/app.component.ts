@@ -45,7 +45,7 @@ import {SigninComponent} from "./authentication/signin.component";
   { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
   { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
   { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
-  { path: '/is/information', component:ContentInformationComponent, name:'Information'},
+  { path: '/is/allinformation', component:ContentInformationComponent, name:'Information'},
   { path: '/is/signin', component:AuthenticationComponent, name:'Signin'},
 ])
 
