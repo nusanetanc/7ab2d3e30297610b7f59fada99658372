@@ -12,7 +12,7 @@ import {Http} from 'angular2/http';
                         <img width="100%" src="./images/background-feature-tv.png"/>
                     </div>
                     <div class="col-sm-12 text-center">
-                        <h2 class="wall-features-title">High Speed Fiber Optic Internet For Home & Personal klml</h2>
+                        <h2 class="wall-features-title">High Speed Fiber Optic Internet For Home & Personal</h2>
                         <p class="wall-features-text">Go With Groovy High-Speed Internet for a consistentl fast connection. Enjoy high speed internet access to your home now. Stream live tv throughout out home using many of your favourite devices with 94 + Local & International Channel. Explore interesting features and lineups while away from home no your smart phone, tablet or laptop.</p>
                     </div>
                 </div>
