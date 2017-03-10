@@ -38,9 +38,9 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #inputsubcategory id="inputsubcategory"  (click)="getDescProblem(subcategory.value)">
+                                    <select  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (click)="getDescProblem(subcategory.value)">
                                         <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" [value] = {{problem.desc}} >{{ problem.subcategory }}</option>
+                                        <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
