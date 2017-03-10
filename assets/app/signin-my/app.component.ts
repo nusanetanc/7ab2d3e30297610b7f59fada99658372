@@ -10,8 +10,7 @@ import {SigninComponent} from "./signin.component";
 
 @Component({
     selector: 'my-signin',
-    template: `
-            <my-header></my-header>
+    template: `<my-header></my-header>
               <form-signin></form-signin>
             <my-footer></my-footer>
 `,
