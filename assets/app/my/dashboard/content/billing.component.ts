@@ -34,7 +34,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        Level {{ subs.level }}
+                                        Level {{ subs.packlev }}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -56,7 +56,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        March, 12 2017
+                                        April, 5 2017
                                     </div>
                                 </div>
                                 <a href="#" class="next btn btn-default">
