@@ -38,9 +38,9 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #inputsubcategory id="inputsubcategory"  (click)="getDescProblem(subcategory.value)">
-                                        <option class="option" disabled="true" selected="true">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" value = "{{problem.subcategory}}" >{{ problem.subcategory }}</option>
+                                    <select  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (click)="getDescProblem(subcategory.value)">
+                                        <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
+                                        <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div>  </div>
+                                         <div>{{ inputsubcategory.value }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,6 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
-  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 

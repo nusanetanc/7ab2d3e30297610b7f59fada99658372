@@ -119,7 +119,7 @@ import { Bill } from './bills';
                             <a [routerLink]="['Detailbilling']">
                             <div class="row">
                                 <div class="col-sm-2 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
-                                <div class="col-sm-4 invoiceList"><span>Payment Februari 2017</span></div>
+                                <div class="col-sm-4 invoiceList"><span>{{ bill.desc }}</span></div>
                                 <div class="col-sm-2 invoiceList"><span>{{ bill.billdate }}</span></div>
                                 <div class="col-sm-2 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
                                 <div class="col-sm-2 invoiceList"><span class="red">Waiting For Payment</span></div>
@@ -183,7 +183,7 @@ export class ContentBillingComponent {
 
 // Get all users from the API
 getAllBills() {
-  this.http.get(`${this.API}/bill/listbill`)
+  this.http.get(`${this.API}/bill/subbill/${this.Session_ID}`)
     .map(res => res.json())
     .subscribe(bills => {
       this.bills = bills

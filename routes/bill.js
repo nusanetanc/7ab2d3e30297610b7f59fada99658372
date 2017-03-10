@@ -21,7 +21,7 @@ Bill.findById(req.params.id, function(err, bills) {
 
 /* GET detail bill one account. */
 router.get('/subbill/:sub', function(req, res, next) {
-Bill.findById(req.params.sub, function(err, bills) {
+Bill.findOne({sub: req.params.sub}, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
@@ -48,6 +48,7 @@ router.post('/addbill', function(req, res, next) {
     bill.duedate= req.body.duedate;
     bill.paydate= req.body.paydate;
     bill.status= req.body.status;
+    bill.desc= req.body.desc;
     bill.sub= req.body.sub;
     bill.save(function(err) {
       if (err)
