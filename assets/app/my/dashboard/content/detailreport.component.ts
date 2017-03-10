@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Complaint } from './complaints';
 
 @Component({
     selector: 'form-dashboard',
