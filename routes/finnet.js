@@ -8,7 +8,7 @@ router.post('/inqreq/', function(req, res, next) {
 Sub.find({subid: req.body.subid}, function(err, sub) {
        console.log(sub);
        res.json({
-         sub.subid
+         gid : sub.subid
        });
    });
 });
