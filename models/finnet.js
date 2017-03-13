@@ -4,7 +4,7 @@ var Sub = require('../models/subs');
 var Bill = require('../models/bill');
 
 var FinnetSchema   = new Schema({
-  typedate: String,
+  typedata: String,
   subid: Number,
   subname: String,
   trxid: String,
