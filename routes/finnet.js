@@ -28,7 +28,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
   Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
        res.json({
          typedata: 'inq_res',
-         trxid: req.body.trxid;
+         trxid: finnet.trxid,
          subid: doc.subid,
          subname: doc.name,
          amount: bill.totalpay,
