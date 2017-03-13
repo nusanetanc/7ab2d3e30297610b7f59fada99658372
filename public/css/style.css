@@ -278,7 +278,7 @@ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 
 .price-box-header{
 background-color: #fff;
 padding: 45px 30px 90px 30px;
-color: #fff;
+color: #ea442d;
 }
 
 .price-box-header-level{
@@ -311,6 +311,7 @@ line-height:29px;
 
 .price-box-body{
 padding: 30px ;
+background-color: #fff;
 }
 
 .price-box-body-list{
