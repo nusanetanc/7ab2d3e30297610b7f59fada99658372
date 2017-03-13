@@ -8,8 +8,7 @@ router.post('/inqreq/', function(req, res, next) {
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
        res.json({
          subid: doc.subid,
-         subname: doc.name,
-         amount: doct.amount
+         subname: doc.name
        });
    });
 });
