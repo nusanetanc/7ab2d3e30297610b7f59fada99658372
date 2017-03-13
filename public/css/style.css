@@ -64,8 +64,6 @@ body{
 .wall-title{
     font-size: 35px;
     line-height: 50px;
-    font-weight: 200;
-    color:#f00;
 }
 
 .btn-subscribe{
@@ -557,7 +555,7 @@ margin-bottom: 20px;
 }
 
 .wall-content{
-    margin-top:120px;
+    margin-top:100px;
 }
 
 .features-content2-title{
