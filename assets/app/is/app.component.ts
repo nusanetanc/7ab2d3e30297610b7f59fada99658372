@@ -10,6 +10,7 @@ import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 import {ContentInformationComponent} from "./dashboard/content/allinformations.component";
 import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component";
 import {SigninComponent} from "./authentication/signin.component";
+import {ContentAddInformationComponent} from "./dashboard/content/addinformation.component";
 
 @Component({
    selector: 'is-app',
@@ -38,15 +39,17 @@ import {SigninComponent} from "./authentication/signin.component";
         
    </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, AuthenticationComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentInformationComponent, ContentSubscribeComponent, ContentAddInformationComponent, AuthenticationComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-  { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
-  { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
-  { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
-  { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
-  { path: '/is/allinformation', component:ContentInformationComponent, name:'Information'},
-  { path: '/is/signin', component:AuthenticationComponent, name:'Signin'},
+    { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
+    { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
+    { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
+    { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
+    { path: '/is/allinformation', component:ContentInformationComponent, name:'Information'},
+    { path: '/is/signin', component:AuthenticationComponent, name:'Signin'},
+    { path: '/is/addinformation', component:ContentAddInformationComponent, name:'AddInformation'},
+
 ])
 
 export class AppComponent {
