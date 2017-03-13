@@ -282,7 +282,9 @@ color: #fff;
 }
 
 .price-box-header-level{
+background-color: #ea442d;
 font-size: 12px;
+text-align:center;
 }
 
 .price-box-header-currency{
@@ -348,11 +350,10 @@ text-align:center;
 .price-box-btn-subscribe{
 border:1px solid #ea442d;
 color: #ea442d;
-border-radius: 0px;
-border: 0;
+border-radius: 4px;
 vertical-align: middle;
-padding: 12px 20px 12px 20px;
-width: 56%;
+padding: 11px 20px 11px 20px;
+width: 50%;
 }
 .price-box-btn-subscribe:hover{
 background-color: #ea442d;
