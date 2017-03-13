@@ -38,5 +38,37 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
     });
   });
 
+  /* GET detail bill one account. */
+  router.post('/payreq/', function(req, res, next) {
+    var finnet = new Finnet()
+     finnet.typedata= req.body.typedata;
+     finnet.trxid= req.body.trxid;
+     finnet.trxdate= req.body.trxdate;
+     finnet.subid= req.body.subid;
+     finnet.subname= req.body.subname;
+     finnet.signature= req.body.signature;
+  Sub.findOne({subid: req.body.subid}, function(err, doc) {
+    if (err) {
+        return res.status(404).json({
+            title: 'An error occured',
+            error: err
+        });
+    }
+    if (!doc) {
+        return res.status(404).json({
+            title: 'No user found',
+            error: {message: 'User could not be found'}
+        });
+    }
+    Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
+         res.json({
+           typedata: 'pay_res',
+           trxid: finnet.trxid,
+           invoiceid: bill.noinvoice,
+           respcode: '00'
+         });
+       });
+      });
+    });
 
 module.exports = router;
