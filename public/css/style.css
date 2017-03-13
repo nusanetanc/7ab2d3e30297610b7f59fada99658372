@@ -341,19 +341,22 @@ list-style: none;
 
 .price-box-body-button{
 margin-top: 20px;
+text-align:center;
 }
 
-.price-box-body-button{
-}
 
 .price-box-btn-subscribe{
-background-color: #ea442d;
-color: white;
+border:1px solid #ea442d;
+color: #ea442d;
 border-radius: 0px;
 border: 0;
 vertical-align: middle;
-padding: 15px 20px 15px 20px;
-width: 100%;
+padding: 12px 20px 12px 20px;
+width: 56%;
+}
+.price-box-btn-subscribe:hover{
+background-color: #ea442d;
+color: white;
 }
 
 ⁠⁠⁠.material-icons {
