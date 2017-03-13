@@ -26,6 +26,9 @@ var information = require('./routes/information');
 var menu = require('./routes/menu');
 var problem = require('./routes/problem');
 
+// api for finnet
+var finnet = require('./routes/finnet');
+
 var app = express();
 
 // view engine setup
@@ -65,6 +68,8 @@ app.use('/home', home);
 app.use('/information', information);
 app.use('/menu', menu);
 app.use('/problem', problem);
+
+app.use('/api/finnet', finnet);
 
 
 // catch 404 and forward to error handler
