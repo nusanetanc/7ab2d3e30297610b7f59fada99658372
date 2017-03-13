@@ -63,6 +63,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Groovy - Contact' });
 });
 
+router.get('/privacy-policy', function(req, res, next) {
+  res.render('privacy-policy', { title: 'Groovy - Privacy-policy' });
+});
+
 /* GET is groovy. */
 
 router.get('/is', function(req, res, next) {
