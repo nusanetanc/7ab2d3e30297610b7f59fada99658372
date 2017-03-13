@@ -6,8 +6,8 @@ var Sub = require('../models/subs');
 /* GET detail bill one account. */
 router.post('/inqreq/', function(req, res, next) {
 Sub.find({subid: req.body.subid}, function(err, sub) {
-       console.log( subid );
-       res.json(subid);
+       console.log( sub );
+       res.json(sub);
    });
 });
 
