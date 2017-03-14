@@ -32,7 +32,7 @@ template: `
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
-            
+
                         <li class="active firstLiSidebar">
                             <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
@@ -43,7 +43,7 @@ template: `
                             <a [routerLink]="['AllBill']"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a href="reportshistory.html"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllBill']"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
                             <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
@@ -57,13 +57,13 @@ template: `
                         <li>
                             <a href="stock.html"><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
-            
+
                         <!--
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>{{menu.title}}</strong></a>
                         <li *ngFor="#menu of menus" style="margin-top: 10px;">
                         </li>
                         -->
-            
+
                     </ul>
                     <div class="sidebar-footer">
                         <div>
