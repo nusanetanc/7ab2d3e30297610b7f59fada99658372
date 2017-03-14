@@ -49,7 +49,7 @@ template: `
                             <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
                         <li class="active">
-                            <a href="engineer.html"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
+                            <a [routerLink]="['AllBill']"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
                         </li>
                         <li>
                             <a href="employee.html"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
@@ -62,7 +62,7 @@ template: `
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>{{menu.title}}</strong></a>
                         <li *ngFor="#menu of menus" style="margin-top: 10px;">
                         </li>
-                        -->
+                        --> 
 
                     </ul>
                     <div class="sidebar-footer">
