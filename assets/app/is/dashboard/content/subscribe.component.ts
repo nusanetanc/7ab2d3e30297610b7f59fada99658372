@@ -15,7 +15,7 @@ import { Sub } from './subs';
                 &nbsp; Subscriber
             </h3>
         </div>
-    
+
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
@@ -31,7 +31,7 @@ import { Sub } from './subs';
                             <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -105,7 +105,7 @@ import { Sub } from './subs';
                             <h4>BILLING INFORMATION</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -161,7 +161,7 @@ export class ContentSubscribeComponent {
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.subid}`;)
+    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
