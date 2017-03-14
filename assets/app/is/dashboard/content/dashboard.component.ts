@@ -64,16 +64,6 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                               <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
                           </div>
                           <div class="row subInfo">
-                              <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                              <div class="col-sm-8 invoiceList"><span>Account can't login in other device</span></div>
-                              <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                          </div>
-                          <div class="row subInfo">
-                              <div class="col-sm-2 invoiceId"><span>21 Jan 2017</span></div>
-                              <div class="col-sm-8 invoiceList"><span>Unstable Internet Connection</span></div>
-                              <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                          </div>
-                          <div class="row subInfo">
                               <div class="col-sm-12 invoiceId"><span><a href="" class="linkViewAll"><b>View all informaiton</b></a></span></div>
                           </div>
                       </div>
