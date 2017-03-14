@@ -290,6 +290,20 @@ background-color: #ea442d;
     text-align: center;
     padding: 15px 0 15px 0;
 }
+.package-most-popular{
+    background-size: 121px;
+    background-image: url(../images/most-popular.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.package-recommend{
+    background-size: 121px;
+    background-image: url(../images/recommend.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+
 
 .price-box-header-currency{
 font-size: 16px;

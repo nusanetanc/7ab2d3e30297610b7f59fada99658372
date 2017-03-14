@@ -14,7 +14,6 @@ import { Http } from 'angular2/http';
                 </a>
                 &nbsp; New Report
             </h3>
-
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
