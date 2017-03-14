@@ -140,7 +140,7 @@ import { Home } from './home';
                                             </select><br/>
                                         </div>
                                         <div class="paddingR30">
-                                            <select class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
+                                            <selectfdgsgfd class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
                                                 <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                                 <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                             </select><br/>
@@ -239,11 +239,7 @@ export class ContentAddSubsComponent implements OnInit {
           .map(res => res.json())
           .subscribe(typeproperties => {
             this.typeproperties = typeproperties
-          })
-      }
-// Get all Cluster from the API
-getAllCluster() {
-  this.http.get(`${this.API}/cluster/listcluster`)
+          })Upload
     .map(res => res.json())
     .subscribe(clusters => {
       this.clusters = clusters
