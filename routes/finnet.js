@@ -1,4 +1,5 @@
 var express = require('express');
+var md5 = require('md5');
 var router = express.Router();
 var Finnet = require('../models/finnet');
 var Sub = require('../models/subs');
@@ -12,16 +13,27 @@ router.post('/inqreq', function(req, res, next) {
    finnet.trxdate= req.body.trxdate;
    finnet.gid= req.body.subid;
    finnet.signature= req.body.signature;
+   finnet.secretkey= req.body.secretkey;
+   hashsignature= md5(finnet.trxid.finnet.trxdate.finnet.gid.finnet.secretkey);
+  if (finnet.secretkey = 'gro0vy'){
+    return res.status(404).json({
+        title: 'Secret Key Not Valid',
+        respcode: '93'
+        error: {message: 'User could not be found'}
+    });
+  }
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
   if (err) {
       return res.status(404).json({
           title: 'An error occured',
-          error: err
+          respcode: '94',
+          error: {message: 'Time Out'}
       });
   }
   if (!doc) {
       return res.status(404).json({
           title: 'No user found',
+          respcode: '98'
           error: {message: 'User could not be found'}
       });
   }
