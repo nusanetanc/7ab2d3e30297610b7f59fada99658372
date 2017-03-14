@@ -25,7 +25,7 @@ import { Sub } from '../subs';
                                     <option value="fiat">Medan</option>
                                 </select><br/>
                             </form>
-                            <a href="/signup-data" class="next btn btn-default dropdown-toggle" style="">
+                            <a [routerLink]="['SignupData']" class="next btn btn-default dropdown-toggle" style="">
                                 NEXT
                             </a>
                         </div>
