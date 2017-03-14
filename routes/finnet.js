@@ -18,8 +18,8 @@ router.post('/inqreq', function(req, res, next) {
   if (finnet.secretkey = 'gro0vy'){
     return res.status(404).json({
         title: 'Secret Key Not Valid',
-        respcode: '93'
-        error: {message: 'User could not be found'}
+        respcode: '93',
+        error: {message: 'Secret Key Not Valid'}
     });
   }
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
