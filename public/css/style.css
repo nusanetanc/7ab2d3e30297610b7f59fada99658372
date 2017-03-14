@@ -437,8 +437,9 @@ padding: 0;
 .row > .col-md-4 > form > select {
 background-color: #f0f0f0;
 border: 0px;
+border-radius: 4px;
 font-size: 14px;
-height: 70px;
+height: 45px;
 margin: 0;
 padding: 22px 0px 26px 5px;
 width: 100%;
