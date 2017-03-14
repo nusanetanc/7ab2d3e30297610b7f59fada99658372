@@ -33,7 +33,7 @@ template: `
                     </div>
                     <ul class="sidebar-nav nav">
             
-                        <li class="active firstLiSidebar">
+                        <li class="firstLiSidebar">
                             <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
@@ -43,19 +43,19 @@ template: `
                             <a [routerLink]="['AllBill']"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a href="reportshistory.html"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllReport']"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
                             <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
-                        <li class="active">
-                            <a href="engineer.html"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
+                        <li>
+                            <a [routerLink]="['AllEngineer']"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
                         </li>
                         <li>
-                            <a href="employee.html"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                            <a [routerLink]="['AllEmployee']"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                            <a href="stock.html"><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                            <a [routerLink]="['AllStock']"><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
             
                         <!--
