@@ -260,7 +260,8 @@ margin-bottom: 0px;
 
 .wall-package-content-title{
 font-size:38px;
-color: #ea442d;
+color: #333;
+font-weight:300;
 }
 
 .package-content{
@@ -289,6 +290,20 @@ background-color: #ea442d;
     text-align: center;
     padding: 15px 0 15px 0;
 }
+.package-most-popular{
+    background-size: 121px;
+    background-image: url(../images/most-popular.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.package-recommend{
+    background-size: 121px;
+    background-image: url(../images/recommend.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+
 
 .price-box-header-currency{
 font-size: 16px;
@@ -320,7 +335,7 @@ padding-left: 10px;
 
 .price-box-body-list ul{
 line-height: 25px;
-font-weight: 700;
+font-weight: 500;
 margin-left: -50px
 }
 
@@ -422,10 +437,12 @@ padding: 0;
 .row > .col-md-4 > form > select {
 background-color: #f0f0f0;
 border: 0px;
+border-radius: 4px;
 font-size: 14px;
-height: 70px;
+height: 45px;
 margin: 0;
-padding: 22px 0px 26px 5px;
+padding-left: 5px;
+color: #E3471C;
 width: 100%;
 }
 

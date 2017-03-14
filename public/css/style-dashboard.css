@@ -272,8 +272,10 @@ hr {
 /*----- Dashboard Page -----*/
 
 .cardDashboardSub {
-    background-color: #FC592E;
+    border:1px solid #FC592E;
     height: 200px;
+    color:#E3471C;
+    background-color:#fff;
     margin-bottom: 20px;
 }
 
@@ -899,8 +901,7 @@ hr {
     margin-left: 10px;
 }
 
-.marginB10White {
-    color: #FFF;
+.marginB10 {
     margin-bottom: 10px;
 }
 
