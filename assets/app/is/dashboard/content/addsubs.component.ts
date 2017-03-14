@@ -22,11 +22,11 @@ import { Home } from './home';
                     &nbsp; New Subscribers
                 </h3>
             </div>
-        
+
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
                 <div class="row subInfo">
                     <div class="col-sm-12">
-        
+
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row">
@@ -66,7 +66,7 @@ import { Home } from './home';
                                                 </span>
                                             </div>
                                         </div>
-        
+
                                         <p>Please select a available timeslot for that date</p>
                                         <div class="marginB20 col-sm-offset-4">
                                             <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am PST<br>
@@ -140,7 +140,7 @@ import { Home } from './home';
                                             </select><br/>
                                         </div>
                                         <div class="paddingR30">
-                                            <select class="inputForm" name="no">
+                                            <select class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
                                                 <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                                 <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                             </select><br/>
@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllBLokfloor();
     this.getAllHome();
   }
-  
+
 
 // Add one person to the API
   addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
