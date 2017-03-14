@@ -32,10 +32,10 @@ import { Sub } from '../subs';
                         </form>
                     </div>
                     <div class="col-md-4 col-md-offset-4">
-                        <a href="/signup-installdate" class="back btn btn-default dropdown-toggle">
+                        <a [routerLink]="['SignupInstalldate']" class="back btn btn-default dropdown-toggle">
                             BACK
                         </a>
-                        <a href="/signup-done" class="next btn btn-default dropdown-toggle">
+                        <a [routerLink]="['SignupDone']" class="next btn btn-default dropdown-toggle">
                             FINISH
                         </a>
                     </div>

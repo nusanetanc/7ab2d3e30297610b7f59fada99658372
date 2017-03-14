@@ -67,10 +67,10 @@ import { Sub } from '../subs';
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
-                            <a href="/signup" class="back btn btn-default dropdown-toggle">
+                            <a [routerLink]="['Signup']" class="back btn btn-default dropdown-toggle">
                                 BACK
                             </a>
-                            <a href="/signup-package" class="next btn btn-default dropdown-toggle">
+                            <a [routerLink]="['SignupPackage']" class="next btn btn-default dropdown-toggle">
                                 NEXT
                             </a>
                         </div>
