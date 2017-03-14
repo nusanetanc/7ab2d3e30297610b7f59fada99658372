@@ -69,7 +69,7 @@ app.use('/information', information);
 app.use('/menu', menu);
 app.use('/problem', problem);
 
-app.use('/api', finnet);
+app.use('/api/finnet', finnet);
 
 
 // catch 404 and forward to error handler

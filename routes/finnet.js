@@ -5,7 +5,7 @@ var Sub = require('../models/subs');
 var Bill = require('../models/bill');
 
 /* GET detail bill one account. */
-router.post('/inqreq/', function(req, res, next) {
+router.post('/inqreq', function(req, res, next) {
   var finnet = new Finnet()
    finnet.typedata= req.body.typedata;
    finnet.trxid= req.body.trxid;
@@ -39,7 +39,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
   });
 
   /* GET detail bill one account. */
-  router.post('/payreq/', function(req, res, next) {
+  router.post('/payreq', function(req, res, next) {
     var finnet = new Finnet()
      finnet.typedata= req.body.typedata;
      finnet.trxid= req.body.trxid;
