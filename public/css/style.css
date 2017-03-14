@@ -794,6 +794,10 @@ margin-bottom: 20px;
     color:#444;
 }
 
+.raleway {
+    font-family: 'Roboto', sans-serif;
+}
+
 /*----------------------------/privacy-policy-----------------------------------*/
 
 @media only screen and (max-width : 768px){
