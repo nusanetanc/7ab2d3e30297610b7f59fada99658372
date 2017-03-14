@@ -34,22 +34,22 @@ template: `
                     <ul class="sidebar-nav nav">
 
                         <li class="active firstLiSidebar">
-                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a href="#" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']"><i class="material-icons">people</i> <strong>SUBSCRIBERS</strong></a>
+                            <a href="#"><i class="material-icons">people</i> <strong>SUBSCRIBERS</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
+                            <a href="#"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a href="#"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Information']"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a href="#"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
-                        <li>
-                            <a [routerLink]="['AllSubs']"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
+                        <li class="active">
+                            <a href="#"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
                         </li>
                         <li>
                             <a href="employee.html"><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
@@ -62,7 +62,7 @@ template: `
                         <a href="#" class="collapse"><i class="material-icons">announcement</i> <strong>{{menu.title}}</strong></a>
                         <li *ngFor="#menu of menus" style="margin-top: 10px;">
                         </li>
-                        -->
+                        --> 
 
                     </ul>
                     <div class="sidebar-footer">
