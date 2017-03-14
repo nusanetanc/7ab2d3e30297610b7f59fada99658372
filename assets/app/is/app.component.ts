@@ -10,20 +10,20 @@ import {ContentAddSubsComponent} from "./dashboard/content/addsubs.component";
 import {ContentAllInformationComponent} from "./dashboard/content/allinformations.component";
 import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component";
 import {SigninComponent} from "./authentication/signin.component";
-import {ContentAddInformationComponent} from "./dashboard/content/addinformation.component";
-import {ContentAddReportComponent} from "./dashboard/content/addreport.component";
-import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee.component";
-import {ContentAllEngineerComponent} from "./dashboard/content/allengineer.component";
-import {ContentAllReportsComponent} from "./dashboard/content/allreports.component";
-import {ContentAllStocksComponent} from "./dashboard/content/allstock.component";
-import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
-import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
-import {ContentDetailStockComponent} from "./dashboard/content/detailstock.component";
-import {ContentInfoStockComponent} from "./dashboard/content/infostock.component";
-import {ContentProfileEmployeeComponent} from "./dashboard/content/profileemployee.component";
-import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
-import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
-import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
+//import {ContentAddInformationComponent} from "./dashboard/content/addinformation.component";
+//import {ContentAddReportComponent} from "./dashboard/content/addreport.component";
+//import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee.component";
+//import {ContentAllEngineerComponent} from "./dashboard/content/allengineer.component";
+//import {ContentAllReportsComponent} from "./dashboard/content/allreports.component";
+//import {ContentAllStocksComponent} from "./dashboard/content/allstock.component";
+//import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
+//import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
+//import {ContentDetailStockComponent} from "./dashboard/content/detailstock.component";
+//import {ContentInfoStockComponent} from "./dashboard/content/infostock.component";
+//import {ContentProfileEmployeeComponent} from "./dashboard/content/profileemployee.component";
+//import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
+//import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
+//import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 
 @Component({
    selector: 'is-app',
@@ -32,7 +32,7 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
    <div id="wrapper">
    <dashboard></dashboard>
    <router-outlet></router-outlet>
-        
+
    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="alert alert-danger alert-dismissible fade in" role=alert>
@@ -49,10 +49,10 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
             </div>
         </div>
     </div>
-        
+
    </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentSubscribeComponent, ContentAddInformationComponent, ContentAddReportComponent, ContentAllEmployeeComponent, ContentAllEngineerComponent, ContentAllInformationComponent, ContentAllReportsComponent, ContentAllStocksComponent, ContentDetailInformationComponent, ContentDetailReportComponent, ContentDetailStockComponent, ContentInfoStockComponent, ContentProfileEmployeeComponent, ContentProfileEngineerComponent, ContentReplayReportComponent, ContentAllBillsComponent, AuthenticationComponent, ROUTER_DIRECTIVES],
+    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentAddSubsComponent, ContentAllInformationComponent, ContentSubscribeComponent, SigninComponent,  AuthenticationComponent, ROUTER_DIRECTIVES],
 })
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
@@ -60,21 +60,7 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
     { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
     { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
     { path: '/is/allinformation', component:ContentAllInformationComponent, name:'Information'},
-    { path: '/is/signin', component:AuthenticationComponent, name:'Signin'},
-    { path: '/is/addinformation', component:ContentAddInformationComponent, name:'AddInformation'},
-    { path: '/is/addreport', component:ContentAddReportComponent, name:'AddReport'},
-    { path: '/is/allbill', component:ContentAllBillsComponent, name:'AllBill'},
-    { path: '/is/allemployee', component:ContentAllEmployeeComponent, name:'AllEmployee'},
-    { path: '/is/allengineer', component:ContentAllEngineerComponent, name:'AllEngineer'},
-    { path: '/is/allreport', component:ContentAllReportsComponent, name:'AllReport'},
-    { path: '/is/allstock', component:ContentAllStocksComponent, name:'AllStock'},
-    { path: '/is/detialinformation', component:ContentDetailInformationComponent, name:'DetailInformation'},
-    { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DeatailReport'},
-    { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
-    { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
-    { path: '/is/profileemployee', component:ContentProfileEmployeeComponent, name:'ProfileEmployee'},
-    { path: '/is/profileengineer', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
-    { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
+    { path: '/is/signin', component:AuthenticationComponent, name:'Signin'}
 ])
 
 export class AppComponent {
