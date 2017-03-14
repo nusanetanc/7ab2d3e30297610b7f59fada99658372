@@ -140,7 +140,7 @@ import { Home } from './home';
                                             </select><br/>
                                         </div>
                                         <div class="paddingR30">
-                                            <selectfdgsgfd class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
+                                            <select class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
                                                 <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                                 <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                             </select><br/>
