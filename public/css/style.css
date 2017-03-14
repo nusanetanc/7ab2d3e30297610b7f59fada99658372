@@ -260,7 +260,8 @@ margin-bottom: 0px;
 
 .wall-package-content-title{
 font-size:38px;
-color: #ea442d;
+color: #333;
+font-weight:300;
 }
 
 .package-content{
