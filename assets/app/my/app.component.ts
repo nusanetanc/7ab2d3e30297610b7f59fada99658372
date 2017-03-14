@@ -17,7 +17,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
    selector: 'my-app',
    template: `
    <!-- START CONTENT -->
-  <div id="wrapper">
+  <divhjghjh id="wrapper">
     <dashboard ></dashboard>
     <router-outlet></router-outlet>
   </div ><!-- END CONTENT -->
