@@ -32,7 +32,7 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
    <div id="wrapper">
    <dashboard></dashboard>
    <router-outlet></router-outlet>
-        
+
    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="alert alert-danger alert-dismissible fade in" role=alert>
@@ -49,7 +49,7 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
             </div>
         </div>
     </div>
-        
+
    </div><!-- END CONTENT -->
 `,
     directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentSubscribeComponent, ContentAddInformationComponent, ContentAddReportComponent, ContentAllEmployeeComponent, ContentAllEngineerComponent, ContentAllInformationComponent, ContentAllReportsComponent, ContentAllStocksComponent, ContentDetailInformationComponent, ContentDetailReportComponent, ContentDetailStockComponent, ContentInfoStockComponent, ContentProfileEmployeeComponent, ContentProfileEngineerComponent, ContentReplayReportComponent, ContentAllBillsComponent, AuthenticationComponent, ROUTER_DIRECTIVES],

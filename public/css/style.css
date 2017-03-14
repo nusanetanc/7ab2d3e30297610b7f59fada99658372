@@ -260,7 +260,8 @@ margin-bottom: 0px;
 
 .wall-package-content-title{
 font-size:38px;
-color: #ea442d;
+color: #333;
+font-weight:300;
 }
 
 .package-content{
@@ -279,6 +280,7 @@ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 
 background-color: #fff;
 padding: 45px 30px 90px 30px;
 color: #ea442d;
+background-image:url(../images/recommend.png);
 }
 
 .price-box-header-level{
@@ -320,7 +322,7 @@ padding-left: 10px;
 
 .price-box-body-list ul{
 line-height: 25px;
-font-weight: 700;
+font-weight: 500;
 margin-left: -50px
 }
 
