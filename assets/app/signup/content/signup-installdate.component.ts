@@ -56,7 +56,7 @@ import { Sub } from '../subs';
                             </div>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
-                            <a href=[routerLink]="['SignupPackage']" class="back btn btn-default dropdown-toggle">BACK</a>
+                            <a [routerLink]="['SignupPackage']" class="back btn btn-default dropdown-toggle">BACK</a>
                             <a [routerLink]="['SignupProvide']" class="next btn btn-default dropdown-toggle">NEXT</a>
                         </div>
                     </div>
