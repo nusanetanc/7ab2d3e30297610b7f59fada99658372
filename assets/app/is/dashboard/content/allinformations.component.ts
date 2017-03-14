@@ -38,10 +38,10 @@ import { Information } from './allinformation';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">11 Feb 2017</a></span></div>
-                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Fiber Optic Network Disruption</a></span></div>
-                        <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
+                    <div class="row subInfo" *ngFor="#information of informations">
+                        <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">{{ information.date }}</a></span></div>
+                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>
+                        <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                     </div>
                 </div>
             </div>
