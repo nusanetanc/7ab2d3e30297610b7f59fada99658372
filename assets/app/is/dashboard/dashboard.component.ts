@@ -40,7 +40,7 @@ template: `
                             <a [routerLink]="['AllSubs']"><i class="material-icons">people</i> <strong>SUBSCRIBERS</strong></a>
                         </li>
                         <li>
-                            <a href="billing.html"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
+                            <a [routerLink]="['AllBill']"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
                             <a href="reportshistory.html"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
