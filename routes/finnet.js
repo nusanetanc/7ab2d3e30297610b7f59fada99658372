@@ -33,7 +33,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
   if (!doc) {
       return res.status(404).json({
           title: 'No user found',
-          respcode: '98'
+          respcode: '98',
           error: {message: 'User could not be found'}
       });
   }
