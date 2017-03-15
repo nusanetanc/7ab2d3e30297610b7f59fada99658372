@@ -20,8 +20,8 @@ import {Home} from "./home";
                             <h3>Sign Up</h3>
                         </div><!-- .header SignUp -->
                     </div>
+                    <form>
                     <div class="row">
-                        <form>
                         <div class="col-md-4 col-md-offset-4">
                                 <select name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
@@ -61,8 +61,8 @@ import {Home} from "./home";
                                 NEXT
                             </a>
                         </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
 `,
