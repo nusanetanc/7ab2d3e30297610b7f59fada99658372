@@ -26,7 +26,7 @@ import { Sub } from './subs';
                           <div class="col-sm-4">
                           <a [routerLink]="['Reports']">
                               <div class="cardDashboardSub">
-                                  <div class="row margin10White">
+                                  <div class="row marginB10">
                                       <div class="col-sm-12 text-center">
                                           <i class="material-icons font100Margin30">announcement</i>
                                           <h4>REPORT PROBLEM</h4>
@@ -38,7 +38,7 @@ import { Sub } from './subs';
                           <div class="col-sm-4">
                           <a [routerLink]="['Billing']">
                               <div class="cardDashboardSub">
-                                  <div class="row margin10White">
+                                  <div class="row marginB10">
                                       <div class="col-sm-12 text-center">
                                           <i class="material-icons font100Margin30">credit_card</i>
                                           <h4>BILLING</h4>
@@ -51,7 +51,7 @@ import { Sub } from './subs';
                               <div class="cardDashboardSub">
                                   <div class="row">
                                       <div class="col-sm-12 marginTop40">
-                                          <div class="row marginBL10White">
+                                          <div class="row marginBL10">
                                               <div class="col-xs-6 col-sm-5">
                                                   Current Plan
                                               </div>
@@ -62,7 +62,7 @@ import { Sub } from './subs';
                                                   Level {{ subs.packlev}}
                                               </div>
                                           </div>
-                                          <div class="row marginBL10White">
+                                          <div class="row marginBL10">
                                               <div class="col-xs-6 col-sm-5">
                                                   Account Status
                                               </div>
@@ -73,7 +73,7 @@ import { Sub } from './subs';
                                                   {{ subs.status}}
                                               </div>
                                           </div>
-                                          <div class="row marginBL10White">
+                                          <div class="row marginBL10">
                                               <div class="col-xs-6 col-sm-5">
                                                   Next Billing Date
                                               </div>
@@ -84,7 +84,7 @@ import { Sub } from './subs';
                                                   March, 12 2017
                                               </div>
                                           </div>
-                                          <div class="row marginB10White">
+                                          <div class="row marginB10">
                                               <div class="col-sm-12">
                                                   <h4 class="text-center">SUBSCRIPTION PLAN</h4>
                                               </div>
@@ -101,7 +101,7 @@ import { Sub } from './subs';
               <div class="row paddingLR15Margin20">
                   <div class="col-sm-12">
                       <div class="row headerList paddingLR30">
-                          <div class="col-sm-12 invoiceId hid headerSubList"><strong>INFORMATION</strong></div>
+                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>INFORMATION</strong></div>
                       </div>
                       <div *ngFor="#information of informations">
                       <a [routerLink]="['Detailinformation']">
