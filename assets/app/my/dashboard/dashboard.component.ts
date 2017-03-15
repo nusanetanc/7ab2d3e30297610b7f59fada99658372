@@ -14,7 +14,7 @@ import { Sub } from './content/subs';
                       <li class="sidebar-brand">
                           <div class="title">
                               <img src="./images/ava.png" alt="ava">
-                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }} {{ user.userId }}</strong></a>
+                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
                               <a class="user">Subscriber - Level {{ subs.packlev}}</a>
                           </div>
                       </li>
