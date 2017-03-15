@@ -20,27 +20,33 @@ import {Home} from "./home";
                             <h3>Sign Up</h3>
                         </div><!-- .header SignUp -->
                     </div>
-                    <form>
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select><br/>
+                            </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select><br/>
+                            </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select><br/>
+                            </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
@@ -48,10 +54,12 @@ import {Home} from "./home";
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select><br/>
+                            </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <a [routerLink]="['Signup']" class="back btn btn-default dropdown-toggle">
@@ -62,7 +70,6 @@ import {Home} from "./home";
                             </a>
                         </div>
                     </div>
-                    </form>
                 </div>
             </div>
 `,
