@@ -38,7 +38,7 @@ router.get('/email-verification', function(req, res, next) {
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
-
+/*
 router.get('/signup-data', function(req, res, next) {
   res.render('signup-data', { title: 'Groovy - Signup' });
 });
@@ -58,7 +58,7 @@ router.get('/signup-provide', function(req, res, next) {
 router.get('/signup-done', function(req, res, next) {
   res.render('signup-done', { title: 'Groovy - Signup' });
 });
-
+*/
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Groovy - Contact' });
 });
