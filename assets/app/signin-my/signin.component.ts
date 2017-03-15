@@ -62,7 +62,7 @@ getAllSub() {
     .subscribe(
             data => {
               window.location.href = `/my`;
-              localStorage.setItem('sessionId', response.json().sessionId);
+              localStorage.setItem('sessionId','58b3cdac45912d052e2c85a5');
             },
             error => {
               alert(error.text());

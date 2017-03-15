@@ -7,42 +7,42 @@ import { Sub } from './content/subs';
 @Component({
     selector: 'dashboard',
     template: `
-    <!-- Sidebar -->
-          <div id="sidebar-wrapper">
-              <nav id="spy">
-                  <ul class="sidebar-nav nav">
-                      <li class="sidebar-brand">
-                          <div class="title">
-                              <img src="./images/ava.png" alt="ava">
-                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
-                              <a class="user">Subscriber - Level {{ subs.packlev }}</a>
-                          </div>
-                      </li>
-
-                      <li>
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <nav id="spy">
+                    <div class="sidebar-brand">
+                        <div class="title">
+                            <img src="./images/ava.png" alt="ava">
+                            <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
+                            <a class="user">Subscriber - Level {{ subs.packlev }}</a>
+                        </div>
+                    </div>
+                    <ul class="sidebar-nav nav">
+            
+                        <li class="firstLiSidebar">
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
-                      </li>
-                      <li>
+                        </li>
+                        <li>
                           <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
-                      </li>
-                      <li>
+                        </li>
+                        <li>
                           <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
-                      </li>
-                      <li>
+                        </li>
+                        <li>
                           <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
-                      </li>
-
-                      <li class="sidebar-footer">
-                          <div>
-                              <img src="./images/groovy-grayscale.png" alt="ava">
-                              <a href="">Privacy</a>
-                              <a href="">Terms</a>
-                          </div>
-                      </li>
-                  </ul>
-              </nav>
-          </div>
-          <!-- /Sidebar -->
+                        </li>
+            
+                    </ul>
+                    <div class="sidebar-footer">
+                        <div>
+                            <img src="./images/groovy-grayscale.png" alt="ava">
+                            <a href="">Privacy</a>
+                            <a href="">Terms</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- /Sidebar -->
     `,
     directives: [ ROUTER_DIRECTIVES], providers: [],
 })
@@ -52,7 +52,8 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = localStorage.getItem('sessionId');
+  localStorage.setItem('sessionId','58b3cdac45912d052e2c85a5');
+  Session_ID = localStorage.sessionId;
 
 subs: any[] = [];
   constructor(private http: Http) {}
@@ -62,7 +63,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+  this.http.get(`${this.API}/subscribe/sub/${Session_ID}`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
