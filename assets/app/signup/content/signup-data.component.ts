@@ -86,6 +86,8 @@ export class DataComponent implements OnInit {
     blokfloors: any[] = [];
     homes: any[] = [];
 
+    constructor(private http: Http) {}
+
     ngOnInit() {
         this.getAllProperty();
         this.getAllType();
