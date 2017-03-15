@@ -14,7 +14,7 @@ import { Sub } from './content/subs';
                       <li class="sidebar-brand">
                           <div class="title">
                               <img src="./images/ava.png" alt="ava">
-                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }} {{ sessionId }}</strong></a>
+                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }} {{ user.userId }}</strong></a>
                               <a class="user">Subscriber - Level {{ subs.packlev}}</a>
                           </div>
                       </li>
@@ -49,6 +49,10 @@ import { Sub } from './content/subs';
 
 
 export class DashboardComponent {
+belongsToUser() {
+    return localStorage.getItem('MongoId') == this.user.userId;
+  }
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';
