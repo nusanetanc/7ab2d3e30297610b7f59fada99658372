@@ -49,13 +49,10 @@ import { Sub } from './content/subs';
 
 
 export class DashboardComponent {
-belongsToUser() {
-    return localStorage.getItem('MongoId') == this.user.userId;
-  }
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = '58b3cdac45912d052e2c85a5';
+  Session_ID = localStorage.getItem('MongoId');
 
   informations: any[] = [];
 subs: any[] = [];
