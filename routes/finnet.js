@@ -22,7 +22,7 @@ router.post('/inqreq', function(req, res, next) {
         error: {message: 'Secret Key Not Valid'}
     });
   }
-  if (finnet.signature !== hashsignature){
+  if (finnet.signature !== md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey)){
     return res.status(404).json({
         title: 'signature Not Valid',
         respcode: '99',
