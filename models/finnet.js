@@ -5,11 +5,11 @@ var Bill = require('../models/bill');
 
 var FinnetSchema   = new Schema({
   typedata: String,
-  subid: Number,
+  subid: String,
   subname: String,
   trxid: String,
-  trxdate: Number,
-  signature: Number,
+  trxdate: Date,
+  signature: String,
   amount: Number,
   respcode: Number,
   invoiceid: Number,
