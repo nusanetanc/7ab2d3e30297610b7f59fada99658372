@@ -113,6 +113,7 @@ router.post('/signin', function(req, res, next){
             message: 'Success',
             token: token,
             sessionId: doc._id
+            localStorage.getItem(sessionId, doc._id);
         })
     })
 })
