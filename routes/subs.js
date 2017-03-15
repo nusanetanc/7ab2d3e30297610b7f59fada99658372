@@ -112,8 +112,7 @@ router.post('/signin', function(req, res, next){
         res.status(200).json({
             message: 'Success',
             token: token,
-            sessionId: doc._id,
-            id_token: createToken(doc)
+            sessionId: doc._id
         })
     })
 })
