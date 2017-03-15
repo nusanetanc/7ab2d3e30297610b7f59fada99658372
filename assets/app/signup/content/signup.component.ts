@@ -23,6 +23,10 @@ import {City} from "./cities";
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
                                 </select><br/>
+                                <select *ngIf="show" [hidden]="hidden" style="" name="cars">
+                                    <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
+                                </select><br/>
                             </form>
                             <a (click)="toggleHidden()" class="next btn btn-default dropdown-toggle" style="">
                                 NEXT
