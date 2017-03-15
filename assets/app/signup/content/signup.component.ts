@@ -13,7 +13,7 @@ import {City} from "./cities";
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12"><!-- header SignUp -->
-                            <h3>Sign Ups</h3>
+                            <h3>Sign Up</h3>
                         </div><!-- .header SignUp -->
                     </div>
                     <div class="row">
