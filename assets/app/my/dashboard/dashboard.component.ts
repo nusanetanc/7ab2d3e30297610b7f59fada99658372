@@ -52,7 +52,7 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = localStorage.getItem('MongoId');
+  Session_ID = '58b3cdac45912d052e2c85a5';
 
   informations: any[] = [];
 subs: any[] = [];
