@@ -39,7 +39,7 @@ router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
 
-router.get('/signup-**', function(req, res, next) {
+router.get('/signup/**', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
 
