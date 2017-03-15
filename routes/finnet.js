@@ -14,7 +14,7 @@ router.post('/inqreq', function(req, res, next) {
    finnet.gid= req.body.subid;
    finnet.signature= req.body.signature;
    finnet.secretkey= req.body.secretkey;
-   hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey);
+   hash.signature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey);
   if (finnet.secretkey !== 'gro0vy'){
     return res.status(404).json({
         title: 'Secret Key Not Valid',
@@ -22,7 +22,7 @@ router.post('/inqreq', function(req, res, next) {
         error: {message: 'Secret Key Not Valid'}
     });
   }
-  if (finnet.signature !== md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey)){
+  if (finnet.signature !== 'c4917cad409abd264ef1e63441afd810'){
     return res.status(404).json({
         title: 'signature Not Valid',
         respcode: '99',
