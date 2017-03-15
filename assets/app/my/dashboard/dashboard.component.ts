@@ -52,8 +52,7 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  localStorage.setItem('sessionId','58b3cdac45912d052e2c85a5');
-  Session_ID = localStorage.sessionId;
+  Session_ID = localStorage.getItem('id_token');
 
 subs: any[] = [];
   constructor(private http: Http) {}
