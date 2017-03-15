@@ -26,7 +26,7 @@ router.post('/inqreq', function(req, res, next) {
     return res.status(404).json({
         title: 'signature Not Valid',
         respcode: '99',
-        error: {message: 'Signature Not Valid'}
+        error: {message: hashsignature}
     });
   }
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
