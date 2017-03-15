@@ -372,6 +372,8 @@ border-radius: 4px;
 vertical-align: middle;
 padding: 11px 20px 11px 20px;
 width: 50%;
+transition: 0.2s all;
+-moz-transition: 0.2s all;
 }
 .price-box-btn-subscribe:hover{
 background-color: #ea442d;
