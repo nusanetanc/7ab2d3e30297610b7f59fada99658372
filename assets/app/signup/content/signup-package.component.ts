@@ -21,7 +21,7 @@ import {Package} from "./package";
                         <form>
                             <select name="package">
                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR ':true}}</option>
                                 <option value="level2">Level 1 - Monthly - IDR 549 K</option>
                                 <option value="level3">Level 1 - Monthly - IDR 899 K</option>
                                 <option value="level4">Level 1 - Monthly - IDR 499 K</option>
