@@ -14,8 +14,8 @@ import { Sub } from './content/subs';
                       <li class="sidebar-brand">
                           <div class="title">
                               <img src="./images/ava.png" alt="ava">
-                              <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
-                              <a class="user">Subscriber - Level {{ subs.packlev }}</a>
+                              <a [routerLink]="['Account']"  class="name"><strong></strong></a>
+                              <a class="user">Subscriber - Level </a>
                           </div>
                       </li>
 
@@ -50,23 +50,5 @@ import { Sub } from './content/subs';
 
 export class DashboardComponent {
 
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
-  Session_ID = '58b3cdac45912d052e2c85a5';
-
-subs: any[] = [];
-  constructor(private http: Http) {}
-
-  ngOnInit() {
-    this.getAcountSub();
-  }
-
-getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/58b3cdac45912d052e2c85a5`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
 
 }
