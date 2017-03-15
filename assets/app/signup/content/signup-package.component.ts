@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from '../subs';
+import {Package} from "./package";
 
 @Component({
     selector: 'form-signin',
@@ -20,7 +21,7 @@ import { Sub } from '../subs';
                         <form>
                             <select name="package">
                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                <option value="level1">Level 1 - Monthly - IDR 349 K</option>
+                                <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - RP. {{package.price}}.toLocaleString()</option>
                                 <option value="level2">Level 1 - Monthly - IDR 549 K</option>
                                 <option value="level3">Level 1 - Monthly - IDR 899 K</option>
                                 <option value="level4">Level 1 - Monthly - IDR 499 K</option>
@@ -43,6 +44,25 @@ import { Sub } from '../subs';
 `,
     directives: [ROUTER_DIRECTIVES]
 })
-export class PackageComponent {
+export class PackageComponent implements OnInit {
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    // Declare empty list of people
+    packages: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllPackage();
+    }
+// Get all Package from the API
+    getAllPackage() {
+        this.http.get(`${this.API}/package/listpackage`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
+            })
+    }
 }
