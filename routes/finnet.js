@@ -22,13 +22,7 @@ router.post('/inqreq', function(req, res, next) {
         error: {message: 'Secret Key Not Valid'}
     });
   }
-  if (finnet.signature !== 'c'){
-    return res.status(404).json({
-        title: 'signature Not Valid',
-        respcode: '99',
-        error: {message: hashsignature}
-    });
-  }
+
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
   if (err) {
       return res.status(404).json({
