@@ -17,7 +17,7 @@ import {Home} from "./home";
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12"><!-- header SignUp -->
-                            <h3>Sign Ups</h3>
+                            <h3>Sign Up</h3>
                         </div><!-- .header SignUp -->
                     </div>
                     <div class="row">
@@ -86,6 +86,8 @@ export class DataComponent implements OnInit {
     blokfloors: any[] = [];
     homes: any[] = [];
 
+    constructor(private http: Http) {}
+
     ngOnInit() {
         this.getAllProperty();
         this.getAllType();
@@ -117,10 +119,6 @@ export class DataComponent implements OnInit {
             .map(res => res.json())
             .subscribe(typeproperties => {
                 this.typeproperties = typeproperties
-            })Upload
-            .map(res => res.json())
-            .subscribe(clusters => {
-                this.clusters = clusters
             })
     }
 // Get all BLokfloor from the API
