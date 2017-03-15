@@ -15,7 +15,7 @@ router.post('/inqreq', function(req, res, next) {
    finnet.signature= req.body.signature;
    finnet.secretkey= req.body.secretkey;
    hashsignature= md5(finnet.trxid+finnet.trxdate+finnet.gid+finnet.secretkey);
-  if (finnet.secretkey = 'gro0vy'){
+  if (finnet.secretkey !== 'gro0vy'){
     return res.status(404).json({
         title: 'Secret Key Not Valid',
         respcode: '93',
