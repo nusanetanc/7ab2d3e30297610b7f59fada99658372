@@ -112,8 +112,7 @@ router.post('/signin', function(req, res, next){
         res.status(200).json({
             message: 'Success',
             token: token,
-            sessionId: doc._id,
-            localStorage.getItem(sessionId, doc._id);
+            sessionId: doc._id
         })
     })
 })
