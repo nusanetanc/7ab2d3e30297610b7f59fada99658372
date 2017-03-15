@@ -113,7 +113,7 @@ router.post('/signin', function(req, res, next){
             message: 'Success',
             token: token,
             sessionId: doc._id,
-            id_token: createToken(doc._id)
+            id_token: createToken(doc)
         })
     })
 })
