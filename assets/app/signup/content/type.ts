@@ -1,4 +1,4 @@
-export class Property {
+export class TypeProperty {
     constructor(
 
         public name: String,
