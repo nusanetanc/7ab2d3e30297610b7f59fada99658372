@@ -60,8 +60,8 @@ import {Home} from "./home";
                             <a [routerLink]="['SignupPackage']" class="next btn btn-default dropdown-toggle">
                                 NEXT
                             </a>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
