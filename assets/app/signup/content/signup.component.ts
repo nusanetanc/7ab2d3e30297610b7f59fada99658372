@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from '../subs';
+import {City} from "./cities";
 
 @Component({
     selector: 'form-signin',
@@ -20,9 +21,7 @@ import { Sub } from '../subs';
                             <form>
                                 <select style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option value="volvo" >Jakarta</option>
-                                    <option value="saab">Bandung</option>
-                                    <option value="fiat">Medan</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" >{{ city.name }}</option>
                                 </select><br/>
                             </form>
                             <a [routerLink]="['SignupData']" class="next btn btn-default dropdown-toggle" style="">
@@ -36,6 +35,26 @@ import { Sub } from '../subs';
 `,
     directives: [ROUTER_DIRECTIVES]
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit{
+// Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    // Declare empty list of people
+    cities: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllCity();
+    }
+
+// Get all City from the API
+    getAllCity() {
+        this.http.get(`${this.API}/city/listcity`)
+            .map(res => res.json())
+            .subscribe(cities => {
+                this.cities = cities
+            })
+    }
 }
