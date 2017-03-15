@@ -52,7 +52,7 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = localStorage.getItem('sessionId');
+  Session_ID = localStorage.getItem("sessionId");
 
 subs: any[] = [];
   constructor(private http: Http) {}
@@ -62,7 +62,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+  this.http.get(`${this.API}/subscribe/sub/${Session_ID}`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
