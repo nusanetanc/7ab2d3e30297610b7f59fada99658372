@@ -39,9 +39,9 @@ import {Employee} from './employee'
             <div class="row">
                 <div class="col-sm-12"  *ngFor="#emp of emps">
                     <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>{{emps.idemployee}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">{{emps.name}}</a></span></div>
-                        <div class="col-sm-2 invoiceList"><span>{{emps.titlejob}}</span></div>
+                        <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
+                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">{{emp.name}}</a></span></div>
+                        <div class="col-sm-2 invoiceList"><span>{{emp.titlejob}}</span></div>
                     </div>
                     </div>
                 </div>
