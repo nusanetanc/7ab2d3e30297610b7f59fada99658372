@@ -107,9 +107,9 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
       }
       if(finnet.chanelpayment == "01"){
-        finnet.chanelname: 'Indomaret'
+        finnet.chanelname= 'Indomaret';
       } else if (finnet.chanelpayment == "02") {
-        finnet.chanelname: 'Alfamart'
+        finnet.chanelname= 'Alfamart';
       } else {
         return res.status(404).json({
             title: 'Invalid Chanel Payment',
