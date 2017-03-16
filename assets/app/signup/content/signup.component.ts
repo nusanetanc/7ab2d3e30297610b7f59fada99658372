@@ -21,7 +21,7 @@ import {City} from "./cities";
                             <form>
                                 <select style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="onCityClicked(city)">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="onCityClicked()">{{ city.name }}</option>
                                 </select><br/><br/>
                                 <input type="text" [(ngModel)]="city.name">
                                 <select *ngIf="!onChange" style="" name="cars">
@@ -60,7 +60,7 @@ export class SignupComponent implements OnInit{
 
     public clickedCity = {name: ""};
 
-    onCityClicked(city) {
+    onCityClicked(city:any) {
         this.clickedCity = city;
     }
 // Link to our api, pointing to localhost
