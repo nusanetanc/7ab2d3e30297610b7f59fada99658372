@@ -19,7 +19,7 @@ import {City} from "./cities";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChange($event.target.value)">
+                                <select [hidden]="hidden" *ngIf="!selectedCity" style="" name="cars" (change)="onChange($event.target.value)">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select><br/><br/>
@@ -54,6 +54,7 @@ export class SignupComponent implements OnInit{
     onChange(deviceValue): void{
         console.log(deviceValue);
         this.selectedCity = deviceValue;
+        this.hidden = !this.hidden;
     }
 
 
