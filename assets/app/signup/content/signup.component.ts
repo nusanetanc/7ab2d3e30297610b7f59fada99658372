@@ -21,7 +21,7 @@ import {City} from "./cities";
                             <form>
                                 <select *ngIf="show" [hidden]="hidden" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="selectCity()">{{ city.name }}</option>
                                 </select><br/><br/>
                                 <select *ngIf="!show" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
@@ -43,6 +43,10 @@ export class SignupComponent implements OnInit{
     hidden = false;
     toggleShow() {
         this.show = !this.show;
+    }
+
+    selectCity(city:any) {
+        console.log(city);
     }
 
     toggleHidden() {

@@ -3,6 +3,6 @@ export class Package {
         public level: Number,
         public price: Number,
         public detail: String,
-        public information: String,
+        public information: [String]
     ) {  }
 }
