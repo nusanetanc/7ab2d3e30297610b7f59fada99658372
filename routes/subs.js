@@ -117,7 +117,7 @@ router.post('/signin', function(req, res, next){
                 error: {message: 'Invalid password'}
             });
         }
-        var token = jwt.sign({idsubs:"58b3cdac45912d052e2c85a5"}, 'secret', {expiresIn: 7200});
+        var token = jwt.sign({idsubs:doc._id}, 'secret', {expiresIn: 7200});
         res.send(token)
         res.status(200).json({
             message: 'Success',
