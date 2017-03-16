@@ -5,6 +5,12 @@ import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from '../subs';
 import {City} from "./cities";
+import { Sub } from '../subs';
+import {Property} from "./property";
+import {TypeProperty} from "./type";
+import {Cluster} from "./cluster";
+import {Blokfloor} from "./blokfloor";
+import {Home} from "./home";
 
 @Component({
     selector: 'form-signin',
@@ -70,12 +76,23 @@ export class SignupComponent implements OnInit{
 
     // Declare empty list of people
     cities: any[] = [];
+    properties: any[] = [];
+    typeproperties: any[] = [];
+    clusters: any[] = [];
+    blokfloors: any[] = [];
+    homes: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllCity();
+        this.getAllProperty();
+        this.getAllType();
+        this.getAllCluster();
+        this.getAllBLokfloor();
+        this.getAllHome();
+
     }
 
 // Get all City from the API
@@ -84,6 +101,48 @@ export class SignupComponent implements OnInit{
             .map(res => res.json())
             .subscribe(cities => {
                 this.cities = cities
+            })
+    }
+
+    // Get all Property from the API
+    getAllProperty() {
+        this.http.get(`${this.API}/property/listproperty`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+// Get all Cluster from the API
+    getAllCluster() {
+        this.http.get(`${this.API}/cluster/listcluster`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+
+    // Get all Type from the API
+    getAllType() {
+        this.http.get(`${this.API}/type/listtypeproperty`)
+            .map(res => res.json())
+            .subscribe(typeproperties => {
+                this.typeproperties = typeproperties
+            })
+    }
+// Get all BLokfloor from the API
+    getAllBLokfloor() {
+        this.http.get(`${this.API}/blokfloor/listblokfloor`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
+// Get all Home from the API
+    getAllHome() {
+        this.http.get(`${this.API}/home/listhome`)
+            .map(res => res.json())
+            .subscribe(homes => {
+                this.homes = homes
             })
     }
 }
