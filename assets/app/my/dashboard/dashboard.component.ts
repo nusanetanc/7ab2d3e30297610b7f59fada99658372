@@ -52,7 +52,7 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  var decoded = jwt.decode(req.query.token);
+
 
 subs: any[] = [];
 
@@ -63,7 +63,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/{decoded.user._id}`)
+  this.http.get(`${this.API}/subscribe/sub/detailsub`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
