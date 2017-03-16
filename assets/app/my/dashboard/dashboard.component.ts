@@ -63,7 +63,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${decoded.user._id}`)
+  this.http.get(`${this.API}/subscribe/sub/ghdfgh56e54tyre`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
