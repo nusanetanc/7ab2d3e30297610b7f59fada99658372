@@ -25,7 +25,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
 var decoded = jwt.decode(req.query.token);
-Sub.findById(decoded.id_subs, function(err, subs) {
+Sub.findById(decoded.idsubs, function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
@@ -117,7 +117,7 @@ router.post('/signin', function(req, res, next){
                 error: {message: 'Invalid password'}
             });
         }
-        var token = jwt.sign({id_subs:"58b3cdac45912d052e2c85a5"}, 'secret', {expiresIn: 7200});
+        var token = jwt.sign({idsubs:"58b3cdac45912d052e2c85a5"}, 'secret', {expiresIn: 7200});
         res.send(token)
         res.status(200).json({
             message: 'Success',
