@@ -21,7 +21,7 @@ import {City} from "./cities";
                             <form>
                                 <select *ngIf="show" [hidden]="hidden" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="selectCity()">{{ city.name }}</option>
                                 </select><br/><br/>
                                 <select *ngIf="!show" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
@@ -35,20 +35,23 @@ import {City} from "./cities";
                     </div>
                 </div>
             </div>
-
 `,
     directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent implements OnInit{
     show = true;
     hidden = false;
-     toggleShow() {
-         this.show = !this.show;
-     }
+    toggleShow() {
+        this.show = !this.show;
+    }
 
-     toggleHidden() {
-         this.hidden = !this.hidden;
-     }
+    selectCity(city:any) {
+        console.log(city);
+    }
+
+    toggleHidden() {
+        this.hidden = !this.hidden;
+    }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
