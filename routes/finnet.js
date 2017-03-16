@@ -99,7 +99,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
     }
     Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
-      if(finnet.amount ==! "30000"){
+      if(finnet.amount !== bill.totalpay){
         return res.status(404).json({
             title: 'Invalid Amount',
             respcode: '97',
