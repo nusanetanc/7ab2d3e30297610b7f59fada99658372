@@ -41,12 +41,13 @@ import {City} from "./cities";
 export class SignupComponent implements OnInit{
     show = true;
     hidden = false;
+
     toggleShow() {
         this.show = !this.show;
     }
 
     toggleHidden() {
-        this.hidden = !this.hidden;
+        this.hidden = false;
     }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
