@@ -69,7 +69,7 @@ export class ContentAllEmployeeComponent {
         this.http.get(`${this.API}/employee/listemp`)
             .map(res => res.json())
             .subscribe(emps => {
-                this.subs = emps
+                this.emps = emps
             })
     }
 }
