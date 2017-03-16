@@ -26,7 +26,7 @@ Sub.findById(req.params.id, function(err, subs) {
 router.get('/sub/detailsub', function(req, res, next) {
 var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
-       console.log( subs );
+       console.log( decoded );
        res.json(subs);
    });
 });
