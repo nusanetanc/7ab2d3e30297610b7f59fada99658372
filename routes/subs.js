@@ -110,7 +110,7 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
-        res.status(200).json({````````````````````````````````````````````````````````````````````````
+        res.status(200).json({
             message: 'Success',
             token: token,
             sessionId: doc.id
