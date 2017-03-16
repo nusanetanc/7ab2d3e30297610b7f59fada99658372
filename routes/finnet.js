@@ -99,7 +99,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
     }
     Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
-      if(bill.totalpay ==! finnet.amount){
+      if("30000" ==! finnet.amount){
         return res.status(404).json({
             title: 'Invalid Amount',
             respcode: '97',
@@ -107,9 +107,9 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
       }
       if(finnet.chanelpayment == "01"){
-        namechanel: 'Indomaret'
+        finnet.chanelname= 'Indomaret';
       } else if (finnet.chanelpayment == "02") {
-        namechanel: 'Alfamart'
+        finnet.chanelname= 'Alfamart';
       } else {
         return res.status(404).json({
             title: 'Invalid Chanel Payment',
@@ -122,7 +122,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
            trxid: finnet.trxid,
            invoiceid: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
-           namechanel : namechanel,
+           namechanel: finnet.chanelname,
            respcode: '96'
          });
        });
