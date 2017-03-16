@@ -122,7 +122,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
            trxid: finnet.trxid,
            invoiceid: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
-           namechanel : namechanel,
+           namechanel: namechanel,
            respcode: '96'
          });
        });
