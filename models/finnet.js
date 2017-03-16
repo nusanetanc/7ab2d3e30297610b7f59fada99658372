@@ -13,6 +13,7 @@ var FinnetSchema   = new Schema({
   amount: Number,
   respcode: Number,
   chanelpayment: Number,
+  namechanel: String,
   invoiceid: Number,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'},
   bill: {type: Schema.Types.ObjectId, ref: 'Bill'}
