@@ -18,16 +18,6 @@ import {Menu} from "./dashboard_menu";
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
                             <a class="name"><b>{{emps.name}}</b></a>
-                            <!-- Extra small button group -->
-                            <!-- <div class="btn-group navbar-right">
-                                <a class="dropdown-toggle name" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="account.html">account</a></li>
-                                    <li><a href="">logout</a></li>
-                                </ul>
-                            </div> -->
                             <a class="user">{{emps.titlejob}}</a>
                         </div>
                     </div>
