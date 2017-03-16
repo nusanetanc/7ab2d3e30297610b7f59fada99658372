@@ -5,6 +5,8 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
+var passport = require("passport");
+var passportJWT = require("passport-jwt");
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -117,7 +119,8 @@ router.post('/signin', function(req, res, next){
                 error: {message: 'Invalid password'}
             });
         }
-        var token = jwt.sign({idsubs:doc._id}, 'secret', {expiresIn: 7200});
+        var session = {idsession: doc._id};
+        var token = jwt.sign(session, jwtOptions.secretOrKey);
         res.status(200).json({
             message: 'Success',
             token: token,
