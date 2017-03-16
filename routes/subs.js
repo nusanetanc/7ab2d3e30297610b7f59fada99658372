@@ -16,18 +16,18 @@ router.get('/listsub', function(req, res, next) {
 
 /* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
-Sub.findById(req.params.id, function(err, doc) {
-       console.log( doc );
-       res.json(doc);
+Sub.findById(req.params.id, function(err, subs) {
+       console.log( subs );
+       res.json(subs);
    });
 });
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
 var decoded = jwt.decode(req.query.token);
-Sub.findById(decoded.subs._id, function(err, subs) {
-       console.log( subs );
-       res.json(subs);
+Sub.findById(decoded.subs._id, function(err, doc) {
+       console.log( doc );
+       res.json(doc);
    });
 });
 
