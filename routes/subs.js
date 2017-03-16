@@ -32,7 +32,6 @@ router.use('/sub/detailsub', function(req, res, next){
     }
     next();
   })
-  console.console.log(decode);
 })
 
 /* GET detail sub. */
@@ -130,6 +129,7 @@ router.post('/signin', function(req, res, next){
                 error: {message: 'Invalid password'}
             });
         }
+        const token = localStorage.getItem('token') ? '?token=' + localStorage.getItem('token') : '';
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         res.status(200).json({
             message: 'Success',
