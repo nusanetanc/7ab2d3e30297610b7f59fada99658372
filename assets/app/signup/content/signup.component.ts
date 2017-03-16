@@ -19,9 +19,9 @@ import {City} from "./cities";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select *ngIf="show" [hidden]="hidden" style="" name="cars">
+                                <select *ngIf="show" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="selectCity()">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" onclick="selectCity()">{{ city.name }}</option>
                                 </select><br/><br/>
                                 <select *ngIf="!show" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
