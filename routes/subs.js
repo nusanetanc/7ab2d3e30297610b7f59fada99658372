@@ -24,10 +24,14 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-var decoded = jwt.decode(req.query.token);
+//var decoded = jwt.decode(req.query.token);
+var decoded = jwt_decode(token);
+console.log( decoded );
+res.json(decoded);
 Sub.findById(decoded.sub._id, function(err, subs) {
-       console.log( token );
-       res.json(token);
+
+  console.log( decoded );
+  res.json(decoded);
    });
 });
 
