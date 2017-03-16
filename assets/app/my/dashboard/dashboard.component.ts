@@ -13,8 +13,8 @@ import { Sub } from './content/subs';
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
-                            <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
-                            <a class="user">Subscriber - Level {{ subs.packlev }}</a>
+                            <a [routerLink]="['Account']"  class="name"><strong>{{ doc.name }}</strong></a>
+                            <a class="user">Subscriber - Level {{ doc.packlev }}</a>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
@@ -65,8 +65,8 @@ subs: any[] = [];
 getAcountSub() {
   this.http.get(`${this.API}/subscribe/sub/detailsub`)
     .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
+    .subscribe(doc => {
+      this.doc = doc
     })
 }
 }
