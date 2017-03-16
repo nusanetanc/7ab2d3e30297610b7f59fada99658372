@@ -28,9 +28,9 @@ hr {
 /*--- Sidebar ---*/
 
 .navbar-right {
-    margin-right: 35px;
-    margin-top: 17px;
-}
+     margin-right: 35px;
+     margin-top: 17px;
+ }
 
 .name {
     margin-top: 20px;
@@ -113,20 +113,17 @@ hr {
 
 .sidebar-nav > li {
     line-height: 40px;
-    text-indent: 20px;
-}
-
-.sidebar-nav > li > a {
-    color: #F4B5A4;
-    display: block;
-    font-size: 13px;
-    margin-left: -30px;
-    text-decoration: none;
+    text-indent: 5px;
 }
 
 .active {
     background: rgba(255,255,255,0.2);
     color: #FFF;
+    text-decoration: none;
+}
+
+.sidebar-nav > li > a {
+    color: #F4B5A4;
     text-decoration: none;
 }
 
@@ -136,20 +133,10 @@ hr {
     text-decoration: none;
 }
 
-.sidebar-nav > li > div > div > a {
-    color: #F4B5A4;
-    display: block;
-    font-size: 12px;
-    height: 60px;
-    padding-left: 35px;
-    padding-top: 10px;
-    text-decoration: none;
-}
-
-.sidebar-nav > li > div > div > a:hover {
-    background: none;
-    color: #FFF;
-    text-decoration: none;
+.sidebar-nav > li > a > i {
+    margin-right: 15px;
+    margin-top: -4px;
+    vertical-align: middle;
 }
 
 .sidebar-brand {
@@ -188,17 +175,16 @@ hr {
     text-decoration: none;
 }
 
-.sidebar-nav > li > a > i {
-    margin-right: 15px;
-    margin-top: -4px;
-    vertical-align: middle;
-}
-
 .sidebar-footer {
     bottom: 0px;
     position: absolute;
-    line-height: 40px;
-    text-indent: 20px;
+}
+
+@media only screen and (max-height: 543px) {
+    .sidebar-footer {
+        bottom: 0px !important;
+        position: relative;
+    }
 }
 
 .sidebar-footer > div {
@@ -219,9 +205,9 @@ hr {
     background:none;
     color: #FFF;
     float: left;
+    margin-left: 10px;
+    margin-top: 25px;
     font-size: 12px;
-    margin-left: -10px;
-    margin-top: 10px;
     text-decoration: none;
 }
 
@@ -881,11 +867,6 @@ hr {
     margin-right: 15px;
 }
 
-.margin10White {
-    margin-bottom: 10px;
-    color: #FFF;
-}
-
 .font100Margin30 {
     font-size: 100px !important;
     margin-top: 30px;
@@ -895,8 +876,7 @@ hr {
     margin-top: 40px;
 }
 
-.marginBL10White {
-    color: #FFF;
+.marginBL10 {
     margin-bottom: 10px;
     margin-left: 10px;
 }

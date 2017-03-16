@@ -5,13 +5,14 @@ var Bill = require('../models/bill');
 
 var FinnetSchema   = new Schema({
   typedata: String,
-  subid: Number,
+  subid: String,
   subname: String,
   trxid: String,
-  trxdate: Number,
-  signature: Number,
+  trxdate: Date,
+  signature: String,
   amount: Number,
   respcode: Number,
+  chanelpayment: Number,
   invoiceid: Number,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'},
   bill: {type: Schema.Types.ObjectId, ref: 'Bill'}
