@@ -22,8 +22,7 @@ Sub.findById(req.params.id, function(err, subs) {
    });
 });
 
-/* GET detail sub. */
-router.get('/sub/detailsub', function(req, res, next) {
+router.use('/sub/detailsub', function(req, res, next){
   jwt.verify(req.query.token, 'secret', function(err, decoded) {
     if (err) {
       return res.status(401).json({
@@ -33,6 +32,10 @@ router.get('/sub/detailsub', function(req, res, next) {
     }
     next();
   })
+})
+
+/* GET detail sub. */
+router.get('/sub/detailsub', function(req, res, next) {
 var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
