@@ -24,14 +24,19 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-//var decoded = jwt.decode(req.query.token);
-var decoded = jwt_decode(token);
-console.log( decoded );
-res.json(decoded);
+  jwt.verify(req.query.token, 'secret', function(err, decoded) {
+    if (err) {
+      return res.status(401).json({
+        title: "Authentication Failed",
+        error: err
+      });
+    }
+    next();
+  })
+var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
-
-  console.log( decoded );
-  res.json(decoded);
+       console.log( subs );
+       res.json(subs);
    });
 });
 
