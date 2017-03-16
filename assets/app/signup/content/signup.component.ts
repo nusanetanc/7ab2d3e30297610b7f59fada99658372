@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from '../subs';
 import {City} from "./cities";
-import { Sub } from '../subs';
 import {Property} from "./property";
 import {TypeProperty} from "./type";
 import {Cluster} from "./cluster";
