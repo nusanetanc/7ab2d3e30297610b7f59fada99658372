@@ -26,50 +26,5 @@ import { Sub } from './subs';
 })
 export class SigninComponent implements OnInit {
 
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
 
-constructor(private http: Http) {}
-
-
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllSub();
-  }
-
-// Declare empty list of people
-subs: any[] = [];
-
-// Get all Sub from the API
-getAllSub() {
-  this.http.get(`${this.API}/subscribe/listsub`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
-
-// Add one person to the API
-  signSub(signEmail, signPassword) {
-
-  var body = `email=${signEmail}&password=${signPassword}`;
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http
-        .post(`${this.API}/subscribe/signin`,
-          body, {
-            headers: headers
-          })
-    .subscribe(
-            data => {
-              window.location.href = `/my`;
-              //localStorage.setItem('token', data.obj);
-              //localStorage.setItem('sessionId', data._id);
-            },
-            error => {
-              alert(error.text());
-              console.log(error.text());
-            }
-          );
-  }
 }
