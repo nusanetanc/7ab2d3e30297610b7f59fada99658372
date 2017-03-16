@@ -23,7 +23,7 @@ import {City} from "./cities";
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}" (click)="onCityClicked(city)">{{ city.name }}</option>
                                 </select><br/><br/>
-                                <input type="text" [(ngModel)]="clickedCity.name">
+                                <input type="text" [(ngModel)]="city.name">
                                 <select *ngIf="!onChange" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
@@ -57,6 +57,8 @@ export class SignupComponent implements OnInit{
     onChange(deviceValue) {
         console.log(deviceValue);
     }
+
+    public clickedCity = {name: ""};
 
     onCityClicked(city) {
         this.clickedCity = city;
