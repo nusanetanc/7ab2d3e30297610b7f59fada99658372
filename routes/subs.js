@@ -32,6 +32,7 @@ router.use('/sub/detailsub', function(req, res, next){
     }
     next();
   })
+  console.console.log(decode);
 })
 
 /* GET detail sub. */
