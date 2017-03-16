@@ -7,7 +7,6 @@ var damm = require('damm');
 var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var jwt = require('jsonwebtoken');
-var decoded = jwt.decode(req.query.token);
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
