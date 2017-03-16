@@ -18,7 +18,7 @@ import { Sub } from './content/subs';
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
-            
+
                         <li class="firstLiSidebar">
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
@@ -31,7 +31,7 @@ import { Sub } from './content/subs';
                         <li>
                           <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
-            
+
                     </ul>
                     <div class="sidebar-footer">
                         <div>
@@ -52,7 +52,7 @@ export class DashboardComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = '58b3cdac45912d052e2c85a5';
+  var decoded = jwt.decode(req.query.token);
 
   informations: any[] = [];
 subs: any[] = [];
@@ -63,7 +63,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+  this.http.get(`${this.API}/subscribe/sub/${decoded.user._id}`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
