@@ -58,7 +58,7 @@ export class SignupComponent implements OnInit{
         console.log(deviceValue);
     }
 
-    public clickedCity = {name: ""};
+    public clickedCity = {name};
 
     onCityClicked(city:any) {
         this.clickedCity = city;
