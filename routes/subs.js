@@ -5,7 +5,6 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
-var session = require('express-session');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -18,6 +17,15 @@ router.get('/listsub', function(req, res, next) {
 /* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
+       console.log( subs );
+       res.json(subs);
+   });
+});
+
+/* GET detail sub. */
+router.get('/sub/detailsub', function(req, res, next) {
+var decoded = jwt.decode(req.query.token);
+Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
