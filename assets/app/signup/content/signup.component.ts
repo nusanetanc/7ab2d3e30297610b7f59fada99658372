@@ -56,8 +56,9 @@ export class SignupComponent implements OnInit{
         this.selectedCity = city;
     }
 
-    onChange(deviceValue) {
+    onChange(deviceValue, city:City): void{
         console.log(deviceValue);
+        this.selectedCity = city;
     }
 
 
