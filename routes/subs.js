@@ -5,8 +5,6 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
-var passport = require("passport");
-var passportJWT = require("passport-jwt");
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
