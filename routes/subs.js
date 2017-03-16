@@ -36,6 +36,7 @@ router.use('/sub/detailsub', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
+  localStorage.getItem('token', token);
 var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
@@ -129,8 +130,8 @@ router.post('/signin', function(req, res, next){
                 error: {message: 'Invalid password'}
             });
         }
-        const token = localStorage.getItem('token') ? '?token=' + localStorage.getItem('token') : '';
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+        localStorage.setItem('token', token);
         res.status(200).json({
             message: 'Success',
             token: token,
