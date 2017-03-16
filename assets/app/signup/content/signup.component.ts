@@ -19,11 +19,12 @@ import {City} from "./cities";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select (change)="onChange($event.target.value)" style="" name="cars">
+                                <select style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}" (click)="onCityClicked()">{{ city.name }}</option>
                                 </select><br/><br/>
-                                <select *ngIf="onChange" style="" name="cars">
+                                <input type="text" [(ngModel)]="city.name">
+                                <select *ngIf="!onChange" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
                                 </select><br/>
@@ -55,6 +56,12 @@ export class SignupComponent implements OnInit{
 
     onChange(deviceValue) {
         console.log(deviceValue);
+    }
+
+    public clickedCity = {name};
+
+    onCityClicked(city:any) {
+        this.clickedCity = city;
     }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
