@@ -107,9 +107,9 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
       }
       if(finnet.chanelpayment == "01"){
-        namechanel: 'Indomaret'
+        finnet.chanelname: 'Indomaret'
       } else if (finnet.chanelpayment == "02") {
-        namechanel: 'Alfamart'
+        finnet.chanelname: 'Alfamart'
       } else {
         return res.status(404).json({
             title: 'Invalid Chanel Payment',
@@ -122,7 +122,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
            trxid: finnet.trxid,
            invoiceid: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
-           namechanel: namechanel,
+           namechanel: finnet.chanelname,
            respcode: '96'
          });
        });
