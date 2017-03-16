@@ -54,8 +54,8 @@ export class DashboardComponent {
   API = 'http://202.162.207.164:3000';
   var decoded = jwt.decode(req.query.token);
 
-  informations: any[] = [];
 subs: any[] = [];
+
   constructor(private http: Http) {}
 
   ngOnInit() {
@@ -63,7 +63,7 @@ subs: any[] = [];
   }
 
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/ghdfgh56e54tyre`)
+  this.http.get(`${this.API}/subscribe/sub/${decoded.user._id}`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
