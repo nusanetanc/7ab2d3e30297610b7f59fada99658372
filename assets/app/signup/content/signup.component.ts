@@ -32,7 +32,6 @@ import {Home} from "./home";
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select><br/><br/>
-                                <form>
                                 <select *ngIf="selectedCity" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
