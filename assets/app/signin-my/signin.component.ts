@@ -63,7 +63,7 @@ getAllSub() {
             data => {
               window.location.href = `/my`;
               localStorage.setItem('token', data.obj);
-              localStorage.setItem('userId', data._id);
+              localStorage.setItem('sessionId', data._id);
             },
             error => {
               alert(error.text());
