@@ -99,7 +99,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
         });
     }
     Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
-      if("30000" ==! finnet.amount){
+      if(finnet.amount ==! "30000"){
         return res.status(404).json({
             title: 'Invalid Amount',
             respcode: '97',
@@ -120,6 +120,8 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
          res.json({
            typedata: 'pay_res',
            trxid: finnet.trxid,
+           subid: doc.subid,
+           subname: doc.name,
            invoiceid: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
            namechanel: finnet.chanelname,
