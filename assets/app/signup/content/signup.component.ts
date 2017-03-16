@@ -48,10 +48,10 @@ import {Home} from "./home";
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select><br/>
+                            </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
                                 </a>
-                            </form>
                         </div>
                     </div>
                 </div>
