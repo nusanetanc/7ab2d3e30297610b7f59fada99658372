@@ -120,6 +120,8 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
          res.json({
            typedata: 'pay_res',
            trxid: finnet.trxid,
+           subid: doc.subid,
+           subname: doc.name,
            invoiceid: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
            namechanel: finnet.chanelname,
