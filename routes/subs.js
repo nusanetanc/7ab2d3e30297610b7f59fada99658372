@@ -22,9 +22,20 @@ Sub.findById(req.params.id, function(err, subs) {
    });
 });
 
+router.use('/sub/detailsub', function(req, res, next){
+  jwt.verify(req.query.token, 'secret', function(err, decoded) {
+    if (err) {
+      return res.status(401).json({
+        title: "Authentication Failed",
+        error: err
+      });
+    }
+    next();
+  })
+})
+
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  console.log( localStorage.getItem('email', email) );
 var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
@@ -119,6 +130,7 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+        localStorage.setItem('token', token);
         res.status(200).json({
             message: 'Success',
             token: token,
