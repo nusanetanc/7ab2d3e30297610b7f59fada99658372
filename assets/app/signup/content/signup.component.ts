@@ -19,18 +19,35 @@ import {City} from "./cities";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select [hidden]="hidden" *ngIf="!selectedCity" style="" name="cars" (change)="onChange($event.target.value)">
+                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChange($event.target.value)">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                </select>
+                                 <select *ngIf="selectedCity" name="property">
+                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                    <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select><br/><br/>
-                                <select *ngIf="selectedCity" style="" name="cars">
-                                    <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                <form>
+                                <select *ngIf="selectedCity" name="type">
+                                    <option class="option" disabled="true" selected="true">-- Select Type --</option>
+                                    <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select><br/>
+                                <select *ngIf="selectedCity" name="cluster">
+                                    <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
+                                    <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
+                                </select><br/>
+                                <select *ngIf="selectedCity" name="block">
+                                    <option class="option" disabled="true" selected="true">-- Select Block --</option>
+                                    <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
+                                </select><br/>
+                                <select *ngIf="selectedCity" name="no">
+                                    <option class="option" disabled="true" selected="true">-- Select No. --</option>
+                                    <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
+                                </select><br/>
+                                <a class="next btn btn-default dropdown-toggle" style="">
+                                    NEXT
+                                </a>
                             </form>
-                            <a class="next btn btn-default dropdown-toggle" style="">
-                                NEXT
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -39,22 +56,12 @@ import {City} from "./cities";
     directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent implements OnInit{
-    show = true;
-    hidden = false;
-    toggleShow() {
-        this.show = !this.show;
-    }
-
-    toggleHidden() {
-        this.hidden = !this.hidden;
-    }
 
     selectedCity: City;
 
     onChange(deviceValue): void{
         console.log(deviceValue);
         this.selectedCity = deviceValue;
-        this.hidden = !this.hidden;
     }
 
 
