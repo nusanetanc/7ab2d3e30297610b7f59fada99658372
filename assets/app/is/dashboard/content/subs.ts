@@ -8,7 +8,7 @@ export class Sub {
   public dateinst: Date,
   public timeinst: Date,
   public password: String,
-  public datebrith: String,
+  public datebirth: String,
   public packlev: String,
   public cardid: String,
   public nova: Number,
