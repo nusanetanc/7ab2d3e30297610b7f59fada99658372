@@ -62,6 +62,7 @@ getAllSub() {
     .subscribe(
             data => {
               window.location.href = `/my`;
+              localStorage.setItem('email', email);
             },
             error => {
               alert(error.text());
