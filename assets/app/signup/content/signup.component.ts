@@ -19,11 +19,11 @@ import {City} from "./cities";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select *ngIf="!onChange" (change)="onChange($event.target.value)" style="" name="cars">
+                                <select *ngIf="onChange" (change)="onChange($event.target.value)" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select><br/><br/>
-                                <select *ngIf="onChange" style="" name="cars">
+                                <select *ngIf="!onChange" style="" name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your citys</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}" (click)="toggleHidden()">{{ city.name }}</option>
                                 </select><br/>
