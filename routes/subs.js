@@ -5,6 +5,7 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
+var session = require('express-session');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
