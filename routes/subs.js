@@ -34,18 +34,6 @@ router.use('/sub/detailsub', function(req, res, next){
   })
 })
 
-/* GET detail sub. */
-router.get('/sub/detailsub', function(req, res, next) {
-  var localStorage = require('localStorage')
-myValue = localStorage.getItem('myKey');
-console.log( myValue );
-var decoded = jwt.decode(req.query.myValue);
-Sub.findById(decoded.sub._id, function(err, subs) {
-       console.log( subs );
-       res.json(subs);
-   });
-});
-
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
@@ -151,4 +139,12 @@ router.post('/signin', function(req, res, next){
     })
 })
 
+/* GET detail sub. */
+router.get('/sub/detailsub', function(req, res, next) {
+var decoded = jwt.decode(req.query.myValue);
+Sub.findById(decoded.sub._id, function(err, subs) {
+       console.log( subs );
+       res.json(subs);
+   });
+});
 module.exports = router;
