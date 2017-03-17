@@ -132,7 +132,7 @@ router.post('/signin', function(req, res, next){
       myValue = localStorage.getItem('myKey');
         //localStorage.setItem('tokenstorage', token);
         jsonLocalStorage.setItem('num', 'yudi');
-        let num = jsonLocalStorage.getItem('num');
+        num = jsonLocalStorage.getItem('num');
         res.status(200).json({
             message: 'Success',
             token: token,
