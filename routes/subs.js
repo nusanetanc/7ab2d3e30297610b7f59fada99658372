@@ -5,6 +5,7 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
+var localStorage = require('localStorage');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -36,8 +37,9 @@ router.use('/sub/detailsub', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
+var SESIIONID = localStorage.getItem('sessionId');
 var decoded = jwt.decode(req.query.token);
-Sub.findById(decoded.sub._id, function(err, subs) {
+Sub.findById(SESIIONID, function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
@@ -130,6 +132,7 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+        localStorage.setItem('sessionId', doc.id);
         res.status(200).json({
             message: 'Success',
             token: token,
