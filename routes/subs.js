@@ -129,18 +129,17 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+        var localStorage = require('localStorage')
+        , myValue = { foo: 'bar', baz: 'quux' }
+        ;
+      localStorage.setItem('myKey', JSON.stringify(myValue));
+      myValue = localStorage.getItem('myKey')
         //localStorage.setItem('tokenstorage', token);
         res.status(200).json({
             message: 'Success',
             token: token,
-            sessionId: doc.id
-            var localStorage = require('localStorage')
-            , myValue = { foo: 'bar', baz: 'quux' }
-            ;
-
-          localStorage.setItem('myKey', JSON.stringify(myValue));
-          myValue = localStorage.getItem('myKey')
-          valu: myValue
+            sessionId: doc.id,
+            valu: myValue
         })
     })
 })
