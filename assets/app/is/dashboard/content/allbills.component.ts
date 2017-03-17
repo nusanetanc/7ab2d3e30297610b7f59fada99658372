@@ -37,7 +37,7 @@ import {Billing} from './allbill';
                 <div class="col-sm-12" *ngFor="#bill of bills">
                     <div class="row subInfo">
                         <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>Yudi Nurhandi</span></div>
+                        <div class="col-sm-8 invoiceList"><span>Yudi</span></div>
                         <div class="col-sm-1 invoiceList"><span class="green">{{bill.status}}</span></div>
                         <div class="col-sm-1 invoiceList"><span class="red">{{bill.desc}}</span></div>
                     </div>
@@ -54,12 +54,14 @@ export class ContentAllBillsComponent {
 
     // Declare empty list of people
     bills: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllBill();
+        this.getAllSub();
     }
 
     // Get all users from the API
@@ -68,6 +70,15 @@ export class ContentAllBillsComponent {
             .map(res => res.json())
             .subscribe(bills => {
                 this.bills = bills
+            })
+    }
+
+    // Get all users from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
             })
     }
 }
