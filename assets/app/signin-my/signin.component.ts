@@ -61,9 +61,13 @@ getAllSub() {
           })
     .subscribe(
             data => {
+            import { jsonLocalStorage } from 'json-web-storage';
+            jsonLocalStorage.setItem('obj', { name: 'John' });
+            let obj = jsonLocalStorage.getItem('obj');
+            console.log(typeof obj) // => object
+            console.log(obj.name) // => John
               window.location.href = `/my`;
-              localStorage.setItem('token', data.obj);
-              localStorage.setItem('MongoId', data._id);
+
             },
             error => {
               alert(error.text());
