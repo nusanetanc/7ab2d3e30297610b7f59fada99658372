@@ -23,7 +23,7 @@ import { Sub } from './subs';
 `,
     directives: [ROUTER_DIRECTIVES]
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -44,7 +44,7 @@ constructor(private http: Http) {}
     .subscribe(
             data => {
               // window.location.href = `/my`;
-              localStorage.setItem('token', data.data);
+              //localStorage.setItem('token', data.data);
               localStorage.setItem("user",JSON.stringify(body));
               console.log(localStorage.getItem("user"));
             },
