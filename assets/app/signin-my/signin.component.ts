@@ -17,14 +17,14 @@ import { Sub } from './subs';
                                 <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                             </div>
                             <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
-                            <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
+                            <div class="text text-other"><a href="isforgot">I forgot password</a></div>
                     </div>
                 </div>
             </div>
 `,
     directives: [ROUTER_DIRECTIVES]
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent{
 
 
 }
