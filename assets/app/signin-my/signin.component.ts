@@ -60,10 +60,10 @@ this.http.get(`${this.API}/subscribe/listsub`)
           })
     .subscribe(
             data => {
-              // window.location.href = `/my`;
               //localStorage.setItem('token', data.data);
               localStorage.setItem("user",JSON.stringify(body));
               console.log(localStorage.getItem("user"));
+              window.location.href = `/my`;
             },
             error => {
               alert(error.text());
