@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import {Report} from './allreports';
 
 
 @Component({
@@ -34,10 +35,10 @@ import { Http } from 'angular2/http';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">11 Feb 2017</a></span></div>
-                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Account can't login in other devices</a></span></div>
-                        <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
+                    <div class="row subInfo" *ngFor="#complaint of complaints">
+                        <div class="col-sm-2 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                        <div class="col-sm-8 invoiceList"><span>{{complaint.subject}}</span></div>
+                        <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
                     </div>
                 </div>
             </div>
@@ -47,5 +48,23 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllReportsComponent {
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    complaints: any[] = [];
+
+    constructor(private http: Http) {}
+
+    ngOnInit() {
+        this.getAllReport();
+    }
+
+    // Get all users from the API
+    getAllReport() {
+        this.http.get(`${this.API}/complaint/listcomplaint`)
+            .map(res => res.json())
+            .subscribe(complaints => {
+                this.complaints = complaints
+            })
+    }
 }
