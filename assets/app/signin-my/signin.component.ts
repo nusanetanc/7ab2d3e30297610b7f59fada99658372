@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
+import storage from 'local-storage-fallback'
 
 @Component({
     selector: 'form-signin',
@@ -61,12 +62,8 @@ getAllSub() {
           })
     .subscribe(
             data => {
-            import { jsonLocalStorage } from 'json-web-storage';
-            jsonLocalStorage.setItem('obj', { name: 'John' });
-            let obj = jsonLocalStorage.getItem('obj');
-            console.log(typeof obj) // => object
-            console.log(obj.name) // => John
               window.location.href = `/my`;
+
 
             },
             error => {
