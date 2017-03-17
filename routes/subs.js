@@ -6,6 +6,7 @@ var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
 var session = require('express-session');
+var localStorage = require('localStorage');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -125,20 +126,19 @@ router.post('/signin', function(req, res, next){
        }
      }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
-        var localStorage = require('localStorage')
-        , myValue = token
-        ;
       localStorage.setItem('myKey', token);
       myValue = localStorage.getItem('myKey');
         //localStorage.setItem('tokenstorage', token);
-        jsonLocalStorage.setItem('num', 'yudi');
-        num = jsonLocalStorage.getItem('num');
+        //import { jsonLocalStorage } from 'json-web-storage';
+
+        //jsonLocalStorage.setItem('num', 'yudi');
+        //num = jsonLocalStorage.getItem('num');
         res.status(200).json({
             message: 'Success',
             token: token,
             sessionId: doc.id,
             valu: myValue,
-            value: num
+            //value: num
         })
     })
 })
