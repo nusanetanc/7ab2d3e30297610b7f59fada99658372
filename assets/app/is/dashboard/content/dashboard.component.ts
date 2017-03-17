@@ -66,7 +66,7 @@ import {Report} from './allreports';
                               <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
                           </div>
                           <div class="row subInfo">
-                              <div class="col-sm-12 invoiceId"><span><a href="" class="linkViewAll"><b>View all report</b></a></span></div>
+                              <div class="col-sm-12 invoiceId"><span><a class="linkViewAll" [routerLink]="['AllReport']"><b>View all report</b></a></span></div>
                           </div>
                       </div>
                   </div>
