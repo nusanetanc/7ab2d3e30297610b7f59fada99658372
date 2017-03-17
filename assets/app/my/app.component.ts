@@ -22,7 +22,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
     <router-outlet></router-outlet>
   </div ><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent,
+    directives: [ DashboardComponent,
                   ContentDashboardComponent,
                   ContentBillingComponent,
                   ContentReportComponent,
@@ -31,7 +31,8 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
                   ContentDetailBillingComponent,
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
-                  ROUTER_DIRECTIVES],
+                  ROUTER_DIRECTIVES
+    ],
 })
 @RouteConfig([
   { path: '/my', component:ContentDashboardComponent, name:'Dashboard'},
