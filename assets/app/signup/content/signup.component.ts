@@ -49,11 +49,11 @@ import {Package} from "./package";
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
-                                <select *ngIf="selectedNo" name="package">
+                                <select *ngIf="selectedNo" [hidden]="selectedPackage" name="package" (change)="onChangePackage($event.target.value)">
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <div>
+                                <div *ngIf="selcetedPackage">
                                     <p>Please select a installation date</p>
                                     <div class="col-sm-6">
                                         <div class="container">
@@ -77,10 +77,9 @@ import {Package} from "./package";
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div *ngIf="selcetedPackage">
                                     <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
-                                        <form action="">
                                             <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
@@ -89,7 +88,6 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
-                                        </form>
                                     </div>
                                 </div>
                             </form>
@@ -111,6 +109,7 @@ export class SignupComponent implements OnInit{
     selectedCluster: Cluster;
     selectedBlok: Blokfloor;
     selectedNo: Home;
+    selectedPackage: Package;
 
 
     onChangeCity(deviceValue): void{
@@ -137,6 +136,10 @@ export class SignupComponent implements OnInit{
                 console.log(deviceValue);
                 this.selectedNo = deviceValue;
             }
+    onChangePackage(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedPackage = deviceValue;
+    }
 
 
 // Link to our api, pointing to localhost
