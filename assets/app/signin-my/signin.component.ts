@@ -63,8 +63,11 @@ getAllSub() {
     .subscribe(
             data => {
               window.location.href = `/my`;
-              localStorage.setItem('token', data.obj);
-              localStorage.setItem('MongoId', data._id);
+              jsonLocalStorage.setItem('obj', { name: 'John' });
+              let obj = jsonLocalStorage.getItem('obj');
+              console.log(typeof obj) // => object
+              console.log(obj.name) // => John
+
             },
             error => {
               alert(error.text());
