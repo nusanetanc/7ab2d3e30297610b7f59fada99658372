@@ -151,5 +151,8 @@ Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
+   res.status(200).json({
+       valu: myValue
+   })
 });
 module.exports = router;
