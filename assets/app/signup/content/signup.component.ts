@@ -24,27 +24,27 @@ import {Home} from "./home";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChange($event.target.value)">
+                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChangeCity($event.target.value)">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select>
-                                 <select *ngIf="selectedCity" (change)="onChange1($event.target.value)" name="property">
+                                 <select *ngIf="selectedCity" (change)="onChangeProperty($event.target.value)" name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select>
-                                <select *ngIf="selectedProperty" (change)="onChange($event.target.value)" name="type">
+                                <select *ngIf="selectedProperty" (change)="onChangeType($event.target.value)" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select>
-                                <select *ngIf="selectedType" (change)="onChange($event.target.value)" name="cluster">
+                                <select *ngIf="selectedType" (change)="onChangeCluster($event.target.value)" name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select>
-                                <select *ngIf="selectedCluster" (change)="onChange($event.target.value)" name="block">
+                                <select *ngIf="selectedCluster" (change)="onChangeBlok($event.target.value)" name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                 </select>
-                                <select *ngIf="selectedBlok" (change)="onChange($event.target.value)" name="no">
+                                <select *ngIf="selectedBlok" (change)="onChangeNo($event.target.value)" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
@@ -63,15 +63,36 @@ export class SignupComponent implements OnInit{
 
     selectedCity: City;
     selectedProperty: Property;
+    selectedType: TypeProperty;
+    selectedCluster: Cluster;
+    selectedBlok: Blokfloor;
+    selectedNo: Home;
 
-    onChange(deviceValue): void{
+
+    onChangeCity(deviceValue): void{
         console.log(deviceValue);
         this.selectedCity = deviceValue;
     }
-    onChange1(deviceValue): void{
+    onChangeProperty(deviceValue): void{
         console.log(deviceValue);
         this.selectedProperty = deviceValue;
     }
+    onChangeType(deviceValue): void{
+            console.log(deviceValue);
+            this.selectedType = deviceValue;
+        }
+    onChangeCluster(deviceValue): void{
+                console.log(deviceValue);
+                this.selectedCluster = deviceValue;
+            }
+    onChangeBlok(deviceValue): void{
+                console.log(deviceValue);
+                this.selectedBlok = deviceValue;
+            }
+    onChangeNo(deviceValue): void{
+                console.log(deviceValue);
+                this.selectedNo = deviceValue;
+            }
 
 
 // Link to our api, pointing to localhost
