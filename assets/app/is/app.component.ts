@@ -52,7 +52,29 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 
    </div><!-- END CONTENT -->
 `,
-    directives: [DashboardComponent, ContentAllSubsComponent, ContentDashboardComponent, ContentSubscribeComponent, ContentAddInformationComponent, ContentAddReportComponent, ContentAllEmployeeComponent, ContentAllEngineerComponent, ContentAllInformationComponent, ContentAllReportsComponent, ContentAllStocksComponent, ContentDetailInformationComponent, ContentDetailReportComponent, ContentDetailStockComponent, ContentInfoStockComponent, ContentProfileEmployeeComponent, ContentProfileEngineerComponent, ContentReplayReportComponent, ContentAllBillsComponent, AuthenticationComponent, ROUTER_DIRECTIVES],
+    directives: [
+        DashboardComponent,
+        ContentAllSubsComponent,
+        ContentDashboardComponent,
+        ContentSubscribeComponent,
+        ContentAddInformationComponent,
+        ContentAddReportComponent,
+        ContentAllEmployeeComponent,
+        ContentAllEngineerComponent,
+        ContentAllInformationComponent,
+        ContentAllReportsComponent,
+        ContentAllStocksComponent,
+        ContentDetailInformationComponent,
+        ContentDetailReportComponent,
+        ContentDetailStockComponent,
+        ContentInfoStockComponent,
+        ContentProfileEmployeeComponent,
+        ContentProfileEngineerComponent,
+        ContentReplayReportComponent,
+        ContentAllBillsComponent,
+        AuthenticationComponent,
+        ROUTER_DIRECTIVES
+    ],
 })
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
