@@ -140,6 +140,7 @@ router.post('/signin', function(req, res, next){
 
           localStorage.setItem('myKey', JSON.stringify(myValue));
           myValue = localStorage.getItem('myKey')
+          valu: myValue
         })
     })
 })
