@@ -9,18 +9,7 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-signin',
     template: `
-            <div class="container container-auth-client">
-                <div class="top-margin text-center">
-                    <div class="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                                <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
-                            </div>
-                            <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
-                            <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-                    </div>
-                </div>
-            </div>
+            <h1>Heloo</h1>
 `,
     directives: [ROUTER_DIRECTIVES]
 })
