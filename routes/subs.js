@@ -39,7 +39,6 @@ router.get('/sub/detailsub', function(req, res, next) {
 var decoded = jwt.decode(req.query.token);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
-       console.log(localStorage.getItem("user")); 
        res.json(subs);
    });
 });

@@ -64,6 +64,7 @@ getAllSub() {
               window.location.href = `/my`;
               localStorage.setItem('token', data.data);
               localStorage.setItem("user",JSON.stringify(body));
+              console.log(localStorage.getItem("user")); 
             },
             error => {
               alert(error.text());
