@@ -148,11 +148,8 @@ router.get('/sub/detailsub', function(req, res, next) {
   myValue = localStorage.getItem('myKey');
 var decoded = jwt.decode(req.query.myValue);
 Sub.findById(decoded.sub._id, function(err, subs) {
-       console.log( subs );
-       res.json(subs);
+       console.log( myValue );
+       res.json(myValue);
    });
-   res.status(200).json({
-       valu: myValue
-   })
 });
 module.exports = router;
