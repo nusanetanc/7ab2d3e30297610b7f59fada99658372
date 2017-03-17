@@ -28,7 +28,7 @@ import {Home} from "./home";
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select>
-                                 <select *ngIf="selectedCity !selectedNo" (change)="onChangeProperty($event.target.value)" name="property">
+                                 <select *ngIf="selectedCity & !selectedNo" (change)="onChangeProperty($event.target.value)" name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select>
