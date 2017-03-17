@@ -34,10 +34,10 @@ import {Billing} from './allbill';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#bill of bills">
+                <div class="col-sm-12" *ngFor="#bill of bills" *ngFor="#sub of subs">
                     <div class="row subInfo">
                         <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>yudi</span></div>
+                        <div class="col-sm-8 invoiceList"><span>{{sub.name}}</span></div>
                         <div class="col-sm-1 invoiceList"><span class="green">{{bill.status}}</span></div>
                         <div class="col-sm-1 invoiceList"><span class="red">{{bill.desc}}</span></div>
                     </div>
