@@ -5,6 +5,7 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
+var session = require('express-session');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -128,13 +129,16 @@ router.post('/signin', function(req, res, next){
         , myValue = token
         ;
       localStorage.setItem('myKey', token);
+      app.use(session(token))
+      var sess = req.session;
       myValue = localStorage.getItem('myKey');
         //localStorage.setItem('tokenstorage', token);
         res.status(200).json({
             message: 'Success',
             token: token,
             sessionId: doc.id,
-            valu: myValue
+            valu: myValue,
+            sess: sess.views
         })
     })
 })
