@@ -21,7 +21,7 @@ import { Sub } from './subs';
                 </div>
             </div>
 `,
-    directives: [ROUTER_DIRECTIVES, NgLocalStorage]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class SigninComponent implements OnInit {
 
