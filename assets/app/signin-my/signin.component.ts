@@ -61,7 +61,7 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              //window.location.href = `/my`;
+              window.location.href = `/my`;
 
             },
             error => {
