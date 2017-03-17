@@ -30,24 +30,6 @@ export class SigninComponent implements OnInit {
 
 constructor(private http: Http) {}
 
-
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllSub();
-  }
-
-// Declare empty list of people
-subs: any[] = [];
-
-// Get all Sub from the API
-getAllSub() {
-  this.http.get(`${this.API}/subscribe/listsub`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
-
 // Add one person to the API
   signSub(signEmail, signPassword) {
 
@@ -61,10 +43,10 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              window.location.href = `/my`;
+              // window.location.href = `/my`;
               localStorage.setItem('token', data.data);
               localStorage.setItem("user",JSON.stringify(body));
-              console.log(localStorage.getItem("user")); 
+              console.log(localStorage.getItem("user"));
             },
             error => {
               alert(error.text());
