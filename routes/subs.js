@@ -145,10 +145,11 @@ router.post('/signin', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
+  myValue = localStorage.getItem('myKey');
 var decoded = jwt.decode(req.query.myValue);
-Sub.findById(decoded.sub._id, function(err, subs) {
-       console.log( myValue );
-       res.json(myValue);
+Sub.findById(myValue, function(err, subs) {
+       console.log( subs );
+       res.json(subs);
    });
 });
 module.exports = router;
