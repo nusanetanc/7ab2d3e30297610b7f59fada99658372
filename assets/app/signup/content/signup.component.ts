@@ -25,6 +25,40 @@ import {Package} from "./package";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
+                            <p>Please select a installation date</p>
+                                    <div class="col-sm-6">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class='col-sm-6'>
+                                                    <div class="form-group">
+                                                        <div class='input-group date' id='datetimepicker1'>
+                                                            <input type='text' class="form-control" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $('#datetimepicker1').datetimepicker();
+                                                    });
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                <p>Please select a available timeslot for that date</p>
+                                    <div class="col-sm-6 col-sm-offset-4">
+                                            <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
+                                            <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
+                                    </div>
                                 <select *ngIf="!selectedCity" style="" name="cars" (change)="onChangeCity($event.target.value)">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
@@ -53,42 +87,7 @@ import {Package} from "./package";
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <p>Please select a installation date</p>
-                                    <div class="col-sm-6">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class='col-sm-6'>
-                                                    <div class="form-group">
-                                                        <div class='input-group date' id='datetimepicker1'>
-                                                            <input type='text' class="form-control" />
-                                                            <span class="input-group-addon">
-                                                                <span class="glyphicon glyphicon-calendar"></span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <script type="text/javascript">
-                                                    $(function () {
-                                                        $('#datetimepicker1').datetimepicker();
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                <p>Please select a available timeslot for that date</p>
-                                    <div class="col-sm-6 col-sm-offset-4">
-                                        <form action="">
-                                            <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
-                                            <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
-                                        </form>
-                                    </div>
+                                
                             </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
