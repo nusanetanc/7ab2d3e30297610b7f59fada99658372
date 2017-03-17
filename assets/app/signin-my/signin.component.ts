@@ -62,8 +62,8 @@ getAllSub() {
     .subscribe(
             data => {
               window.location.href = `/my`;
-              localStorage.setItem('token', data.obj);
-              localStorage.setItem('MongoId', data._id);
+              localStorage.setItem('token', data.data);
+              localStorage.setItem("user",JSON.stringify(body));
             },
             error => {
               alert(error.text());
