@@ -130,7 +130,6 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
-        localStorage.setItem('token', token);
         res.status(200).json({
             message: 'Success',
             token: token,
