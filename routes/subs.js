@@ -147,7 +147,7 @@ router.post('/signin', function(req, res, next){
 router.get('/sub/detailsub', function(req, res, next) {
   myValue = localStorage.getItem('myKey');
 var decoded = jwt.decode(req.query.myValue);
-Sub.findById(myValue, function(err, subs) {
+Sub.find(function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
