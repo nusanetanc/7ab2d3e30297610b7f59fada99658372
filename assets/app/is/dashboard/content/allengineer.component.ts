@@ -34,10 +34,10 @@ import { Http } from 'angular2/http';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>00301327</span></div>
-                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Arif Rahmanto</a></span></div>
-                        <div class="col-sm-2 invoiceList"><span>Field Support</span></div>
+                    <div class="row subInfo" *ngFor="#emp of emps">
+                        <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
+                        <div class="col-sm-8 invoiceList"><span>{{emp.name}}</span></div>
+                        <div class="col-sm-2 invoiceList"><span>{{emp.titlejob}}</span></div>
                     </div>
                 </div>
             </div>
@@ -47,5 +47,25 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllEngineerComponent {
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    // Declare empty list of people
+    emps: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllEmployee();
+    }
+
+    // Get all users from the API
+    getAllEmployee() {
+        this.http.get(`${this.API}/employee/listemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            })
+    }
 }

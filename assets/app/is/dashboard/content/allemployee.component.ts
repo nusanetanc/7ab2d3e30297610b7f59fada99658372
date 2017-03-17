@@ -37,16 +37,16 @@ import {Employee} from './allemployee';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12"  *ngFor="#emp of emps">
-                    <div class="row subInfo" >
+                <div class="col-sm-12">
+                    <div class="row subInfo" *ngFor="#emp of emps">
                         <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
                         <div class="col-sm-8 invoiceList"><span>{{emp.name}}</span></div>
                         <div class="col-sm-2 invoiceList"><span>{{emp.titlejob}}</span></div>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
