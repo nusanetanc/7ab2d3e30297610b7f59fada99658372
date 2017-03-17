@@ -4,7 +4,6 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
-import { CoolLocalStorage } from 'angular2-cool-storage';
 
 @Component({
     selector: 'form-signin',
@@ -28,7 +27,7 @@ export class SigninComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-
+import { CoolLocalStorage } from 'angular2-cool-storage';
   localStorage: CoolLocalStorage;
 
   constructor(localStorage: CoolLocalStorage) {
