@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 
 @Component({
     selector: 'form-signin',
@@ -27,6 +28,12 @@ export class SigninComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+
+  localStorage: CoolLocalStorage;
+
+  constructor(localStorage: CoolLocalStorage) {
+      this.localStorage = localStorage;
+  }
 
 constructor(private http: Http) {}
 
@@ -61,8 +68,8 @@ this.http.get(`${this.API}/subscribe/listsub`)
     .subscribe(
             data => {
               //localStorage.setItem('token', data.data);
-              localStorage.setItem("user",JSON.stringify(body));
-              console.log(localStorage.getItem("user"));
+              this.localStorage.setItem('user', 'body');
+              console.log(this.localStorage.getItem('body'));
               window.location.href = `/my`;
             },
             error => {
