@@ -138,7 +138,7 @@ router.post('/signin', function(req, res, next){
             token: token,
             sessionId: doc.id,
             valu: myValue,
-            value = num
+            value: num
         })
     })
 })
