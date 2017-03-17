@@ -37,7 +37,7 @@ router.use('/sub/detailsub', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-vay SESIIONID = localStorage.getItem('sessionId');
+var SESIIONID = localStorage.getItem('sessionId');
 var decoded = jwt.decode(req.query.SESIIONID);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
