@@ -123,7 +123,7 @@ router.post('/signin', function(req, res, next){
             return res.status(404).json({
                 title: 'No user found',
                 error: {message: 'User could not be found'}
-            });sessionId4).json({
+            });sessionId).json({
                 title: 'Could not sign you in',
                 error: {message: 'Invalid password'}
             });
