@@ -53,7 +53,7 @@ import {Package} from "./package";
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <div class="col-md-4 col-md-offset-4">
+                                <div>
                                     <p>Please select a installation date</p>
                                     <div class="col-sm-6">
                                         <div class="container">
@@ -77,7 +77,7 @@ import {Package} from "./package";
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-md-offset-4">
+                                <div>
                                     <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
                                         <form action="">
