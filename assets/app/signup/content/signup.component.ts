@@ -53,7 +53,8 @@ import {Package} from "./package";
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <p>Please select a installation date</p>
+                                <div class="col-md-4 col-md-offset-4">
+                                    <p>Please select a installation date</p>
                                     <div class="col-sm-6">
                                         <div class="container">
                                             <div class="row">
@@ -75,9 +76,11 @@ import {Package} from "./package";
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                <p>Please select a available timeslot for that date</p>
+                                </div>
+                                <div class="col-md-4 col-md-offset-4">
+                                    <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
+                                        <form action="">
                                             <input type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
@@ -86,7 +89,9 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
+                                        </form>
                                     </div>
+                                </div>
                             </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
