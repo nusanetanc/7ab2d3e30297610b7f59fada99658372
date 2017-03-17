@@ -126,7 +126,7 @@ router.post('/signin', function(req, res, next){
        }
      }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
-      localStorage.setItem('myKey', token);
+      localStorage.setItem('myKey', doc.id);
       myValue = localStorage.getItem('myKey');
         //localStorage.setItem('tokenstorage', token);
         //import { jsonLocalStorage } from 'json-web-storage';
