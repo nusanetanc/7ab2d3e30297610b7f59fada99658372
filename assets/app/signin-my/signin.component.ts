@@ -62,8 +62,12 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              window.location.href = `/my`;
-
+              //window.location.href = `/my`;
+              // Use storage directly
+              storage.setItem('foo', 'bar');
+               alert(storage.getItem('foo'));
+              // Or shim window.localStorage
+              window.localStorage = storage;
 
             },
             error => {
