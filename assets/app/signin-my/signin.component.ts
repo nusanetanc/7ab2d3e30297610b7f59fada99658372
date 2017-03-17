@@ -22,7 +22,7 @@ import { NgLocalStorage } from 'ng-localstorage';
                 </div>
             </div>
 `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, NgLocalStorage],
     providers: [ NgLocalStorage ]
 })
 export class SigninComponent implements OnInit {
