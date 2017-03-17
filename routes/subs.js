@@ -36,6 +36,7 @@ router.use('/sub/detailsub', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
+  var localStorage = require('localStorage')
 myValue = localStorage.getItem('myKey');
 var decoded = jwt.decode(req.query.myValue);
 Sub.findById(decoded.sub._id, function(err, subs) {
