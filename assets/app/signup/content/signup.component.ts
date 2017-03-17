@@ -24,8 +24,36 @@ import {Package} from "./package";
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <form>
-                            <p>Please select a installation date</p>
+                            <form>                            
+                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChangeCity($event.target.value)">
+                                    <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                </select>
+                                 <select *ngIf="selectedCity" [hidden]="selectedNo" (change)="onChangeProperty($event.target.value)" name="property">
+                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                    <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
+                                </select>
+                                <select *ngIf="selectedProperty" [hidden]="selectedNo" (change)="onChangeType($event.target.value)" name="type">
+                                    <option class="option" disabled="true" selected="true">-- Select Type --</option>
+                                    <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
+                                </select>
+                                <select *ngIf="selectedType" [hidden]="selectedNo" (change)="onChangeCluster($event.target.value)" name="cluster">
+                                    <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
+                                    <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
+                                </select>
+                                <select *ngIf="selectedCluster" [hidden]="selectedNo" (change)="onChangeBlok($event.target.value)" name="block">
+                                    <option class="option" disabled="true" selected="true">-- Select Block --</option>
+                                    <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
+                                </select>
+                                <select *ngIf="selectedBlok" [hidden]="selectedNo" (change)="onChangeNo($event.target.value)" name="no">
+                                    <option class="option" disabled="true" selected="true">-- Select No. --</option>
+                                    <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
+                                </select>
+                                <select *ngIf="selectedNo" name="package">
+                                    <option disabled="true" selected="true">-- Select Package --</option>
+                                    <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                </select>
+                                <p>Please select a installation date</p>
                                     <div class="col-sm-6">
                                         <div class="container">
                                             <div class="row">
@@ -59,35 +87,6 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
                                     </div>
-                                <select *ngIf="!selectedCity" style="" name="cars" (change)="onChangeCity($event.target.value)">
-                                    <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
-                                </select>
-                                 <select *ngIf="selectedCity" [hidden]="selectedNo" (change)="onChangeProperty($event.target.value)" name="property">
-                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                    <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
-                                </select>
-                                <select *ngIf="selectedProperty" [hidden]="selectedNo" (change)="onChangeType($event.target.value)" name="type">
-                                    <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                    <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
-                                </select>
-                                <select *ngIf="selectedType" [hidden]="selectedNo" (change)="onChangeCluster($event.target.value)" name="cluster">
-                                    <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                    <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
-                                </select>
-                                <select *ngIf="selectedCluster" [hidden]="selectedNo" (change)="onChangeBlok($event.target.value)" name="block">
-                                    <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                    <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
-                                </select>
-                                <select *ngIf="selectedBlok" [hidden]="selectedNo" (change)="onChangeNo($event.target.value)" name="no">
-                                    <option class="option" disabled="true" selected="true">-- Select No. --</option>
-                                    <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
-                                </select>
-                                <select *ngIf="selectedNo" name="package">
-                                    <option disabled="true" selected="true">-- Select Package --</option>
-                                    <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                </select>
-                                
                             </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
