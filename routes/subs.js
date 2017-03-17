@@ -36,8 +36,8 @@ router.use('/sub/detailsub', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-var SESIIONID = localStorage.getItem('sessionId');
-var decoded = jwt.decode(req.query.SESIIONID);
+myValue = localStorage.getItem('myKey');
+var decoded = jwt.decode(req.query.myValue);
 Sub.findById(decoded.sub._id, function(err, subs) {
        console.log( subs );
        res.json(subs);
@@ -138,7 +138,7 @@ router.post('/signin', function(req, res, next){
         , myValue = token
         ;
       localStorage.setItem('myKey', token);
-      myValue = localStorage.getItem('myKey')
+      myValue = localStorage.getItem('myKey');
         //localStorage.setItem('tokenstorage', token);
         res.status(200).json({
             message: 'Success',
