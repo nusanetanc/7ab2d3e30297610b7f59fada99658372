@@ -10,6 +10,7 @@ import {TypeProperty} from "./type";
 import {Cluster} from "./cluster";
 import {Blokfloor} from "./blokfloor";
 import {Home} from "./home";
+import {Package} from "./package";
 
 @Component({
     selector: 'form-signin',
@@ -32,21 +33,25 @@ import {Home} from "./home";
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select>
-                                <select *ngIf="selectedProperty" (change)="onChangeType($event.target.value)" name="type">
+                                <select *ngIf="selectedProperty" [hidden]="selectedNo" (change)="onChangeType($event.target.value)" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select>
-                                <select *ngIf="selectedType" (change)="onChangeCluster($event.target.value)" name="cluster">
+                                <select *ngIf="selectedType" [hidden]="selectedNo" (change)="onChangeCluster($event.target.value)" name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select>
-                                <select *ngIf="selectedCluster" (change)="onChangeBlok($event.target.value)" name="block">
+                                <select *ngIf="selectedCluster" [hidden]="selectedNo" (change)="onChangeBlok($event.target.value)" name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                 </select>
-                                <select *ngIf="selectedBlok" (change)="onChangeNo($event.target.value)" name="no">
+                                <select *ngIf="selectedBlok" [hidden]="selectedNo" (change)="onChangeNo($event.target.value)" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
+                                </select>
+                                <select *ngIf="selectedNo" name="package">
+                                    <option disabled="true" selected="true">-- Select Package --</option>
+                                    <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
                             </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
@@ -105,6 +110,7 @@ export class SignupComponent implements OnInit{
     clusters: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
+    packages: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -116,7 +122,7 @@ export class SignupComponent implements OnInit{
         this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
-
+        this.getAllPackage();
     }
 
 // Get all City from the API
@@ -167,6 +173,15 @@ export class SignupComponent implements OnInit{
             .map(res => res.json())
             .subscribe(homes => {
                 this.homes = homes
+            })
+    }
+
+    // Get all Package from the API
+    getAllPackage() {
+        this.http.get(`${this.API}/package/listpackage`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
             })
     }
 }
