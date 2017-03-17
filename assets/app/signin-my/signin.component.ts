@@ -63,8 +63,7 @@ this.http.get(`${this.API}/subscribe/listsub`)
     .subscribe(
             data => {
             var userData = {name: 'John Doe', email: 'johndoe@mail.com'};
-            NgLocalStorage.set('user', userData);
-              console.log(NgLocalStorage.get('user.name'));
+
               window.location.href = `/my`;
             },
             error => {
