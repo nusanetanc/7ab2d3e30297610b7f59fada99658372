@@ -31,23 +31,23 @@ import {Home} from "./home";
                                  <select *ngIf="selectedCity" name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
-                                </select><br/><br/>
+                                </select>
                                 <select *ngIf="selectedCity" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
-                                </select><br/>
+                                </select>
                                 <select *ngIf="selectedCity" name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
-                                </select><br/>
+                                </select>
                                 <select *ngIf="selectedCity" name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
-                                </select><br/>
+                                </select>
                                 <select *ngIf="selectedCity" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
-                                </select><br/>
+                                </select>
                             </form>
                                 <a class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
