@@ -32,7 +32,7 @@ import {Home} from "./home";
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select>
-                                <select *ngIf="selectedCProperty" (change)="onChange($event.target.value)" name="type">
+                                <select *ngIf="selectedProperty" (change)="onChange($event.target.value)" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select>
@@ -62,20 +62,10 @@ import {Home} from "./home";
 export class SignupComponent implements OnInit{
 
     selectedCity: City;
-    selectedProperty: Property;
-    selectedType: TypeProperty;
-    selectedCluster: Cluster;
-    selectedBlok: Blokfloor;
-    selectedNo: Home;
 
     onChange(deviceValue): void{
         console.log(deviceValue);
         this.selectedCity = deviceValue;
-        this.selectedProperty = deviceValue;
-        this.selectedType = deviceValue;
-        this.selectedCluster = deviceValue;
-        this.selectedBlok = deviceValue;
-        this.selectedNo = deviceValue;
     }
 
 
