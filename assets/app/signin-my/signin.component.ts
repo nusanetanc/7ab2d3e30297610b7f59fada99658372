@@ -4,7 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
-import storage from 'local-storage-fallback'
+import storage from 'node_modules/local-storage-fallback';
 
 @Component({
     selector: 'form-signin',
