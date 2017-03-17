@@ -51,23 +51,23 @@ import { Information } from './allinformation';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllInformationComponent {
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+    // Link to our api, pointing to localhost
+      API = 'http://202.162.207.164:3000';
 
-  informations: any[] = [];
+      informations: any[] = [];
 
-  constructor(private http: Http) {}
+      constructor(private http: Http) {}
 
-  ngOnInit() {
-    this.getAllInformation();
-  }
+      ngOnInit() {
+        this.getAllInformation();
+      }
 
-// Get all users from the API
-getAllInformation() {
-  this.http.get(`${this.API}/information/listinformation`)
-    .map(res => res.json())
-    .subscribe(informations => {
-      this.informations = informations
-    })
-}
+    // Get all users from the API
+    getAllInformation() {
+      this.http.get(`${this.API}/information/listinformation`)
+        .map(res => res.json())
+        .subscribe(informations => {
+          this.informations = informations
+        })
+    }
 }

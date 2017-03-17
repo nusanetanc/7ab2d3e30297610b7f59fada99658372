@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import {Billing} from './allbill';
 
 
 @Component({
@@ -33,12 +34,12 @@ import { Http } from 'angular2/http';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12" *ngFor="#bill of bills">
                     <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>GR-123456</span></div>
+                        <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
                         <div class="col-sm-8 invoiceList"><span>Yudi Nurhandi</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
+                        <div class="col-sm-1 invoiceList"><span class="green">{{bill.status}}</span></div>
+                        <div class="col-sm-1 invoiceList"><span class="red">{{bill.desc}}</span></div>
                     </div>
                 </div>
             </div>
@@ -48,5 +49,25 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllBillsComponent {
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    // Declare empty list of people
+    bills: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllBill();
+    }
+
+    // Get all users from the API
+    getAllBill() {
+        this.http.get(`${this.API}/bill/listbill`)
+            .map(res => res.json())
+            .subscribe(bills => {
+                this.bills = bills
+            })
+    }
 }
