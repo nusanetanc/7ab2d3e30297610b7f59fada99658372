@@ -38,25 +38,5 @@ getAllSub() {
     })
 }
 
-// Add one person to the API
-  signSub(signEmail, signPassword) {
 
-  var body = `email=${signEmail}&password=${signPassword}`;
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http
-        .post(`${this.API}/subscribe/signin`,
-          body, {
-            headers: headers
-          })
-    .subscribe(
-            data => {
-              window.location.href = `/my`;
-            },
-            error => {
-              alert(error.text());
-              console.log(error.text());
-            }
-          );
-  }
 }
