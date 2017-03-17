@@ -4,7 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
-import { CoolLocalStorage } from 'angular2-cool-storage';
+import { NgLocalStorage } from 'ng-localstorage';
 
 @Component({
     selector: 'form-signin',
@@ -22,20 +22,15 @@ import { CoolLocalStorage } from 'angular2-cool-storage';
                 </div>
             </div>
 `,
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ NgLocalStorage ]
 })
 export class SigninComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-  localStorage: CoolLocalStorage;
-
-  constructor(localStorage: CoolLocalStorage) {
-      this.localStorage = localStorage;
-  }
-
-constructor(private http: Http) {}
+constructor(private http: Http, private NgLocalStorage: NgLocalStorage) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -67,9 +62,9 @@ this.http.get(`${this.API}/subscribe/listsub`)
           })
     .subscribe(
             data => {
-              //localStorage.setItem('token', data.data);
-              this.localStorage.setItem('itemKey', 'body');
-              console.log(this.localStorage.getItem('itemKey'));
+            var userData = {name: 'John Doe', email: 'johndoe@mail.com'};
+            NgLocalStorage.set('user', userData);
+              console.log(NgLocalStorage.get('user.name'));
               window.location.href = `/my`;
             },
             error => {
