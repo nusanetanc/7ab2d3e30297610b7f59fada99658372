@@ -28,23 +28,23 @@ import {Home} from "./home";
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select>
-                                 <select *ngIf="selectedCity" name="property">
+                                 <select *ngIf="selectedCity" (change)="onChange($event.target.value)" name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select>
-                                <select *ngIf="selectedCity" name="type">
+                                <select *ngIf="selectedCity" (change)="onChange($event.target.value)" name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>      
                                 </select>
-                                <select *ngIf="selectedCity" name="cluster">
+                                <select *ngIf="selectedCity" (change)="onChange($event.target.value)" name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select>
-                                <select *ngIf="selectedCity" name="block">
+                                <select *ngIf="selectedCity" (change)="onChange($event.target.value)" name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                 </select>
-                                <select *ngIf="selectedCity" name="no">
+                                <select *ngIf="selectedCity" (change)="onChange($event.target.value)" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
@@ -62,10 +62,18 @@ import {Home} from "./home";
 export class SignupComponent implements OnInit{
 
     selectedCity: City;
+    selectedProperty: Property;
+    selectedType: TypeProperty;
+    selectedCluster: Blokfloor;
+    selectedNo: Home;
 
     onChange(deviceValue): void{
         console.log(deviceValue);
         this.selectedCity = deviceValue;
+        this.selectedProperty = deviceValue;
+        this.selectedType = deviceValue;
+        this.selectedCluster = deviceValue;
+        this.selectedNo = deviceValue;
     }
 
 
