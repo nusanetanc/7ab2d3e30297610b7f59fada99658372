@@ -120,14 +120,20 @@ router.post('/signin', function(req, res, next){
             });
         }
         if (!doc) {
-            return res.status(404).json({
-                title: 'No user found',
-                error: {message: 'User could not be found'}
-            });sessionId).json({
-                title: 'Could not sign you in',
-                error: {message: 'Invalid password'}
-            });
-        }
+       return res.status(404).json({
+         title: "No user found",
+         error: {message: 'User could not be found.'}
+       });
+     }
+
+     if (!passwordHash.verify(req.body.password, doc.password)) {
+       if (err) {
+         return res.status(404).json({
+           title: "Could not sign user in",
+           error: {message: 'Invalid Password'}
+         });
+       }
+     }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         var localStorage = require('localStorage')
         , myValue = { foo: 'bar', baz: 'quux' }
