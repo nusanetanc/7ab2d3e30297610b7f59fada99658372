@@ -5,7 +5,6 @@ var Sub = require('../models/subs');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
-var localStorage = require('localStorage');
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -136,9 +135,9 @@ router.post('/signin', function(req, res, next){
      }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         var localStorage = require('localStorage')
-        , myValue = { foo: 'bar', baz: 'quux' }
+        , myValue = token
         ;
-      localStorage.setItem('myKey', JSON.stringify(myValue));
+      localStorage.setItem('myKey', token);
       myValue = localStorage.getItem('myKey')
         //localStorage.setItem('tokenstorage', token);
         res.status(200).json({
