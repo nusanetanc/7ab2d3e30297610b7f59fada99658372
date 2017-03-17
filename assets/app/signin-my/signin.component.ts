@@ -4,7 +4,6 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
-import { NgLocalStorage } from 'ng-localstorage';
 
 @Component({
     selector: 'form-signin',
@@ -22,31 +21,31 @@ import { NgLocalStorage } from 'ng-localstorage';
                 </div>
             </div>
 `,
-    directives: [ROUTER_DIRECTIVES, NgLocalStorage],
-    providers: [ NgLocalStorage ]
+    directives: [ROUTER_DIRECTIVES]
 })
 export class SigninComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-constructor(private http: Http, private NgLocalStorage: NgLocalStorage) {}
+constructor(private http: Http) {}
 
-// Angular 2 Life Cycle event when component has been initialized
-ngOnInit() {
-  this.getAllSub();
-}
+
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllSub();
+  }
 
 // Declare empty list of people
 subs: any[] = [];
 
 // Get all Sub from the API
 getAllSub() {
-this.http.get(`${this.API}/subscribe/listsub`)
-  .map(res => res.json())
-  .subscribe(subs => {
-    this.subs = subs
-  })
+  this.http.get(`${this.API}/subscribe/listsub`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
 }
 
 // Add one person to the API
@@ -62,10 +61,9 @@ this.http.get(`${this.API}/subscribe/listsub`)
           })
     .subscribe(
             data => {
-            var userData = {name: 'John Doe', email: 'johndoe@mail.com'};
-            NgLocalStorage.set('user', userData);
-              console.log(NgLocalStorage.get('user.name'));
               window.location.href = `/my`;
+              localStorage.setItem('token', data.obj);
+              localStorage.setItem('MongoId', data._id);
             },
             error => {
               alert(error.text());
