@@ -145,8 +145,8 @@ router.post('/signin', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  myValue = localStorage.getItem('myKey');
-var decoded = jwt.decode(req.query.myValue);
+  //myValue = localStorage.getItem('myKey');
+//var decoded = jwt.decode(req.query.myValue);
 Sub.find(function(err, subs) {
        console.log( subs );
        res.json(subs);
