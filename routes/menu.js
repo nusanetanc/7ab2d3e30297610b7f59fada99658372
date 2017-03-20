@@ -25,7 +25,7 @@ router.use(session({secret: "Your secret key"}));
 /* GET menu listing. */
 router.get('/listmenu', function(req, res, next) {
   if(req.session.accessrole){
-      sessionEmpAccess = req.session.accessrole;
+    var sessionEmpAccess = req.session.accessrole;
 }
     Menu.find({access: sessionEmpAccess}, function(err, menus) {
         console.log( menus );
