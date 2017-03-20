@@ -118,7 +118,9 @@ router.post('/signin', function(req, res, next){
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
         req.session.subs = token;
+        console.log(req.session.subs);
       }
+      console.log(req.session.subs);
         res.status(200).json({
             message: 'Success',
             token: token,
