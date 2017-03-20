@@ -24,10 +24,11 @@ router.use(session({secret: "Your secret key"}));
 
 /* GET menu listing. */
 router.get('/listmenu', function(req, res, next) {
-  if(req.session.accessrole){
+  if(req.session.emp){
+      sessionEmpId = req.session.emp;
       sessionEmpAccess = req.session.accessrole;
 }
-    Menu.find({access:sessionEmpAccess}, function(err, menus) {
+    Menu.find({access: sessionEmpAccess}, function(err, menus) {
         console.log( menus );
         res.json(menus);
     });
