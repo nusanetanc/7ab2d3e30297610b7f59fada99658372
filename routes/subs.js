@@ -37,7 +37,9 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-  var sessionId = '58b3cdac45912d052e2c85a5';
+  if(req.session.subs){
+      var sessionId = req.session.subs;
+}
   Sub.findOne({_id: sessionId}, function(err, subs) {
     console.log( subs );
     res.json(subs);
