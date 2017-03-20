@@ -134,8 +134,8 @@ router.post('/signin', function(req, res, next){
         res.status(200).json({
             message: 'Success',
             token: token,
-            sessionId: doc.id
-            accessrole: req.session.accessrole;
+            sessionId: doc.id,
+            accessrole: req.session.accessrole
         })
     })
 });
