@@ -41,7 +41,7 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  mysubs = res.session.subs;
+  mysubs = req.session.subs;
 var decoded = jwt.decode(req.query.mysubs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
@@ -141,7 +141,7 @@ router.post('/signin', function(req, res){
         if(!req.session.subs){
             req.session.subs = token;
       }
-      req.session.save()
+      req.session.save(subs, token);
         res.status(200).json({
             message: 'Success',
             token: req.session.subs,
