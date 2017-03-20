@@ -12,6 +12,7 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
+var Bill = require('../models/bill');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +49,17 @@ router.get('/detailsub', function(req, res, next) {
     console.log( subs );
     res.json(subs);
   });
+});
+
+/* GET detail bill one account. */
+router.get('/bill', function(req, res, next) {
+  if(req.session.subs){
+      var sessionSubId = req.session.subs;
+  }
+Bill.find({sub: sessionSubId}, function(err, bills) {
+       console.log( bills );
+       res.json(bills);
+   });
 });
 
 /* Add sub */

@@ -42,17 +42,6 @@ Bill.findById(req.params.id, function(err, bills) {
    });
 });
 
-/* GET detail bill one account. */
-router.get('/subbill', function(req, res, next) {
-  if(req.session.subs){
-      var sessionSubId = req.session.subs;
-  }
-Bill.find({sub: sessionSubId}, function(err, bills) {
-       console.log( bills );
-       res.json(bills);
-   });
-});
-
 /* Add bill */
 router.post('/addbill', function(req, res, next) {
   var bill = new Bill();

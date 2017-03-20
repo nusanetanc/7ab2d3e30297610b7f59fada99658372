@@ -182,7 +182,7 @@ export class ContentBillingComponent {
 
 // Get all users from the API
 getAllBills() {
-  this.http.get(`${this.API}/bill/subbill`)
+  this.http.get(`${this.API}/subscribe/bill`)
     .map(res => res.json())
     .subscribe(bills => {
       this.bills = bills
