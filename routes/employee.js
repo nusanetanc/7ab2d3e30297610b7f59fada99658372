@@ -41,10 +41,10 @@ Emp.findById(req.params.id, function(err, emps) {
 
 /* GET detail employe. */
 router.get('/emp/detail', function(req, res, next) {
-if(req.session.subs){
-    var sessionSubId = req.session.subs;
+if(req.session.emp){
+    var sessionEmpId = req.session.emp;
 }
-Emp.findById(sessionSubId, function(err, emps) {
+Emp.findById(sessionEmpId, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
