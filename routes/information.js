@@ -2,24 +2,6 @@ var express = require('express');
 var passwordHash = require('password-hash');
 var router = express.Router();
 var Information = require('../models/information');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
-var router = express.Router();
-var Sub = require('../models/subs');
-var randomInt = require('random-int');
-var damm = require('damm');
-var jwt = require('jsonwebtoken');
-var session = require('express-session');
-var localStorage = require('localStorage');
-
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(upload.array());
-router.use(cookieParser());
-router.use(session({secret: "Your secret key"}));
-
 
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {

@@ -40,7 +40,7 @@ router.get('/detailsub', function(req, res, next) {
   if(req.session.subs){
       var sessionSubId = req.session.subs;
 }
-  Sub.findOne({_id: sessionId}, function(err, subs) {
+  Sub.findOne({_id: sessionSubId}, function(err, subs) {
     console.log( subs );
     res.json(subs);
   });
