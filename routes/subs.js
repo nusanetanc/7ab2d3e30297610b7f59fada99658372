@@ -98,7 +98,7 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
-router.post('/signin', function(req, res, next){
+router.post('/signin', function(req, res){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
             return res.status(404).json({
@@ -123,9 +123,7 @@ router.post('/signin', function(req, res, next){
      }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
-          req.session.save(function(err) {
             req.session.subs = token;
-          })
       }
         res.status(200).json({
             message: 'Success',
