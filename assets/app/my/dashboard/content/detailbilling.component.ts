@@ -241,28 +241,29 @@ export class ContentDetailBillingComponent {
   Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
-  subs: any[] = [];
+ subs: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.getAllBills();
-    this.getAcountSub();
+    this.getAllBills();  this.getAcountSub();
   }
+
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/detailsub`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
+}
 
 // Get all users from the API
 getAllBills() {
-  this.http.get(`${this.API}/bill/idbill/${id}`)
-    .map(res => res.json())
-    .subscribe(bills => {
-      this.bills = bills
-    })
+ this.http.get(`${this.API}/bill/idbill/${id}`)
+   .map(res => res.json())
+   .subscribe(bills => {
+     this.bills = bills
+   })
 }
-  getAcountSub() {
-    this.http.get(`${this.API}/subscribe/detailsub`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-      })
-  }
 }
