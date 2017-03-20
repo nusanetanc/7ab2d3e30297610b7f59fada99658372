@@ -1,6 +1,9 @@
 var express = require('express');
 var passwordHash = require('password-hash');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
 var router = express.Router();
 var Sub = require('../models/subs');
 var randomInt = require('random-int');
@@ -9,8 +12,14 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 
+router.set('view engine', 'pug');
+router.set('views','./views');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
 router.use(cookieParser());
-router.use(session({secret: "Shh, its a secret!"}));
+router.use(session({secret: "Your secret key"}))
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -132,11 +141,8 @@ router.post('/signin', function(req, res, next){
 router.get('/sub/detailsub', function(req, res, next) {
   if(req.session.subs){
   var mysubs = req.session.subs;
-  console.log(req.session.subs);
 }
 var decoded = jwt.decode(req.query.mysubs);
-console.log(mysubs);
-console.log(decoded);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
   res.json(subs);
