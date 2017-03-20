@@ -22,7 +22,7 @@ router.use(session({secret: "Your secret key"}));
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
-     Sub.find(function(err, subs) {
+     Sub.findOne({email: 'developers@groovy.id'},function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
