@@ -16,7 +16,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(cookieParser());
-app.use(session({secret: "Your secret key"}));
+router.use(session({secret: "Your secret key"}));
 
 
 /* GET subloye listing. */
