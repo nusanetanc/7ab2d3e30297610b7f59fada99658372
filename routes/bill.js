@@ -2,8 +2,54 @@ var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
 var randomInt = require('random-int');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
+var router = express.Router();
+var Sub = require('../models/subs');
+var randomInt = require('random-int');
+var damm = require('damm');
+var jwt = require('jsonwebtoken');
+var session = require('express-session');
+var localStorage = require('localStorage');
+var jwtDecode = require('jwt-decode');
+var Bill = require('../models/bill');
 
-/* GET billloye listing. */
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(cookieParser());
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 200000000000000000000
+}));
+
+/* GET billloye listing. */var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
+var router = express.Router();
+var Sub = require('../models/subs');
+var randomInt = require('random-int');
+var damm = require('damm');
+var jwt = require('jsonwebtoken');
+var session = require('express-session');
+var localStorage = require('localStorage');
+var jwtDecode = require('jwt-decode');
+var Bill = require('../models/bill');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(cookieParser());
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 200000000000000000000
+}));
+
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
        console.log( bills );
