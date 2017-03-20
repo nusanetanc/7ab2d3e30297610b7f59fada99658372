@@ -1,5 +1,6 @@
 var express = require('express');
 var passwordHash = require('password-hash');
+var cookieParser = require('cookie-parser');
 var router = express.Router();
 var Sub = require('../models/subs');
 var randomInt = require('random-int');
@@ -89,7 +90,7 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
-/*signin subscribe
+signin subscribe
 router.post('/signin', function(req, res, next){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
@@ -114,7 +115,9 @@ router.post('/signin', function(req, res, next){
        }
      }
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
-        req.session.token = token;
+        if(!req.session.subs){
+        req.session.subs = token;
+      }
         res.status(200).json({
             message: 'Success',
             token: token,
@@ -122,7 +125,7 @@ router.post('/signin', function(req, res, next){
         })
     })
 })
-*/
+
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
   //myValue = localStorage.getItem('myKey');
