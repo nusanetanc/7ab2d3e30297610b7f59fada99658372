@@ -91,7 +91,7 @@ import {Package} from "./package";
                                     </div>
                                 </div>
                             </form>
-                                <a class="next btn btn-default dropdown-toggle" style="">
+                                <a *ngIf="selectedPackage" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
                                 </a>
                         </div>
