@@ -12,10 +12,8 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 
-router.configure(function(){
-    router.set(express.cookieParser());
-        router.set(express.session({secret: "gro0vy"}));
-});
+router.set(express.cookieParser());
+router.set(express.session({secret: "gro0vy"}));
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
