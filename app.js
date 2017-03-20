@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var Sub = require('models/subs');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/groovy');
@@ -71,6 +73,40 @@ app.use('/problem', problem);
 
 app.use('/api/finnet', finnet);
 
+app.use(session({secret: "Shh, its a secret!"}));
+
+app.post('/signin', function(req, res){
+   i  Sub.findOne({email: req.body.email}, function(err, doc){
+         if (err) {
+             return res.status(404).json({
+                 title: 'An error occured',
+                 error: err
+             });
+         }
+         if (!doc) {
+        return res.status(404).json({
+          title: "No user found",
+          error: {message: 'User could not be found.'}
+        });
+      }
+
+      if (!passwordHash.verify(req.body.password, doc.password)) {
+        if (err) {
+          return res.status(404).json({
+            title: "Could not sign user in",
+            error: {message: 'Invalid Password'}
+          });
+        }
+      }
+         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+         req.session.sub = token;
+         res.status(200).json({
+             message: 'Success',
+             token: token,
+             sessionId: doc.id
+         })
+     })
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
