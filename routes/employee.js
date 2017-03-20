@@ -41,10 +41,10 @@ Emp.findById(req.params.id, function(err, emps) {
 
 /* GET detail employe. */
 router.get('/emp/detail', function(req, res, next) {
-Emp.find(function(err, emps) {
-       console.log( emps );
-       res.json(emps);
-   });
+  Emp.find(function(err, emps) {
+    console.log( emps );
+    res.json(emps);
+});
 });
 
 /* Add employe */
