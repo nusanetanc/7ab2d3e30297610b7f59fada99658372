@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
 var randomInt = require('random-int');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
