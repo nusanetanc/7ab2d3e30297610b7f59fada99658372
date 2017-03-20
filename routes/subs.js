@@ -90,6 +90,8 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
+router.use(cookieParser());
+router.use(session({secret: "Shh, its a secret!"}));
 router.post('/signin', function(req, res, next){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
