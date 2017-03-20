@@ -20,9 +20,6 @@ router.use(upload.array());
 router.use(cookieParser());
 router.use(session({secret: "Your secret key"}));
 
-if(req.session.subs){
-    var sessionSubId = req.session.subs;
-}
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
@@ -42,6 +39,9 @@ Bill.findById(req.params.id, function(err, bills) {
 
 /* GET detail bill one account. */
 router.get('/subbill', function(req, res, next) {
+  if(req.session.subs){
+      var sessionSubId = req.session.subs;
+  }
 Bill.find({sub: sessionSubId}, function(err, bills) {
        console.log( bills );
        res.json(bills);
