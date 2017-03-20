@@ -44,7 +44,7 @@ import {Menu} from "./menu";
 export class DashboardComponent {
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    Session_ID = '58b6a0d77dfd7052a9fe53c9';
+  //Session_ID = '58b6a0d77dfd7052a9fe53c9';
     content_access = '202';
 
     ngOnInit() {

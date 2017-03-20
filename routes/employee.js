@@ -40,7 +40,10 @@ Emp.findById(req.params.id, function(err, emps) {
 });
 
 router.get('/detailemp', function(req, res, next) {
-     Emp.findOne({_id: '58b6a0d77dfd7052a9fe53c9'}, function(err, emps) {
+  if(req.session.emp){
+      sessionEmpId = req.session.emp;
+}
+     Emp.findOne({_id: sessionEmpId}, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
