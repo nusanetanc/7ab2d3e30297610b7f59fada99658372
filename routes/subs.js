@@ -130,6 +130,7 @@ router.post('/signin', function(req, res){
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
             req.session.subs = token;
+            res.session.subs = token;
       }
       req.session.save()
         res.status(200).json({
@@ -142,11 +143,11 @@ router.post('/signin', function(req, res){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  mysubs = req.session.subs;
+  mysubs = res.session.subs;
 var decoded = jwt.decode(req.query.mysubs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
   res.json(subs);
-});
+})
 });
 module.exports = router;
