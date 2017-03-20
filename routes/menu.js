@@ -5,7 +5,7 @@ var Menu = require('../models/menu');
 
 /* GET menu listing. */
 router.get('/listmenu', function(req, res, next) {
-    Menu.find({access:'2'}function(err, menus) {
+    Menu.find({access:'2'}, function(err, menus) {
         console.log( menus );
         res.json(menus);
     });
