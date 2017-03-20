@@ -23,7 +23,7 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li *ngFor="#menu of menus">
-                          <a [routerLink]="['']" class="collapse" ><i class="material-icons">{{menu.icons}}</i> <strong>{{menu.title}}</strong></a>
+                          <a [routerLink]="['dashboard']" class="collapse" ><i class="material-icons">{{menu.icons}}</i> <strong>{{menu.title}}</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
