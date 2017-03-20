@@ -137,10 +137,11 @@ router.post('/signin', function(req, res){
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
             req.session.subs = doc.id;
+            req.session.accesssub = doc.accessrole;
       }
         res.status(200).json({
             message: 'Success',
-            token: req.session.subs,
+            token: req.session.accesssub,
             sessionId: doc.id
         })
     })
