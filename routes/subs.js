@@ -129,7 +129,9 @@ router.post('/signin', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-var mysubs = req.session.subs;
+  if(req.session.subs){
+  var mysubs = req.session.subs;
+}
 var decoded = jwt.decode(req.query.mysubs);
 console.log(mysubs);
 console.log(decoded);
