@@ -57,7 +57,7 @@ export class DashboardComponent {
     constructor(private http: Http) {}
 
     getAcountEmp() {
-        this.http.get(`${this.API}/employee/emp/${this.Session_ID}`)
+        this.http.get(`${this.API}/employee/emp/detail`)
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
