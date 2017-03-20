@@ -120,7 +120,6 @@ router.post('/signin', function(req, res, next){
         req.session.subs = token;
         console.log(req.session.subs);
       }
-      console.log(req.session.subs);
         res.status(200).json({
             message: 'Success',
             token: token,
@@ -133,6 +132,7 @@ router.post('/signin', function(req, res, next){
 router.get('/sub/detailsub', function(req, res, next) {
   if(req.session.subs){
   var mysubs = req.session.subs;
+  console.log(req.session.subs);
 }
 var decoded = jwt.decode(req.query.mysubs);
 console.log(mysubs);
