@@ -12,20 +12,12 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 
-router.set(express.cookieParser());
-router.set(express.session({secret: "gro0vy"}));
-
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(cookieParser());
+app.use(session({secret: "Your secret key"}));
 
-router.use(session({
-  cookieName: 'session',
-  secret: 'gro0vy',
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
-}))
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -48,6 +40,7 @@ router.get('/sub/detailsub', function(req, res, next) {
     mysubs = req.session.subs;
     var decoded = jwt.decode(req.query.mysubs);
   }
+  console.log(req.session.subs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
   res.json(subs);
