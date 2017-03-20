@@ -39,7 +39,6 @@ export class SigninComponent {
             .subscribe(
                 data => {
                     window.location.href = `/is`;
-                    localStorage.setItem('id_token', response.json().id_token);
                 },
                 error => {
                     alert(error.text());
