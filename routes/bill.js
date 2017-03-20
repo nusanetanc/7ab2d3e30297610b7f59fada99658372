@@ -16,9 +16,6 @@ var localStorage = require('localStorage');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-router.use(upload.array());
-router.use(cookieParser());
-router.use(session({secret: "Your secret key"}));
 
 
 /* GET billloye listing. */
