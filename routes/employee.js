@@ -44,7 +44,7 @@ router.get('/emp/detail', function(req, res, next) {
 if(req.session.emp){
     var sessionEmpId = req.session.emp;
 }
-Emp.findOne({_id: sessionEmpId}, function(err, emps) {
+Emp.findById(sessionEmpId, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
@@ -129,12 +129,12 @@ router.post('/signin', function(req, res, next){
         }
         var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.emp){
-            req.session.emp = doc._id;
+            req.session.emp = doc.id;
       }
         res.status(200).json({
             message: 'Success',
             token: token,
-            sessionId: doc._id
+            sessionId: doc.id
         })
     })
 });
