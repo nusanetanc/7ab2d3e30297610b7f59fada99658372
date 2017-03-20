@@ -17,7 +17,12 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(cookieParser());
-router.use(session({secret: "Your secret key", cookie:{maxAge:6000}}));
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 20000
+}));
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
