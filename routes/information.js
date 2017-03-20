@@ -20,9 +20,6 @@ router.use(upload.array());
 router.use(cookieParser());
 router.use(session({secret: "Your secret key"}));
 
-if(req.session.subs){
-    var sessionSubId = req.session.subs;
-}
 
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
