@@ -9,6 +9,9 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 
+router.use(cookieParser());
+router.use(session({secret: "Shh, its a secret!"}));
+
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
      Sub.find(function(err, subs) {
@@ -16,7 +19,6 @@ router.get('/listsub', function(req, res, next) {
        res.json(subs);
    });
 });
-
 /* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
@@ -90,8 +92,6 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
-router.use(cookieParser());
-router.use(session({secret: "Shh, its a secret!"}));
 router.post('/signin', function(req, res, next){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
@@ -129,9 +129,9 @@ router.post('/signin', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  //myValue = localStorage.getItem('myKey');
-//var decoded = jwt.decode(req.query.myValue);
-Sub.find(function(err, subs) {
+var mysubs = req.session.subs;
+var decoded = jwt.decode(req.query.mysubs);
+Sub.findOne({_id: decode._id}), function(err, subs) {
   console.log( subs );
   res.json(subs);
 });
