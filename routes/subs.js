@@ -12,9 +12,6 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 
-router.set('view engine', 'pug');
-router.set('views','./views');
-
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
