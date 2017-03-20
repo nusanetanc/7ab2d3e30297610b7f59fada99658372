@@ -135,11 +135,7 @@ router.post('/signin', function(req, res){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
-  var mysubs;
-  if(req.session.subs){
-    console.log(req.session.subs);
   mysubs = req.session.subs;
-}
 var decoded = jwt.decode(req.query.mysubs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
