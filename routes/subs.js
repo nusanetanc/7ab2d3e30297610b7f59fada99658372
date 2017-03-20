@@ -17,8 +17,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(cookieParser());
-router.use(session({secret: "Your secret key"}));
-
+router.use(session({secret: "Your secret key", cookie:{maxAge:6000}}));
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
@@ -137,7 +136,6 @@ router.post('/signin', function(req, res){
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
             req.session.subs = doc.id;
-            req.session.accesssub = doc.accessrole;
       }
         res.status(200).json({
             message: 'Success',
