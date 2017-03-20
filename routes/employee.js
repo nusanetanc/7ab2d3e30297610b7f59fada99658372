@@ -44,7 +44,7 @@ router.get('/emp/detail', function(req, res, next) {
 if(req.session.emp){
     var sessionEmpId = req.session.emp;
 }
-Emp.findById(sessionEmpId, function(err, emps) {
+Emp.find({_id: sessionEmpId}, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
