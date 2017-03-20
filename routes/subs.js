@@ -15,8 +15,6 @@ var jwtDecode = require('jwt-decode');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-router.use(express.bodyParser());
-router.use(require('connect').bodyParser());
 router.use(upload.array());
 router.use(cookieParser());
 router.use(session({secret: "Your secret key"}));
