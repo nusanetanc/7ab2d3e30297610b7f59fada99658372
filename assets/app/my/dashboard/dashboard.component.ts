@@ -4,6 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './content/subs';
+import { Menu } from './menu';
 @Component({
     selector: 'dashboard',
     template: `
