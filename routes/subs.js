@@ -124,7 +124,6 @@ router.post('/signin', function(req, res, next){
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
         if(!req.session.subs){
         req.session.subs = token;
-        console.log(req.session.subs);
       }
         res.status(200).json({
             message: 'Success',
@@ -136,8 +135,9 @@ router.post('/signin', function(req, res, next){
 
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
+  var mysubs;
   if(req.session.subs){
-  var mysubs = req.session.subs;
+  mysubs = req.session.subs;
 }
 var decoded = jwt.decode(req.query.mysubs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
