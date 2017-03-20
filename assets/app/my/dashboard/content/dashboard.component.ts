@@ -147,7 +147,7 @@ getAllInformation() {
     })
 }
 getAcountSub() {
-  this.http.get(`${this.API}/subscribe/sub/${this.Session_ID}`)
+  this.http.get(`${this.API}/subscribe/detailsub`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
