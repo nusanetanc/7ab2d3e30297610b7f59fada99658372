@@ -89,7 +89,7 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
-//signin subscribe
+/*signin subscribe
 router.post('/signin', function(req, res, next){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
@@ -122,7 +122,7 @@ router.post('/signin', function(req, res, next){
         })
     })
 })
-
+*/
 /* GET detail sub. */
 router.get('/sub/detailsub', function(req, res, next) {
   //myValue = localStorage.getItem('myKey');
