@@ -131,9 +131,6 @@ router.post('/signin', function(req, res){
         if(!req.session.subs){
             req.session.subs = token;
       }
-      if(!res.session.subs){
-          res.session.subs = token;
-    }
       req.session.save()
         res.status(200).json({
             message: 'Success',
