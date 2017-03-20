@@ -1,9 +1,27 @@
 var express = require('express');
 var router = express.Router();
 var passwordHash = require('password-hash');
-var jwt = require('jsonwebtoken');
 
 var Emp = require('../models/employee');
+
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
+var router = express.Router();
+var randomInt = require('random-int');
+var damm = require('damm');
+var jwt = require('jsonwebtoken');
+var session = require('express-session');
+var localStorage = require('localStorage');
+var jwtDecode = require('jwt-decode');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(cookieParser());
+router.use(session({secret: "Your secret key"}));
+
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {
@@ -16,6 +34,17 @@ router.get('/listemp', function(req, res, next) {
 /* GET detail employe. */
 router.get('/emp/:id', function(req, res, next) {
 Emp.findById(req.params.id, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+});
+
+/* GET detail employe. */
+router.get('/emp/detail', function(req, res, next) {
+if(req.session.subs){
+    var sessionSubId = req.session.subs;
+}
+Emp.findById(sessionSubId, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });
@@ -99,6 +128,9 @@ router.post('/signin', function(req, res, next){
             });
         }
         var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
+        if(!req.session.emp){
+            req.session.emp = doc.id;
+      }
         res.status(200).json({
             message: 'Success',
             token: token,
