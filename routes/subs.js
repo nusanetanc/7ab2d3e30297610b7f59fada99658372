@@ -16,7 +16,13 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
 router.use(cookieParser());
-router.use(session({secret: "Shh, its a secret!"}))
+
+router.use(session({
+  cookieName: 'session',
+  secret: 'gr0vy',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+}))
 
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
