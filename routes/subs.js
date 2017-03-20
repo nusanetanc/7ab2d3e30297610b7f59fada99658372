@@ -41,6 +41,8 @@ router.get('/sub/detailsub', function(req, res, next) {
     var decoded = jwt.decode(req.query.mysubs);
   }
   console.log(req.session.subs);
+  mysubs = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiX192IjowLCJfaWQiOiI1OGIzY2RhYzQ1OTEyZDA1MmUyYzg1YTUiLCJlbWFpbCI6ImRldmVsb3BlcnNAZ3Jvb3Z5LmlkIiwiZ3Jvb3Z5aWQiOiI1ODk4MzMwY2MwZDA5OTJhNDY0NjUxMDkiLCJuYW1lIjoiVGVzIEFkbWluIiwibm92YSI6NzIwMDIzMjEzNDIxNCwicGFja2xldiI6IjEiLCJwYXNzd29yZCI6InNoYTEkMTg2MWNjNTMkMSQ5YWQzZGY3OTU3NDM3YWZhZGNmYmI4MTNlNDMzZDlhNTQ0Y2UwMTE1IiwicGhvbmUiOiI4NTcyMzM5OTAzNCIsInN0YXR1cyI6IkFrdGlmIiwic3ViaWQiOiJHUjYxOTkxNiIsImhpc3RvcnkiOltdLCJiaWxsaW5nIjpbXX0sImlhdCI6MTQ4OTk4NDA0MiwiZXhwIjoxNDg5OTkxMjQyfQ.Ie4yiijpdGmWphaVvVmv9yLKXWw63SFT1jRT1fZkUfI";
+  var decoded = jwt.decode(req.query.mysubs);
 Sub.findOne({_id: decode._id}, function(err, subs) {
   console.log( subs );
   res.json(subs);
