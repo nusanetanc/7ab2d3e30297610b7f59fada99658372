@@ -4,7 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Emp} from "./emp";
-import {Menu} from "./dashboard_menu";
+import {Menu} from "./menu";
 
 //import {ContentDashboardComponent} from "./content/dashboard.component";
 //import {ContentAllSubsComponent} from "./content/allsubs.component";
