@@ -103,10 +103,10 @@ import {Package} from "./package";
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                                 <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
                                 </button>
+                            </form>
                         </div>
                     </div>
                 </div>
