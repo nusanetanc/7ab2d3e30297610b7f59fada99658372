@@ -7,13 +7,9 @@ var randomInt = require('random-int');
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
-       Sub.findOne({id: bills.sub },function(err, doc) {
-         subname : doc.name,
-     })
-     res.json({
-       noinvoice: bills.noinvoice,
-       name: subname
-     });
+       console.log( bills );
+       res.json(bills);
+
    });
 });
 
