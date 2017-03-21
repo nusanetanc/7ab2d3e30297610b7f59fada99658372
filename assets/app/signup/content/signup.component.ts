@@ -90,6 +90,16 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                    <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                    <p>Upload your National Identity Card</p>
+                                    <div class="form-control">
+                                        <button type="button">choose file</button>
+                                        <p>No choose file</p>
+                                    </div>
+                                </div>
                             </form>
                                 <button *ngIf="selectedPackage" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
