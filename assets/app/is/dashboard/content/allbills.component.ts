@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES, Params} from 'angular2/router';
-import { Http } from 'angular2/http';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+import { Http, Response, Headers, Request, RequestOptions, RequestMethod, URLSearchParams } from 'angular2/http';
 import {Billing} from './allbill';
 
 
