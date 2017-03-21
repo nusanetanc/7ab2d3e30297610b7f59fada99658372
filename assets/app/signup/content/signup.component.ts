@@ -90,15 +90,17 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
                                     </div>
                                 </div>
-                                <P>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</P>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
-                                    <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                    <p>Upload your National Identity Card</p>
-                                    <div class="form-control">
-                                        <button type="button">choose file</button>
-                                        <p>No choose file</p>
+                                <div *ngIf="selectedPackage">
+                                    <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                        <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <p>Upload your National Identity Card</p>
+                                        <div class="form-control">
+                                            <button type="button">choose file</button>
+                                            <p>No choose file</p>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
