@@ -115,7 +115,7 @@ import { Home } from './home';
                                                 <option *ngFor="#city of cities">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -210,7 +210,12 @@ export class ContentAddSubsComponent implements OnInit {
           .map(res => res.json())
           .subscribe(typeproperties => {
             this.typeproperties = typeproperties
-          })Upload
+          })
+
+  }
+  // Get all Type from the API
+    getAllCluster() {
+      this.http.get(`${this.API}/type/listcluster`)
     .map(res => res.json())
     .subscribe(clusters => {
       this.clusters = clusters
