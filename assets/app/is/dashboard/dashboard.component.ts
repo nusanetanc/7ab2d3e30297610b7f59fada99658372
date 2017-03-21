@@ -21,13 +21,6 @@ import {Menu} from "./menu";
                             <a class="user">{{emps.titlejob}}</a>
                         </div>
                     </div>
-                    <!--
-                    <ul class="sidebar-nav nav">
-                        <li *ngFor="#menu of menus">
-                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">{{menu.icons}}</i> <strong>{{menu.title}}</strong></a>
-                        </li>
-                    </ul>
-                    -->
                     <ul class="sidebar-nav nav">
                         <li>
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
@@ -38,7 +31,18 @@ import {Menu} from "./menu";
                         <li>
                           <a [routerLink]="['AllBill']" class="collapse" ><i class="material-icons">money</i> <strong>BILLING</strong></a>
                         </li>
-
+                        <li>
+                          <a [routerLink]="['AllReport']" class="collapse" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['Information']" class="collapse" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['AllEmployee']" class="collapse" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                        </li>
+                        <li>
+                          <a [routerLink]="['AllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                        </li>
                     </ul>
                     <div class="sidebar-footer">
                         <div>
