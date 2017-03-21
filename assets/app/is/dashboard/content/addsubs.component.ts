@@ -112,7 +112,7 @@ import { Home } from './home';
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your city --</option>
-                                                <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                                <option *ngFor="#city of cities">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="paddingR30">
