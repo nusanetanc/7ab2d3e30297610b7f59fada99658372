@@ -89,7 +89,7 @@ import {Package} from "./package";
                                             <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
                                             <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm PST
                                     </div>
-                                </div>
+                                </div><br><br><br><br><br><br><br><br><br><br><br><br>
                                 <div>
                                     <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
                                     <div class="form-group">
