@@ -4,17 +4,17 @@ var City = require('../models/city');
 
 /* GET cityloye listing. */
 router.get('/listcity', function(req, res, next) {
-     City.find(function(err, citys) {
-       console.log( citys );
-       res.json(citys);
+     City.find(function(err, cities) {
+       console.log( cities );
+       res.json(cities);
    });
 });
 
 /* GET detail city. */
 router.get('/city/:id', function(req, res, next) {
-City.findById(req.params.id, function(err, citys) {
-       console.log( citys );
-       res.json(citys);
+City.findById(req.params.id, function(err, cities) {
+       console.log( cities );
+       res.json(cities);
    });
 });
 

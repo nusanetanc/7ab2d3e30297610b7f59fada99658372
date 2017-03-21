@@ -92,12 +92,12 @@ import { Home } from './home';
                                         <div class="marginT20 paddingR30">
                                             <select #subpacklev id="subpacklev" name="package" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                                <option value="level1">Level 1 - Monthly - IDR 349 K</option>
-                                                <option value="level2">Level 1 - Monthly - IDR 549 K</option>
-                                                <option value="level3">Level 1 - Monthly - IDR 899 K</option>
-                                                <option value="level4">Level 1 - Monthly - IDR 499 K</option>
-                                                <option value="level5">Level 1 - Monthly - IDR 699 K</option>
-                                                <option value="level6">Level 1 - Monthly - IDR 999 K</option>
+                                                <option value="1">Level 1 - Monthly - IDR 349 K</option>
+                                                <option value="2">Level 2 - Monthly - IDR 549 K</option>
+                                                <option value="3">Level 3 - Monthly - IDR 899 K</option>
+                                                <option value="4">Level 4 - Monthly - IDR 499 K</option>
+                                                <option value="5">Level 5 - Monthly - IDR 699 K</option>
+                                                <option value="6">Level 6 - Monthly - IDR 999 K</option>
                                             </select><br/>
                                         </div>
                                     </div>
