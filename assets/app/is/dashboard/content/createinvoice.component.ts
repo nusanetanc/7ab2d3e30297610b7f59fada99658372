@@ -33,14 +33,15 @@ import { Http } from 'angular2/http';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
+                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Billing Due Date">
                                             <select #package id="package" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                                <option value="level1">Level 1 - Monthly - IDR 349 K</option>
-                                                <option value="level2">Level 1 - Monthly - IDR 549 K</option>
-                                                <option value="level3">Level 1 - Monthly - IDR 899 K</option>
-                                                <option value="level4">Level 1 - Monthly - IDR 499 K</option>
-                                                <option value="level5">Level 1 - Monthly - IDR 699 K</option>
-                                                <option value="level6">Level 1 - Monthly - IDR 999 K</option>
+                                                <option value="1">Level 1</option>
+                                                <option value="2">Level 2</option>
+                                                <option value="3">Level 3</option>
+                                                <option value="4">Level 4</option>
+                                                <option value="5">Level 5</option>
+                                                <option value="6">Level 6</option>
                                             </select><br/>
                                             <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee">
@@ -60,7 +61,7 @@ import { Http } from 'angular2/http';
                     <div class="row">
                         <div class="col-sm-12 paddingR45">
                             <!-- Small modal -->
-                            <button type="button" class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal" data-target="#success">CONFIRM</button>
+                            <button type="button" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, package.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)"class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal">CONFIRM</button>
                         </div>
                     </div>
 
@@ -77,5 +78,48 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  // Declare empty list of people
+  bills: any[] = [];
+
+  constructor(private http: Http) {}
+
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllBill();
+  }
+
+
+// Add one person to the API
+  createInvoice(billingdate, billingduedate, subsid, package, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+
+  var body = `namepack=${package}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
+  pricestb=${stbprice}&pricerj45cable=${cablej45price}&promoname=${promoname}&pricepromo=${promoprice}
+  &changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&billdate=${billingdate}&duedate=${billingduedate}
+  &status='Waiting For Payment'&sub=${subsid}`;
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+        .post(`${this.API}/bill/addbill`,
+          body, {
+            headers: headers
+          })
+          .subscribe(data => {
+                alert('Create New Invoice Success');
+                this.getAllBill();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
+
+  // Get all Sub from the API
+  getAllBill() {
+    this.http.get(`${this.API}/bill/listbill`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+      })
+  }
 }
