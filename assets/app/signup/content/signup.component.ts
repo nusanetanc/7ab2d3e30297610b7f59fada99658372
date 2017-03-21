@@ -90,6 +90,7 @@ import {Package} from "./package";
                                             <input type="radio" name="vehicle" value="Time" /> 4:00 pm PST
                                     </div>
                                 </div>
+                                <P>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</P>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
                                     <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
