@@ -29,9 +29,6 @@ import { Http } from 'angular2/http';
                             </div>
                             <div class="row">
                                 <div class="col-sm-12 paddingL35">
-                                <a [routerLink]="['Createinvoice']" class="btn btn-default buttonOrange">
-                                    CREATE INVOICE
-                                </a>
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Billing Date">
