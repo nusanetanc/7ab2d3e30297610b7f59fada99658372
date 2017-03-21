@@ -24,7 +24,7 @@ import {ContentProfileEmployeeComponent} from "./dashboard/content/profileemploy
 import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
-
+import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
 @Component({
    selector: 'is-app',
    template: `
@@ -73,11 +73,13 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
         ContentReplayReportComponent,
         ContentAllBillsComponent,
         AuthenticationComponent,
+        ContentCreateInvoiceComponent,
         ROUTER_DIRECTIVES
     ],
 })
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
+    { path: '/is/createinvoice', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
     { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
     { path: '/is/subscribe/:id', component:ContentSubscribeComponent, name:'Subscribe'},
