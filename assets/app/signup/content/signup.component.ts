@@ -45,11 +45,11 @@ import {Package} from "./package";
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
                                 </select>
-                                <select #subno id="subgroovyid" name="no">
+                                <select #subgroovyid id="subgroovyid" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
-                                <select #subcity id="subpackage" name="package">
+                                <select #subpacklev id="subpacklev" name="package">
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
