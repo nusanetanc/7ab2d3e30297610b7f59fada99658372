@@ -35,8 +35,8 @@ import { Billing } from './billing';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
-                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Billing Due Date">
-                                            <select #package id="package" class="inputForm">
+                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subscribe ID">
+                                            <select #namepackage id="namepackage" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
                                                 <option value="1">Level 1</option>
                                                 <option value="2">Level 2</option>
@@ -63,7 +63,7 @@ import { Billing } from './billing';
                     <div class="row">
                         <div class="col-sm-12 paddingR45">
                             <!-- Small modal -->
-                            <button type="button" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, package.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)"class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal">CONFIRM</button>
+                            <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal" data-target="#success">CONFIRM</button>
                         </div>
                     </div>
 
@@ -95,9 +95,9 @@ export class ContentCreateInvoiceComponent implements OnInit {
 
 
 // Add one person to the API
-  createInvoice(billingdate, billingduedate, subsid, package, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
 
-  var body = `namepack=${package}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
+  var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&pricerj45cable=${cablej45price}&promoname=${promoname}&pricepromo=${promoprice}
   &changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&billdate=${billingdate}&duedate=${billingduedate}
   &status='Waiting For Payment'&sub=${subsid}`;
@@ -121,7 +121,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
     this.http.get(`${this.API}/bill/listbill`)
       .map(res => res.json())
       .subscribe(bills => {
-        this.subs = bills
+        this.bills = bills
       })
   }
 }
