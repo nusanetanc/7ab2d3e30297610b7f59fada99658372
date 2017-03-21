@@ -8,10 +8,11 @@ var randomInt = require('random-int');
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
        Sub.findOne({id: bills.sub },function(err, doc) {
-         res.json({
-           noinvoice: bills.noinvoice,
-           name: doc.name
-         });
+         subname : doc.name,
+     });
+     res.json({
+       noinvoice: bills.noinvoice,
+       name: subname
      });
    });
 });
