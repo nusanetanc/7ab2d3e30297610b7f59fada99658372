@@ -42,7 +42,7 @@ import {Billing} from './allbill';
                         <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
                         <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
                         <div class="col-sm-1 invoiceList"><span class="green"></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red"></span></div>
+                        <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
                     </div>
                 </div>
             </div>
