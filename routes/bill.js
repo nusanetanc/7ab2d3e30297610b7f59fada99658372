@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var Bill = require('../models/bill');
+var Sub = require('../models/subs');
 var randomInt = require('random-int');
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
-       console.log( bills );
-       res.json(bills);
+       Sub.findOne({_id: bills._id },function(err, docs) {
+         res.json({
+           noinvoice: bills.noinvoice,
+           name: docs.name
+         });
+     });
    });
 });
 
