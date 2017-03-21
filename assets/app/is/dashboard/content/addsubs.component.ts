@@ -244,7 +244,7 @@ export class ContentAddSubsComponent implements OnInit {
   }
   // Get all Type from the API
     getAllCluster() {
-      this.http.get(`${this.API}/type/listcluster`)
+      this.http.get(`${this.API}/cluster/listcluster`)
     .map(res => res.json())
     .subscribe(clusters => {
       this.clusters = clusters
