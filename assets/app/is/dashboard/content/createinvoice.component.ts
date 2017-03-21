@@ -1,6 +1,8 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
+import { Billing } from './billing';
 
 
 @Component({
@@ -77,7 +79,7 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentCreateInvoiceComponent {
+export class ContentCreateInvoiceComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
@@ -118,8 +120,8 @@ export class ContentCreateInvoiceComponent {
   getAllBill() {
     this.http.get(`${this.API}/bill/listbill`)
       .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
+      .subscribe(bills => {
+        this.subs = bills
       })
   }
 }
