@@ -6,6 +6,16 @@ import { Http } from 'angular2/http';
 @Component({
     selector: 'form-addreport',
     template: `
+    <!-- Page content -->
+<div id="page-content-wrapper">
+    <div class="content-header">
+        <h3 id="home">
+            <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+            </a>
+            &nbsp; Subscribers
+        </h3>
+
+    </div>
     <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row subInfo">
                 <div class="col-sm-12">
@@ -62,7 +72,7 @@ import { Http } from 'angular2/http';
 
     </div>
 
-</div><!-- END CONTENT -->
+</div></div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
