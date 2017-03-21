@@ -25,35 +25,35 @@ import {Package} from "./package";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>                            
-                                <select *ngIf="!selectedCity" (change)="onChangeCity($event.target.value)" name="cars">
+                                <select name="cars">
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
                                 </select>
-                                 <select *ngIf="selectedCity" [hidden]="selectedNo" (change)="onChangeProperty($event.target.value)" name="property">
+                                 <select name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
                                 </select>
-                                <select *ngIf="selectedProperty" [hidden]="selectedNo" (change)="onChangeType($event.target.value)" name="type">
+                                <select name="type">
                                     <option class="option" disabled="true" selected="true">-- Select Type --</option>
                                     <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty.name }}">{{ typeproperty.name }}</option>      
                                 </select>
-                                <select *ngIf="selectedType" [hidden]="selectedNo" (change)="onChangeCluster($event.target.value)" name="cluster">
+                                <select name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
                                 </select>
-                                <select *ngIf="selectedCluster" [hidden]="selectedNo" (change)="onChangeBlok($event.target.value)" name="block">
+                                <select name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
                                 </select>
-                                <select *ngIf="selectedBlok" [hidden]="selectedNo" (change)="onChangeNo($event.target.value)" #subgroovyid id="subgroovyid" name="no">
+                                <select #subgroovyid id="subgroovyid" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
-                                <select *ngIf="selectedNo" [hidden]="selectedPackage" (change)="onChangePackage($event.target.value)" #subpacklev id="subpacklev" name="package">
+                                <select #subpacklev id="subpacklev" name="package">
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <div *ngIf="selectedPackage">
+                                <div>
                                     <p>Please select a installation date</p>
                                     <div class="col-sm-6">
                                         <div class="container">
@@ -77,7 +77,7 @@ import {Package} from "./package";
                                         </div>
                                     </div>
                                 </div>
-                                <div *ngIf="selectedPackage">
+                                <div>
                                     <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
                                             <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
@@ -104,7 +104,7 @@ import {Package} from "./package";
                                     </div>
                                 </div>
                             </form>
-                                <button *ngIf="selectedPackage" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
+                                <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
                                 </button>
                         </div>
