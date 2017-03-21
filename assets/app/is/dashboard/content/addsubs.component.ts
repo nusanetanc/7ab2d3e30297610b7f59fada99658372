@@ -115,36 +115,7 @@ import { Home } from './home';
                                                 <option *ngFor="#city of cities">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
-                                        <div class="paddingR30">
-                                            <select class="inputForm" name="property">
-                                                <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                <option *ngFor="#property of properties" value="{{ property._id }}">Jakarta</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="paddingR30">
-                                            <select class="inputForm" name="type">
-                                                <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                                <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty._id }}">{{ typeproperty.name }}</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="paddingR30">
-                                            <select class="inputForm" name="cluster">
-                                                <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                                <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster._id }}</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="paddingR30">
-                                            <select class="inputForm" name="block">
-                                                <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                                <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="paddingR30">
-                                            <select class="inputForm"  #subgroovyid id="subgroovyid" name="subgroovyid">
-                                                <option class="option" disabled="true" selected="true">-- Select No. --</option>
-                                                <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
-                                            </select><br/>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="row">
