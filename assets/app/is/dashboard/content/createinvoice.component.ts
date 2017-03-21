@@ -63,7 +63,7 @@ import { Billing } from './billing';
                     <div class="row">
                         <div class="col-sm-12 paddingR45">
                             <!-- Small modal -->
-                            <button type="button" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, package.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)"class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal">CONFIRM</button>
+                            <button type="button" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, package.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20" data-toggle="modal">CONFIRM</button>
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
     this.http.get(`${this.API}/bill/listbill`)
       .map(res => res.json())
       .subscribe(bills => {
-        this.subs = bills
+        this.bills = bills
       })
   }
 }
