@@ -41,13 +41,13 @@ import {Menu} from "./menu";
                           <a [routerLink]="['AllEmployee']" class="collapse" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['AasllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                          <a [routerLink]="['AllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
                         <div>
                             <img src="./images/groovy-grayscale.png" alt="ava">
-                            <a href="">Privacysad</a>
+                            <a href="">Privacy</a>
                             <a href="">Terms</a>
                         </div>
                     </div>
