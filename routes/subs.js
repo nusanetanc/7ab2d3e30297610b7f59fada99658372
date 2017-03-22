@@ -107,8 +107,12 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.status= req.body.status;
                 sub.groovyid= req.body.groovyid;
                 sub.phone= req.body.phone;
+<<<<<<< HEAD
+                sub.datebrith= req.body.datebrith;
+=======
                 sub.idnumber= req.body.idnumber;
                 sub.datebirth= req.body.datebirth;
+>>>>>>> 461f4dccef71085bb898f012c80fd04b9b9c3a88
               if (err)
                 res.send(err);
 
