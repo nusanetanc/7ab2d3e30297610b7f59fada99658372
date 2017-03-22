@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -172,6 +172,15 @@ export class ContentSubscribeComponent {
 
     constructor(private http: Http, public route: ActivatedRoute) {}
 
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+      this.getSub();
+      this.sub = this.route
+        .params
+        .subscribe(params => {
+            this.mode = params['id'];
+    });
+    }
 
   // Get all users from the API
   getSub() {

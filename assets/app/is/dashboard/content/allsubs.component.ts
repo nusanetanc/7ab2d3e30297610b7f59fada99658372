@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Router, ROUTER_DIRECTIVES, ActivatedRoute } from 'angular2/router';
+import {ROUTER_DIRECTIVES } from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
