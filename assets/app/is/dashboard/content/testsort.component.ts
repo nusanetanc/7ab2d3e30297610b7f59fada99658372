@@ -6,10 +6,10 @@ import 'rxjs/add/operator/map';
 @Component({
     selector: 'form-test',
     template: `
+    <body ng-app="orderByExample2">
     <div class="row">
-        <h1>TEST</h1>
+        <h1 style="margin-left: 200px">TEST</h1>
     </div>
-    <div ng-app="orderByExample2">
       <div ng-controller="ExampleController">
       <pre>Sort by = {{propertyName}}; reverse = {{reverse}}</pre>
       <hr/>
@@ -37,7 +37,7 @@ import 'rxjs/add/operator/map';
         </tr>
       </table>
     </div>
-    </div>
+    </body>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
