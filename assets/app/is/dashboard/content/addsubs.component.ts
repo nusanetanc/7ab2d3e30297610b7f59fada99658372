@@ -164,7 +164,7 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
 
     onSelect(deviceValue) {
-        this.states = this.getAllProperty()
+        this.properties = this.getAllProperty()
             .filter((item)=> item.deviceValue == deviceValue);
     }
 
