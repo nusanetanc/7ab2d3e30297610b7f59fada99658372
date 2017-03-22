@@ -75,7 +75,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Jln. Media No. 14,<br>Komplek Indah, Bandung</span>
+                                    <span>Jln. Media No. {{ homes.nohome }},<br>Komplek Indah, Bandung</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -191,8 +191,8 @@ export class ContentSubscribeComponent {
   getHome() {
     this.http.get(`${this.API}/subscribe/sub/{{subs.groovyid}}`)
       .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
+      .subscribe(homes => {
+        this.homes = homes
       })
   }
 }
