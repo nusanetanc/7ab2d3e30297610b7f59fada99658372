@@ -165,7 +165,7 @@ export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
-
+    groovyid = '5898330cc0d0992a46465109';
 
     // Declare empty list of people
     subs: any[] = [];
@@ -190,7 +190,7 @@ export class ContentSubscribeComponent {
   }
   // Get all homes from the API
   getHome() {
-    this.http.get(`${this.API}/home/home/${this.subhomes}`)
+    this.http.get(`${this.API}/home/home/${this.groovyid}`)
       .map(res => res.json())
       .subscribe(homes => {
         this.homes = homes
