@@ -10,6 +10,7 @@ import { Cluster } from './cluster';
 import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
+import {Streetname} from "./street_name";
 
 @Component({
     selector: 'form-addsubs',
@@ -133,8 +134,8 @@ import {Package} from "./package";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Selesct your street name --</option>
-                                                <option *ngFor="#blokfloor of blokfloors">{{ blokfloor.name }}</option>
+                                                <option disabled="true" selected="true">-- Select your street name --</option>
+                                                <option *ngFor="#streetname of streetnames">{{ streetname.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -174,6 +175,7 @@ export class ContentAddSubsComponent implements OnInit {
     blokfloors: any[] = [];
     homes: any[] = [];
     packages: any[] = [];
+    streetnames: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -187,11 +189,12 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllBLokfloor();
         this.getAllHome();
         this.getAllPackage();
+        this.getAllStreet();
     }
 
 
 // Add one person to the API
-    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
+    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber, streetname) {
 
         var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
         var headers = new Headers();
@@ -273,6 +276,15 @@ export class ContentAddSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(packages => {
                 this.packages = packages
+            })
+    }
+
+    // Get all Street from the API
+    getAllStreet() {
+        this.http.get(`${this.API}/streetname/liststreetname`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
             })
     }
 }
