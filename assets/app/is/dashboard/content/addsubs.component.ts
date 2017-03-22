@@ -109,8 +109,8 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select (change)="onSelect($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your city --</option>
+                                            <select [(ngModel)]="selectedCountry._id" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0" disabled="true" selected="true">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value="{{ city._id}}">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
@@ -162,8 +162,8 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
-
-    onSelect(cityid): void {
+    selectedCity:City = new City(0, 'India');
+    onSelect(cityid){
         console.log(cityid);
         this.properties = this.getAllProperty()
             .filter((item)=> item.cityid == cityid);
