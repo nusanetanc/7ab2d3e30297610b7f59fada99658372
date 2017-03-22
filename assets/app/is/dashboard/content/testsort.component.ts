@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
     template: `
     <body ng-app="orderByExample2">
     <div class="row">
-        <h1 style="padding-left: 50px">TEST</h1>
+        <h1 style="margin-left: 200px">TEST</h1>
     </div>
       <div ng-controller="ExampleController">
       <pre>Sort by = {{propertyName}}; reverse = {{reverse}}</pre>
