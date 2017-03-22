@@ -15,7 +15,9 @@
     <link rel='stylesheet' href='/css/style.css'/>
     <link rel='stylesheet' href='/css/style-dashboard.css'/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.24/system.js"></script>
     <script src="https://npmcdn.com/rxjs@5.0.0-beta.2/bundles/Rx.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.14/angular2-polyfills.min.js"></script>
@@ -55,8 +57,35 @@
     System.import('boot')
             .then(null, console.error.bind(console));
 </script>
+
 <!-- Collaps JS -->
 <script type="text/javascript">
+
+   /*SortJS*/
+   (function(angular) {
+       'use strict';
+       angular.module('orderByExample2', [])
+               .controller('ExampleController', ['$scope', function($scope) {
+                   var friends = [
+                       {name: 'John',   phone: '555-1212',  age: 10},
+                       {name: 'Mary',   phone: '555-9876',  age: 19},
+                       {name: 'Mike',   phone: '555-4321',  age: 21},
+                       {name: 'Adam',   phone: '555-5678',  age: 35},
+                       {name: 'Julie',  phone: '555-8765',  age: 29}
+                   ];
+
+                   $scope.propertyName = 'age';
+                   $scope.reverse = true;
+                   $scope.friends = friends;
+
+                   $scope.sortBy = function(propertyName) {
+                       $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+                       $scope.propertyName = propertyName;
+                   };
+               }]);
+   })(window.angular);
+
+
   /*Menu-toggle*/
   $("#menu-toggle").click(function(e) {
       e.preventDefault();
