@@ -60,19 +60,12 @@ export class ContentAllSubsComponent {
 
     // Declare empty list of people
       subs: any[] = [];
-      sub: any[] = [];
-      mode: any[] = [];
-      
-    constructor(private http: Http, public route: ActivatedRoute) {}
+
+    constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getAllSub();
-      this.sub = this.route
-        .params
-        .subscribe(params => {
-            this.mode = params['id'];
-    });
     }
 
   // Get all users from the API

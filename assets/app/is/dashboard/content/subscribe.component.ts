@@ -167,17 +167,24 @@ export class ContentSubscribeComponent {
     subid = '58b3cdac45912d052e2c85a5';
     // Declare empty list of people
     subs: any[] = [];
+    sub: any[] = [];
+    mode: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, public route: ActivatedRoute) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
+      this.sub = this.route
+        .params
+        .subscribe(params => {
+            this.mode = params['id'];
+    });
     }
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
+    this.http.get(`${this.API}/subscribe/sub/${this.mode}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
