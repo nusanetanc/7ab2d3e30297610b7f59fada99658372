@@ -133,7 +133,7 @@ import {Package} from "./package";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your street name --</option>
+                                                <option disabled="true" selected="true">-- Selesct your street name --</option>
                                                 <option *ngFor="#blokfloor of blokfloors">{{ blokfloor.name }}</option>
                                             </select><br/>
                                         </div>
