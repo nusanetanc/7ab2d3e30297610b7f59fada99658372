@@ -286,7 +286,7 @@ color: #ea442d;
 }
 
 .price-box-header-level{
-background-color: #999;
+background-color: #fff;
     font-size: 20px;
     font-weight: 200;
     color: #fff;
@@ -294,11 +294,11 @@ background-color: #999;
 }
 .anak {
     padding: 15px 0 15px 0;
-    background-color:#999;
+    background-color:#fff;
 }
 .anak:hover {
     padding: 15px 0 15px 0;
-    background-color:#999;
+    background-color:#ea442d;
 }
 .package-most-popular{
     background-size: 121px;
