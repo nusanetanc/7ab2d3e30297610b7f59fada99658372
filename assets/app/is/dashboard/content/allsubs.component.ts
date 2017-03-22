@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Router, ROUTER_DIRECTIVES, ActivatedRoute } from 'angular2/router';
+import {ROUTER_DIRECTIVES } from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -59,7 +59,7 @@ export class ContentAllSubsComponent {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    subs: any[] = [];
+      subs: any[] = [];
 
     constructor(private http: Http) {}
 
