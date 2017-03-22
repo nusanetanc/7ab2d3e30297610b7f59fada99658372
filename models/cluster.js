@@ -1,10 +1,10 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
-var TypeProperty = require('../models/type');
+var Property = require('../models/property');
 
 var ClusterSchema   = new Schema({
   name: String,
-    typeproperty: {type: Schema.Types.ObjectId, ref: 'TypeProperty'}
+  property: {type: Schema.Types.ObjectId, ref: 'Property'}
 });
 
 module.exports = mongoose.model('Cluster', ClusterSchema);
