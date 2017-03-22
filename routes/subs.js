@@ -105,6 +105,7 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.status= req.body.status;
                 sub.groovyid= req.body.groovyid;
                 sub.phone= req.body.phone;
+                sub.datebrith= req.body.datebrith;
               if (err)
                 res.send(err);
 
