@@ -41,7 +41,7 @@ Sub.findById(req.params.id, function(err, subs) {
         email: subs.email,
         name: subs.name,
         nova: subs.nova,
-        packlev: subs,packlev,
+        packlev: subs.packlev,
         phone: subs.phone,
         status: subs.status,
         datebrith: subs.datebrith,
