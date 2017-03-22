@@ -14,6 +14,8 @@ var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
 var Bill = require('../models/bill');
+var City = require('../models/city');
+var Cluster = require('../models/cluster');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -37,21 +39,27 @@ router.get('/listsub', function(req, res, next) {
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
   Home.findById(subs.groovyid, function(err, homes) {
-      res.json({
-        email: subs.email,
-        name: subs.name,
-        nova: subs.nova,
-        packlev: subs.packlev,
-        phone: subs.phone,
-        status: subs.status,
-        datebrith: subs.datebrith,
-        idnumber: subs.idnumber,
-        groovyid: homes.groovyid,
-        address: homes.address,
-        nohome: homes.nohome
+    Cluster.findById(home.cluster, function(err, clusters) {
+      City.findById(home.city, function(err, cities) {
+            res.json({
+              email: subs.email,
+              name: subs.name,
+              nova: subs.nova,
+              packlev: subs.packlev,
+              phone: subs.phone,
+              status: subs.status,
+              datebrith: subs.datebrith,
+              idnumber: subs.idnumber,
+              groovyid: homes.groovyid,
+              address: homes.address,
+              nohome: homes.nohome,
+              cluster: clusters.name,
+              city: cities.name
+            });
+          });
+        });
       });
-   });
-});
+    });
 });
 
 /* GET detail sub. */
