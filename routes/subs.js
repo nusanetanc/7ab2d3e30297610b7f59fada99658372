@@ -109,7 +109,6 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.phone= req.body.phone;
                 sub.datebrith= req.body.datebrith;
                 sub.idnumber= req.body.idnumber;
-                sub.datebirth= req.body.datebirth;
               if (err)
                 res.send(err);
 
