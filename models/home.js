@@ -14,6 +14,7 @@ var HomeSchema   = new Schema({
   cluster: {type: Schema.Types.ObjectId, ref: 'Cluster'},
   blokfloor: {type: Schema.Types.ObjectId, ref: 'Blokfloor'},
   nohome: Number,
+  address: String,
   vendorfo: String,
   vendortv: String,
   perangkat: [String]
