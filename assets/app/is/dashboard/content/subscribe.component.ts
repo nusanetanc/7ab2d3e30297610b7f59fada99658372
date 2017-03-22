@@ -165,13 +165,12 @@ export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
-  groovyid = '5898330cc0d0992a46465109';
+    groovyid = '5898330cc0d0992a46465109';
     cluster = '58982738f60815180d148f14';
     city = '5897f8145985cd5957e81a6d';
 
     // Declare empty list of people
     subs: any[] = [];
-    homes: any[] = [];
     clusters: any[] = [];
     cities: any[] = [];
 
@@ -180,7 +179,6 @@ export class ContentSubscribeComponent {
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
-      this.getHome();
       this.getCluster();
       this.getCity();
     }
