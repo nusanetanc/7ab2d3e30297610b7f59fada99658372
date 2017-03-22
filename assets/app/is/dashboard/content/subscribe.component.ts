@@ -171,14 +171,14 @@ export class ContentSubscribeComponent {
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
-    ngOnInit() {
-      this.getSub();
-      this.route.params.subscribe(
-         (params : Params) => {
-            this.id = params["id"];
-         }
-        )
-    }
+  //  ngOnInit() {
+  //    this.getSub();
+  //    this.route.params.subscribe(
+    //     (params : Params) => {
+      //      this.id = params["id"];
+      //   }
+      //  )
+  //  }
 
 
   // Get all users from the API
