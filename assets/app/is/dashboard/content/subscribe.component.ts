@@ -165,7 +165,7 @@ export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
-    groovyid = this.subs.groovyid;
+    groovyid = '5898330cc0d0992a46465109';
     cluster = '58982738f60815180d148f14';
     city = '5897f8145985cd5957e81a6d';
 
@@ -195,14 +195,7 @@ export class ContentSubscribeComponent {
   }
   // Get all homes from the API
   getHome() {
-    this.http.get(`${this.API}/home/home/${this.groovyid}`)
-      .map(res => res.json())
-      .subscribe(homes => {
-        this.homes = homes
-      })
-  }
-  getHome() {
-    this.http.get(`${this.API}/home/home/${this.groovyid}`)
+    this.http.get(`${this.API}/home/home/this.getSub(subs.groovyid)`)
       .map(res => res.json())
       .subscribe(homes => {
         this.homes = homes
