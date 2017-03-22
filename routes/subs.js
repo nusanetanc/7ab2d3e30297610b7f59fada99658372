@@ -50,6 +50,7 @@ Sub.findById(req.params.id, function(err, subs) {
       });
    });
 });
+});
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
