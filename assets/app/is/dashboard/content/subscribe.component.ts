@@ -104,7 +104,7 @@ import { Sub } from './subs';
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-xs-6 col-md-3">
-                                    <img class="images/{{ subs._id }}.png" src="photoprofile.png" alt="photoprofile">
+                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
                                 </div>
                             </div>
                         </div>
