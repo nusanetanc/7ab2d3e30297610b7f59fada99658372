@@ -111,7 +111,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select (change)="onSelect($event.target.value)" class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your city --</option>
-                                                <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                                <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -163,7 +163,8 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
 
-    onSelect(deviceValue) {
+    onSelect(deviceValue): void {
+        console.log(deviceValue);
         this.properties = this.getAllProperty()
             .filter((item)=> item.deviceValue == deviceValue);
     }
