@@ -9,6 +9,7 @@ import { Type } from './type';
 import { Cluster } from './cluster';
 import { Blokfloor } from './blokfloor';
 import { Home } from './home';
+import {Package} from "./package";
 
 @Component({
     selector: 'form-addsubs',
@@ -172,6 +173,7 @@ export class ContentAddSubsComponent implements OnInit {
   clusters: any[] = [];
   blokfloors: any[] = [];
   homes: any[] = [];
+  packages: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -184,6 +186,7 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllCluster();
     this.getAllBLokfloor();
     this.getAllHome();
+    this.getAllPackage();
   }
 
 
@@ -256,11 +259,20 @@ export class ContentAddSubsComponent implements OnInit {
       })
   }
 // Get all Home from the API
-getAllHome() {
-this.http.get(`${this.API}/home/listhome`)
-  .map(res => res.json())
-  .subscribe(homes => {
-    this.homes = homes
-  })
-}
+    getAllHome() {
+    this.http.get(`${this.API}/home/listhome`)
+      .map(res => res.json())
+      .subscribe(homes => {
+        this.homes = homes
+      })
+    }
+
+    // Get all Package from the API
+    getAllPackage() {
+        this.http.get(`${this.API}/package/listpackage`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
+            })
+    }
 }
