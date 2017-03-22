@@ -154,8 +154,8 @@ export class ContentSubscribeComponent {
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
-      this.params = injector.parent.parent.get(RouteParams);
-      this.subid = this.params.get('id');
+      //this.params = injector.parent.parent.get(RouteParams);
+      //this.subid = this.params.get('id');
     }
 
   // Get all users from the API
