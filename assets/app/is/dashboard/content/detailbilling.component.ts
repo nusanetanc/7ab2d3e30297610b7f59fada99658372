@@ -237,19 +237,19 @@ import { Billing } from './billing';
 export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Billing_ID = '589873f31293e406e041fbd8';
+  Billing_ID = '58d237f5ca0d0a5c78e44b34';
 
   bills: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.getAllBills();
+    this.getBills();
   }
 
 
 // Get all users from the API
-getAllBills() {
+getBills() {
  this.http.get(`${this.API}/bill/idbill/${Billing_ID}`)
    .map(res => res.json())
    .subscribe(bills => {
