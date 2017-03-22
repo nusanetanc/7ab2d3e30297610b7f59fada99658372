@@ -18,13 +18,14 @@ var modul = require('./routes/modul');
 var bill = require('./routes/bill');
 var city = require('./routes/city');
 var property = require('./routes/property');
-var type = require('./routes/type');
+//var type = require('./routes/type');
 var cluster = require('./routes/cluster');
 var blokfloor = require('./routes/blokfloor');
 var home = require('./routes/home');
 var information = require('./routes/information');
 var menu = require('./routes/menu');
 var problem = require('./routes/problem');
+var streetname = require('./routes/street_name');
 
 // api for finnet
 var finnet = require('./routes/finnet');
@@ -61,13 +62,14 @@ app.use('/modul', modul);
 app.use('/bill', bill);
 app.use('/city', city);
 app.use('/property', property);
-app.use('/type', type);
+//app.use('/type', type);
 app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
 app.use('/home', home);
 app.use('/information', information);
 app.use('/menu', menu);
 app.use('/problem', problem);
+app.use('/streetname', problem);
 
 app.use('/api/finnet', finnet);
 

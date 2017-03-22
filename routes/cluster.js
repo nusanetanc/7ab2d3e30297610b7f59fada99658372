@@ -22,7 +22,7 @@ Cluster.findById(req.params.id, function(err, clusters) {
 router.post('/addcluster', function(req, res, next) {
   var cluster = new Cluster();
     cluster.name= req.body.name;
-    cluster.typeproperty= req.body.typeproperty;
+    cluster.property= req.body.property;
 
     cluster.save(function(err) {
       if (err)
