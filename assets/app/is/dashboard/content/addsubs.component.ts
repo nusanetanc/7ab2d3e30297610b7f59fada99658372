@@ -121,12 +121,6 @@ import {Package} from "./package";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your type property --</option>
-                                                <option *ngFor="#type of typeproperties">{{ type.name }}</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your cluster --</option>
                                                 <option *ngFor="#cluster of clusters">{{ cluster.name }}</option>
                                             </select><br/>
