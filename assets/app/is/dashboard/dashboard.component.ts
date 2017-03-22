@@ -21,9 +21,9 @@ import {Menu} from "./menu";
                             <a class="user">{{emps.titlejob}}</a>
                         </div>
                     </div>
-                    <ul class="sidebar-nav nav">
+                    <ul class="sidebar-nav nav"></ul>
                         <li>
-                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong>
                         </li>
                         <li>
                           <a [routerLink]="['AllSubs']" class="collapse" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
