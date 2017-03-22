@@ -116,7 +116,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Level {{ subs.packlev }} (Internet & TV)</span>
+                                    <span>Level {{ subs.packlev }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -142,7 +142,7 @@ import { Sub } from './subs';
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    subid = '58d0de02f603d13c13d9def9';
+    subid = '58b3cdac45912d052e2c85a5';
 
 
     // Declare empty list of people
