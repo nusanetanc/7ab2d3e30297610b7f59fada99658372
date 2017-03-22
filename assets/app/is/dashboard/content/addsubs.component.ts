@@ -9,7 +9,6 @@ import { Type } from './type';
 import { Cluster } from './cluster';
 import { Blokfloor } from './blokfloor';
 import { Home } from './home';
-import {Package} from "./package";
 
 @Component({
     selector: 'form-addsubs',
@@ -95,7 +94,12 @@ import {Package} from "./package";
                                         <div class="marginT20 paddingR30">
                                             <select #subpacklev id="subpacklev" name="package" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                                <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                                <option value="1">Level 1 - Monthly - IDR 349 K</option>
+                                                <option value="2">Level 2 - Monthly - IDR 549 K</option>
+                                                <option value="3">Level 3 - Monthly - IDR 899 K</option>
+                                                <option value="4">Level 4 - Monthly - IDR 499 K</option>
+                                                <option value="5">Level 5 - Monthly - IDR 699 K</option>
+                                                <option value="6">Level 6 - Monthly - IDR 999 K</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -117,6 +121,12 @@ import {Package} from "./package";
                                             <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties">{{ property.name }}</option>
+                                            </select><br/>
+                                        </div>
+                                        <div class="marginT20 paddingR30">
+                                            <select class="inputForm" name="cars">
+                                                <option disabled="true" selected="true">-- Select your type property --</option>
+                                                <option *ngFor="#type of typeproperties">{{ type.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -167,7 +177,6 @@ export class ContentAddSubsComponent implements OnInit {
   clusters: any[] = [];
   blokfloors: any[] = [];
   homes: any[] = [];
-  packages: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -180,7 +189,6 @@ export class ContentAddSubsComponent implements OnInit {
     this.getAllCluster();
     this.getAllBLokfloor();
     this.getAllHome();
-    this.getAllPackage();
   }
 
 
@@ -253,20 +261,11 @@ export class ContentAddSubsComponent implements OnInit {
       })
   }
 // Get all Home from the API
-    getAllHome() {
-    this.http.get(`${this.API}/home/listhome`)
-      .map(res => res.json())
-      .subscribe(homes => {
-        this.homes = homes
-      })
-    }
-
-    // Get all Package from the API
-    getAllPackage() {
-        this.http.get(`${this.API}/package/listpackage`)
-            .map(res => res.json())
-            .subscribe(packages => {
-                this.packages = packages
-            })
-    }
+getAllHome() {
+this.http.get(`${this.API}/home/listhome`)
+  .map(res => res.json())
+  .subscribe(homes => {
+    this.homes = homes
+  })
+}
 }
