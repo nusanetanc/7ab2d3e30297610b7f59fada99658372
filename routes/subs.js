@@ -35,8 +35,19 @@ router.get('/listsub', function(req, res, next) {
 /* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
-       console.log( subs );
-       res.json(subs);
+  Home.findById(subs.groovyid, function(err, homes) {
+      res.json({
+        email: subs.email,
+        name: subs.name,
+        nova: subs.nova,
+        packlev: subs,packlev,
+        phone: subs.phone,
+        status: subs.status,
+        datebrith: subs.datebrith,
+        idnumber: subs.idnumber,
+        groovyid: homes.groovyid,
+        nohome: homes.address
+      });
    });
 });
 
