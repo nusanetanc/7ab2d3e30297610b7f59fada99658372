@@ -75,7 +75,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ homes.address }} No. {{ homes.nohome }},<br>Komplek Indah, Bandung</span>
+                                    <span>{{ homes.address }} No. {{ homes.nohome }},<br>{{ clusters.name }}, {{ cities.name }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -166,10 +166,14 @@ export class ContentSubscribeComponent {
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
     groovyid = '5898330cc0d0992a46465109';
+    cluster = '58982738f60815180d148f14';
+    cities = '5897f8145985cd5957e81a6d';
 
     // Declare empty list of people
     subs: any[] = [];
     homes: any[] = [];
+    clusters: any[] = [];
+    cities: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -177,6 +181,8 @@ export class ContentSubscribeComponent {
     ngOnInit() {
       this.getSub();
       this.getHome();
+      this.getCluster();
+      this.getCity();
     }
 
   // Get all users from the API
@@ -201,6 +207,20 @@ export class ContentSubscribeComponent {
       .map(res => res.json())
       .subscribe(homes => {
         this.homes = homes
+      })
+  }
+  getCluster() {
+    this.http.get(`${this.API}/cluster/cluster/${this.cluster}`)
+      .map(res => res.json())
+      .subscribe(clusters => {
+        this.clusters = clusters
+      })
+  }
+  getCity() {
+    this.http.get(`${this.API}/city/city/${this.city}`)
+      .map(res => res.json())
+      .subscribe(cities => {
+        this.cities = cities
       })
   }
 }
