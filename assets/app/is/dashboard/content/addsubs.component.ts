@@ -132,6 +132,12 @@ import {Package} from "./package";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
+                                            <select class="inputForm" name="cars">
+                                                <option disabled="true" selected="true">-- Selesct your street name --</option>
+                                                <option *ngFor="#blokfloor of blokfloors">{{ blokfloor.name }}</option>
+                                            </select><br/>
+                                        </div>
+                                        <div class="marginT20 paddingR30">
                                             <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your no home --</option>
                                                 <option *ngFor="#home of homes">{{ home.nohome }}</option>

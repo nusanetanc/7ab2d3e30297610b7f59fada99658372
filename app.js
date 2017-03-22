@@ -69,7 +69,7 @@ app.use('/home', home);
 app.use('/information', information);
 app.use('/menu', menu);
 app.use('/problem', problem);
-app.use('/streetname', problem);
+app.use('/streetname', streetname);
 
 app.use('/api/finnet', finnet);
 
