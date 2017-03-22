@@ -163,9 +163,9 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
 
-    onSelect(cityid) {
+    onSelect(deviceValue) {
         this.states = this.getAllProperty()
-            .filter((item)=> item.cityid == cityid);
+            .filter((item)=> item.deviceValue == deviceValue);
     }
 
 // Link to our api, pointing to localhost
