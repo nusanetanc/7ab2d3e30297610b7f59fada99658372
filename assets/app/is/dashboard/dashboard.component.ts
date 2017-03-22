@@ -47,7 +47,7 @@ import {Menu} from "./menu";
                     <div class="sidebar-footer">
                         <div>
                             <img src="./images/groovy-grayscale.png" alt="ava">
-                            <a href="">Privacy</a>
+                            <a href="">Privacysad</a>
                             <a href="">Terms</a>
                         </div>
                     </div>
