@@ -81,6 +81,8 @@ router.post('/addsub', function(req, res, next) {
     sub.regisref= req.body.regisref;
     sub.groovyid= req.body.groovyid;
     sub.phone= req.body.phone;
+    sub.idnumber= req.body.idnumber;
+    sub.datebirth= req.body.datebirth;
 
     sub.save(function(err) {
       if (err)
@@ -105,6 +107,8 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.status= req.body.status;
                 sub.groovyid= req.body.groovyid;
                 sub.phone= req.body.phone;
+                sub.idnumber= req.body.idnumber;
+                sub.datebirth= req.body.datebirth;
               if (err)
                 res.send(err);
 
