@@ -109,14 +109,14 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCountry._id" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
                                                 <option value="0" disabled="true" selected="true">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value="{{ city._id}}">{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your property --</option>
+                                                <option *ngIf='selectedCity._id == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties">{{ property.name }}</option>
                                             </select><br/>
                                         </div>
