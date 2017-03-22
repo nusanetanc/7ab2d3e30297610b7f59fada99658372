@@ -167,7 +167,7 @@ export class ContentSubscribeComponent {
     subid = '58b3cdac45912d052e2c85a5';
     groovyid = '5898330cc0d0992a46465109';
     cluster = '58982738f60815180d148f14';
-    cities = '5897f8145985cd5957e81a6d';
+    city = '5897f8145985cd5957e81a6d';
 
     // Declare empty list of people
     subs: any[] = [];
