@@ -176,7 +176,6 @@ export class ContentSubscribeComponent {
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
-        })
     }
 
   // Get all users from the API
