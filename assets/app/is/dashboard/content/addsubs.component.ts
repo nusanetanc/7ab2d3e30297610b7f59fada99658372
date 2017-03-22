@@ -9,6 +9,7 @@ import { Type } from './type';
 import { Cluster } from './cluster';
 import { Blokfloor } from './blokfloor';
 import { Home } from './home';
+import {Package} from "./package";
 
 @Component({
     selector: 'form-addsubs',
@@ -40,7 +41,9 @@ import { Home } from './home';
                                             <div class="form-group">
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
-                                                <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Emaill">
+                                                <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
+                                                <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
+                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
                                                 <p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button">choose file</button>
@@ -92,12 +95,7 @@ import { Home } from './home';
                                         <div class="marginT20 paddingR30">
                                             <select #subpacklev id="subpacklev" name="package" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
-                                                <option value="1">Level 1 - Monthly - IDR 349 K</option>
-                                                <option value="2">Level 2 - Monthly - IDR 549 K</option>
-                                                <option value="3">Level 3 - Monthly - IDR 899 K</option>
-                                                <option value="4">Level 4 - Monthly - IDR 499 K</option>
-                                                <option value="5">Level 5 - Monthly - IDR 699 K</option>
-                                                <option value="6">Level 6 - Monthly - IDR 999 K</option>
+                                                <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -123,12 +121,6 @@ import { Home } from './home';
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your type property --</option>
-                                                <option *ngFor="#type of typeproperties">{{ type.name }}</option>
-                                            </select><br/>
-                                        </div>
-                                        <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your cluster --</option>
                                                 <option *ngFor="#cluster of clusters">{{ cluster.name }}</option>
                                             </select><br/>
@@ -140,7 +132,7 @@ import { Home } from './home';
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
+                                            <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your no home --</option>
                                                 <option *ngFor="#home of homes">{{ home.nohome }}</option>
                                             </select><br/>
@@ -150,7 +142,7 @@ import { Home } from './home';
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
-                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
+                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
                                     </div>
                                 </div>
                             </div>
@@ -165,105 +157,116 @@ import { Home } from './home';
 export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+    API = 'http://202.162.207.164:3000';
 
-  // Declare empty list of people
-  subs: any[] = [];
-  cities: any[] = [];
-  properties: any[] = [];
-  typeproperties: any[] = [];
-  clusters: any[] = [];
-  blokfloors: any[] = [];
-  homes: any[] = [];
+    // Declare empty list of people
+    subs: any[] = [];
+    cities: any[] = [];
+    properties: any[] = [];
+    typeproperties: any[] = [];
+    clusters: any[] = [];
+    blokfloors: any[] = [];
+    homes: any[] = [];
+    packages: any[] = [];
 
-  constructor(private http: Http) {}
+    constructor(private http: Http) {}
 
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllSub();
-    this.getAllCity();
-    this.getAllProperty();
-    this.getAllType();
-    this.getAllCluster();
-    this.getAllBLokfloor();
-    this.getAllHome();
-  }
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllSub();
+        this.getAllCity();
+        this.getAllProperty();
+        this.getAllType();
+        this.getAllCluster();
+        this.getAllBLokfloor();
+        this.getAllHome();
+        this.getAllPackage();
+    }
 
 
 // Add one person to the API
-  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
+    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
 
-  var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}`;
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http
-        .post(`${this.API}/subscribe/addsub`,
-          body, {
-            headers: headers
-          })
-          .subscribe(data => {
+        var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/subscribe/addsub`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
                 alert('Add New Subscribe Success');
                 this.getAllSub();
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
-  }
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
 
-  // Get all Sub from the API
-  getAllSub() {
-    this.http.get(`${this.API}/subscribe/listsub`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-      })
-  }
+    // Get all Sub from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
 // Get all City from the API
-  getAllCity() {
-    this.http.get(`${this.API}/city/listcity`)
-      .map(res => res.json())
-      .subscribe(cities => {
-        this.cities = cities
-      })
-  }
-  // Get all Property from the API
+    getAllCity() {
+        this.http.get(`${this.API}/city/listcity`)
+            .map(res => res.json())
+            .subscribe(cities => {
+                this.cities = cities
+            })
+    }
+    // Get all Property from the API
     getAllProperty() {
-      this.http.get(`${this.API}/property/listproperty`)
-        .map(res => res.json())
-        .subscribe(properties => {
-          this.properties = properties
-        })
+        this.http.get(`${this.API}/property/listproperty`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
     }
     // Get all Type from the API
-      getAllType() {
+    getAllType() {
         this.http.get(`${this.API}/type/listtypeproperty`)
-          .map(res => res.json())
-          .subscribe(typeproperties => {
-            this.typeproperties = typeproperties
-          })
+            .map(res => res.json())
+            .subscribe(typeproperties => {
+                this.typeproperties = typeproperties
+            })
 
-  }
-  // Get all Type from the API
+    }
+    // Get all Type from the API
     getAllCluster() {
-      this.http.get(`${this.API}/cluster/listcluster`)
-    .map(res => res.json())
-    .subscribe(clusters => {
-      this.clusters = clusters
-    })
-}
+        this.http.get(`${this.API}/cluster/listcluster`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
 // Get all BLokfloor from the API
-  getAllBLokfloor() {
-    this.http.get(`${this.API}/blokfloor/listblokfloor`)
-      .map(res => res.json())
-      .subscribe(blokfloors => {
-        this.blokfloors = blokfloors
-      })
-  }
+    getAllBLokfloor() {
+        this.http.get(`${this.API}/blokfloor/listblokfloor`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
 // Get all Home from the API
-getAllHome() {
-this.http.get(`${this.API}/home/listhome`)
-  .map(res => res.json())
-  .subscribe(homes => {
-    this.homes = homes
-  })
-}
+    getAllHome() {
+        this.http.get(`${this.API}/home/listhome`)
+            .map(res => res.json())
+            .subscribe(homes => {
+                this.homes = homes
+            })
+    }
+
+    // Get all Package from the API
+    getAllPackage() {
+        this.http.get(`${this.API}/package/listpackage`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
+            })
+    }
 }
