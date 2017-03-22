@@ -41,7 +41,7 @@ import {Menu} from "./menu";
                           <a [routerLink]="['AllEmployee']" class="collapse" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['AllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                          <a [routerLink]="['AasllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
