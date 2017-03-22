@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -164,26 +164,20 @@ import { Sub } from './subs';
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    subid = params['id'];
+    subid = '58b3cdac45912d052e2c85a5';
     // Declare empty list of people
     subs: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
-  //  ngOnInit() {
-  //    this.getSub();
-  //    this.route.params.subscribe(
-    //     (params : Params) => {
-      //      this.id = params["id"];
-      //   }
-      //  )
-  //  }
-
+    ngOnInit() {
+      this.getSub();
+    }
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
+    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
