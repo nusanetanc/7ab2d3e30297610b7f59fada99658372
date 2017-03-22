@@ -75,7 +75,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Jln. Media No. {{ homes.nohome }},<br>Komplek Indah, Bandung</span>
+                                    <span>{{ homes.address }} No. {{ homes.nohome }},<br>Komplek Indah, Bandung</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
