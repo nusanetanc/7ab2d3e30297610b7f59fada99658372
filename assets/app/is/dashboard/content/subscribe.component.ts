@@ -169,17 +169,27 @@ export class ContentSubscribeComponent {
 
     // Declare empty list of people
     subs: any[] = [];
+    homes: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
+      this.getHome();
     }
 
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/{:id}`)
+    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+      })
+  }
+  // Get all users from the API
+  getHome() {
+    this.http.get(`${this.API}/subscribe/sub/{{subs.groovyid}}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
