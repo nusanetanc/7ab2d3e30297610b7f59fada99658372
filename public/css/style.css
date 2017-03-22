@@ -118,6 +118,7 @@ body{
 
 .home-footer-body-text{
     font-size: 15px;
+    font-weight: 300 !important;
 }
 
 .home-footer-body-text > a {
