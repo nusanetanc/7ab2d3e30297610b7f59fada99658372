@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Component({
     selector: 'form-test',
     template: `
-    <div>
+    <div class="row">
         <h1>TEST</h1>
     </div>
     <div ng-app="orderByExample2">
