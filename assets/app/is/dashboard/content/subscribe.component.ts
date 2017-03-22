@@ -191,11 +191,12 @@ export class ContentSubscribeComponent {
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
+        var groovyid = subs['groovyid'];
       })
   }
   // Get all homes from the API
   getHome() {
-    this.http.get(`${this.API}/home/home/${this.getSub(subs[groovyid])}`)
+    this.http.get(`${this.API}/home/home/${this.groovyid}`)
       .map(res => res.json())
       .subscribe(homes => {
         this.homes = homes
