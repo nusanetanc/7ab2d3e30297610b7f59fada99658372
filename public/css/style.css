@@ -586,6 +586,19 @@ margin-bottom: 20px;
 .wall-content{
     margin-top:100px;
 }
+.wall-content-hashtag{
+    font-size:68px;
+    color:#fff;
+    font-weight:200;
+    background-color: #fc592e;
+    padding:150px 0 155px 0;
+    text-align:center;
+    color:#fff;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-image:url(../images/background-connectinghome.png);
+    background-position:center
+}
 
 .features-content2-title{
     opacity: 0.9;
@@ -827,6 +840,11 @@ margin-bottom: 20px;
 
     .wall-title {
         font-size: 28px;
+    }
+    
+    .wall-content-hashtag{
+        font-size:35px;
+        padding:80px 0 85px 0;
     }
 
     .home-content-text{

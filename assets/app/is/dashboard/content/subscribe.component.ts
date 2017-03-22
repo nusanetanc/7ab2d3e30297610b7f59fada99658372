@@ -75,7 +75,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Jln. Media No. 14,<br>Komplek Indah, Bandung</span>
+                                    <span>Jln. Media No. {{ homes.nohome }},<br>Komplek Indah, Bandung</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -104,7 +104,7 @@ import { Sub } from './subs';
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-xs-6 col-md-3">
-                                    <img class="images/{{ subs._id }}.png" src="photoprofile.png" alt="photoprofile">
+                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
                                 </div>
                             </div>
                         </div>
@@ -141,6 +141,17 @@ import { Sub } from './subs';
                                     <span class="green">{{ subs.status }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>No Virtual Account</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.nova }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,12 +169,14 @@ export class ContentSubscribeComponent {
 
     // Declare empty list of people
     subs: any[] = [];
+    homes: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
+      this.getHome();
     }
 
   // Get all users from the API
@@ -172,6 +185,14 @@ export class ContentSubscribeComponent {
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
+      })
+  }
+  // Get all homes from the API
+  getHome() {
+    this.http.get(`${this.API}/home/home/{subs.groovyid}`)
+      .map(res => res.json())
+      .subscribe(homes => {
+        this.homes = homes
       })
   }
 }
