@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {Router, ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -168,17 +168,25 @@ export class ContentSubscribeComponent {
 
     // Declare empty list of people
     subs: any[] = [];
+    public id: string
+    private idSubscription: Subscription
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, activatedRoute: ActivatedRoute) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
+      this.idSubscription = this.activatedRoute.params.subscribe(params => {
+            this.id = params['id']
+            this.load()
+        })
     }
-
+    ngOnDestroy() {
+        this.idSubscription.unsubscribe()
+    }
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/{req.params.id}`)
+    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
