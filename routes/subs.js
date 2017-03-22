@@ -47,7 +47,8 @@ Sub.findById(req.params.id, function(err, subs) {
         datebrith: subs.datebrith,
         idnumber: subs.idnumber,
         groovyid: homes.groovyid,
-        nohome: homes.address
+        address: homes.address,
+        nohome: homes.nohome
       });
    });
 });
