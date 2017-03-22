@@ -75,7 +75,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ homes.address }} No. {{ homes.nohome }},<br>{{ clusters.name }}, {{ cities.name }}</span>
+                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ clusters.name }}, {{ cities.name }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -191,14 +191,6 @@ export class ContentSubscribeComponent {
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
-      })
-  }
-  // Get all homes from the API
-  getHome() {
-    this.http.get(`${this.API}/home/home/${this.groovyid}`)
-      .map(res => res.json())
-      .subscribe(homes => {
-        this.homes = homes
       })
   }
   getCluster() {
