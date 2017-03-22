@@ -561,7 +561,7 @@ margin-bottom: 20px;
 
 .wall-features-text{
     font-size: 18px !important;
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 
 .features-content1{
