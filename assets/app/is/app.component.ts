@@ -26,6 +26,7 @@ import {ContentReplayReportComponent} from "./dashboard/content/replayreports.co
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
+import {ContentTestComponent} from "./dashboard/content/testsort.component";
 
 @Component({
    selector: 'is-app',
@@ -77,6 +78,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
         AuthenticationComponent,
         ContentCreateInvoiceComponent,
         ContentDetailBillingComponent,
+        ContentTestComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -103,6 +105,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
     { path: '/is/profileemployee', component:ContentProfileEmployeeComponent, name:'ProfileEmployee'},
     { path: '/is/profileengineer', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
+    { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
 ])
 
 export class AppComponent {
