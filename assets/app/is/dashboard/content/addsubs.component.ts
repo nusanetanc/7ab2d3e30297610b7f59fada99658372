@@ -41,7 +41,7 @@ import { Home } from './home';
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Emaill">
-                                                <p>Upload your National Identity Cardsad</p>
+                                                <p>Upload your National Identity Cards</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button">choose file</button>
                                                     <p class="left marginL5">No choose file</p>
