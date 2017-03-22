@@ -149,7 +149,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span class="green">{{ subs.nova }}</span>
+                                    <span>{{ subs.nova }}</span>
                                 </div>
                             </div>
                         </div>
