@@ -6,6 +6,7 @@ var multer = require('multer');
 var upload = multer();
 var router = express.Router();
 var Sub = require('../models/subs');
+var Home = require('../models/home');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
