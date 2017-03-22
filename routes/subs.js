@@ -6,6 +6,7 @@ var multer = require('multer');
 var upload = multer();
 var router = express.Router();
 var Sub = require('../models/subs');
+var Home = require('../models/home');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
@@ -40,7 +41,7 @@ Sub.findById(req.params.id, function(err, subs) {
         email: subs.email,
         name: subs.name,
         nova: subs.nova,
-        packlev: subs,packlev,
+        packlev: subs.packlev,
         phone: subs.phone,
         status: subs.status,
         datebrith: subs.datebrith,
