@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 import { City } from './cities';
 import { Property } from './property';
-import { Type } from './type';
+import { TypeProperty } from './type';
 import { Cluster } from './cluster';
 import { Blokfloor } from './blokfloor';
 import { Home } from './home';
@@ -40,7 +40,7 @@ import { Home } from './home';
                                             <div class="form-group">
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
-                                                <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Emaill">
+                                                <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                                 <p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button">choose file</button>
