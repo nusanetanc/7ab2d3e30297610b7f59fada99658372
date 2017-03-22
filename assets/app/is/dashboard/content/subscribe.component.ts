@@ -189,7 +189,7 @@ export class ContentSubscribeComponent {
   }
   // Get all users from the API
   getHome() {
-    this.http.get(`${this.API}/subscribe/sub/{{subs.groovyid}}`)
+    this.http.get(`${this.API}/home/home/{{subs.groovyid}}`)
       .map(res => res.json())
       .subscribe(homes => {
         this.homes = homes
