@@ -141,6 +141,17 @@ import { Sub } from './subs';
                                     <span class="green">{{ subs.status }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>No Virtual Account</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span class="green">{{ subs.nova }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
