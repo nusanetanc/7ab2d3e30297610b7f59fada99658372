@@ -10,7 +10,7 @@ var SubSchema   = new Schema({
     dateinst: Date,
     timeinst: String,
     password: String,
-    datebrith: String,
+    datebirth: String,
     packlev: String,
     cardid: String,
     nova: Number,
