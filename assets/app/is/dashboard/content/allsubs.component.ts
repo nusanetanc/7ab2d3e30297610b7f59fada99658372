@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, ROUTER_DIRECTIVES, ActivatedRoute } from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -15,9 +15,9 @@ import { Sub } from './subs';
                 </a>
                 &nbsp; All Subscribers
             </h3>
-    
+
         </div>
-    
+
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
