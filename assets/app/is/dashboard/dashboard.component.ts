@@ -26,7 +26,7 @@ import {Menu} from "./menu";
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong>
                         </li>
                         <li>
-                          <a [routerLink]="['AllSubs']" class="collapse" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
+                          [routerLink]="['AllSubs']" class="collapse" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
                         </li>
                         <li>
                           <a [routerLink]="['AllBill']" class="collapse" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
