@@ -41,8 +41,8 @@ import { Home } from './home';
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
-                                                <input #subdatebirth id="subdatebirth" type="number" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
-                                                <input #subidnumber id="subidnumber" type="number" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
+                                                <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
+                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
                                                 <p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button">choose file</button>
