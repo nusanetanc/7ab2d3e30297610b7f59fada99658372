@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {Router, ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
+import {ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -186,10 +186,13 @@ export class ContentSubscribeComponent {
     }
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
+    this.http.get(`${this.API}/subscribe/sub/`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
       })
   }
+  load() {
+        console.log("Load Id " + this.id);
+    }
 }
