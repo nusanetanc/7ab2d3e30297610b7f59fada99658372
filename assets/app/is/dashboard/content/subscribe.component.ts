@@ -161,17 +161,15 @@ import { Sub } from './subs';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent {
+export class ContentSubscribeComponent implements  OnInit, OnDestroy {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
 
     // Declare empty list of people
     subs: any[] = [];
-    public id: string
-    private idSubscription: Subscription
 
-    constructor(private http: Http, activatedRoute: ActivatedRoute) {}
+    constructor(private http: Http, private activatedRoute: ActivatedRoute) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -184,6 +182,9 @@ export class ContentSubscribeComponent {
     ngOnDestroy() {
         this.idSubscription.unsubscribe()
     }
+    public id: string
+    private idSubscription: Subscription
+
   // Get all users from the API
   getSub() {
     this.http.get(`${this.API}/subscribe/sub/`)
