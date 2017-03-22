@@ -39,8 +39,8 @@ router.get('/listsub', function(req, res, next) {
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
   Home.findById(subs.groovyid, function(err, homes) {
-    Cluster.findById(home.cluster, function(err, clusters) {
-      City.findById(home.city, function(err, cities) {
+    Cluster.findById(homes.cluster, function(err, clusters) {
+      City.findById(homes.city, function(err, cities) {
             res.json({
               email: subs.email,
               name: subs.name,
