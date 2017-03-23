@@ -184,7 +184,7 @@ export class ContentSubscribeComponent implements  OnInit {
     ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
     let id = +params['id'];
-    this.getSub = this.getSub(id);
+    console.log(id);
     })
 });
 
@@ -192,8 +192,8 @@ export class ContentSubscribeComponent implements  OnInit {
     }
 
   // Get all users from the API
-  getSub(id: string) {
-    this.http.get(`${this.API}/subscribe/sub/${this.id}`)
+  getSub() : Subs {
+    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
