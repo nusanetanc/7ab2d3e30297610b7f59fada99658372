@@ -126,10 +126,10 @@ import { Billing } from './billing';
                                                 <div class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
-                                                            <span>Level 4 Package (Internet & UserTV)</span>
+                                                            <span>Level {{ bills.namepack }} Package</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">499.000</span>
+                                                            <span class="right">{{ bills.pricepack }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -139,7 +139,7 @@ import { Billing } from './billing';
                                                             <span>Router rent</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">40.000</span>
+                                                            <span class="right">{{ bills.pricerouter }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,17 +149,17 @@ import { Billing } from './billing';
                                                             <span>STB Rent</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">45.000</span>
+                                                            <span class="right">{{ bills.pricestb }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
-                                                            <span>Cable</span>
+                                                            <span>Cable & RJ45</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">0</span>
+                                                            <span class="right">{{ bills.pricerj45cable }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -169,7 +169,7 @@ import { Billing } from './billing';
                                                             <span>Instalation Charge</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">75.000</span>
+                                                            <span class="right">{{ bills.priceinstal }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -182,7 +182,7 @@ import { Billing } from './billing';
                                                             <span class="right">TOTAL PRICE</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">659.000</span>
+                                                            <span class="right">{{ bills.totalprice }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -192,7 +192,7 @@ import { Billing } from './billing';
                                                             <span class="right">TAX 10%</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">65.900</span>
+                                                            <span class="right">{{ bills.changetax }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -202,7 +202,7 @@ import { Billing } from './billing';
                                                             <span class="right">TOTAL PAYMENT</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">563.000</span>
+                                                            <span class="right">{{ bills.totalpay }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
