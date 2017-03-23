@@ -168,6 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(cityid) {
+      console.log(cityid)
         this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
     }
 
