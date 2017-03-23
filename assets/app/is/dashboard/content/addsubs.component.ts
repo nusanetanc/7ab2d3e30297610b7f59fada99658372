@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option *ngIf='selectedCity.cityid == 0' disabled="true" selected="true">-- Select your property --</option>
+                                                <option value="0" *ngIf='selectedCity.cityid == 0' disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property.propertyid}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
@@ -164,7 +164,6 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
     onSelect(cityid) {
-        console.log(cityid);
         this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
     }
 
@@ -188,7 +187,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllProperty();
         this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
