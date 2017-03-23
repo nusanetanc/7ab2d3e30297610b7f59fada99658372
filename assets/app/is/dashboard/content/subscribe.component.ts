@@ -188,11 +188,8 @@ export class ContentSubscribeComponent implements  OnInit {
     })
 });
 
-
-    }
-
   // Get all users from the API
-  getSub() : Subs {
+  getSub() {
     this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
       .map(res => res.json())
       .subscribe(subs => {
