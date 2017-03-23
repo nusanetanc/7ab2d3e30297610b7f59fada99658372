@@ -182,7 +182,7 @@ export class ContentSubscribeComponent implements  OnInit {
     private location: Location){}
 
     ngOnInit() {
-    this.route.params.forEach((params: Params) => {
+     this.activatedRoute.params.subscribe((params: Params) => {
     let id = +params['id'];
     console.log(id);
     })
