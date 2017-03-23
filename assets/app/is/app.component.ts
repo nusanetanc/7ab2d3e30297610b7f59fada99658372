@@ -29,6 +29,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
+import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
 
 @Component({
    selector: 'is-app',
@@ -83,11 +84,13 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
         ContentTestComponent,
         ContentAddCityComponent,
         ContentCoverageComponent,
+        ContentCoveragePropertyComponent,
         ROUTER_DIRECTIVES
     ],
 })
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
+    { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
     { path: '/is/createinvoice', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
     { path: '/is/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
