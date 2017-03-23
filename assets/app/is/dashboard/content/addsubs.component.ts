@@ -109,13 +109,13 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select (change)="onSelect($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your city --</option>
+                                            <select  [(ngModel)]="selectedCity.cityid" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{city.cityid}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select *ngIf='selectedCity.cityid == 0' class="inputForm" name="cars">
+                                            <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property.propertyid}}>{{ property.name }}</option>
                                             </select><br/>
@@ -162,7 +162,7 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
-    selectedCity:City = new City(0, "dummy");
+    selectedCity: City = new City(0, "dummy");
     onSelect(cityid) {
         console.log(cityid);
         this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);

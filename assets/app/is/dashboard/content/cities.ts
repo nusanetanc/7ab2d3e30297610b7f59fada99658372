@@ -1,6 +1,6 @@
 export class City {
   constructor(
-      public id: Number,
+      public cityid: Number,
       public name: String,
   ) {  }
 }
