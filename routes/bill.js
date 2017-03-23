@@ -3,6 +3,9 @@ var router = express.Router();
 var Bill = require('../models/bill');
 var Sub = require('../models/subs');
 var randomInt = require('random-int');
+var City = require('../models/city');
+var Cluster = require('../models/cluster');
+var Home = require('../models/home');
 
 /* GET billloye listing. */
 router.get('/listbill', function(req, res, next) {

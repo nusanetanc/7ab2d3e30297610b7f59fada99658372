@@ -49,14 +49,14 @@ import { Billing } from './billing';
                                                     <div class="col-sm-12">
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span><b>Rahmanto Wifajar</b></span>
+                                                                <span><b>{{ bills.name }}</b></span>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span>Grand Pinus Regency</span><br>
-                                                                <span>Pinus Barat No.33</span>
-                                                                <span>Indonesia</span>
+                                                                <span>{{ bills.cluster }}</span><br>
+                                                                <span>{{ bills.address }} No.{{ bills.nohome }}</span>
+                                                                <span>{{ bills.city }}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -238,7 +238,7 @@ import { Billing } from './billing';
 export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Billing_ID = '58d237f5ca0d0a5c78e44b34';
+  Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
 
