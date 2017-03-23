@@ -83,6 +83,7 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
         ContentTestComponent,
         ContentCovergeComponent,
         ContentAddCityComponent,
+        ContentCoverageCityComponent,
         ROUTER_DIRECTIVES
     ],
 })
