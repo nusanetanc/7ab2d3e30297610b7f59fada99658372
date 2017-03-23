@@ -35,12 +35,8 @@ import { Http } from 'angular2/http';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <select name="problemCatagory">
-                                                    <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                    <option value="volvo">Jakarta</option>
-                                                    <option value="saab">Bandung</option>
-                                                    <option value="fiat">All Region</option>
-                                                </select><br/>
+                                                <input type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                <br/>
                                             </form>
                                             <a href="coverage2.html" class="btn btn-default buttonOrange">
                                                 SEND
