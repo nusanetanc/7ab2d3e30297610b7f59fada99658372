@@ -3,7 +3,7 @@ export class Property {
 
   public id: Number,
   public name: String,
-  public cityid: Int,
+  public cityid: Number,
   public city: String
   ) {  }
 }
