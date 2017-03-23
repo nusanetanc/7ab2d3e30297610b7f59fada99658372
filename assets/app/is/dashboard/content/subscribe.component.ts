@@ -172,6 +172,7 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
     subs: any[] = [];
 
     constructor(private http: Http) {}
+    constructor(private activatedRoute: ActivatedRoute) {}
 /*
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
