@@ -35,7 +35,7 @@ import { Billing } from './billing';
                    <!-- /Row Button -->
 
                    <!-- Content List -->
-                   <div *ngFor="#sub of subs" class="row rowBillInfoContList">
+                   <div class="row rowBillInfoContList">
                        <div class="col-md-12">
                            <div class="row headerList">
                                <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -48,7 +48,7 @@ import { Billing } from './billing';
                                                <div class="col-sm-12">
                                                    <div class="row">
                                                        <div class="col-sm-5">
-                                                           <span><b>{{ sub.name }}</b></span>
+                                                           <span><b>hkljljl</b></span>
                                                        </div>
                                                    </div>
                                                    <div class="row">
@@ -68,7 +68,7 @@ import { Billing } from './billing';
                                                        <span>Subscriber ID</span>
                                                    </div>
                                                    <div class="col-sm-5">
-                                                       <span>{{ subs.subid }}</span>
+                                                       <span>kjjjjjjjjjh</span>
                                                    </div>
                                                </div>
                                            </div>
