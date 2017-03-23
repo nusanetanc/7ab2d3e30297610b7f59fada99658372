@@ -115,8 +115,8 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select *ngIf='selectedCity.cityid == 0' class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your property --</option>
+                                            <select class="inputForm" name="cars">
+                                                <option *ngIf='selectedCity.cityid == 0' disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property.propertyid}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
