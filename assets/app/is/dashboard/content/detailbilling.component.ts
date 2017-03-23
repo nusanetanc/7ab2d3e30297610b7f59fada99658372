@@ -69,7 +69,7 @@ import { Billing } from './billing';
                                                             <span>Subscriber ID</span>
                                                         </div>
                                                         <div class="col-sm-5">
-                                                            <span>GR123456</span>
+                                                            <span>{{ bills.subid }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
