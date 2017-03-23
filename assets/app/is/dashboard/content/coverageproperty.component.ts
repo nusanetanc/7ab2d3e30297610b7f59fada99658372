@@ -68,7 +68,7 @@ constructor(private http: Http) {}
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
-    getAllProperty()
+    this.getAllProperty()
 }
 // Get all City from the API
     getAllCity() {
