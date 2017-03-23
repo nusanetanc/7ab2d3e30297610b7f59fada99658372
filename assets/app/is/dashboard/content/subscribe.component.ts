@@ -185,7 +185,7 @@ export class ContentSubscribeComponent implements  OnInit {
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-      this.getSub();
+      this.getSub(id);
 
     }
 
