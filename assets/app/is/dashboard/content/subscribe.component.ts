@@ -172,7 +172,7 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
     subs: any[] = [];
 
     constructor(private http: Http, private activatedRoute: ActivatedRoute) {}
-
+/*
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
@@ -181,16 +181,17 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
             this.load()
         })
     }
-
+*/
   // Get all users from the API
   getSub() {
-    this.http.get(`${this.API}/subscribe/sub`)
+    this.http.get(`${this.API}/subscribe/sub/${this.API}`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
       })
   }
+/*
   load() {
         console.log("Load Id " + this.id);
-    }
+    } */
 }

@@ -248,7 +248,7 @@ export class ContentDetailBillingComponent {
   }
 
 
-// Get all users from the API
+// Get all bill from the API
 getBills() {
  this.http.get(`${this.API}/bill/idbill/${this.Billing_ID}`)
    .map(res => res.json())
