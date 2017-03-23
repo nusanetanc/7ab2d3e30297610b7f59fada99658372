@@ -44,7 +44,7 @@ import { Property } from './property';
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
-                                        <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
+                                        <button type="submit" (click)="addProperty(propertyname.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
@@ -89,9 +89,9 @@ ngOnInit() {
                     this.propertys = propertys
                 })
         }
-    addProperty(propertyname, propertycity) {
+    addProperty(propertyname) {
 
-        var body = `name=${propertyname}&city=${propertycity}`;
+        var body = `name=${propertyname}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
