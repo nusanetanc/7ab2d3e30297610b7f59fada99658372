@@ -166,7 +166,7 @@ import { Sub } from './subs';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent implements  OnInit {
+export class ContentSubscribeComponent implements  OnInit, OnDestroy {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
@@ -184,14 +184,4 @@ export class ContentSubscribeComponent implements  OnInit {
     let id = +params['id'];
     console.log(id);
     })
-}
-
-  // Get all users from the API
-  getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-      })
-  }
 }
