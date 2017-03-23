@@ -185,3 +185,4 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy {
     console.log(id);
     })
 }
+}
