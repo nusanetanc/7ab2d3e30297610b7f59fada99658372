@@ -123,7 +123,7 @@ hr {
 }
 
 .sidebar-nav > li > a {
-    color: #F4B5A4;
+    color: #B3B3B3;
     text-decoration: none;
 }
 
@@ -188,7 +188,7 @@ hr {
 }
 
 .sidebar-footer > div {
-    border-top: 0.3px solid white;
+    border-top: 0.3px solid #B3B3B3;
     height: 60px;
     width: 250px;
 }
@@ -203,7 +203,7 @@ hr {
 
 .sidebar-footer > div > a {
     background:none;
-    color: #FFF;
+    color: #B3B3B3;
     float: left;
     margin-left: 10px;
     margin-top: 25px;
@@ -255,6 +255,7 @@ hr {
 
 /*--- /Content ---*/
 
+
 /*----- Dashboard Page -----*/
 
 .cardDashboardSub {
@@ -270,8 +271,21 @@ hr {
         height: 250px;
     }
 }
-/*----- /Dashboard Page -----*/
 
+.cardDashboardCover {
+    background-color: #FFFFFF;
+    height: 200px;
+    margin-bottom: 20px;
+    padding-top: 80px;
+}
+
+@media only screen and (max-width: 767px) {
+    .cardDashboardSub {
+        height: 250px;
+    }
+}
+
+/*----- /Dashboard Page -----*/
 /*----- All Subscribers Page -----*/
 /*--- Search ---*/
 .form-group > div > i {
