@@ -181,12 +181,12 @@ export class ContentSubscribeComponent implements  OnInit {
     constructor(
     private location: Location){}
 
-    ngOnInit(): void {
+    ngOnInit() {
     this.route.params.forEach((params: Params) => {
     let id = +params['id'];
     console.log(id);
     })
-});
+}
 
   // Get all users from the API
   getSub() {
