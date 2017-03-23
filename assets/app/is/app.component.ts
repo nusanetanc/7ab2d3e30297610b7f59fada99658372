@@ -30,6 +30,7 @@ import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
 import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
+import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
 
 @Component({
    selector: 'is-app',
@@ -85,6 +86,7 @@ import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageprop
         ContentAddCityComponent,
         ContentCoverageComponent,
         ContentCoveragePropertyComponent,
+        ContentCoverageClusterComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -115,6 +117,7 @@ import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageprop
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
+    { path: '/is/addcluster', component:ContentCoverageClusterComponent, name:'AddCluster'},
 
 ])
 
