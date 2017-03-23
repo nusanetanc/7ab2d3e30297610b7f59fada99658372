@@ -1,6 +1,9 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
+import { City } from './cities';
+import { Property } from './property';
 
 @Component({
     selector: 'form-coverageproperty',
@@ -35,13 +38,13 @@ import { Http } from 'angular2/http';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select name="problemCatagory">
+                                            <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" [value]=city._id>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
-                                        <button type="submit" (click)="addProperty(propertyname.value)" class="btn btn-default buttonOrange">
+                                        <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
@@ -56,7 +59,7 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentCoveragePropertyComponent {
+export class ContentCoveragePropertyComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
@@ -86,9 +89,9 @@ ngOnInit() {
                     this.propertys = propertys
                 })
         }
-    addProperty(propertyname) {
+    addProperty(propertyname, propertycity) {
 
-        var body = `name=${propertyname}`;
+        var body = `name=${propertyname}&city=${propertycity}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
