@@ -286,12 +286,19 @@ color: #ea442d;
 }
 
 .price-box-header-level{
-background-color: #ea442d;
+background-color: #fff;
+border-top:1px solid #ea442d;
+border-bottom:1px solid #ea442d;
     font-size: 20px;
     font-weight: 200;
-    color: #fff;
+    color: #ea442d;
     text-align: center;
     padding: 15px 0 15px 0;
+}
+
+.price-box-header-level:hover{
+background-color: #ea442d;
+    color: #fff;
 }
 .package-most-popular{
     background-size: 121px;
