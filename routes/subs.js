@@ -54,7 +54,7 @@ Sub.findById(req.params.id, function(err, subs) {
               //groovyid: homes.groovyid,
             //address: homes.address,
               //nohome: homes.nohome,
-              c//luster: clusters.name,
+              //luster: clusters.name,
               //city: cities.name
             //});
           //});
