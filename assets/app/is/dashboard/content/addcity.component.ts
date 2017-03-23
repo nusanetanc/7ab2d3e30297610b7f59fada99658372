@@ -49,6 +49,28 @@ import { City } from './cities';
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row headerList paddingLR30">
+                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List City</strong></div>
+                            </div>
+                            <div class="row subInfo">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                          <div class="row">
+                                              <div class="col-sm-12" *ngFor="#city of cities">
+                                                  <div class="row subInfo">
+                                                      <div class="col-sm-8 invoiceList"><span>{{city.name}}</span></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
