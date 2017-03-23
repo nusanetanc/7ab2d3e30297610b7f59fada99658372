@@ -19,8 +19,8 @@ Property.findById(req.params.id, function(err, propertys) {
 });
 
 /* GET detail property by city */
-router.get('/property/:id', function(req, res, next) {
-    City.findById(req.params.id, function(err, propertys) {
+router.get('/ferdiproperty/:id', function(req, res, next) {
+    Property.find({city: req.params.id}, function(err, propertys) {
             console.log( propertys );
             res.json(propertys);
         });
