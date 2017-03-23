@@ -109,8 +109,8 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCity.cityid" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your city --</option>
+                                            <select (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                                <option [(ngModel)]="selectedCity.cityid" value="0">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{country.cityid}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
