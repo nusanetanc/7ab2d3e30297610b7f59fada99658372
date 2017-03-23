@@ -28,13 +28,13 @@ import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.c
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCovergeComponent} from "./dashboard/content/coverge.component";
-import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
-import {ContentCoverageCityComponent} from "./dashboard/content/coveragecity.component";
-import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
-import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
-import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
-import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
-import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
+//import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
+//import {ContentCoverageCityComponent} from "./dashboard/content/coveragecity.component";
+//import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
+//import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
+//import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
+//import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
+//import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 
 @Component({
    selector: 'is-app',
@@ -89,12 +89,12 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
         ContentTestComponent,
         ContentAddCityComponent,
         ContentCovergeComponent,
-        ContentCoverageCityComponent,
-        ContentCoveragePropertyComponent,
-        ContentCoverageClusterComponent,
-        ContentCoverageBlockComponent,
-        ContentCoverageStreetComponent,
-        ContentCoverageHomeComponent,
+        //ContentCoverageCityComponent,
+        //ContentCoveragePropertyComponent,
+        //ContentCoverageClusterComponent,
+        //ContentCoverageBlockComponent,
+        //ContentCoverageStreetComponent,
+        //ContentCoverageHomeComponent,
         ROUTER_DIRECTIVES
     ],
 })
