@@ -37,9 +37,7 @@ import { Http } from 'angular2/http';
                                         <form>
                                             <select name="problemCatagory">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option value="volvo">Jakarta</option>
-                                                <option value="saab">Bandung</option>
-                                                <option value="fiat">All Region</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Property Name">
@@ -59,5 +57,23 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoveragePropertyComponent {
+API = 'http://202.162.207.164:3000';
 
+// Declare empty list of people
+cities: any[] = [];
+
+constructor(private http: Http) {}
+
+// Angular 2 Life Cycle event when component has been initialized
+ngOnInit() {
+    this.getAllCity();
+}
+// Get all City from the API
+    getAllCity() {
+        this.http.get(`${this.API}/city/listcity`)
+            .map(res => res.json())
+            .subscribe(cities => {
+                this.cities = cities
+            })
+    }
 }
