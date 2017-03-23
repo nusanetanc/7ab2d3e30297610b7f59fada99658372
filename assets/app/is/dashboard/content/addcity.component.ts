@@ -1,6 +1,8 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
+import { City } from './cities';
 
 @Component({
     selector: 'form-dashboard',
@@ -35,12 +37,12 @@ import { Http } from 'angular2/http';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <input type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
                                             </form>
-                                            <a href="coverage2.html" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addSub(cityname.value)" class="btn btn-default buttonOrange">
                                                 SEND
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -54,5 +56,36 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddCityComponent {
+export class ContentAddCityComponent implements OnInit {
+API = 'http://202.162.207.164:3000';
+cities: City[];
+  ngOnInit() {
+      this.getAllCity();
+  }
+  constructor(private http: Http) {}
+  // Get all City from the API
+      getAllCity() {
+          this.http.get(`${this.API}/city/listcity`)
+              .map(res => res.json())
+              .subscribe(cities => {
+                  this.cities = cities
+              })
+      }
+  addSub(cityname) {
+
+      var body = `name=${cityname}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/city/addcity`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add City Success');
+              this.getAllCity();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
 }
