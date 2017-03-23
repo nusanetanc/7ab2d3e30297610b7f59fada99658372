@@ -178,14 +178,11 @@ export class ContentSubscribeComponent implements  OnInit {
     private route: ActivatedRoute,
     private location: Location) {}
 
-    ngOnInit(): void {
-      this.route.params
-        .switchMap((params: Params) => this.getSub(+params['id']))
-    }
+
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-      this.getSub(id);
+      this.getSub();
 
     }
 
