@@ -168,7 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(cityid) {
-        this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
+        //this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
     }
 
 // Link to our api, pointing to localhost
