@@ -164,6 +164,9 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
 
+    cities: City[];
+    properties: Property[];
+
     onSelect(cityid) {
         this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
     }
@@ -173,8 +176,6 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Declare empty list of people
     subs: any[] = [];
-    cities: any[] = [];
-    properties: any[] = [];
     typeproperties: any[] = [];
     clusters: any[] = [];
     blokfloors: any[] = [];
