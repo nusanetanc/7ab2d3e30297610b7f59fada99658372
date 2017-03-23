@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Property = require('../models/property');
-
+var City = require('../models/city');
 /* GET propertyloye listing. */
 router.get('/listproperty', function(req, res, next) {
      Property.find(function(err, propertys) {
@@ -17,6 +17,14 @@ Property.findById(req.params.id, function(err, propertys) {
        res.json(propertys);
    });
 });
+
+/* GET detail property by city */
+router.get('/property/:id', function(req, res, next) {
+    City.findById(req.params.id, function(err, propertys) {
+            console.log( propertys );
+            res.json(propertys);
+        });
+    });
 
 /* Add property */
 router.post('/addproperty', function(req, res, next) {
