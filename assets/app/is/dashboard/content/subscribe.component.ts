@@ -179,6 +179,13 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
       this.getSub();
     }
 
+    ngOnInit() {
+      this.idSubscription = this.activatedRoute.params.subscribe(params => {
+            this.id = params['id']
+            this.load()
+        });
+    }
+
   // Get all users from the API
   getSub() {
     this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
