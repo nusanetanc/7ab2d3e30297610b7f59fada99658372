@@ -40,11 +40,11 @@ import { Property } from './property';
                                         <form>
                                             <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities" [value]=city._id>{{ city.name }}</option>
+                                                <option *ngFor="#city of cities">{{ city._id }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
-                                        <button type="submit" (click)="addProperty(propertyname.value)" class="btn btn-default buttonOrange">
+                                        <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
@@ -89,9 +89,9 @@ ngOnInit() {
                     this.propertys = propertys
                 })
         }
-    addProperty(propertyname) {
+    addProperty(propertyname, propertycity) {
 
-        var body = `name=${propertyname}`;
+        var body = `name=${propertyname}&city=${propertycity}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
