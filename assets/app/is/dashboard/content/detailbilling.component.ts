@@ -49,14 +49,14 @@ import { Billing } from './billing';
                                                     <div class="col-sm-12">
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span><b>Rahmanto Wifajar</b></span>
+                                                                <span><b>{{ bills.name }}</b></span>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span>Grand Pinus Regency</span><br>
-                                                                <span>Pinus Barat No.33</span>
-                                                                <span>Indonesia</span>
+                                                                <span>{{ bills.cluster }}</span><br>
+                                                                <span>{{ bills.address }} No.{{ bills.nohome }}</span>
+                                                                <span>{{ bills.city }}</span>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -16,9 +16,43 @@ router.get('/listbill', function(req, res, next) {
 /* GET detail bill. */
 router.get('/idbill/:id', function(req, res, next) {
 Bill.findOne({_id: req.params.id}, function(err, bills) {
-       console.log( bills );
-       res.json(bills);
-   });
+  Sub.findById(bills.sub, function(err, subs) {
+    Home.findById(subs.groovyid, function(err, homes) {
+      Cluster.findById(homes.cluster, function(err, clusters) {
+       City.findById(homes.city, function(err, cities) {
+            res.json({
+              _id: subs._id,
+              noinvoice: bills.noinvoice,
+              namepack: bills.namepack,
+              pricepack: bills.pricepack,
+              priceinstal: bills.priceinstal,
+              pricerouter: bills.pricerouter,
+              pricestb: bills.pricestb,
+              noinvoice: bills.noinvoice,
+              promoname: bills.promoname,
+              pricepromo: bills.pricepromo,
+              pricerj45cable: bills.pricerj45cable,
+              changetax: bills.changetax,
+              totalprice: bills.totalprice,
+              totalpay: bills.totalpay,
+              billdate: bills.billdate,
+              duedate: bills.duedate,
+              paydate: bills.paydate,
+              status: bills.status,
+              desc: bills.desc,
+              name: subs.name,
+              subid: subs.subid,
+              nova: subs.nova,
+              address: homes.address,
+              nohome: homes.nohome,
+              cluster: clusters.name,
+              city: cities.name
+            });
+          });
+        });
+      });
+    });
+  });
 });
 
 /* Add bill */
