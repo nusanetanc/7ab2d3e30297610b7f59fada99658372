@@ -185,6 +185,11 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
             this.load()
         });
     }
+    ngOnDestroy() {
+        this.idSubscription.unsubscribe()
+    }
+    public id: string
+    private idSubscription: Subscription
 
   // Get all users from the API
   getSub() {
