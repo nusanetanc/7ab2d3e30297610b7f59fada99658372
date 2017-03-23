@@ -28,7 +28,7 @@ import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.c
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCovergeComponent} from "./dashboard/content/coverge.component";
-//import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
+import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
 //import {ContentCoverageCityComponent} from "./dashboard/content/coveragecity.component";
 //import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
 //import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
