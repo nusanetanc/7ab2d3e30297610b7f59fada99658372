@@ -20,7 +20,7 @@ Property.findById(req.params.id, function(err, propertys) {
 
 /* GET detail property by city */
 router.get('/propertybycity/:id', function(req, res, next) {
-    Property.find({city: req.params.id}, function(err, propertys) {
+    Property.find({cityid: req.body.cityid}, function(err, propertys) {
             console.log( propertys );
             res.json(propertys);
         });
