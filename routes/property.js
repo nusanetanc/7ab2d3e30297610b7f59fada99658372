@@ -22,6 +22,8 @@ Property.findById(req.params.id, function(err, propertys) {
 router.post('/addproperty', function(req, res, next) {
   var property = new Property();
     property.name= req.body.name;
+    property.id= req.body.id;
+    property.cityid= req.body.cityid;
     property.city= req.body.city;
     property.save(function(err) {
       if (err)
@@ -37,6 +39,8 @@ router.put('/putproperty/:id', function(req, res, next) {
             if (err)
                 res.send(err);
                 property.name= req.body.name;
+                property.id= req.body.id;
+                property.cityid= req.body.cityid;
               if (err)
                 res.send(err);
 
