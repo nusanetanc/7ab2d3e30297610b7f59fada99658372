@@ -7,7 +7,7 @@ import { Billing } from './billing';
 @Component({
     selector: 'form-detailbilling',
     template: `
-    <h1>{{ subs.noinvoice }} </h1>
+    <h1>{{ bills.noinvoice }} </h1>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
