@@ -25,7 +25,7 @@ import { Billing } from './billing';
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a href="billing.html" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
                                 <a href="#" class="btn btn-default billInfoPrint" type="button">
@@ -69,7 +69,7 @@ import { Billing } from './billing';
                                                             <span>Subscriber ID</span>
                                                         </div>
                                                         <div class="col-sm-5">
-                                                            <span>GR123456</span>
+                                                            <span>{{ bills.subid }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
