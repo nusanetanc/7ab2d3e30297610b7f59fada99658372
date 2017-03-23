@@ -176,20 +176,12 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy {
 
     constructor(
     private http: Http) {}
-    constructor(
-    private activatedRoute: ActivatedRoute){}
-
-    ngOnInit() {
-     this.activatedRoute.params.subscribe((params: Params) => {
-    let id = +params['id'];
-    console.log(id);
-    })
-}
-// Get all bill from the API
-//getSubs() {
-// this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
-//   .map(res => res.json())
-//     this.subs = subs
-//   })
+    
+Get all bill from the API
+getSubs() {
+this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
+  .map(res => res.json())
+    this.subs = subs
+  })
 }
 }
