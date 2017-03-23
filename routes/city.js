@@ -21,8 +21,8 @@ City.findById(req.params.id, function(err, cities) {
 /* Add city */
 router.post('/addcity', function(req, res, next) {
   var city = new City();
-    city.name= req.body.name;
     city.cityid= req.body.cityid;
+    city.name= req.body.name;
 
     city.save(function(err) {
       if (err)
@@ -38,8 +38,8 @@ router.put('/putcity/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-            city.name= req.body.name;
             city.cityid= req.body.cityid;
+            city.name= req.body.name;
               if (err)
                 res.send(err);
 
