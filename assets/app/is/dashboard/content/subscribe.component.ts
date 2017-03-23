@@ -174,9 +174,17 @@ export class ContentSubscribeComponent implements  OnInit {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(
+    private http: Http) {}
+    constructor(
+    private route: ActivatedRoute){}
+    constructor(
+    private location: Location){}
 
-
+    ngOnInit(): void {
+      this.route.params
+        .switchMap((params: Params) => this.getSub(+params['id']))
+    }
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
