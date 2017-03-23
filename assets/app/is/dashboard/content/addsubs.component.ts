@@ -109,15 +109,15 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select  [(ngModel)]="selectedCity.cityid" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                            <select (change)="onSelect($event.target.value)" class="inputForm" name="cars">
                                                 <option value="0">-- Select your city --</option>
-                                                <option *ngFor="#city of cities" value={{city.cityid}}>{{ city.name }}</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option value="0" *ngIf='selectedCity.cityid == 0' disabled="true" selected="true">-- Select your property --</option>
-                                                <option *ngFor="#property of properties" value={{property.propertyid}}>{{ property.name }}</option>
+                                                <option value="0" disabled="true" selected="true">-- Select your property --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -168,8 +168,9 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(cityid) {
-      console.log(cityid)
-        this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
+        console.log(cityid)
+        var City_ID = this.cities = cityid;
+        this.getAllProperty();
     }
 
 // Link to our api, pointing to localhost
@@ -236,7 +237,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Property from the API
     getAllProperty() {
-        this.http.get(`${this.API}/property/listproperty`)
+        this.http.get(`${this.API}/property/propertybycity/${this.City_ID}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
