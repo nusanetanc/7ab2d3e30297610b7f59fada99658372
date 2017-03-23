@@ -37,7 +37,7 @@ import { Http } from 'angular2/http';
                                         <form>
                                             <select name="problemCatagory">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                                <option *ngFor="#city of cities" [value]=city._id>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
