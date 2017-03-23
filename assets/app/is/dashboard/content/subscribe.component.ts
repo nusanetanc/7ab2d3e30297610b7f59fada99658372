@@ -183,7 +183,8 @@ export class ContentSubscribeComponent implements  OnInit {
 
     ngOnInit(): void {
       this.route.params
-        .switchMap((params: Params) => this.getSub(+params['id']))
+        .switchMap(params: Params)
+        paramsid = params['id']
     }
 
     // Angular 2 Life Cycle event when component has been initialized
@@ -193,7 +194,7 @@ export class ContentSubscribeComponent implements  OnInit {
     }
 
   // Get all users from the API
-  getSub(id: string) {
+  getSub() {
     this.http.get(`${this.API}/subscribe/sub/{$this.id}`)
       .map(res => res.json())
       .subscribe(subs => {
