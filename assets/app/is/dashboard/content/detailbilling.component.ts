@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 
 @Component({
-    selector: 'form-dashboard',
+    selector: 'form-detailbilling',
     template: `
     <h1>{{ subs.noinvoice }} </h1>
     `,
