@@ -179,7 +179,7 @@ export class ContentSubscribeComponent {
     ngOnInit() {
       this.getSubs();
     }
-Get all bill from the API
+
 getSubs() {
 this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
   .map(res => res.json())
