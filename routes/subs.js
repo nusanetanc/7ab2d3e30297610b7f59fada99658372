@@ -36,7 +36,7 @@ router.get('/listsub', function(req, res, next) {
    });
 });
 /* GET detail sub. */
-router.get('/sub/:id', function(req, res, next) {
+router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
   Home.findById(subs.groovyid, function(err, homes) {
     Cluster.findById(homes.cluster, function(err, clusters) {

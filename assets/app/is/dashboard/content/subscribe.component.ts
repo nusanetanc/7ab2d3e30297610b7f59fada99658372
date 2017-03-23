@@ -1,10 +1,8 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES, ActivatedRoute, Params} from 'angular2/router';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
-import { Location } from 'angular2/common';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
-import 'rxjs/add/operator/switchMap';
 import { Sub } from './subs';
 
 @Component({
