@@ -29,6 +29,12 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCovergeComponent} from "./dashboard/content/coverge.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
+import {ContentCoverageCityComponent} from "./dashboard/content/coveragecity.component";
+import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
+import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
+import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
+import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
+import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 
 @Component({
    selector: 'is-app',
@@ -81,9 +87,14 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
         ContentCreateInvoiceComponent,
         ContentDetailBillingComponent,
         ContentTestComponent,
-        ContentCovergeComponent,
         ContentAddCityComponent,
+        ContentCovergeComponent,
         ContentCoverageCityComponent,
+        ContentCoveragePropertyComponent,
+        ContentCoverageClusterComponent,
+        ContentCoverageBlockComponent,
+        ContentCoverageStreetComponent,
+        ContentCoverageHomeComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -113,6 +124,7 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverge', component:ContentCovergeComponent, name:'Coverge'},
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
+
 ])
 
 export class AppComponent {
