@@ -1,6 +1,6 @@
 export class Billing {
     constructor(
-        public noinvoice: Number,
+        public noinvoice: String,
         public namepack: String,
         public pricepack: Number,
         public priceinstal: Number,
