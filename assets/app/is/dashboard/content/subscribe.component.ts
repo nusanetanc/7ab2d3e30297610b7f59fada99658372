@@ -185,6 +185,7 @@ export class ContentSubscribeComponent implements  OnInit {
     this.route.params.forEach((params: Params) => {
     let id = +params['id'];
     this.getSub = this.getSub(id);
+    })
 });
 
 
