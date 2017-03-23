@@ -174,9 +174,7 @@ export class ContentSubscribeComponent implements  OnInit {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http,
-    private route: ActivatedRoute,
-    private location: Location) {}
+    constructor(private http: Http) {}
 
 
 
