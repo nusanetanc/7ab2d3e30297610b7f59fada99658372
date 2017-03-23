@@ -15,7 +15,7 @@ router.get('/listbill', function(req, res, next) {
 
 /* GET detail bill. */
 router.get('/idbill/:id', function(req, res, next) {
-Bill.findById(req.params.id, function(err, bills) {
+Bill.findOne({_id: req.params.id}, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
