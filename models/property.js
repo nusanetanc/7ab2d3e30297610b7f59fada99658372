@@ -5,7 +5,7 @@ var City = require('../models/city');
 var PropertySchema   = new Schema({
   id : Number,
   name : String,
-  cityid : Int,
+  cityid : Number,
   city: {type: Schema.Types.ObjectId, ref: 'City'}
 });
 
