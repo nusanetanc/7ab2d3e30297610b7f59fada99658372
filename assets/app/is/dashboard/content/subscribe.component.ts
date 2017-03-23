@@ -175,9 +175,9 @@ export class ContentSubscribeComponent {
     subs: any[] = [];
 
     constructor(private http: Http) {}
-    
+
     ngOnInit() {
-      this.getBills();
+      this.getSubs();
     }
 Get all bill from the API
 getSubs() {
