@@ -176,12 +176,11 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy {
 
     constructor(
     private http: Http) {}
-    
+
 Get all bill from the API
 getSubs() {
 this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
   .map(res => res.json())
     this.subs = subs
   })
-}
 }
