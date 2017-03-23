@@ -163,9 +163,10 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
-    constructor(private _city: City) {
-        this.cities = this.getAllCity();
-    }
+
+    cities: City[];
+    properties: Property[];
+
     onSelect(cityid) {
         this.properties = this.getAllProperty().filter((item)=> item.cityid == cityid);
     }
@@ -175,8 +176,6 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Declare empty list of people
     subs: any[] = [];
-    cities: any[] = [];
-    properties: any[] = [];
     typeproperties: any[] = [];
     clusters: any[] = [];
     blokfloors: any[] = [];
@@ -189,6 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllSub();
+        this.getAllCity();
         this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
