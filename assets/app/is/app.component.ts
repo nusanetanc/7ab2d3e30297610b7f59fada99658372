@@ -124,12 +124,12 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverge', component:ContentCovergeComponent, name:'Coverge'},
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
-    { path: '/is/covergeaddcity', component:ContentCoverageCityComponent, name:'CovergeAddCity'},
-    { path: '/is/covergeaddproperty', component:ContentCoveragePropertyComponent, name:'CovergeAddProperty'},
-    { path: '/is/covergeaddcluster', component:ContentCoverageClusterComponent, name:'CovergeAddCluster'},
-    { path: '/is/covergeaddblock', component:ContentCoverageBlockComponent, name:'CovergeAddBlock'},
-    { path: '/is/covergeaddstreet', component:ContentCoverageStreetComponent, name:'CovergeAddStreet'},
-    { path: '/is/covergeaddhomenumber', component:ContentCoverageHomeComponent, name:'CovergeAddHomeNumber'},
+  //  { path: '/is/covergeaddcity', component:ContentCoverageCityComponent, name:'CovergeAddCity'},
+    //{ path: '/is/covergeaddproperty', component:ContentCoveragePropertyComponent, name:'CovergeAddProperty'},
+    //{ path: '/is/covergeaddcluster', component:ContentCoverageClusterComponent, name:'CovergeAddCluster'},
+  //  { path: '/is/covergeaddblock', component:ContentCoverageBlockComponent, name:'CovergeAddBlock'},
+    //{ path: '/is/covergeaddstreet', component:ContentCoverageStreetComponent, name:'CovergeAddStreet'},
+    //{ path: '/is/covergeaddhomenumber', component:ContentCoverageHomeComponent, name:'CovergeAddHomeNumber'},
 
 ])
 
