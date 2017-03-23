@@ -110,7 +110,7 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCity.cityid" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your city --</option>
+                                                <option value="0" disabled="true" selected="true">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{country.cityid}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
