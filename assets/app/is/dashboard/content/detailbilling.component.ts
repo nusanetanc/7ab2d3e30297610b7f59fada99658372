@@ -25,7 +25,7 @@ import { Billing } from './billing';
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a href="billing.html" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['Billing']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
                                 <a href="#" class="btn btn-default billInfoPrint" type="button">
