@@ -27,14 +27,8 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
-import {ContentCovergeComponent} from "./dashboard/content/coverge.component";
+import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
-//import {ContentCoverageCityComponent} from "./dashboard/content/coveragecity.component";
-//import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
-//import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
-//import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
-//import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
-//import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 
 @Component({
    selector: 'is-app',
@@ -88,7 +82,7 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
         ContentDetailBillingComponent,
         ContentTestComponent,
         ContentAddCityComponent,
-        ContentCovergeComponent,
+        ContentCoverageComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -116,7 +110,7 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
     { path: '/is/profileengineer', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
-    { path: '/is/coverge', component:ContentCovergeComponent, name:'Coverge'},
+    { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
 
 ])

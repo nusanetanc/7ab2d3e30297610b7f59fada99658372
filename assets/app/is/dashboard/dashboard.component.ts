@@ -32,7 +32,7 @@ import {Menu} from "./menu";
                           <a [routerLink]="['AllBill']" class="collapse" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Coverge']" class="collapse" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
+                          <a [routerLink]="['Coverage']" class="collapse" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
                         </li>
                         <li>
                           <a [routerLink]="['AllReport']" class="collapse" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
