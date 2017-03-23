@@ -49,8 +49,10 @@ import { City } from './cities';
                             </div>
                         </div>
                     </div>
+                  </div>
+                  <br/>
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="row headerList paddingLR30">
                                 <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List City</strong></div>
                             </div>
@@ -72,8 +74,6 @@ import { City } from './cities';
                         </div>
                     </div>
                 </div>
-            </div>
-
         </div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
