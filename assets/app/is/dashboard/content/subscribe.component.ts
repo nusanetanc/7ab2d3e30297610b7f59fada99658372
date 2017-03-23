@@ -1,8 +1,9 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
+import {ROUTER_DIRECTIVES, ActivatedRoute, Params} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
+import 'rxjs/add/operator/switchMap';
 import { Sub } from './subs';
 
 @Component({
@@ -152,6 +153,7 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>{{ subs.nova }}</span>
+
                                 </div>
                             </div>
                         </div>
@@ -163,7 +165,7 @@ import { Sub } from './subs';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedRoute {
+export class ContentSubscribeComponent implements  OnInit {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
@@ -171,7 +173,14 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http,
+    private route: ActivatedRoute,
+    private location: Location) {}
+
+    ngOnInit(): void {
+      this.route.params
+        .switchMap((params: Params) => this.getSub(+params['id']))
+    }
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -179,10 +188,9 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
 
     }
 
-
   // Get all users from the API
-  getSub() {
-    this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
+  getSub(id: string) {
+    this.http.get(`${this.API}/subscribe/sub/id`)
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
