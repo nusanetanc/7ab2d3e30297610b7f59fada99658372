@@ -42,7 +42,7 @@ Sub.findById(req.params.id, function(err, subs) {
     //Cluster.findById(homes.cluster, function(err, clusters) {
     //  City.findById(homes.city, function(err, cities) {
             res.json({
-              _id: subs._id,
+              _id: subs.id,
               email: subs.email,
               name: subs.name,
               nova: subs.nova,
