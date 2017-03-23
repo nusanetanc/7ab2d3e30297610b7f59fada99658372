@@ -177,9 +177,7 @@ export class ContentSubscribeComponent implements  OnInit {
     constructor(
     private http: Http) {}
     constructor(
-    private route: ActivatedRoute){}
-    constructor(
-    private location: Location){}
+    private activatedRoute: ActivatedRoute){}
 
     ngOnInit() {
      this.activatedRoute.params.subscribe((params: Params) => {
