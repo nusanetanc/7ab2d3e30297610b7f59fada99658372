@@ -37,11 +37,11 @@ import { Sub } from './subs';
               </div>
           </div>
           <div class="row">
-              <div class="col-sm-12">
+              <div class="col-sm-12" *ngFor="#sub of subs">
                   <div class="row subInfo">
-                      <div class="col-sm-2 invoiceId"><span>GR-123456</span></div>
-                      <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">Yudi Nurhandi</a></span></div>
-                      <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
+                      <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
+                      <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
+                      <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
                       <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
                   </div>
               </div>
