@@ -177,10 +177,7 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getSub();
-      this.idSubscription = this.activatedRoute.params.subscribe(params => {
-            this.id = params['id']
-            this.load()
-        });
+      this.subsc();
     }
 
     ngOnDestroy() {
@@ -188,7 +185,13 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy, activatedR
     }
     public id: string
     private idSubscription: Subscription
-
+    
+    subsc(){
+      this.idSubscription = this.activatedRoute.params.subscribe(params => {
+            this.id = params['id']
+            this.load()
+        })
+      }
   // Get all users from the API
   getSub() {
     this.http.get(`${this.API}/subscribe/sub/${this.subid}`)
