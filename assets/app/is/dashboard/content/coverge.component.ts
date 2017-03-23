@@ -11,7 +11,7 @@ import { Http } from 'angular2/http';
             <h3 id="home">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Add Coverage Area
+                &nbsp; Coverage Area
             </h3>
 
         </div>
@@ -21,6 +21,7 @@ import { Http } from 'angular2/http';
                 <div class="col-sm-12">
                     <div class="row marginLR15">
                         <div class="col-sm-4">
+                          <a [routerLink]="['AddCity']">
                             <div class="cardDashboardCover">
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -28,6 +29,7 @@ import { Http } from 'angular2/http';
                                     </div>
                                 </div>
                             </div>
+                          </a>
                         </div>
                         <div class="col-sm-4">
                             <div class="cardDashboardCover">
