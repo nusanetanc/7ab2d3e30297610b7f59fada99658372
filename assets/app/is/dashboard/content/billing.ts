@@ -17,5 +17,13 @@ export class Billing {
         public paydate: Date,
         public status: String,
         public desc: String,
+
+        public name: String,
+        public subid: String,
+        public nova: Number,
+        public address: String,
+        public nohome: Number,
+        public cluster: String,
+        public city: String,
     ) {  }
 }
