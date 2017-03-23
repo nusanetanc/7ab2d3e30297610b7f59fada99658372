@@ -27,6 +27,7 @@ import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
+import {ContentCovergeComponent} from "./dashboard/content/coverge.component";
 
 @Component({
    selector: 'is-app',
@@ -79,6 +80,7 @@ import {ContentTestComponent} from "./dashboard/content/testsort.component";
         ContentCreateInvoiceComponent,
         ContentDetailBillingComponent,
         ContentTestComponent,
+        ContentCovergeComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -106,6 +108,7 @@ import {ContentTestComponent} from "./dashboard/content/testsort.component";
     { path: '/is/profileengineer', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
+    { path: '/is/coverge', component:ContentCovergeComponent, name:'Coverge'},
 ])
 
 export class AppComponent {
