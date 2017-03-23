@@ -63,7 +63,6 @@ import { Http } from 'angular2/http';
             </div>
         </div>
 
-    </div>
     <!-- Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
