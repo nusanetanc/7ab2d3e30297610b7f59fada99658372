@@ -40,10 +40,10 @@ import { Http } from 'angular2/http';
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
-                                        <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Property Name">
-                                        <a href="coverage3.html" class="btn btn-default buttonOrange">
+                                        <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
+                                        <button type="submit" (click)="addProperty(propertyname.value)" class="btn btn-default buttonOrange">
                                             SEND
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -61,12 +61,14 @@ API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
 cities: any[] = [];
+propertys: any[] = [];
 
 constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
+    getAllProperty()
 }
 // Get all City from the API
     getAllCity() {
@@ -75,5 +77,30 @@ ngOnInit() {
             .subscribe(cities => {
                 this.cities = cities
             })
+    }
+    // Get all Property from the API
+        getAllProperty() {
+            this.http.get(`${this.API}/property/listproperty`)
+                .map(res => res.json())
+                .subscribe(propertys => {
+                    this.propertys = propertys
+                })
+        }
+    addProperty(propertyname) {
+
+        var body = `name=${propertyname}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/property/addproperty`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Property Success');
+                this.getAllProperty();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 }

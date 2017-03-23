@@ -40,7 +40,7 @@ import { City } from './cities';
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addSub(cityname.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
@@ -93,7 +93,7 @@ cities: City[];
                   this.cities = cities
               })
       }
-  addSub(cityname) {
+  addCity(cityname) {
 
       var body = `name=${cityname}`;
       var headers = new Headers();
