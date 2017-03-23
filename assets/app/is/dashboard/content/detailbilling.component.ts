@@ -238,7 +238,7 @@ import { Billing } from './billing';
 export class ContentDetailBillingComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Billing_ID = '58d237f5ca0d0a5c78e44b34';
+  Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
 
