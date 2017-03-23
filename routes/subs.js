@@ -38,9 +38,9 @@ router.get('/listsub', function(req, res, next) {
 /* GET detail sub. */
 router.get('/sub/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
-  Home.findById(subs.groovyid, function(err, homes) {
-    Cluster.findById(homes.cluster, function(err, clusters) {
-      City.findById(homes.city, function(err, cities) {
+  //Home.findById(subs.groovyid, function(err, homes) {
+    //Cluster.findById(homes.cluster, function(err, clusters) {
+    //  City.findById(homes.city, function(err, cities) {
             res.json({
               _id: subs._id,
               email: subs.email,
@@ -51,14 +51,14 @@ Sub.findById(req.params.id, function(err, subs) {
               status: subs.status,
               datebrith: subs.datebrith,
               idnumber: subs.idnumber,
-              groovyid: homes.groovyid,
-              address: homes.address,
-              nohome: homes.nohome,
-              cluster: clusters.name,
-              city: cities.name
-            });
-          });
-        });
+              //groovyid: homes.groovyid,
+            //address: homes.address,
+              //nohome: homes.nohome,
+              c//luster: clusters.name,
+              //city: cities.name
+            //});
+          //});
+        //});
       });
     });
 });
