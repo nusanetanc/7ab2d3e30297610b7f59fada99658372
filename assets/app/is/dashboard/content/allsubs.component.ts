@@ -11,7 +11,7 @@ import { Sub } from './subs';
   <div id="page-content-wrapper">
       <div class="content-header">
           <h3 id="home">
-              <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+              <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
               </a>
               &nbsp; Subscribers
           </h3>
@@ -21,7 +21,7 @@ import { Sub } from './subs';
       <div class="page-content inset" data-spy="scroll" data-target="#spy">
           <div class="row marginB20 marginR0">
               <div class="col-sm-12">
-                  <a href="newsubscriber.html" class="btn btn-default buttonOrange">
+                  <a [routerLink]="['AllSubs']" class="btn btn-default buttonOrange">
                       NEW SUBSCRIBER
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
@@ -38,12 +38,14 @@ import { Sub } from './subs';
           </div>
           <div class="row">
               <div class="col-sm-12" *ngFor="#sub of subs">
+              <a [routerLink]="['Subscribe', {id: sub._id}]">
                   <div class="row subInfo">
                       <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
                       <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
                       <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
                       <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
                   </div>
+                </a>
               </div>
           </div>
       </div>

@@ -106,7 +106,7 @@ import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageprop
     { path: '/is/allreport', component:ContentAllReportsComponent, name:'AllReport'},
     { path: '/is/allstock', component:ContentAllStocksComponent, name:'AllStock'},
     { path: '/is/detialinformation', component:ContentDetailInformationComponent, name:'DetailInformation'},
-    { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DeatailReport'},
+    { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DetailReport'},
     { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
     { path: '/is/profileemployee', component:ContentProfileEmployeeComponent, name:'ProfileEmployee'},
