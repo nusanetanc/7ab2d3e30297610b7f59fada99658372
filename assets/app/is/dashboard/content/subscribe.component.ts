@@ -166,7 +166,7 @@ import { Sub } from './subs';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent implements  OnInit, OnDestroy {
+export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     subid = '58b3cdac45912d052e2c85a5';
@@ -174,22 +174,15 @@ export class ContentSubscribeComponent implements  OnInit, OnDestroy {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(
-    private http: Http) {}
-    constructor(
-    private activatedRoute: ActivatedRoute){}
+    constructor(private http: Http) {}
 
     ngOnInit() {
-     this.activatedRoute.params.subscribe((params: Params) => {
-    let id = +params['id'];
-    console.log(id);
-    })
-}
-// Get all bill from the API
-//getSubs() {
-// this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
-//   .map(res => res.json())
-//     this.subs = subs
-//   })
-}
+      this.getSubs();
+    }
+
+getSubs() {
+this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
+  .map(res => res.json())
+    this.subs = subs
+  })
 }

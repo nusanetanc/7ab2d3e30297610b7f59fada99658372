@@ -85,5 +85,5 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentCovergeComponent {
+export class ContentCoverageComponent {
 }
