@@ -59,8 +59,8 @@ import { Street } from './street';
                                         </select><br/>
                                     </form>
                                     <form>
-                                        <select #homeblok id="homeblok">
                                             <option class="option" disabled="true" selected="true">-- Select Block Name --</option>
+                                            <select #homeblok id="homeblok">
                                             <option *ngFor="#blokfloor of blokfloors" >{{ blokfloor._id }}</option>
                                         </select><br/>
                                     </form>
@@ -70,10 +70,10 @@ import { Street } from './street';
                                             <option *ngFor="#streetname of streetnames" >{{ streetname._id }}</option>
                                         </select><br/>
                                     </form>
-                                        <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Home Number">
-                                        <a href="coveragearea.html" class="btn btn-default buttonOrange">
+                                        <input type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number">
+                                        <button type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
                                             SEND
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -157,19 +157,18 @@ ngOnInit() {
                       this.homes = homes
                   })
           }
-    addBlock(streetname, blokfloor) {
-
-        var body = `name=${streetname}&blokfloor=${streetblok}`;
+    addBlock(homecity, homeproperty, homecluster, homeblok, homestreet, homeno) {
+        var body = `city=${homecity}&property=${homeproperty}&cluster=${homecluster}&blokfloor=${homeblok}&street=${homestreet}&nohome=${homeno}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/streetname/addstreetname`,
+            .post(`${this.API}/home/addhome`,
                 body, {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Street Success');
-                this.getAllStreet();
+                alert('Add Home Success');
+                this.getAllHome();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
