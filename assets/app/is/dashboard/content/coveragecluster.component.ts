@@ -50,7 +50,7 @@ import { Cluster } from './cluster';
                                               </select><br/>
                                           </form>
                                           <input type="text" class="form-control inputForm" #clustername id="clustername" placeholder="Cluster Name">
-                                          <button type="submit" (click)="addCluster(clustername.value, clusterproperty.value)" class="btn btn-default buttonOrange">
+                                          <button type="submit" (click)="addCluster(clustername.value)" class="btn btn-default buttonOrange">
                                               SEND
                                           </button>
                                       </div>
@@ -107,9 +107,9 @@ ngOnInit() {
                     this.clusters = clusters
                 })
         }
-    addCluster(clustername, clusterproperty) {
+    addCluster(clustername) {
 
-        var body = `name=${clustername}&property=${clusterproperty}`;
+        var body = `name=${clustername}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
