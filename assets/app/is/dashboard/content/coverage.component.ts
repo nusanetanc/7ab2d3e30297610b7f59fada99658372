@@ -76,6 +76,7 @@ import { Http } from 'angular2/http';
                         </a>
                         </div>
                         <div class="col-sm-4">
+                        <a [routerLink]="['AddHome']">
                             <div class="cardDashboardCover">
                                 <div class="row white">
                                     <div class="col-sm-12">
@@ -83,6 +84,7 @@ import { Http } from 'angular2/http';
                                     </div>
                                 </div>
                             </div>
+                        </a>
                         </div>
                     </div>
                 </div>
