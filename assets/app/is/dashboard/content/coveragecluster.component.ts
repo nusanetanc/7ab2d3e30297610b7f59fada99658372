@@ -41,7 +41,7 @@ import { Cluster } from './cluster';
                                           <form>
                                               <select #clustercity id="clustercity">
                                                   <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                  <option *ngFor="#city of cities">{{ city._id }}</option>
+                                                  <option *ngFor="#city of cities" value={{ city.id }}>{{ city.name }}</option>
                                               </select><br/>
                                           </form>
                                           <form>
