@@ -247,14 +247,11 @@ export class ContentDetailBillingComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
-      this.getBills() {
        this.http.get(`${this.API}/bill/idbill/id`)
          .map(res => res.json())
          .subscribe(bills => {
            this.bills = bills
          })
-
-  }
-  });
+  })
 }
 }
