@@ -242,7 +242,7 @@ export class ContentDetailBillingComponent implements OnInit {
 
   bills: any[] = [];
 
-  constructor(private http: Http, , private route: ActivatedRoute) {}
+  constructor(private http: Http, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -255,11 +255,7 @@ export class ContentDetailBillingComponent implements OnInit {
            this.bills = bills
          })
 
-  });
   }
-
-
-
-// Get all bill from the API
+  )};
 }
 }
