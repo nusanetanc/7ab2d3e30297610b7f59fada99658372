@@ -296,10 +296,15 @@ border-bottom:1px solid #ea442d;
     padding: 15px 0 15px 0;
 }
 
-.price-box-header-level:hover{
-background-color: #ea442d;
-    color: #fff;
+#price-box-container:hover > #price-box-header-level {
+
+    background-color: #fff;
+    border-top:1px solid #ea442d;
+    border-bottom:1px solid #ea442d;
+    color: #ea442d;
+
 }
+
 .package-most-popular{
     background-size: 121px;
     background-image: url(../images/most-popular.png);
