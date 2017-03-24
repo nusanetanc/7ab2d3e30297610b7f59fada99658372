@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { City } from './cities';
 import { Property } from './property';
 import { Cluster } from './cluster';
+import { Blokfloor } from './blokfloor';
 
 @Component({
     selector: 'form-coverageblock',
@@ -80,6 +81,7 @@ API = 'http://202.162.207.164:3000';
 cities: any[] = [];
 propertys: any[] = [];
 clusters: any[] = [];
+blokfloors: any[] = [];
 
 constructor(private http: Http) {}
 
@@ -128,7 +130,7 @@ ngOnInit() {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/cluster/addblokfloor`,
+            .post(`${this.API}/blokfloor/addblokfloor`,
                 body, {
                     headers: headers
                 })
