@@ -45,7 +45,7 @@ import { Cluster } from './cluster';
                                                 </select><br/>
                                             </form>
                                             <form>
-                                                <select class="form-control inputForm" #clusterproperty id="clusterproperty">
+                                                <select  #clusterproperty id="clusterproperty">
                                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                                     <option *ngFor="#property of propertys" >{{ property.name }}</option>
                                                 </select><br/>

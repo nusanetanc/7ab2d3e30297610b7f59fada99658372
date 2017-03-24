@@ -38,7 +38,7 @@ import { Property } from './property';
                                 <div class="col-sm-12">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select #propertycity id="propertycity">
+                                            <select class="form-control inputForm" #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities">{{ city.name }}</option>
                                             </select><br/>
