@@ -43,25 +43,25 @@ import { Street } from './street';
                                     <form>
                                         <select #streetcity id="streetcity">
                                             <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                            <option *ngFor="#city of cities">{{ city._id }}</option>
+                                            <option *ngFor="#city of cities">{{ city.name }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #streetproperty id="streetproperty">
                                             <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#property of propertys" >{{ property._id }}</option>
+                                            <option *ngFor="#property of propertys" >{{ property.name }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #streetcluster id="streetcluster">
-                                            <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
+                                            <option class="option" disabled="true" selected="true">-- Select Cluster Name --</option>
+                                            <option *ngFor="#cluster of clusters" >{{ cluster.name }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #streetblok id="streetblok">
                                             <option class="option" disabled="true" selected="true">-- Select Block Name --</option>
-                                            <option *ngFor="#blokfloor of blokfloors" >{{ blokfloor._id }}</option>
+                                            <option *ngFor="#blokfloor of blokfloors" >{{ blokfloor.name }}</option>
                                         </select><br/>
                                     </form>
                                         <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
@@ -75,6 +75,33 @@ import { Street } from './street';
                     </div>
                 </div>
             </div>
+            <br/>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="row headerList paddingLR30">
+                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Jalan</strong></div>
+                      </div>
+                      <div class="row subInfo">
+                          <div class="col-sm-12">
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-sm-12" *ngFor="#street of streetnames">
+                                            <div class="row subInfo">
+                                                <div class="col-sm-1 invoiceList"><span>{{street.name}}</span></div>
+                                                <div class="col-sm-3 invoiceList"><span>{{street.blokfloor}}</span></div>
+                                                <div class="col-sm-3 invoiceList"><span>{{street.cluster}}</span></div>
+                                                <div class="col-sm-3 invoiceList"><span>{{street.property}}</span></div>
+                                                <div class="col-sm-2 invoiceList"><span>{{street.city}}</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
         </div>
     <!-- Page content -->
     `,

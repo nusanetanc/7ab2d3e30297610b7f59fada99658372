@@ -42,19 +42,19 @@ import { Blokfloor } from './blokfloor';
                                     <form>
                                         <select #blockcity id="blockcity">
                                             <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                            <option *ngFor="#city of cities">{{ city._id }}</option>
+                                            <option *ngFor="#city of cities">{{ city.name }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #blockproperty id="blockproperty">
                                             <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#property of propertys" >{{ property._id }}</option>
+                                            <option *ngFor="#property of propertys" >{{ property.name }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #blockcluster id="blockcluster">
                                             <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
+                                            <option *ngFor="#cluster of clusters" >{{ cluster.name }}</option>
                                         </select><br/>
                                     </form>
                                     <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">

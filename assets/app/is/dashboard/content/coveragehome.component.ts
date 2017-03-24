@@ -82,6 +82,31 @@ import { Street } from './street';
                 </div>
             </div>
         </div>
+        <br/>
+          <div class="row">
+              <div class="col-sm-12">
+                  <div class="row headerList paddingLR30">
+                      <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Jalan</strong></div>
+                  </div>
+                  <div class="row subInfo">
+                      <div class="col-sm-12">
+                          <div class="row">
+                              <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-12" *ngFor="#home of homes">
+                                        <div class="row subInfo">
+                                            <div class="col-sm-8 invoiceList"><span>{{home.cluster}}, {{home.street}}, Blok {{home.city}}</span></div>
+                                            <div class="col-sm-2 invoiceList"><span></span>{{home.blokfloor}}</div>
+                                            <div class="col-sm-2 invoiceList"><span></span>{{home.no}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 </div>
     <!-- Page content -->
     `,
