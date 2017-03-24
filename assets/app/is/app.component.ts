@@ -32,6 +32,7 @@ import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
 import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
 import {ContentCoverageClusterComponent} from "./dashboard/content/coveragecluster.component";
 import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
+import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
 
 @Component({
    selector: 'is-app',
@@ -89,6 +90,7 @@ import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.c
         ContentCoveragePropertyComponent,
         ContentCoverageClusterComponent,
         ContentCoverageBlockComponent,
+        ContentCoverageStreetComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -121,7 +123,7 @@ import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.c
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
     { path: '/is/addcluster', component:ContentCoverageClusterComponent, name:'AddCluster'},
     { path: '/is/addblok', component:ContentCoverageBlockComponent, name:'AddBlock'},
-
+    { path: '/is/addstreet', component:ContentCoverageStreetComponent, name:'AddStreet'},
 ])
 
 export class AppComponent {
