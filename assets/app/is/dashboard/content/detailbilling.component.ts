@@ -247,7 +247,6 @@ export class ContentDetailBillingComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
-      //this.petService.findPetById(id).subscribe(dog => this.dog = dog);
       this.getBills() {
        this.http.get(`${this.API}/bill/idbill/id`)
          .map(res => res.json())
@@ -256,6 +255,6 @@ export class ContentDetailBillingComponent implements OnInit {
          })
 
   }
-  )};
+  });
 }
 }
