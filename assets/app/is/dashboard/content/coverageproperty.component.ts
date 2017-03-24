@@ -33,12 +33,12 @@ import { Property } from './property';
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Property</strong></div>
                     </div>
                     <div class="row subInfo">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="row">
-                                <div class="col-sm-12">
+                                <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select class="form-control inputForm" #propertycity id="propertycity">
+                                            <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities">{{ city.name }}</option>
                                             </select><br/>
