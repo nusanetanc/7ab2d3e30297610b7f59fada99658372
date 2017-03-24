@@ -1,6 +1,9 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import { City } from './cities';
+import { Property } from './property';
+import { Cluster } from './cluster';
 
 @Component({
     selector: 'form-coveragecluster',
@@ -104,7 +107,7 @@ ngOnInit() {
                     this.clusters = clusters
                 })
         }
-    addCluster(clustername, clustercity, clusterproperty) {
+    addCluster(clustername, clusterproperty) {
 
         var body = `name=${clustername}&property=${clusterproperty}`;
         var headers = new Headers();
