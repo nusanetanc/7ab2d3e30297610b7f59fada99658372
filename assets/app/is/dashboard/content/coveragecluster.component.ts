@@ -39,6 +39,18 @@ import { Cluster } from './cluster';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
+                                                <select #blockcity id="blockcity">
+                                                    <option class="option" disabled="true" selected="true">-- Select City Name --</option>
+                                                    <option *ngFor="#city of cities">{{ city.name }}</option>
+                                                </select><br/>
+                                            </form>
+                                            <form>
+                                                <select #blockproperty id="blockproperty">
+                                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                                    <option *ngFor="#property of propertys" >{{ property.name }}</option>
+                                                </select><br/>
+                                            </form>
+                                            <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
                                             </form>
