@@ -33,7 +33,7 @@ import { Property } from './property';
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Property</strong></div>
                     </div>
                     <div class="row subInfo">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="formNewReport marginLR20">
