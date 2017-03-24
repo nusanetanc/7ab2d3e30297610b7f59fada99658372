@@ -59,8 +59,8 @@ import { Street } from './street';
                                         </select><br/>
                                     </form>
                                     <form>
+                                       <select #homeblok id="homeblok">
                                             <option class="option" disabled="true" selected="true">-- Select Block Name --</option>
-                                            <select #homeblok id="homeblok">
                                             <option *ngFor="#blokfloor of blokfloors" >{{ blokfloor._id }}</option>
                                         </select><br/>
                                     </form>
