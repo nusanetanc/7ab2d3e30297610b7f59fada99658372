@@ -1,6 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
 import { City } from './cities';
 import { Property } from './property';
 import { Cluster } from './cluster';
@@ -50,7 +51,7 @@ import { Cluster } from './cluster';
                                               </select><br/>
                                           </form>
                                           <input type="text" class="form-control inputForm" #clustername id="clustername" placeholder="Cluster Name">
-                                          <button type="submit" (click)="addCluster(clustername.value)" class="btn btn-default buttonOrange">
+                                          <button type="submit" (click)="addCluster(clustername.value, clusterproperty.value)" class="btn btn-default buttonOrange">
                                               SEND
                                           </button>
                                       </div>
@@ -107,9 +108,9 @@ ngOnInit() {
                     this.clusters = clusters
                 })
         }
-    addCluster(clustername) {
+    addCluster(clustername, clusterproperty) {
 
-        var body = `name=${clustername}`;
+        var body = `name=${clustername}&property=${clusterproperty}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
