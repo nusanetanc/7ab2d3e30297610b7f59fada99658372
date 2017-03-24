@@ -43,11 +43,11 @@ import { Http } from 'angular2/http';
                                           <form>
                                               <select #clusterproperty id="clusterproperty">
                                                   <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                  <option *ngFor="#property of propertys" value={{property.name}}>{{ property.name }}</option>
+                                                  <option *ngFor="#property of propertys" value={{property.name}}>{{ property._id }}</option>
                                               </select><br/>
                                           </form>
                                           <input type="text" class="form-control inputForm" #clustername id="clustername" placeholder="Cluster Name">
-                                          <button type="submit" (click)="addCluster(clustername.value, clustercity.value, clusterproperty.value)" class="btn btn-default buttonOrange">
+                                          <button type="submit" (click)="addCluster(clustername.value, clusterproperty.value)" class="btn btn-default buttonOrange">
                                               SEND
                                           </button>
                                       </div>
@@ -106,7 +106,7 @@ ngOnInit() {
         }
     addCluster(clustername, clustercity, clusterproperty) {
 
-        var body = `name=${clustername}&city=${clustercity}&property=${clusterproperty}`;
+        var body = `name=${clustername}&property=${clusterproperty}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
