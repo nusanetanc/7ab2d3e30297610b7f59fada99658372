@@ -244,7 +244,7 @@ export class ContentDetailBillingComponent {
 
   constructor(private http: Http) {}
   constructor(params: RouteParams) {
-      var paramId = params.get("id");
+      paramId = params.get("id");
   }
 
   ngOnInit() {
