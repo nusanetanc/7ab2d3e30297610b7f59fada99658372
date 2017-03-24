@@ -36,7 +36,7 @@ import { Cluster } from './cluster';
                       <div class="row subInfo">
                           <div class="col-sm-12">
                               <div class="row">
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-12">
                                       <div class="formNewReport marginLR20">
                                           <form>
                                               <select #clustercity id="clustercity">

@@ -84,7 +84,7 @@ import { Street } from './street';
                       <div class="row subInfo">
                           <div class="col-sm-12">
                               <div class="row">
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#street of streetnames">
                                             <div class="row subInfo">

@@ -78,7 +78,7 @@ import { Blokfloor } from './blokfloor';
               <div class="row subInfo">
                   <div class="col-sm-12">
                       <div class="row">
-                          <div class="col-sm-6">
+                          <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-12" *ngFor="#blokfloor of blokfloors">
                                     <div class="row subInfo">
