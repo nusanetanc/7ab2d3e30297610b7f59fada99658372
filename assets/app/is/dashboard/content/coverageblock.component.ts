@@ -38,7 +38,7 @@ import { Cluster } from './cluster';
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="formNewReport marginLR20">
-                                    <<form>
+                                    <form>
                                         <select #blockcity id="blockcity">
                                             <option class="option" disabled="true" selected="true">-- Select City Name --</option>
                                             <option *ngFor="#city of cities">{{ city._id }}</option>
@@ -56,10 +56,10 @@ import { Cluster } from './cluster';
                                             <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
                                         </select><br/>
                                     </form>
-                                    <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Block / Floor Name">
-                                    <a href="coverage5.html" class="btn btn-default buttonOrange">
+                                    <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
+                                    <button type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -88,6 +88,7 @@ ngOnInit() {
     this.getAllCity();
     this.getAllProperty();
     this.getAllCluster();
+    this.getAllBlock();
 }
 // Get all City from the API
     getAllCity() {
@@ -113,19 +114,27 @@ ngOnInit() {
                     this.clusters = clusters
                 })
         }
-    addCluster(clustername, clusterproperty) {
+        // Get all BLock from the API
+            getAllBlock() {
+                this.http.get(`${this.API}/blokfloor/listblokfloor`)
+                    .map(res => res.json())
+                    .subscribe(blokfloors => {
+                        this.blokfloors = blokfloors
+                    })
+            }
+    addBlock(blockname, blockcluster) {
 
-        var body = `name=${clustername}&property=${clusterproperty}`;
+        var body = `name=${blockname}&cluster=${blockcluster}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/cluster/addcluster`,
+            .post(`${this.API}/cluster/addblokfloor`,
                 body, {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Cluster Success');
-                this.getAllCluster();
+                alert('Add Block Success');
+                this.getAllBlock();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
