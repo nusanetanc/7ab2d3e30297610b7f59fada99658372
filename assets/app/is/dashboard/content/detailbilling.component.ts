@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
@@ -235,30 +235,31 @@ import { Billing } from './billing';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailBillingComponent {
+export class ContentDetailBillingComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
 
-  constructor(private http: Http) {}
-  constructor(params: RouteParams) {
-      var paramId = params.get("id");
-      console.log(paramId);
-  }
+  constructor(private http: Http, , private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.getBills();
+    this.sub = this.route.params.subscribe(params => {
+      let id = params['id'];
+      //this.petService.findPetById(id).subscribe(dog => this.dog = dog);
+      this.getBills() {
+       this.http.get(`${this.API}/bill/idbill/id`)
+         .map(res => res.json())
+         .subscribe(bills => {
+           this.bills = bills
+         })
+
+  });
   }
+
 
 
 // Get all bill from the API
-getBills() {
- this.http.get(`${this.API}/bill/idbill/${this.Billing_ID}`)
-   .map(res => res.json())
-   .subscribe(bills => {
-     this.bills = bills
-   })
 }
 }
