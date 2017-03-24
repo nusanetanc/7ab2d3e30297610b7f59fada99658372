@@ -63,12 +63,12 @@ import { Property } from './property';
                       <div class="row subInfo">
                           <div class="col-sm-12">
                               <div class="row">
-                                  <div class="col-sm-6">
+                                  <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#property of propertys">
                                             <div class="row subInfo">
-                                                <div class="col-sm-8 invoiceList"><span>{{property.name}}</span></div>
-                                                <div class="col-sm-8 invoiceList"><span>{{property.city}}</span></div>
+                                                <div class="col-sm-6 invoiceList"><span>{{property.name}}</span></div>
+                                                <div class="col-sm-6 invoiceList"><span>{{property.city}}</span></div>
                                             </div>
                                         </div>
                                     </div>
