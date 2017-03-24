@@ -11,7 +11,6 @@ var HomeSchema   = new Schema({
   groovyid: String,
   city: {type: Schema.Types.ObjectId, ref: 'City'},
   property: {type: Schema.Types.ObjectId, ref: 'Property'},
-  typeproperty: {type: Schema.Types.ObjectId, ref: 'typeproperty'},
   cluster: {type: Schema.Types.ObjectId, ref: 'Cluster'},
   blokfloor: {type: Schema.Types.ObjectId, ref: 'Blokfloor'},
   streetname: {type: Schema.Types.ObjectId, ref: 'Streetname'},
