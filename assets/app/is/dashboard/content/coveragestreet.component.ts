@@ -88,11 +88,9 @@ import { Street } from './street';
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#street of streetnames">
                                             <div class="row subInfo">
-                                                <div class="col-sm-1 invoiceList"><span>{{street.name}}</span></div>
-                                                <div class="col-sm-3 invoiceList"><span>{{street.blokfloor}}</span></div>
-                                                <div class="col-sm-3 invoiceList"><span>{{street.cluster}}</span></div>
-                                                <div class="col-sm-3 invoiceList"><span>{{street.property}}</span></div>
-                                                <div class="col-sm-2 invoiceList"><span>{{street.city}}</span></div>
+                                                <div class="col-sm-3 invoiceList"><span>{{street.city}}</span></div>
+                                                <div class="col-sm-4 invoiceList"><span>{{street.cluster}}, Blok {{street.blokfloor}}</span></div>
+                                                <div class="col-sm-5 invoiceList"><span>{{street.name}}</span></div>
                                             </div>
                                         </div>
                                     </div>
