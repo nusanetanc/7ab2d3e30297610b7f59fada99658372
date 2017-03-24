@@ -40,7 +40,7 @@ import { Property } from './property';
                                         <form>
                                             <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities" value={{ city._id }}>{{ city.name }}</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
@@ -54,6 +54,30 @@ import { Property } from './property';
                     </div>
                 </div>
             </div>
+            <br/>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="row headerList paddingLR30">
+                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Property</strong></div>
+                      </div>
+                      <div class="row subInfo">
+                          <div class="col-sm-12">
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="row">
+                                        <div class="col-sm-12" *ngFor="#property of propertys">
+                                            <div class="row subInfo">
+                                                <div class="col-sm-6 invoiceList"><span>{{property.name}}</span></div>
+                                                <div class="col-sm-6 invoiceList"><span>{{property.city}}</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
         </div>
     <!-- Page content -->
     `,
