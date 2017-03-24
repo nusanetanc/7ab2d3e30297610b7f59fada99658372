@@ -31,7 +31,7 @@ import { Cluster } from './cluster';
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row headerList paddingLR30">
-                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add City</strong></div>
+                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Cluster</strong></div>
                         </div>
                         <div class="row subInfo">
                             <div class="col-sm-12">
@@ -51,7 +51,7 @@ import { Cluster } from './cluster';
                                                 </select><br/>
                                             </form>
                                             <form>
-                                                <input #clustername type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                <input #clustername type="text" class="form-control inputForm" id="cityname" placeholder="New Cluster">
                                                 <br/>
                                             </form>
                                             <button type="submit" (click)="addCity(clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
@@ -63,12 +63,12 @@ import { Cluster } from './cluster';
                             </div>
                         </div>
                     </div>
-                  </div>
-                  <br/>
+                </div>
+                <br/>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="row headerList paddingLR30">
-                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List City</strong></div>
+                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Cluster</strong></div>
                             </div>
                             <div class="row subInfo">
                                 <div class="col-sm-12">

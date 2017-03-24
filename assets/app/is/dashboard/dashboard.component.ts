@@ -22,7 +22,7 @@ import {Menu} from "./menu";
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
-                        <li>
+                        <li class="firstLiSidebar">
                           <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
