@@ -69,6 +69,32 @@ import { Blokfloor } from './blokfloor';
             </div>
         </div>
     </div>
+    <br/>
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="row headerList paddingLR30">
+                  <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Block</strong></div>
+              </div>
+              <div class="row subInfo">
+                  <div class="col-sm-12">
+                      <div class="row">
+                          <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12" *ngFor="#blokfloor of blokfloors">
+                                    <div class="row subInfo">
+                                        <div class="col-sm-8 invoiceList"><span>{{blokfloor.name}}</span></div>
+                                        <div class="col-sm-8 invoiceList"><span>{{blokfloor.cluster}}</span></div>
+                                        <div class="col-sm-8 invoiceList"><span>{{blokfloor.property}}</span></div>
+                                        <div class="col-sm-8 invoiceList"><span>{{blokfloor.city}}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
 <!-- Page content -->
     `,
