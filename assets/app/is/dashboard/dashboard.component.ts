@@ -17,13 +17,12 @@ import {ContentAllSubsComponent} from "./content/allsubs.component";
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
-                            <a class="name"><b>{{emp.name}}</b></a>
-                            <a class="user">{{emp.titlejob}}</a>
+                            <a class="name"><b>{{emps.name}}</b></a>
+                            <a class="user">{{emps.titlejob}}</a>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['AllSubs']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
                             <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
