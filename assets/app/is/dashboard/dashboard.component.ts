@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 import {Emp} from "./emp";
 import {Menu} from "./menu";
 
+//import {ContentDashboardComponent} from "./content/dashboard.component";
+//import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
@@ -21,7 +23,8 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['Dashboardwq']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
+                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
                             <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
@@ -56,7 +59,7 @@ import {Menu} from "./menu";
             </div>
             <!-- /Sidebar -->
     `,
-    directives: [ROUTER_DIRECTIVES], providers: [],
+    directives: [ ROUTER_DIRECTIVES], providers: [],
 })
 
 
