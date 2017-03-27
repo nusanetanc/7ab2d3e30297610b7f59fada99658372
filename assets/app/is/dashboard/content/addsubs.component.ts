@@ -26,9 +26,15 @@ import {Streetname} from "./street_name";
             </div>
 
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                <div class="row marginB20 marginR0">
+                    <div class="col-sm-12">
+                          <a [routerLink]="['AllSubs']" class="btn btn-default buttonBack" type="button">
+                              BACK
+                          </a>
+                    </div>
+                </div>
                 <div class="row subInfo">
                     <div class="col-sm-12">
-
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row">
