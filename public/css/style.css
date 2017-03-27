@@ -245,6 +245,34 @@ body{
 /*-------------------- End Form Authentication -------------------------*/
 
 
+/*---------------------- About ---------------------*/
+.wall-about{
+    height:560px;
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    margin-bottom: 0px;
+}
+
+.wall-about-content{
+    background-position:center;
+    background-size:cover;
+    background-color: #f0f0f0;
+    margin-bottom: 0px;
+}
+
+.wall-about-content-title{
+    font-size:38px;
+    color: #333;
+    font-weight:300;
+}
+
+.about-content{
+    padding-bottom: 50px;
+}
+
+/*--------------------/End About ---------------------*/
+
+
 /*---------------------- Package ---------------------*/
 .wall-package{
 background-image:url(../images/package-groovy.png);
