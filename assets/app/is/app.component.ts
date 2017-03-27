@@ -34,7 +34,7 @@ import {ContentCoverageClusterComponent} from "./dashboard/content/coverageclust
 import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.component";
 import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
 import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
-import {2DashboardComponent} from "./dashboard/2dashboard.component";
+import {DdashboardComponent} from "./dashboard/ddashboard.component";
 
 @Component({
    selector: 'is-app',
@@ -64,7 +64,7 @@ import {2DashboardComponent} from "./dashboard/2dashboard.component";
    </div><!-- END CONTENT -->
 `,
     directives: [
-    2DashboardComponent,
+    DdashboardComponent,
         DashboardComponent,
         ContentAllSubsComponent,
         ContentDashboardComponent,

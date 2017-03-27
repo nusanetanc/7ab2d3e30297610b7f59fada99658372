@@ -63,7 +63,7 @@ import {Menu} from "./menu";
 })
 
 
-export class 2DashboardComponent {
+export class DdashboardComponent {
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
   //Session_ID = '58b6a0d77dfd7052a9fe53c9';
