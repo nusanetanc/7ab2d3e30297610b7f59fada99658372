@@ -23,6 +23,7 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
+                            <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
                             <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
