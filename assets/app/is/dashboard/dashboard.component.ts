@@ -23,28 +23,28 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']" class="collapse" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
+                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllBill']" class="collapse" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
+                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Coverage']" class="collapse" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
+                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllReport']" class="collapse" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Information']" class="collapse" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllEmployee']" class="collapse" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllStock']" class="collapse" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
