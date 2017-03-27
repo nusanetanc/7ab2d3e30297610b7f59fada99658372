@@ -23,29 +23,29 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routesarLink]="['AddInforasmation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
-                            <a [routerLsaink]="['Dashboarasd']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['AddInforasmation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
+                            <a [routerLink]="['Dashboarasd']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
-                            <a [routersaLink]="['AllSubass']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
+                            <a [routerLink]="['AllSubass']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
                         </li>
                         <li>
-                            <a [routesarLink]="['AllsaBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
+                            <a [routerLink]="['AllsaBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a [routerLasink]="['Coveasrage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
+                            <a [routerLink]="['Coveasrage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
                         </li>
                         <li>
-                            <a [routsarLink]="['AllResaport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllResaport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
-                            <a [routersaLink]="['Inforsmation']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a [routerLink]="['Inforsmation']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
                         <li>
-                            <a [routersLink]="['AllEmasployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                            <a [routerLink]="['AllEmasployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                            <a [routerasLink]="['AllStasock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
