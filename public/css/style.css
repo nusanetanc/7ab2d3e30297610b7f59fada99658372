@@ -286,8 +286,10 @@ color: #ea442d;
 }
 
 .price-box-header-level{
-    background-color: #ea442d;
-    color: #fff;
+    background-color: #fff;
+    border-top:1px solid #ea442d;
+    border-bottom:1px solid #ea442d;
+    color: #ea442d;
     font-size: 20px;
     font-weight: 200;
     text-align: center;
@@ -296,10 +298,9 @@ color: #ea442d;
 
 #price-box-container:hover > #price-box-header-level {
 
-    background-color: #fff;
-    border-top:1px solid #ea442d;
-    border-bottom:1px solid #ea442d;
-    color: #ea442d;
+
+    background-color: #ea442d;
+    color: #fff;
 
 }
 
