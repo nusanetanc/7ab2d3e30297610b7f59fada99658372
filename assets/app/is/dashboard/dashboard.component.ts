@@ -3,36 +3,49 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Sub } from './content/subs';
-import { Menu } from './menu';
+import {Emp} from "./emp";
+import {Menu} from "./menu";
+
+//import {ContentDashboardComponent} from "./content/dashboard.component";
+//import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
-    <!-- Sidebar -->
+            <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <nav id="spy">
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
-                            <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
-                            <a class="user">Subscriber - Level {{ subs.packlev }}</a>
+                            <a class="name"><b>{{emp.name}}</b></a>
+                            <a class="user">{{emp.titlejob}}</a>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
-
                         <li class="firstLiSidebar">
-                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
+                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
                         </li>
-
+                        <li>
+                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                        </li>
                     </ul>
                     <div class="sidebar-footer">
                         <div>
@@ -50,24 +63,33 @@ import { Menu } from './menu';
 
 
 export class DashboardComponent {
-
 // Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+    API = 'http://202.162.207.164:3000';
+  //Session_ID = '58b6a0d77dfd7052a9fe53c9';
+    content_access = '202';
 
+    ngOnInit() {
+        this.getAcountEmp();
+        this.getContentMenu()
+    }
 
-subs: any[] = [];
+    emps: any[] = [];
+    menus: any[] = [];
+    constructor(private http: Http) {}
 
-  constructor(private http: Http) {}
+    getAcountEmp() {
+        this.http.get(`${this.API}/employee/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            })
+    }
 
-  ngOnInit() {
-    this.getAcountSub();
-  }
-
-getAcountSub() {
-  this.http.get(`${this.API}/subscribe/detailsub`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
+    getContentMenu() {
+        this.http.get(`${this.API}/menu/listmenu`)
+            .map(res => res.json())
+            .subscribe(menus => {
+                this.menus = menus
+            })
+    }
 }
