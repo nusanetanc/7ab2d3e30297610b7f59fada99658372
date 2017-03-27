@@ -163,13 +163,14 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
-    city_id = _id;
+
 
     cities: City[];
     properties: Property[];
 
     onSelect(_id) {
-        console.log(_id)
+        var city_id = _id;
+        console.log(city_id)
         this.properties = this.getAllPropertyByCity();
     }
 
