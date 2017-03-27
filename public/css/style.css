@@ -259,6 +259,10 @@ body{
     margin-bottom: 0px;
 }
 
+.about-content-text{
+    font-size: 14px;
+}
+
 .wall-about-content-title{
     font-size:38px;
     color: #333;
