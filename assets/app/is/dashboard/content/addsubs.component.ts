@@ -178,7 +178,7 @@ export class ContentAddSubsComponent implements OnInit {
                 this.properties = properties
             })
     }
-        console.log(city_id)
+        console.log(_id)
         this.properties = this.getAllPropertyByCity();
     }
 
