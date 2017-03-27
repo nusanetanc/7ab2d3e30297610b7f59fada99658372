@@ -23,7 +23,7 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['/is']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
                             <a [routerLink]="['AllSubs']" class="collapse" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
