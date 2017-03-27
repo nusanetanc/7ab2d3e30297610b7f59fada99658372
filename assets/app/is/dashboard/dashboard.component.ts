@@ -23,29 +23,29 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
-                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routesarLink]="['AddInforasmation']" class="btn btn-default buttonOrange">NEW INFORMATION</a>
+                            <a [routerLsaink]="['Dashboarasd']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
+                            <a [routersaLink]="['AllSubass']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
+                            <a [routesarLink]="['AllsaBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
+                            <a [routerLasink]="['Coveasrage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routsarLink]="['AllResaport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a [routersaLink]="['Inforsmation']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                            <a [routersLink]="['AllEmasployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                            <a [routerasLink]="['AllStasock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
