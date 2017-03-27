@@ -168,6 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(_id) {
+    API = 'http://202.162.207.164:3000';
     city_id = _id;
     // Get all Property by city from the API
     getAllPropertyByCity() {
