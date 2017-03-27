@@ -109,9 +109,9 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm">
                                                 <option value="0">-- Select your city --</option>
-                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city._id }}</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -169,7 +169,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelect(_id) {
         console.log(_id)
-        this.properties = this.getAllProperty().filter((item) => item.city == _id);
+        this.properties = this.getAllProperty(city : _id);
     }
 
 // Link to our api, pointing to localhost
