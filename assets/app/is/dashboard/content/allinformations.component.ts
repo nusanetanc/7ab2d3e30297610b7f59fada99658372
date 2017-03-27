@@ -21,7 +21,7 @@ import { Information } from './allinformation';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a href="newinformation.html" class="btn btn-default buttonOrange">
+                    <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
                         NEW INFORMATION
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
