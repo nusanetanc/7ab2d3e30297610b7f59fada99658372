@@ -109,7 +109,7 @@ import {Streetname} from "./street_name";
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h4 class="titleH4">ADDRESssS</h4>
+                                        <h4 class="titleH4">ADDREsaSasS</h4>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -170,20 +170,12 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
 
+
     cities: City[];
     properties: Property[];
 
     onSelect(_id) {
-    API = 'http://202.162.207.164:3000';
-    city_id = _id;
-    // Get all Property by city from the API
-    getAllPropertyByCity() {
-        this.http.get(`${this.API}/propertybycity/${this.city_id}`)
-            .map(res => res.json())
-            .subscribe(properties => {
-                this.properties = properties
-            })
-    }
+        var city_id = _id;
         console.log(city_id)
         this.properties = this.getAllPropertyByCity();
     }
@@ -258,7 +250,14 @@ export class ContentAddSubsComponent implements OnInit {
                 this.properties = properties
             })
     }
-
+    // Get all Property by city from the API
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/${this.city_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
     // Get all Type from the API
     getAllType() {
         this.http.get(`${this.API}/type/listtypeproperty`)
