@@ -22,7 +22,7 @@ import {Report} from './allreports';
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                    <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
-                        NEW INFORMATION
+                        NEW REPORT
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
