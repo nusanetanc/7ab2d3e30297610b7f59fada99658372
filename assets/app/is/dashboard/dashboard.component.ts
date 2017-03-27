@@ -7,7 +7,7 @@ import {Emp} from "./emp";
 import {Menu} from "./menu";
 
 //import {ContentDashboardComponent} from "./content/dashboard.component";
-//import {ContentAllSubsComponent} from "./content/allsubs.component";
+import {ContentAllSubsComponent} from "./content/allsubs.component";
 @Component({
     selector: 'dashboard',
     template: `
