@@ -164,15 +164,14 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
 
-
     cities: City[];
     properties: Property[];
 
     onSelect(_id) {
         var city_id = _id;
-        console.log(city_id)
+        console.log(_id)
         this.properties = this.getAllPropertyByCity();
-    }
+
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
@@ -303,4 +302,5 @@ export class ContentAddSubsComponent implements OnInit {
                 this.streetnames = streetnames
             })
     }
+}
 }
