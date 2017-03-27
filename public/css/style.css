@@ -247,13 +247,11 @@ body{
 
 /*---------------------- About ---------------------*/
 .wall-about{
-    height:500px;
+    height:300px;
     margin-bottom: 0px;
 }
 
 .wall-about-content{
-    background-position: center;
-    background-size: cover;
     background-color: #f0f0f0;
     margin-bottom: 0px;
 }
