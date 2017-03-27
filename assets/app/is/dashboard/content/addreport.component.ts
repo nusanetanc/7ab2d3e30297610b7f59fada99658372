@@ -17,6 +17,13 @@ import { Http } from 'angular2/http';
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
+            <div class="row marginB20 marginR0">
+                <div class="col-sm-12">
+                      <a [routerLink]="['AllReport']" class="btn btn-default buttonBack" type="button">
+                          BACK
+                      </a>
+                </div>
+            </div>
             <div class="row subInfo">
                 <div class="col-sm-12">
                     <div class="row">
