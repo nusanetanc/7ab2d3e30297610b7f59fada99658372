@@ -163,6 +163,7 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
+    city_id = _id;
 
     cities: City[];
     properties: Property[];
@@ -171,6 +172,8 @@ export class ContentAddSubsComponent implements OnInit {
         console.log(_id)
         this.properties = this.getAllProperty().filter((item) => item.city == _id);
     }
+
+    console.log(_id)
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
