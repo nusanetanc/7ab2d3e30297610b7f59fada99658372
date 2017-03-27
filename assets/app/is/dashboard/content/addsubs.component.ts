@@ -165,21 +165,9 @@ export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, "dummy");
 
     cities: City[];
-
+    properties: Property[];
 
     onSelect(_id) {
-            var city_id = _id;
-        properties: Property[];
-        constructor(private http: Http) {}
-        // Get all Property by city from the API
-        getAllPropertyByCity() {
-            this.http.get(`${this.API}/property/${this.city_id}`)
-                .map(res => res.json())
-                .subscribe(properties => {
-                    this.properties = properties
-                })
-        }
-
         console.log(_id)
         this.properties = this.getAllPropertyByCity();
     }
@@ -254,7 +242,14 @@ export class ContentAddSubsComponent implements OnInit {
                 this.properties = properties
             })
     }
-
+    // Get all Property by city from the API
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/${this.city_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
     // Get all Type from the API
     getAllType() {
         this.http.get(`${this.API}/type/listtypeproperty`)
