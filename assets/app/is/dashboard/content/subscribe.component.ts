@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
@@ -162,7 +162,7 @@ import { Sub } from './subs';
         </div>
     </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, RouteParams],
 })
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
@@ -172,14 +172,15 @@ export class ContentSubscribeComponent {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, private RouteParams:_routeParams) {}
 
     ngOnInit() {
       this.getSubs();
+      let id = String.parseInt(this._routeParams.get('id'));
     }
 
 getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
+this.http.get(`${this.API}/subscribe/subs/${this.id}`)
   .map(res => res.json())
   .subscribe(subs => {
     this.subs = subs
