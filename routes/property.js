@@ -5,14 +5,8 @@ var City = require('../models/city');
 /* GET propertyloye listing. */
 router.get('/listproperty', function(req, res, next) {
      Property.find(function(err, propertys) {
-       City.findById(propertys.city,function(err, cities) {
-       res.json({
-         city: propertys.city,
-         namecity: cities.name,
-         name: propertys.name,
-         _id: propertys._id,
-       });
-     });
+       console.log( propertys );
+       res.json(propertys);
    });
 });
 
