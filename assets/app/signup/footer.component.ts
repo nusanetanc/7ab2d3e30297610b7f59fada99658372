@@ -10,38 +10,36 @@ import {Http} from 'angular2/http';
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
-                    <span class="home-footer-body-text">
-                        <a href="#">Facebook</a><br>
-                        <a href="#">Twitter</a><br>
-                        <a href="#">Instagram</a><br>
-                        <a href="#">Youtube</a>
+                        <span class="home-footer-body-text">
+                        <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
+                        <a href="https://twitter.com/groovy_play">Twitter</a><br>
+                        <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
                     </span></p>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Features</span><br>
                         <span class="home-footer-body-text">
-                        <a href="#">Internet</a><br>
-                        <a href="#">Live TV</a><br>
-                        <a href="#">Video on Demand</a><br>
-                        <a href="#">Social TV</a><br>
-                        <a href="#">Catch-up TV Channel</a><br>
-                        <a href="#">Radio Streaming</a>
+                        <a href="/features">Unlimited Internet Access</a><br>
+                        <a href="/features">Fiber Optic to the Home</a><br>
+                        <a href="/features">Free Public Wifi Account</a><br>
+                        <a href="/features">IP Static</a><br>
+                        <a href="/features">Helpdesk 24/7</a><br>
                     </span></p>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Groovy</span><br>
-                    <span class="home-footer-body-text">
-                        <a href="#">About</a><br/>
-                        <a href="">Career</a><br>
-                        <a href="">Event</a><br>
-                        <a href="">Contact</a><br>
-                        <a href="">Privacy Policy</a><br>
-                        <a href="">Terms of Use</a>
+                        <span class="home-footer-body-text">
+                        <a href="about">About</a><br/>
+                        <a href="career">Career</a><br>
+                        <a href="event">Event</a><br>
+                        <a href="contact">Contact</a><br>
+                        <a href="privacy-policy">Privacy Policy</a><br>
+                        <a href="terms-of-use">Terms of Use</a>
                     </span></p>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text"><img src="images/groovy.png" alt="" width="120px"></span><br>
-                        <span class="home-footer-body-text">Layanan Internet terbaik untuk komplek perumahan dan apartemen dengan mengkombinasikan layanan hiburan terlengkap mullai dari live TV, video on demand, social TV, catch-up TV dan radio streaming</span>
+                        <span class="home-footer-body-text">Best Internet services for homes and apartments with a complete entertainment services, from live TV, video on demand, social TV, catch-up TV and radio streaming.
                     </p>
                 </div>
             </div>
