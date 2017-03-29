@@ -29,12 +29,12 @@ import {Http} from 'angular2/http';
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Groovy</span><br>
                         <span class="home-footer-body-text">
-                        <a href="/about">About</a><br/>
-                        <a href="/career">Career</a><br>
-                        <a href="/event">Event</a><br>
-                        <a href="/contact">Contact</a><br>
-                        <a href="/privacy-policy">Privacy Policy</a><br>
-                        <a href="/terms-of-use">Terms of Use</a>
+                        <a href="about">About</a><br/>
+                        <a href="career">Career</a><br>
+                        <a href="event">Event</a><br>
+                        <a href="contact">Contact</a><br>
+                        <a href="privacy-policy">Privacy Policy</a><br>
+                        <a href="terms-of-use">Terms of Use</a>
                     </span></p>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
@@ -47,7 +47,7 @@ import {Http} from 'angular2/http';
     </div>
     <div class="footer-home">
         <div class="container footer-home-text">
-            <p>Copyright 2017 Groovy. All Right Reserved.</p>
+            <p>Copyright 2016 Groovy. All Right Reserved.</p>
         </div>
     </div>
 `,
