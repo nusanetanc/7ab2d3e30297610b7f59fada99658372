@@ -172,7 +172,6 @@ import { Sub } from './subs';
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    subid = '58b3cdac45912d052e2c85a5';
 
     // Declare empty list of people
     subs: any[] = [];
