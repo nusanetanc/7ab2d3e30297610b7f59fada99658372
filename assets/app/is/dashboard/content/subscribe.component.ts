@@ -24,6 +24,11 @@ import { Sub } from './subs';
                     <a [routerLink]="['AllSubs']" class="btn btn-default buttonBack" type="button">
                         BACK
                     </a>
+                    <div class="right">
+                      <a [routerLink]="['AllSubs']" class="btn btn-default buttonOrange" type="button">
+                          CREATE INVOICE
+                      </a>
+                    </div>
                 </div>
             </div>
             <div class="row subInfo">
@@ -162,7 +167,7 @@ import { Sub } from './subs';
         </div>
     </div>
     `,
-    directives: [ROUTER_DIRECTIVES, RouteParams],
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
@@ -172,15 +177,14 @@ export class ContentSubscribeComponent {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http, private RouteParams:_routeParams) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
       this.getSubs();
-      let id = String.parseInt(this._routeParams.get('id'));
     }
 
 getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this.id}`)
+this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
   .map(res => res.json())
   .subscribe(subs => {
     this.subs = subs

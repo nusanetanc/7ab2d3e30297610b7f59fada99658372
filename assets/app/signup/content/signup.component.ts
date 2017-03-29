@@ -33,10 +33,6 @@ import {Package} from "./package";
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
                                 </select>
-                                <select name="type">
-                                    <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                    <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty.name }}">{{ typeproperty.name }}</option>      
-                                </select>
                                 <select name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
@@ -80,16 +76,16 @@ import {Package} from "./package";
                                 <div>
                                     <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm PST
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
                                     </div>
-                                </div><br><br><br><br><br><br><br><br><br><br><br><br>
+                                </div><br><br><br><br><br><br>
                                 <div>
                                     <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
                                     <div class="form-group">
@@ -138,7 +134,6 @@ export class SignupComponent implements OnInit{
 
     selectedCity: City;
     selectedProperty: Property;
-    selectedType: TypeProperty;
     selectedCluster: Cluster;
     selectedBlok: Blokfloor;
     selectedNo: Home;
@@ -182,7 +177,6 @@ export class SignupComponent implements OnInit{
     subs: any[] = [];
     cities: any[] = [];
     properties: any[] = [];
-    typeproperties: any[] = [];
     clusters: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
@@ -195,7 +189,6 @@ export class SignupComponent implements OnInit{
         this.getAllSub();
         this.getAllCity();
         this.getAllProperty();
-        this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
@@ -234,15 +227,6 @@ export class SignupComponent implements OnInit{
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
-            })
-    }
-
-    // Get all Type from the API
-    getAllType() {
-        this.http.get(`${this.API}/type/listtypeproperty`)
-            .map(res => res.json())
-            .subscribe(typeproperties => {
-                this.typeproperties = typeproperties
             })
     }
 // Get all BLokfloor from the API

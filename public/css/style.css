@@ -863,6 +863,19 @@ margin-bottom: 20px;
 
 /*----------------------------/privacy-policy-----------------------------------*/
 
+
+/*---------------------------coming soon-----------------------------*/
+.coming-soon{
+    text-align: center;
+    padding: 250px 0 250px 0;
+}
+
+.coming-soon > h1{
+    color: #c1c1c1;
+}
+
+/*---------------------------/coming soon-----------------------------*/
+
 @media only screen and (max-width : 768px){
     .container-auth{
         width:90%;

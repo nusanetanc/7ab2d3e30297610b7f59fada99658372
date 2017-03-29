@@ -24,11 +24,9 @@ import {Streetname} from "./street_name";
                     &nbsp; New Subscribers
                 </h3>
             </div>
-
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
                 <div class="row subInfo">
                     <div class="col-sm-12">
-
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row">
@@ -45,11 +43,13 @@ import {Streetname} from "./street_name";
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                                 <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
-                                                <p>Upload your National Identity Card</p>
+                                                
+                                                <!--<p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
-                                                    <button class="left" type="button">choose file</button>
+                                                    <button class="left" type="button" disabled="true">choose file</button>
                                                     <p class="left marginL5">No choose file</p>
-                                                </div>
+                                                </div>-->
+                                                
                                             </div>
                                         </form>
                                     </div>
@@ -70,17 +70,16 @@ import {Streetname} from "./street_name";
                                                 </span>
                                             </div>
                                         </div>
-
                                         <p>Please select a available timeslot for that date</p>
                                         <div class="marginB20 col-sm-offset-4">
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm PST<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm PST
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
                                         </div>
                                     </div>
                                 </div>
@@ -169,7 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelect(_id) {
         console.log(_id)
-        this.properties = this.getAllProperty().filter((obj)=> obj.city == _id);
+        this.properties = this.getAllProperty().filter((item)=> item.city == _id);
     }
 
 // Link to our api, pointing to localhost
