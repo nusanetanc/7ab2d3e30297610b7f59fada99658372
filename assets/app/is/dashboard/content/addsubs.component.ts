@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllProperty().filter((obj)=> obj.city == "5897f8285985cd5957e81a6e"
+        this.getAllProperty().filter((item)=> item.city == "5897f8285985cd5957e81a6e"
         this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
