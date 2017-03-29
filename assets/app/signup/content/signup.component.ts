@@ -85,18 +85,18 @@ import {Package} from "./package";
                                             <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
                                             <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
                                     </div>
-                                </div><br><br><br><br><br><br>
+                                </div><br><br><br><br><br><br><br><br><br><br><br><br>
                                 <div>
                                     <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
                                     <div class="form-group">
                                         <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
                                         <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        <p>Upload your National Identity Card</p>
+                                        <!--<p>Upload your National Identity Card</p>
                                         <div class="form-control">
                                             <button type="button">choose file</button>
                                             <p>No choose file</p>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
                             </form><br><br><br><br><br>
@@ -147,10 +147,6 @@ export class SignupComponent implements OnInit{
     onChangeProperty(deviceValue): void{
         console.log(deviceValue);
         this.selectedProperty = deviceValue;
-    }
-    onChangeType(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedType = deviceValue;
     }
     onChangeCluster(deviceValue): void{
         console.log(deviceValue);

@@ -55,6 +55,18 @@ router.get('/privacy-policy', function(req, res, next) {
   res.render('privacy-policy', { title: 'Groovy - Privacy-policy' });
 });
 
+router.get('/career', function(req, res, next) {
+  res.render('coming-soon', { title: 'Groovy - Career' });
+});
+
+router.get('/event', function(req, res, next) {
+  res.render('coming-soon', { title: 'Groovy - Event' });
+});
+
+router.get('/terms-of-use', function(req, res, next) {
+  res.render('coming-soon', { title: 'Groovy - Terms-of-use' });
+});
+
 /* GET is groovy. */
 
 router.get('/is', function(req, res, next) {
