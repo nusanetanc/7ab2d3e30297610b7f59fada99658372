@@ -161,8 +161,7 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
-    `,
-    directives: [ROUTER_DIRECTIVES, RouteParams],
+    `
 })
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
