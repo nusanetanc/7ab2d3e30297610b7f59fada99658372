@@ -24,6 +24,11 @@ import { Sub } from './subs';
                     <a [routerLink]="['AllSubs']" class="btn btn-default buttonBack" type="button">
                         BACK
                     </a>
+                    <div class="right">
+                      <a [routerLink]="['AllSubs']" class="btn btn-default buttonOrange" type="button">
+                          CREATE INVOICE
+                      </a>
+                    </div>
                 </div>
             </div>
             <div class="row subInfo">
