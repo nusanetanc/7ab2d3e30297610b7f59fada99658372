@@ -172,7 +172,7 @@ export class ContentSubscribeComponent {
     // Declare empty list of people
     subs: any[] = [];
 
-    constructor(private http: Http, private RouteParams:_routeParams) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
       this.getSubs();
