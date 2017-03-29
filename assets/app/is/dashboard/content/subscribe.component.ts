@@ -177,11 +177,11 @@ export class ContentSubscribeComponent {
     ngOnInit() {
       this.getSubs();
       let id = this._routeParams.get('id');
-      console.log(id);
+      idsub = id;
     }
 
 getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
+this.http.get(`${this.API}/subscribe/subs/${this.idsub}`)
   .map(res => res.json())
   .subscribe(subs => {
     this.subs = subs
