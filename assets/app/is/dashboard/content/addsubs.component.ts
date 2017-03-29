@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
                                                 <option *ngIf='selectedCity._id == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
-                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.city }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -167,8 +167,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(_id) {
-        console.log(_id)
-        this.properties = this.getAllProperty().filter((obj)=> obj.city == "5897f8285985cd5957e81a6e");
+        console.log(_id);
     }
 
 // Link to our api, pointing to localhost
@@ -189,6 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
+        this.getAllProperty().filter((obj)=> obj.city == "5897f8285985cd5957e81a6e"
         this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
