@@ -176,8 +176,7 @@ export class ContentSubscribeComponent {
 
     ngOnInit() {
       this.getSubs();
-      let id = this._routeParams.get('id');
-      idsub = id;
+      //let id = this._routeParams.get('id');
     }
 
 getSubs() {
