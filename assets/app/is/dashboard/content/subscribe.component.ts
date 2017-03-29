@@ -161,8 +161,7 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
-    `,
-    directives: [ROUTER_DIRECTIVES],
+    `
 })
 export class ContentSubscribeComponent {
   // Link to our api, pointing to localhost
@@ -175,10 +174,16 @@ export class ContentSubscribeComponent {
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
+      this.getSubs();
       let id = this._routeParams.get('id');
-      this.http.get(`${this.API}/subscribe/subs/id`)
-        .map(res => res.json())
-        .subscribe(subs => {
-          this.subs = subs
-        })
+      console.log(id);
     }
+
+getSubs() {
+this.http.get(`${this.API}/subscribe/subs/${this.subid}`)
+  .map(res => res.json())
+  .subscribe(subs => {
+    this.subs = subs
+  })
+  }
+}
