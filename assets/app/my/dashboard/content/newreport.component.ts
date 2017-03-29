@@ -93,9 +93,6 @@ export class ContentNewReportComponent implements OnInit {
         this.complaints = complaints
       })
   }
-  callType(value){
-    console.log(value);
-  }
   getProblem() {
     this.http.get(`${this.API}/problem/listproblem`)
       .map(res => res.json())
