@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES, ActivatedRoute} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
@@ -242,16 +242,16 @@ export class ContentDetailBillingComponent implements OnInit {
 
   bills: any[] = [];
 
-  constructor(private http: Http, private route: ActivatedRoute) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      let id = params['id'];
-       this.http.get(`${this.API}/bill/idbill/`+id)
-         .map(res => res.json())
-         .subscribe(bills => {
-           this.bills = bills
-         })
-  })
+  this.getBills();
 }
+getBills(){
+   this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
+     .map(res => res.json())
+     .subscribe(bills => {
+       this.bills = bills
+     })
+    }
 }
