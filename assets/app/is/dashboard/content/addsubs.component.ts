@@ -24,11 +24,9 @@ import {Streetname} from "./street_name";
                     &nbsp; New Subscribers
                 </h3>
             </div>
-
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
                 <div class="row subInfo">
                     <div class="col-sm-12">
-
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row">
@@ -70,7 +68,6 @@ import {Streetname} from "./street_name";
                                                 </span>
                                             </div>
                                         </div>
-
                                         <p>Please select a available timeslot for that date</p>
                                         <div class="marginB20 col-sm-offset-4">
                                             <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am PST<br>
@@ -109,15 +106,15 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm">
                                                 <option value="0">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option *ngIf='selectedCity.cityid == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
-                                                <option *ngFor="#property of properties" value={{property.propertyid}}>{{ property.name }}</option>
+                                                <option *ngIf='selectedCity._id == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -169,7 +166,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelect(_id) {
         console.log(_id)
-        this.properties = this.getAllProperty().filter((item) => item.city == _id);
+        this.properties = this.getAllProperty().filter((obj)=> obj.city == _id);
     }
 
 // Link to our api, pointing to localhost
@@ -237,6 +234,14 @@ export class ContentAddSubsComponent implements OnInit {
     // Get all Property from the API
     getAllProperty() {
         this.http.get(`${this.API}/property/listproperty`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+    // Get all Property by city from the API
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/${this.city_id}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
