@@ -126,4 +126,11 @@ export class ContentCreateInvoiceComponent implements OnInit {
         this.bills = bills
       })
   }
+  getSubs() {
+  this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
+    }
 }
