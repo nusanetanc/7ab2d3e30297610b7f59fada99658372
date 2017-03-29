@@ -25,7 +25,6 @@ import {ContentProfileEngineerComponent} from "./dashboard/content/profileengine
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
-import {ContentCreateInvoiceComponent1} from "./dashboard/content/invoice1.component";
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
@@ -85,7 +84,6 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
         ContentAllBillsComponent,
         AuthenticationComponent,
         ContentCreateInvoiceComponent,
-        //ContentCreateInvoiceComponent1,
         ContentDetailBillingComponent,
         ContentTestComponent,
         ContentAddCityComponent,
@@ -102,7 +100,6 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
     { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
     { path: '/is/createinvoice', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
-  //  { path: '/is/createinvoice1/:id', component:ContentCreateInvoiceComponent1, name:'Createinvoice1'},
     { path: '/is/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
     { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
