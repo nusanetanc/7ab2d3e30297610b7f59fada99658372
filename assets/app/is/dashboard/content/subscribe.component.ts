@@ -181,7 +181,7 @@ export class ContentSubscribeComponent {
     }
 
 getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this.idsub}`)
+this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
   .map(res => res.json())
   .subscribe(subs => {
     this.subs = subs
