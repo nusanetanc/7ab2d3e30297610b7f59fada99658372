@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (click)="getDescProblem(subcategory.value)">
+                                    <select  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
                                         <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -92,6 +92,9 @@ export class ContentNewReportComponent implements OnInit {
       .subscribe(complaints => {
         this.complaints = complaints
       })
+  }
+  callType(value){
+    console.log(value);
   }
   getProblem() {
     this.http.get(`${this.API}/problem/listproblem`)
