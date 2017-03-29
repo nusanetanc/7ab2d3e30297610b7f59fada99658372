@@ -168,7 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelect(_id) {
         console.log(_id)
-        this.properties = this.getAllProperty().filter((obj)=> obj.city == _id);
+        this.properties = this.getAllProperty().filter((obj)=> obj.city == "5897f8285985cd5957e81a6e");
     }
 
 // Link to our api, pointing to localhost
