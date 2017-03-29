@@ -175,15 +175,10 @@ export class ContentSubscribeComponent {
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
-      this.getSubs();
-      let id = String.parseInt(this._routeParams.get('id'));
+      let id = this._routeParams.get('id');
+      this.http.get(`${this.API}/subscribe/subs/id`)
+        .map(res => res.json())
+        .subscribe(subs => {
+          this.subs = subs
+        })
     }
-
-getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${id}`)
-  .map(res => res.json())
-  .subscribe(subs => {
-    this.subs = subs
-  })
-  }
-}
