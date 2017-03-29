@@ -40,8 +40,9 @@ import { Property } from './property';
                                         <form>
                                             <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities">{{ city.name }}</option>
+                                                <option *ngFor="#city of cities">{{ city._id }}</option>
                                             </select><br/>
+                                            {{propertycity.value}}
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
                                         <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
@@ -58,7 +59,7 @@ import { Property } from './property';
               <div class="row">
                   <div class="col-sm-12">
                       <div class="row headerList paddingLR30">
-                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Property</strong></div>
+                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Existing Property Data</strong></div>
                       </div>
                       <div class="row subInfo">
                           <div class="col-sm-12">
