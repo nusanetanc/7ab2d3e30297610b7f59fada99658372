@@ -44,7 +44,6 @@ import {Http} from 'angular2/http';
                 </div>
             </div>
         </div>
-    </div>
     <div class="footer-home">
         <div class="container footer-home-text">
             <p>Copyright 2016 Groovy. All Right Reserved.</p>
