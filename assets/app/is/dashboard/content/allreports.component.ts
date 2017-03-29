@@ -21,6 +21,9 @@ import {Report} from './allreports';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
+                   <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
+                        NEW REPORT
+                    </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
                         <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

@@ -130,5 +130,5 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
 ])
 
 export class AppComponent {
- provideRouter(routes)
+
 }

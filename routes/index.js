@@ -15,6 +15,10 @@ router.get('/features', function(req, res, next) {
   res.render('features', { title: 'Groovy - Features' });
 });
 
+router.get('/about', function(req, res, next) {
+    res.render('about', { title: 'Groovy - About' });
+});
+
 router.get('/packages', function(req, res, next) {
   res.render('packages', { title: 'Groovy - Packages' });
 });

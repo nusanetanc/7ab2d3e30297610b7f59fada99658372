@@ -14,9 +14,9 @@ import {Report} from './allreports';
                       </a>
                       &nbsp; Dashboard
                   </h3>
-    
+
               </div>
-    
+
               <div class="page-content inset" data-spy="scroll" data-target="#spy">
                   <div class="row">
                       <div class="col-sm-12">
@@ -45,7 +45,7 @@ import {Report} from './allreports';
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
-    
+
                                           </div>
                                       </div>
                                   </div>
@@ -53,7 +53,7 @@ import {Report} from './allreports';
                           </div>
                       </div>
                   </div>
-    
+
                   <!-- Content List -->
                   <div class="row paddingLR15Margin20">
                       <div class="col-sm-12">
@@ -71,7 +71,7 @@ import {Report} from './allreports';
                       </div>
                   </div>
                   <!-- /Content List -->
-    
+
               </div>
           </div>
     `,
