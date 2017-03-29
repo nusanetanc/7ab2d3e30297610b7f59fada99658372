@@ -80,16 +80,16 @@ import {Package} from "./package";
                                 <div>
                                     <p>Please select a available timeslot for that date</p>
                                     <div class="col-sm-6 col-sm-offset-4">
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm PST
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
+                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
                                     </div>
-                                </div><br><br><br><br><br><br><br><br><br><br><br><br>
+                                </div><br><br><br><br><br><br>
                                 <div>
                                     <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
                                     <div class="form-group">
