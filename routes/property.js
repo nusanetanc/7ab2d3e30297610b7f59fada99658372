@@ -5,7 +5,7 @@ var City = require('../models/city');
 /* GET propertyloye listing. */
 router.get('/listproperty', function(req, res, next) {
      Property.find(function(err, propertys) {
-       City.findOne({name: propertys.city},function(err, cities) {
+       City.findOne({_id: propertys.city},function(err, cities) {
        res.json({
          city: propertys.city,
          namecity: cities.name,
