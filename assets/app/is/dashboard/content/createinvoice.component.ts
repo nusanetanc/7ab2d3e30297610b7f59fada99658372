@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
@@ -35,7 +35,7 @@ import { Billing } from './billing';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
-                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subscribe ID">
+                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subscribe ID" value="{{subs._id}}" disabled="true">
                                             <select #namepackage id="namepackage" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
                                                 <option value="1">Level 1</option>
@@ -85,12 +85,14 @@ export class ContentCreateInvoiceComponent implements OnInit {
 
   // Declare empty list of people
   bills: any[] = [];
+  subs: any[] = [];
 
   constructor(private http: Http) {}
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
     this.getAllBill();
+    this.getSubs();
   }
 
 
@@ -124,4 +126,11 @@ export class ContentCreateInvoiceComponent implements OnInit {
         this.bills = bills
       })
   }
+  getSubs() {
+  this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
+    })
+    }
 }
