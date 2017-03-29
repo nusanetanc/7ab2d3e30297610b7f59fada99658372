@@ -10,11 +10,11 @@ import {Http} from 'angular2/http';
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
-                        <span class="home-footer-body-text">
-                        <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
-                        <a href="https://twitter.com/groovy_play">Twitter</a><br>
-                        <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
-                    </span></p>
+                    <span class="home-footer-body-text">
+                    <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
+                    <a href="https://twitter.com/groovy_play">Twitter</a><br>
+                    <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
+                </span></p>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text">Features</span><br>
@@ -39,11 +39,12 @@ import {Http} from 'angular2/http';
                 </div>
                 <div class="col-xs-6 col-sm-6 col-sm-3">
                     <p style="line-height:25px;"><span class="home-footer-header-text"><img src="images/groovy.png" alt="" width="120px"></span><br>
-                        <span class="home-footer-body-text">Best Internet services for homes and apartments with a complete entertainment services, from live TV, video on demand, social TV, catch-up TV and radio streaming.
+                        <span class="home-footer-body-text">Layanan Internet terbaik untuk komplek perumahan dan apartemen dengan mengkombinasikan layanan hiburan terlengkap mullai dari live TV, video on demand, social TV, catch-up TV dan radio streaming</span>
                     </p>
                 </div>
             </div>
         </div>
+    </div>
     <div class="footer-home">
         <div class="container footer-home-text">
             <p>Copyright 2016 Groovy. All Right Reserved.</p>
