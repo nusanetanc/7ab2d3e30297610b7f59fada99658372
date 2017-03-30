@@ -172,7 +172,7 @@ export class ContentAddSubsComponent implements OnInit {
     onSelectCity(_id) {
         console.log(_id);
         this.properties = this.getAllPropertyByCity(){
-            this.http.get(`${this.API}/property/propertybycity/${_id}`)
+            this.http.get(`${this.API}/property/propertybycity/58d3af8b84a03c36aef03a33`)
                 .map(res => res.json())
                 .subscribe(properties => {
                     this.properties = properties
