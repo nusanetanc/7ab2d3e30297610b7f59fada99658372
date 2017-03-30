@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
-
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-crateinvoice',
