@@ -167,7 +167,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(_id) {
-        this.properties =;
+        this.properties = this.getAllPropertyByCity();
     }
 
 // Link to our api, pointing to localhost
@@ -188,7 +188,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllPropertyByCity()
         this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
