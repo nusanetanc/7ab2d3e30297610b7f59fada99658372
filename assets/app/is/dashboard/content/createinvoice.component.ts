@@ -165,9 +165,9 @@ import { Sub } from './subs';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
-                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
-                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
+                                            <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/30">
+                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/05">
+                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="349000">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -193,7 +193,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
+                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
