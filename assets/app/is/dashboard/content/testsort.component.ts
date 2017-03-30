@@ -33,7 +33,7 @@ import 'rxjs/add/operator/map';
                   </div>
               </div>
               <div class="row">
-                  <div class="col-sm-12" *ngFor="#names of names | sortBy : 'first_name'">
+                  <div class="col-sm-12" *ngFor="#names of names">
                       <div class="row subInfo">
                           <div class="col-sm-2 invoiceId"><span>{{ names.id }}</span></div>
                           <div class="col-sm-5 invoiceList"><span>{{ names.first_name }}</span></div>
@@ -47,9 +47,9 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 
-@Pipe({
+/*@Pipe({
     name: "sortBy",
-})
+})*/
 
 export class ContentTestComponent {
 
