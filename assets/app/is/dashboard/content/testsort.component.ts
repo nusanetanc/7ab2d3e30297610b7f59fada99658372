@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {Pipe} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -32,7 +33,7 @@ import 'rxjs/add/operator/map';
                   </div>
               </div>
               <div class="row">
-                  <div class="col-sm-12" *ngFor="#names of names">
+                  <div class="col-sm-12" *ngFor="#names of names | sortBy : 'first_name'">
                       <div class="row subInfo">
                           <div class="col-sm-2 invoiceId"><span>{{ names.id }}</span></div>
                           <div class="col-sm-5 invoiceList"><span>{{ names.first_name }}</span></div>
@@ -45,6 +46,9 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
+
+@Pipe({name: "sortBy"})
+
 export class ContentTestComponent {
 
     names = [
@@ -61,7 +65,7 @@ export class ContentTestComponent {
         {"id": 11,"first_name": "Ahmad","last_name": "Rifki"},
     ]
 
-    ngOnInit(){
+    /*ngOnInit(){
         this.names.sort( function(name1, name2) {
             if ( name1.first_name < name2.first_name ){
                 return -1;
@@ -71,6 +75,19 @@ export class ContentTestComponent {
                 return 0;
             }
         });
+    }*/
+
+    transform(array: Array<string>, args: string): Array<string> {
+        array.sort((a: any, b: any) => {
+            if ( a[args] < b[args] ){
+                return -1;
+            }else if( a[args] > b[args] ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+        return array;
     }
 
 }
