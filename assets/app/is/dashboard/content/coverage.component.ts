@@ -13,6 +13,7 @@ import { Http } from 'angular2/http';
                 </a>
                 &nbsp; Coverage Area
             </h3>
+
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -24,6 +25,7 @@ import { Http } from 'angular2/http';
                             <div class="cardDashboardCover">
                                 <div class="row">
                                     <div class="col-sm-12">
+                                        <img class="imageCoverage" src="./images/city.png" alt="city">
                                         <h4 class="text-center grey333">ADD CITY</h4>
                                     </div>
                                 </div>
@@ -88,6 +90,7 @@ import { Http } from 'angular2/http';
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     `,
