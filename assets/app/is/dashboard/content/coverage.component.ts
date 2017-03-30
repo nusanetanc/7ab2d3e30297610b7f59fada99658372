@@ -48,7 +48,7 @@ import { Http } from 'angular2/http';
                             <div class="cardDashboardCover">
                                 <div class="row white">
                                     <div class="col-sm-12 paddingT30">
-                                        <img class="imageCoverage" src="./images/cluster.png" alt="cluter">
+                                        <img class="imageCoverage" src="./images/cluster.png" alt="cluster">
                                         <h4 class="text-center grey333">ADD CLUSTER</h4>
                                     </div>
                                 </div>
