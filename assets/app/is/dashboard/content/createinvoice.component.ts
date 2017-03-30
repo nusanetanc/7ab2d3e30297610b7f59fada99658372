@@ -200,7 +200,7 @@ import { Sub } from './subs';
                                                 </div>
                                             </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
-                                            <select class="form-control inputForm" #promoname id="promoname" (change)="onItemClickedPromo(listPromo)">
+                                            <select class="form-control inputForm" #promoname id="promoname" (click)="onItemClickedPromo(listPromo)">
                                                 <option class="option" disabled="true" selected="true">-- Select Promo --</option>
                                                 <option  *ngFor="#listPromo of listPromos" >{{ listPromo.name }}</option>
                                             </select>
