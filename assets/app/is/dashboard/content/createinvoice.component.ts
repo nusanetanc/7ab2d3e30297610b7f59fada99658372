@@ -204,7 +204,7 @@ import { Sub } from './subs';
                                                 <option class="option" disabled="true" selected="true">-- Select Promo --</option>
                                                 <option  *ngFor="#listPromo of listPromos" >{{ listPromo.name }}</option>
                                             </select>
-                                            <input [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled="true">
+                                            <input [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                                             <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
                                             <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
                                         </div>
