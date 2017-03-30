@@ -167,7 +167,7 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(_id) {
-        this.properties = this.getAllPropertyByCity().filter((item)=> item.city == _id);
+        this.properties = this.getAllPropertyByCity();
     }
 
 // Link to our api, pointing to localhost
@@ -241,7 +241,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Property by city from the API
     getAllPropertyByCity() {
-        this.http.get(`${this.API}/property/${this.city_id}`)
+        this.http.get(`${this.API}/propertybycity/${this.city_id}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
