@@ -176,7 +176,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input (click)="onItemClicked(Router)" type="checkbox" >
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value={{this.routerprice}}>
+                                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="{{this.routerprice}}">
                                                         </div>
                                                     </form>
                                                 </div>
