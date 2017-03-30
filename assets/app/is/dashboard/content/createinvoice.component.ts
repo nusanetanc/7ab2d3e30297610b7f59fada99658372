@@ -174,7 +174,7 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input  (click)="hargarouter = 40000.value" type="checkbox" >
+                                                                <input type="checkbox" >
                                                             </span>
                                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
@@ -182,6 +182,11 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
+      <ul>
+         <li *ngFor="#listItem of listItems"
+            (click)="onItemClicked(listItem)">{{listItem.name}}
+         </li>
+      </ul>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -248,6 +253,17 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+public listItems = [
+      {name:"apple"},
+      {name:"orange"},
+      {name:"grapes"},
+   ];
+   public selectedItem = {name: ""};
+
+   onItemClicked(listItem){
+      this.selectedItem=listItem;
+   }
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
