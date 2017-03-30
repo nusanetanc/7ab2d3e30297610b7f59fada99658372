@@ -161,15 +161,23 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
-    selectedCity: City = new City(0, "dummy");
+    selectedCity: City = new City(0, 'dummy');
 
     cities: City[];
     properties: Property[];
 
-    onSelect(_id) {
-        this.properties = this.getAllProperty().filter((item)=> item.city == _id);
-    }
 
+
+    onSelect(_id) {
+        console.log(_id);
+        this.properties = this.getAllPropertyByCity(){
+            this.http.get(`${this.API}/property/propertybycity/${_id}`)
+                .map(res => res.json())
+                .subscribe(properties => {
+                    this.properties = properties
+                })
+        };
+    }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -240,7 +248,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Property by city from the API
     getAllPropertyByCity() {
-        this.http.get(`${this.API}/property/${this.city_id}`)
+        this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties

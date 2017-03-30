@@ -25,6 +25,9 @@ import 'rxjs/add/operator/map';
                           <button (click)="byId()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                               ID
                           </button>
+                          <button (click)="byName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                              NAME
+                          </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                               <li><a href="#">NAME</a></li>
                               <li><a href="#">ID</a></li>
@@ -84,6 +87,18 @@ export class ContentTestComponent {
             if ( id1.id < id2.id ){
                 return -1;
             }else if( id1.id > id2.id ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    byName(){
+        this.names.sort( function(a, b) {
+            if ( a.first_name < b.first_name ){
+                return -1;
+            }else if( a.first_name > b.first_name ){
                 return 1;
             }else{
                 return 0;
