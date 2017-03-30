@@ -174,11 +174,11 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input (click)="onItemClicked(Router)" type="checkbox" >
+                                                                <input  (click)="hargarouter = 40000.value" type="checkbox" >
                                                             </span>
                                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
-                                                            {{ this.routerprice }}
                                                         </div>
+                                                        {{hargarouter}}
                                                     </form>
                                                 </div>
                                             </div>
@@ -255,10 +255,6 @@ export class ContentCreateInvoiceComponent implements OnInit {
   bills: any[] = [];
   subs: any[] = [];
   constructor(private http: Http, private _routeParams: RouteParams) {}
-
-  onItemClicked(Router){
-      this.routerprice = '40000';
-   }
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
