@@ -161,17 +161,18 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
-    selectedCity: City = new City(0, "dummy");
+    selectedCity: City = new City(0, 'dummy');
 
     cities: City[];
     properties: Property[];
 
     onSelect(_id) {
-        this.properties = this.getAllProperty().filter((item)=> item.city == _id);
+        this.properties = this.getAllPropertyByCity().filter((item)=> item.city == _id);
     }
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
+    city_id = '58d34974afc3b77e68b6652'
 
     // Declare empty list of people
     subs: any[] = [];
