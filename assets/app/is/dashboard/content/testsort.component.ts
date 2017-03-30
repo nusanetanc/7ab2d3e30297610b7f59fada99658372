@@ -34,8 +34,9 @@ import 'rxjs/add/operator/map';
               <div class="row">
                   <div class="col-sm-12" *ngFor="#names of names">
                       <div class="row subInfo">
-                          <div class="col-sm-6 invoiceId"><span>{{ names.first_name }}</span></div>
-                          <div class="col-sm-6 invoiceId"><span>{{ names.last_name }}</span></div>
+                          <div class="col-sm-2 invoiceId"><span>{{ names.id }}</span></div>
+                          <div class="col-sm-5 invoiceList"><span>{{ names.first_name }}</span></div>
+                          <div class="col-sm-5 invoiceList"><span>{{ names.last_name }}</span></div>
                       </div>
                   </div>
               </div>
