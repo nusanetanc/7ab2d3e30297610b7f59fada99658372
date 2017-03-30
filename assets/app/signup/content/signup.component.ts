@@ -30,7 +30,6 @@ import {Package} from "./package";
                                     <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
                                 </select>
                             </form>
-                        </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
                                  <select name="property">
