@@ -276,10 +276,10 @@ hr {
     background-color: #FFFFFF;
     height: 200px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .imageCoverage {
-    margin-left: 60px;
     width: 50%;
 }
 
