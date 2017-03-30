@@ -25,7 +25,7 @@ import { Http } from 'angular2/http';
                             <div class="cardDashboardCover">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <img class="imageCoverage" src="" alt="city">
+                                        <img src="./images/city.png" alt="city">
                                         <h4 class="text-center grey333">ADD CITY</h4>
                                     </div>
                                 </div>
@@ -97,4 +97,5 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoverageComponent {
+
 }

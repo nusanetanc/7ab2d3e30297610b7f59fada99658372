@@ -276,11 +276,7 @@ hr {
     background-color: #FFFFFF;
     height: 200px;
     margin-bottom: 20px;
-}
-
-.imageCoverage {
-    height: 50px;
-    width: 50px;
+    padding-top: 80px;
 }
 
 @media only screen and (max-width: 767px) {
