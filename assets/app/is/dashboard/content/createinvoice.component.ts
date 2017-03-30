@@ -173,21 +173,13 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input type="checkbox" >
+                                                                <input type="checkbox" (click)="onItemClicked(listItems)" >
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
+                                                            <input [(ngModel)]="selectedItem.name" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
-                                                        {{hargarouter}}
                                                     </form>
                                                 </div>
                                             </div>
-      <ul>
-         <li *ngFor="#listItem of listItems"
-            (click)="onItemClicked(listItem)">{{listItem.name}}
-         </li>
-      </ul>
-      <input type="text" [(ngModel)]="selectedItem.name">
-
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -255,9 +247,7 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 public listItems = [
-      {name:"apple"},
-      {name:"orange"},
-      {name:"grapes"},
+      {harga:"40000"},
    ];
    public selectedItem = {name: ""};
 
