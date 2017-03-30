@@ -182,7 +182,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelectProperty(_id) {
         console.log(_id);
-        this.clusters = this.getAllClusterByProperty() {
+        this.clusters = this.getAllClusterByProperty(){
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
                 .subscribe(clusters => {
