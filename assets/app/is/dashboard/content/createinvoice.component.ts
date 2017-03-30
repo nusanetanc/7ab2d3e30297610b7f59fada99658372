@@ -249,10 +249,10 @@ export class ContentCreateInvoiceComponent implements OnInit {
 public listItems = [
       {harga:"40000"},
    ];
-   public selectedItem = {name: ""};
+   public selectedItems = {name: ""};
 
-   onItemClicked(listItem){
-      this.selectedItem=listItem;
+   onItemClicked(listItems){
+      this.selectedItem=listItems;
    }
 
 // Link to our api, pointing to localhost
