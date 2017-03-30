@@ -60,14 +60,13 @@ export class ContentAllSubsComponent {
 
     // Sort By
     sortById(){
-        this.subs.sort( function(id1, id2) {
-            if ( id1.id < id2.id ){
-                return -1;
-            }else if( id1.id > id2.id ){
-                return 1;
-            }else{
-                return 0;
-            }
+        this.subs.sort( function(a, b) {
+            var idA = new Date(a.id),
+                idB = new Date(b.id);
+            // Compare the 2 dates
+            if(idA < idB) return -1;
+            if(idA > idB) return 1;
+            return 0;
         });
     }
 
