@@ -108,21 +108,21 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                                                 <option value="0">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
                                                 <option *ngIf='selectedCity._id == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your cluster --</option>
-                                                <option *ngFor="#cluster of clusters">{{ cluster.name }}</option>
+                                                <option *ngIf='selectedProperty._id == 0' value="0" disabled="true" selected="true">-- Select your cluster --</option>
+                                                <option *ngFor="#cluster of clusters" value={{property._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -162,13 +162,9 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
+    selectedProperty: Property = new Property(0, 'dummy');
 
-    cities: City[];
-    properties: Property[];
-
-
-
-    onSelect(_id) {
+    onSelectCity(_id) {
         console.log(_id);
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
@@ -178,11 +174,24 @@ export class ContentAddSubsComponent implements OnInit {
                 })
         };
     }
+
+    onSelectProperty(_id) {
+        console.log(_id);
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        };
+    }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
     subs: any[] = [];
+    cities: any[] = [];
+    properties: any[] = [];
     clusters: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
@@ -248,7 +257,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Property by city from the API
     getAllPropertyByCity() {
-        this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
@@ -257,6 +266,14 @@ export class ContentAddSubsComponent implements OnInit {
     // Get all Type from the API
     getAllCluster() {
         this.http.get(`${this.API}/cluster/listcluster`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+    // Get all Type from the API
+    getAllClusterByProperty() {
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters

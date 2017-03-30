@@ -18,6 +18,14 @@ Cluster.findById(req.params.id, function(err, clusters) {
    });
 });
 
+/* GET detail cluster by property. */
+router.get('/clusterbyproperty/:id', function(req, res, next) {
+    Cluster.find({property: req.params.id}, function(err, clusters) {
+        console.log( clusters );
+        res.json(clusters);
+    });
+});
+
 /* Add cluster */
 router.post('/addcluster', function(req, res, next) {
   var cluster = new Cluster();
