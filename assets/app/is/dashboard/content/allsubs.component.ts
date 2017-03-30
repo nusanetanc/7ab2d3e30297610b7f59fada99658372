@@ -26,6 +26,9 @@ import { Sub } from './subs';
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <div class="dropdown right">
+                      <button (click)="sortById()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          ID
+                      </button>
                       <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                           NAME
                       </button>
@@ -54,6 +57,19 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
+
+    // Sort By
+    sortById(){
+        this.subs.sort( function(id1, id2) {
+            if ( id1.id < id2.id ){
+                return -1;
+            }else if( id1.id > id2.id ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
 
     sortByName(){
         this.subs.sort( function(name1, name2) {
