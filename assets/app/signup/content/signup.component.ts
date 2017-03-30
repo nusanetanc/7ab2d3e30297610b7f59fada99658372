@@ -46,73 +46,91 @@ import {Package} from "./package";
                                 </select>
                             </form>
                         </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
                                 </select>
+                             </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select #subgroovyid id="subgroovyid" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                 </select>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select #subpacklev id="subpacklev" name="package">
                                     <option disabled="true" selected="true">-- Select Package --</option>
                                     <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                 </select>
-                                <div>
-                                    <p>Please select a installation date</p>
-                                    <div class="col-sm-6">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class='col-sm-6'>
-                                                    <div class="form-group">
-                                                        <div class='input-group date' id='datetimepicker1'>
-                                                            <input #subdateinst id="subdateinst" type='text' class="form-control" />
-                                                            <span class="input-group-addon">
-                                                                <span class="glyphicon glyphicon-calendar"></span>
-                                                            </span>
-                                                        </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <p>Please select a installation date</p>
+                                <div class="col-sm-6">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class='col-sm-6'>
+                                                <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker1'>
+                                                        <input #subdateinst id="subdateinst" type='text' class="form-control" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
                                                     </div>
                                                 </div>
-                                                <script type="text/javascript">
-                                                    $(function () {
-                                                        $('#datetimepicker1').datetimepicker();
-                                                    });
-                                                </script>
                                             </div>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $('#datetimepicker1').datetimepicker();
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <p>Please select a available timeslot for that date</p>
-                                    <div class="col-sm-6 col-sm-offset-4">
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
-                                            <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
-                                    </div>
-                                </div><br><br><br><br><br><br><br><br><br><br><br><br>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <p>Please select a available timeslot for that date</p>
+                            <div class="col-sm-6 col-sm-offset-4">
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
+                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
+                            </div>
+                        </div>
                                 <div>
                                     <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
-                                    <div class="form-group">
-                                        <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
-                                        <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                        <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        <!--<p>Upload your National Identity Card</p>
-                                        <div class="form-control">
-                                            <button type="button">choose file</button>
-                                            <p>No choose file</p>
-                                        </div>-->
+                                    <div class="row">
+                                        <div class="col-md-4 col-md-offset-4">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                                    <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                                                    <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                                    <!--<p>Upload your National Identity Card</p>
+                                                    <div class="form-control">
+                                                        <button type="button">choose file</button>
+                                                        <p>No choose file</p>
+                                                    </div>-->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-4 col-md-offset-4">
+                                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
+                                                NEXT
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </form><br><br><br><br><br>
-                                <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
-                                    NEXT
-                                </button>
-                        </div>
                     </div>
                 </div>
             </div>
