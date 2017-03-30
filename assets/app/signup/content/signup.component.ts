@@ -29,14 +29,23 @@ import {Package} from "./package";
                                     <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
                                 </select>
+                            </form>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                  <select name="property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
-                                </select>
+                                </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select name="cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
                                 </select>
+                            </form>
+                        </div>
                                 <select name="block">
                                     <option class="option" disabled="true" selected="true">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
