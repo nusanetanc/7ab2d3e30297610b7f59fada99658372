@@ -26,8 +26,8 @@ import { Sub } from './subs';
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <div class="dropdown right">
-                      <button (click)="sortById()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          ID
+                      <button (click)="sortByStatus()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          ACTIVE
                       </button>
                       <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                           NAME
@@ -59,14 +59,15 @@ import { Sub } from './subs';
 export class ContentAllSubsComponent {
 
     // Sort By
-    sortById(){
+    sortByStatus(){
         this.subs.sort( function(a, b) {
-            var idA = new Date(a.id),
-                idB = new Date(b.id);
-            // Compare the 2 dates
-            if(idA < idB) return -1;
-            if(idA > idB) return 1;
-            return 0;
+            if ( a.status < b.status ){
+                return -1;
+            }else if( a.status > b.status ){
+                return 1;
+            }else{
+                return 0;
+            }
         });
     }
 
