@@ -99,7 +99,7 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
     { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
-    { path: '/is/createinvoice', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
+    { path: '/is/createinvoice/:id', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
     { path: '/is/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
     { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},
