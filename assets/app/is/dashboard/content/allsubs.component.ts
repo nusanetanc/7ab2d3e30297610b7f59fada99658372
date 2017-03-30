@@ -26,9 +26,9 @@ import { Sub } from './subs';
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <div class="dropdown right">
-                      <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                           NAME
-                      </a>
+                      </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                           <li><a href="#">NAME</a></li>
                           <li><a href="#">ID</a></li>
@@ -54,6 +54,18 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
+
+    sortByName(){
+        this.subs.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return -1;
+            }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
 
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
