@@ -178,12 +178,12 @@ import { Sub } from './subs';
                                                 <option value="6">Level 6</option>
                                             </select><br/>
                                             <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
-                                            <div class="input-group form-control inputForm">
-                                              <span class="input-group-addon">
-                                                <input type="checkbox" aria-label="...">
-                                              </span>
-                                              <input type="text" class="form-control" aria-label="...">
-                                            </div><!-- /input-group -->
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                  <input type="checkbox" aria-label="...">
+                                                </span>
+                                                <input type="text" class="form-control" aria-label="...">
+                                              </div><!-- /input-group -->
                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
                                             <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
                                             <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
