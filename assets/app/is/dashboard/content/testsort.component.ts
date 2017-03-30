@@ -32,7 +32,7 @@ import 'rxjs/add/operator/map';
                   </div>
               </div>
               <div class="row">
-                  <div class="col-sm-12" *ngFor="#name of names">
+                  <div class="col-sm-12" *ngFor="#names of names">
                       <div class="row subInfo">
                           <div class="col-sm-6 invoiceId"><span>{{ names.first_name }}</span></div>
                           <div class="col-sm-6 invoiceId"><span>{{ names.last_name }}</span></div>
