@@ -276,14 +276,12 @@ hr {
     background-color: #FFFFFF;
     height: 200px;
     margin-bottom: 20px;
-<<<<<<< HEAD
+    padding-top: 20px;
+    text-align: center;
 }
 
 .imageCoverage {
-    height: 50px;
-    width: 50px;
-=======
->>>>>>> fdffccc5ff94f1593961b51b0e85f2953b63299e
+    width: 35%;
 }
 
 @media only screen and (max-width: 767px) {
