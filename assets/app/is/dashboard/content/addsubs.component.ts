@@ -232,7 +232,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Property from the API
     getAllProperty() {
-        this.http.get(`${this.API}/property/listproperty`)
+        this.http.get(`${this.API}/property/listproperty`).filter((item)=> item.city == "58d34974afc3b77e68b66526";
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
