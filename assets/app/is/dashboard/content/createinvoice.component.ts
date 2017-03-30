@@ -33,12 +33,8 @@ import { Billing } from './billing';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                        <input type="text" class="form-control" id="email"
-                                          [(ngModel)]="personal.email" name="email" #email="ngModel" required
-                                          value="{{subs._id}}" readonly>
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
-                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subscribe ID" value="{{subs._id}}">
                                             <select #namepackage id="namepackage" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
                                                 <option value="1">Level 1</option>
