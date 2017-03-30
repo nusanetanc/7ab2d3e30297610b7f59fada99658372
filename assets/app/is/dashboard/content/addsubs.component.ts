@@ -182,7 +182,13 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelectProperty(_id) {
         console.log(_id);
-        this.clusters = this.getAllCluster().filter((item)=> item.property == _id);
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        };
     }
 
 // Link to our api, pointing to localhost
@@ -269,7 +275,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Type from the API
     getAllClusterByProperty() {
-        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
