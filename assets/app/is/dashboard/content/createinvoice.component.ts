@@ -177,7 +177,7 @@ import { Sub } from './subs';
                                                                 <input (click)="onItemClicked(Router)" type="checkbox" >
                                                             </span>
                                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
-                                                            {{routerprice.value}}
+                                                            {{this.routerprice}}
                                                         </div>
                                                     </form>
                                                 </div>
