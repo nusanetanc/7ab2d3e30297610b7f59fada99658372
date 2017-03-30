@@ -206,7 +206,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
+                                            <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
                                             <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                             <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                                             <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
