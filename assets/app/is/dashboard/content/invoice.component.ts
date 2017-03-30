@@ -35,6 +35,7 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
+                                            <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subs ID">
                                             <select #namepackage id="namepackage" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
                                                 <option value="1">Level 1</option>
