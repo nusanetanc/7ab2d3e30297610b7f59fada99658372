@@ -114,7 +114,7 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
                                                 <option *ngIf='selectedCity._id == 0' value="0" disabled="true" selected="true">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
@@ -178,6 +178,18 @@ export class ContentAddSubsComponent implements OnInit {
                 })
         };
     }
+
+    onSelectProperty(_id) {
+        console.log(_id);
+        this.clusters = this.getAllClusterByProperty() {
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        }
+    }
+
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -195,7 +207,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
         this.getAllPackage();
@@ -257,6 +268,14 @@ export class ContentAddSubsComponent implements OnInit {
     // Get all Type from the API
     getAllCluster() {
         this.http.get(`${this.API}/cluster/listcluster`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+    // Get all Type from the API
+    getAllClusterByProperty() {
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
