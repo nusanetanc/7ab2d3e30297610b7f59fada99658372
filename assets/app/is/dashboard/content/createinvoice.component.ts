@@ -200,8 +200,11 @@ import { Sub } from './subs';
                                                 </div>
                                             </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
-                                            <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
-                                            <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled="true">
+                                            <select class="form-control inputForm" #promoname id="promoname">
+                                                <option class="option" disabled="true" selected="true">-- Select Promo --</option>
+                                                <option (click)="onItemClickedPromo(listPromo)" *ngFor="#listPromo of listPromos" >{{ listPromo.name }}</option>
+                                            </select>
+                                            <input [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled="true">
                                             <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
                                             <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
                                         </div>
@@ -229,7 +232,15 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+public listPromos = [
+      {name:"Gratis Instalasi", harga:"9000"},
+      {name:"Groovy Play", harga:"10000"}
+   ];
+   public selectedPromo = {harga: "0"};
 
+   onItemClickedPromo(listPromo){
+      this.selectedPromo=listPromo;
+   }
    public selectedRouter = {harga: ""};
    public selectedSTB = {harga: ""};
    public selectedIns = {harga: ""};
