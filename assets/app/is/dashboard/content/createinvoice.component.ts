@@ -145,7 +145,7 @@ import { Sub } from './subs';
                      </div>
                      <div class="col-xs-12 col-md-7">
                          <span>{{ subs.nova }}</span>
-
+                         {{valueDate | date: 'dd/MM/yyyy'}}
                      </div>
                  </div>
              </div>
@@ -181,7 +181,7 @@ import { Sub } from './subs';
                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
                                             <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
                                             <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
-                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="75">
+                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="75000">
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
                                             <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                             <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
@@ -219,7 +219,9 @@ export class ContentCreateInvoiceComponent implements OnInit {
   bills: any[] = [];
   subs: any[] = [];
 
-  constructor(private http: Http, private _routeParams: RouteParams) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {
+  this.date = new Date();
+  }
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
