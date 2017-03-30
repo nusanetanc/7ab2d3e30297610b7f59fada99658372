@@ -172,7 +172,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    city_id = '58d34974afc3b77e68b6652'
+    city_id = '58d34974afc3b77e68b66526'
 
     // Declare empty list of people
     subs: any[] = [];
