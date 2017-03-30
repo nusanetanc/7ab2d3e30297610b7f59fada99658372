@@ -33,6 +33,9 @@ import { Billing } from './billing';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
+                                        <input type="text" class="form-control" id="email"
+                                          [(ngModel)]="personal.email" name="email" #email="ngModel" required
+                                          value="{{subs._id}}" readonly>
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
                                             <input type="text" class="form-control inputForm" #subsid id="subsid" placeholder="Subscribe ID" value="{{subs._id}}">
@@ -46,10 +49,10 @@ import { Billing } from './billing';
                                                 <option value="6">Level 6</option>
                                             </select><br/>
                                             <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
-                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee">
-                                            <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
-                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45">
-                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
+                                            <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
+                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
+                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="75">
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
                                             <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                             <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
