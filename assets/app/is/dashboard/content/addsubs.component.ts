@@ -188,7 +188,7 @@ export class ContentAddSubsComponent implements OnInit {
                 .subscribe(clusters => {
                     this.clusters = clusters
                 })
-        }
+        };
     }
 
 // Link to our api, pointing to localhost
@@ -208,6 +208,7 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllSub();
         this.getAllCity();
         this.getAllBLokfloor();
+        this.getAllClusterByProperty();
         this.getAllHome();
         this.getAllPackage();
         this.getAllStreet();
@@ -275,7 +276,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Type from the API
     getAllClusterByProperty() {
-        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+        this.http.get(`${this.API}/cluster/clusterbyproperty/58d3af8b84a03c36aef03a33`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
