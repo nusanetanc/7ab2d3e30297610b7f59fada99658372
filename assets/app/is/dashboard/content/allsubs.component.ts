@@ -55,6 +55,18 @@ import { Sub } from './subs';
 })
 export class ContentAllSubsComponent {
 
+    sortByName(){
+        this.subs.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return -1;
+            }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -78,15 +90,4 @@ export class ContentAllSubsComponent {
      })
    }
 
-    sortByName(){
-        this.subs.sort( function(name1, name2) {
-            if ( name1.name < name2.name ){
-                return -1;
-            }else if( name1.name > name2.name ){
-                return 1;
-            }else{
-                return 0;
-            }
-        });
-    }
 }
