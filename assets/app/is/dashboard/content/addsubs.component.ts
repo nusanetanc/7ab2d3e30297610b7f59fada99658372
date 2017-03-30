@@ -204,7 +204,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
         this.getAllPackage();
