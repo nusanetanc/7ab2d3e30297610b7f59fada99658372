@@ -167,7 +167,6 @@ export class ContentAddSubsComponent implements OnInit {
     properties: Property[];
 
     onSelect(_id) {
-        console.log(_id)
         this.properties = this.getAllProperty().filter((item)=> item.city == _id);
     }
 
@@ -176,7 +175,6 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Declare empty list of people
     subs: any[] = [];
-    typeproperties: any[] = [];
     clusters: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
@@ -189,7 +187,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllType();
         this.getAllCluster();
         this.getAllBLokfloor();
         this.getAllHome();
@@ -248,15 +245,6 @@ export class ContentAddSubsComponent implements OnInit {
             .subscribe(properties => {
                 this.properties = properties
             })
-    }
-    // Get all Type from the API
-    getAllType() {
-        this.http.get(`${this.API}/type/listtypeproperty`)
-            .map(res => res.json())
-            .subscribe(typeproperties => {
-                this.typeproperties = typeproperties
-            })
-
     }
     // Get all Type from the API
     getAllCluster() {
