@@ -107,30 +107,26 @@ import {Package} from "./package";
                                     <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
                             </div>
                         </div>
-                                <div>
-                                    <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <form>
-                                                <div class="form-group">
-                                                    <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
-                                                    <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                                    <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                                    <!--<p>Upload your National Identity Card</p>
-                                                    <div class="form-control">
-                                                        <button type="button">choose file</button>
-                                                        <p>No choose file</p>
-                                                    </div>-->
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
-                                                NEXT
-                                            </button>
-                                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>                                        
+                                <form>
+                                    <div class="form-group">
+                                        <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                        <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                                        <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <!--<p>Upload your National Identity Card</p>
+                                        <div class="form-control">
+                                            <button type="button">choose file</button>
+                                            <p>No choose file</p>
+                                        </div>-->
                                     </div>
-                                </div>
+                                </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
+                                NEXT
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
