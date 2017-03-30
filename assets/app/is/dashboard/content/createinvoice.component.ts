@@ -96,13 +96,6 @@ import { Sub } from './subs';
                      </div>
                  </div>
              </div>
-             <div class="col-sm-6">
-                 <div class="row">
-                     <div class="col-xs-6 col-md-3">
-                         <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
-                     </div>
-                 </div>
-             </div>
          </div>
      </div>
      <div class="col-sm-12">
@@ -208,7 +201,7 @@ import { Sub } from './subs';
                                             </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
                                             <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
-                                            <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
+                                            <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled="true">
                                             <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
                                             <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
                                         </div>
