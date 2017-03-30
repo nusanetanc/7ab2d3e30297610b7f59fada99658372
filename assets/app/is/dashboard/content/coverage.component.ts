@@ -25,7 +25,6 @@ import { Http } from 'angular2/http';
                             <div class="cardDashboardCover">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <img src="./images/city.png" alt="city">
                                         <h4 class="text-center grey333">ADD CITY</h4>
                                     </div>
                                 </div>
