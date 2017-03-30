@@ -108,7 +108,7 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelect($event.target.value)" class="inputForm">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                                                 <option value="0">-- Select your city --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
@@ -168,7 +168,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 
 
-    onSelect(_id) {
+    onSelectCity(_id) {
         console.log(_id);
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
