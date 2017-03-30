@@ -185,6 +185,18 @@ import { Sub } from './subs';
                                                 <input type="text" class="form-control" aria-label="...">
                                               </div><!-- /input-group -->
                                             <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
+                                            <div class="row">
+                                                <div class="col-sm-12 paddingL35">
+                                                    <form class="paddingTB20 paddingR30">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <input type="checkbox" aria-label="...">
+                                                            </span>
+                                                            <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                             <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
                                             <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
                                             <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="75000">
