@@ -23,7 +23,7 @@ import {Billing} from './allbill';
                 <div class="col-sm-12">
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
-                       <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                       <a (click)="sortByNo()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                            SUBS-ID
                        </a>
                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -51,6 +51,20 @@ import {Billing} from './allbill';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllBillsComponent {
+
+    // Sort By
+    sortByNo(){
+        this.bills.sort( function(a, b) {
+            if ( a.noinvoice < b.noinvoice ){
+                return -1;
+            }else if( a.noinvoice> b.noinvoice ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
