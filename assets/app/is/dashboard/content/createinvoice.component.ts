@@ -173,9 +173,9 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input type="checkbox" (click)="onItemClicked(listItem)" >
+                                                                <input type="checkbox" (click)="onItemClickedRouter(Router)" >
                                                             </span>
-                                                            <input [(ngModel)]="selectedItem.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
+                                                            <input [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
                                                     </form>
                                                 </div>
@@ -186,33 +186,22 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input type="checkbox" aria-label="...">
+                                                                <input type="checkbox" (click)="onItemClickedSTB(STB)">
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                                            <input [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
+                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input type="checkbox" aria-label="...">
+                                                                <input type="checkbox" (click)="onItemClickedIns(Ins)">
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <form class="paddingTB20">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" aria-label="...">
-                                                            </span>
-                                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                                            <input [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -248,11 +237,19 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
-   public selectedItem = {harga: ""};
-   onItemClicked(listItem){
-      this.selectedItem={harga:"40000"};
-   }
+   public selectedRouter = {harga: ""};
+   public selectedSTB = {harga: ""};
+   public selectedIns = {harga: ""};
 
+   onItemClickedRouter(Router){
+      this.selectedRouter={harga:"40000"};
+   }
+   onItemClickedSTB(STB){
+      this.selectedSTB={harga:"45000"};
+   }
+   onItemClickedIns(Ins){
+      this.selectedIns={harga:"75000"};
+   }
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 

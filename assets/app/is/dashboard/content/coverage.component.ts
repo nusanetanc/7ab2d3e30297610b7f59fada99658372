@@ -36,7 +36,8 @@ import { Http } from 'angular2/http';
                         <a [routerLink]="['AddProperty']">
                             <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT10">
+                                        <img class="imageCoverage" src="./images/property.png" alt="property">
                                         <h4 class="text-center grey333">ADD PROPERTY</h4>
                                     </div>
                                 </div>
@@ -47,7 +48,8 @@ import { Http } from 'angular2/http';
                         <a [routerLink]="['AddCluster']">
                             <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT20">
+                                        <img class="imageCoverage" src="./images/cluster.png" alt="cluter">
                                         <h4 class="text-center grey333">ADD CLUSTER</h4>
                                     </div>
                                 </div>
@@ -58,7 +60,8 @@ import { Http } from 'angular2/http';
                         <a [routerLink]="['AddBlock']">
                             <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT10">
+                                        <img class="imageCoverage" src="./images/block.png" alt="block / floor">
                                         <h4 class="text-center grey333">ADD BLOCK / FLOOR</h4>
                                     </div>
                                 </div>
@@ -69,7 +72,8 @@ import { Http } from 'angular2/http';
                         <a [routerLink]="['AddStreet']">
                             <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12  paddingT10">
+                                        <img class="imageCoverage" src="./images/street.png" alt="street">
                                         <h4 class="text-center grey333">ADD STREET</h4>
                                     </div>
                                 </div>
@@ -80,7 +84,8 @@ import { Http } from 'angular2/http';
                             <a [routerLink]="['AddHome']">
                                 <div class="cardDashboardCover">
                                     <div class="row white">
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 paddingT10">
+                                            <img class="imageCoverage" src="./images/home.png" alt="home">
                                             <h4 class="text-center grey333">ADD HOME NUMBER</h4>
                                         </div>
                                     </div>
