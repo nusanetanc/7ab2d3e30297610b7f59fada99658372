@@ -115,8 +115,8 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your propertys --</option>
-                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property._id }}</option>
+                                                <option disabled="true" selected="true">-- Select your property --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -165,6 +165,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     cities: City[];
     properties: Property[];
+    clusters: Cluster[];
 
 
 
@@ -195,7 +196,6 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Declare empty list of people
     subs: any[] = [];
-    clusters: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
     packages: any[] = [];
