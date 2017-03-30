@@ -166,13 +166,20 @@ export class ContentAddSubsComponent implements OnInit {
     cities: City[];
     properties: Property[];
 
-    onSelect(_id) {
-        this.properties = this.getAllPropertyByCity();
-    }
 
+
+    onSelect(_id) {
+        console.log(_id);
+        this.properties = this.getAllPropertyByCity(){
+            this.http.get(`${this.API}/property/propertybycity/${_id}`)
+                .map(res => res.json())
+                .subscribe(properties => {
+                    this.properties = properties
+                })
+        };
+    }
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    city_id = '58d34974afc3b77e68b66526';
 
     // Declare empty list of people
     subs: any[] = [];
