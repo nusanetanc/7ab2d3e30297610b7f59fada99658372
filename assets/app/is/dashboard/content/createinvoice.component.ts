@@ -176,7 +176,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input (click)="onItemClicked(Router)" type="checkbox" >
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="{{this.routerprice}}">
+                                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
                                                     </form>
                                                 </div>
@@ -253,7 +253,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
   // Declare empty list of people
   bills: any[] = [];
   subs: any[] = [];
-  public routerprice = '';
+  routerprice = '';
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   onItemClicked(Router){
