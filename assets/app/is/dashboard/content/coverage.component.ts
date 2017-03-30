@@ -13,7 +13,6 @@ import { Http } from 'angular2/http';
                 </a>
                 &nbsp; Coverage Area
             </h3>
-
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -95,9 +94,7 @@ import { Http } from 'angular2/http';
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
