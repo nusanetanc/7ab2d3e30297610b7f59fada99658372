@@ -34,9 +34,9 @@ import { Http } from 'angular2/http';
                         </div>
                         <div class="col-sm-4">
                         <a [routerLink]="['AddProperty']">
-                            <div class="cardDashboardCover paddingT10" style="padding-top: 10px">
+                            <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT10">
                                         <img class="imageCoverage" src="./images/property.png" alt="property">
                                         <h4 class="text-center grey333">ADD PROPERTY</h4>
                                     </div>
@@ -46,9 +46,9 @@ import { Http } from 'angular2/http';
                         </div>
                         <div class="col-sm-4">
                         <a [routerLink]="['AddCluster']">
-                            <div class="cardDashboardCover paddingT10" style="padding-top: 10px">
+                            <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT10">
                                         <img class="imageCoverage" src="./images/cluster.png" alt="cluter">
                                         <h4 class="text-center grey333">ADD CLUSTER</h4>
                                     </div>
@@ -58,9 +58,9 @@ import { Http } from 'angular2/http';
                         </div>
                         <div class="col-sm-4">
                         <a [routerLink]="['AddBlock']">
-                            <div class="cardDashboardCover paddingT10" style="padding-top: 10px">
+                            <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingT10">
                                         <img class="imageCoverage" src="./images/block.png" alt="block / floor">
                                         <h4 class="text-center grey333">ADD BLOCK / FLOOR</h4>
                                     </div>
@@ -70,9 +70,9 @@ import { Http } from 'angular2/http';
                         </div>
                         <div class="col-sm-4">
                         <a [routerLink]="['AddStreet']">
-                            <div class="cardDashboardCover paddingT10" style="padding-top: 10px">
+                            <div class="cardDashboardCover">
                                 <div class="row white">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12  paddingT10">
                                         <img class="imageCoverage" src="./images/street.png" alt="street">
                                         <h4 class="text-center grey333">ADD STREET</h4>
                                     </div>
@@ -82,9 +82,9 @@ import { Http } from 'angular2/http';
                         </div>
                         <div class="col-sm-4">
                             <a [routerLink]="['AddHome']">
-                                <div class="cardDashboardCover paddingT10" style="padding-top: 10px">
+                                <div class="cardDashboardCover">
                                     <div class="row white">
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 paddingT10">
                                             <img class="imageCoverage" src="./images/home.png" alt="home">
                                             <h4 class="text-center grey333">ADD HOME NUMBER</h4>
                                         </div>
