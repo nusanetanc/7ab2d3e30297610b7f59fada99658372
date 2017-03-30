@@ -172,7 +172,7 @@ import { Sub } from './subs';
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
-                                                            <span *ngFor="#listItem of listItems" class="input-group-addon">
+                                                            <span class="input-group-addon">
                                                                 <input type="checkbox" (click)="onItemClicked(listItem)" >
                                                             </span>
                                                             <input [(ngModel)]="selectedItem.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
@@ -247,13 +247,10 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
-public listItems = [
-      {harga:"40000"},
-   ];
-   public selectedItem = {name: ""};
 
+   public selectedItem = {harga: ""};
    onItemClicked(listItem){
-      this.selectedItem=listItem;
+      this.selectedItem={harga:"40000"};
    }
 
 // Link to our api, pointing to localhost
