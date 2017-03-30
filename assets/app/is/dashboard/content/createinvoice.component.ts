@@ -172,14 +172,15 @@ import { Sub } from './subs';
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" (click)="onItemClicked(listItems)" >
+                                                            <span *ngFor="#listItem of listItems" class="input-group-addon">
+                                                                <input type="checkbox" (click)="onItemClicked(listItem)" >
                                                             </span>
-                                                            <input [(ngModel)]="selectedItem.name" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
+                                                            <input [(ngModel)]="selectedItem.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -249,10 +250,10 @@ export class ContentCreateInvoiceComponent implements OnInit {
 public listItems = [
       {harga:"40000"},
    ];
-   public selectedItems = {name: ""};
+   public selectedItem = {name: ""};
 
-   onItemClicked(listItems){
-      this.selectedItem=listItems;
+   onItemClicked(listItem){
+      this.selectedItem=listItem;
    }
 
 // Link to our api, pointing to localhost
