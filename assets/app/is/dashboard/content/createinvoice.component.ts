@@ -168,15 +168,6 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
-                                            <select #namepackage id="namepackage" class="inputForm">
-                                                <option disabled="true" selected="true">-- Select Package --</option>
-                                                <option value="1">Level 1</option>
-                                                <option value="2">Level 2</option>
-                                                <option value="3">Level 3</option>
-                                                <option value="4">Level 4</option>
-                                                <option value="5">Level 5</option>
-                                                <option value="6">Level 6</option>
-                                            </select><br/>
                                             <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
                                             <div class="row">
                                                 <div class="col-sm-12">
