@@ -26,7 +26,7 @@ import { Sub } from './subs';
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <div class="dropdown right">
-                      <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      <button (click)="sortById()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                           ID
                       </button>
                       <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
