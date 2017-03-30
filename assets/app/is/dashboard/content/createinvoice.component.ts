@@ -253,10 +253,9 @@ export class ContentCreateInvoiceComponent implements OnInit {
   // Declare empty list of people
   bills: any[] = [];
   subs: any[] = [];
+  public routerprice = '';
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
-  constructor(private http: Http, private _routeParams: RouteParams) {
-  this.date = new Date();
-  }
   onItemClicked(Router){
       this.routerprice = '40000';
    }
