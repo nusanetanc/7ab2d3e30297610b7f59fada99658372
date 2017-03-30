@@ -145,7 +145,6 @@ import { Sub } from './subs';
                      </div>
                      <div class="col-xs-12 col-md-7">
                          <span>{{ subs.nova }}</span>
-                         {{valueDate | date: 'dd/MM/yyyy'}}
                      </div>
                  </div>
              </div>
@@ -187,6 +186,8 @@ import { Sub } from './subs';
             (click)="onItemClicked(listItem)">{{listItem.name}}
          </li>
       </ul>
+      <input type="text" [(ngModel)]="selectedItem.name">
+
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
