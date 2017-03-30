@@ -280,6 +280,10 @@ hr {
     text-align: center;
 }
 
+.cardDashboardCover > h4 {
+    color: #F15A34;
+}
+
 .imageCoverage {
     width: 35%;
 }
