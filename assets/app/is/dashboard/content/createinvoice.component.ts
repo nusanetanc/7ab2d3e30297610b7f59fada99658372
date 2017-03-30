@@ -185,7 +185,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" aria-label="...">
                                                             </span>
-                                                            <input disabled type="text" inputForm" #routerprice id="routerprice" class="form-control inputForm" placeholder="Router Rent Fee">
+                                                            <input disabled="true" type="text" inputForm" #routerprice id="routerprice" class="form-control inputForm" placeholder="Router Rent Fee">
                                                         </div>
                                                     </form>
                                                 </div>
