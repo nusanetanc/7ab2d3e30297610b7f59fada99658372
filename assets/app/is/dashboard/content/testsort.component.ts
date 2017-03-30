@@ -47,7 +47,8 @@ import 'rxjs/add/operator/map';
 })
 export class ContentTestComponent {
 
-    names = [{"id": 1,"first_name": "Jason","last_name": "Martin"},
+    names = [
+        {"id": 1,"first_name": "Jason","last_name": "Martin"},
         {"id": 2,"first_name": "Douglas","last_name": "Holmes"},
         {"id": 3,"first_name": "Randy","last_name": "Woods"},
         {"id": 4,"first_name": "Thomas","last_name": "Castillo"},
@@ -56,7 +57,9 @@ export class ContentTestComponent {
         {"id": 7,"first_name": "Carl","last_name": "Taylor"},
         {"id": 8,"first_name": "Brandon","last_name": "Mendoza"},
         {"id": 9,"first_name": "Willie","last_name": "Ross"},
-        {"id": 10,"first_name": "Howard","last_name": "Montgomery"}]
+        {"id": 10,"first_name": "Howard","last_name": "Montgomery"},
+        {"id": 11,"first_name": "Ahmad","last_name": "Rifki"},
+    ]
 
     ngOnInit(){
         this.names.sort( function(name1, name2) {
