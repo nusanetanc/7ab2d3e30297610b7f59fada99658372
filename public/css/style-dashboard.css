@@ -280,7 +280,7 @@ hr {
     text-align: center;
 }
 
-.cardDashboardCover > h4 {
+.cardDashboardCover > div > div > h4 {
     color: #F15A34;
 }
 
