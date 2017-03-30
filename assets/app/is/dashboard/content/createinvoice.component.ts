@@ -178,13 +178,6 @@ import { Sub } from './subs';
                                                 <option value="6">Level 6</option>
                                             </select><br/>
                                             <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
-                                            <div class="input-group">
-                                                <span class="input-group-addon">
-                                                  <input type="checkbox" aria-label="...">
-                                                </span>
-                                                <input type="text" class="form-control" aria-label="...">
-                                              </div><!-- /input-group -->
-                                            <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -192,14 +185,47 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" aria-label="...">
                                                             </span>
-                                                            <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
+                                                            <input disabled type="text" inputForm" #routerprice id="routerprice" class="form-control inputForm" placeholder="Router Rent Fee">
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
-                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
-                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="75000">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <form class="paddingTB20">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <input type="checkbox" aria-label="...">
+                                                            </span>
+                                                            <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <form class="paddingTB20">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <input type="checkbox" aria-label="...">
+                                                            </span>
+                                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <form class="paddingTB20">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <input type="checkbox" aria-label="...">
+                                                            </span>
+                                                            <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
                                             <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                             <input type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
