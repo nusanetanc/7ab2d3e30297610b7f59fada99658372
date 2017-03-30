@@ -77,15 +77,15 @@ import { Http } from 'angular2/http';
                         </a>
                         </div>
                         <div class="col-sm-4">
-                        <a [routerLink]="['AddHome']">
-                            <div class="cardDashboardCover">
-                                <div class="row white">
-                                    <div class="col-sm-12">
-                                        <h4 class="text-center grey333">ADD HOME NUMBER</h4>
+                            <a [routerLink]="['AddHome']">
+                                <div class="cardDashboardCover">
+                                    <div class="row white">
+                                        <div class="col-sm-12">
+                                            <h4 class="text-center grey333">ADD HOME NUMBER</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
                         </div>
                     </div>
                 </div>
