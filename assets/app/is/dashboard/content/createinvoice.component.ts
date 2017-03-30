@@ -219,7 +219,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
   bills: any[] = [];
   subs: any[] = [];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
