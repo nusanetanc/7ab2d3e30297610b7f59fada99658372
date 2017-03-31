@@ -13,7 +13,7 @@ import { Sub } from './subs';
                     <div class="form">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                                <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                                <inputs style="box-shadow:none" type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                             </div>
                             <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                             <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
