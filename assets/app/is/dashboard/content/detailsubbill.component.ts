@@ -165,9 +165,9 @@ import { Sub } from './subs';
             </div>
             
             <!-- Content List -->
-            <div class="row paddingLR15Margin20">
+            <div class="row paddingLR15Margin20 paddingLR30 marginT20">
                 <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
+                    <div class="row headerList">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
                     </div>
                     <div class="row subInfo" *ngFor="#bill of bills">
@@ -187,20 +187,47 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentBillSubscribeComponent {
+
+    // Sort By
+    sortByNo(){
+        this.bills.sort( function(a, b) {
+            if ( a.noinvoice < b.noinvoice ){
+                return -1;
+            }else if( a.noinvoice> b.noinvoice ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
+    bills: any[] = [];
     subs: any[] = [];
 
-    constructor(private http: Http, private _routeParams: RouteParams) {}
+    constructor(private http: Http) {}
 
+    // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getSubs();
+        this.getAllBill();
+        this.getAllSub();
     }
 
-    getSubs() {
-        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+    // Get all users from the API
+    getAllBill() {
+        this.http.get(`${this.API}/bill/listbill`)
+            .map(res => res.json())
+            .subscribe(bills => {
+                this.bills = bills
+            })
+    }
+
+    // Get all users from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
             .map(res => res.json())
             .subscribe(subs => {
                 this.subs = subs
