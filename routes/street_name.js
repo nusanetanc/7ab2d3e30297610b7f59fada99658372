@@ -20,7 +20,7 @@ router.get('/streetname/:id', function(req, res, next) {
 
 /* GET detail streetname by blok. */
 router.get('/streetnamebyblok/:id', function(req, res, next) {
-    Streetname.find({blokfloor: req.params.id}, function(err, streetnames) {
+    Streetname.find({blok: req.params.id}, function(err, streetnames) {
         console.log( streetnames );
         res.json(streetnames);
     });
@@ -30,7 +30,7 @@ router.get('/streetnamebyblok/:id', function(req, res, next) {
 router.post('/addstreetname', function(req, res, next) {
     var streetname = new Streetname();
     streetname.name= req.body.name;
-    streetname.blokfloor= req.body.blokfloor;
+    streetname.blok= req.body.blok;
 
     streetname.save(function(err) {
         if (err)
@@ -47,6 +47,7 @@ router.put('/putstreetname/:id', function(req, res, next) {
             res.send(err);
 
         streetname.name= req.body.name;
+        streetname.blok= req.body.blok;
         if (err)
             res.send(err);
 
