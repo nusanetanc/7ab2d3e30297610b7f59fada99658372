@@ -274,9 +274,10 @@ hr {
 
 .cardDashboardCover {
     background-color: #FFFFFF;
-    height: 200px;
+    height: 300px auto;
     margin-bottom: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -285,7 +286,7 @@ hr {
 }
 
 .imageCoverage {
-    width: 35%;
+    width: 30%;
 }
 
 @media only screen and (max-width: 767px) {
