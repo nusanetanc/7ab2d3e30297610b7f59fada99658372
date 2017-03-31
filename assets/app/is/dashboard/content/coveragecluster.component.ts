@@ -65,24 +65,23 @@ import { Cluster } from './cluster';
                     </div>
                 </div>
                 <br/>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="row headerList paddingLR30">
-                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Cluster</strong></div>
-                            </div>
-                            <div class="row subInfo">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                          <div class="row">
-                                              <div class="col-sm-12" *ngFor="#cluster of clusters">
-                                                  <div class="row subInfo">
-                                                      <div class="col-sm-4 invoiceList"><span>{{cluster.name}}</span></div>
-                                                      <div class="col-sm-4 invoiceList"><span>{{cluster.property}}</span></div>
-                                                      <div class="col-sm-4 invoiceList"><span>{{cluster.city}}</span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row headerList paddingLR30">
+                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Cluster</strong></div>
+                        </div>
+                        <div class="row subInfo">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12" *ngFor="#cluster of clusters">
+                                                <div class="row subInfo">
+                                                    <div class="col-sm-4 invoiceList"><span>{{cluster.name}}</span></div>
+                                                    <div class="col-sm-4 invoiceList"><span>{{cluster.property}}</span></div>
+                                                    <div class="col-sm-4 invoiceList"><span>{{cluster.city}}</span></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -90,6 +89,7 @@ import { Cluster } from './cluster';
                         </div>
                     </div>
                 </div>
+            </div>
         </div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
