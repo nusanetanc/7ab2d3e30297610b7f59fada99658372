@@ -43,19 +43,19 @@ import { Street } from './street';
                                     <form>
                                         <select #streetcity id="streetcity">
                                             <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                            <option *ngFor="#city of cities">{{ city.name }}</option>
+                                            <option *ngFor="#city of cities">{{ city._id }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #streetproperty id="streetproperty">
                                             <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#property of propertys" >{{ property.name }}</option>
+                                            <option *ngFor="#property of propertys" >{{ property._id }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
                                         <select #streetcluster id="streetcluster">
                                             <option class="option" disabled="true" selected="true">-- Select Cluster Name --</option>
-                                            <option *ngFor="#cluster of clusters" >{{ cluster.name }}</option>
+                                            <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
                                         </select><br/>
                                     </form>
                                     <form>
