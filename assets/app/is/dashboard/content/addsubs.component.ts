@@ -190,7 +190,7 @@ export class ContentAddSubsComponent implements OnInit {
     onSelectCluster(_id) {
         console.log(_id);
         this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/58dcc61c0067bc400459c0df`)
                 .map(res => res.json())
                 .subscribe(blokfloors => {
                     this.blokfloors = blokfloors
