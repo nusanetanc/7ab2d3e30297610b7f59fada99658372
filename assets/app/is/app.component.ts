@@ -35,6 +35,7 @@ import {ContentCoverageBlockComponent} from "./dashboard/content/coverageblock.c
 import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet.component";
 import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
+import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.component";
 
 @Component({
    selector: 'is-app',
@@ -95,6 +96,7 @@ import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
         ContentCoverageStreetComponent,
         ContentCoverageHomeComponent,
         ContentInvoiceComponent,
+        ContentBillSubscribeComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -130,6 +132,7 @@ import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
     { path: '/is/addstreet', component:ContentCoverageStreetComponent, name:'AddStreet'},
     { path: '/is/addhome', component:ContentCoverageHomeComponent, name:'AddHome'},
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
+    { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
 ])
 
 export class AppComponent {
