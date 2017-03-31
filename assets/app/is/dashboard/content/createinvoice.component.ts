@@ -200,7 +200,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
+                                            <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
                                             <form>
                                                 <label *ngFor="#listPromo of listPromos" class="form-control">
                                                   <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
