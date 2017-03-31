@@ -160,7 +160,7 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/30">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/05">
-                                            <input type="text" class="form-control [(ngModel)]="package.harga" inputForm" #packageprice id="packageprice" placeholder="Package Price" value="349000">
+                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="349000" [(ngModel)]="package.harga">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
