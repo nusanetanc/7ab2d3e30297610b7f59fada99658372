@@ -163,12 +163,6 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
 
-    cities: City[];
-    properties: Property[];
-    clusters: Cluster[];
-
-
-
     onSelectCity(_id) {
         console.log(_id);
         this.properties = this.getAllPropertyByCity(){
@@ -195,6 +189,9 @@ export class ContentAddSubsComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
+    cities: any[] = [];
+    properties: any[] = [];
+    clusters: any[] = [];
     subs: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
