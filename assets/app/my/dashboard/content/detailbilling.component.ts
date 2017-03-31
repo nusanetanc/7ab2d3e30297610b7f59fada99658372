@@ -251,7 +251,7 @@ export class ContentDetailBillingComponent {
 
 // Get all bill from the API
 getBills() {
- this.http.get(`${this.API}/bill/idbill/${this.Billing_ID}`)
+ this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
    .map(res => res.json())
    .subscribe(bills => {
      this.bills = bills
