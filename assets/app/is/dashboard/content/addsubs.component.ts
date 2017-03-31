@@ -114,8 +114,8 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedProperty.id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0" selected>-- Select your property --</option>
+                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
@@ -162,7 +162,7 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
-    selectedProperty: Property = new Property(0);
+    selectedProperty: City = new City(0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
