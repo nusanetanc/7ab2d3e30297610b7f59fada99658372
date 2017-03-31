@@ -115,13 +115,13 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your property --</option>
-                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property._id }}</option>
+                                                <option selected="true">-- Select your property --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your cluster --</option>
+                                                <option selected="true">-- Select your cluster --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
