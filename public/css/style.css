@@ -551,20 +551,31 @@ font-size: 14px;
 
 /*----------------------- provide.html --------------------------*/
 .jumbotron > .container > .row > .col-md-12 > p {
-font-size: 14px;
-margin-bottom: 30px;
-text-align: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.row > .col-md-4 > form > div > input {
-background-color: #f0f0f0;
-border: none;
-border-radius: 0px;
-font-size:14px;
-height: 45px;
-margin: 0 0 20px 0;
-padding: 22px 0px 26px 20px;
-width: 100%;
+/*.row > .col-md-4 > form > div > input {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 45px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
+}*/
+
+.formInput  {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0px;
+    font-size:14px;
+    height: 45px;
+    margin: 0 0 20px 0;
+    padding: 22px 0px 26px 20px;
+    width: 100%;
 }
 
 .row > .col-md-4 > form > div > p {

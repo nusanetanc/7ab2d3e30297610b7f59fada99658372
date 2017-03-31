@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Groovy - Connecting Home</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+    <!-- Style css -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top navbar-homepage">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../"><img class="navbar-logo" src="images/logo-groovy.png" alt="logo-groovy"/></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="features"><span class="navbar-menus">FEATURES</span></a></li>
+                <li><a href="packages"><span class="navbar-menus">PACKAGES</span></a></li>
+                <li><a href="support"><span class="navbar-menus">SUPPORT</span></a></li>
+                <li><a href="contact"><span class="navbar-menus">CONTACT</span></a></li>
+                <li class="active"><a href="signin"><span class="sign-in-only">SIGN IN</span></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<!-- Content -->
+<div class="jumbotron signup-jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><!-- header SignUp -->
+                <h3>Sign Up</h3>
+                <P>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</P>
+            </div><!-- .header SignUp -->
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
+                        <input type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
+                        <input type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
+                        <p>Upload your National Identity Card</p>
+                        <div class="form-control">
+                            <button type="button">choose file</button>
+                            <p>No choose file</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-md-offset-4">
+                <a [routerLink]="['SignupDone']" class="next btn btn-default dropdown-toggle">
+                    FINISH
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content -->
+
+<div class="jumbotron features-content1" id="#unlimited">
+    <div class="features-content1-container container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p><span class="wall-content-title">Unlimited Internet Access</span></p>
+                <p><span class="home-content-text">Have it all lighting-fast network speeds and unlimited Internet usage. Never worry about surprise charges again!</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron features-content2" id="ftth">
+    <div class="container wall-content">
+        <div class="row">
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6">
+                <p><span class="wall-title features-content2-title">Fiber Optic to the Home</span></p>
+                <p><span class="home-content-text features-content2-text">You can take your entertainment with you. Watch the hottest shows and movies On Demand and stream live TV. Just turn on your TV, laptop, tablet or phone</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron features-content3" id="free-wifi">
+    <div class="features-content3-container container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p><span class="wall-content-title features-content3-title">Free Public WiFi Account</span></p>
+                <p><span class="home-content-text">Get free public wifi account with more than 100k hotspot location speed up to 100Mbps</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron features-content4" id="ip-static">
+    <div class="features-content4-container container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p><span class="wall-content-title">IP Static</span></p>
+                <p><span class="home-content-text">Don't worry about the changes in the IP address during the connected session. Also when you connect to your computer through applications such as remote desktop, you need not be bothered about losing the IP address.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron features-content5" id="helpdesk">
+    <div class="features-content5-container container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p><span class="wall-content-title">Helpdesk 24/7</span></p>
+                <p><span class="home-content-text">We're here to help when you need us. Our 24/7 live chat support is ready to answer your questions. You can also send us and email, and we'll answer within 24 hours</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/content-->
+
+<br/><br/><br/>
+<div class="jumbotron home-footer">
+    <div class="container home-content">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-sm-3">
+                <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
+                    <span class="home-footer-body-text">
+                    <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
+                    <a href="https://twitter.com/groovy_play">Twitter</a><br>
+                    <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
+                </span></p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-sm-3">
+                <p style="line-height:25px;"><span class="home-footer-header-text">Features</span><br>
+                    <span class="home-footer-body-text">
+                    <a href="/features">Unlimited Internet Access</a><br>
+                    <a href="/features">Fiber Optic to the Home</a><br>
+                    <a href="/features">Free Public Wifi Account</a><br>
+                    <a href="/features">IP Static</a><br>
+                    <a href="/features">Helpdesk 24/7</a><br>
+                </span></p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-sm-3">
+                <p style="line-height:25px;"><span class="home-footer-header-text">Groovy</span><br>
+                    <span class="home-footer-body-text">
+                    <a href="about">About</a><br/>
+                    <a href="career">Career</a><br>
+                    <a href="event">Event</a><br>
+                    <a href="contact">Contact</a><br>
+                    <a href="privacy-policy">Privacy Policy</a><br>
+                    <a href="terms-of-use">Terms of Use</a>
+                </span></p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-sm-3">
+                <p style="line-height:25px;"><span class="home-footer-header-text"><img src="images/groovy.png" alt="" width="120px"></span><br>
+                    <span class="home-footer-body-text">Best Internet services for homes and apartments with a complete entertainment services, from live TV, video on demand, social TV, catch-up TV and radio streaming.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-home">
+    <div class="container footer-home-text">
+        <p>Copyright 2017 Groovy. All Right Reserved.</p>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
