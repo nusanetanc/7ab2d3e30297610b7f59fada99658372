@@ -38,7 +38,7 @@ import {Billing} from './allbill';
                 <a [routerLink]="['Detailbilling', {id: bill._id}]">
                     <div class="row subInfo">
                         <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
+                        <div class="col-sm-8 invoiceList"><span>{{bill.name}}</span></div>
                         <div class="col-sm-1 invoiceList"><span class="green"></span></div>
                         <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
                     </div>
