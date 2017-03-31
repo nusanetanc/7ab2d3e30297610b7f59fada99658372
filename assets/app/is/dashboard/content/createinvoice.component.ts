@@ -201,7 +201,7 @@ import { Sub } from './subs';
                                             </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
                                             <form>
-                                                <label *ngFor="#listPromo of listPromos" class="form-control inputForm radio-inline">
+                                                <label *ngFor="#listPromo of listPromos" class="form-control">
                                                   <input type="radio" name="optradio">Promo {{ listPromo.name }}
                                                 </label>
                                               </form><br/>
@@ -237,7 +237,7 @@ public listPromos = [
       {name:"Gratis Instalasi", harga:"9000"},
       {name:"Groovy Play", harga:"10000"}
    ];
-   public selectedPromo = {harga: "0"};
+   public selectedPromo = {harga: ""};
 
    onItemClickedPromo(listPromo){
       this.selectedPromo=listPromo;
