@@ -160,7 +160,7 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/30">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/05">
-                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="349000" [(ngModel)]="package.harga">
+                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="349000" [(ngModel)]="packageprice">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -200,7 +200,7 @@ import { Sub } from './subs';
                                                 </div>
                                             </div>
                                             <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
-                                            {{ package.harga }}
+                                            {{ packageprice }}
                                             <form>
                                                 <label *ngFor="#listPromo of listPromos" class="form-control">
                                                   <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
