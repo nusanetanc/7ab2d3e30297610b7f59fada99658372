@@ -162,7 +162,7 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
-    selectedProperty: Property = new Property(0, 'dummy');
+    selectedProperty: Property = new Property(0, 0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
