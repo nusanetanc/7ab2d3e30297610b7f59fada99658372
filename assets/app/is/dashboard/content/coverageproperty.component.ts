@@ -79,7 +79,7 @@ import { Property } from './property';
                   </div>
               </div>
         </div>
-    <!-- Page content -->
+    <!-- -Page content- -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
