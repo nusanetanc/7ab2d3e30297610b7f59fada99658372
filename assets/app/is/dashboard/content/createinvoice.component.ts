@@ -235,7 +235,7 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
-//val='';
+val=(event.target).value;
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
   }
