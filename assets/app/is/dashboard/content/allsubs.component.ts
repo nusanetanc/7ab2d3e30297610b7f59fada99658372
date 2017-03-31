@@ -68,7 +68,7 @@ export class ContentAllSubsComponent {
         });
     }
 
-  // Link to our api, pointing to localhost
+    // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
@@ -81,14 +81,13 @@ export class ContentAllSubsComponent {
       this.getAllSub();
     }
 
-  // Get all users from the API
-  getAllSub() {
-    this.http.get(`${this.API}/subscribe/listsub`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-
-     })
-   }
+    // Get all users from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+            this.subs = subs
+        })
+    }
 
 }
