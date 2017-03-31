@@ -18,6 +18,14 @@ Home.findById(req.params.id, function(err, homes) {
    });
 });
 
+/* GET detail home by street. */
+router.get('/homebystreet/:id', function(req, res, next) {
+Home.find({streetname: req.params.id}, function(err, homes) {
+       console.log( homes );
+       res.json(homes);
+   });
+});
+
 /* Add home */
 router.post('/addhome', function(req, res, next) {
   var home = new Home();

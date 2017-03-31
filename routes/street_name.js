@@ -18,6 +18,14 @@ router.get('/streetname/:id', function(req, res, next) {
     });
 });
 
+/* GET detail streetname by blok. */
+router.get('/streetnamebyblok/:id', function(req, res, next) {
+    Streetname.find({blokfloor: req.params.id}, function(err, streetnames) {
+        console.log( streetnames );
+        res.json(streetnames);
+    });
+});
+
 /* Add streetname */
 router.post('/addstreetname', function(req, res, next) {
     var streetname = new Streetname();

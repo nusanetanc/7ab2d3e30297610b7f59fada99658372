@@ -126,21 +126,21 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your blok or floor --</option>
+                                            <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your blok or floor --</option>
                                                 <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your street name --</option>
-                                                <option *ngFor="#streetname of streetnames">{{ streetname.name }}</option>
+                                            <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your street name --</option>
+                                                <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your no home --</option>
-                                                <option *ngFor="#home of homes">{{ home.nohome }}</option>
+                                                <option value="0">-- Select your no home --</option>
+                                                <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -164,6 +164,8 @@ export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
+    selectedBlok: City = new City(0, 'dummy');
+    selectedStreet: City = new City(0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
@@ -198,6 +200,28 @@ export class ContentAddSubsComponent implements OnInit {
         }
     }
 
+    onSelectBlok(_id) {
+        console.log(_id);
+        this.streetnames = this.getAllStreetByBlok() {
+            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+                .map(res => res.json())
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
+                })
+        }
+    }
+
+    onSelectStreet(_id) {
+        console.log(_id);
+        this.homes = this.getAllHomeByStreet() {
+            this.http.get(`${this.API}/home/homebystreet/${_id}`)
+                .map(res => res.json())
+                .subscribe(homes => {
+                    this.homes = homes
+                })
+        }
+    }
+
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -217,9 +241,7 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllHome();
         this.getAllPackage();
-        this.getAllStreet();
     }
 
 
@@ -258,14 +280,7 @@ export class ContentAddSubsComponent implements OnInit {
                 this.cities = cities
             })
     }
-    // Get all Property from the API
-    getAllProperty() {
-        this.http.get(`${this.API}/property/listproperty`)
-            .map(res => res.json())
-            .subscribe(properties => {
-                this.properties = properties
-            }).filter((item)=> item.city == "58d34974afc3b77e68b66526");
-    }
+
     // Get all Property by city from the API
     getAllPropertyByCity() {
         this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
@@ -275,27 +290,11 @@ export class ContentAddSubsComponent implements OnInit {
             })
     }
     // Get all Type from the API
-    getAllCluster() {
-        this.http.get(`${this.API}/cluster/listcluster`)
-            .map(res => res.json())
-            .subscribe(clusters => {
-                this.clusters = clusters
-            })
-    }
-    // Get all Type from the API
     getAllClusterByProperty() {
         this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
-            })
-    }
-// Get all BLokfloor from the API
-    getAllBLokfloor() {
-        this.http.get(`${this.API}/blokfloor/listblokfloor`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
             })
     }
 
@@ -307,9 +306,10 @@ export class ContentAddSubsComponent implements OnInit {
                 this.blokfloors = blokfloors
             })
     }
-// Get all Home from the API
-    getAllHome() {
-        this.http.get(`${this.API}/home/listhome`)
+
+    // Get all Home from the API
+    getAllHomeByStreet() {
+        this.http.get(`${this.API}/home/homebystreet/${_id}`)
             .map(res => res.json())
             .subscribe(homes => {
                 this.homes = homes
@@ -326,8 +326,8 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     // Get all Street from the API
-    getAllStreet() {
-        this.http.get(`${this.API}/streetname/liststreetname`)
+    getAllStreetByBlok() {
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
