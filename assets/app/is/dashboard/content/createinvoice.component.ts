@@ -246,7 +246,8 @@ public listPromos = [
    public selectedSTB = {harga: ""};
    public selectedIns = {harga: ""};
 
-   public total = {harga: "40000"};
+   var score1:number = 50;
+   console.log(score1);
    onItemClickedRouter(Router){
       this.selectedRouter={harga:"40000"};
    }
