@@ -115,6 +115,8 @@ import {Package} from "./package";
                                         <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
                                         <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
+                                        <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
                                         <!--<p>Upload your National Identity Card</p>
                                         <div class="form-control">
                                             <button type="button">choose file</button>
@@ -124,7 +126,7 @@ import {Package} from "./package";
                                 </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
-                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
+                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                                 NEXT
                             </button>
                         </div>
@@ -137,9 +139,9 @@ import {Package} from "./package";
 export class SignupComponent implements OnInit{
 
     // Add one person to the API
-    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
+    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
 
-        var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}}`;
+        var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}datebirth=${subdatebirth}&idnumber=${subidnumber}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
