@@ -47,6 +47,7 @@ router.put('/putstreetname/:id', function(req, res, next) {
             res.send(err);
 
         streetname.name= req.body.name;
+        streetname.blok= req.body.blok;
         if (err)
             res.send(err);
 
