@@ -199,7 +199,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input [(ngModel)]="{{this.API}}" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
+                                            <input [(ngModel)]=total.harga"" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal" disabled="true">
                                             <form>
                                                 <label *ngFor="#listPromo of listPromos" class="form-control">
                                                   <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
@@ -246,6 +246,7 @@ public listPromos = [
    public selectedSTB = {harga: ""};
    public selectedIns = {harga: ""};
 
+   public total = {harga: "40000"};
    onItemClickedRouter(Router){
       this.selectedRouter={harga:"40000"};
    }
