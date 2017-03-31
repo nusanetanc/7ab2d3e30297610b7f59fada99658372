@@ -168,7 +168,6 @@ export class ContentAddSubsComponent implements OnInit {
     selectedStreet: City = new City(0, 'dummy');
 
     onSelectCity(_id) {
-        console.log(_id);
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
                 .map(res => res.json())
@@ -179,7 +178,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectProperty(_id) {
-        console.log(_id);
         this.clusters = this.getAllClusterByProperty(){
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
@@ -190,7 +188,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectCluster(_id) {
-        console.log(_id);
         this.clusters = this.getAllBLokfloorByCluster() {
             this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
                 .map(res => res.json())
@@ -201,7 +198,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectBlok(_id) {
-        console.log(_id);
         this.streetnames = this.getAllStreetByBlok() {
             this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
                 .map(res => res.json())
@@ -212,7 +208,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectStreet(_id) {
-        console.log(_id);
         this.homes = this.getAllHomeByStreet() {
             this.http.get(`${this.API}/home/homebystreet/${_id}`)
                 .map(res => res.json())
