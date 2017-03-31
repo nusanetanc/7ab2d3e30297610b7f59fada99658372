@@ -114,14 +114,14 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your property --</option>
+                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
-                                                <option disabled="true" selected="true">-- Select your cluster --</option>
+                                                <option selected="true">-- Select your cluster --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
@@ -162,12 +162,7 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
-
-    cities: City[];
-    properties: Property[];
-    clusters: Cluster[];
-
-
+    selectedProperty: City = new City(0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
@@ -177,12 +172,12 @@ export class ContentAddSubsComponent implements OnInit {
                 .subscribe(properties => {
                     this.properties = properties
                 })
-        };
+        }
     }
 
     onSelectProperty(_id) {
         console.log(_id);
-        this.clusters = this.getAllClusterByProperty() {
+        this.clusters = this.getAllClusterByProperty(){
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
                 .subscribe(clusters => {
@@ -195,6 +190,9 @@ export class ContentAddSubsComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
+    cities: any[] = [];
+    properties: any[] = [];
+    clusters: any[] = [];
     subs: any[] = [];
     blokfloors: any[] = [];
     homes: any[] = [];
@@ -275,7 +273,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
     // Get all Type from the API
     getAllClusterByProperty() {
-        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
