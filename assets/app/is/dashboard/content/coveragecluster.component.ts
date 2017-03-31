@@ -54,7 +54,7 @@ import { Cluster } from './cluster';
                                                 <input #clustername type="text" class="form-control inputForm" id="cityname" placeholder="New Cluster">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addCity(clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
