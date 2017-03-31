@@ -114,7 +114,7 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
+                                            <select (change)="onSelectProperty($event.target._id)" class="inputForm" name="cars">
                                                 <option value="0">-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
