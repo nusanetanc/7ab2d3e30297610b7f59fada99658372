@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
                                                 <option selected="true">-- Select your property --</option>
-                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                                <option *ngFor="#property of properties" value={{property.name}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -174,10 +174,10 @@ export class ContentAddSubsComponent implements OnInit {
         };
     }
 
-    onSelectProperty(name) {
-        console.log(name);
+    onSelectProperty(_id) {
+        console.log(_id);
         this.clusters = this.getAllClusterByProperty(){
-            this.http.get(`${this.API}/cluster/clusterbyproperty/${name}`)
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
                 .subscribe(clusters => {
                     this.clusters = clusters
