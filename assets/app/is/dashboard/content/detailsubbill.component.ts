@@ -165,7 +165,7 @@ import { Sub } from './subs';
             </div>
             
             <!-- Content List -->
-            <div class="row paddingLR15Margin20">
+            <div class="row paddingLR15Margin20 paddingLR30">
                 <div class="col-sm-12">
                     <div class="row headerList">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
