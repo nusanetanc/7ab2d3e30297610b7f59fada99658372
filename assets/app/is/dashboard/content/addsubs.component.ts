@@ -189,7 +189,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelectCluster(_id) {
         console.log(_id);
-        this.blokfloors = this.getAllBLokfloorByCluster() {
+        this.blokfloors = this.getAllBLokfloorByCluster(){
             this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
                 .map(res => res.json())
                 .subscribe(blokfloors => {
@@ -199,7 +199,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectBlok(_id) {
-        this.streetnames = this.getAllStreetByBlok() {
+        this.streetnames = this.getAllStreetByBlok(){
             this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
                 .map(res => res.json())
                 .subscribe(streetnames => {
@@ -209,7 +209,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectStreet(_id) {
-        this.homes = this.getAllHomeByStreet() {
+        this.homes = this.getAllHomeByStreet(){
             this.http.get(`${this.API}/home/homebystreet/${_id}`)
                 .map(res => res.json())
                 .subscribe(homes => {
