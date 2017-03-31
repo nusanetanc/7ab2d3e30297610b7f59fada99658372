@@ -35,14 +35,14 @@ import {Billing} from './allbill';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#bill of bills">
-                <a [routerLink]="['Detailbilling', {id: bill._id}]">
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>{{sub.name}}</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="green"></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
-                    </div>
-                </a>
+                    <a [routerLink]="['Detailbilling', {id: bill._id}]">
+                        <div class="row subInfo">
+                            <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
+                            <div class="col-sm-8 invoiceList"><span>{{bill.name}}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green"></span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
