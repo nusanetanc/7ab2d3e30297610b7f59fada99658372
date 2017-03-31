@@ -296,7 +296,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Get all Home from the API
     getAllHomeByStreet() {
-        this.http.get(`${this.API}/home/homebystreet/${_id}`)
+        this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
             .map(res => res.json())
             .subscribe(homes => {
                 this.homes = homes
@@ -314,7 +314,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Get all Street from the API
     getAllStreetByBlok() {
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
@@ -332,7 +332,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Get all BLokfloor from the API
     getAllBLokfloorByCluster() {
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
             .map(res => res.json())
             .subscribe(blokfloors => {
                 this.blokfloors = blokfloors

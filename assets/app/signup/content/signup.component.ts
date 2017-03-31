@@ -76,10 +76,10 @@ import {Package} from "./package";
                                 <div class="col-sm-6">
                                     <div class="container">
                                         <div class="row">
-                                            <div class='col-sm-6'>
+                                            <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <div class='input-group date' id='datetimepicker1'>
-                                                        <input #subdateinst id="subdateinst" type='text' class="form-control" />
+                                                    <div class="input-group date" id="datetimepicker1">
+                                                        <input #subdateinst id="subdateinst" type="date" class="form-control" />
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>
@@ -116,7 +116,7 @@ import {Package} from "./package";
                                         <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                         <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
-                                        <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
+                                        <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
                                         <!--<p>Upload your National Identity Card</p>
                                         <div class="form-control">
                                             <button type="button">choose file</button>

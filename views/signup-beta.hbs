@@ -40,69 +40,41 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<!--content-->
-<div class="contact-maps">
-    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBNTqYE7i0Qqyauj7KDghzQTbo8f2vA7a4'></script><div style='overflow:hidden;height:400px;width:100%;'><div id='gmap_canvas' style='height:400px;width:100%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div> <a href='https://embedmaps.org/'>google map widget</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=d1731b902a6ac7a7b953f8feb57951291f8c00f3'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(-6.238650199999999,106.82407739999996),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-6.238650199999999,106.82407739999996)});infowindow = new google.maps.InfoWindow({content:'<strong>Groovy - PT Media Andalan Nusa</strong><br>Cyber Building 7th Floor, Jl. Kuningan Barat No.8<br>12710 Jakarta Selatan, DKI Jakarta, Indonesia<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
-</div>
 
-<div class="container contact-content">
-    <div class="row">
-        <div class="col-sm-4 contact-info">
-            <h3 class="contact-header">Contact Info</h3>
-            <div class="row">
-                <div class="col-sm-3">
-                    <p><span class="contact-info-title">Address</span>
-                </div>
-                <div class="col-sm-9">
-                    <span class="contact-info-text">Cyber Building 7th Floor,<br> Jln Kuningan Barat 8,<br> Jakarta 12710,<br> Indonesia</span></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <p><span class="contact-info-title">Email</span>
-                </div>
-                <div class="col-sm-9">
-                    <span class="contact-info-text">cs@groovy.id</span></p>
-                </div>
-            </div>
+<!-- Content -->
+<div class="jumbotron signup-jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><!-- header SignUp -->
+                <h3>Sign Up</h3>
+            </div><!-- .header SignUp -->
         </div>
-        <div class="col-sm-8 contact-form">
-            <h3 class="contact-header">Get In Touch with us</h3>
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>We're here to help when you need us and we're ready to answer your questions. You can also send as an email, and we'll answer within 24 hours</p>
-                </div>
-                <div class="col-sm-12">
-                    <form action="mailto:nurhandiy@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <span class="contact-input-text">Your Name</span>
-                            <input class="form-control contact-input" type="text" placeholder="Name"/>
-                        </div>
-                        <div class="form-group">
-                            <span class="contact-input-text">Your Email</span>
-                            <input class="form-control contact-input" type="text" placeholder="Email"/>
-                        </div>
-                        <div class="form-group">
-                            <span class="contact-input-text">Message</span>
-                            <textarea class="form-control contact-input-textarea" placeholder="Message here"/></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="btn contact-send-button" name="submit" id="submit" type="submit" value="Send">
-                        </div>
-                    </form>
-                </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                        <input type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-md-offset-4">
+                <a [routerLink]="['SignupDone']" class="next btn btn-default dropdown-toggle">
+                    FINISH
+                </a>
             </div>
         </div>
     </div>
 </div>
-<!--/content-->
+<!-- Content -->
 
 <div class="jumbotron home-footer">
     <div class="container home-content">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-sm-3">
                 <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
-                <span class="home-footer-body-text">
+                    <span class="home-footer-body-text">
                     <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
                     <a href="https://twitter.com/groovy_play">Twitter</a><br>
                     <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
