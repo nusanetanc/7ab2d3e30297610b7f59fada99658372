@@ -41,13 +41,13 @@ import { Cluster } from './cluster';
                                             <form>
                                                 <select #clustercity id="clustercity">
                                                     <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                    <option *ngFor="#city of cities">{{ city._id }}</option>
+                                                    <option *ngFor="#city of cities" value="58d3492416d72b7e166dd977">{{ city.name }}</option>
                                                 </select><br/>
                                             </form>
                                             <form>
                                                 <select  #clusterproperty id="clusterproperty">
                                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                    <option *ngFor="#property of propertys" >{{ property._id }}</option>
+                                                    <option *ngFor="#property of propertys" value="58d3510309f03f0338136435">{{ property.name }}</option>
                                                 </select><br/>
                                             </form>
                                             <form>
