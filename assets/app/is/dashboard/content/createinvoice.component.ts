@@ -160,8 +160,9 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/30">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/05">
-                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value=4500000>
-                                            {{ 25 + 25 }}
+                                            <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="4500000">
+                                            <input (keyup)="onKey($event)">
+                                            <p>{{val}}</p>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -235,7 +236,10 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
-totalharga: packageprice.value;
+val='';
+  onKey(event:KeyboardEvent) {
+    this.val += (event.target).value + ' | ';
+  }
 public listPromos = [
       {name:"Gratis Instalasi", harga:"9000"},
       {name:"Groovy Play", harga:"10000"}
