@@ -163,19 +163,24 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
-            <div class="row">
+            
+            <!-- Content List -->
+            <div class="row paddingLR15Margin20">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Informations</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
                     </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
-                        <div class="col-sm-1 invoiceList"><span class="green"></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
+                    <div class="row subInfo" *ngFor="#bill of bills">
+                        <a [routerLink]="['Detailbilling', {id: bill._id}]">
+                            <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
+                            <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green"></span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
+                        </a>
                     </div>
                 </div>
             </div>
+            <!-- /Content List --> 
         </div>
     </div>
     `,
