@@ -168,7 +168,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" (click)="onItemClickedRouter(Router)" >
                                                             </span>
-                                                            <input [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
+                                                            <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
                                                     </form>
                                                 </div>
@@ -181,7 +181,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" (click)="onItemClickedSTB(STB)">
                                                             </span>
-                                                            <input [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                                            <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -194,7 +194,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" (click)="onItemClickedIns(Ins)">
                                                             </span>
-                                                            <input [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                                            <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -205,9 +205,9 @@ import { Sub } from './subs';
                                                   <input type="radio" name="optradio">Promo {{ listPromo.name }}
                                                 </label>
                                               </form><br/>
-                                            <input [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                            <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
-                                            <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
+                                            <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
+                                            <input  disabled="true" type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
+                                            <input disabled="true" type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
                                         </div>
                                     </form>
                                 </div>
