@@ -74,7 +74,17 @@ body{
     border-radius: 0px;
     border: 0;
     vertical-align: middle;
-    padding: 20px 20px 20px 20px;
+    padding: 13px 20px 13px 20px;
+}
+
+.btn-subscribe:hover{
+    text-decoration: none;
+    background-color: #fc3e1b;
+    color: white;
+    border-radius: 0px;
+    border: 0;
+    vertical-align: middle;
+    padding: 13px 20px 13px 20px;
 }
 
 .wall-home-content{
