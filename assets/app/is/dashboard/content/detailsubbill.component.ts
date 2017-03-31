@@ -168,7 +168,7 @@ import { Sub } from './subs';
             <div class="row paddingLR15Margin20 paddingLR30 marginT20">
                 <div class="col-sm-12">
                     <div class="row headerList">
-                        <div class="col-sm-12 paddingL35 headerSubList"><strong>Billing Information</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
                     </div>
                     <div class="row subInfo" *ngFor="#bill of bills">
                         <a [routerLink]="['Detailbilling', {id: bill._id}]">
