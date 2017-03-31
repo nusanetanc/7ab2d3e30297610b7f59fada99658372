@@ -24,7 +24,7 @@ import {DoneComponent} from "./content/signup-done.component";
 })
 
 @RouteConfig([
-    {path: '/signup', name: 'Signup', component: ProvideComponent, useAsDefault: true},
+    {path: '/signup', name: 'Signup', component: SignupComponent, useAsDefault: true},
     {path: '/signup/signup-data', name: 'SignupData', component: DataComponent},
     {path: '/signup/signup-package', name: 'SignupPackage', component: PackageComponent},
     {path: '/signup/signup-installdate', name: 'SignupInstalldate', component: InstalldateComponent},
