@@ -166,11 +166,13 @@ import { Sub } from './subs';
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Bullet M5 (120 pcs)</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Informations</strong></div>
                     </div>
                     <div class="row subInfo">
-                        <div class="col-sm-11 invoiceId"><span><a href="stock-detail.html" class="grey333">1109482746</a></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">In Use</span></div>
+                        <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
+                        <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
+                        <div class="col-sm-1 invoiceList"><span class="green"></span></div>
+                        <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
                     </div>
                 </div>
             </div>

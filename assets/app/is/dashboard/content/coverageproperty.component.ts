@@ -47,7 +47,6 @@ import { Property } from './property';
                                         <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
-                                        {{propertycity.value}}
                                     </div>
                                 </div>
                             </div>
