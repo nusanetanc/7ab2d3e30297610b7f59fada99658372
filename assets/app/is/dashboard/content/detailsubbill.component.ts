@@ -6,7 +6,7 @@ import {Subscription} from "rxjs/Rx";
 import { Sub } from './subs';
 
 @Component({
-    selector: 'form-subscriber',
+    selector: 'form-billsubscriber',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
@@ -168,8 +168,8 @@ import { Sub } from './subs';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent {
-  // Link to our api, pointing to localhost
+export class ContentBillSubscribeComponent {
+    // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
@@ -178,14 +178,14 @@ export class ContentSubscribeComponent {
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
-      this.getSubs();
+        this.getSubs();
     }
 
-getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
-  .map(res => res.json())
-  .subscribe(subs => {
-    this.subs = subs
-  })
-  }
+    getSubs() {
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
 }
