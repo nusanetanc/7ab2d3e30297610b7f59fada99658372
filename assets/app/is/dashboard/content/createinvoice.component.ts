@@ -158,9 +158,9 @@ import { Sub } from './subs';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/30">
-                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/05">
-                                            <input (keyup)="onKey($event)" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="4500000">
+                                            <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/31">
+                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
+                                            <input (keyup)="onKey($event)" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
                                             <p>{{val}}</p>
                                             <div class="row">
                                                 <div class="col-sm-12">
@@ -207,8 +207,8 @@ import { Sub } from './subs';
                                                 </label>
                                               </form><br/>
                                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                            <input  disabled="true" type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
-                                            <input disabled="true" type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
+                                            <input  type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
+                                            <input  type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
                                         </div>
                                     </form>
                                 </div>
