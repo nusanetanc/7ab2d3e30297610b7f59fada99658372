@@ -20,7 +20,7 @@ router.get('/streetname/:id', function(req, res, next) {
 
 /* GET detail streetname by blok. */
 router.get('/streetnamebyblok/:id', function(req, res, next) {
-    Streetname.find({blok: req.params.id}, function(err, streetnames) {
+    Streetname.find({blokfloor: req.params.id}, function(err, streetnames) {
         console.log( streetnames );
         res.json(streetnames);
     });
