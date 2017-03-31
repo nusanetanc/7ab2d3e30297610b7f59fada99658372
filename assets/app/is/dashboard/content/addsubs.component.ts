@@ -189,13 +189,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     onSelectCluster(_id) {
         console.log(_id);
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/58dcc61c0067bc400459c0df`)
-                .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
-                })
-        }
+        this.blokfloors = this.getAllBLokfloor();
     }
 
     onSelectBlok(_id) {
@@ -327,6 +321,15 @@ export class ContentAddSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
+            })
+    }
+
+    // Get all BLokfloor from the API
+    getAllBLokfloor() {
+        this.http.get(`${this.API}/blokfloor/listblokfloor`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
             })
     }
 }
