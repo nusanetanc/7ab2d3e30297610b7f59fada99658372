@@ -238,7 +238,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
 
 val='';
   onKey(event:KeyboardEvent) {
-    this.val += (event.target).value + ' | ';
+    this.val = (event.target).value;
   }
 public listPromos = [
       {name:"Gratis Instalasi", harga:"9000"},
