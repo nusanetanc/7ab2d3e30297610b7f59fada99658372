@@ -14,7 +14,7 @@ import { Sub } from './subs';
             <h3 id="home">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Subscriber
+                &nbsp; Test
             </h3>
         </div>
 
