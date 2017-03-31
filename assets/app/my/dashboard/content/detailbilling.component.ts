@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './bills';
@@ -235,14 +235,14 @@ import { Billing } from './bills';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailBillingComponent {
+export class ContentDetailBillingComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Billing_ID = '58c21045ad926e4b42d8d560';
 
   bills: any[] = [];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getBills();
