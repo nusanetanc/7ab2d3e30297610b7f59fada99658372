@@ -120,15 +120,15 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select class="inputForm" name="cars">
-                                                <option selected="true">-- Select your cluster --</option>
+                                            <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
+                                                <option value="0">-- Select your cluster --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select class="inputForm" name="cars">
                                                 <option disabled="true" selected="true">-- Select your blok or floor --</option>
-                                                <option *ngFor="#blokfloor of blokfloors">{{ blokfloor.name }}</option>
+                                                <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -163,6 +163,7 @@ import {Streetname} from "./street_name";
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
+    selectedCluster: City = new City(0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
@@ -186,6 +187,17 @@ export class ContentAddSubsComponent implements OnInit {
         }
     }
 
+    onSelectCluster(_id) {
+        console.log(_id);
+        this.clusters = this.getAllBLokfloorByCluster() {
+            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(blokfloors => {
+                    this.blokfloors = blokfloors
+                })
+        }
+    }
+
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -205,7 +217,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllBLokfloor();
         this.getAllHome();
         this.getAllPackage();
         this.getAllStreet();
@@ -282,6 +293,15 @@ export class ContentAddSubsComponent implements OnInit {
 // Get all BLokfloor from the API
     getAllBLokfloor() {
         this.http.get(`${this.API}/blokfloor/listblokfloor`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
+
+    // Get all BLokfloor from the API
+    getAllBLokfloorByCluster() {
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
             .map(res => res.json())
             .subscribe(blokfloors => {
                 this.blokfloors = blokfloors

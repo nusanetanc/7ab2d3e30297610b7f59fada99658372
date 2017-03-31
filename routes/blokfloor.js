@@ -18,6 +18,14 @@ Blokfloor.findById(req.params.id, function(err, blokfloors) {
    });
 });
 
+/* GET detail blokfloor by cluster. */
+router.get('/blokfloorbycluster/:id', function(req, res, next) {
+Blokfloor.find({cluster: req.params.id}, function(err, blokfloors) {
+       console.log( blokfloors );
+       res.json(blokfloors);
+   });
+});
+
 /* Add blokfloor */
 router.post('/addblokfloor', function(req, res, next) {
   var blokfloor = new Blokfloor();
