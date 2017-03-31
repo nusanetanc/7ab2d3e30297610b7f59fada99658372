@@ -115,7 +115,7 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your property --</option>
+                                                <option>-- Select your property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
@@ -162,7 +162,7 @@ import {Streetname} from "./street_name";
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
-    selectedProperty: Property = new Property(0, 0, 'dummy');
+    selectedProperty: Property = new Property(0, 'dummy');
 
     onSelectCity(_id) {
         console.log(_id);
@@ -172,7 +172,7 @@ export class ContentAddSubsComponent implements OnInit {
                 .subscribe(properties => {
                     this.properties = properties
                 })
-        };
+        }
     }
 
     onSelectProperty(_id) {
@@ -183,7 +183,7 @@ export class ContentAddSubsComponent implements OnInit {
                 .subscribe(clusters => {
                     this.clusters = clusters
                 })
-        };
+        }
     }
 
 // Link to our api, pointing to localhost
