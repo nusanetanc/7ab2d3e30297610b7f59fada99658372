@@ -181,24 +181,6 @@ import { Sub } from './subs';
                 </div>
             </div>
             <!-- /Content List -->
-            
-            <!-- Content List -->
-            <div class="row paddingLR15Margin20">
-                <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
-                    </div>
-                    <div class="row subInfo" *ngFor="#complaint of complaints">
-                        <div class="col-sm-2 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                        <div class="col-sm-8 invoiceList"><span>{{complaint.subject}}</span></div>
-                        <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                    </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-12 invoiceId"><span><a class="linkViewAll" [routerLink]="['AllReport']"><b>View all report</b></a></span></div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Content List -->
         </div>
     </div>
     `,
