@@ -24,12 +24,12 @@ import {DoneComponent} from "./content/signup-done.component";
 })
 
 @RouteConfig([
-    {path: '/signup', name: 'Signup', component: SignupComponent, useAsDefault: true},
-    {path: '/signup/signup-data', name: 'SignupData', component: DataComponent},
-    {path: '/signup/signup-package', name: 'SignupPackage', component: PackageComponent},
-    {path: '/signup/signup-installdate', name: 'SignupInstalldate', component: InstalldateComponent},
-    {path: '/signup/signup-provide', name: 'SignupProvide', component: ProvideComponent},
-    {path: '/signup/signup-done', name: 'SignupDone', component: DoneComponent},
+    {path: '/signup-beta', name: 'Signup', component: SignupComponent, useAsDefault: true},
+    {path: '/signup-beta/signup-data', name: 'SignupData', component: DataComponent},
+    {path: '/signup-beta/signup-package', name: 'SignupPackage', component: PackageComponent},
+    {path: '/signup-beta/signup-installdate', name: 'SignupInstalldate', component: InstalldateComponent},
+    {path: '/signup-beta/signup-provide', name: 'SignupProvide', component: ProvideComponent},
+    {path: '/signup-beta/signup-done', name: 'SignupDone', component: DoneComponent},
 ])
 
 export class AppComponent{
