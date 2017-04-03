@@ -14,7 +14,6 @@ import {Report} from './allreports';
                       </a>
                       &nbsp; Dashboard
                   </h3>
-
               </div>
 
               <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -71,7 +70,6 @@ import {Report} from './allreports';
                       </div>
                   </div>
                   <!-- /Content List -->
-
               </div>
           </div>
     `,
