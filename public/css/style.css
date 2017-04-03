@@ -16,11 +16,13 @@ body{
 .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
     background-color: #fc592e;
+    font-weight: 300;
 }
 
 .navbar-nav > li > a {
     padding-top: 20px;
     height: 60px;
+    font-weight: 300;
 }
 
 .navbar-nav > li > a > .navbar-menus {
