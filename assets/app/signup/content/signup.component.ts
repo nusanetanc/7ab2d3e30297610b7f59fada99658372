@@ -25,40 +25,40 @@ import {Package} from "./package";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>                            
-                                <select name="cars">
-                                    <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
+                                <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
+                                    <option value="0" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
                                 </select>
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                 <select name="property">
-                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                 <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" name="property">
+                                    <option class="option" value="0">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
                                 </select><br/>
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select name="cluster">
-                                    <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
+                                <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" name="cluster">
+                                    <option class="option" value="0">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
                                 </select>
                             </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select name="block">
-                                    <option class="option" disabled="true" selected="true">-- Select Block --</option>
+                                <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" name="block">
+                                    <option class="option" value="0">-- Select Block --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
                                 </select>
                              </form>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select name="street">
-                                    <option class="option" disabled="true" selected="true">-- Select Street --</option>
+                                <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" name="street">
+                                    <option class="option" value="0">-- Select Street --</option>
                                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                 </select>
                              </form>
@@ -200,6 +200,62 @@ export class SignupComponent implements OnInit{
     }
     */
 
+    selectedCity: City = new City(0, 'dummy');
+    selectedProperty: City = new City(0, 'dummy');
+    selectedCluster: City = new City(0, 'dummy');
+    selectedBlok: City = new City(0, 'dummy');
+    selectedStreet: City = new City(0, 'dummy');
+
+    onSelectCity(_id) {
+        this.properties = this.getAllPropertyByCity(){
+            this.http.get(`${this.API}/property/propertybycity/${_id}`)
+                .map(res => res.json())
+                .subscribe(properties => {
+                    this.properties = properties
+                })
+        }
+    }
+
+    onSelectProperty(_id) {
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        }
+    }
+
+    onSelectCluster(_id) {
+        console.log(_id);
+        this.blokfloors = this.getAllBLokfloorByCluster(){
+            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(blokfloors => {
+                    this.blokfloors = blokfloors
+                })
+        }
+    }
+
+    onSelectBlok(_id) {
+        this.streetnames = this.getAllStreetByBlok(){
+            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+                .map(res => res.json())
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
+                })
+        }
+    }
+
+    onSelectStreet(_id) {
+        this.homes = this.getAllHomeByStreet(){
+            this.http.get(`${this.API}/home/homebystreet/${_id}`)
+                .map(res => res.json())
+                .subscribe(homes => {
+                    this.homes = homes
+                })
+        }
+    }
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
@@ -246,38 +302,40 @@ export class SignupComponent implements OnInit{
             })
     }
 
-    // Get all Property from the API
-    getAllProperty() {
-        this.http.get(`${this.API}/property/listproperty`)
+    // Get all Property by city from the API
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
             .map(res => res.json())
             .subscribe(properties => {
                 this.properties = properties
             })
     }
-// Get all Cluster from the API
-    getAllCluster() {
-        this.http.get(`${this.API}/cluster/listcluster`)
+
+    // Get all Type from the API
+    getAllClusterByProperty() {
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
             .map(res => res.json())
             .subscribe(clusters => {
                 this.clusters = clusters
             })
     }
 // Get all BLokfloor from the API
-    getAllBLokfloor() {
-        this.http.get(`${this.API}/blokfloor/listblokfloor`)
+    getAllBLokfloorByCluster() {
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
             .map(res => res.json())
             .subscribe(blokfloors => {
                 this.blokfloors = blokfloors
             })
     }
-// Get all Home from the API
-    getAllHome() {
-        this.http.get(`${this.API}/home/listhome`)
+    // Get all Home from the API
+    getAllHomeByStreet() {
+        this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
             .map(res => res.json())
             .subscribe(homes => {
                 this.homes = homes
             })
     }
+
 
     // Get all Package from the API
     getAllPackage() {
@@ -288,8 +346,9 @@ export class SignupComponent implements OnInit{
             })
     }
 
-    getAllStreet() {
-        this.http.get(`${this.API}/streetname/liststreetname`)
+    // Get all Street from the API
+    getAllStreetByBlok() {
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
