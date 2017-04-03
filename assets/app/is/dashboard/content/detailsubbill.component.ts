@@ -167,7 +167,7 @@ import { Sub } from './subs';
             <!-- Content List -->
             <div class="row marginT20">
                 <div class="col-sm-12">
-                    <div class="row headerList">
+                    <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
                     </div>
                     <div class="row subInfo" *ngFor="#bill of bills">
