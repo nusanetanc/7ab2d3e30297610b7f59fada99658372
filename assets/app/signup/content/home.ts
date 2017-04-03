@@ -4,7 +4,7 @@ export class Home {
         public groovyid: String,
         public city: String,
         public property: String,
-        public typeproperty: String,
+        public street: String,
         public cluster: String,
         public blokfloor: String,
         public nohome: Number,

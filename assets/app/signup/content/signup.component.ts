@@ -57,6 +57,14 @@ import {Package} from "./package";
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
+                                <select name="street">
+                                    <option class="option" disabled="true" selected="true">-- Select Street --</option>
+                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                </select>
+                             </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
                                 <select #subgroovyid id="subgroovyid" name="no">
                                     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                     <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
@@ -158,7 +166,7 @@ export class SignupComponent implements OnInit{
     }
 
 
-    selectedCity: City;
+/*    selectedCity: City;
     selectedProperty: Property;
     selectedCluster: Cluster;
     selectedBlok: Blokfloor;
@@ -190,6 +198,7 @@ export class SignupComponent implements OnInit{
         console.log(deviceValue);
         this.selectedPackage = deviceValue;
     }
+    */
 
 
 // Link to our api, pointing to localhost
@@ -203,6 +212,7 @@ export class SignupComponent implements OnInit{
     blokfloors: any[] = [];
     homes: any[] = [];
     packages: any[] = [];
+    streetnames: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -215,6 +225,7 @@ export class SignupComponent implements OnInit{
         this.getAllBLokfloor();
         this.getAllHome();
         this.getAllPackage();
+        this.getAllStreet()
     }
 
     // Get all Sub from the API
@@ -274,6 +285,14 @@ export class SignupComponent implements OnInit{
             .map(res => res.json())
             .subscribe(packages => {
                 this.packages = packages
+            })
+    }
+
+    getAllStreet() {
+        this.http.get(`${this.API}/streetname/liststreetname`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
             })
     }
 }

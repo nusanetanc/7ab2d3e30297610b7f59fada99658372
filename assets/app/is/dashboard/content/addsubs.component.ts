@@ -322,15 +322,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     // Get all BLokfloor from the API
-    getAllBLokfloor() {
-        this.http.get(`${this.API}/blokfloor/listblokfloor`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
-
-    // Get all BLokfloor from the API
     getAllBLokfloorByCluster() {
         this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
             .map(res => res.json())

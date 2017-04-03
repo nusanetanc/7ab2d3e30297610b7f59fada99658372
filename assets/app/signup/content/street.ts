@@ -1,7 +1,6 @@
-export class Cluster {
+export class Street {
     constructor(
-
+        public blokfloor: String,
         public name: String,
-        public property: String
     ) {  }
 }
