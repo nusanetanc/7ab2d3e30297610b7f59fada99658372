@@ -60,8 +60,8 @@ import {Report} from './allreports';
                               <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
                           </div>
                           <div class="row subInfo" *ngFor="#complaint of complaints">
-                              <div class="col-sm-2 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                              <div class="col-sm-8 invoiceList"><span>{{complaint.subject}}</span></div>
+                              <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                              <div class="col-sm-7 invoiceList"><span>{{complaint.subject}}</span></div>
                               <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
                           </div>
                           <div class="row subInfo">
