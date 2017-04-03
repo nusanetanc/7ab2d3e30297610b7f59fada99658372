@@ -1,5 +1,5 @@
 body{
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
 }
 /*----------------------- Homepage --------------------------*/
 
@@ -789,6 +789,7 @@ margin-bottom: 20px;
     border: none;
     border-radius: 0px;
     font-size: 14px;
+    font-weight: 300;
     height: 45px;
     padding: 0px 0px 0px 20px;
     width: 100%;
@@ -817,11 +818,16 @@ margin-bottom: 20px;
 
 .contact-info-text{
     opacity: 0.9;
+    font-weight: 300;
 }
 
 .contact-header{
-    font-weight: 500;
+    font-weight: 300;
     line-height: 40px;
+}
+
+.contact-form > div > div > p {
+    font-weight: 300;
 }
 
 .contact-maps{
@@ -838,6 +844,7 @@ margin-bottom: 20px;
     border: none;
     border-radius: 0px;
     font-size: 14px;
+    font-weight: 300;
     height: 200px !important;
     padding: 22px 0px 26px 20px;
     width: 100%;
