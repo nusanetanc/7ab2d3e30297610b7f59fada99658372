@@ -276,12 +276,7 @@ export class SignupComponent implements OnInit{
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllProperty();
-        this.getAllCluster();
-        this.getAllBLokfloor();
-        this.getAllHome();
         this.getAllPackage();
-        this.getAllStreet()
     }
 
     // Get all Sub from the API
