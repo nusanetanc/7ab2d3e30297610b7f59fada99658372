@@ -718,11 +718,13 @@ margin-bottom: 20px;
 
 .support-content-header{
     opacity: 0.9;
+    font-weight: 300;
 }
 
 .support-content-text{
     opacity: 0.9;
     font-size: 15px;
+    font-weight: 300;
 }
 .support > p{
     margin-top: 20px;
