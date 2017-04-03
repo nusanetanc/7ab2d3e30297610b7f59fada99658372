@@ -1151,4 +1151,8 @@ button.buttonOrange:active {
 .marginL40sen {
     margin-left: 40%;
 }
+
+.fontWeight300 {
+    font-weight: 300;
+}
 /*----- /New Class ------*/
