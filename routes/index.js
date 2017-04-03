@@ -43,6 +43,10 @@ router.get('/signup', function(req, res, next) {
   res.render('signup-beta', { title: 'Groovy - Signup' });
 });
 
+router.get('/signup-beta', function(req, res, next) {
+  res.render('signup', { title: 'Groovy - Signup' });
+});
+
 router.get('/signup/**', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
