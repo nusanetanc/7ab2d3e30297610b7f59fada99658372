@@ -16,7 +16,7 @@ import {DoneComponent} from "./content/signup-done.component";
 @Component({
     selector: 'my-app',
     template: `
-            <my-headers></my-headers><br>
+            <my-header></my-header><br>
               <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
