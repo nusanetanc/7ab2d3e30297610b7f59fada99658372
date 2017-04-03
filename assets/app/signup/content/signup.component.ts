@@ -27,7 +27,7 @@ import {Package} from "./package";
                             <form>                            
                                 <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                     <option value="0" style="height: 30px;">Select your city</option>
-                                    <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
+                                    <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                 </select>
                             </form>
                         </div>
@@ -35,7 +35,7 @@ import {Package} from "./package";
                             <form>
                                  <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" name="property">
                                     <option class="option" value="0">-- Select Property Name --</option>
-                                    <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
+                                    <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select><br/>
                             </form>
                         </div>
@@ -43,7 +43,7 @@ import {Package} from "./package";
                             <form>
                                 <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" name="cluster">
                                     <option class="option" value="0">-- Select Cluster --</option>
-                                    <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
+                                    <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select>
                             </form>
                         </div>
@@ -51,7 +51,7 @@ import {Package} from "./package";
                             <form>
                                 <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" name="block">
                                     <option class="option" value="0">-- Select Block --</option>
-                                    <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
+                                    <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                 </select>
                              </form>
                         </div>
