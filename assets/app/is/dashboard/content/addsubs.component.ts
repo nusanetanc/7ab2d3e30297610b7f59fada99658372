@@ -44,9 +44,7 @@ import {Streetname} from "./street_name";
                                                 <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
                                                 <p>Upload your National Identity Card</p>
-                                                <div class="form-control inputForm">
-                                                    <input type="file" placeholder="Upload file..." />                                                    
-                                                </div>
+                                                <input class="inputForm" type="file" placeholder="Upload file..." />    
                                                 
                                                 <!-- komen -->
                                                 
