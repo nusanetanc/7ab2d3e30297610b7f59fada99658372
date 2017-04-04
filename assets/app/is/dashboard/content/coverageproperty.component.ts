@@ -11,7 +11,7 @@ import { Property } from './property';
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
-            <h3 id="home">
+            <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Add Coverage Area
