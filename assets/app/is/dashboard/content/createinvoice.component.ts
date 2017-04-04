@@ -161,7 +161,7 @@ import { Sub } from './subs';
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/31">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
                                             <input (keyup)="onKey($event)" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
-                                            <p>{{val}}</p>
+                                            <p>{{subtotal}}</p>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -238,6 +238,7 @@ export class ContentCreateInvoiceComponent implements OnInit {
 val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
+    this.subtotal = val.value;
   }
 public listPromos = [
       {name:"Gratis Instalasi", harga:"9000"},
