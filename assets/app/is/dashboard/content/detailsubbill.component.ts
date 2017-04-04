@@ -11,7 +11,7 @@ import { Sub } from './subs';
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
-            <h3 id="home">
+            <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Test
@@ -165,22 +165,22 @@ import { Sub } from './subs';
             </div>
             
             <!-- Content List -->
-            <div class="row paddingLR15Margin20 paddingLR30 marginT20">
+            <div class="row marginT20">
                 <div class="col-sm-12">
-                    <div class="row headerList">
+                    <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Billing Information</strong></div>
                     </div>
                     <div class="row subInfo" *ngFor="#bill of bills">
                         <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
                             <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="green"></span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- /Content List --> 
+            <!-- /Content List -->
         </div>
     </div>
     `,

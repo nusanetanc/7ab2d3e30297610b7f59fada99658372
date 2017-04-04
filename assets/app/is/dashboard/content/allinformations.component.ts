@@ -10,7 +10,7 @@ import { Information } from './allinformation';
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
-            <h3 id="home">
+            <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; All Information
@@ -40,8 +40,8 @@ import { Information } from './allinformation';
                 <div class="col-sm-12" *ngFor="#information of informations">
                 <a [routerLink]="['Information']">
                     <div class="row subInfo">
-                        <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">{{ information.date }}</a></span></div>
-                        <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>
+                        <div class="col-sm-3 invoiceId"><span><a href="" class="grey333">{{ information.date }}</a></span></div>
+                        <div class="col-sm-7 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                     </div>
                 </a>

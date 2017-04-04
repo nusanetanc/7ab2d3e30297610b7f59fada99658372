@@ -9,14 +9,13 @@ import { Billing } from './billing';
     selector: 'form-crateinvoice',
     template: `
     <!-- Page content -->
-<div id="page-content-wrapper">
+    <div id="page-content-wrapper">
     <div class="content-header">
-        <h3 id="home">
+        <h3 id="home" class="fontWeight300">
             <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
             </a>
             &nbsp; BILLING
         </h3>
-
     </div>
     <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row subInfo">

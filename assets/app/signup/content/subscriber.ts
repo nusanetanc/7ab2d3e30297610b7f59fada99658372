@@ -16,6 +16,6 @@ export class Sub {
         public regisby: String,
         public regisref: String,
         public billing: String,
-        public history: String
+        public history: String,
     ) {  }
 }

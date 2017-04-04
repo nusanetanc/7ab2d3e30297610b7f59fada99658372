@@ -18,7 +18,7 @@ import {Streetname} from "./street_name";
         <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
-                <h3 id="home">
+                <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
                     &nbsp; New Subscribers
@@ -42,13 +42,15 @@ import {Streetname} from "./street_name";
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                                 <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
-                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="ID Number">
+                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
                                                 
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button" disabled="true">choose file</button>
                                                     <p class="left marginL5">No choose file</p>
                                                 </div>-->
+                                                
+                                                <!-- komen -->
                                                 
                                             </div>
                                         </form>
@@ -64,7 +66,7 @@ import {Streetname} from "./street_name";
                                         <p>Please select a installation date</p>
                                         <div class="form-group">
                                             <div class="input-group date paddingR30" id="datetimepicker1">
-                                                <input #subdateinst id="subdateinst" type="text" class="form-control" />
+                                                <input #subdateinst id="subdateinst" type="date" class="form-control" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -93,8 +95,8 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select #subpacklev id="subpacklev" name="package" class="inputForm">
-                                                <option disabled="true" selected="true">-- Select Package --</option>
+                                            <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                                <option value="0">-- Select Package --</option>
                                                 <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                             </select><br/>
                                         </div>
@@ -121,7 +123,7 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your clusterss --</option>
+                                                <option value="0">-- Select your clusters --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
@@ -166,6 +168,11 @@ export class ContentAddSubsComponent implements OnInit {
     selectedCluster: City = new City(0, 'dummy');
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
+    selectedPackage: Package = new Package(0, 'dummy');
+
+    onSelectPackage(level) {
+        console.log(level)
+    }
 
     onSelectCity(_id) {
         this.properties = this.getAllPropertyByCity(){
@@ -318,15 +325,6 @@ export class ContentAddSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
-            })
-    }
-
-    // Get all BLokfloor from the API
-    getAllBLokfloor() {
-        this.http.get(`${this.API}/blokfloor/listblokfloor`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
             })
     }
 

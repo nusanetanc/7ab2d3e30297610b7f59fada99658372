@@ -9,12 +9,11 @@ import {Report} from './allreports';
     <!-- Page content -->
           <div id="page-content-wrapper">
               <div class="content-header">
-                  <h3 id="home">
+                  <h3 id="home" class="fontWeight300">
                       <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
                       &nbsp; Dashboard
                   </h3>
-
               </div>
 
               <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -26,7 +25,7 @@ import {Report} from './allreports';
                                       <div class="row">
                                           <div class="col-sm-12">
                                               <p class="text-center font70MarginT35"><b>112</b></p>
-                                              <h4 class="text-center">SUBSCRIBERS</h4>
+                                              <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                           </div>
                                       </div>
                                   </div>
@@ -36,7 +35,7 @@ import {Report} from './allreports';
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
                                               <i class="material-icons font100Margin30">info</i>
-                                              <h4 class="marginLR20">VIEW ALL INFORMATION</h4>
+                                              <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATION</h4>
                                           </div>
                                       </div>
                                   </div>
@@ -45,7 +44,7 @@ import {Report} from './allreports';
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
-
+                                            
                                           </div>
                                       </div>
                                   </div>
@@ -58,20 +57,19 @@ import {Report} from './allreports';
                   <div class="row paddingLR15Margin20">
                       <div class="col-sm-12">
                           <div class="row headerList paddingLR30">
-                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
+                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><span class="fontWeight300">LATEST USER REPORT</span></div>
                           </div>
-                          <div class="row subInfo" *ngFor="#complaint of complaints">
-                              <div class="col-sm-2 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                              <div class="col-sm-8 invoiceList"><span>{{complaint.subject}}</span></div>
+                          <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
+                              <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                              <div class="col-sm-7 invoiceList"><span>{{complaint.subject}}</span></div>
                               <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
                           </div>
                           <div class="row subInfo">
-                              <div class="col-sm-12 invoiceId"><span><a class="linkViewAll" [routerLink]="['AllReport']"><b>View all report</b></a></span></div>
+                              <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all report</a></span></div>
                           </div>
                       </div>
                   </div>
                   <!-- /Content List -->
-
               </div>
           </div>
     `,
