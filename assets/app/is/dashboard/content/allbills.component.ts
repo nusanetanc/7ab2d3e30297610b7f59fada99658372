@@ -36,7 +36,7 @@ import {Billing} from './allbill';
             <div class="row">
                 <div class="col-sm-12" *ngFor="#bill of bills">
                     <a [routerLink]="['Detailbilling', {id: bill._id}]">
-                        <div class="row subInfo">
+                        <div class="row subInfo fontWeight300">
                             <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
                             <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="green"></span></div>

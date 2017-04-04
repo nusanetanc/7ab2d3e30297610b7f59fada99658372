@@ -38,7 +38,7 @@ import {Report} from './allreports';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row subInfo" *ngFor="#complaint of complaints">
+                    <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
                         <div class="col-sm-7 invoiceList"><span>{{complaint.subject}}</span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
