@@ -21,13 +21,6 @@
 
 <!-- Modals Event -->
 
-<!-- Active Modals On Load Page -->
-<script type="text/javascript">
-    $(window).load(function(){
-        $('.cModal').modal('show');
-    });
-</script>
-
 <!-- Large modal -->
 <div id="myModal" class="modal fade cModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">
@@ -212,6 +205,12 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Active Modals On Load Page -->
+<script>
+    $(window).load(function(){
+        $('.cModal').modal('show');
+    });
+</script>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
