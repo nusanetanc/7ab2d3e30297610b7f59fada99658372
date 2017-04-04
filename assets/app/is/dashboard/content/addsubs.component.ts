@@ -43,7 +43,7 @@ import {Streetname} from "./street_name";
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
                                                 <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
-                                                
+                                                <input type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <div class="form-control inputForm">
                                                     <button class="left" type="button" disabled="true">choose file</button>
