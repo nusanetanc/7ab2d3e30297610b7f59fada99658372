@@ -160,7 +160,7 @@ import { Sub } from './subs';
                                         <div class="form-group">
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/31">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
-                                            <input (keyup)="onKey($event)" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
+                                            <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
