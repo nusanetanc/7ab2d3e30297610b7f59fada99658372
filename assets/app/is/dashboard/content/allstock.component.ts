@@ -34,7 +34,7 @@ import { Http } from 'angular2/http';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row subInfo">
+                    <div class="row subInfo fontWeight300">
                         <div class="col-sm-11 invoiceId"><span><a href="stock-information.html" class="grey333">Bullet M5</a></span></div>
                         <div class="col-sm-1 invoiceList"><span>50</span></div>
                     </div>
