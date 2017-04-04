@@ -93,7 +93,7 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="package.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                            <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                                                 <option disabled="true" selected="true">-- Select Package --</option>
                                                 <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                             </select><br/>
@@ -166,6 +166,7 @@ export class ContentAddSubsComponent implements OnInit {
     selectedCluster: City = new City(0, 'dummy');
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
+    selectedPackage: Package = new Package(0, 'dummy');
 
     onSelectPackage(level) {
         console.log(level)
