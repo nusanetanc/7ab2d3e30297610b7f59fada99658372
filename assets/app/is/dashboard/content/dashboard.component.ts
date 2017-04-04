@@ -24,8 +24,8 @@ import {Report} from './allreports';
                                   <div class="cardDashboardSub">
                                       <div class="row">
                                           <div class="col-sm-12">
-                                              <p class="text-center font70MarginT35"><b>112</b></p>
-                                              <h4 class="text-center">SUBSCRIBERS</h4>
+                                              <p class="text-center font70MarginT35 fontWeight300"><b>112</b></p>
+                                              <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                           </div>
                                       </div>
                                   </div>
@@ -35,7 +35,7 @@ import {Report} from './allreports';
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
                                               <i class="material-icons font100Margin30">info</i>
-                                              <h4 class="marginLR20">VIEW ALL INFORMATION</h4>
+                                              <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATION</h4>
                                           </div>
                                       </div>
                                   </div>
