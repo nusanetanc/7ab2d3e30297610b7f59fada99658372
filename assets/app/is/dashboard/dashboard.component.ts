@@ -21,28 +21,28 @@ import {Menu} from "./menu";
                     </div>
                     <ul class="sidebar-nav nav">
                         <li class="firstLiSidebar">
-                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <strong>SUBSCRIBE</strong></a>
+                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <strong>BILLING</strong></a>
+                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <strong>COVERAGE AREA</strong></a>
+                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <strong>EMPLOYEE</strong></a>
+                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <span class="fontWeight300">EMPLOYEE</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <strong>STOCK</strong></a>
+                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">
