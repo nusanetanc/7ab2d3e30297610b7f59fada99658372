@@ -44,7 +44,7 @@ import {Report} from './allreports';
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
-                                            bebas
+                                            
                                           </div>
                                       </div>
                                   </div>
