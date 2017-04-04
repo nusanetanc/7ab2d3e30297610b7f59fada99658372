@@ -11,56 +11,80 @@ import { Blokfloor } from './blokfloor';
     selector: 'form-coverageblock',
     template: `
     <!-- Page content -->
-<div id="page-content-wrapper">
-    <div class="content-header">
-        <h3 id="home">
-            <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-            </a>
-            &nbsp; Add Coverage Area
-        </h3>
-
-    </div>
-
-    <div class="page-content inset" data-spy="scroll" data-target="#spy">
-        <div class="row marginB20 marginR0">
-            <div class="col-sm-12">
-                <a [routerLink]="['Coverage']" class="btn btn-default buttonBack" type="button">
-                    BACK
+    <div id="page-content-wrapper">
+        <div class="content-header">
+            <h3 id="home" class="fontWeight300">
+                <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
+                &nbsp; Add Coverage Area
+            </h3>
+        </div>
+
+        <div class="page-content inset" data-spy="scroll" data-target="#spy">
+            <div class="row marginB20 marginR0">
+                <div class="col-sm-12">
+                    <a [routerLink]="['Coverage']" class="btn btn-default buttonBack" type="button">
+                        BACK
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row headerList paddingLR30">
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Block / Floor</strong></div>
+                    </div>
+                    <div class="row subInfo">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="formNewReport marginLR20">
+                                        <form>
+                                            <select #blockcity id="blockcity">
+                                                <option class="option" disabled="true" selected="true">-- Select City Name --</option>
+                                                <option *ngFor="#city of cities">{{ city._id }}</option>
+                                            </select><br/>
+                                        </form>
+                                        <form>
+                                            <select #blockproperty id="blockproperty">
+                                                <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                                <option *ngFor="#property of propertys" >{{ property._id }}</option>
+                                            </select><br/>
+                                        </form>
+                                        <form>
+                                            <select #blockcluster id="blockcluster">
+                                                <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                                <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
+                                            </select><br/>
+                                        </form>
+                                        <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
+                                        <button type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
+                                            SEND
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <br/>
         <div class="row">
             <div class="col-sm-12">
                 <div class="row headerList paddingLR30">
-                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Block / Floor</strong></div>
+                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Block</strong></div>
                 </div>
                 <div class="row subInfo">
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <div class="formNewReport marginLR20">
-                                    <form>
-                                        <select #blockcity id="blockcity">
-                                            <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                            <option *ngFor="#city of cities">{{ city._id }}</option>
-                                        </select><br/>
-                                    </form>
-                                    <form>
-                                        <select #blockproperty id="blockproperty">
-                                            <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#property of propertys" >{{ property._id }}</option>
-                                        </select><br/>
-                                    </form>
-                                    <form>
-                                        <select #blockcluster id="blockcluster">
-                                            <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                            <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
-                                        </select><br/>
-                                    </form>
-                                    <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
-                                    <button type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
-                                        SEND
-                                    </button>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12" *ngFor="#blokfloor of blokfloors">
+                                        <div class="row subInfo">
+                                            <div class="col-sm-4 invoiceList"><span>Blok {{blokfloor.name}}</span></div>
+                                            <div class="col-sm-8 invoiceList"><span>{{blokfloor.cluster}}, {{blokfloor.city}}</span></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,32 +93,7 @@ import { Blokfloor } from './blokfloor';
             </div>
         </div>
     </div>
-    <br/>
-      <div class="row">
-          <div class="col-sm-12">
-              <div class="row headerList paddingLR30">
-                  <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Block</strong></div>
-              </div>
-              <div class="row subInfo">
-                  <div class="col-sm-12">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col-sm-12" *ngFor="#blokfloor of blokfloors">
-                                    <div class="row subInfo">
-                                        <div class="col-sm-4 invoiceList"><span>Blok {{blokfloor.name}}</span></div>
-                                        <div class="col-sm-8 invoiceList"><span>{{blokfloor.cluster}}, {{blokfloor.city}}</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-</div>
-<!-- Page content -->
+    <!-- Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
