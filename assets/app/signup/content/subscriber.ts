@@ -16,6 +16,11 @@ export class Sub {
         public regisby: String,
         public regisref: String,
         public billing: String,
-        public history: String
+        public history: String,
+        public property: String,
+        public cluster: String,
+        public block: String,
+        public streetname: String,
+        public home: String,
     ) {  }
 }
