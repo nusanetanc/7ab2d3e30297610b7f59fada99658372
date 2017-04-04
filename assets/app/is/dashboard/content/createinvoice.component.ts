@@ -161,7 +161,6 @@ import { Sub } from './subs';
                                             <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/31">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
                                             <input (keyup)="onKey($event)" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
-                                            <p>{{val}}</p>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -187,7 +186,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45">
+                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -200,15 +199,15 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Subtotal">
+                                            <p>Sub Total : {{val}}</p>
                                             <form>
                                                 <label *ngFor="#listPromo of listPromos" class="form-control">
                                                   <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
                                                 </label>
                                               </form><br/>
                                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                            <input  type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax 10%">
-                                            <input  type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Total Pay">
+                                            <p>Tax : {{val}}</p>
+                                            <p>Total Price : {{val}}</p>
                                         </div>
                                     </form>
                                 </div>
