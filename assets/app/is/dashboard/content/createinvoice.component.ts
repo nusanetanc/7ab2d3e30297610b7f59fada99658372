@@ -235,7 +235,7 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
-val=packageprice.value;
+val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
   }
@@ -259,9 +259,11 @@ public listPromos = [
    }
    onItemClickedSTB(STB){
       this.selectedSTB={harga:"45000"};
+      this.val = "45000";
    }
    onItemClickedIns(Ins){
       this.selectedIns={harga:"75000"};
+      this.val = "75000";
    }
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
