@@ -24,7 +24,7 @@ import {SubDataService} from "./subscriberData.service";
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select name="property" [(ngModel)]="_sub.property">
+                                <select name="property" [(ngModel)]="sub.property">
                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
                                     <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
                                 </select><br/>
@@ -32,7 +32,7 @@ import {SubDataService} from "./subscriberData.service";
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <form>
-                                <select name="cluster" [(ngModel)]="_sub.cluster">
+                                <select name="cluster" [(ngModel)]="sub.cluster">
                                     <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
                                     <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                 </select><br/>
@@ -78,18 +78,18 @@ import {SubDataService} from "./subscriberData.service";
     directives: [ROUTER_DIRECTIVES]
 })
 export class DataComponent implements OnInit, OnDestroy {
-    @Input() _sub: Sub;
+    @Input() sub: Sub;
 
     constructor(private subDataService: SubDataService) {
     }
 
     ngOnInit() {
-        this._sub = this.subDataService.getData();
+        this.sub = this.subDataService.getData();
         console.log('Personal feature loaded!');
     }
 
     ngOnDestroy() {
-        this.subDataService.setData(this._sub);
+        this.subDataService.setData(this.sub);
     }
 
 // Link to our api, pointing to localhost

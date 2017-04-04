@@ -5,13 +5,13 @@ import {Sub} from "./subscriber";
 @Injectable()
 export class SubDataService {
 
-    private _sub: Sub = new Sub();
+    private sub: Sub = new Sub();
 
     getData(): Sub {
-        return this._sub;
+        return this.sub;
     }
 
     setData(_sub: Sub) {
-        this._sub = Sub;
+        this.sub = Sub;
     }
 }
