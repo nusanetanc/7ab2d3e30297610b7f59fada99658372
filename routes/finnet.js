@@ -15,6 +15,13 @@ router.post('/inqreq', function(req, res, next) {
    finnet.signature= req.body.signature;
    finnet.secretkey= req.body.secretkey;
    hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey);
+   if (finnet.typedata !== 'inq_req'){
+     return res.status(404).json({
+         title: 'Type Data Not Valid',
+         respcode: '92',
+         error: {message: 'Type Data Not Valid'}
+     });
+   }
   if (finnet.secretkey !== 'gro0vy'){
     return res.status(404).json({
         title: 'Secret Key Not Valid',
@@ -69,6 +76,13 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
     finnet.signature= req.body.signature;
     finnet.chanelpayment= req.body.chanelpayment;
     hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.amount+req.body.secretkey);
+    if (finnet.typedata !== 'inq_req'){
+      return res.status(404).json({
+          title: 'Type Data Not Valid',
+          respcode: '92',
+          error: {message: 'Type Data Not Valid'}
+      });
+    }
    if (finnet.secretkey !== 'gro0vy'){
      return res.status(404).json({
          title: 'Secret Key Not Valid',
@@ -120,9 +134,10 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
          res.json({
            typedata: 'pay_res',
            trxid: finnet.trxid,
+           trxdate: finnet.trxdate,
            subid: doc.subid,
            subname: doc.name,
-           invoiceid: bill.noinvoice,
+           noinvoice: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
            namechanel: finnet.chanelname,
            respcode: '96'

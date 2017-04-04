@@ -255,6 +255,7 @@ public listPromos = [
    console.log(score1);
    onItemClickedRouter(Router){
       this.selectedRouter={harga:"40000"};
+      this.val = val.value + "40000";
    }
    onItemClickedSTB(STB){
       this.selectedSTB={harga:"45000"};
