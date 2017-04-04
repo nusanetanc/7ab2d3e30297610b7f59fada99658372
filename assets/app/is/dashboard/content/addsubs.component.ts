@@ -50,6 +50,7 @@ import {Streetname} from "./street_name";
                                                     <p class="left marginL5">No choose file</p>
                                                 </div>-->
                                                 
+                                                <!-- komen -->
                                                 
                                             </div>
                                         </form>
