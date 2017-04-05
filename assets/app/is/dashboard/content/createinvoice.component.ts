@@ -147,127 +147,121 @@ import {Now} from './datetime'
                 </div>
                 
                 <div class="col-sm-12">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <h4 class="titleH4">NEW INVOICE</h4>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="titleH4">NEW INVOICE</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Invoice Date</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span><now format="'yyyy:MM:dd'"></now></span>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="row marginTB10 paddingR30">
-                                        <div class="col-xs-6 col-sm-4">
-                                            <span>Invoice Date</span>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-1">
-                                            <span>:</span>
-                                        </div>
-                                        <div class="col-xs-12 col-md-7">
-                                            <span><now format="'yyyy:MM:dd'"></now></span>
-                                        </div>
-                                    </div>
-                                    <div class="row marginTB10 paddingR30">
-                                        <div class="col-xs-6 col-sm-4">
-                                            <span>Due Date</span>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-1">
-                                            <span>:</span>
-                                        </div>
-                                        <div class="col-xs-12 col-md-7">
-                                            <span><now format="'yyyy:MM:dd'"></now></span>
-                                        </div>
-                                    </div>
-                                    <div class="row marginTB10 paddingR30">
-                                        <div class="col-xs-6 col-sm-4">
-                                            <span>Package Price</span>
-                                        </div>
-                                        <div class="col-xs-6 col-sm-1">
-                                            <span>:</span>
-                                        </div>
-                                        <div class="col-xs-12 col-md-7">
-                                            <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
-                                        </div>
-                                    </div>
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Due Date</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span><now format="'yyyy:MM:dd'"></now></span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Package Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="col-sm-12 paddingL35">
-                                        <form class="paddingTB20 paddingR30">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <form class="paddingTB20">
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">
-                                                                    <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
-                                                                </span>
-                                                                <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
-                                                            </div>
-                                                        </form>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12 paddingL35">
+                                <form class="paddingTB20 paddingR30">
+                                    <div class="form-group">
+                                    
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <form class="paddingTB20">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
+                                                        </span>
+                                                        <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <form class="paddingTB20">
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">
-                                                                    <input type="checkbox" (click)="onItemClickedSTB(STB)">
-                                                                </span>
-                                                                <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <form class="paddingTB20">
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">
-                                                                    <input type="checkbox" (click)="onItemClickedIns(Ins)">
-                                                                </span>
-                                                                <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <p>Sub Total : {{val}}</p>
-                                                <form>
-                                                    <label *ngFor="#listPromo of listPromos" class="form-control">
-                                                      <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
-                                                    </label>
-                                                  </form><br/>
-                                                <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                                <p>Tax : {{val}}</p>
-                                                <p>Total Price : {{val}}</p>
+                                                </form>
                                             </div>
-                                        </form>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <form class="paddingTB20">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <input type="checkbox" (click)="onItemClickedSTB(STB)">
+                                                        </span>
+                                                        <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                        <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                                                
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <form class="paddingTB20">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <input type="checkbox" (click)="onItemClickedIns(Ins)">
+                                                        </span>
+                                                        <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                        <p>Sub Total : {{val}}</p>
+                                        
+                                        <form>
+                                            <label *ngFor="#listPromo of listPromos" class="form-control">
+                                                <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
+                                            </label>
+                                        </form><br/>
+                                        <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
+                                        <p>Tax : {{val}}</p>
+                                        <p>Total Price : {{val}}</p>
                                     </div>
-                                </div>
+                                </form>
                             </div>
+                        </div>
+                    </div>
 
-                            <div class="row">
-                                <div class="col-sm-12 paddingR45">
-                                    <!-- Small modal -->
-                                    <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
-                                </div>
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-12 paddingR45">
+                            <!-- Small modal -->
+                            <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
+                        </div>
+                    </div>
                         
                 </div>
-            </div>
-
-
-
-            
-
-
-
-
-
-            <div class="row subInfo">
-                
             </div>
         </div>
     </div>
