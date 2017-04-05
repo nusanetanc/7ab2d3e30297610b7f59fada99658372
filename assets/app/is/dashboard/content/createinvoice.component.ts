@@ -158,7 +158,7 @@ import { Sub } from './subs';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" value="2017/03/31">
+                                            <input [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" type="date" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                             <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
                                             <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
                                             <div class="row">
@@ -255,10 +255,6 @@ public listPromos = [
    if (routercheck.value = "1"){
      this.selectedRouter={harga:"40000"};
      this.val = "40000";
-     }
-   if (routercheck.value = "0"){
-     this.selectedRouter={harga:"0"};
-     this.val = "";
      }
    }
    onItemClickedSTB(STB){
