@@ -156,10 +156,20 @@ import {Now} from './datetime'
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="row marginTB10 marginL5">
+                                    <div class="col-xs-6 col-sm-4">
+                                        <span>Tanggal Invoice</span>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-1">
+                                        <span>:</span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-7">
+                                        <span><now format="'yyyy:MM:dd'"></now></span>
+                                    </div>
+                                </div>
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <p>Tanggal Invoice : <now format="'yyyy:MM:dd'"></now></p>
                                             <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
                                             <div class="row">
                                                 <div class="col-sm-12">
