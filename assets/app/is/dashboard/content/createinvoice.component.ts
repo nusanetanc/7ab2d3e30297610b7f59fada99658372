@@ -168,7 +168,7 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 <div class="col-sm-12 paddingL35">
-                                    <form class="paddingTB20 paddingR30">
+                                    <form class="paddingTB20">
                                         <div class="form-group">
                                             <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
                                             <div class="row">
