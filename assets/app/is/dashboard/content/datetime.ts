@@ -4,7 +4,7 @@ import {Component, Attribute} from 'angular2/core'
 @Component({
   selector: 'now',
   template: `
-      <h2 (updateTime)="updateMyTime()">{{date | date: format}}</h2>
+      <span (updateTime)="updateMyTime()">{{date | date: format}}</span>
     `
 })
 export class Now {
@@ -19,4 +19,4 @@ export class Now {
      }, 1000);
   }
 
-} 
+}
