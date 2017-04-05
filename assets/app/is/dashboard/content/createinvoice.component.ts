@@ -250,7 +250,7 @@ import {Now} from './datetime'
                                     <div class="col-sm-12">
                                         <form>
                                             <label *ngFor="#listPromo of listPromos" class="form-control">
-                                                <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
+                                                <input (click)=" onItemClickedPromo(listPromo)" class="inputForm" type="radio" name="optradio">Promo {{ listPromo.name }}
                                             </label>
                                         </form>
                                     </div>
