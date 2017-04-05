@@ -94,7 +94,7 @@ Bill.find({sub: sessionSubId}, function(err, bills) {
 });
 
 /* Add sub */
-router.post('/addsub', upload.any(),function(req, res, next) {
+router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
     var Random = String(randomInt(10000, 99999));
     var checkdigit = damm.append(Random);
@@ -120,8 +120,6 @@ router.post('/addsub', upload.any(),function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
-
-    res.send(req.files);
 });
 
 router.put('/putsub/:id', function(req, res, next) {
