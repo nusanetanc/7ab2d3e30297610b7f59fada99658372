@@ -159,9 +159,7 @@ import {Now} from './datetime'
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                          <now format="'yyyy:MM:dd'"></now>
-                                            <input  type="date" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" />
-                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06"/>
+                                            <p>Tanggal Invoice : <now format="'yyyy:MM:dd'"></now></p>
                                             <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
                                             <div class="row">
                                                 <div class="col-sm-12">
