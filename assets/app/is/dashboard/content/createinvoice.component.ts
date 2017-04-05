@@ -194,58 +194,59 @@ import {Now} from './datetime'
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
+                            
                                 <div class="row">
-                                            <div class="col-sm-12">
-                                                <form class="paddingTB20">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
-                                                        </span>
-                                                        <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
-                                                    </div>
-                                                </form>
+                                    <div class="col-sm-12">
+                                        <form class="paddingTB20">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
+                                                </span>
+                                                <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
                                             </div>
-                                        </div>
-                                        
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <form class="paddingTB20">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <input type="checkbox" (click)="onItemClickedSTB(STB)">
-                                                        </span>
-                                                        <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        
-                                        <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
-                                                
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <form class="paddingTB20">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <input type="checkbox" (click)="onItemClickedIns(Ins)">
-                                                        </span>
-                                                        <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        
-                                        <p>Sub Total : {{val}}</p>
-                                        
-                                        <form>
-                                            <label *ngFor="#listPromo of listPromos" class="form-control">
-                                                <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
-                                            </label>
-                                        </form><br/>
-                                        <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                        <p>Tax : {{val}}</p>
-                                        <p>Total Price : {{val}}</p>
+                                        </form>
                                     </div>
+                                </div>
+                                        
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <form class="paddingTB20">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <input type="checkbox" (click)="onItemClickedSTB(STB)">
+                                                </span>
+                                                <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                        
+                                <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                                                
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <form class="paddingTB20">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <input type="checkbox" (click)="onItemClickedIns(Ins)">
+                                                </span>
+                                                <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                        
+                                <p>Sub Total : {{val}}</p>
+                                        
+                                <form>
+                                    <label *ngFor="#listPromo of listPromos" class="form-control">
+                                        <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
+                                    </label>
+                                </form><br/>
+                                <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
+                                <p>Tax : {{val}}</p>
+                                <p>Total Price : {{val}}</p>
+                            </div>
                         </div>
                     </div>
                     
