@@ -1159,4 +1159,9 @@ button.buttonOrange:active {
 .fontWeight300 {
     font-weight: 300;
 }
+
+.subTotal {
+    padding-top: 10px !important;
+}
+
 /*----- /New Class ------*/
