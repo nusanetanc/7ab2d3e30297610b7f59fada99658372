@@ -282,7 +282,7 @@ public listPromos = [
 
    onItemClickedPromo(listPromo){
       this.selectedPromo=listPromo;
-      this.val = listPromo;
+      this.val = listPromo.harga;
    }
    public selectedRouter = {harga: ""};
    public selectedSTB = {harga: ""};
