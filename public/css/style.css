@@ -955,3 +955,25 @@ margin-bottom: 20px;
 .grey333 {
     color: #333;
 }
+
+/*--- Modals Event ---*/
+.item > img {
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.modal-header {
+    padding: 5px 10px !important;
+    border-bottom: none !important;
+}
+
+.carousel-control-left {
+    color: #333;
+}
+
+.carousel-control-right {
+    color: #333;
+    right: 0;
+    left: auto;
+}
+/*--- Modals Event ---*/
