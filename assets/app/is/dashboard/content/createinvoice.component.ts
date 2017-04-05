@@ -158,9 +158,9 @@ import { Sub } from './subs';
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <input [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" type="date" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" name="startDate">
-                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06">
-                                            <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000">
+                                            <input [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" type="date" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date" name="startDate"/>
+                                            <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date" value="2017/04/06"/>
+                                            <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -168,7 +168,7 @@ import { Sub } from './subs';
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
                                                             </span>
-                                                            <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
+                                                            <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
                                                         </div>
                                                     </form>
                                                 </div>
