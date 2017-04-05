@@ -969,10 +969,12 @@ margin-bottom: 20px;
 
 .carousel-control-left {
     color: #FC592E;
+    opacity: inherit !important;
 }
 
 .carousel-control-right {
     color: #FC592E;
+    opacity: inherit !important;
     right: 0;
     left: auto;
 }
