@@ -195,9 +195,9 @@ import {Now} from './datetime'
                         <div class="col-sm-6">
                             <div class="form-group">
                             
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
-                                        <form class="marginB20">
+                                        <form>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
@@ -208,9 +208,9 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                         
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
-                                        <form class="marginB20">
+                                        <form>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <input type="checkbox" (click)="onItemClickedSTB(STB)">
@@ -221,15 +221,15 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
                                         <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
-                                        <form class="marginB20">
+                                        <form>
                                             <div class="input-group">
                                                 <span class="input-group-addon">
                                                     <input type="checkbox" (click)="onItemClickedIns(Ins)">
@@ -240,13 +240,13 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
                                         <p>Sub Total : {{val}}</p>
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
                                         <form>
                                             <label *ngFor="#listPromo of listPromos" class="form-control">
@@ -256,13 +256,13 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
                                         <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                                     </div>
                                 </div>
                                 
-                                <div class="row">
+                                <div class="row marginL20 marginB20">
                                     <div class="col-sm-12">
                                         <p>Tax : {{val}}</p>
                                         <p>Total Price : {{val}}</p>
