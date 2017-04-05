@@ -941,6 +941,10 @@ hr {
     margin-right: 0px;
 }
 
+.marginR15{
+    margin-right: 15px;
+}
+
 .buttonBack {
     background-color: #E2E2E2;
     border: none;
