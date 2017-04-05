@@ -150,45 +150,48 @@ import {Now} from './datetime'
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <h4 class="titleH4">NEW INVOICE</h4>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="titleH4">NEW INVOICE</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Invoice Date</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span><now format="'yyyy:MM:dd'"></now></span>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="row marginTB10 paddingR30">
-                                    <div class="col-xs-6 col-sm-4">
-                                        <span>Invoice Date</span>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-1">
-                                        <span>:</span>
-                                    </div>
-                                    <div class="col-xs-12 col-md-7">
-                                        <span><now format="'yyyy:MM:dd'"></now></span>
-                                    </div>
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Due Date</span>
                                 </div>
-                                <div class="row marginTB10 paddingR30">
-                                    <div class="col-xs-6 col-sm-4">
-                                        <span>Due Date</span>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-1">
-                                        <span>:</span>
-                                    </div>
-                                    <div class="col-xs-12 col-md-7">
-                                        <span><now format="'yyyy:MM:dd'"></now></span>
-                                    </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
                                 </div>
-                                <div class="row marginTB10 paddingR30">
-                                    <div class="col-xs-6 col-sm-4">
-                                        <span>Package Price</span>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-1">
-                                        <span>:</span>
-                                    </div>
-                                    <div class="col-xs-12 col-md-7">
-                                        <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
-                                    </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span><now format="'yyyy:MM:dd'"></now></span>
                                 </div>
+                            </div>
+                            <div class="row marginTB10 paddingR30">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Package Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
+                                </div>
+                            </div>
+                        </div>
+
                                 <div class="col-sm-12 paddingL35">
                                     <form class="paddingTB20 paddingR30">
                                         <div class="form-group">
