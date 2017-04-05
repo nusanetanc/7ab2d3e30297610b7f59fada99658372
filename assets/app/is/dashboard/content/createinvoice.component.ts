@@ -10,259 +10,261 @@ import {Now} from './datetime'
     selector: 'form-crateinvoice',
     template: `
     <!-- Page content -->
-<div id="page-content-wrapper">
-    <div class="content-header">
-        <h3 id="home" class="fontWeight300">
-            <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-            </a>
-            &nbsp; BILLING
-        </h3>
+    <div id="page-content-wrapper">
+        <div class="content-header">
+            <h3 id="home" class="fontWeight300">
+                <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                </a>
+                &nbsp; BILLING
+            </h3>
+        </div>
 
-    </div>
-    <div class="page-content inset" data-spy="scroll" data-target="#spy">
-    <div class="row subInfo">
-     <div class="col-sm-12">
-         <div class="row">
-             <div class="col-sm-12">
-                 <h4>PERSONAL INFORMATION</h4>
-             </div>
-         </div>
-
-         <div class="row">
-             <div class="col-sm-6">
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Fullname</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.name }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Email</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.email }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Handphone</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.phone }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Address</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>No Identy Card</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.idnumber }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Birth Date</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.datebrith }}</span>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <div class="col-sm-12">
-         <div class="row">
-             <div class="col-sm-12">
-                 <h4>BILLING INFORMATION</h4>
-             </div>
-         </div>
-
-         <div class="row">
-             <div class="col-sm-6">
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Current Package</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>Level {{ subs.packlev }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>Status</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span class="green">{{ subs.status }}</span>
-                     </div>
-                 </div>
-                 <div class="row marginTB10 marginL5">
-                     <div class="col-xs-6 col-sm-4">
-                         <span>No Virtual Account</span>
-                     </div>
-                     <div class="col-xs-6 col-sm-1">
-                         <span>:</span>
-                     </div>
-                     <div class="col-xs-12 col-md-7">
-                         <span>{{ subs.nova }}</span>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
+        <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row subInfo">
                 <div class="col-sm-12">
-
                     <div class="row">
-                        <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 class="titleH4">NEW INVOICE</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                        <div class="col-sm-6">
-                            <div class="row marginTB10 paddingR30">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Invoice Date</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span><now format="'yyyy:MM:dd'"></now></span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 paddingR30">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Due Date</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span><now format="'yyyy:MM:dd'"></now></span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 paddingR30">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Package Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
-                                </div>
-                            </div>
-                        </div>
-
-                                <div class="col-sm-12 paddingL35">
-                                    <form class="paddingTB20 paddingR30">
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <form class="paddingTB20">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
-                                                            </span>
-                                                            <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <form class="paddingTB20">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" (click)="onItemClickedSTB(STB)">
-                                                            </span>
-                                                            <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <form class="paddingTB20">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" (click)="onItemClickedIns(Ins)">
-                                                            </span>
-                                                            <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <p>Sub Total : {{val}}</p>
-                                            <form>
-                                                <label *ngFor="#listPromo of listPromos" class="form-control">
-                                                  <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
-                                                </label>
-                                              </form><br/>
-                                            <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                            <p>Tax : {{val}}</p>
-                                            <p>Total Price : {{val}}</p>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                    <div class="row">
-                        <div class="col-sm-12 paddingR45">
-                            <!-- Small modal -->
-                            <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
+                        <div class="col-sm-12">
+                            <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Fullname</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.name }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Email</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.email }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Handphone</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.phone }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Address</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>No Identy Card</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.idnumber }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Birth Date</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.datebrith }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>BILLING INFORMATION</h4>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Current Package</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>Level {{ subs.packlev }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Status</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span class="green">{{ subs.status }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>No Virtual Account</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.nova }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row subInfo">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4 class="titleH4">NEW INVOICE</h4>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="row marginTB10 paddingR30">
+                                        <div class="col-xs-6 col-sm-4">
+                                            <span>Invoice Date</span>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-1">
+                                            <span>:</span>
+                                        </div>
+                                        <div class="col-xs-12 col-md-7">
+                                            <span><now format="'yyyy:MM:dd'"></now></span>
+                                        </div>
+                                    </div>
+                                    <div class="row marginTB10 paddingR30">
+                                        <div class="col-xs-6 col-sm-4">
+                                            <span>Due Date</span>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-1">
+                                            <span>:</span>
+                                        </div>
+                                        <div class="col-xs-12 col-md-7">
+                                            <span><now format="'yyyy:MM:dd'"></now></span>
+                                        </div>
+                                    </div>
+                                    <div class="row marginTB10 paddingR30">
+                                        <div class="col-xs-6 col-sm-4">
+                                            <span>Package Price</span>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-1">
+                                            <span>:</span>
+                                        </div>
+                                        <div class="col-xs-12 col-md-7">
+                                            <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12 paddingL35">
+                                        <form class="paddingTB20 paddingR30">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form class="paddingTB20">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
+                                                                </span>
+                                                                <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form class="paddingTB20">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <input type="checkbox" (click)="onItemClickedSTB(STB)">
+                                                                </span>
+                                                                <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <form class="paddingTB20">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">
+                                                                    <input type="checkbox" (click)="onItemClickedIns(Ins)">
+                                                                </span>
+                                                                <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <p>Sub Total : {{val}}</p>
+                                                <form>
+                                                    <label *ngFor="#listPromo of listPromos" class="form-control">
+                                                      <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
+                                                    </label>
+                                                  </form><br/>
+                                                <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
+                                                <p>Tax : {{val}}</p>
+                                                <p>Total Price : {{val}}</p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 paddingR45">
+                                    <!-- Small modal -->
+                                    <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-</div></div><!-- END CONTENT -->
+    <!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES, Now],
 })
