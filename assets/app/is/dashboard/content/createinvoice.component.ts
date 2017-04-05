@@ -243,15 +243,27 @@ import {Now} from './datetime'
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <p>Sub Total : {{val}}</p>
-                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-12">
                                         <form>
                                             <label *ngFor="#listPromo of listPromos" class="form-control">
                                                 <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
                                             </label>
                                         </form>
-                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-12">
                                         <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-12">
                                         <p>Tax : {{val}}</p>
                                         <p>Total Price : {{val}}</p>
                                     </div>
