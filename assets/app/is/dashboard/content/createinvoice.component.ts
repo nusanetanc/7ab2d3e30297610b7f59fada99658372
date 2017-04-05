@@ -249,8 +249,8 @@ import {Now} from './datetime'
                                 <div class="row marginL10 marginB20">
                                     <div class="col-sm-12">
                                         <form>
-                                            <label *ngFor="#listPromo of listPromos" class="form-control">
-                                                <input (click)=" onItemClickedPromo(listPromo)" class="inputForm" type="radio" name="optradio">Promo {{ listPromo.name }}
+                                            <label *ngFor="#listPromo of listPromos" class="form-control inputForm">
+                                                <input (click)=" onItemClickedPromo(listPromo)" type="radio" name="optradio">Promo {{ listPromo.name }}
                                             </label>
                                         </form>
                                     </div>
