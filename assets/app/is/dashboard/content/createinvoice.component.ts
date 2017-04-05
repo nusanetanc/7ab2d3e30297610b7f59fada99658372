@@ -240,7 +240,7 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 
-                                <div class="row marginL10 marginB20">
+                                <div class="row marginL10">
                                     <div class="col-sm-12">
                                         <p>Sub Total : {{val}}</p>
                                     </div>
