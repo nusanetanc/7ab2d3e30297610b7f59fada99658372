@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Attribute} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -233,7 +233,15 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+private date;
+constructor(@Attribute("format") format) {
+    this.format = format;
+    this.date =  new Date();
 
+    setInterval(() => {
+        this.date =  new Date();
+     }, 1000);
+  }
 val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
