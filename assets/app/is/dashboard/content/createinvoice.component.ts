@@ -256,6 +256,10 @@ public listPromos = [
      this.selectedRouter={harga:"40000"};
      this.val = "40000";
      }
+   if (routercheck.value = "0"){
+     this.selectedRouter={harga:"0"};
+     this.val = "0";
+     }
    }
    onItemClickedSTB(STB){
       this.selectedSTB={harga:"45000"};
