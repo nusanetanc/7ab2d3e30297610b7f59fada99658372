@@ -2,8 +2,6 @@ var express = require('express');
 var passwordHash = require('password-hash');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
 var router = express.Router();
 var Sub = require('../models/subs');
 var Home = require('../models/home');
@@ -16,6 +14,16 @@ var jwtDecode = require('jwt-decode');
 var Bill = require('../models/bill');
 var City = require('../models/city');
 var Cluster = require('../models/cluster');
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, 'public/uploads');
+    },
+    filename: function(req, file, cb){
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({ storage:storage });
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -86,7 +94,7 @@ Bill.find({sub: sessionSubId}, function(err, bills) {
 });
 
 /* Add sub */
-router.post('/addsub', function(req, res, next) {
+router.post('/addsub', upload.any(),function(req, res, next) {
   var sub = new Sub();
     var Random = String(randomInt(10000, 99999));
     var checkdigit = damm.append(Random);
@@ -111,6 +119,7 @@ router.post('/addsub', function(req, res, next) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
+        console.log(req.files);
   });
 });
 
