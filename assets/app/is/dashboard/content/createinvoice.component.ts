@@ -145,9 +145,7 @@ import {Now} from './datetime'
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- <div class="row subInfo">
+                
                 <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -258,7 +256,19 @@ import {Now} from './datetime'
                             </div>
                         
                 </div>
-            </div> -->
+            </div>
+
+
+
+            
+
+
+
+
+
+            <div class="row subInfo">
+                
+            </div>
         </div>
     </div>
     <!-- END CONTENT -->
