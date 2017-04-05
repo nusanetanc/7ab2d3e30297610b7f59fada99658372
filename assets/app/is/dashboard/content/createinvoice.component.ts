@@ -258,7 +258,7 @@ public listPromos = [
      }
    if (routercheck.value = "0"){
      this.selectedRouter={harga:"0"};
-     this.val = "0";
+     this.val = "";
      }
    }
    onItemClickedSTB(STB){
