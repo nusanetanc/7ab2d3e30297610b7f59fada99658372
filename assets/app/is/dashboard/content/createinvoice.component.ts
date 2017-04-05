@@ -193,7 +193,7 @@ import {Now} from './datetime'
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="col-sm-6 paddingL35">
+                            <div class="col-sm-12 paddingL35">
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
                                     
