@@ -166,7 +166,7 @@ import { Sub } from './subs';
                                                     <form class="paddingTB20">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
-                                                                <input type="checkbox" (click)="onItemClickedRouter(Router)" >
+                                                                <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)" value="1">
                                                             </span>
                                                             <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" >
                                                         </div>
@@ -186,7 +186,7 @@ import { Sub } from './subs';
                                                     </form>
                                                 </div>
                                             </div>
-                                            <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                                            <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <form class="paddingTB20">
@@ -251,10 +251,11 @@ public listPromos = [
    public selectedSTB = {harga: ""};
    public selectedIns = {harga: ""};
 
-   console.log(score1);
    onItemClickedRouter(Router){
-      this.selectedRouter={harga:"40000"};
-      this.val = "40000";
+   if (routercheck.value = "1"){
+     this.selectedRouter={harga:"40000"};
+     this.val = "40000";
+     }
    }
    onItemClickedSTB(STB){
       this.selectedSTB={harga:"45000"};
