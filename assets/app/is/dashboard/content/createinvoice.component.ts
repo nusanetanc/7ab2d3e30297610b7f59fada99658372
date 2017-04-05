@@ -221,7 +221,7 @@ import {Now} from './datetime'
                                     </div>
                                 </div>
                                 
-                                <div class="row marginL10 marginB20">
+                                <div class="row marginL10">
                                     <div class="col-sm-12">
                                         <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                                     </div>
