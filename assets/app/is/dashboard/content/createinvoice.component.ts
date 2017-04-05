@@ -156,7 +156,7 @@ import {Now} from './datetime'
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="row marginTB10 marginL5">
+                                <div class="row marginTB10 paddingR30">
                                     <div class="col-xs-6 col-sm-4">
                                         <span>Invoice Date</span>
                                     </div>
@@ -167,7 +167,7 @@ import {Now} from './datetime'
                                         <span><now format="'yyyy:MM:dd'"></now></span>
                                     </div>
                                 </div>
-                                <div class="row marginTB10 marginL5">
+                                <div class="row marginTB10 paddingR30">
                                     <div class="col-xs-6 col-sm-4">
                                         <span>Due Date</span>
                                     </div>
@@ -178,7 +178,7 @@ import {Now} from './datetime'
                                         <span><now format="'yyyy:MM:dd'"></now></span>
                                     </div>
                                 </div>
-                                <div class="row marginTB10 marginL5">
+                                <div class="row marginTB10 paddingR30">
                                     <div class="col-xs-6 col-sm-4">
                                         <span>Package Price</span>
                                     </div>
