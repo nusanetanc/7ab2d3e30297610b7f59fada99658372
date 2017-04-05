@@ -119,8 +119,9 @@ router.post('/addsub', upload.any(),function(req, res, next) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
-        res.send(req.files);
   });
+
+    res.send(req.files);
 });
 
 router.put('/putsub/:id', function(req, res, next) {
