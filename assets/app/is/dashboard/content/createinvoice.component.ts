@@ -4,7 +4,7 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
-import {Now} from 'now.ts'
+import {Now} from './datetime'
 
 @Component({
     selector: 'form-crateinvoice',
