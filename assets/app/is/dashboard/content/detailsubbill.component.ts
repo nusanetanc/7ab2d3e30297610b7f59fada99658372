@@ -163,7 +163,7 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
-            
+
             <!-- Content List -->
             <div class="row marginT20">
                 <div class="col-sm-12">
@@ -227,7 +227,7 @@ export class ContentBillSubscribeComponent {
 
     // Get all users from the API
     getAllSub() {
-        this.http.get(`${this.API}/subscribe/listsub`)
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(subs => {
                 this.subs = subs
