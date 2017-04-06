@@ -13,51 +13,50 @@ import {Billing} from './allbill';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; All Billing
+                All Billing
             </h3>
-
         </div>
-
+    
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
-                       <a (click)="sortByNo()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                           SUBS-ID
-                       </a>
-                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                           <li><a href="#">NAME</a></li>
-                           <li><a href="#">ID</a></li>
-                       </ul>
+                        <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            NAME
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">NAME</a></li>
+                            <li><a href="#">ID</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#bill of bills">
-                    <a [routerLink]="['Detailbilling', {id: bill._id}]">
-                        <div class="row subInfo fontWeight300">
-                            <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                            <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="green"></span></div>
-                            <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
+                <div class="col-sm-12" *ngFor="#sub of subs">
+                    <a [routerLink]="['BillSubscribe', {id: sub._id}]">
+                        <div class="row subInfo">
+                            <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
+                            <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-    </div>
+    </div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllBillsComponent {
 
     // Sort By
-    sortByNo(){
-        this.bills.sort( function(a, b) {
-            if ( a.noinvoice < b.noinvoice ){
+    sortByName(){
+        this.subs.sort( function(a, b) {
+            if ( a.name < b.name ){
                 return -1;
-            }else if( a.noinvoice> b.noinvoice ){
+            }else if( a.name > b.name ){
                 return 1;
             }else{
                 return 0;
@@ -69,24 +68,13 @@ export class ContentAllBillsComponent {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    bills: any[] = [];
     subs: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getAllBill();
         this.getAllSub();
-    }
-
-    // Get all users from the API
-    getAllBill() {
-        this.http.get(`${this.API}/bill/listbill`)
-            .map(res => res.json())
-            .subscribe(bills => {
-                this.bills = bills
-            })
     }
 
     // Get all users from the API
@@ -97,4 +85,5 @@ export class ContentAllBillsComponent {
                 this.subs = subs
             })
     }
+
 }
