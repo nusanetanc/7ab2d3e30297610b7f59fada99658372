@@ -941,6 +941,10 @@ hr {
     margin-right: 0px;
 }
 
+.marginR15{
+    margin-right: 15px;
+}
+
 .buttonBack {
     background-color: #E2E2E2;
     border: none;
@@ -1129,6 +1133,10 @@ button.buttonOrange:active {
     margin-top: -30px;
 }
 
+.marginL10 {
+    margin-left: 10px;
+}
+
 .marginL20 {
     margin-left: 20px;
 }
@@ -1155,4 +1163,13 @@ button.buttonOrange:active {
 .fontWeight300 {
     font-weight: 300;
 }
+
+.subTotal {
+    padding-top: 10px !important;
+}
+
+.subTotalCek {
+    margin-right: 15px !important;
+}
+
 /*----- /New Class ------*/
