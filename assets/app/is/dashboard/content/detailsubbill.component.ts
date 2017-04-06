@@ -208,12 +208,12 @@ export class ContentBillSubscribeComponent {
     bills: any[] = [];
     subs: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllBill();
-        this.getAllSub();
+        this.getSub();
     }
 
     // Get all users from the API
@@ -226,7 +226,7 @@ export class ContentBillSubscribeComponent {
     }
 
     // Get all users from the API
-    getAllSub() {
+    getSub() {
         this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(subs => {
