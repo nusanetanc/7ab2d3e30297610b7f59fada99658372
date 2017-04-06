@@ -367,6 +367,7 @@ public listPromos = [
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
+      this.subpackprice = subs.packprice
     })
     }
 }
