@@ -16,6 +16,15 @@ router.get('/listbill', function(req, res, next) {
    });
 });
 
+/* GET billloye listing. */
+router.get('/listbill/sub/:id', function(req, res, next) {
+     Bill.find({sub: req.params.id}, function(err, bills) {
+       console.log( bills );
+       res.json(bills);
+
+   });
+});
+
 /* GET detail bill. */
 router.get('/idbill/:id', function(req, res, next) {
 Bill.findOne({_id: req.params.id}, function(err, bills) {

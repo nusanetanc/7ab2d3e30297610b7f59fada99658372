@@ -14,7 +14,7 @@ import { Sub } from './subs';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Test
+                &nbsp; BILLING USER
             </h3>
         </div>
 
@@ -172,10 +172,8 @@ import { Sub } from './subs';
                     </div>
                     <div class="row subInfo" *ngFor="#bill of bills">
                         <a [routerLink]="['Detailbilling', {id: bill._id}]">
-                            <div class="col-sm-2 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                            <div class="col-sm-8 invoiceList"><span>{{bill.sub}}</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="green">Active</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="red">Waiting For Payment</span></div>
+                            <div class="col-sm-6 invoiceId"><span>{{bill.noinvoice}}</span></div>
+                            <div class="col-sm-6 invoiceList"><span class="red">Waiting For Payment</span></div>
                         </a>
                     </div>
                 </div>
@@ -218,7 +216,7 @@ export class ContentBillSubscribeComponent {
 
     // Get all users from the API
     getAllBill() {
-        this.http.get(`${this.API}/bill/listbill`)
+        this.http.get(`${this.API}/bill/listbill/sub/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(bills => {
                 this.bills = bills
