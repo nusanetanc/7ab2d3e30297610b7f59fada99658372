@@ -1092,6 +1092,10 @@ button.buttonOrange:active {
     padding-bottom: 20px;
 }
 
+.paddingR5 {
+    padding-right: 5px !important;
+}
+
 .paddingR30 {
     padding-right: 30px;
 }
