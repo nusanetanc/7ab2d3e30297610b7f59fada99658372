@@ -55,6 +55,7 @@ Sub.findById(req.params.id, function(err, subs) {
               name: subs.name,
               nova: subs.nova,
               packlev: subs.packlev,
+              packprice: subs.packprice,
               phone: subs.phone,
               status: subs.status,
               datebrith: subs.datebrith,
@@ -103,6 +104,7 @@ router.post('/addsub', function(req, res, next) {
     sub.email= req.body.email;
     sub.phone= req.body.phone;
     sub.packlev= req.body.packlev;
+    sub.packprice= req.body.packprice;
     sub.dateinst= req.body.dateinst;
     sub.timeinst= req.body.timeinst;
     sub.cardid= req.body.cardid;
@@ -111,7 +113,6 @@ router.post('/addsub', function(req, res, next) {
     sub.regisby= req.body.regisby;
     sub.regisref= req.body.regisref;
     sub.groovyid= req.body.groovyid;
-    sub.phone= req.body.phone;
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
 
@@ -132,14 +133,19 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.name= req.body.name;
                 sub.email= req.body.email;
                 sub.password= passwordHash.generate(req.body.password);
+                sub.phone= req.body.phone;
                 sub.packlev= req.body.packlev;
+                sub.packprice= req.body.packprice;
+                sub.dateinst= req.body.dateinst;
+                sub.timeinst= req.body.timeinst;
                 sub.cardid= req.body.cardid;
                 sub.nova= req.body.nova;
                 sub.status= req.body.status;
+                sub.regisby= req.body.regisby;
+                sub.regisref= req.body.regisref;
                 sub.groovyid= req.body.groovyid;
-                sub.phone= req.body.phone;
-                sub.datebrith= req.body.datebrith;
                 sub.idnumber= req.body.idnumber;
+                sub.datebirth= req.body.datebirth;
               if (err)
                 res.send(err);
 

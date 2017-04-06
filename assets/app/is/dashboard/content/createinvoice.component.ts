@@ -149,7 +149,7 @@ import {Now} from './datetime'
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 class="titleH4">NEW INVOICE {{testnumber}}</h4>
+                            <h4 class="titleH4">NEW INVOICE</h4>
                         </div>
                     </div>
 
@@ -238,7 +238,7 @@ import {Now} from './datetime'
                                             </div>
                                         </div>
 
-                                        <p>Sub Total : {{val}}</p>
+                                        <p>Sub Total : {{totalharga}}</p>
 
                                         <form>
                                             <label *ngFor="#listPromo of listPromos" class="form-control">
@@ -273,9 +273,9 @@ export class ContentCreateInvoiceComponent implements OnInit {
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
-testnumber: number;
+totalharga: number;
 constructor(private http: Http, private _routeParams: RouteParams) {
-  this.testnumber = 2.5
+  this.totalharga = subs.
 }
 
 val='';
@@ -300,7 +300,7 @@ public listPromos = [
    if (routercheck.value = "1"){
      this.selectedRouter={harga:"40000"};
      this.val = "40000";
-     this.testnumber = this.testnumber + 40000
+     this.totalharga = this.totalharga + 40000
      }
    }
    onItemClickedSTB(STB){
