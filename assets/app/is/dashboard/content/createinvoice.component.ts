@@ -149,7 +149,7 @@ import {Now} from './datetime'
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 class="titleH4">NEW INVOICE {{this.testnumber}}</h4>
+                            <h4 class="titleH4">NEW INVOICE {{testnumber}}</h4>
                         </div>
                     </div>
 
