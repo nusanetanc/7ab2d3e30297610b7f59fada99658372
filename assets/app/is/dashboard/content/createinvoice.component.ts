@@ -203,7 +203,7 @@ import {Now} from './datetime'
                         </div>
                     </div>
                     
-                     <div class="row marginL20 marginB10">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -220,7 +220,7 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL20 marginB10">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -237,13 +237,13 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL20 marginB10">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                         </div>
                      </div>
                      
-                     <div class="row marginL20 marginB10">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -260,7 +260,7 @@ import {Now} from './datetime'
                         </div>
                      </div>
                     
-                    <div class="row marginL20 marginB10">
+                    <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <p>Sub Total : {{totalharga}}</p>
 
@@ -273,13 +273,13 @@ import {Now} from './datetime'
                     </div>
                     
                     
-                    <div class="row marginL20 marginB10">
+                    <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                         </div>
                     </div>
                     
-                    <div class="row marginL20 marginB10">
+                    <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <p>Tax : {{tax}}</p>
                             <p>Total Price : {{totalbayar}}</p>
@@ -288,7 +288,7 @@ import {Now} from './datetime'
 
                 </div>
                 
-                <div class="row">
+                <div class="row marginL5">
                     <div class="col-sm-12 paddingR45">
                         <!-- Small modal -->
                         <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
