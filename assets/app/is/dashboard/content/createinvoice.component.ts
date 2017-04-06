@@ -258,7 +258,7 @@ import {Now} from './datetime'
                                         </form><br/>
                                         <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                                         <p>Tax : {{val}}</p>
-                                        <p>Total Price : {{val}}</p>
+                                        <p>Total Price : {{subpackprice}}</p>
                                     </div>
                                 </form>
                             </div>
