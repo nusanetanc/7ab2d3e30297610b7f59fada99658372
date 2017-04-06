@@ -239,9 +239,7 @@ import {Now} from './datetime'
                      
                      <div class="row marginL5">
                         <div class="col-sm-6">
-                            <div class="input-group paddingR8">
                             <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
-                            </div>
                         </div>
                      </div>
                      
@@ -277,9 +275,7 @@ import {Now} from './datetime'
                     
                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
-                            <div class="input-group paddingR8">
                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                            <div class="input-group paddingR8">
                         </div>
                     </div>
                     
