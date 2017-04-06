@@ -203,12 +203,12 @@ import {Now} from './datetime'
                         </div>
                     </div>
                     
-                     <div class="row marginL5 marginB10 paddingR5">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <form>
-                                        <div class="input-group">
+                                        <div class="input-group paddingR8">
                                             <span class="input-group-addon">
                                                 <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)">
                                             </span>
@@ -220,12 +220,12 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL5 marginB10 paddingR5">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <form>
-                                        <div class="input-group">
+                                        <div class="input-group paddingR8">
                                             <span class="input-group-addon">
                                                 <input type="checkbox" (click)="onItemClickedSTB(STB)">
                                             </span>
@@ -237,18 +237,18 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL5 paddingR5">
+                     <div class="row marginL5">
                         <div class="col-sm-6">
-                            <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                            <input type="number" class="form-control inputForm paddingR8" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                         </div>
                      </div>
                      
-                     <div class="row marginL5 marginB10 paddingR5">
+                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <form>
-                                        <div class="input-group">
+                                        <div class="input-group paddingR8">
                                             <span class="input-group-addon">
                                                 <input type="checkbox" (click)="onItemClickedIns(Ins)">
                                             </span>
@@ -260,7 +260,7 @@ import {Now} from './datetime'
                         </div>
                      </div>
                     
-                    <div class="row marginL5 paddingR5">
+                    <div class="row marginL5">
                         <div class="col-sm-6">
                             <p>Sub Total : {{totalharga}}</p>
 
@@ -273,13 +273,13 @@ import {Now} from './datetime'
                     </div>
                     
                     
-                    <div class="row marginL5 marginB10 paddingR5">
+                    <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                         </div>
                     </div>
                     
-                    <div class="row marginL5 marginB10 paddingR5">
+                    <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <p>Tax : {{tax}}</p>
                             <p>Total Price : {{totalbayar}}</p>
