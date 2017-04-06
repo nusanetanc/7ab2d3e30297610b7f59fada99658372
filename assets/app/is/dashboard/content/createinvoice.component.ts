@@ -203,7 +203,7 @@ import {Now} from './datetime'
                         </div>
                     </div>
                     
-                     <div class="row marginL5 marginB10">
+                     <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -220,7 +220,7 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL5 marginB10">
+                     <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -243,7 +243,7 @@ import {Now} from './datetime'
                         </div>
                      </div>
                      
-                     <div class="row marginL5 marginB10">
+                     <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-12">
