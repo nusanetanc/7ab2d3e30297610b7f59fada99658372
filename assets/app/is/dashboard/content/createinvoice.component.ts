@@ -270,6 +270,14 @@ import {Now} from './datetime'
     directives: [ROUTER_DIRECTIVES, Now],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+// Declare empty list of people
+bills: any[] = [];
+subs: any[] = [];
+testnumber: number;
+constructor(private http: Http, private _routeParams: RouteParams) {
+  this.testnumber = 2.5
+}
+
 val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
@@ -305,14 +313,6 @@ public listPromos = [
    }
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-
-  // Declare empty list of people
-  bills: any[] = [];
-  subs: any[] = [];
-  testnumber: number;
-  constructor(private http: Http, private _routeParams: RouteParams) {
-    this.testnumber = 2.5
-  }
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
