@@ -286,7 +286,7 @@ bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = packageprice.value;
+        this.totalharga = this.subs[0];
       }
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
