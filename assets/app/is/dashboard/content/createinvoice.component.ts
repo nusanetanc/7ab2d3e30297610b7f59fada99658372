@@ -122,6 +122,17 @@ import {Now} from './datetime'
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
+                                    <span>Price Package</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>Level {{ subs.packprice }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Status</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -275,7 +286,7 @@ bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
 constructor(private http: Http, private _routeParams: RouteParams) {
-  this.totalharga = subs.
+  this.totalharga = subs.packprice;
 }
 
 val='';
