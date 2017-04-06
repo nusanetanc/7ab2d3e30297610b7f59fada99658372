@@ -287,7 +287,7 @@ subs: any[] = [];
 totalharga: number;
 subspackprice: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = this.subspackprice;
+        this.totalharga = '0';
       }
 
 val='';
