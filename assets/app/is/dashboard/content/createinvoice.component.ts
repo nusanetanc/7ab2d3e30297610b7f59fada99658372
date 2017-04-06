@@ -289,7 +289,7 @@ totalbayar: number;
       }
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
-    this.totalharga = this.totalharga + (event.target).value;
+    this.totalharga = this.totalharga + parseInt(this.val);
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
