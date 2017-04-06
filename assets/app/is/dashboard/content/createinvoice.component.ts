@@ -286,7 +286,7 @@ bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
 constructor(private http: Http, private _routeParams: RouteParams) {
-  this.totalharga = this.subs[packprice];
+  this.totalharga = subs[packprice];
 }
 
 val='';
