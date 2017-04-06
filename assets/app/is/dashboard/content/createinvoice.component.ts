@@ -196,7 +196,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" [(ngModel)]="subs.packprice"/>
+                                    <input [(ngModel)]="subs.packprice" (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
                                 </div>
                             </div>
                         </div>
