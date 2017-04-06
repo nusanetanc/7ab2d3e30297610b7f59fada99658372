@@ -293,18 +293,18 @@ subspackprice: number;
     this.val = (event.target).value;
   }
           public listPromos = [
-              {name:"Gratis Instalasi", harga:"9000"},
-              {name:"Groovy Play", harga:"10000"}
+              {name:"Gratis Instalasi", harga:9000},
+              {name:"Groovy Play", harga:10000}
            ];
-           public selectedPromo = {harga: ""0};
+           public selectedPromo = {harga: 0};
 
            onItemClickedPromo(listPromo){
               this.selectedPromo=listPromo;
               this.totalharga = this.totalharga - listPromo.harga;
            }
-           public selectedRouter = {harga: "0"};
-           public selectedSTB = {harga: "0"};
-           public selectedIns = {harga: "0"};
+           public selectedRouter = {harga: 0};
+           public selectedSTB = {harga: 0};
+           public selectedIns = {harga: 0};
 
  onItemClickedRouter(Router){
  if (routercheck.value = "1"){
