@@ -252,8 +252,8 @@ import {Now} from './datetime'
                                             </label>
                                         </form><br/>
                                         <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
-                                        <p>Tax : {{val}}</p>
-                                        <p>Total Price : {{subpackprice}}</p>
+                                        <p>Tax : {{tax}}</p>
+                                        <p>Total Price : {{totalbayar}}</p>
                                     </div>
                                 </form>
                             </div>
@@ -280,11 +280,18 @@ export class ContentCreateInvoiceComponent implements OnInit {
 bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
+tax: number;
+totalbayar: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
         this.totalharga = 349000;
+        this.tax = this.totalharga * 0.1;
+        this.totalbayar = this.totalharga + this.tax;
       }
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
+    this.totalharga = this.totalharga + (event.target).value;
+    this.tax = this.totalharga * 0.1;
+    this.totalbayar = this.totalharga + this.tax;
   }
           public listPromos = [
               {name:"Gratis Instalasi", harga:9000},
@@ -295,6 +302,8 @@ totalharga: number;
            onItemClickedPromo(listPromo){
               this.selectedPromo=listPromo;
               this.totalharga = this.totalharga - listPromo.harga;
+              this.tax = this.totalharga * 0.1;
+              this.totalbayar = this.totalharga + this.tax;
            }
            public selectedRouter = {harga: ''};
            public selectedSTB = {harga: ''};
@@ -304,15 +313,21 @@ totalharga: number;
  if (routercheck.value = "1"){
    this.selectedRouter={harga:"40000"};
    this.totalharga = this.totalharga + 40000
+   this.tax = this.totalharga * 0.1;
+   this.totalbayar = this.totalharga + this.tax;
    }
  }
  onItemClickedSTB(STB){
     this.selectedSTB={harga:"45000"};
     this.totalharga = this.totalharga + 45000
+    this.tax = this.totalharga * 0.1;
+    this.totalbayar = this.totalharga + this.tax;
  }
  onItemClickedIns(Ins){
     this.selectedIns={harga:"75000"};
     this.totalharga = this.totalharga + 75000
+    this.tax = this.totalharga * 0.1;
+    this.totalbayar = this.totalharga + this.tax;
  }
 
         // Link to our api, pointing to localhost
