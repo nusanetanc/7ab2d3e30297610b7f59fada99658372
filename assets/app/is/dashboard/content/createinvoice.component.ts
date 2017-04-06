@@ -238,8 +238,8 @@ import {Now} from './datetime'
                      </div>
                      
                      <div class="row marginL5">
-                        <div class="col-sm-6">
-                            <input type="number" class="form-control inputForm paddingR8" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
+                        <div class="col-sm-6 paddingR8">
+                            <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)">
                         </div>
                      </div>
                      
@@ -264,7 +264,7 @@ import {Now} from './datetime'
                         <div class="col-sm-6">
                             <p>Sub Total : {{totalharga}}</p>
 
-                            <form>
+                            <form class"paddingR8">
                                 <label *ngFor="#listPromo of listPromos" class="form-control inputForm subTotal">
                                     <input (click)=" onItemClickedPromo(listPromo)" class="subTotalCek" type="radio" name="optradio">Promo {{ listPromo.name }}
                                 </label>
@@ -274,7 +274,7 @@ import {Now} from './datetime'
                     
                     
                     <div class="row marginL5 marginB10">
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 paddingR8">
                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price">
                         </div>
                     </div>
