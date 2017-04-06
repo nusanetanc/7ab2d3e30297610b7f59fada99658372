@@ -173,7 +173,7 @@ import { Sub } from './subs';
                     <div class="row subInfo" *ngFor="#bill of bills">
                         <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="col-sm-6 invoiceId"><span>{{bill.noinvoice}}</span></div>
-                            <div class="col-sm-6 invoiceList"><span class="red">{{bill.noinvoice}}</span></div>
+                            <div class="col-sm-6 invoiceList"><span class="red">{{bill.status}}</span></div>
                         </a>
                     </div>
                 </div>
