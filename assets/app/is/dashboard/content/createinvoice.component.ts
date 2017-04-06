@@ -285,51 +285,52 @@ export class ContentCreateInvoiceComponent implements OnInit {
 bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
-constructor(private http: Http, private _routeParams: RouteParams) {
-  this.totalharga = this.subpackprice;
-}
+      constructor(private http: Http, private _routeParams: RouteParams) {
+        this.totalharga = subs.packprice;
+      }
 
 val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
   }
-public listPromos = [
-      {name:"Gratis Instalasi", harga:"9000"},
-      {name:"Groovy Play", harga:"10000"}
-   ];
-   public selectedPromo = {harga: ""};
+          public listPromos = [
+              {name:"Gratis Instalasi", harga:"9000"},
+              {name:"Groovy Play", harga:"10000"}
+           ];
+           public selectedPromo = {harga: ""};
 
-   onItemClickedPromo(listPromo){
-      this.selectedPromo=listPromo;
-      this.val = listPromo.harga;
-   }
-   public selectedRouter = {harga: ""};
-   public selectedSTB = {harga: ""};
-   public selectedIns = {harga: ""};
+           onItemClickedPromo(listPromo){
+              this.selectedPromo=listPromo;
+              this.val = listPromo.harga;
+           }
+           public selectedRouter = {harga: ""};
+           public selectedSTB = {harga: ""};
+           public selectedIns = {harga: ""};
 
-   onItemClickedRouter(Router){
-   if (routercheck.value = "1"){
-     this.selectedRouter={harga:"40000"};
-     this.val = "40000";
-     this.totalharga = this.totalharga + 40000
-     }
+ onItemClickedRouter(Router){
+ if (routercheck.value = "1"){
+   this.selectedRouter={harga:"40000"};
+   this.val = "40000";
+   this.totalharga = this.totalharga + 40000
    }
-   onItemClickedSTB(STB){
-      this.selectedSTB={harga:"45000"};
-      this.val = "45000";
-   }
-   onItemClickedIns(Ins){
-      this.selectedIns={harga:"75000"};
-      this.val = "75000";
-   }
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+ }
+ onItemClickedSTB(STB){
+    this.selectedSTB={harga:"45000"};
+    this.val = "45000";
+ }
+ onItemClickedIns(Ins){
+    this.selectedIns={harga:"75000"};
+    this.val = "75000";
+ }
 
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllBill();
-    this.getSubs();
-  }
+        // Link to our api, pointing to localhost
+          API = 'http://202.162.207.164:3000';
+
+          // Angular 2 Life Cycle event when component has been initialized
+          ngOnInit() {
+            this.getAllBill();
+            this.getSubs();
+          }
 
 
 // Add one person to the API
@@ -367,7 +368,6 @@ public listPromos = [
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.subpackprice = subs.packprice
     })
     }
 }
