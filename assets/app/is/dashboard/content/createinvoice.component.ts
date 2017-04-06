@@ -310,7 +310,7 @@ public listPromos = [
   subs: any[] = [];
   testnumber: number;
   constructor(private http: Http, private _routeParams: RouteParams) {
-    this.testnumber = 2.5
+    this.testnumber = 2.5 + 12
   }
 
   // Angular 2 Life Cycle event when component has been initialized
