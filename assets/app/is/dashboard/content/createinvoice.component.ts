@@ -264,7 +264,7 @@ import {Now} from './datetime'
                         <div class="col-sm-6">
                             <p>Sub Total : {{totalharga}}</p>
 
-                            <form class"paddingR8">
+                            <form class="paddingR8">
                                 <label *ngFor="#listPromo of listPromos" class="form-control inputForm subTotal">
                                     <input (click)=" onItemClickedPromo(listPromo)" class="subTotalCek" type="radio" name="optradio">Promo {{ listPromo.name }}
                                 </label>
