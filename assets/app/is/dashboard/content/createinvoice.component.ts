@@ -149,7 +149,7 @@ import {Now} from './datetime'
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 class="titleH4">NEW INVOICE</h4>
+                            <h4 class="titleH4">NEW INVOICE {{this.testnumber}}</h4>
                         </div>
                     </div>
 
@@ -308,7 +308,10 @@ public listPromos = [
   // Declare empty list of people
   bills: any[] = [];
   subs: any[] = [];
-  constructor(private http: Http, private _routeParams: RouteParams) {}
+  testnumber: number;
+  constructor(private http: Http, private _routeParams: RouteParams) {
+    this.testnumber = 2.5
+  }
 
   // Angular 2 Life Cycle event when component has been initialized
   ngOnInit() {
