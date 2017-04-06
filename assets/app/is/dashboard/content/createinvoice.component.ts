@@ -199,11 +199,6 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
                             <div class="col-sm-12 paddingL35">
                                 <form class="paddingTB20 paddingR30">
                                     <div class="form-group">
@@ -301,9 +296,9 @@ totalharga: number;
               this.selectedPromo=listPromo;
               this.totalharga = this.totalharga - listPromo.harga;
            }
-           public selectedRouter = {harga: 0};
-           public selectedSTB = {harga: 0};
-           public selectedIns = {harga: 0};
+           public selectedRouter = {harga: ''};
+           public selectedSTB = {harga: ''};
+           public selectedIns = {harga: ''};
 
  onItemClickedRouter(Router){
  if (routercheck.value = "1"){
