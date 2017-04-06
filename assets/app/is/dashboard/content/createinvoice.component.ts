@@ -292,7 +292,7 @@ public listPromos = [
    if (routercheck.value = "1"){
      this.selectedRouter={harga:"40000"};
      this.val = "40000";
-     this.testnumber = testnumber.value + 40000
+     this.testnumber = this.testnumber + 40000
      }
    }
    onItemClickedSTB(STB){
