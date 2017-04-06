@@ -301,7 +301,7 @@ totalbayar: number;
 
            onItemClickedPromo(listPromo){
               this.selectedPromo=listPromo;
-              this.totalharga = this.totalharga - selectedPromo.harga;
+              this.totalharga = this.totalharga - this.selectedPromo.harga;
 
               this.tax = this.totalharga * 0.1;
               this.totalbayar = this.totalharga + this.tax;
