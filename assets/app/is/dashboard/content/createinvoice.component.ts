@@ -185,7 +185,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span><now format="'yyyy:MM:dd'"></now></span>
+                                    <span>20/06/2017</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -196,7 +196,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packprice" (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
+                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
                                 </div>
                             </div>
                             <div class="col-sm-12 paddingL35">
