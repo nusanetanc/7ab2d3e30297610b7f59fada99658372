@@ -50,7 +50,13 @@ Sub.findById(req.params.id, function(err, subs) {
     subs.groovyid = "5898330cc0d0992a46465109";
   }
   Home.findById(subs.groovyid, function(err, homes) {
+    if(homes.cluster == "" || homes.cluster == null){
+      homes.cluster = "58982738f60815180d148f14";
+    }
     Cluster.findById(homes.cluster, function(err, clusters) {
+      if(homes.city == "" || homes.city == null){
+        homes.city = "58d3492416d72b7e166dd977";
+      }
      City.findById(homes.city, function(err, cities) {
             res.json({
               _id: subs._id,
