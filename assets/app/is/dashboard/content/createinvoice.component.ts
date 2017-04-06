@@ -196,7 +196,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" value="499000"/>
+                                    <input (keyup)="onKey($event)" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" [value]={{subs.packprice}}/>
                                 </div>
                             </div>
                         </div>
@@ -369,7 +369,6 @@ val='';
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.subspackprice = subs.packprice
     })
     }
 }
