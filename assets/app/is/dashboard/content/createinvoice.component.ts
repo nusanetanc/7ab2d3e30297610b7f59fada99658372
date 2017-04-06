@@ -287,10 +287,8 @@ subs: any[] = [];
 totalharga: number;
 subspackprice: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = this.subs.packprice;
+        this.totalharga = 0;
       }
-
-val='';
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
   }
@@ -298,30 +296,29 @@ val='';
               {name:"Gratis Instalasi", harga:"9000"},
               {name:"Groovy Play", harga:"10000"}
            ];
-           public selectedPromo = {harga: ""};
+           public selectedPromo = {harga: ""0};
 
            onItemClickedPromo(listPromo){
               this.selectedPromo=listPromo;
-              this.val = listPromo.harga;
+              this.totalharga = this.totalharga - listPromo.harga;
            }
-           public selectedRouter = {harga: ""};
-           public selectedSTB = {harga: ""};
-           public selectedIns = {harga: ""};
+           public selectedRouter = {harga: "0"};
+           public selectedSTB = {harga: "0"};
+           public selectedIns = {harga: "0"};
 
  onItemClickedRouter(Router){
  if (routercheck.value = "1"){
    this.selectedRouter={harga:"40000"};
-   this.val = "40000";
    this.totalharga = this.totalharga + 40000
    }
  }
  onItemClickedSTB(STB){
     this.selectedSTB={harga:"45000"};
-    this.val = "45000";
+    this.totalharga = this.totalharga + 45000
  }
  onItemClickedIns(Ins){
     this.selectedIns={harga:"75000"};
-    this.val = "75000";
+    this.totalharga = this.totalharga + 75000
  }
 
         // Link to our api, pointing to localhost
