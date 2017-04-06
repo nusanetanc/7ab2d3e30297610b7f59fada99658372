@@ -164,7 +164,7 @@ import { Sub } from './subs';
                 </div>
                 
                 <div class="right">
-                    <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button" style="border-radius: 50% !important;">
+                    <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
                         <i class="material-icons">create</i>
                     </a>
                 </div>
