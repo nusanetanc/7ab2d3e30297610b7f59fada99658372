@@ -285,9 +285,8 @@ export class ContentCreateInvoiceComponent implements OnInit {
 bills: any[] = [];
 subs: any[] = [];
 totalharga: number;
-subspackprice: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = 0;
+        this.totalharga = subs['packprice'];
       }
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
@@ -366,7 +365,6 @@ subspackprice: number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.subspackprice = subs.packprice
     })
     }
 }
