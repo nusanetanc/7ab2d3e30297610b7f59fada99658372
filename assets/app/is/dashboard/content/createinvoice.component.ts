@@ -292,6 +292,7 @@ public listPromos = [
    if (routercheck.value = "1"){
      this.selectedRouter={harga:"40000"};
      this.val = "40000";
+     this.testnumber = 2.5 + 40000
      }
    }
    onItemClickedSTB(STB){
@@ -310,7 +311,7 @@ public listPromos = [
   subs: any[] = [];
   testnumber: number;
   constructor(private http: Http, private _routeParams: RouteParams) {
-    this.testnumber = 2.5 + 12
+    this.testnumber = 2.5
   }
 
   // Angular 2 Life Cycle event when component has been initialized
