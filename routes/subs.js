@@ -46,7 +46,7 @@ router.get('/listsub', function(req, res, next) {
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
-  if(subs.groovyid == "" || subs.groovyid == null){
+  if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
     subs.groovyid = "5898330cc0d0992a46465109";
   }
   Home.findById(subs.groovyid, function(err, homes) {
