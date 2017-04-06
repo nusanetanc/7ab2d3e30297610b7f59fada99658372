@@ -287,7 +287,7 @@ subs: any[] = [];
 totalharga: number;
 subspackprice: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = subs.packprice;
+        this.totalharga = this.subspackprice;
       }
 
 val='';
@@ -369,6 +369,7 @@ val='';
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
+      this.subspackprice = subs.packprice
     })
     }
 }
