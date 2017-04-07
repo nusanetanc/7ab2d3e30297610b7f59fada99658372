@@ -62,7 +62,7 @@ import {Streetname} from "./street_name";
                                         <p>Please select a installation date</p>
                                         <div class="form-group">
                                             <div class="input-group date paddingR30" id="datetimepicker1">
-                                                <input #subdateinst id="subdateinst" type="date" class="form-control" />
+                                                <input #subdateinst id="theDate" type="date" class="form-control" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
