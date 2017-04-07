@@ -41,7 +41,7 @@ import {Streetname} from "./street_name";
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name">
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone">
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email">
-                                                <input #subdatebirth type="text" onfocus="(this.type='date' && this.id="subdatebirth")" onblur="(this.type='text')" class="form-control inputForm">
+                                                <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm">
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
