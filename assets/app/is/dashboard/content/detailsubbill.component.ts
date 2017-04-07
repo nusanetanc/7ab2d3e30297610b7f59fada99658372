@@ -21,7 +21,7 @@ import { Sub } from './subs';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['AllSubs']" class="btn btn-default buttonBack" type="button">
+                    <a [routerLink]="['AllBill']" class="btn btn-default buttonBack" type="button">
                         BACK
                     </a>
                     <div class="right">
