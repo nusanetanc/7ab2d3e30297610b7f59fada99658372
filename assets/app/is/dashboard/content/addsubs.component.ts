@@ -53,7 +53,7 @@ import {Streetname} from "./street_name";
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12 paddingL35">
                                         <h4 class="titleH4">INSTALLATION DATE</h4>
                                     </div>
                                 </div>
