@@ -311,7 +311,6 @@ routerrent: number;
 totalharga: number;
 tax: number;
 totalbayar: number;
-paketlev: string;
       constructor(private http: Http, private _routeParams: RouteParams) {
         this.totalharga = 349000;
         this.tax = this.totalharga * 0.1;
