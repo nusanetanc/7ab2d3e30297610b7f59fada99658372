@@ -246,15 +246,6 @@ export class ContentTestComponent {
 
     public print() {
 
-
-        var img = new Image();
-        img.addEventListener('load', function() {
-            var doc = new jsPDF();
-            doc.addImage(img, 'png', 10, 50);
-        });
-        img.src = 'images/logo-groovy.png';
-
-
         var doc = new jsPDF();
 
         // We'll make our own renderer to skip this editor
