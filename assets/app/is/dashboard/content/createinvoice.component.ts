@@ -270,13 +270,27 @@ import {Now} from './datetime'
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Promo</span>
+                                    <span>Promo Price</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo Name</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                  <select class="form-control inputForm" #promoname id="promoname">
+                                      <option value="No">-- Select Promo --</option>
+                                      <option *ngFor="#promo of listPromo">{{ promo.name }}</option>
+                                  </select>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -350,6 +364,10 @@ lev = '1';
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
+
+  public listPromo = [
+      {name:"Potongan 100 Ribu", harga:100000}
+   ];
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
