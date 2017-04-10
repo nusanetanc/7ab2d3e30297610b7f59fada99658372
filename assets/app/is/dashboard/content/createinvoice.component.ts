@@ -113,7 +113,7 @@ import { Sub } from './subs';
                                     <span>Current Package</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
+                                    <span>: {{test | date: 'dd/MM/yyyy'}}</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>Level {{ subs.packlev }}</span>
@@ -343,7 +343,7 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
-
+test : Date = new Date();
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   paketlev = '1'
