@@ -4,7 +4,6 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
-import {Now} from './datetime'
 
 @Component({
     selector: 'form-crateinvoice',
@@ -114,7 +113,7 @@ import {Now} from './datetime'
                                     <span>Current Package</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
+                                    <span>: {{test | date: 'dd/MM/yyyy'}}</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>Level {{ subs.packlev }}</span>
@@ -128,7 +127,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Level {{ subs.packprice }}</span>
+                                    <span>{{ subs.packprice }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -185,7 +184,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span><now format="'yyyy:MM:dd'"></now></span>
+                                    <input class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -196,7 +195,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>20/06/2017</span>
+                                    <input type="date" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -210,50 +209,6 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5" >
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Router Rent</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargastb" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5"  *ngIf="subs.packprice == '4' || subs.packprice == '5' || subs.packprice == '6'">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>STB Rent</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargarouter" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Instalation</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargains" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Cable/Rj45</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
-                                </div>
-                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Prorate Price</span>
@@ -265,9 +220,70 @@ import {Now} from './datetime'
                                     <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5" >
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Router Rent</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5" >
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>STB Rent</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
+                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
+                                </div>
+                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Promo</span>
+                                    <span>Instalation</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Cable/Rj45</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo Name</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                  <select class="form-control inputForm" #promoname id="promoname">
+                                      <option value="No">-- Select Promo --</option>
+                                      <option *ngFor="#promo of listPromo">{{ promo.name }}</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo Price</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
@@ -276,17 +292,41 @@ import {Now} from './datetime'
                                     <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Sub Total</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="totalharga"  type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Tax</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Total Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" disabled/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row marginL5 marginB10">
-                        <div class="col-sm-6">
-                            <p>Sub Total : {{totalharga}}</p>
-                            <p>Tax : {{tax}}</p>
-                            <p>Total Price : {{totalbayar}}</p>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class="row" style="margin-left: 3px !important;">
@@ -300,9 +340,19 @@ import {Now} from './datetime'
     </div>
     <!-- END CONTENT -->
     `,
-    directives: [ROUTER_DIRECTIVES, Now],
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+test : Date = new Date();
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  paketlev = '1'
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllBill();
+    this.getSubs();
+  }
+
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
@@ -311,9 +361,8 @@ routerrent: number;
 totalharga: number;
 tax: number;
 totalbayar: number;
-lev = '1';
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = 349000;
+        this.totalharga = 349000 + 40000;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
@@ -324,17 +373,10 @@ lev = '1';
     this.totalbayar = this.totalharga + this.tax;
   }
 
-        // Link to our api, pointing to localhost
-          API = 'http://202.162.207.164:3000';
-          paketlev = '1'
-          // Angular 2 Life Cycle event when component has been initialized
-          ngOnInit() {
-            this.getAllBill();
-            this.getSubs();
-          }
-         //if(${this.API} = "http://202.162.207.164:3000"){
-              public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-          //}
+  public listPromo = [
+      {name:"Potongan 100 Ribu", harga:100000}
+   ];
+
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
