@@ -259,6 +259,9 @@ export class ContentTestComponent {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
+
+        // Save the PDF
+        doc.save('invoice.pdf');
     }
 
 }
