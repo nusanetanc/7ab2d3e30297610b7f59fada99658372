@@ -244,7 +244,7 @@ declare let jsPDF;
     
             <div class="head" style="border: 1px solid yellow;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
                 <div class="logo" style="border: 1px solid green;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
-                    <img src="logo.png" width="50%">
+                    <img src="images/logo-groovy.png" width="50%">
                 </div>
                 <div class="about" style="border: 1px solid red;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
                     <span style="float: right;">cs@groovy.id &nbsp; www.groovy.id</span><br>
