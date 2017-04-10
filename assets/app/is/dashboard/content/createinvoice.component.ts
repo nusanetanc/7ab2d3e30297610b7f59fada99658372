@@ -128,7 +128,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Level {{ subs.packprice }}</span>
+                                    <span>{{ subs.packprice }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -235,6 +235,17 @@ import {Now} from './datetime'
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
+                                    <span>Prorate Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Instalation</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -259,17 +270,6 @@ import {Now} from './datetime'
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Prorate Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
                                     <span>Promo</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -279,17 +279,41 @@ import {Now} from './datetime'
                                     <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Sub Total</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="totalharga"  type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Tax</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Total Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row marginL5 marginB10">
-                        <div class="col-sm-6">
-                            <p>Sub Total : {{totalharga}}</p>
-                            <p>Tax : {{tax}}</p>
-                            <p>Total Price : {{totalbayar}}</p>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class="row" style="margin-left: 3px !important;">
