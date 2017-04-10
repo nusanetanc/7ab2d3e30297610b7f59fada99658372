@@ -184,7 +184,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{test | date: 'dd/MM/yyyy'}} class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
+                                    <input value="{{test | date: 'dd/MM/yyyy'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
