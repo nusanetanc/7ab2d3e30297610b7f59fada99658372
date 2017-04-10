@@ -237,32 +237,123 @@ declare let jsPDF;
     
     
     
-    <!-- Add your site or application content here -->
-    <div id="print" style="border: 1px solid #000; padding: 20px 20px;">
-    
-        <!-- Head -->
-    
-            <div class="head" style="border: 1px solid yellow;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
-                <div class="logo" style="border: 1px solid green;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
-                    <img src="images/logo-groovy.png" width="50%">
-                </div>
-                <div class="about" style="border: 1px solid red;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
-                    <span style="float: right;">cs@groovy.id &nbsp; www.groovy.id</span><br>
-                    <span style="float: right;">Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</span>
-                </div>
-            </div>
-    
-        <!-- /Head -->
-    
-        <!-- Content -->
-            <div class="content" style="border: 1px solid burlywood;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
-                <div class="title" style="border: 1px solid gray;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
-                    <h4>INFORMASI TAGIHAN</h4>
-                </div>
-            </div>
-        <!-- /Content -->
-    
-    </div>
+    <div class="container">
+
+			<div class="masthead">
+				<div class="pull-right">
+					<div class="tweet-buttons">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="MrRio" data-size="large">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						<a href="https://twitter.com/MrRio" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @MrRio</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					<!--a class="btn btn-primary btn-large" href="http://jspdf.com/downloads/jsPDF-0.9.0rc2.zip">Download Now</a>
+					<p class="muted" style="text-align: right;">Version 0.9.0rc2</p-->
+					<a class="btn btn-primary btn-large" href="https://github.com/MrRio/jsPDF">Download Now</a>
+					<p class="muted" style="text-align: right;" id="dversion">Version 0.9.0rc2</p>
+				</div>
+				<h1 class="muted">jsPDF</h1>
+				<h4>HTML5 JavaScript PDF generation library from <a href="http://twitter.com/MrRio">@MrRio</a> at <a href="http://parall.ax">Parallax</a></h4>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span6" style="float: right">
+					<iframe class="preview-pane" type="application/pdf" width="100%" height="650" frameborder="0" style="position:relative;z-index:999"></iframe>
+				</div>
+				<div class="span5 no-gutter">
+
+					<h2>Have a play.</h2>
+
+					<p>A HTML5 client-side solution for generating PDFs. Perfect for event tickets, reports, certificates, you name it! </p>
+
+					<p><b>No servers were used in the making of this demo.</b></p>
+
+					<div class="template-picker">
+						<label for="template">Choose example</label>
+						<select id="template" name="template">
+							<option>Hold your horses...</option>
+						</select>
+					</div>
+				</div>
+
+				<div id="editor" class="bypass"></div>
+
+			   <div class="controls">
+					<div class="pull-right">
+						<!--<a href="#" class="btn btn-primary">Download Your Code</a>-->
+						<a href="#" class="btn btn-primary download-pdf">Download PDF</a>
+					</div>
+
+					<label class="checkbox">
+						<input type="checkbox" id="auto-refresh" checked="checked"> Auto refresh on changes?
+					</label>
+					<a href="#" class="run-code hide btn btn-success">Run Code</a>
+
+					<div class="alert hide">
+						Auto refresh disabled for this
+					</div>
+
+			   </div>
+
+			</div>
+			<div class="clerfix"></div>
+			<div class="span12 credits">
+
+				<h2>The Basics</h2>
+
+				<p>Simply include the jsPDF library in your <span class="source">&lt;head&gt;</span>, generate your PDF using the <i>many</i> built-in functions, then hook up a button to trigger the download. All the examples here use jQuery.</p>
+
+				<h2>Browser Compatibility</h2>
+
+				<p>jsPDF will work in IE6+*, Firefox 3+, Chrome, Safari 3+, Opera. For IE9 and below, we lazily load a Flash shim called Downloadify which enables the files to be downloaded.</p>
+
+				<p>* Current build does not have IE6-9 shim enabled</p>
+
+				<p><strong>NB:</strong> UTF-8 is <em>not</em> supported by default, however there might be some plugins allowing you to use it, such as <em>addHTML</em></p>
+
+				<p>十五向學,三十而立,四十而不惑,五十而知天命,六十而耳順,七十而從心欲，不踰矩.</p>
+
+				<h2>Need Help?</h2>
+
+				<p>Send me a <a href="http://twitter.com/MrRio">tweet</a> and I'll see if I can help :)</p>
+
+				<!-- ADD_PAGE -->
+				<h2>Credits</h2>
+
+				<p>Big thanks to Daniel Dotsenko from <a href="http://willow-systems.com">Willow Systems Corporation</a> for making huge contributions to the codebase. </p>
+
+				<p>Thanks to Ajaxian.com for <a href="http://ajaxian.com/archives/dynamically-generic-pdfs-with-javascript">featuring us back in 2009</a>.</p>
+
+				<p>Everyone else that's contributed patches or bug reports. You rock.</p>
+
+				<h2>License</h2>
+
+				<p>(MIT License)</p>
+
+				<p>Copyright (c) 2010-2016 James Hall, <a href="https://github.com/MrRio/jsPDF">https://github.com/MrRio/jsPDF</a></p>
+
+				<p>Permission is hereby granted, free of charge, to any person obtaining
+				a copy of this software and associated documentation files (the
+				"Software"), to deal in the Software without restriction, including
+				without limitation the rights to use, copy, modify, merge, publish,
+				distribute, sublicense, and/or sell copies of the Software, and to
+				permit persons to whom the Software is furnished to do so, subject to
+				the following conditions:</p>
+
+				<p>The above copyright notice and this permission notice shall be
+				included in all copies or substantial portions of the Software.</p>
+
+				<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+				EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+				MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+				NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+				LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+				OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+				WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+			</div>
+
+		</div> <!-- /container -->
     
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -286,7 +377,7 @@ export class ContentTestComponent {
 
         // All units are in the set measurement for the document
         // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-        doc.fromHTML($('#print').get(0), 15, 15, {
+        doc.fromHTML($('.container').get(0), 15, 15, {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
