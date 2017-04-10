@@ -322,7 +322,7 @@ totalbayar: number;
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
-//if(${this.subs.packlev} == "1"){
+//if(${this.subs('packlev')} == "1"){
         public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
 //}
 
