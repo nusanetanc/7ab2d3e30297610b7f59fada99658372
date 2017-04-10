@@ -353,17 +353,6 @@ export class ContentCreateInvoiceComponent implements OnInit {
     this.getSubs();
   }
 
-private date;
-
-constructor(@Attribute("format") format) {
- this.format = format;
- this.date =  new Date();
-
- setInterval(() => {
-     this.date =  new Date();
-  }, 1000);
-}
-
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
