@@ -202,7 +202,7 @@ import {Now} from './datetime'
 
                         </div>
                     </div>
-                    
+
                      <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
@@ -219,7 +219,7 @@ import {Now} from './datetime'
                             </div>
                         </div>
                      </div>
-                     
+
                      <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
@@ -227,22 +227,22 @@ import {Now} from './datetime'
                                     <form>
                                         <div class="input-group paddingR8">
                                             <span class="input-group-addon">
-                                                <input type="checkbox" (click)="onItemClickedSTB(STB)">
+                                                <input type="checkbox" (click)="onItemClickedSTB(STB)" [(ngModel)]="checkedSTB">
                                             </span>
-                                            <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                            <input disabled="true" [(ngModel)]="!checkedSTB selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                      </div>
-                     
+
                      <div class="row marginL5">
                         <div class="col-sm-6">
                             <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)" style="width: 98% !important;">
                         </div>
                      </div>
-                     
+
                      <div class="row marginL5 marginB20">
                         <div class="col-sm-6">
                             <div class="row">
@@ -259,7 +259,7 @@ import {Now} from './datetime'
                             </div>
                         </div>
                      </div>
-                    
+
                     <div class="row marginL5">
                         <div class="col-sm-6">
                             <p>Sub Total : {{totalharga}}</p>
@@ -271,14 +271,14 @@ import {Now} from './datetime'
                             </form>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" style="width: 98% !important;">
                         </div>
                     </div>
-                    
+
                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <p>Tax : {{tax}}</p>
@@ -287,7 +287,7 @@ import {Now} from './datetime'
                     </div>
 
                 </div>
-                
+
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12">
                         <!-- Small modal -->
