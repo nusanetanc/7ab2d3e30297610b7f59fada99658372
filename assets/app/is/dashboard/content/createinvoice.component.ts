@@ -332,7 +332,7 @@ lev = '1';
             this.getAllBill();
             this.getSubs();
           }
-    if(${this.lev} == "1"){
+    if(lev == "1"){
             public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
     }
 
