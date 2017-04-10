@@ -8,6 +8,7 @@ declare let jsPDF;
 @Component({
     selector: 'form-test',
     template: `
+    <button class="btn btn-primary" onclick="generatePDF()"><i class="fa fa-save"></i> Save as PDF</button>
     <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
@@ -247,7 +248,11 @@ export class ContentTestComponent {
     public print() {
 
 
-
+        var generatePDF = function() {
+            kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
+                kendo.drawing.pdf.saveAs(group, "Converted PDF.pdf");
+            });
+        }
 
 
         //var doc = new jsPDF();
