@@ -368,12 +368,16 @@ export class ContentTestComponent {
 
         var doc = new jsPDF();
 
+        var imgData = 'images/logo-groovy.png';
+
         // We'll make our own renderer to skip this editor
         var specialElementHandlers = {
             '#editor': function(element, renderer){
                 return true;
             }
         };
+
+        doc.addImage(imgData, 'JPEG', 15, 40, 180, 160)
 
         // All units are in the set measurement for the document
         // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
