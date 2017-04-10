@@ -38,11 +38,11 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
-                                                <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name" required>
-                                                <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone" required>
-                                                <input #subemail id="subemail" type="email" class="form-control inputForm" id="exampleInputEmail1" placeholder="Email" required>
+                                                <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required>
+                                                <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
+                                                <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
                                                 <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
-                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="National Identity Card Number" required>
+                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
                                                 
