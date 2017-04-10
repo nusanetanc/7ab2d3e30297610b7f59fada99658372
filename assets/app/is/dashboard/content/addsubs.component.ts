@@ -36,7 +36,7 @@ import {Streetname} from "./street_name";
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
-                                        <form class="paddingTB20 paddingR30">
+                                        <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
                                                 <input #subname id="subname" type="text" class="form-control inputForm" id="exampleInputName" placeholder="Full Name" required>
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" id="exampleInputHp" placeholder="Handphone" required>
@@ -49,7 +49,7 @@ import {Streetname} from "./street_name";
                                                 <!-- komen -->
                                                 
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
