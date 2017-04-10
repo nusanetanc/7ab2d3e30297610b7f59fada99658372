@@ -210,7 +210,7 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5" >
+                            <div class="row marginTB10 marginL5" *ngIf="subs.packprice != '1'" >
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Router Rent</span>
                                 </div>
