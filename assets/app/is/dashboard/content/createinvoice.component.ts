@@ -229,7 +229,7 @@ import {Now} from './datetime'
                                             <span class="input-group-addon">
                                                 <input type="checkbox" (click)="onItemClickedSTB(STB)" [(ngModel)]="checkedSTB">
                                             </span>
-                                            <input disabled="true" [(ngModel)]="!checkedSTB selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
+                                            <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
                                         </div>
                                     </form>
                                 </div>
