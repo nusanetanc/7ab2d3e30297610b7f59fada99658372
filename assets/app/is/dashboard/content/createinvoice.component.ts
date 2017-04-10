@@ -332,7 +332,7 @@ lev = '1';
             this.getAllBill();
             this.getSubs();
           }
-          if(this.paketlev ==! '1'){
+          if(this.API ==! 'http://202.162.207.164:3000'){
               public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
           }
 
