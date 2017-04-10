@@ -184,7 +184,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="today | date" type="date" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
+                                    <input [(ngModel)]="{{date | date:'dd MM yyyy'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -343,7 +343,12 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
-today: number = Date.now();
+  date: Date;
+
+  //date constructor
+  constructor() {
+    this.date = new Date();
+  }
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   paketlev = '1'
