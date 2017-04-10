@@ -36,7 +36,7 @@ declare let jsPDF;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div id="billing" class="row rowBillInfoContList">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -245,11 +245,20 @@ export class ContentTestComponent {
     public print() {
 
         var doc = new jsPDF();
-        doc.text(20, 20, 'Hello world!');
-        doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
 
-        doc.addPage();
-        doc.text(20, 20, 'Do you like that?');
+        // We'll make our own renderer to skip this editor
+        var specialElementHandlers = {
+            '#editor': function(element, renderer){
+                return true;
+            }
+        };
+
+        // All units are in the set measurement for the document
+        // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
+        doc.fromHTML($('#billing').get(0), 15, 15, {
+            'width': 170,
+            'elementHandlers': specialElementHandlers
+        });
 
         // Save the PDF
         doc.save('invoice.pdf');
