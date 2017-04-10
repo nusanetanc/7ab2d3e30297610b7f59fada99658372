@@ -251,7 +251,7 @@ export class ContentTestComponent {
         doc.text(20, 20, 'Do you like that?');
 
         // Save the PDF
-        doc.save('Test.pdf');
+        doc.save('invoice.pdf');
     }
 
 }
