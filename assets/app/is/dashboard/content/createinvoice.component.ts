@@ -270,17 +270,6 @@ import {Now} from './datetime'
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -291,6 +280,17 @@ import {Now} from './datetime'
                                       <option value="No">-- Select Promo --</option>
                                       <option *ngFor="#promo of listPromo">{{ promo.name }}</option>
                                   </select>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -352,9 +352,8 @@ routerrent: number;
 totalharga: number;
 tax: number;
 totalbayar: number;
-lev = '1';
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = 349000;
+        this.totalharga = 349000 + 40000;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
