@@ -184,7 +184,6 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                {{date | date:'dd MM yyyy'}}
                                     <input class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
@@ -344,12 +343,7 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
-  date: Date;
 
-  //date constructor
-  constructor() {
-    this.date = new Date();
-  }
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   paketlev = '1'
