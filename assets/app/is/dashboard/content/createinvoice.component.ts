@@ -235,25 +235,6 @@ import {Now} from './datetime'
                         </div>
                     </div>
 
-                    <div class="row marginL5">
-                        <div class="col-sm-6">
-                            <p>Sub Total : {{totalharga}}</p>
-
-                            <form class="paddingR8">
-                                <label *ngFor="#listPromo of listPromos" class="form-control inputForm subTotal">
-                                    <input (click)=" onItemClickedPromo(listPromo)" class="subTotalCek" type="radio" name="optradio">Promo {{ listPromo.name }}
-                                </label>
-                            </form>
-                        </div>
-                    </div>
-
-
-                    <div class="row marginL5 marginB10">
-                        <div class="col-sm-6">
-                            <input disabled="true" [(ngModel)]="selectedPromo.harga" type="text" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" style="width: 98% !important;">
-                        </div>
-                    </div>
-
                     <div class="row marginL5 marginB10">
                         <div class="col-sm-6">
                             <p>Tax : {{tax}}</p>
