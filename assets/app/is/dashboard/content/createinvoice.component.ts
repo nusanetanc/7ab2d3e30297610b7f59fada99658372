@@ -331,9 +331,9 @@ totalbayar: number;
             this.getAllBill();
             this.getSubs();
           }
-          if(${this.paketlev} == "1"){
+          //if(${this.paketlev} == "1"){
                   public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-          }
+          //}
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
