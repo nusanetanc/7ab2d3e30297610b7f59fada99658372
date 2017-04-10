@@ -311,6 +311,7 @@ routerrent: number;
 totalharga: number;
 tax: number;
 totalbayar: number;
+lev = '1';
       constructor(private http: Http, private _routeParams: RouteParams) {
         this.totalharga = 349000;
         this.tax = this.totalharga * 0.1;
@@ -330,11 +331,10 @@ totalbayar: number;
           ngOnInit() {
             this.getAllBill();
             this.getSubs();
-            this.lev = '1';
           }
-          if(${this.lev} == "1"){
-                  public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-          }
+    if(${this.lev} == "1"){
+            public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
+    }
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
