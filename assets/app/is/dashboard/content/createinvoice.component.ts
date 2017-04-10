@@ -311,6 +311,7 @@ routerrent: number;
 totalharga: number;
 tax: number;
 totalbayar: number;
+paketlev: string;
       constructor(private http: Http, private _routeParams: RouteParams) {
         this.totalharga = 349000;
         this.tax = this.totalharga * 0.1;
@@ -325,13 +326,13 @@ totalbayar: number;
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
-
+          paketlev = '1'
           // Angular 2 Life Cycle event when component has been initialized
           ngOnInit() {
             this.getAllBill();
             this.getSubs();
           }
-          if(${this.packlev} == "1"){
+          if(${this.paketlev} == "1"){
                   public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
           }
 
@@ -370,7 +371,6 @@ totalbayar: number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.packlev = sub.packlev
     })
     }
 }
