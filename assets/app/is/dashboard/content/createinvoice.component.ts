@@ -199,66 +199,41 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
                                 </div>
                             </div>
-
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Router Rent</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>STB Rent</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Instalation</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="75000" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                     <div class="row marginL5 marginB20">
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <form>
-                                        <div class="input-group paddingR8">
-                                            <span class="input-group-addon">
-                                                <input type="checkbox" #routercheck id="routercheck" (click)="onItemClickedRouter(Router)">
-                                            </span>
-                                            <input disabled="true" [(ngModel)]="selectedRouter.harga" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee"/>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-
-                     <div class="row marginL5 marginB20">
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <form>
-                                        <div class="input-group paddingR8">
-                                            <span class="input-group-addon">
-                                                <input type="checkbox" (click)="onItemClickedSTB(STB)" [(ngModel)]="checkedSTB" value="1">
-                                            </span>
-                                            <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-
-                     <div class="row marginL5">
-                        <div class="col-sm-6">
-                            <input type="number" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" (keyup)="onKey($event)" style="width: 98% !important;">
-                        </div>
-                     </div>
-
-                     <div class="row marginL5 marginB20">
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <form>
-                                        <div class="input-group paddingR8">
-                                            <span class="input-group-addon">
-                                                <input type="checkbox" (click)="onItemClickedIns(Ins)">
-                                            </span>
-                                            <input disabled="true" [(ngModel)]="selectedIns.harga" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
 
                     <div class="row marginL5">
                         <div class="col-sm-6">
@@ -319,46 +294,6 @@ totalbayar: number;
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
-          public listPromos = [
-              {name:"Gratis Instalasi", harga:9000},
-              {name:"Groovy Play", harga:10000}
-           ];
-           public selectedPromo = {harga: 0};
-
-           onItemClickedPromo(listPromo){
-              this.selectedPromo=listPromo;
-              this.totalharga = this.totalharga - this.selectedPromo.harga;
-
-              this.tax = this.totalharga * 0.1;
-              this.totalbayar = this.totalharga + this.tax;
-           }
-           public selectedRouter = {harga: ''};
-           public selectedSTB = {harga: ''};
-           public selectedIns = {harga: ''};
-
- onItemClickedRouter(Router){
- if (routercheck.value = "1"){
-   this.selectedRouter={harga:"40000"};
-   this.totalharga = this.totalharga + 40000
-   this.tax = this.totalharga * 0.1;
-   this.totalbayar = this.totalharga + this.tax;
-   }
- }
- onItemClickedSTB(STB){
- if (checkedSTB.value == "1"){
-     this.selectedSTB={harga:"45000"};
-     this.totalharga = this.totalharga + 45000
-     this.tax = this.totalharga * 0.1;
-     this.totalbayar = this.totalharga + this.tax;
- }
-
- }
- onItemClickedIns(Ins){
-    this.selectedIns={harga:"75000"};
-    this.totalharga = this.totalharga + 75000
-    this.tax = this.totalharga * 0.1;
-    this.totalbayar = this.totalharga + this.tax;
- }
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
