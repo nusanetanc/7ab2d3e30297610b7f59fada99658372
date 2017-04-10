@@ -233,6 +233,37 @@ declare let jsPDF;
             </div>
         </div>
     <!-- Page content -->
+    
+    
+    
+    
+    <!-- Add your site or application content here -->
+    <div id="print" style="border: 1px solid #000; padding: 20px 20px;">
+    
+        <!-- Head -->
+    
+            <div class="head" style="border: 1px solid yellow;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
+                <div class="logo" style="border: 1px solid green;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
+                    <img src="logo.png" width="50%">
+                </div>
+                <div class="about" style="border: 1px solid red;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:45%;">
+                    <span style="float: right;">cs@groovy.id &nbsp; www.groovy.id</span><br>
+                    <span style="float: right;">Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</span>
+                </div>
+            </div>
+    
+        <!-- /Head -->
+    
+        <!-- Content -->
+            <div class="content" style="border: 1px solid burlywood;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
+                <div class="title" style="border: 1px solid gray;position:relative;min-height:1px;padding-right:15px;padding-left:15px;float:left;width:100%;">
+                    <h4>INFORMASI TAGIHAN</h4>
+                </div>
+            </div>
+        <!-- /Content -->
+    
+    </div>
+    
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -255,7 +286,7 @@ export class ContentTestComponent {
 
         // All units are in the set measurement for the document
         // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-        doc.fromHTML($('#billing').get(0), 15, 15, {
+        doc.fromHTML($('#print').get(0), 15, 15, {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
