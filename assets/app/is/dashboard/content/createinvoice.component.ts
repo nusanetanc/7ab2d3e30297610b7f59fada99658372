@@ -113,7 +113,7 @@ import { Sub } from './subs';
                                     <span>Current Package</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
-                                    <span>: {{test | date: 'dd/MM/yyyy'}}</span>
+                                    <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>Level {{ subs.packlev }}</span>
@@ -184,7 +184,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
+                                    <input [(ngModel)]={{test | date: 'dd/MM/yyyy'}} class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
