@@ -184,7 +184,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{date | date: format}}</span>
+                                    <span (updateTime)="updateMyTime()">{{date | date: format}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -195,7 +195,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{date | date: format}}</span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
