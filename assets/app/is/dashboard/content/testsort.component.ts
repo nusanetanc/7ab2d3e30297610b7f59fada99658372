@@ -8,7 +8,6 @@ declare let jsPDF;
 @Component({
     selector: 'form-test',
     template: `
-    <button class="btn btn-primary" onclick="generatePDF()"><i class="fa fa-save"></i> Save as PDF</button>
     <!-- Page content -->
         <div id="page-content-wrapper">
             <div class="content-header">
@@ -29,6 +28,7 @@ declare let jsPDF;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
+                                <button class="btn btn-primary" onclick="generatePDF()"><i class="fa fa-save"></i> Save as PDF</button>
                                 <button (click)="print()" class="btn btn-default billInfoPrint" type="button">
                                     PRINT
                                 </button>
