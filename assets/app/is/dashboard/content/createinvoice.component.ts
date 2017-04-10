@@ -210,6 +210,17 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Prorate Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
+                                </div>
+                            </div>
                             <div class="row marginTB10 marginL5" >
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Router Rent</span>
@@ -231,17 +242,6 @@ import {Now} from './datetime'
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
                                     <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Prorate Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -287,7 +287,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="totalharga"  type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total"/>
+                                    <input [(ngModel)]="totalharga"  type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -298,7 +298,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax"/>
+                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -309,7 +309,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total"/>
+                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" disabled/>
                                 </div>
                             </div>
                         </div>
