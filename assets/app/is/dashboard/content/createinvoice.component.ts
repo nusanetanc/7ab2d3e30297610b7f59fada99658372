@@ -184,7 +184,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span></span>
+                                    <input type="date" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -195,7 +195,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span></span>
+                                    <input type="date" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
