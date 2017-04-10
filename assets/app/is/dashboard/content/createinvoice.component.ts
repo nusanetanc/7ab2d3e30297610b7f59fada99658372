@@ -207,7 +207,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
+                                    <input[(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -218,7 +218,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargastb" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent"/>
+                                    <input [(ngModel)]="prices.hargastb" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -229,7 +229,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargarouter" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent"/>
+                                    <input [(ngModel)]="prices.hargarouter" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -240,7 +240,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargains" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price"/>
+                                    <input [(ngModel)]="prices.hargains" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -322,9 +322,9 @@ totalbayar: number;
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
-  //if(subs.packlev == "1"){
+if(this.subs.packlev == "1"){
         public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-  //}
+}
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
