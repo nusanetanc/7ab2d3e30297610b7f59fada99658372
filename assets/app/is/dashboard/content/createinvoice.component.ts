@@ -321,14 +321,14 @@ totalbayar: number;
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
-  if(subs.packlev == "1"){
+  //if(subs.packlev == "1"){
         public Item = [
                    {hargastb: "40000"},
                    {name: "Milk"},
                    {name: "Yogurt"},
                    {name: "Cheese"},
                 ];
-  }
+  //}
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
