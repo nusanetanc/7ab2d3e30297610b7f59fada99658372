@@ -218,10 +218,10 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargastb" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
+                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5"  *ngIf="subs.packprice == '4' || subs.packprice == '5' || subs.packprice == '6'">
+                            <div class="row marginTB10 marginL5" >
                                 <div class="col-xs-6 col-sm-4">
                                     <span>STB Rent</span>
                                 </div>
@@ -229,7 +229,8 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargarouter" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
+                                    <input *ngIf="subs.packprice == '4' || subs.packprice == '5' || subs.packprice == '6'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
+                                    <input *ngIf="subs.packprice == '1' || subs.packprice == '2' || subs.packprice == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -240,7 +241,8 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="prices.hargains" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,9 +334,6 @@ lev = '1';
             this.getAllBill();
             this.getSubs();
           }
-         //if(${this.API} = "http://202.162.207.164:3000"){
-              public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-          //}
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
