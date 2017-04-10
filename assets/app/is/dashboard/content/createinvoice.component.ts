@@ -227,7 +227,7 @@ import {Now} from './datetime'
                                     <form>
                                         <div class="input-group paddingR8">
                                             <span class="input-group-addon">
-                                                <input type="checkbox" (click)="onItemClickedSTB(STB)" [(ngModel)]="checkedSTB">
+                                                <input type="checkbox" (click)="onItemClickedSTB(STB)" [(ngModel)]="checkedSTB" value="1">
                                             </span>
                                             <input disabled="true" [(ngModel)]="selectedSTB.harga" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee">
                                         </div>
@@ -345,10 +345,13 @@ totalbayar: number;
    }
  }
  onItemClickedSTB(STB){
-    this.selectedSTB={harga:"45000"};
-    this.totalharga = this.totalharga + 45000
-    this.tax = this.totalharga * 0.1;
-    this.totalbayar = this.totalharga + this.tax;
+ if (checkedSTB.value == "1"){
+     this.selectedSTB={harga:"45000"};
+     this.totalharga = this.totalharga + 45000
+     this.tax = this.totalharga * 0.1;
+     this.totalbayar = this.totalharga + this.tax;
+ }
+
  }
  onItemClickedIns(Ins){
     this.selectedIns={harga:"75000"};
