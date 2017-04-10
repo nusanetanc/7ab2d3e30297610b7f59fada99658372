@@ -29,7 +29,7 @@ declare let jsPDF;
                                     BACK
                                 </a>
                                 <button class="btn btn-primary" onclick="generatePDF()"><i class="fa fa-save"></i> Save as PDF</button>
-                                <button (click)="print()" class="btn btn-default billInfoPrint" type="button">
+                                <button (click)="generatePDF()" class="btn btn-default billInfoPrint" type="button">
                                     PRINT
                                 </button>
                             </div>
