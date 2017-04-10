@@ -345,6 +345,15 @@ import {Now} from './datetime'
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+  paketlev = '1'
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+    this.getAllBill();
+    this.getSubs();
+  }
+
 private date;
 
 constructor(@Attribute("format") format) {
@@ -380,14 +389,6 @@ totalbayar: number;
       {name:"Potongan 100 Ribu", harga:100000}
    ];
 
-        // Link to our api, pointing to localhost
-          API = 'http://202.162.207.164:3000';
-          paketlev = '1'
-          // Angular 2 Life Cycle event when component has been initialized
-          ngOnInit() {
-            this.getAllBill();
-            this.getSubs();
-          }
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
