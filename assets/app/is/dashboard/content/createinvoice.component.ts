@@ -4,7 +4,6 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
-import {Now} from './datetime'
 
 @Component({
     selector: 'form-crateinvoice',
@@ -341,7 +340,7 @@ import {Now} from './datetime'
     </div>
     <!-- END CONTENT -->
     `,
-    directives: [ROUTER_DIRECTIVES, Now],
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 
