@@ -207,7 +207,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input[(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
