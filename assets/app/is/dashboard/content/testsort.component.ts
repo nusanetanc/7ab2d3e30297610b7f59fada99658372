@@ -368,7 +368,7 @@ export class ContentTestComponent {
 
         var doc = new jsPDF();
 
-        var imgData = 'images/logo-groovy.png';
+        var imgData = 'data:images/logo-groovy.png';
 
         // We'll make our own renderer to skip this editor
         var specialElementHandlers = {
