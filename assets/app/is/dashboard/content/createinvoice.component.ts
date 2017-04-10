@@ -185,7 +185,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span><now format="'yyyy:MM:dd'"></now></span>
+                                    <span>{{date | date: format}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -196,7 +196,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>20/06/2017</span>
+                                    <span>{{date | date: format}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -344,6 +344,18 @@ import {Now} from './datetime'
     directives: [ROUTER_DIRECTIVES, Now],
 })
 export class ContentCreateInvoiceComponent implements OnInit {
+
+private date;
+
+constructor(@Attribute("format") format) {
+ this.format = format;
+ this.date =  new Date();
+
+ setInterval(() => {
+     this.date =  new Date();
+  }, 1000);
+}
+
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
