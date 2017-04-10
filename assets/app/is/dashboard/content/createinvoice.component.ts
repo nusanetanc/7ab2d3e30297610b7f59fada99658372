@@ -218,7 +218,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="Item.hargastb"" hargastb routerrent type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent"/>
+                                    <input [(ngModel)]="Item.hargastb" hargastb routerrent type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -229,7 +229,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent"/>
+                                    <input [(ngModel)]="Item.hargarouter" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -240,7 +240,7 @@ import {Now} from './datetime'
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="75000" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price"/>
+                                    <input [(ngModel)]="Item.hargains" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -323,10 +323,7 @@ totalbayar: number;
   }
   //if(subs.packlev == "1"){
         public Item = [
-                   {hargastb: "40000"},
-                   {name: "Milk"},
-                   {name: "Yogurt"},
-                   {name: "Cheese"},
+                   {hargastb: 45000, hargarouter: 40000, hargains: 40000},
                 ];
   //}
 
