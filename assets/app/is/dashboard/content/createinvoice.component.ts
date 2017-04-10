@@ -322,9 +322,6 @@ totalbayar: number;
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
-//if(${this.subs('packlev')} == "1"){
-        public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
-//}
 
         // Link to our api, pointing to localhost
           API = 'http://202.162.207.164:3000';
@@ -334,7 +331,9 @@ totalbayar: number;
             this.getAllBill();
             this.getSubs();
           }
-
+          if(${this.packlev} == "1"){
+                  public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
+          }
 
 // Add one person to the API
   createInvoice(billingdate, billingduedate, subsid, namepackage, packageprice, routerprice, stbprice, cablej45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
@@ -371,6 +370,7 @@ totalbayar: number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
+      this.packlev = sub.packlev
     })
     }
 }
