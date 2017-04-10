@@ -323,9 +323,7 @@ totalbayar: number;
     this.totalbayar = this.totalharga + this.tax;
   }
   //if(subs.packlev == "1"){
-        public prices = [
-                   {hargastb: 45000, hargarouter: 40000, hargains: 40000},
-                ];
+        public prices = {hargastb: 45000, hargarouter: 40000, hargains: 40000};
   //}
 
         // Link to our api, pointing to localhost
