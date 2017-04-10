@@ -153,6 +153,17 @@ import {Now} from './datetime'
                                     <span>{{ subs.nova }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.promo }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,7 +210,7 @@ import {Now} from './datetime'
                                     <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price"/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5">
+                            <div class="row marginTB10 marginL5" >
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Router Rent</span>
                                 </div>
@@ -230,6 +241,28 @@ import {Now} from './datetime'
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input value="75000" type="number" class="form-control inputForm" #insprice id="insprice" placeholder="Instalation Price"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Cable/Rj45</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value="0" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price"/>
                                 </div>
                             </div>
                         </div>
