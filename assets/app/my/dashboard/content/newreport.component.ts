@@ -57,7 +57,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div>{{ problem.desc }}</div>
+                                         <div>{{ inputsubcategory.value }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -94,6 +94,7 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
+    this.selectedProblem = category;
   }
 
 // Link to our api, pointing to localhost
