@@ -429,11 +429,11 @@ total:number;
       }
       this.tax = this.totalharga * 0.1;
       this.totalbayar = this.totalharga + this.tax;
-      onKey(event:KeyboardEvent) {
-      this.totalharga = (event.target).value + this.totalharga;
-      this.tax = this.totalharga * 0.1;
-      this.totalbayar = this.totalharga + this.tax;
-    }
     })
+    }
+    onKey(event:KeyboardEvent) {
+    this.totalharga = (event.target).value + this.totalharga;
+    this.tax = this.totalharga * 0.1;
+    this.totalbayar = this.totalharga + this.tax;
     }
 }
