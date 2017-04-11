@@ -427,10 +427,10 @@ total:number;
       if(subs['status'] =! 'registrasi'){
         this.totalharga = this.totalharga + 75000;
       }
-      this.tax = this.totalharga * 0.1;
-      this.totalbayar = this.totalharga + this.tax;
     })
     }
+    this.tax = this.totalharga * 0.1;
+    this.totalbayar = this.totalharga + this.tax;
     onKey(event:KeyboardEvent) {
     this.totalharga = parseInt((event.target).value) + this.totalharga;
     this.tax = this.totalharga * 0.1;
