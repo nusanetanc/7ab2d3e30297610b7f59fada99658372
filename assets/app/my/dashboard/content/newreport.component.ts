@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select [(ngModel)]="selectedSubCategory._id" #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
+                                    <select [(ngModel)]="selectedSubCategory._id" #inputsubcategory id="inputsubcategory" name="inputsubcategory">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" value = "{{ problem.desc }}" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -68,7 +68,7 @@ import { Problem } from './problem';
                                         <i class="material-icons">info</i>
                                     </div>
                                     <div class="col-sm-11" >
-                                        {{ inputsubcategory.value }}
+                                        {{ problem.desc }}
                                     </div>
                                 </div>
                             </div>
@@ -107,6 +107,7 @@ export class ContentNewReportComponent implements OnInit {
 
   ngOnInit() {
     this.getAllComplaint();
+    this.getProblem();
   }
 
   getAllComplaint() {
@@ -123,7 +124,8 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-  getDescProblem(inputsubcategory) {
+
+  /*getDescProblem(inputsubcategory) {
   var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -135,5 +137,5 @@ export class ContentNewReportComponent implements OnInit {
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
-  }
+  }*/
 }
