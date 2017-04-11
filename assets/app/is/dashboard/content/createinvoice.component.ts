@@ -279,6 +279,7 @@ import { Sub } from './subs';
                                     <input (keyup)="onKey($event)" *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
+                            {{val}}
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
@@ -429,6 +430,9 @@ total:number;
       }
       this.tax = this.totalharga * 0.1;
       this.totalbayar = this.totalharga + this.tax;
+      onKey(event:KeyboardEvent) {
+        this.val += (event.target).value + ' | ';
+      }
     })
     }
 }
