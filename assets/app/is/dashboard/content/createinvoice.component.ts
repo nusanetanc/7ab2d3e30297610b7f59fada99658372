@@ -347,7 +347,7 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
-    <!-- END CONTENT -->
+    <!-- END CONTENT   -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
