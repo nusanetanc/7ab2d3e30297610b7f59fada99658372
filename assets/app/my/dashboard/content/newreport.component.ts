@@ -31,7 +31,7 @@ import { Problem } from './problem';
                                 <form>
                                     <select name="problemCatagory">
                                         <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
-                                        <option *ngFor="#problem of problems" value="{{problem.desc}}">{{problem.category}}</option>
+                                        <option *ngFor="#problem of problems" value="{{problem.desc}}">{{problem._id}}</option>
                                     </select><br/>
                                 </form>
                                 <form>
