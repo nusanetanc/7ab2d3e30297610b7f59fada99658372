@@ -94,7 +94,6 @@ export class ContentNewReportComponent implements OnInit {
 
   ngOnInit() {
     this.getAllComplaint();
-      this.getProblem();
   }
 
   getAllComplaint() {
