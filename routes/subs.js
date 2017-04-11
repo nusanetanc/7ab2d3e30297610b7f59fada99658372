@@ -75,7 +75,7 @@ Sub.findById(req.params.id, function(err, subs) {
               regisby: subs.regisby,
               regisref: subs.regisref,
               activedate: subs.activedate,
-              promo: subs.promo
+              promo: subs.promo,
               groovyid: homes.groovyid,
               address: homes.address,
               nohome: homes.nohome,
