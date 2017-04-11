@@ -341,6 +341,7 @@ import { Sub } from './subs';
                     <div class="col-sm-12">
                         <!-- Small modal -->
                         <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
+                        {{total}}
                     </div>
                 </div>
             </div>
@@ -375,7 +376,7 @@ totalbayar: number;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
-
+total = this.subs.packprice[0];
   public listPromo = [
       {name:"Potongan 100 Ribu", harga:100000}
    ];
@@ -411,6 +412,7 @@ totalbayar: number;
         this.bills = bills
       })
   }
+
   getSubs() {
   this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
     .map(res => res.json())
