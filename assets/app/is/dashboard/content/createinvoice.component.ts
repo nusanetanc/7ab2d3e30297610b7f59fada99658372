@@ -1,6 +1,7 @@
 import {Component, OnInit, Attribute} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
+import {MomentModule} from 'angular2-moment';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
@@ -195,7 +196,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{dueday | date: 'dd/MM/yyyy'}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{nextDay}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -344,7 +345,6 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
-dueday : Date = new Date();
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -353,6 +353,8 @@ dueday : Date = new Date();
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
+    this.nextDay = new Date();
+    nextDay.setDate(nextDay.getDate() + 1);
   }
 
 // Declare empty list of people
