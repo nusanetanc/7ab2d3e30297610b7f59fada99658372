@@ -38,9 +38,9 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
+                                    <select [(ngModel)]="selectedProblem._id"  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
                                         <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
-                                        <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
+                                        <option *ngFor="#problem of problems" value = "{{ problem.desc }}" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
@@ -57,7 +57,6 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div>{{ inputsubcategory.value }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +82,7 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
-  selectedProblem: Problem;
+  selectedProblem: Problem = new Problem(0, 'dummy');
 
   onSelectCategory(category) {
     console.log(category);
@@ -94,7 +93,6 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
-    this.selectedProblem = category;
   }
 
 // Link to our api, pointing to localhost
