@@ -292,7 +292,7 @@ import { Sub } from './subs';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Price1</span>
+                                    <span>Promo Price</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
