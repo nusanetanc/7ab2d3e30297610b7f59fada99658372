@@ -195,7 +195,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="date" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{dueday | date: 'dd/MM/yyyy'}}" type="date" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
