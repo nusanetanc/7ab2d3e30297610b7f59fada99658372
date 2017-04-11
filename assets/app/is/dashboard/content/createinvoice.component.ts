@@ -376,7 +376,7 @@ totalbayar: number;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
-total = this.subs.packprice[0];
+total = this.subs['packprice'];
   public listPromo = [
       {name:"Potongan 100 Ribu", harga:100000}
    ];
