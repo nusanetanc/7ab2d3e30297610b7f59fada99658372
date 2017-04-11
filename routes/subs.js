@@ -67,7 +67,7 @@ Sub.findById(req.params.id, function(err, subs) {
               packprice: subs.packprice,
               phone: subs.phone,
               status: subs.status,
-              datebrith: subs.datebrith,
+              datebirth: subs.datebirth,
               idnumber: subs.idnumber,
               subid: subs.subid,
               dateinst: subs.dateinst,
