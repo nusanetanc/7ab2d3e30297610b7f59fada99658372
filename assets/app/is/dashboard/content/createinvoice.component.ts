@@ -276,7 +276,7 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price" disabled/>
+                                    <input (keyup)="onKey($event)" *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -424,8 +424,11 @@ total:number;
           this.total = subs['packprice'];
           this.totalharga = this.total + 40000 + 45000;
       }
-      if(subs['status'] == 'registrasi'){
+      if(subs['status'] =! 'registrasi'){
         this.totalharga = this.totalharga + 75000;
+          onKey(event:KeyboardEvent) {
+          this.totalharga = (event.target).value + this.totalharga;
+        }
       }
       this.tax = this.totalharga * 0.1;
       this.totalbayar = this.totalharga + this.tax;
