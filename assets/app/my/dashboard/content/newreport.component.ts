@@ -62,7 +62,7 @@ import { Problem } from './problem';
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="inputsubcategory" class="col-sm-6">
+                        <div *ngIf="onSelectCategory" class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
