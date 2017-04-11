@@ -62,15 +62,14 @@ import { Problem } from './problem';
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="problem.subcategory !== null" class="col-sm-6">
+                        <div *ngIf="inputsubcategory" class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
                                     <div class="col-sm-11" >
-                                        Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div>{{ inputsubcategory.value }}</div>
+                                        {{ inputsubcategory.value }}
                                     </div>
                                 </div>
                             </div>
