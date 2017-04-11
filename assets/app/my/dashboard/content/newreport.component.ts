@@ -31,7 +31,10 @@ import { Problem } from './problem';
                                 <form>
                                     <select name="problemCatagory">
                                         <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
-                                        <option *ngFor="#problem of problems" value="{{problem.desc}}">{{problem.category}}</option>
+                                        <option value="volvo">Internet Problem</option>
+                                        <option value="saab">TV Problem</option>
+                                        <option value="fiat">Billing Problem</option>
+                                        <option value="fiat">Account Problem</option>
                                     </select><br/>
                                 </form>
                                 <form>
@@ -71,6 +74,7 @@ export class ContentNewReportComponent implements OnInit {
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+  Session_ID = '58b3cdac45912d052e2c85a5';
 
   complaints: any[] = [];
   problems: any[] = [];
@@ -96,8 +100,7 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-
-  /*getDescProblem(inputsubcategory) {
+  getDescProblem(inputsubcategory) {
   var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -109,5 +112,5 @@ export class ContentNewReportComponent implements OnInit {
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
-  }*/
+  }
 }
