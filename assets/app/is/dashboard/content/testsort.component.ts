@@ -30,7 +30,7 @@ declare let kendo;
                                     BACK
                                 </a>
                                 
-                                <button onclick="print()" class="btn btn-default billInfoPrint" type="button">
+                                <button onclick="test()" class="btn btn-default billInfoPrint" type="button">
                                     PRINT
                                 </button>
                             </div>
@@ -246,15 +246,15 @@ export class ContentTestComponent {
     constructor() {
     }
 
+
+    var test = function() {
+    kendo.drawing.drawDOM($("#billing")).then(function(group) {
+        kendo.drawing.pdf.saveAs(group, "Converted PDF.pdf");
+    });
+    }
+
+
     public print() {
-
-
-        var print = function() {
-            kendo.drawing.drawDOM($("#billing")).then(function(group) {
-                kendo.drawing.pdf.saveAs(group, "Converted PDF.pdf");
-            });
-        }
-
 
         //var doc = new jsPDF();
 
