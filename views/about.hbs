@@ -46,7 +46,7 @@
 </nav>
 <div class="wall-about jumbotron" style="background-color:#e2e2e2;">
 
-    <button onclick="print()" class="btn btn-default billInfoPrint" type="button">
+    <button onclick="print()" class="btn btn-default" type="button">
         PRINT
     </button>
 
@@ -147,8 +147,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script>
-    var print = function() {
-        kendo.drawing.drawDOM($('body')).then(function(group) {
+    var print = newPDF;
+
+    newPDF = function() {
+        kendo.drawing.drawDOM($('.wall-about-content')).then(function(group) {
             kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
         });
     }
