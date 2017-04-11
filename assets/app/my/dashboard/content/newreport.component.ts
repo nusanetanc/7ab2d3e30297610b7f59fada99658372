@@ -30,7 +30,7 @@ import { Problem } from './problem';
                             <div class="formNewReport marginLR20">
                                 <form>
                                     <select [(ngModel)]="selectedCategory._id" (change)="onSelectCategory($event.target.value)">
-                                        <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
+                                        <option value="0" class="option" disabled="true" selected="true">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
                                         <option value="Billing Problem">Billing Problem</option>
