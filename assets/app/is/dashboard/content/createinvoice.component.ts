@@ -196,7 +196,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{myDate | amCalendar:nextDay }}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{dueday | date: 'dd/MM/yyyy'}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -345,7 +345,7 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
-nextDay: Date;
+dueday : Date = new Date();
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -354,8 +354,6 @@ nextDay: Date;
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
-    this.nextDay = new Date();
-    nextDay.setDate(nextDay.getDate() + 1);
   }
 
 // Declare empty list of people
