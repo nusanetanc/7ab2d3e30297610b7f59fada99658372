@@ -347,6 +347,10 @@ export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
 dueday : Date = new Date();
 
+tomorrow: Date = new Date();
+tomorrow.setDate(today.getDate()+1);
+console.log(tomorrow.getDate());
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   paketlev = '1'
