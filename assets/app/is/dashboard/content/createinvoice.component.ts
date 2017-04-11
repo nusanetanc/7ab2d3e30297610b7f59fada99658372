@@ -218,7 +218,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input (keyup)="onKey($event)" value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
+                                    <input value="0" type="number" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -367,12 +367,6 @@ totalbayar: number;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
-  onKey(event:KeyboardEvent) {
-    this.val = (event.target).value;
-    this.totalharga = this.totalharga + parseInt(this.val);
-    this.tax = this.totalharga * 0.1;
-    this.totalbayar = this.totalharga + this.tax;
-  }
 
   public listPromo = [
       {name:"Potongan 100 Ribu", harga:100000}
