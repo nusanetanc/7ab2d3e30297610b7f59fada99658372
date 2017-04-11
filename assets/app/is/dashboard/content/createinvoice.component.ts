@@ -430,9 +430,9 @@ total:number;
       }
       this.tax = this.totalharga * 0.1;
       this.totalbayar = this.totalharga + this.tax;
-      onKey(event:KeyboardEvent) {
-        this.val += (event.target).value + ' | ';
-      }
     })
     }
+    onKey(event:KeyboardEvent) {
+    this.val += (event.target).value + ' | ';
+  }
 }
