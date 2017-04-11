@@ -93,7 +93,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
+                                    <span>{{ subs.datebirth }}</span>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
+                                    <span>{{ subs.activedate }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
