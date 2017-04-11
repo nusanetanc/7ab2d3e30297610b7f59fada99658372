@@ -29,12 +29,12 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select name="problemCatagory">
+                                    <select (change)="onSelectCategory($event.target.value)">
                                         <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
-                                        <option value="volvo">Internet Problem</option>
-                                        <option value="saab">TV Problem</option>
-                                        <option value="fiat">Billing Problem</option>
-                                        <option value="fiat">Account Problem</option>
+                                        <option value="Internet Problem">Internet Problem</option>
+                                        <option value="TV Problem">TV Problem</option>
+                                        <option value="Billing Problem">Billing Problem</option>
+                                        <option value="Account Problem">Account Problem</option>
                                     </select><br/>
                                 </form>
                                 <form>
@@ -72,6 +72,16 @@ import { Problem } from './problem';
 })
 export class ContentNewReportComponent implements OnInit {
 
+  onSelectCategory(category) {
+    this.problems = this.getProblem() {
+      this.http.get(`${this.API}/problem/category/${category}`)
+          .map(res => res.json())
+          .subscribe(problems => {
+            this.problems = problems
+          })
+    }
+  }
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
   Session_ID = '58b3cdac45912d052e2c85a5';
@@ -94,7 +104,7 @@ export class ContentNewReportComponent implements OnInit {
       })
   }
   getProblem() {
-    this.http.get(`${this.API}/problem/listproblem`)
+    this.http.get(`${this.API}/problem/category/${this.category}`)
       .map(res => res.json())
       .subscribe(problems => {
         this.problems = problems
