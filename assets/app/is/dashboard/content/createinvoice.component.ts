@@ -329,7 +329,7 @@ import { Sub } from './subs';
                         </div>
                     </div>
                 </div>
-
+                {{tomorrow.getDate()}}
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12">
                         <!-- Small modal -->
