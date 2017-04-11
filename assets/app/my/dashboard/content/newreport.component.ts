@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select [(ngModel)]="selectedSubCategory._id" #inputsubcategory id="inputsubcategory" name="inputsubcategory">
+                                    <select [(ngModel)]="selectedSubCategory._id" #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" value = "{{ problem.desc }}" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -61,7 +61,7 @@ import { Problem } from './problem';
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="selectedProblem" class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
@@ -125,7 +125,7 @@ export class ContentNewReportComponent implements OnInit {
       })
   }
 
-  /*getDescProblem(inputsubcategory) {
+  getDescProblem(inputsubcategory) {
   var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -137,5 +137,5 @@ export class ContentNewReportComponent implements OnInit {
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
-  }*/
+  }
 }
