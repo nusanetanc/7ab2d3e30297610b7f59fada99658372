@@ -104,7 +104,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                                                 <option value="0">-- Select your city --</option>
-                                                <option *ngFor="#problem of problems" value="{{problem.desc}}">{{problem.category}}</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
@@ -230,7 +230,6 @@ export class ContentAddSubsComponent implements OnInit {
     homes: any[] = [];
     packages: any[] = [];
     streetnames: any[] = [];
-    problems: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -239,7 +238,6 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllSub();
         this.getAllCity();
         this.getAllPackage();
-        this.getProblem();
     }
 
 
@@ -329,14 +327,6 @@ export class ContentAddSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(blokfloors => {
                 this.blokfloors = blokfloors
-            })
-    }
-
-    getProblem() {
-        this.http.get(`${this.API}/problem/listproblem`)
-            .map(res => res.json())
-            .subscribe(problems => {
-                this.problems = problems
             })
     }
 }
