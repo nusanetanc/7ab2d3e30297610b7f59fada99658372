@@ -196,7 +196,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{dueday | date: 'dd/MM/yyyy'}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{today.getDate()+3}}{{today | date: '/MM/yyyy'}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -329,7 +329,6 @@ import { Sub } from './subs';
                         </div>
                     </div>
                 </div>
-                {{tomorrow.getDate()+20}}
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12">
                         <!-- Small modal -->
@@ -345,11 +344,6 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
-dueday : Date = new Date();
-
-tomorrow: Date = new Date();
-tomorrow.setDate(today.getDate()+1);
-console.log(tomorrow.getDate());
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
