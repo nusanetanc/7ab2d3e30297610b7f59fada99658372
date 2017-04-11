@@ -419,16 +419,13 @@ total:number;
       if(subs['packlev'] == '1' || subs['packlev'] == '2' || subs['packlev'] == '3'){
           this.total = subs['packprice'];
           this.totalharga = this.total + 40000;
-          this.tax = this.totalharga * 0.1;
-          this.totalbayar = this.totalharga + this.tax;
       }
-      this.totalbayar = this.totalbayar + this.totalbayar;
       if(subs['packlev'] == '4' || subs['packlev'] == '5' || subs['packlev'] == '6'){
           this.total = subs['packprice'];
           this.totalharga = this.total + 40000 + 45000;
-          this.tax = this.totalharga * 0.1;
-          this.totalbayar = this.totalharga + this.tax;
       }
+      this.tax = this.totalharga * 0.1;
+      this.totalbayar = this.totalharga + this.tax;
     })
     }
 }
