@@ -341,12 +341,13 @@ import { Sub } from './subs';
                     <div class="col-sm-12">
                         <!-- Small modal -->
                         <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, subsid.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablej45price.value, instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10" data-toggle="modal" data-target="#success">CONFIRM</button>
+                        {{total}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- END CONTENT -->
+    <!-- END CONTENT   -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -371,8 +372,9 @@ totalharga: number;
 tax: number;
 totalbayar: number;
 total:number;
+
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = parseInt(this.total) + 40000;
+        this.totalharga = this.total + 40000;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
