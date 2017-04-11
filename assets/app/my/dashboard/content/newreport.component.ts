@@ -29,7 +29,7 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select (change)="onSelectCategory($event.target.value)">
+                                    <select [(ngModel)]="selectedCategory._id" (change)="onSelectCategory($event.target.value)">
                                         <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select [(ngModel)]="selectedProblem._id"  #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
+                                    <select [(ngModel)]="selectedSubCategory._id" #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" value = "{{ problem.desc }}" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -82,7 +82,8 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
-  selectedProblem: Problem = new Problem(0, 'dummy');
+  selectedCategory: Problem = new Problem(0, 'dummy');
+  selectedSubCategory: Problem = new Problem(0, 'dummy');
 
   onSelectCategory(category) {
     console.log(category);
