@@ -344,7 +344,7 @@ import { Sub } from './subs';
 })
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
-3day : Date = new Date();
+dueday : Date = new Date();
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
