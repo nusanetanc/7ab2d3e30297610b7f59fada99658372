@@ -94,6 +94,7 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
+    this.selectedProblem = category;
   }
 
 // Link to our api, pointing to localhost
