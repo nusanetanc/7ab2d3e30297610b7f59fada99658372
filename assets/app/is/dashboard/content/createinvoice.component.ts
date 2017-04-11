@@ -427,8 +427,8 @@ total:number;
       if(subs['status'] =! 'registrasi'){
         this.totalharga = this.totalharga + 75000;
       }
+      this.tax = this.totalharga * 0.1;
+      this.totalbayar = this.totalharga + this.tax;
     })
     }
-    this.tax = this.totalharga * 0.1;
-    this.totalbayar = this.totalharga + this.tax;
 }
