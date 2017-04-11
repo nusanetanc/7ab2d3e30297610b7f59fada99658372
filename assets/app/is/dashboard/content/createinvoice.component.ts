@@ -185,7 +185,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today | date: 'dd/MM/yyyy'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
+                                    <input value="{{today | date: 'yyyy/MM/dd'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -196,7 +196,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today.getDate()+3}}{{today | date: '/MM/yyyy'}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{today | date: 'yyyy/MM/'}}{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
