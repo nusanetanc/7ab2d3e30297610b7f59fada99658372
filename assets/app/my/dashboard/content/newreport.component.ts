@@ -31,10 +31,7 @@ import { Problem } from './problem';
                                 <form>
                                     <select name="problemCatagory">
                                         <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
-                                        <option value="volvo">Internet Problem</option>
-                                        <option value="saab">TV Problem</option>
-                                        <option value="fiat">Billing Problem</option>
-                                        <option value="fiat">Account Problem</option>
+                                        <option *ngFor="#problem of problems" value="{{problem.desc}}">{{problem._id}}</option>
                                     </select><br/>
                                 </form>
                                 <form>
