@@ -19,7 +19,7 @@ Problem.findById(req.params.id, function(err, problems) {
 });
 
 /* GET problem by category. */
-router.get('/problem/category/:category', function(req, res, next) {
+router.get('/category/:category', function(req, res, next) {
     Problem.find({category: req.params.category}, function(err, problems) {
         console.log( problems );
         res.json(problems);
