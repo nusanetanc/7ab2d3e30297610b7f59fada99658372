@@ -74,6 +74,7 @@ Sub.findById(req.params.id, function(err, subs) {
               timeinst: subs.timeinst,
               regisby: subs.regisby,
               regisref: subs.regisref,
+              activedate: subs.activedate,
               groovyid: homes.groovyid,
               address: homes.address,
               nohome: homes.nohome,
@@ -160,6 +161,7 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.groovyid= req.body.groovyid;
                 sub.idnumber= req.body.idnumber;
                 sub.datebirth= req.body.datebirth;
+                sub.activedate= req.body.activedate;
               if (err)
                 res.send(err);
 

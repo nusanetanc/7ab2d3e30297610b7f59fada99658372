@@ -19,6 +19,7 @@ var SubSchema   = new Schema({
     regisref: String,
     idnumber: Number,
     packprice: Number,
+    activedate: Date,
     billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}],
     history: [{type: Schema.Types.ObjectId, ref: 'History'}]
 
