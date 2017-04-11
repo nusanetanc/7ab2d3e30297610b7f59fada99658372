@@ -424,7 +424,7 @@ total:number;
           this.total = subs['packprice'];
           this.totalharga = this.total + 40000 + 45000;
       }
-      if(subs['status'] != 'registrasi'){
+      if(subs['status'] == 'registrasi'){
         this.totalharga = this.totalharga + 75000;
       }
       this.tax = this.totalharga * 0.1;
