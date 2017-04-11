@@ -4,6 +4,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 declare let jsPDF;
+declare let kendo;
 
 @Component({
     selector: 'form-test',
@@ -28,8 +29,8 @@ declare let jsPDF;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button class="btn btn-primary" onclick="generatePDF()"><i class="fa fa-save"></i> Save as PDF</button>
-                                <button (click)="generatePDF()" class="btn btn-default billInfoPrint" type="button">
+                                <button class="btn btn-primary" onclick="print()"><i class="fa fa-save"></i> Save as PDF</button>
+                                <button (click)="print()" class="btn btn-default billInfoPrint" type="button">
                                     PRINT
                                 </button>
                             </div>
@@ -248,8 +249,8 @@ export class ContentTestComponent {
     public print() {
 
 
-        var generatePDF = function() {
-            kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
+        var print = function() {
+            kendo.drawing.drawDOM($("#billing")).then(function(group) {
                 kendo.drawing.pdf.saveAs(group, "Converted PDF.pdf");
             });
         }
