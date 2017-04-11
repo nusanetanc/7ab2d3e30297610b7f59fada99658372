@@ -46,7 +46,7 @@ router.put('/putproblem/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-
+                problem.category= req.body.category;
                 problem.subcategory= req.body.subcategory;
                 problem.desc= req.body.desc;
               if (err)
