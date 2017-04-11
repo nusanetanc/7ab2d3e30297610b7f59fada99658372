@@ -363,13 +363,13 @@ totalharga: number;
 tax: number;
 totalbayar: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = packageprice.value + 40000;
+        this.totalharga = (subs.packprice).value + 40000;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
   onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
-    this.totalharga = this.totalharga + this.val;
+    this.totalharga = this.totalharga + parseInt(this.val);
     this.tax = this.totalharga * 0.1;
     this.totalbayar = this.totalharga + this.tax;
   }
