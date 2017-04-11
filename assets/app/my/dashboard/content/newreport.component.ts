@@ -74,7 +74,7 @@ export class ContentNewReportComponent implements OnInit {
 
   onSelectCategory(category) {
     console.log(category);
-    this.problems = this.getProblem() {
+    this.problems = this.getProblem(){
       this.http.get(`${this.API}/problem/category/${category}`)
           .map(res => res.json())
           .subscribe(problems => {
