@@ -250,7 +250,7 @@ export class ContentTestComponent {
     public print() {
 
 
-        var test = function() {
+        var print = function() {
             kendo.drawing.drawDOM($('#billing')).then(function(group) {
                 kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
             });
