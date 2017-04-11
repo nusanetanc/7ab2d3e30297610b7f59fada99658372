@@ -287,10 +287,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                  <select class="form-control inputForm" #promoname id="promoname">
-                                      <option value="No">-- Select Promo --</option>
-                                      <option *ngFor="#promo of listPromo">{{ promo.name }}</option>
-                                  </select>
+                                  <input [(ngModel)]="subs.promo" type="number" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">

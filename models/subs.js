@@ -13,6 +13,7 @@ var SubSchema   = new Schema({
     datebirth: String,
     packlev: String,
     cardid: String,
+    promo: String,
     nova: Number,
     status: String,
     regisby: String,
