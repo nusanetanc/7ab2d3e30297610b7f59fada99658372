@@ -196,7 +196,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today.getYear('yyyy')}}/{{today.getMonth('MM')}}/{{today.getDate('dd')+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
+                                    <input value="{{today | date: 'yyyy/MM/'}}/{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
