@@ -371,7 +371,7 @@ totalharga: number;
 tax: number;
 totalbayar: number;
       constructor(private http: Http, private _routeParams: RouteParams) {
-        this.totalharga = total + 40000;
+        this.totalharga = this.total + 40000;
         this.tax = this.totalharga * 0.1;
         this.totalbayar = this.totalharga + this.tax;
       }
