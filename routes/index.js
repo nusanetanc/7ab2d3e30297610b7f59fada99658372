@@ -6,6 +6,7 @@ var api = express.Router();
 router.get('/', function(req, res, next) {
   res.render('homepage', { title: 'Groovy - Home' });
 });
+
 api.get('/', function(req, res, next) {
   res.render('homepage', { title: 'Groovy - Home' });
 });
@@ -69,6 +70,10 @@ router.get('/event', function(req, res, next) {
 
 router.get('/terms-of-use', function(req, res, next) {
   res.render('coming-soon', { title: 'Groovy - Terms-of-use' });
+});
+
+router.get('/test', function(req, res, next) {
+    res.render('test', { title: 'Groovy - My Test' });
 });
 
 /* GET is groovy. */
