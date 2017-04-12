@@ -310,7 +310,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "key_val.value * totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
+                                    <input [(ngModel)]= "key_val.value + totalharga.value" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
