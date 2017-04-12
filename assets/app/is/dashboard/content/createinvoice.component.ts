@@ -279,7 +279,7 @@ import { Sub } from './subs';
                                     <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
-                            <input #key_val (keyup)="0">
+                            <input #key_val (keyup)="0" type="number">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
@@ -310,7 +310,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "key_val.value" + "totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
+                                    <input [(ngModel)]= "key_val.value + totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
