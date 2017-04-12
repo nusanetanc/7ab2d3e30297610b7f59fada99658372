@@ -36,6 +36,7 @@ import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet
 import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
 import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.component";
+import {ModalComponent} from "./dashboard/content/testmodal.component";
 
 @Component({
    selector: 'is-app',
@@ -97,6 +98,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
         ContentCoverageHomeComponent,
         ContentInvoiceComponent,
         ContentBillSubscribeComponent,
+        ModalComponent,
         ROUTER_DIRECTIVES
     ],
 })
