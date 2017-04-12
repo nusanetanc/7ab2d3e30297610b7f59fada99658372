@@ -41,11 +41,11 @@ declare let kendo;
                         <div id="formConfirmation">
 
                             <!-- Content List -->
-                            <div id="body" class="container" style="border-style: outset;background-color: #ffffff;padding: 40px 40px;">
+                            <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px;">
                                 <div id="header" class="row">
                                     <div class="col-sm-12" style="margin-bottom: 30px;">
                                         <div class="col-sm-6">
-                                            <img src="logo.png" width="70%">
+                                            <img src="images/logo-groovy.png" width="70%">
                                         </div>
                                         <div class="col-sm-6" style="font-size: 19px; padding-top: 20px;">
                                             <br>
