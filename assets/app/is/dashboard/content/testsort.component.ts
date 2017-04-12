@@ -37,7 +37,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div style="zoom: 80%; -moz-transform: scale(0.7); -moz-transform-origin: 0 0;">
+                        <div style="zoom: 80%; -moz-transform: scale(0.8); -moz-transform-origin: 0 20;">
                         
                         <div id="formConfirmation">
 
