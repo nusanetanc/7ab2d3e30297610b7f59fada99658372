@@ -37,7 +37,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div style="zoom: 80%;">
                         
                         <div id="formConfirmation">
 
