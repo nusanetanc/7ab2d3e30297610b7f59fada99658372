@@ -37,7 +37,8 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="container">
+                        <div class="row rowBillInfoContList">
+                        
                         <div id="formConfirmation">
 
                             <!-- Content List -->
@@ -249,6 +250,7 @@ declare let kendo;
                             <!-- /Content List -->
                         
                         </div>
+                        
                         </div>
                         <!-- /Content List -->
                         
