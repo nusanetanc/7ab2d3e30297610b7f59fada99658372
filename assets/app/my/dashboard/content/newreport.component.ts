@@ -57,12 +57,11 @@ import { Problem } from './problem';
                                     </div>
                                     <div class="col-sm-11" >
                                         Whats up..! What is going on ? <br> Please select the category of your problem
-                                         <div>{{ inputsubcategory.value }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="onSelectCategory" class="col-sm-6">
+                        <div *ngIf="selectedProblem" class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
@@ -83,6 +82,7 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
+  selectedProblem: Problem;
 
   onSelectCategory(category) {
     console.log(category);
@@ -93,6 +93,7 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
+    this.selectedProblem = category;
   }
 
 // Link to our api, pointing to localhost
