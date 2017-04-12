@@ -434,6 +434,6 @@ total:number;
     }
     onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
-    this.totalharga = parseInt(this.totalharga) + parseInt((event.target).value);
+    this.totalharga = 40000 + parseInt((event.target).value);
   }
 }
