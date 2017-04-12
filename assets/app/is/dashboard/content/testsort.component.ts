@@ -30,7 +30,7 @@ declare let kendo;
                                     BACK
                                 </a>
                                 <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button">
-                                    PRINT
+                                    SAVE
                                 </button>
                             </div>
                         </div>
