@@ -23,7 +23,8 @@ import 'rxjs/add/operator/map';
       </div>
     </div>
   </div>
-  `
+  `,
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ModalComponent {
 

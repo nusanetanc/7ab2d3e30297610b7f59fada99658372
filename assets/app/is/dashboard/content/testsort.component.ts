@@ -3,7 +3,7 @@ import {Pipe} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
-import {ModalComponent} from "./dashboard/content/testmodal.component";
+import {ModalComponent} from './dashboard/content/testmodal.component';
 
 declare let jsPDF;
 declare let kendo;
@@ -25,10 +25,13 @@ declare let ViewChild;
       <button type="button" class="btn btn-primary">Save changes</button>
     </div>
   </app-modal>
-  `
+  `,
+    directives: [ROUTER_DIRECTIVES],
 })
+
 export class ContentTestComponent {
 
     @ViewChild(ModalComponent)
     public readonly modal: ModalComponent;
+
 }
