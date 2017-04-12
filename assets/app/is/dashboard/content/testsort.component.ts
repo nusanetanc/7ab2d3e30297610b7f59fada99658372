@@ -37,7 +37,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        
+                        <div class="container">
                         <div id="formConfirmation">
 
                             <!-- Content List -->
@@ -248,6 +248,7 @@ declare let kendo;
                             </div>
                             <!-- /Content List -->
                         
+                        </div>
                         </div>
                         <!-- /Content List -->
                         
