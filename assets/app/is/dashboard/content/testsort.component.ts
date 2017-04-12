@@ -30,14 +30,14 @@ declare let kendo;
                                     BACK
                                 </a>
                                 <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button">
-                                    PRINT
+                                    SAVE
                                 </button>
                             </div>
                         </div>
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div style="zoom: 80%;">
                         
                         <div id="formConfirmation">
 
