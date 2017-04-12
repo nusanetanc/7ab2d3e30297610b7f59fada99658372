@@ -42,7 +42,7 @@ declare let kendo;
                         <div id="formConfirmation">
 
                             <!-- Content List -->
-                            <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000;">
+                            <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
                                 <div id="header" class="row">
                                     <div class="col-sm-12" style="margin-bottom: 30px;">
                                         <div class="col-sm-6">
