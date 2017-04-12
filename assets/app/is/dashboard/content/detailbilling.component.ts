@@ -233,8 +233,8 @@ import { Billing } from './billing';
             </div>
         </div>
         <!-- Page Content -->
-        
-        <!-- Modal -->
+
+        <!-- Modal Invoice -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -462,7 +462,8 @@ import { Billing } from './billing';
                 </div>
             </div>
         </div>
-        <!-- Modal -->
+        <!-- Modal Invoice -->
+
     `,
     directives: [ROUTER_DIRECTIVES],
 })
