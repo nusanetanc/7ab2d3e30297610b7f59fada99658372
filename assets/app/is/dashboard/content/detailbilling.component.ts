@@ -28,9 +28,9 @@ import { Billing } from './billing';
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button class="btn btn-default billInfoPrint" type="button" data-toggle="modal" data-target="#myModal">
+                                <a href="#myModal" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <!-- /Row Button -->
