@@ -279,7 +279,7 @@ import { Sub } from './subs';
                                     <input (keyup)="0" *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
-                            {{key_val.value}}
+                            {{cablerj45price.value}}
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
