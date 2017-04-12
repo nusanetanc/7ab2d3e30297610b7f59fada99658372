@@ -26,7 +26,7 @@ import {ContentReplayReportComponent} from "./dashboard/content/replayreports.co
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
 import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
-import {ContentTestComponent} from "./dashboard/content/testsort1.component";
+import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
 import {ContentCoveragePropertyComponent} from "./dashboard/content/coverageproperty.component";
