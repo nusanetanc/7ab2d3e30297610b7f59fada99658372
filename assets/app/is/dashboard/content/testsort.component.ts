@@ -37,7 +37,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="container">
+                        <div class="container" width="50%">
                         <div id="formConfirmation">
 
                             <!-- Content List -->
