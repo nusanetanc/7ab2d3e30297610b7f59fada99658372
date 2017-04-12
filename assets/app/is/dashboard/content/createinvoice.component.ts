@@ -433,6 +433,6 @@ total:number;
     })
     }
     onKey(event:KeyboardEvent) {
-    this.val += (event.target).value + ' | ';
+    this.val = (event.target).value;
   }
 }
