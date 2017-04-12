@@ -93,7 +93,15 @@
             .then(null, console.error.bind(console));
 </script>
 
+<script>
+    var generatePDF = function() {
 
+        kendo.drawing.drawDOM($("#formConfirmation")).then(function(group) {
+            kendo.drawing.pdf.saveAs(group, "invoice.pdf");
+        });
+
+    }
+</script>
 
 <!-- Collaps JS -->
 <script type="text/javascript">
