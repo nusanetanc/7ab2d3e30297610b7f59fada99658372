@@ -434,7 +434,7 @@ total:number;
     }
     onKey(event:KeyboardEvent) {
     this.val = (event.target).value;
-    if (this.val =! ''){
+    if (this.val == ''){
       this.totalharga = 4000;
     }
     if (this.val =! ''){
