@@ -236,7 +236,7 @@ declare let kendo;
         <!-- Page Content -->
         
         <!-- Content Print -->
-        <div class="container">
+        <div class="print" style="padding: 0px 20px;">
            <div id="formConfirmation">
               <!-- Content List -->
               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
