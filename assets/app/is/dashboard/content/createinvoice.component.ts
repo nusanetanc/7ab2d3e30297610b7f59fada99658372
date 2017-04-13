@@ -262,8 +262,8 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
-                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" disabled/>
+                                    <input *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" value="45000" type="number" class="form-control inputForm" #stbprice1 id="stbprice1" placeholder="STB Rent" disabled/>
+                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice2 id="stbprice2" placeholder="STB Rent" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -274,8 +274,8 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" disabled/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice1 id="instalationprice1" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice2 id="instalationprice2" placeholder="Instalation Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -286,8 +286,8 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price" disabled/>
+                                    <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
                                 </div>
                             </div>
                             <!-- <input #key_val (keyup)=0 type="number"> -->
@@ -350,9 +350,15 @@ import { Sub } from './subs';
                     </div>
                 </div>
                 <div class="row" style="margin-left: 3px !important;">
-                    <div class="col-sm-12">
+                    <div class="col-sm-12" *ngIf="subs.status == 'registrasi'">
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value,  subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                    </div>
+                    <div class="col-sm-12" *ngIf="subs.status =! 'registrasi'">
+                        <!-- Small modal -->
+                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -393,7 +399,7 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice,  subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, cablerj45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
 alert('test');
   var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&pricerj45cable=${cablerj45price}&promoname=${promoname}&pricepromo=${promoprice}
