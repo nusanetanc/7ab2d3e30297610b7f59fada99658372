@@ -236,13 +236,9 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Page Content -->
-
-        <!-- Content Print -->
+                        
+                        
+                        <!-- Content Print -->
         <div class="print" style="zoom: 80%;">
            <div id="formConfirmation">
               <!-- Content List -->
@@ -448,6 +444,13 @@ declare let kendo;
            </div>
         </div>
         <!-- /Content Print -->
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Content -->
 
     `,
     directives: [ROUTER_DIRECTIVES],
