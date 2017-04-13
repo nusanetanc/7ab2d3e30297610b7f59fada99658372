@@ -237,213 +237,218 @@ declare let kendo;
                         </div>
                         <!-- /Content List -->
                         
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3 style="color: #333;">YOUR INVOICE</h4>
+                            </div>
+                        </div>
                         
                         <!-- Content Print -->
-        <div class="print" style="zoom: 80%;">
-           <div id="formConfirmation">
-              <!-- Content List -->
-              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
-                 <div id="header" class="row">
-                    <div class="col-sm-12" style="margin-bottom: 30px;">
-                       <div class="col-sm-6">
-                          <img src="images/logo-groovy.png" width="70%">
-                       </div>
-                       <div class="col-sm-6" style="font-size: 18px; padding-top: 20px;">
-                          <br>
-                          <p class="text-right" style="color: #707070;"><img src="images/email.png" width="6%"> cs@groovy.id &nbsp; <img src="images/earth.png" width="6%"> www.groovy.id</p>
-                          <p class="text-right" style="color: #707070;"><img src="images/map-marker.png" width="6%"> Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</p>
-                       </div>
-                    </div>
-                 </div>
-                 <div id="content" class="row">
-                    <div class="col-sm-12">
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12" >
-                             <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
-                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI TAGIHAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; BILLING INFORMATION</i></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12">
-                             <div class="row" style="font-size: 20px;">
-                                <div class="col-sm-6">
-                                </div>
-                                <div class="col-sm-6">
-                                   <div class="col-sm-6" style="border: 1px solid orangered; padding: 5px;">
-                                      <span>Subscriber ID</span>
-                                   </div>
-                                   <div class="col-sm-6 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                      <span><b>{{ bills.subid }}</b></span>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12" style="padding-bottom: 30px">
-                             <div class="row" style="font-size: 20px;">
-                                <div class="col-sm-6" >
-                                   <div class="col-sm-6" style="padding: 5px;">
-                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
-                                   </div>
-                                   <div class="col-sm-6" style="padding: 5px;">
-                                   </div>
-                                </div>
-                                <div class="col-sm-6" style="margin-bottom: 0px;">
-                                   <div class="col-sm-4">
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                            <span>Tgl. Jatuh Tempo <br> /<i>Billing Due Date</i></span>
-                                         </div>
-                                      </div>
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                            <span>09 April 2017</span>
-                                         </div>
-                                      </div>
-                                   </div>
-                                   <div class="col-sm-4">
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                            <span>Tanggal Cetak <br> /<i>Billing Date</i></span>
-                                         </div>
-                                      </div>
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                            <span>06 April 2017</span>
-                                         </div>
-                                      </div>
-                                   </div>
-                                   <div class="col-sm-4">
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                            <span>No. Tagihan <br> /<i>Billing Number</i></span>
-                                         </div>
-                                      </div>
-                                      <div class="row">
-                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                            <span>{{ bills.noinvoice }}</span>
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12">
-                             <p style="font-size: 24px;">Terima kasih telah menggunakan layanan Groovy. Berikut ini adalah informasi detail tagihan Anda. <i style="color: #999999;"> &nbsp; / &nbsp; Thank you for using our Groovy service. The following are the details of your bill.</i></p>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12">
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="border: 1px solid orangered; padding: 5px;">
-                                   <span>Deskripsi / Description</span>
-                                </div>
-                                <div class="col-sm-3 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                   <span>Jumlah / Amount (Rp.)</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="padding: 5px;">
-                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="padding: 5px;">
-                                   <span>{{ bills.pricepack }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="padding: 5px;">
-                                   <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="padding: 5px;">
-                                   <span>{{ bills.pricerouter }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="padding: 5px;">
-                                   <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="padding: 5px;">
-                                   <span>{{ bills.pricestb }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="padding: 5px;">
-                                   <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="padding: 5px;">
-                                   <span>{{ bills.pricerj45cable }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9" style="padding: 5px;">
-                                   <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="padding: 5px;">
-                                   <span>{{ bills.priceinstal }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                   <span>{{ bills.totalprice }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                   <span>{{ bills.changetax }}</span>
-                                </div>
-                             </div>
-                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
-                                </div>
-                                <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
-                                   <span><b>{{ bills.totalpay }}</b></span>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12" style="font-size: 20px;">
-                             <p><u>Info Penting Pelanggan :</u></p>
-                             <ul style="list-style-type:none;">
-                                <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                <li style="margin-bottom: 10px;">2. Pembayaran ditujukan ke Bank mandiri Cabang Citra garden Jak-Bar No. Rek 118 000 58977 97 a/n PT. Media Andalan Nusa.</li>
-                                <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
-                                <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
-                                <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
-                             </ul>
-                          </div>
-                       </div>
-                       <div class="row" style="margin-bottom: 30px;">
-                          <div class="col-sm-12" style="font-size: 20px; color: #999999;">
-                             <p><u>Subscriber hightlight information :</u></p>
-                             <ul style="list-style-type:none;">
-                                <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
-                                <li style="margin-bottom: 10px;">2. Payment is addressed to Bank Mandiri, Citra Garden Jak-Bar branch, account number 118 000 58977 97 beneficiary PT. Media Andalan Nusa.</li>
-                                <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
-                                <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
-                                <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
-                             </ul>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
-              </div>
-              <!-- /Content List -->
-           </div>
-        </div>
-        <!-- /Content Print -->
+                        <div class="print" style="zoom: 80%;">
+                           <div id="formConfirmation">
+                              <!-- Content List -->
+                              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
+                                 <div id="header" class="row">
+                                    <div class="col-sm-12" style="margin-bottom: 30px;">
+                                       <div class="col-sm-6">
+                                          <img src="images/logo-groovy.png" width="70%">
+                                       </div>
+                                       <div class="col-sm-6" style="font-size: 18px; padding-top: 20px;">
+                                          <br>
+                                          <p class="text-right" style="color: #707070;"><img src="images/email.png" width="6%"> cs@groovy.id &nbsp; <img src="images/earth.png" width="6%"> www.groovy.id</p>
+                                          <p class="text-right" style="color: #707070;"><img src="images/map-marker.png" width="6%"> Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="content" class="row">
+                                    <div class="col-sm-12">
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12" >
+                                             <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
+                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI TAGIHAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; BILLING INFORMATION</i></span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12">
+                                             <div class="row" style="font-size: 20px;">
+                                                <div class="col-sm-6">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                   <div class="col-sm-6" style="border: 1px solid orangered; padding: 5px;">
+                                                      <span>Subscriber ID</span>
+                                                   </div>
+                                                   <div class="col-sm-6 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                      <span><b>{{ bills.subid }}</b></span>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12" style="padding-bottom: 30px">
+                                             <div class="row" style="font-size: 20px;">
+                                                <div class="col-sm-6" >
+                                                   <div class="col-sm-6" style="padding: 5px;">
+                                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
+                                                   </div>
+                                                   <div class="col-sm-6" style="padding: 5px;">
+                                                   </div>
+                                                </div>
+                                                <div class="col-sm-6" style="margin-bottom: 0px;">
+                                                   <div class="col-sm-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span>Tgl. Jatuh Tempo <br> /<i>Billing Due Date</i></span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span>09 April 2017</span>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-sm-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span>Tanggal Cetak <br> /<i>Billing Date</i></span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span>06 April 2017</span>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-sm-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span>No. Tagihan <br> /<i>Billing Number</i></span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span>{{ bills.noinvoice }}</span>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12">
+                                             <p style="font-size: 24px;">Terima kasih telah menggunakan layanan Groovy. Berikut ini adalah informasi detail tagihan Anda. <i style="color: #999999;"> &nbsp; / &nbsp; Thank you for using our Groovy service. The following are the details of your bill.</i></p>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12">
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="border: 1px solid orangered; padding: 5px;">
+                                                   <span>Deskripsi / Description</span>
+                                                </div>
+                                                <div class="col-sm-3 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                   <span>Jumlah / Amount (Rp.)</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>{{ bills.pricepack }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>{{ bills.pricerouter }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>{{ bills.pricestb }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>{{ bills.pricerj45cable }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>{{ bills.priceinstal }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
+                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
+                                                   <span>{{ bills.totalprice }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
+                                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
+                                                   <span>{{ bills.changetax }}</span>
+                                                </div>
+                                             </div>
+                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
+                                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
+                                                   <span><b>{{ bills.totalpay }}</b></span>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12" style="font-size: 20px;">
+                                             <p><u>Info Penting Pelanggan :</u></p>
+                                             <ul style="list-style-type:none;">
+                                                <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
+                                                <li style="margin-bottom: 10px;">2. Pembayaran ditujukan ke Bank mandiri Cabang Citra garden Jak-Bar No. Rek 118 000 58977 97 a/n PT. Media Andalan Nusa.</li>
+                                                <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
+                                                <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
+                                                <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                       <div class="row" style="margin-bottom: 30px;">
+                                          <div class="col-sm-12" style="font-size: 20px; color: #999999;">
+                                             <p><u>Subscriber hightlight information :</u></p>
+                                             <ul style="list-style-type:none;">
+                                                <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
+                                                <li style="margin-bottom: 10px;">2. Payment is addressed to Bank Mandiri, Citra Garden Jak-Bar branch, account number 118 000 58977 97 beneficiary PT. Media Andalan Nusa.</li>
+                                                <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
+                                                <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
+                                                <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
+                              </div>
+                              <!-- /Content List -->
+                           </div>
+                        </div>
+                        <!-- /Content Print -->
                         
                         
                     </div>
