@@ -39,7 +39,7 @@ import { Problem } from './problem';
                                 </form>
                                 <form>
                                     <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="onSelectSubCategory($event.target.value)">
-                                        <option *ngIf="selectedProblem.category == 0" class="option" value="0">-- Select Internet Problem --</option>
+                                        <option class="option" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
