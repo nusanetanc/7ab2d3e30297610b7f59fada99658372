@@ -1,9 +1,8 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
-declare let jsPDF;
 declare let kendo;
 
 @Component({
@@ -77,7 +76,7 @@ declare let kendo;
                                                             <span>Subscriber ID</span>
                                                         </div>
                                                         <div class="col-sm-6 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span><b>GR968091</b></span>
+                                                            <span><b>{{ bills.subid }}</b></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,7 +87,7 @@ declare let kendo;
                                                 <div class="row" style="font-size: 20px;">
                                                     <div class="col-sm-6" >
                                                         <div class="col-sm-6" style="padding: 5px;">
-                                                            <span><b>Hj. Andi Siangka</b> <br> Residence One <br> Ruby 7 No. 36 <br> Indonesia</span>
+                                                            <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
                                                         </div>
                                                         <div class="col-sm-6" style="padding: 5px;">
                         
@@ -127,7 +126,7 @@ declare let kendo;
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                                    <span>2259135300</span>
+                                                                    <span>{{ bills.noinvoice }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -152,10 +151,10 @@ declare let kendo;
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                     <div class="col-sm-9" style="padding: 5px;">
-                                                        <span>Paket Level 3 (Internet) <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                        <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>899.000</span>
+                                                        <span>{{ bills.pricepack }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -163,7 +162,7 @@ declare let kendo;
                                                         <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>40.000</span>
+                                                        <span>{{ bills.pricerouter }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -171,7 +170,7 @@ declare let kendo;
                                                         <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>0</span>
+                                                        <span>{{ bills.pricestb }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -179,7 +178,7 @@ declare let kendo;
                                                         <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>20.000</span>
+                                                        <span>{{ bills.pricerj45cable }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -187,7 +186,7 @@ declare let kendo;
                                                         <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>75.000</span>
+                                                        <span>{{ bills.priceinstal }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -195,7 +194,7 @@ declare let kendo;
                                                         <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                        <span>1.034.000</span>
+                                                        <span>{{ bills.totalprice }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -203,7 +202,7 @@ declare let kendo;
                                                         <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                        <span>103.000</span>
+                                                        <span>{{ bills.changetax }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -211,7 +210,7 @@ declare let kendo;
                                                         <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
-                                                        <span><b>1.137.400</b></span>
+                                                        <span><b>{{ bills.totalpay }}</b></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -277,6 +276,25 @@ export class ContentTestComponent {
             });
         }
 
+    }
+
+
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+
+    bills: any[] = [];
+
+    constructor(private http: Http, private _routeParams: RouteParams) {}
+
+    ngOnInit() {
+        this.getBills();
+    }
+    getBills(){
+        this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(bills => {
+                this.bills = bills
+            })
     }
 
 }
