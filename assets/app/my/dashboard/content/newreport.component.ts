@@ -29,7 +29,7 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select [(ngModel)]="selectedProblem._id" (change)="onSelectCategory($event.target.value)">
+                                    <select [(ngModel)]="selectedProblem.category" (change)="onSelectCategory($event.target.value)">
                                         <option class="option" value="0">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
@@ -39,7 +39,7 @@ import { Problem } from './problem';
                                 </form>
                                 <form>
                                     <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="onSelectSubCategory($event.target.value)">
-                                        <option *ngIf="selectedProblem._id == 0" class="option" value="0">-- Select Internet Problem --</option>
+                                        <option *ngIf="selectedProblem.category == 0" class="option" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
