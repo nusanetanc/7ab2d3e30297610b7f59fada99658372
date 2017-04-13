@@ -280,6 +280,7 @@ import { Sub } from './subs';
                                 </div>
                             </div>
                             <input #key_val (keyup)=0 type="number">
+                            {{totalharga + key_val.value}}
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
@@ -310,7 +311,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "totalharga" + key_val.value type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
+                                    <input [(ngModel)]= "totalharga + key_val.value" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
