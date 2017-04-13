@@ -26,7 +26,7 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['Detailbilling']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
                                 <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button">
