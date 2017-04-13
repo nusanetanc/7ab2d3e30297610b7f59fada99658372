@@ -4,6 +4,8 @@ import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 
+declare let kendo;
+
 @Component({
     selector: 'form-detailbilling',
     template: `
@@ -231,7 +233,7 @@ import { Billing } from './billing';
                         
                         
                         <!-- Content Print -->
-                        <div style="display: none;"
+                        <div style="display: none;">
                         <div id="formConfirmation">
 
                             <!-- Content List -->
@@ -457,6 +459,21 @@ import { Billing } from './billing';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailBillingComponent implements OnInit {
+
+    constructor() {
+    }
+
+
+    public print() {
+
+        var print = function() {
+            kendo.drawing.drawDOM($('#billing')).then(function(group) {
+                kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
+            });
+        }
+
+    }
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
