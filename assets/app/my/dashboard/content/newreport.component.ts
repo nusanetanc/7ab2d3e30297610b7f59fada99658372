@@ -29,8 +29,8 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select (change)="onSelectCategory($event.target.value)">
-                                        <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
+                                    <select [(ngModel)]="selectedProblem.category" (change)="onSelectCategory($event.target.value)">
+                                        <option class="option" value="0">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
                                         <option value="Billing Problem">Billing Problem</option>
@@ -38,8 +38,8 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
-                                        <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
+                                    <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="onSelectSubCategory($event.target.value)">
+                                        <option class="option" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
@@ -61,14 +61,14 @@ import { Problem } from './problem';
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="selectedProblem" class="col-sm-6">
+                        <div *ngIf="selectedSubProblem" class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
-                                    <div *ngFor="#problem of problems" class="col-sm-11" >
-                                        {{ problem.desc }}
+                                    <div *ngFor="#descproblem of descproblems" class="col-sm-11" >
+                                        {{ descproblem.desc }}
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,8 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
-  selectedProblem: Problem;
+  selectedProblem: Problem = new Problem(0, 'dummy');
+  selectedSubProblem: Problem;
 
   onSelectCategory(category) {
     console.log(category);
@@ -93,7 +94,18 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
-    this.selectedProblem = category;
+  }
+
+  onSelectSubCategory(subcategory) {
+    console.log(subcategory);
+    this.descproblems = this.getDescProblem(){
+      this.http.get(`${this.API}/problem/subcategory/${subcategory}`)
+          .map(res => res.json())
+          .subscribe(descproblems => {
+            this.descproblems = descproblems
+          })
+    }
+    this.selectedSubProblem = subcategory;
   }
 
 // Link to our api, pointing to localhost
@@ -102,12 +114,12 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
+  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
-    this.getProblem();
   }
 
   getAllComplaint() {
@@ -124,7 +136,14 @@ export class ContentNewReportComponent implements OnInit {
         this.problems = problems
       })
   }
-  getDescProblem(inputsubcategory) {
+  getDescProblem() {
+    this.http.get(`${this.API}/problem/subcategory/${this.subcategory}`)
+      .map(res => res.json())
+      .subscribe(descproblems => {
+        this.descproblems = descproblems
+      })
+  }
+  /*getDescProblem(inputsubcategory) {
   var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -136,5 +155,5 @@ export class ContentNewReportComponent implements OnInit {
       .subscribe(descproblems => {
         this.descproblems = descproblems
       })
-  }
+  }*/
 }

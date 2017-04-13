@@ -1,8 +1,9 @@
-import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {Component} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
+declare let jsPDF;
 declare let kendo;
 
 @Component({
@@ -25,7 +26,7 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['Detailbilling']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
                                 <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button">
@@ -76,7 +77,7 @@ declare let kendo;
                                                             <span>Subscriber ID</span>
                                                         </div>
                                                         <div class="col-sm-6 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span><b>{{ bills.subid }}</b></span>
+                                                            <span><b>GR968091</b></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -87,7 +88,7 @@ declare let kendo;
                                                 <div class="row" style="font-size: 20px;">
                                                     <div class="col-sm-6" >
                                                         <div class="col-sm-6" style="padding: 5px;">
-                                                            <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
+                                                            <span><b>Hj. Andi Siangka</b> <br> Residence One <br> Ruby 7 No. 36 <br> Indonesia</span>
                                                         </div>
                                                         <div class="col-sm-6" style="padding: 5px;">
                         
@@ -126,7 +127,7 @@ declare let kendo;
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                                    <span>{{ bills.noinvoice }}</span>
+                                                                    <span>2259135300</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -151,10 +152,10 @@ declare let kendo;
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                     <div class="col-sm-9" style="padding: 5px;">
-                                                        <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                        <span>Paket Level 3 (Internet) <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>{{ bills.pricepack }}</span>
+                                                        <span>899.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -162,7 +163,7 @@ declare let kendo;
                                                         <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>{{ bills.pricerouter }}</span>
+                                                        <span>40.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -170,7 +171,7 @@ declare let kendo;
                                                         <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>{{ bills.pricestb }}</span>
+                                                        <span>0</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -178,7 +179,7 @@ declare let kendo;
                                                         <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>{{ bills.pricerj45cable }}</span>
+                                                        <span>20.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -186,7 +187,7 @@ declare let kendo;
                                                         <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                        <span>{{ bills.priceinstal }}</span>
+                                                        <span>75.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -194,7 +195,7 @@ declare let kendo;
                                                         <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                        <span>{{ bills.totalprice }}</span>
+                                                        <span>1.034.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -202,7 +203,7 @@ declare let kendo;
                                                         <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                        <span>{{ bills.changetax }}</span>
+                                                        <span>103.000</span>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -210,7 +211,7 @@ declare let kendo;
                                                         <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
                                                     </div>
                                                     <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
-                                                        <span><b>{{ bills.totalpay }}</b></span>
+                                                        <span><b>1.137.400</b></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +223,7 @@ declare let kendo;
                                                     <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
                                                     <li style="margin-bottom: 10px;">2. Pembayaran ditujukan ke Bank mandiri Cabang Citra garden Jak-Bar No. Rek 118 000 58977 97 a/n PT. Media Andalan Nusa.</li>
                                                     <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
-                                                    <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
+                                                    <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> atau telepon ke 021-5276616.</li>
                                                     <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
                                                 </ul>
                                             </div>
@@ -234,7 +235,7 @@ declare let kendo;
                                                     <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
                                                     <li style="margin-bottom: 10px;">2. Payment is addressed to Bank Mandiri, Citra Garden Jak-Bar branch, account number 118 000 58977 97 beneficiary PT. Media Andalan Nusa.</li>
                                                     <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
-                                                    <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
+                                                    <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> or contact number 021-5276616.</li>
                                                     <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
                                                 </ul>
                                             </div>
@@ -276,25 +277,6 @@ export class ContentTestComponent {
             });
         }
 
-    }
-
-
-    // Link to our api, pointing to localhost
-    API = 'http://202.162.207.164:3000';
-
-    bills: any[] = [];
-
-    constructor(private http: Http, private _routeParams: RouteParams) {}
-
-    ngOnInit() {
-        this.getBills();
-    }
-    getBills(){
-        this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
-            .map(res => res.json())
-            .subscribe(bills => {
-                this.bills = bills
-            })
     }
 
 }

@@ -26,6 +26,14 @@ router.get('/category/:category', function(req, res, next) {
     });
 });
 
+/* GET desc problem by subcategory. */
+router.get('/subcategory/:subcategory', function(req, res, next) {
+    Problem.find({subcategory: req.params.subcategory}, function(err, problems) {
+        console.log( problems );
+        res.json(problems);
+    });
+});
+
 /* Add city */
 router.post('/addproblem', function(req, res, next) {
   var problem = new Problem();

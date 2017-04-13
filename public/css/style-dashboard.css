@@ -1177,3 +1177,13 @@ button.buttonOrange:active {
 }
 
 /*----- /New Class ------*/
+
+.print {
+    display: none;
+}
+
+.page-content >  div > div > div > div > button:hover {
+    .print {
+        display: block;
+    }
+}
