@@ -48,11 +48,11 @@ declare let kendo;
                                         <div class="col-sm-6">
                                             <img src="images/logo-groovy.png" width="70%">
                                         </div>
-                                        <div class="col-sm-6" style="font-size: 19px; padding-top: 20px;">
+                                        <div class="col-sm-6" style="font-size: 18px; padding-top: 20px;">
                                             <br>
-                                            <p class="text-right" style="color: #707070;">cs@groovy.id &nbsp; || &nbsp; www.groovy.id</p>
-                                            <p class="text-right" style="color: #707070;">Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</p>
-                                         </div>
+                                            <p class="text-right" style="color: #707070;"><img src="images/email.png" width="6%"> cs@groovy.id &nbsp; <img src="images/earth.png" width="6%"> www.groovy.id</p>
+                                            <p class="text-right" style="color: #707070;"><img src="images/map-marker.png" width="6%"> Cyber Building 7th Floor, Jl Kuningan Barat 8, Jakarta 12710</p>
+                                        </div>
                                     </div>
                                 </div>
                         
@@ -271,31 +271,12 @@ export class ContentTestComponent {
 
     public print() {
 
-
         var print = function() {
             kendo.drawing.drawDOM($('#billing')).then(function(group) {
                 kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
             });
         }
 
-        //var doc = new jsPDF();
-
-        // We'll make our own renderer to skip this editor
-        //var specialElementHandlers = {
-        //    '#editor': function(element, renderer){
-        //        return true;
-        //    }
-        //};
-
-        // All units are in the set measurement for the document
-        // This can be changed to "pt" (points), "mm" (Default), "cm", "in"
-        //doc.fromHTML($('#billing').get(0), 15, 15, {
-        //    'width': 170,
-        //    'elementHandlers': specialElementHandlers
-        //});
-
-        // Save the PDF
-        //doc.save('invoice.pdf');
     }
 
 }
