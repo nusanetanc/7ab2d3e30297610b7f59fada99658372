@@ -49,7 +49,7 @@ import { Problem } from './problem';
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div *ngIf="!selectedProblem" class="col-sm-6">
                             <div class="alertNewReports">
                                 <div class="row">
                                     <div class="col-sm-1">
