@@ -273,7 +273,7 @@ export class ContentTestComponent {
 
         var print = function() {
             kendo.drawing.drawDOM($('#billing')).then(function(group) {
-                kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
+                kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
             });
         }
 

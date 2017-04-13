@@ -451,11 +451,17 @@ export class ContentDetailBillingComponent implements OnInit {
 
         var print = function() {
             kendo.drawing.drawDOM($('#billing')).then(function(group) {
-                kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
+                kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
             });
         }
 
+        $('button').on('click', function(){
+            $('button').removeClass('active');
+            $(this).addClass('active');
+        });
+
     }
+
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
