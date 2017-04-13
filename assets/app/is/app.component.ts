@@ -25,7 +25,7 @@ import {ContentProfileEngineerComponent} from "./dashboard/content/profileengine
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
-import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling1.component";
+import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.component";
 import {ContentTestComponent} from "./dashboard/content/testsort.component";
 import {ContentCoverageComponent} from "./dashboard/content/coverage.component";
 import {ContentAddCityComponent} from "./dashboard/content/addcity.component";
