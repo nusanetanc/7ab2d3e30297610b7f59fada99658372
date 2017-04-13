@@ -27,29 +27,6 @@ var menu = require('./routes/menu');
 var problem = require('./routes/problem');
 var streetname = require('./routes/street_name');
 
-
-var angular2ModalVer = '@2.0.0-beta.11';
-var plugin = 'bootstrap'; // js-native / vex
-
-global.angular2ModalVer = angular2ModalVer;
-
-// UMD bundles
-map[`angular2-modal/plugins/${plugin}`] = map['angular2-modal'] + '/bundles';
-packages[`angular2-modal/plugins/${plugin}`] =  { defaultExtension: 'js', main: `angular2-modal.${plugin}.umd` };
-
-var config = {
-    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
-    transpiler: 'ts',
-    typescriptOptions: {
-        tsconfig: true,
-    },
-    map: map,
-    packages: packages,
-};
-
-System.config(config);
-
-
 // api for finnet
 var finnet = require('./routes/finnet');
 
