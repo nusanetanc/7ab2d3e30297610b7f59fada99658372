@@ -67,7 +67,7 @@ import { Problem } from './problem';
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
-                                    <div *ngFor="#problem of problems" class="col-sm-11" >
+                                    <div *ngFor="#problem of descproblems" class="col-sm-11" >
                                         {{ problem.desc }}
                                     </div>
                                 </div>
@@ -97,11 +97,11 @@ export class ContentNewReportComponent implements OnInit {
 
   onSelectSubCategory(subcategory) {
     console.log(subcategory);
-    this.problems = this.getDescProblem(){
+    this.descproblems = this.getDescProblem(){
       this.http.get(`${this.API}/problem/subcategory/${subcategory}`)
           .map(res => res.json())
-          .subscribe(problems => {
-            this.problems = problems
+          .subscribe(descproblems => {
+            this.descproblems = descproblems
           })
     }
     this.selectedProblem = subcategory;
@@ -113,6 +113,7 @@ export class ContentNewReportComponent implements OnInit {
 
   complaints: any[] = [];
   problems: any[] = [];
+  descproblems: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -138,8 +139,8 @@ export class ContentNewReportComponent implements OnInit {
   getDescProblem() {
     this.http.get(`${this.API}/problem/subcategory/${this.subcategory}`)
       .map(res => res.json())
-      .subscribe(problems => {
-        this.problems = problems
+      .subscribe(descproblems => {
+        this.descproblems = descproblems
       })
   }
   getDescProblem(inputsubcategory) {
