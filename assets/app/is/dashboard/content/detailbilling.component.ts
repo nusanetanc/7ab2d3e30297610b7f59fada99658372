@@ -237,11 +237,7 @@ declare let kendo;
                         </div>
                         <!-- /Content List -->
                         
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h3 style="color: #333;">YOUR INVOICE</h4>
-                            </div>
-                        </div>
+                        
                         
                         <!-- Content Print -->
                         <div class="print" style="zoom: 80%;">
