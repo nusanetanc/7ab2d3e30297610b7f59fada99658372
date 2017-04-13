@@ -69,6 +69,7 @@ import { Problem } from './problem';
                                     </div>
                                     <div *ngFor="#descproblem of descproblems" class="col-sm-11" >
                                         {{ descproblem.desc }}
+                                        {{ subs._id }}
                                     </div>
                                 </div>
                             </div>
@@ -115,11 +116,13 @@ export class ContentNewReportComponent implements OnInit {
   complaints: any[] = [];
   problems: any[] = [];
   descproblems: any[] = [];
+  subs: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
+    this.getAcountSub();
   }
 
   getAllComplaint() {
@@ -143,6 +146,15 @@ export class ContentNewReportComponent implements OnInit {
         this.descproblems = descproblems
       })
   }
+
+  getAcountSub() {
+    this.http.get(`${this.API}/subscribe/detailsub`)
+        .map(res => res.json())
+        .subscribe(subs => {
+          this.subs = subs
+        })
+  }
+
   /*getDescProblem(inputsubcategory) {
   var body = `subcategory=${inputsubcategory}`;
   var headers = new Headers();

@@ -76,26 +76,33 @@ declare let kendo;
                                                 </div>
                                                 <div class="row rowBillinfoDate">
                                                     <div class="col-sm-12 hid">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span>Billing Due Date</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span>Billing Date</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
+                                                            <span>Pay Date</span>
+                                                        </div>
+                                                        <div class="col-sm-3">
                                                             <span>Billing Number</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 billInfoDateList">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>Feb, 21 2017</span>
+                                                            <span>{{ bills.duedate }}</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>Feb, 11 2017</span>
+                                                            <span>{{ bills.billdate }}</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
+                                                            <span class="bildate"><b>Pay Date</b></span><br>
+                                                            <span>{{ bills.paydate }}</span>
+                                                        </div>
+                                                        <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
                                                             <span>{{ bills.noinvoice }}</span>
                                                         </div>
@@ -234,7 +241,7 @@ declare let kendo;
             </div>
         </div>
         <!-- Page Content -->
-        
+
         <!-- Content Print -->
         <div class="print" style="zoom: 80%;">
            <div id="formConfirmation">
@@ -441,7 +448,7 @@ declare let kendo;
            </div>
         </div>
         <!-- /Content Print -->
-        
+
     `,
     directives: [ROUTER_DIRECTIVES],
 })
