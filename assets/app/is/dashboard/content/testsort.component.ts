@@ -265,5 +265,18 @@ declare let kendo;
 
 export class ContentTestComponent {
 
+    constructor() {
+    }
+
+
+    public print() {
+
+        var print = function() {
+            kendo.drawing.drawDOM($('#billing')).then(function(group) {
+                kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
+            });
+        }
+
+    }
 
 }
