@@ -36,7 +36,47 @@ import { Http } from 'angular2/http';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select name="problemCatagory">
+                                    <select name="selectcity">
+                                        <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
+                                        <option value="volvo">Jakarta</option>
+                                        <option value="saab">Bandung</option>
+                                        <option value="fiat">All Region</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select name="selectproperty">
+                                        <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
+                                        <option value="volvo">Jakarta</option>
+                                        <option value="saab">Bandung</option>
+                                        <option value="fiat">All Region</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select name="selectcluster">
+                                        <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
+                                        <option value="volvo">Jakarta</option>
+                                        <option value="saab">Bandung</option>
+                                        <option value="fiat">All Region</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select name="selectblok">
+                                        <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
+                                        <option value="volvo">Jakarta</option>
+                                        <option value="saab">Bandung</option>
+                                        <option value="fiat">All Region</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select name="selectstreet">
+                                        <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
+                                        <option value="volvo">Jakarta</option>
+                                        <option value="saab">Bandung</option>
+                                        <option value="fiat">All Region</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select name="selecthome">
                                         <option class="option" disabled="true" selected="true">-- Select Target Information --</option>
                                         <option value="volvo">Jakarta</option>
                                         <option value="saab">Bandung</option>
