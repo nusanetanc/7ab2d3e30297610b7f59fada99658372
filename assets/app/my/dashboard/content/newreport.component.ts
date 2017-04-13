@@ -67,7 +67,7 @@ import { Problem } from './problem';
                                     <div class="col-sm-1">
                                         <i class="material-icons">info</i>
                                     </div>
-                                    <div class="col-sm-11" >
+                                    <div *ngFor="#problem of problems" class="col-sm-11" >
                                         {{ problem.desc }}
                                     </div>
                                 </div>
