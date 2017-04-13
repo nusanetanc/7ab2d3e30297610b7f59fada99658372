@@ -393,7 +393,7 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(billingdate, billingduedate, namepackage, packageprice, routerprice, stbprice, cablerj45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, cablerj45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
 
   var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&pricerj45cable=${cablerj45price}&promoname=${promoname}&pricepromo=${promoprice}
