@@ -76,13 +76,16 @@ declare let kendo;
                                                 </div>
                                                 <div class="row rowBillinfoDate">
                                                     <div class="col-sm-12 hid">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span>Billing Due Date</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
                                                             <span>Billing Date</span>
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-3">
+                                                            <span>Pay Date</span>
+                                                        </div>
+                                                        <div class="col-sm-3">
                                                             <span>Billing Number</span>
                                                         </div>
                                                     </div>
