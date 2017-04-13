@@ -1179,11 +1179,9 @@ button.buttonOrange:active {
 /*----- /New Class ------*/
 
 .print {
-    display: none;
+    display: block;
 }
 
-.page-content >  div > div > div > div > button:hover {
-    .print {
-        display: block;
-    }
+button.active{
+    display: block;
 }
