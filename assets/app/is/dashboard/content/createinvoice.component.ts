@@ -352,7 +352,7 @@ import { Sub } from './subs';
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12">
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablerj45price.value, instalationprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -392,7 +392,7 @@ total:number;
    ];
 
 
-  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice) {
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, cablerj45price, instalationprice) {
 alert('test');
   var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&pricerj45cable=${cablerj45price}&promoname=${promoname}&pricepromo=${promoprice}
