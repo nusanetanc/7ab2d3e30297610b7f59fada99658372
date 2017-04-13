@@ -1183,6 +1183,6 @@ button.buttonOrange:active {
 }
 
 .page-content >  div > div > div > div > button:hover,
-.print {
+.print:hover {
     display: block;
 }
