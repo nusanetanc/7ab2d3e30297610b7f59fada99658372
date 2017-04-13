@@ -352,13 +352,13 @@ import { Sub } from './subs';
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12" *ngIf="subs.status == 'registrasi'">
                         <!-- Small modal -->
-                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
-                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice1(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice2(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price1.value, instalationprice1.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                     <div class="col-sm-12" *ngIf="subs.status != 'registrasi'">
                         <!-- Small modal -->
-                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
-                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice3(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice4(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -399,10 +399,10 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, cablerj45price, instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice4(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice2, cablerj45price2, instalationprice2, subtotal, promoname, promoprice, taxprice, totalprice) {
 alert('test');
-  var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
-  pricestb=${stbprice}&pricerj45cable=${cablerj45price}&promoname=${promoname}&pricepromo=${promoprice}
+  var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice2}&pricerouter=${routerprice}&
+  pricestb=${stbprice2}&pricerj45cable=${cablerj45price2}&promoname=${promoname}&pricepromo=${promoprice}
   &changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&billdate=${billingdate}&duedate=${billingduedate}
   &status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
   var headers = new Headers();
