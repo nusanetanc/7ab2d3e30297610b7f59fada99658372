@@ -1177,3 +1177,7 @@ button.buttonOrange:active {
 }
 
 /*----- /New Class ------*/
+
+.print {
+    display: none;
+}
