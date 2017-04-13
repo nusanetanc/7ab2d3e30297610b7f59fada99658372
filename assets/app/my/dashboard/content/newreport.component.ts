@@ -29,8 +29,8 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select (change)="onSelectCategory($event.target.value)">
-                                        <option class="option" disabled="true" selected="true">-- Problem Catagory --</option>
+                                    <select [(ngModel)]="selectedProblem._id" (change)="onSelectCategory($event.target.value)">
+                                        <option class="option" value="0">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
                                         <option value="Billing Problem">Billing Problem</option>
@@ -39,7 +39,7 @@ import { Problem } from './problem';
                                 </form>
                                 <form>
                                     <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="onSelectSubCategory($event.target.value)">
-                                        <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
+                                        <option *ngIf="selectedProblem._id == 0" class="option" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
@@ -82,7 +82,8 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
-  selectedProblem: Problem;
+  selectedProblem: Problem = new Problem(0, 'dummy');
+  selectedSubProblem: Problem;
 
   onSelectCategory(category) {
     console.log(category);
@@ -104,7 +105,7 @@ export class ContentNewReportComponent implements OnInit {
             this.descproblems = descproblems
           })
     }
-    this.selectedProblem = subcategory;
+    this.selectedSubProblem = subcategory;
   }
 
 // Link to our api, pointing to localhost
