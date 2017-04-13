@@ -394,7 +394,6 @@ total:number;
 
 // Add one person to the API
   createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, promoprice, taxprice, totalprice) {
-alert('test');
   var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
   promoname=${promoname}&pricepromo=${promoprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&billdate=${billingdate}&duedate=${billingduedate}
   &status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
