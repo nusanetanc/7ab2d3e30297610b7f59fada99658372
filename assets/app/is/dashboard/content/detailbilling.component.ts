@@ -233,7 +233,7 @@ declare let kendo;
                         
                         
                         <!-- Content Print -->
-                        <div style="display: none;">
+                        <div class="print">
                         <div id="formConfirmation">
 
                             <!-- Content List -->
