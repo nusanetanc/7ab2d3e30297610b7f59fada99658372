@@ -31,7 +31,7 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button">
+                                <button (click)="onClick()" class="btn btn-default billInfoPrint" type="button">
                                     SAVE
                                 </button>
                             </div>
@@ -263,6 +263,7 @@ declare let kendo;
         <!-- Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
+    providers: [Modal],
 })
 
 export class ContentTestComponent {
