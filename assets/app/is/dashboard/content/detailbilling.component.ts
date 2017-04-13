@@ -2,7 +2,8 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Billing } from './billing';
+
+declare let kendo;
 
 @Component({
     selector: 'form-detailbilling',
@@ -28,9 +29,9 @@ import { Billing } from './billing';
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <a href="#myModal" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
+                                <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <!-- /Row Button -->
@@ -468,6 +469,21 @@ import { Billing } from './billing';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailBillingComponent implements OnInit {
+
+    constructor() {
+    }
+
+
+    public print() {
+
+        var print = function() {
+            kendo.drawing.drawDOM($('#billing')).then(function(group) {
+                kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
+            });
+        }
+
+    }
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
