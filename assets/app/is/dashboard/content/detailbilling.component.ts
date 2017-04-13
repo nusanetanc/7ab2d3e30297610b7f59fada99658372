@@ -28,7 +28,7 @@ import { Billing } from './billing';
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <a [routerLink]="['TestSort']" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
+                                <a [routerLink]="['TestSort', {id: subs._id}]]" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
                                 </a>
                             </div>
