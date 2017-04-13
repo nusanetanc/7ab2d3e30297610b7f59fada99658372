@@ -38,7 +38,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="callType(inputsubcategory.value)">
+                                    <select #inputsubcategory id="inputsubcategory" name="inputsubcategory" (change)="onSelectSubCategory($event.target.value)">
                                         <option class="option" disabled="true" selected="true" value="">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
@@ -93,7 +93,18 @@ export class ContentNewReportComponent implements OnInit {
             this.problems = problems
           })
     }
-    this.selectedProblem = category;
+  }
+
+  onSelectSubCategory(subcategory) {
+    console.log(subcategory);
+    this.problems = this.getDescProblem(){
+      this.http.get(`${this.API}/problem/subcategory/${subcategory}`)
+          .map(res => res.json())
+          .subscribe(problems => {
+            this.problems = problems
+          })
+    }
+    this.selectedProblem = subcategory;
   }
 
 // Link to our api, pointing to localhost
@@ -107,7 +118,7 @@ export class ContentNewReportComponent implements OnInit {
 
   ngOnInit() {
     this.getAllComplaint();
-    this.getProblem();
+    this.getDescProblem();
   }
 
   getAllComplaint() {
@@ -119,6 +130,13 @@ export class ContentNewReportComponent implements OnInit {
   }
   getProblem() {
     this.http.get(`${this.API}/problem/category/${this.category}`)
+      .map(res => res.json())
+      .subscribe(problems => {
+        this.problems = problems
+      })
+  }
+  getDescProblem() {
+    this.http.get(`${this.API}/problem/subcategory/${this.subcategory}`)
       .map(res => res.json())
       .subscribe(problems => {
         this.problems = problems
