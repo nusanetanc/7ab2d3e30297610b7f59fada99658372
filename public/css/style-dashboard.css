@@ -1182,7 +1182,8 @@ button.buttonOrange:active {
     display: none;
 }
 
-.page-content >  div > div > div > div > button:hover,
-.print:hover {
-    display: block;
+.page-content >  div > div > div > div > button:hover {
+    .print {
+        display: block;
+    }
 }
