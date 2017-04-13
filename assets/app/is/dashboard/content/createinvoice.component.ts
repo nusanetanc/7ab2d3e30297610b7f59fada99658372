@@ -276,11 +276,10 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price" disabled/>
                                 </div>
                             </div>
-                            <input #key_val (keyup)=0 type="number">
-                            {{totalharga + key_val.value}}
+                            <!-- <input #key_val (keyup)=0 type="number"> -->
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Promo Name</span>
