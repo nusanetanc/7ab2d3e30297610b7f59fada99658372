@@ -287,7 +287,7 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
+                                    <input *ngIf="subs.status != 'registrasi'"  type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
                                 </div>
                             </div>
                             <!-- <input #key_val (keyup)=0 type="number"> -->
@@ -358,7 +358,7 @@ import { Sub } from './subs';
                     <div class="col-sm-12" *ngIf="subs.status != 'registrasi'">
                         <!-- Small modal -->
                         <button *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" type="submit" (click)="createInvoice3(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice1.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM3</button>
-                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice4(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice2.value, cablerj45price2.value, instalationprice2.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM4</button>
+                        <button *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="submit" (click)="createInvoice4(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM4</button>
                     </div>
                 </div>
             </div>
