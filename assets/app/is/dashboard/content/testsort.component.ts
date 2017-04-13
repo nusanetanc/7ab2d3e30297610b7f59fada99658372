@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 declare let kendo;
 
 @Component({
-    selector: 'form-detailbilling',
+    selector: 'form-test',
     template: `
 
         <!-- Page content -->
@@ -445,7 +445,7 @@ declare let kendo;
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailBillingComponent implements OnInit {
+export class ContentTestComponent implements OnInit {
 
     public print() {
 
