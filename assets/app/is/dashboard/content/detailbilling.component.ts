@@ -470,10 +470,6 @@ declare let kendo;
 })
 export class ContentDetailBillingComponent implements OnInit {
 
-    constructor() {
-    }
-
-
     public print() {
 
         var print = function() {
@@ -484,21 +480,23 @@ export class ContentDetailBillingComponent implements OnInit {
 
     }
 
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
-  bills: any[] = [];
+    bills: any[] = [];
 
-  constructor(private http: Http, private _routeParams: RouteParams) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
-  ngOnInit() {
-  this.getBills();
-}
-getBills(){
-   this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
-     .map(res => res.json())
-     .subscribe(bills => {
-       this.bills = bills
-     })
+    ngOnInit() {
+        this.getBills();
     }
+
+    getBills(){
+    this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
+        .map(res => res.json())
+        .subscribe(bills => {
+            this.bills = bills
+        })
+    }
+
 }
