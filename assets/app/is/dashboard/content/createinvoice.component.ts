@@ -352,7 +352,7 @@ import { Sub } from './subs';
                 <div class="row" style="margin-left: 3px !important;">
                     <div class="col-sm-12">
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value,  instalationprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, cablerj45price.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -393,7 +393,7 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice,  instalationprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, cablerj45price,  subtotal, promoname, promoprice, taxprice, totalprice) {
 alert('test');
   var body = `namepack=${namepackage}&pricepack=${packageprice}&priceinstal=${instalationprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&pricerj45cable=${cablerj45price}&promoname=${promoname}&pricepromo=${promoprice}
