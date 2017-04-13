@@ -38,7 +38,7 @@ declare let kendo;
 
                         <!-- Content List -->
                         <div style="zoom: 80%;">
-                        
+
                         <div id="formConfirmation">
 
                             <!-- Content List -->
@@ -55,10 +55,10 @@ declare let kendo;
                                         </div>
                                     </div>
                                 </div>
-                        
+
                                 <div id="content" class="row">
                                     <div class="col-sm-12">
-                        
+
                                         <div class="row" style="margin-bottom: 30px;">
                                             <div class="col-sm-12" >
                                                 <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
@@ -70,7 +70,7 @@ declare let kendo;
                                             <div class="col-sm-12">
                                                 <div class="row" style="font-size: 20px;">
                                                     <div class="col-sm-6">
-                        
+
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="col-sm-6" style="border: 1px solid orangered; padding: 5px;">
@@ -91,7 +91,7 @@ declare let kendo;
                                                             <span><b>Hj. Andi Siangka</b> <br> Residence One <br> Ruby 7 No. 36 <br> Indonesia</span>
                                                         </div>
                                                         <div class="col-sm-6" style="padding: 5px;">
-                        
+
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6" style="margin-bottom: 0px;">
@@ -240,20 +240,20 @@ declare let kendo;
                                                 </ul>
                                             </div>
                                         </div>
-                        
+
                                     </div>
                                 </div>
-                        
+
                                 <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
-                        
+
                             </div>
                             <!-- /Content List -->
-                        
+
                         </div>
-                        
+
                         </div>
                         <!-- /Content List -->
-                        
+
                     </div>
                 </div>
             </div>
@@ -265,18 +265,5 @@ declare let kendo;
 
 export class ContentTestComponent {
 
-    constructor() {
-    }
-
-
-    public print() {
-
-        var print = function() {
-            kendo.drawing.drawDOM($('#billing')).then(function(group) {
-                kendo.drawing.pdf.saveAs(group, 'Converted PDF.pdf');
-            });
-        }
-
-    }
 
 }
