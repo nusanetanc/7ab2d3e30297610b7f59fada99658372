@@ -142,7 +142,7 @@ import {Streetname} from "./street_name";
                      </div>
                  </div>
                  <div class="row" *ngIf="clickedItem.name == 'regDone'">
-                    <div class="col-md-12 col-md-offset-6">
+                    <div class="col-md-12">
                         <div class="row" style="margin-bottom: 10px; text-align: center;">
                         All Set! We Will See You At The Date And Time You Chose
                         And A Confirmation Email Was Sent With Details Below.
