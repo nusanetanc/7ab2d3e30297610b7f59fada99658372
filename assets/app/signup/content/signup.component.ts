@@ -224,7 +224,7 @@ import {Streetname} from "./street_name";
                             <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT
                             </button>
-                            <button  (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                            <button  (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 FINNISH
                             </button>
                         </div>
@@ -335,9 +335,9 @@ ngOnInit() {
 
 
 // Add one person to the API
-addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
+addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
 
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
