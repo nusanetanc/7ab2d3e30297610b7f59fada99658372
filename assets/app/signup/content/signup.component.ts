@@ -133,11 +133,11 @@ import {Package} from "./package";
                                         </div>
                                     </form>
                             </div>
-                            <div class="col-md-4 col-md-offset-4">
-                                < *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
-                                    NEXT
-                                </button>
-                            </div>
+        <div class="col-md-4 col-md-offset-4">
+            <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
+                NEXT
+            </button>
+        </div>
                         </div>
                     </div>
                 </div>
