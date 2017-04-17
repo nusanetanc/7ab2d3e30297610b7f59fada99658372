@@ -84,6 +84,55 @@ import {Streetname} from "./street_name";
                             </form>
                         </div>
                     </div>
+                    <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                         <p>Please select a installation date</p>
+                             <div class="col-sm-6">
+                                 <div class="container">
+                                     <div class="row">
+                                         <div class="col-sm-6">
+                                             <div class="form-group">
+                                                 <div class="input-group date" id="datetimepicker1">
+                                                     <input #subdateinst id="subdateinst" type="date" class="form-control" />
+                                                     <span class="input-group-addon">
+                                                         <span class="glyphicon glyphicon-calendar"></span>
+                                                     </span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                         <script type="text/javascript">
+                                             $(function () {
+                                                 $('#datetimepicker1').datetimepicker();
+                                             });
+                                         </script>
+                                     </div>
+                                 </div>
+                             </div>
+                     </div>
+                       <div class="col-md-4 col-md-offset-4">
+                           <p>Please select a available timeslot for that date</p>
+                           <div class="col-sm-6 col-sm-offset-4">
+                               <form action="">
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
+                                   <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
+                               </form>
+                           </div>
+                       </div>
+                       <div class="col-md-4 col-md-offset-4">
+                           <a href="package.html" class="back btn btn-default dropdown-toggle">
+                               BACK
+                           </a>
+                           <a href="provide.html" class="next btn btn-default dropdown-toggle">
+                               NEXT
+                           </a>
+                       </div>
+                   </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
