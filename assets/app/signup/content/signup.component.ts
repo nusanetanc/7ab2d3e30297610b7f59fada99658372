@@ -221,13 +221,13 @@ import {Streetname} from "./street_name";
                             <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                                 NEXT2
                             </button>
-                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                            <button (click)="onItemClicked(regPack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT3
                             </button>
-                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                            <button  (click)="onItemClicked(regData)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 NEXT4
                             </button>
-                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
+                            <button  (click)="onItemClicked(regDone)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
                                 FINNISH
                             </button>
                         </div>
