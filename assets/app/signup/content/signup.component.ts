@@ -35,49 +35,46 @@ import {Streetname} from "./street_name";
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="type">
-                                  <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                              <option value="0">-- Select your property --</option>
+                              <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="cluster">
-                                  <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                              <option value="0">-- Select your clusters --</option>
+                              <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="block">
-                                  <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                              <option value="0">-- Select your blok or floor --</option>
+                              <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="no">
-                                  <option class="option" disabled="true" selected="true">-- Select No. --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                              <option value="0">-- Select your street name --</option>
+                              <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
-                          <a href="signup.html" class="back btn btn-default dropdown-toggle">
-                              BACK
-                          </a>
-                          <a href="package.html" class="next btn btn-default dropdown-toggle">
+                          <form>
+                          <select #subgroovyid id="subgroovyid">
+                              <option value="0">-- Select your no home --</option>
+                              <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
+                          </select><br/>
+                          </form>
+                      </div>
+                      <div class="col-md-4 col-md-offset-4">
+                          <button class="next btn btn-default dropdown-toggle">
                               NEXT
                           </a>
                       </div>
