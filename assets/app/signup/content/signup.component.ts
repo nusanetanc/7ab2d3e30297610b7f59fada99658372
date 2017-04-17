@@ -27,7 +27,7 @@ import {Package} from "./package";
                                 <form>
                                     <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                         <option value="0" style="height: 30px;">Select your city</option>
-                                        <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                        <option *ngFor="#city of cities">{{ city.name }}</option>
                                     </select>
                                 </form>
                             </div>
@@ -133,11 +133,11 @@ import {Package} from "./package";
                                         </div>
                                     </form>
                             </div>
-                            <div class="col-md-4 col-md-offset-4">
-                                <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
-                                    NEXT
-                                </button>
-                            </div>
+        <div class="col-md-4 col-md-offset-4">
+            <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
+                NEXT
+            </button>
+        </div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ export class SignupComponent implements OnInit{
 // Add one person to the API
 addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
 
-        var body = name='y'
+        var body = name='y';
      var headers = new Headers();
      headers.append('Content-Type', 'application/x-www-form-urlencoded');
      this.http
