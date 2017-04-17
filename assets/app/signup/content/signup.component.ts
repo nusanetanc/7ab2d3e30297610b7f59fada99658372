@@ -250,7 +250,7 @@ public Items = [
              ];
 public clickedItem = {name: "regArea"};
 onItemClicked(regArea) {
-   this.clickedItem = Item.name:regArea;
+   this.clickedItem = {name: "regArea"};;
 }
 
 selectedCity: City = new City(0, 'dummy');
