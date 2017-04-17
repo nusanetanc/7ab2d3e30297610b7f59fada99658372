@@ -21,6 +21,33 @@ import {Package} from "./package";
 })
 export class SignupComponent implements OnInit{
 
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+
+  // Declare empty list of people
+  subs: any[] = [];
+  cities: any[] = [];
+  properties: any[] = [];
+  typeproperties: any[] = [];
+  clusters: any[] = [];
+  blokfloors: any[] = [];
+  homes: any[] = [];
+  packages: any[] = [];
+
+  constructor(private http: Http) {}
+
+  // Angular 2 Life Cycle event when component has been initialized
+  ngOnInit() {
+      this.getAllSub();
+      this.getAllCity();
+      this.getAllProperty();
+      this.getAllType();
+      this.getAllCluster();
+      this.getAllBLokfloor();
+      this.getAllHome();
+      this.getAllPackage();
+  }
+
 // Add one person to the API
  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
 
@@ -39,34 +66,6 @@ export class SignupComponent implements OnInit{
              console.log(JSON.stringify(error.json()));
          });
  }
-
-
-    // Link to our api, pointing to localhost
-      API = 'http://202.162.207.164:3000';
-
-      // Declare empty list of people
-      subs: any[] = [];
-      cities: any[] = [];
-      properties: any[] = [];
-      typeproperties: any[] = [];
-      clusters: any[] = [];
-      blokfloors: any[] = [];
-      homes: any[] = [];
-      packages: any[] = [];
-
-      constructor(private http: Http) {}
-
-      // Angular 2 Life Cycle event when component has been initialized
-      ngOnInit() {
-          this.getAllSub();
-          this.getAllCity();
-          this.getAllProperty();
-          this.getAllType();
-          this.getAllCluster();
-          this.getAllBLokfloor();
-          this.getAllHome();
-          this.getAllPackage();
-      }
 
       // Get all Sub from the API
       getAllSub() {
