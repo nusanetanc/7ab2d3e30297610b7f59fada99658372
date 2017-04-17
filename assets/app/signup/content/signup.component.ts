@@ -137,7 +137,7 @@ import {Package} from "./package";
             <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                 NEXT
             </button>
-            <button (click)="person = male" [disabled]="person.sex=='m'">Male</button>
+            <button (click)="person = male" *ngIf="person.sex=='f'">Male</button>
             <button (click)="person = female" [disabled]="person.sex=='f'">Female</button>
         </div>
                         </div>
