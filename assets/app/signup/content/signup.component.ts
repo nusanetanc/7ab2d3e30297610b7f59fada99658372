@@ -215,8 +215,20 @@ import {Streetname} from "./street_name";
                 </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
-                                {{ Item.name }}
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regArea'">>
+                                NEXT
+                            </button>
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regInst'">>
+                                NEXT
+                            </button>
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regPack'">>
+                                NEXT
+                            </button>
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regData'">>
+                                NEXT
+                            </button>
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regDone'">>
+                                FINNISH
                             </button>
                         </div>
                     </div>
