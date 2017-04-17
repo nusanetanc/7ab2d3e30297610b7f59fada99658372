@@ -134,7 +134,7 @@ import {Package} from "./package";
                                     </form>
                             </div>
                             <div class="col-md-4 col-md-offset-4">
-                                <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
+                                < *ngIf="!click.data & " button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
                                 </button>
                             </div>
@@ -146,157 +146,209 @@ import {Package} from "./package";
 })
 export class SignupComponent implements OnInit{
 
+    // Add one person to the API
+    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
+
+        var body = name='tes';
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/subscribe/addsub`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add New Subscribe Success');
+                this.getAllSub();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+
+
+/*    selectedCity: City;
+    selectedProperty: Property;
+    selectedCluster: Cluster;
+    selectedBlok: Blokfloor;
+    selectedNo: Home;
+    selectedPackage: Package;
+
+
+    onChangeCity(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedCity = deviceValue;
+    }
+    onChangeProperty(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedProperty = deviceValue;
+    }
+    onChangeCluster(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedCluster = deviceValue;
+    }
+    onChangeBlok(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedBlok = deviceValue;
+    }
+    onChangeNo(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedNo = deviceValue;
+    }
+    onChangePackage(deviceValue): void{
+        console.log(deviceValue);
+        this.selectedPackage = deviceValue;
+    }
+    */
+
+    selectedCity: City = new City(0, 'dummy');
+    selectedProperty: City = new City(0, 'dummy');
+    selectedCluster: City = new City(0, 'dummy');
+    selectedBlok: City = new City(0, 'dummy');
+    selectedStreet: City = new City(0, 'dummy');
+
+    onSelectCity(_id) {
+        this.properties = this.getAllPropertyByCity(){
+            this.http.get(`${this.API}/property/propertybycity/${_id}`
+ )
+                .map(res => res.json())
+                .subscribe(properties => {
+                    this.properties = properties
+                })
+        }
+    }
+
+    onSelectProperty(_id) {
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        }
+    }
+
+    onSelectCluster(_id) {
+        console.log(_id);
+        this.blokfloors = this.getAllBLokfloorByCluster(){
+            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(blokfloors => {
+                    this.blokfloors = blokfloors
+                })
+        }
+    }
+
+    onSelectBlok(_id) {
+        this.streetnames = this.getAllStreetByBlok(){
+            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+                .map(res => res.json())
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
+                })
+        }
+    }
+
+    onSelectStreet(_id) {
+        this.homes = this.getAllHomeByStreet(){
+            this.http.get(`${this.API}/home/homebystreet/${_id}`)
+                .map(res => res.json())
+                .subscribe(homes => {
+                    this.homes = homes
+                })
+        }
+    }
+
 // Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+    API = 'http://202.162.207.164:3000';
 
-  // Declare empty list of people
-  subs: any[] = [];
-  cities: any[] = [];
-  properties: any[] = [];
-  typeproperties: any[] = [];
-  clusters: any[] = [];
-  blokfloors: any[] = [];
-  homes: any[] = [];
-  packages: any[] = [];
+    // Declare empty list of people
+    subs: any[] = [];
+    cities: any[] = [];
+    properties: any[] = [];
+    clusters: any[] = [];
+    blokfloors: any[] = [];
+    homes: any[] = [];
+    packages: any[] = [];
+    streetnames: any[] = [];
 
-  constructor(private http: Http) {}
+    constructor(private http: Http) {}
 
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-      this.getAllSub();
-      this.getAllCity();
-      this.getAllProperty();
-      this.getAllType();
-      this.getAllCluster();
-      this.getAllBLokfloor();
-      this.getAllHome();
-      this.getAllPackage();
-  }
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllSub();
+        this.getAllCity();
+        this.getAllPackage();
+    }
 
-// Add one person to the API
-addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
+    // Get all Sub from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
 
-        var body = name='y'
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     this.http
-         .post(`${this.API}/subscribe/addsub`,
-             body, {
-                 headers: headers
-             })
-         .subscribe(data => {
-             alert('Add New Subscribe Success');
-             this.getAllSub();
-         }, error => {
-             console.log(JSON.stringify(error.json()));
-         });
- }
+// Get all City from the API
+    getAllCity() {
+        this.http.get(`${this.API}/city/listcity`)
+            .map(res => res.json())
+            .subscribe(cities => {
+                this.cities = cities
+            })
+    }
 
- selectedCity: City;
- selectedProperty: Property;
- selectedType: TypeProperty;
- selectedCluster: Cluster;
- selectedBlok: Blokfloor;
- selectedNo: Home;
- selectedPackage: Package;
+    // Get all Property by city from the API
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
 
-
- onChangeCity(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedCity = deviceValue;
- }
- onChangeProperty(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedProperty = deviceValue;
- }
- onChangeType(deviceValue): void{
-         console.log(deviceValue);
-         this.selectedType = deviceValue;
-     }
- onChangeCluster(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedCluster = deviceValue;
-         }
- onChangeBlok(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedBlok = deviceValue;
-         }
- onChangeNo(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedNo = deviceValue;
-         }
- onChangePackage(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedPackage = deviceValue;
- }
-
-
-      // Get all Sub from the API
-      getAllSub() {
-          this.http.get(`${this.API}/subscribe/listsub`)
-              .map(res => res.json())
-              .subscribe(subs => {
-                  this.subs = subs
-              })
-      }
-
-    // Get all City from the API
-      getAllCity() {
-          this.http.get(`${this.API}/city/listcity`)
-              .map(res => res.json())
-              .subscribe(cities => {
-                  this.cities = cities
-              })
-      }
-
-      // Get all Property from the API
-      getAllProperty() {
-          this.http.get(`${this.API}/property/listproperty`)
-              .map(res => res.json())
-              .subscribe(properties => {
-                  this.properties = properties
-              })
-      }
-    // Get all Cluster from the API
-      getAllCluster() {
-          this.http.get(`${this.API}/cluster/listcluster`)
-              .map(res => res.json())
-              .subscribe(clusters => {
-                  this.clusters = clusters
-              })
-      }
-
-      // Get all Type from the API
-      getAllType() {
-          this.http.get(`${this.API}/type/listtypeproperty`)
-              .map(res => res.json())
-              .subscribe(typeproperties => {
-                  this.typeproperties = typeproperties
-              })
-      }
-    // Get all BLokfloor from the API
-      getAllBLokfloor() {
-          this.http.get(`${this.API}/blokfloor/listblokfloor`)
-              .map(res => res.json())
-              .subscribe(blokfloors => {
-                  this.blokfloors = blokfloors
-              })
-      }
+    // Get all Type from the API
+    getAllClusterByProperty() {
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+// Get all BLokfloor from the API
+    getAllBLokfloorByCluster() {
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
     // Get all Home from the API
-      getAllHome() {
-          this.http.get(`${this.API}/home/listhome`)
-              .map(res => res.json())
-              .subscribe(homes => {
-                  this.homes = homes
-              })
-      }
+    getAllHomeByStreet() {
+        this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
+            .map(res => res.json())
+            .subscribe(homes => {
+                this.homes = homes
+            })
+    }
 
-      // Get all Package from the API
-      getAllPackage() {
-          this.http.get(`${this.API}/package/listpackage`)
-              .map(res => res.json())
-              .subscribe(packages => {
-                  this.packages = packages
-              })
-      }
+
+    // Get all Package from the API
+    getAllPackage() {
+        this.http.get(`${this.API}/package/listpackage`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
+            })
+    }
+
+    // Get all Street from the API
+    getAllStreetByBlok() {
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetna
+ mes = streetnames
+            })
+    }
 }
