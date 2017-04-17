@@ -146,119 +146,18 @@ import {Package} from "./package";
 })
 export class SignupComponent implements OnInit{
 
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
-
-  // Declare empty list of people
-  subs: any[] = [];
-  cities: any[] = [];
-  properties: any[] = [];
-  typeproperties: any[] = [];
-  clusters: any[] = [];
-  blokfloors: any[] = [];
-  homes: any[] = [];
-  packages: any[] = [];
-
-  constructor(private http: Http) {}
-
-  // Angular 2 Life Cycle event when component has been initialized
+API = 'http://202.162.207.164:3000';
+cities: City[];
   ngOnInit() {
-      this.getAllSub();
       this.getAllCity();
-      this.getAllProperty();
-      this.getAllType();
-      this.getAllCluster();
-      this.getAllBLokfloor();
-      this.getAllHome();
-      this.getAllPackage();
   }
-
-// Add one person to the API
-addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
-
-        var body = name='y';
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     this.http
-         .post(`${this.API}/subscribe/addsub`,
-             body, {
-                 headers: headers
-             })
-         .subscribe(data => {
-             alert('Add New Subscribe Success');
-             this.getAllSub();
-         }, error => {
-             console.log(JSON.stringify(error.json()));
-         });
- }
-
-
-      // Get all Sub from the API
-      getAllSub() {
-          this.http.get(`${this.API}/subscribe/listsub`)
-              .map(res => res.json())
-              .subscribe(subs => {
-                  this.subs = subs
-              })
-      }
-
-    // Get all City from the API
+  constructor(private http: Http) {}
+  // Get all City from the API
       getAllCity() {
           this.http.get(`${this.API}/city/listcity`)
               .map(res => res.json())
               .subscribe(cities => {
                   this.cities = cities
-              })
-      }
-
-      // Get all Property from the API
-      getAllProperty() {
-          this.http.get(`${this.API}/property/listproperty`)
-              .map(res => res.json())
-              .subscribe(properties => {
-                  this.properties = properties
-              })
-      }
-    // Get all Cluster from the API
-      getAllCluster() {
-          this.http.get(`${this.API}/cluster/listcluster`)
-              .map(res => res.json())
-              .subscribe(clusters => {
-                  this.clusters = clusters
-              })
-      }
-
-      // Get all Type from the API
-      getAllType() {
-          this.http.get(`${this.API}/type/listtypeproperty`)
-              .map(res => res.json())
-              .subscribe(typeproperties => {
-                  this.typeproperties = typeproperties
-              })
-      }
-    // Get all BLokfloor from the API
-      getAllBLokfloor() {
-          this.http.get(`${this.API}/blokfloor/listblokfloor`)
-              .map(res => res.json())
-              .subscribe(blokfloors => {
-                  this.blokfloors = blokfloors
-              })
-      }
-    // Get all Home from the API
-      getAllHome() {
-          this.http.get(`${this.API}/home/listhome`)
-              .map(res => res.json())
-              .subscribe(homes => {
-                  this.homes = homes
-              })
-      }
-
-      // Get all Package from the API
-      getAllPackage() {
-          this.http.get(`${this.API}/package/listpackage`)
-              .map(res => res.json())
-              .subscribe(packages => {
-                  this.packages = packages
               })
       }
 }
