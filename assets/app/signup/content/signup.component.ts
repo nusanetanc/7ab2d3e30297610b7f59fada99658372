@@ -1,8 +1,7 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
-import 'rxjs/add/operator/map';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
 import { Sub } from './subscriber';
 import {City} from "./cities";
 import {Property} from "./property";
@@ -144,7 +143,7 @@ import {Package} from "./package";
                     </div>
                 </div>
 `,
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
 })
 export class SignupComponent implements OnInit{
 
