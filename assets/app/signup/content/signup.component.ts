@@ -15,70 +15,11 @@ import {Package} from "./package";
 @Component({
     selector: 'form-signin',
     template: `
-<h1>tes</h1>
+<h1>tes</h1><br/><h1>tes</h1><br/><h1>tes</h1>
 `,
     directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent implements OnInit{
-
-// Add one person to the API
- addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
-
-     var body = name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid};
-     var headers = new Headers();
-     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-     this.http
-         .post(`${this.API}/subscribe/addsub`,
-             body, {
-                 headers: headers
-             })
-         .subscribe(data => {
-             alert('Add New Subscribe Success');
-             this.getAllSub();
-         }, error => {
-             console.log(JSON.stringify(error.json()));
-         });
- }
-
-
- selectedCity: City;
- selectedProperty: Property;
- selectedType: TypeProperty;
- selectedCluster: Cluster;
- selectedBlok: Blokfloor;
- selectedNo: Home;
- selectedPackage: Package;
-
-
- onChangeCity(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedCity = deviceValue;
- }
- onChangeProperty(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedProperty = deviceValue;
- }
- onChangeType(deviceValue): void{
-         console.log(deviceValue);
-         this.selectedType = deviceValue;
-     }
- onChangeCluster(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedCluster = deviceValue;
-         }
- onChangeBlok(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedBlok = deviceValue;
-         }
- onChangeNo(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedNo = deviceValue;
-         }
- onChangePackage(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedPackage = deviceValue;
- }
-
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
 
