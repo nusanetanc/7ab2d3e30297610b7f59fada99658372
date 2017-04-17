@@ -174,9 +174,9 @@ export class SignupComponent implements OnInit{
   }
 
 // Add one person to the API
- addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
+addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
 
-     var body = name='tes'
+        var body = name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}datebirth=${subdatebirth}&idnumber=${subidnumber};
      var headers = new Headers();
      headers.append('Content-Type', 'application/x-www-form-urlencoded');
      this.http
