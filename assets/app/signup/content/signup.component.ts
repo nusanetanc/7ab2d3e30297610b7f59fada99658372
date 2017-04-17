@@ -2,14 +2,14 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Sub } from './subscriber';
+//import { Sub } from './subscriber';
 import {City} from "./cities";
-import {Property} from "./property";
-import {TypeProperty} from "./type";
-import {Cluster} from "./cluster";
-import {Blokfloor} from "./blokfloor";
-import {Home} from "./home";
-import {Package} from "./package";
+//import {Property} from "./property";
+//import {TypeProperty} from "./type";
+//import {Cluster} from "./cluster";
+//import {Blokfloor} from "./blokfloor";
+//import {Home} from "./home";
+//import {Package} from "./package";
 
 @Component({
     selector: 'form-signin',
