@@ -143,6 +143,76 @@ import {Streetname} from "./street_name";
                         </form>
                      </div>
                  </div>
+                 <div class="row" *ngIf="clickedItem.name == 'regDone'">
+                    <div class="col-md-8 col-md-offset-3">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Fullname
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                Jhon Doe
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Handphone
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                +62 812 1234 2222
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Email
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                jhondoe@gmail.com
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Address
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                112 Diamond Cove Terrace Unit 12, 94134
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Package
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                Level 2
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
+                                Installation Date
+                            </div>
+                            <div class="col-xs-6 col-sm-1">
+                                :
+                            </div>
+                            <div class="col-xs-6 col-md-5">
+                                Wednesday, March 4, 2017 - 10.00 WIB
+                            </div>
+                        </div>
+                    </div>
+                </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
@@ -164,6 +234,7 @@ public Items = [
                 {name: "regInst"},
                 {name: "regPack"},
                 {name: "regData"},
+                {name: "regDone"},
              ];
 public clickedItem = {name: "regArea"};
 onItemClicked(Item) {
