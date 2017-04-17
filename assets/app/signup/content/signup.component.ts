@@ -42,22 +42,6 @@ import {Streetname} from "./street_name";
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
-                              <option value="0">-- Select your clusters --</option>
-                              <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                              <option value="0">-- Select your blok or floor --</option>
-                              <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
                           <button class="next btn btn-default dropdown-toggle">
                               NEXT
                           </a>
