@@ -134,11 +134,9 @@ import {Streetname} from "./street_name";
                                 <input #subemail id="subemail" type="email" class="form-control" placeholder="Email">
                                 <input #subdatebirth id="subdatebirth" type="date" class="form-control inputForm" placeholder="Date of Birth (yyyy/mm/dd)">
                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="NIK">
-                                <!--<p>Upload your National Identity Card</p>
-                                <div class="form-control">
-                                    <button type="button">choose file</button>
-                                    <p>No choose file</p>
-                                </div>-->
+                                <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="back btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
+                                    REGISTER
+                                </button>
                             </div>
                         </form>
                      </div>
@@ -224,7 +222,6 @@ import {Streetname} from "./street_name";
                             <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT
                             </button>
-                            <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" *ngIf="clickedItem.name == 'regData'" class="back btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">REGISTER</button>
                         </div>
                     </div>
                 </div>
