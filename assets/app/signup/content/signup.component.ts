@@ -15,8 +15,6 @@ import {Package} from "./package";
 @Component({
     selector: 'form-signin',
     template: `
-    *ngFor="#city of cities"
-    {{ city.name }}
     <div class="jumbotron signup-jumbotron">
                     <div class="container">
                         <div class="row">
@@ -27,7 +25,7 @@ import {Package} from "./package";
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
                                 <form>
-                                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
+                                    <select>
                                         <option value="0" style="height: 30px;">Select your city</option>
                                         <option *ngFor="#city of cities">{{ city.name }}</option>
                                     </select>
