@@ -27,7 +27,7 @@ import {Package} from "./package";
                                 <form>
                                     <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                         <option value="0" style="height: 30px;">Select your city</option>
-                                        <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
+                                        <option *ngFor="#city of cities">{{ city.name }}</option>
                                     </select>
                                 </form>
                             </div>
