@@ -86,7 +86,7 @@ export class ContentNewReportComponent implements OnInit {
     // Add one person to the API
     addReport(category, subcategory) {
 
-        var body = `subject='test'`;
+        var body = `category=$(category)&subcategory=$(subcategory)`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
