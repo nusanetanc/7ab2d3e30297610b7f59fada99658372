@@ -216,16 +216,16 @@ import {Streetname} from "./street_name";
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <button (click)="onItemClicked(regArea)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
-                                NEXT
+                                NEXT1
                             </button>
                             <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
-                                NEXT
+                                NEXT2
                             </button>
                             <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
-                                NEXT
+                                NEXT3
                             </button>
                             <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
-                                NEXT
+                                NEXT4
                             </button>
                             <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
                                 FINNISH
