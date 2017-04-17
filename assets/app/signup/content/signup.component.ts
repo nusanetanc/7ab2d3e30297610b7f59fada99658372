@@ -347,8 +347,7 @@ export class SignupComponent implements OnInit{
         this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
-                this.streetna
- mes = streetnames
+                this.streetnames = streetnames
             })
     }
 }
