@@ -251,9 +251,6 @@ onItemClicked2(Inst) {
 onItemClicked3(Pack) {
    clickedItem = {name: "regData"};;
 }
-onItemClicked4(Data) {
-   clickedItem = {name: "regDone"};;
-}
 
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
