@@ -137,8 +137,8 @@ import {Package} from "./package";
             <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                 NEXT
             </button>
-            <button (click)="Person()">Male</button>
-            {{ test }}
+            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)">{{ Item.name }}</button>
+            {{ clickedItem.name }}
         </div>
                         </div>
                     </div>
@@ -148,9 +148,16 @@ import {Package} from "./package";
 })
 export class SignupComponent implements OnInit{
 
-onPerson(){
-  test = "halo";
-}
+public Items = [
+                    {name: "Butter"},
+                    {name: "Milk"},
+                    {name: "Yogurt"},
+                    {name: "Cheese"},
+                 ];
+    public clickedItem = {name: ""};
+    onItemClicked(Item) {
+       this.clickedItem = Item;
+    }
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
