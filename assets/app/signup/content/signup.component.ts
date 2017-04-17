@@ -124,7 +124,7 @@ import {Streetname} from "./street_name";
                                </form>
                            </div>
                        </div>
-                       <div class="row" *ngIf="clickedItem.name == 'regData'">
+                       <div class="row" *ngIf="clickedItem.name == 'regPack'">
                          <div class="col-md-4 col-md-offset-4">
                          <form>
                                 <div class="form-group">
