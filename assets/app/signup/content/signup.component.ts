@@ -137,7 +137,7 @@ import {Package} from "./package";
             <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                 NEXT
             </button>
-            <button (click)="Person(1)">Male</button>
+            <button (click)="Person()">Male</button>
             {{ test }}
         </div>
                         </div>
@@ -148,8 +148,8 @@ import {Package} from "./package";
 })
 export class SignupComponent implements OnInit{
 
-onPerson(1){
-  test = 'halo';
+onPerson(){
+  test = "halo";
 }
 
 // Link to our api, pointing to localhost
