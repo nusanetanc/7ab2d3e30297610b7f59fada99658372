@@ -225,8 +225,6 @@ import {Streetname} from "./street_name";
                                 NEXT
                             </button>
                             <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" *ngIf="clickedItem.name == 'regData'" class="btn btn-default buttonOrange right" data-toggle="modal" data-target="#success">REGISTER</button>
-                                FINNISH
-                            </button>
                         </div>
                     </div>
                 </div>
