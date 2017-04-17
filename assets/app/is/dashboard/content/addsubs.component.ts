@@ -24,7 +24,6 @@ import {Streetname} from "./street_name";
                     &nbsp; New Subscribers
                 </h3>
             </div>
-            <form (submit)="onSubmit()">
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
                 <div class="row subInfo">
                     <div class="col-sm-12">
@@ -150,7 +149,6 @@ import {Streetname} from "./street_name";
                     </div>
                 </div>
             </div>
-            </form>
         </div>
     `,
     directives: [ROUTER_DIRECTIVES],
