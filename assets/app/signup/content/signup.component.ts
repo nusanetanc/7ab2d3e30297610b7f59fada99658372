@@ -84,7 +84,7 @@ import {Streetname} from "./street_name";
                             </form>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" *ngIf="clickedItem.name == 'regInst'">
                     <div class="col-md-4 col-md-offset-4">
                          <p>Please select a installation date</p>
                              <div class="col-sm-6">
