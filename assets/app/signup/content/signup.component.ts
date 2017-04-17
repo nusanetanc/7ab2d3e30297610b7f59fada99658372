@@ -51,7 +51,7 @@ export class SignupComponent implements OnInit{
 // Add one person to the API
  addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
 
-     var body = name='yudi';
+     var body = name='tes'
      var headers = new Headers();
      headers.append('Content-Type', 'application/x-www-form-urlencoded');
      this.http
@@ -66,6 +66,45 @@ export class SignupComponent implements OnInit{
              console.log(JSON.stringify(error.json()));
          });
  }
+
+ selectedCity: City;
+ selectedProperty: Property;
+ selectedType: TypeProperty;
+ selectedCluster: Cluster;
+ selectedBlok: Blokfloor;
+ selectedNo: Home;
+ selectedPackage: Package;
+
+
+ onChangeCity(deviceValue): void{
+     console.log(deviceValue);
+     this.selectedCity = deviceValue;
+ }
+ onChangeProperty(deviceValue): void{
+     console.log(deviceValue);
+     this.selectedProperty = deviceValue;
+ }
+ onChangeType(deviceValue): void{
+         console.log(deviceValue);
+         this.selectedType = deviceValue;
+     }
+ onChangeCluster(deviceValue): void{
+             console.log(deviceValue);
+             this.selectedCluster = deviceValue;
+         }
+ onChangeBlok(deviceValue): void{
+             console.log(deviceValue);
+             this.selectedBlok = deviceValue;
+         }
+ onChangeNo(deviceValue): void{
+             console.log(deviceValue);
+             this.selectedNo = deviceValue;
+         }
+ onChangePackage(deviceValue): void{
+     console.log(deviceValue);
+     this.selectedPackage = deviceValue;
+ }
+
 
       // Get all Sub from the API
       getAllSub() {
