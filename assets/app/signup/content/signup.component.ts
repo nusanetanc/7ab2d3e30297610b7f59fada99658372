@@ -244,16 +244,16 @@ export class SignupComponent implements OnInit{
 
 public clickedItem = {name: "regArea"};
 onItemClicked1(Area) {
-   clickedItem = {name: "regInst"};;
+   this.clickedItem = {name: "regInst"};;
 }
 onItemClicked2(Inst) {
-   clickedItem = {name: "regPack"};;
+   this.clickedItem = {name: "regPack"};;
 }
 onItemClicked3(Pack) {
-   clickedItem = {name: "regData"};;
+   this.clickedItem = {name: "regData"};;
 }
 onItemClicked4(Data) {
-   clickedItem = {name: "regDone"};;
+   this.clickedItem = {name: "regDone"};;
 }
 
 selectedCity: City = new City(0, 'dummy');
