@@ -40,7 +40,7 @@ import { Property } from './property';
                                         <form>
                                             <select #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities" value="Jakarta">{{ city.name }},</option>
+                                                <option *ngFor="#city of cities" value="58d3492416d72b7e166dd977">{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
