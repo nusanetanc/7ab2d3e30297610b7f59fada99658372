@@ -224,7 +224,7 @@ import {Streetname} from "./street_name";
                             <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT
                             </button>
-                            <button  (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                            <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" *ngIf="clickedItem.name == 'regData'" class="btn btn-default buttonOrange right" data-toggle="modal" data-target="#success">REGISTER</button>
                                 FINNISH
                             </button>
                         </div>
