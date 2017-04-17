@@ -215,19 +215,19 @@ import {Streetname} from "./street_name";
                 </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <button (click)="onItemClicked(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                            <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                                 NEXT1
                             </button>
-                            <button (click)="onItemClicked(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
+                            <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                                 NEXT2
                             </button>
-                            <button (click)="onItemClicked(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                            <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT3
                             </button>
-                            <button  (click)="onItemClicked(Data)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                            <button  (click)="onItemClicked4(Data)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 NEXT4
                             </button>
-                            <button  (click)="onItemClicked(Done)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
+                            <button  (click)="onItemClicked5(Done)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
                                 FINNISH
                             </button>
                         </div>
@@ -242,16 +242,16 @@ import {Streetname} from "./street_name";
 export class SignupComponent implements OnInit{
 
 public clickedItem = {name: "regArea"};
-onItemClicked(Area) {
+onItemClicked1(Area) {
    clickedItem = {name: "regInst"};;
 }
-onItemClicked(Inst) {
+onItemClicked2(Inst) {
    clickedItem = {name: "regPack"};;
 }
-onItemClicked(Pack) {
+onItemClicked3(Pack) {
    clickedItem = {name: "regData"};;
 }
-onItemClicked(Data) {
+onItemClicked4(Data) {
    clickedItem = {name: "regDone"};;
 }
 
