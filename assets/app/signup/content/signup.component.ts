@@ -144,70 +144,8 @@ import {Streetname} from "./street_name";
                  <div class="row" *ngIf="clickedItem.name == 'regDone'">
                     <div class="col-md-8 col-md-offset-3">
                         <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Fullname
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                Jhon Doe
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Handphone
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                +62 812 1234 2222
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Email
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                jhondoe@gmail.com
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Address
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                112 Diamond Cove Terrace Unit 12, 94134
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Package
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                Level 2
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px;">
-                            <div class="col-xs-6 col-sm-2 col-md-offset-1">
-                                Installation Date
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                :
-                            </div>
-                            <div class="col-xs-6 col-md-5">
-                                Wednesday, March 4, 2017 - 10.00 WIB
-                            </div>
+                        All Set! We Will See You At The Date And Time You Chose
+                        And A Confirmation Email Was Sent With Details Below.
                         </div>
                     </div>
                 </div>
