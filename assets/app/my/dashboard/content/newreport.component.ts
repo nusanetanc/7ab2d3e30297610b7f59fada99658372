@@ -44,7 +44,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <a (click)="addReport(category.value, subcategory.value)" class="btn btn-default">
+                                <a (click)="addReport(category.value, subcategory.value, {{subs._id}})" class="btn btn-default">
                                     SEND
                                 </a>
                             </div>
@@ -86,8 +86,8 @@ export class ContentNewReportComponent implements OnInit {
     // Add one person to the API
     addReport(category, subcategory) {
 
-        var subscriber = this.getAcountSub();
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subscriber._id}`;
+        var subs = this.getAcountSub();
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs._id}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
