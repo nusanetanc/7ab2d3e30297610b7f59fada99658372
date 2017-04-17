@@ -90,8 +90,7 @@ export class SignupComponent implements OnInit{
                   this.typeproperties = typeproperties
               })
       }
-    // Get all BLo
-    kfloor from the API
+    // Get all BLokfloor from the API
       getAllBLokfloor() {
           this.http.get(`${this.API}/blokfloor/listblokfloor`)
               .map(res => res.json())
