@@ -165,41 +165,6 @@ export class SignupComponent implements OnInit{
             });
     }
 
-
-/*    selectedCity: City;
-    selectedProperty: Property;
-    selectedCluster: Cluster;
-    selectedBlok: Blokfloor;
-    selectedNo: Home;
-    selectedPackage: Package;
-
-
-    onChangeCity(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedCity = deviceValue;
-    }
-    onChangeProperty(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedProperty = deviceValue;
-    }
-    onChangeCluster(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedCluster = deviceValue;
-    }
-    onChangeBlok(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedBlok = deviceValue;
-    }
-    onChangeNo(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedNo = deviceValue;
-    }
-    onChangePackage(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedPackage = deviceValue;
-    }
-    */
-
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
