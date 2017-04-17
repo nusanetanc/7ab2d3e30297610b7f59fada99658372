@@ -15,7 +15,7 @@ import {SignupComponent} from "./content/signup.component";
               <router-outlet></router-outlet>
             <my-footer></my-footer>
 `,
-    directives: [HeaderComponent, FooterComponent, SignupComponent, DataComponent, PackageComponent, InstalldateComponent, ProvideComponent, DoneComponent, ROUTER_DIRECTIVES]
+    directives: [HeaderComponent, FooterComponent, SignupComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
