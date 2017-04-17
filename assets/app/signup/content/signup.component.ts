@@ -34,14 +34,6 @@ import {Streetname} from "./street_name";
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                              <option value="0">-- Select your property --</option>
-                              <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
                           <button class="next btn btn-default dropdown-toggle">
                               NEXT
                           </a>
