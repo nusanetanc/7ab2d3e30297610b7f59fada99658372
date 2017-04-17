@@ -29,7 +29,7 @@ import { Problem } from './problem';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select #category id="category" [(ngModel)]="selectedProblem.category" (change)="onSelectCategory($event.target.value)">
+                                    <select #reportcategory id="reportcategory" [(ngModel)]="selectedProblem.category" (change)="onSelectCategory($event.target.value)">
                                         <option class="option" value="0">-- Problem Catagory --</option>
                                         <option value="Internet Problem">Internet Problem</option>
                                         <option value="TV Problem">TV Problem</option>
@@ -38,13 +38,13 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select #subcategory id="subcategory" name="subcategory" (change)="onSelectSubCategory($event.target.value)">
+                                    <select #reportsubcategory id="reportsubcategory" name="subcategory" (change)="onSelectSubCategory($event.target.value)">
                                         <option class="option" value="0">-- Select Internet Problem --</option>
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <a (click)="addReport(category.value, subcategory.value)" class="btn btn-default">
+                                <a (click)="addReport(reportcategory.value, reportsubcategory.value)" class="btn btn-default">
                                     SEND
                                 </a>
                             </div>
@@ -84,9 +84,9 @@ import { Problem } from './problem';
 })
 export class ContentNewReportComponent implements OnInit {
     // Add one person to the API
-    addReport(category, subcategory) {
+    addReport(reportcategory, reportsubcategory) {
 
-        var body = `category=$(category)&subcategory=$(subcategory)`;
+        var body = `category=$(reportcategory)&subcategory=$(reportsubcategory)`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
