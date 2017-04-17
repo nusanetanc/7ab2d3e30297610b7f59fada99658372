@@ -43,22 +43,18 @@ import {Streetname} from "./street_name";
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="cluster">
-                                  <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                            <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                <option value="0">-- Select your clusters --</option>
+                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                            </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="block">
-                                  <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                              <option value="0">-- Select your blok or floor --</option>
+                              <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
