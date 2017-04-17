@@ -138,7 +138,7 @@ import {Package} from "./package";
                 NEXT
             </button>
             <button (click)="person = male">Male</button>
-            {{ person.value }}
+            {{ person }}
         </div>
                         </div>
                     </div>
