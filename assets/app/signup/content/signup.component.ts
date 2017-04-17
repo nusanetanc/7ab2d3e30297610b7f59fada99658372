@@ -215,19 +215,19 @@ import {Streetname} from "./street_name";
                 </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <button (click)="onItemClicked(regArea)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regArea'">
+                            <button (click)="onItemClicked(regArea)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                                 NEXT
                             </button>
-                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regInst'">
+                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                                 NEXT
                             </button>
-                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regPack'">
+                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT
                             </button>
-                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regData'">
+                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 NEXT
                             </button>
-                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="Item.name == 'regDone'">
+                            <button  (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
                                 FINNISH
                             </button>
                         </div>
