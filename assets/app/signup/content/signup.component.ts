@@ -192,43 +192,7 @@ addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgro
          });
  }
 
- selectedCity: City;
- selectedProperty: Property;
- selectedType: TypeProperty;
- selectedCluster: Cluster;
- selectedBlok: Blokfloor;
- selectedNo: Home;
- selectedPackage: Package;
 
-
- onChangeCity(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedCity = deviceValue;
- }
- onChangeProperty(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedProperty = deviceValue;
- }
- onChangeType(deviceValue): void{
-         console.log(deviceValue);
-         this.selectedType = deviceValue;
-     }
- onChangeCluster(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedCluster = deviceValue;
-         }
- onChangeBlok(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedBlok = deviceValue;
-         }
- onChangeNo(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedNo = deviceValue;
-         }
- onChangePackage(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedPackage = deviceValue;
- }
 
 
       // Get all Sub from the API
