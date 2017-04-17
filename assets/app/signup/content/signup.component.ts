@@ -25,7 +25,7 @@ import {Package} from "./package";
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
                                 <form>
-                                    <select>
+                                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                         <option value="0" style="height: 30px;">Select your city</option>
                                         <option *ngFor="#city of cities">{{ city.name }}</option>
                                     </select>
@@ -192,44 +192,6 @@ addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgro
          });
  }
 
- selectedCity: City;
- selectedProperty: Property;
- selectedType: TypeProperty;
- selectedCluster: Cluster;
- selectedBlok: Blokfloor;
- selectedNo: Home;
- selectedPackage: Package;
-
-
- onChangeCity(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedCity = deviceValue;
- }
- onChangeProperty(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedProperty = deviceValue;
- }
- onChangeType(deviceValue): void{
-         console.log(deviceValue);
-         this.selectedType = deviceValue;
-     }
- onChangeCluster(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedCluster = deviceValue;
-         }
- onChangeBlok(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedBlok = deviceValue;
-         }
- onChangeNo(deviceValue): void{
-             console.log(deviceValue);
-             this.selectedNo = deviceValue;
-         }
- onChangePackage(deviceValue): void{
-     console.log(deviceValue);
-     this.selectedPackage = deviceValue;
- }
-
 
       // Get all Sub from the API
       getAllSub() {
@@ -298,5 +260,42 @@ addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgro
               .subscribe(packages => {
                   this.packages = packages
               })
+      }
+      selectedCity: City;
+      selectedProperty: Property;
+      selectedType: TypeProperty;
+      selectedCluster: Cluster;
+      selectedBlok: Blokfloor;
+      selectedNo: Home;
+      selectedPackage: Package;
+
+
+      onChangeCity(deviceValue): void{
+          console.log(deviceValue);
+          this.selectedCity = deviceValue;
+      }
+      onChangeProperty(deviceValue): void{
+          console.log(deviceValue);
+          this.selectedProperty = deviceValue;
+      }
+      onChangeType(deviceValue): void{
+              console.log(deviceValue);
+              this.selectedType = deviceValue;
+          }
+      onChangeCluster(deviceValue): void{
+                  console.log(deviceValue);
+                  this.selectedCluster = deviceValue;
+              }
+      onChangeBlok(deviceValue): void{
+                  console.log(deviceValue);
+                  this.selectedBlok = deviceValue;
+              }
+      onChangeNo(deviceValue): void{
+                  console.log(deviceValue);
+                  this.selectedNo = deviceValue;
+              }
+      onChangePackage(deviceValue): void{
+          console.log(deviceValue);
+          this.selectedPackage = deviceValue;
       }
 }
