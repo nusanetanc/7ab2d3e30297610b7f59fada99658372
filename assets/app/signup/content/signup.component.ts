@@ -224,7 +224,7 @@ import {Streetname} from "./street_name";
                             <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT
                             </button>
-                            <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" *ngIf="clickedItem.name == 'regData'" class="btn btn-default buttonOrange right" data-toggle="modal" data-target="#success">REGISTER</button>
+                            <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" *ngIf="clickedItem.name == 'regData'" class="back btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">REGISTER</button>
                         </div>
                     </div>
                 </div>
@@ -334,7 +334,7 @@ ngOnInit() {
 
 // Add one person to the API
 addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
-
+alert('tes');
     var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
