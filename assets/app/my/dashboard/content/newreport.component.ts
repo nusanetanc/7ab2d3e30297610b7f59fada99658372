@@ -44,7 +44,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <a (click)="addReport(category.value, subcategory.value, subscriber.value)" class="btn btn-default">
+                                <a (click)="addReport(category.value, subcategory.value, subscriber)" class="btn btn-default">
                                     SEND
                                 </a>
                             </div>
