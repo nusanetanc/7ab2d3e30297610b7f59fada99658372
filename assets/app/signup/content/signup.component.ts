@@ -206,7 +206,56 @@ export class SignupComponent implements OnInit{
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
 
-    
+    onSelectCity(_id) {
+        this.properties = this.getAllPropertyByCity(){
+            this.http.get(`${this.API}/property/propertybycity/${_id}`)
+                .map(res => res.json())
+                .subscribe(properties => {
+                    this.properties = properties
+                })
+        }
+    }
+
+    onSelectProperty(_id) {
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.clusters = clusters
+                })
+        }
+    }
+
+    onSelectCluster(_id) {
+        console.log(_id);
+        this.blokfloors = this.getAllBLokfloorByCluster(){
+            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(blokfloors => {
+                    this.blokfloors = blokfloors
+                })
+        }
+    }
+
+    onSelectBlok(_id) {
+        this.streetnames = this.getAllStreetByBlok(){
+            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+                .map(res => res.json())
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
+                })
+        }
+    }
+
+    onSelectStreet(_id) {
+        this.homes = this.getAllHomeByStreet(){
+            this.http.get(`${this.API}/home/homebystreet/${_id}`)
+                .map(res => res.json())
+                .subscribe(homes => {
+                    this.homes = homes
+                })
+        }
+    }
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
