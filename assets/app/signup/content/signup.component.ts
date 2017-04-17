@@ -215,19 +215,19 @@ import {Streetname} from "./street_name";
                 </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <button (click)="onItemClicked(regArea)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                            <button (click)="onItemClicked(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                                 NEXT1
                             </button>
-                            <button (click)="onItemClicked(regInst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
+                            <button (click)="onItemClicked(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                                 NEXT2
                             </button>
-                            <button (click)="onItemClicked(regPack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                            <button (click)="onItemClicked(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                                 NEXT3
                             </button>
-                            <button  (click)="onItemClicked(regData)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                            <button  (click)="onItemClicked(Data)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 NEXT4
                             </button>
-                            <button  (click)="onItemClicked(regDone)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
+                            <button  (click)="onItemClicked(Done)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
                                 FINNISH
                             </button>
                         </div>
@@ -249,16 +249,16 @@ public Items = [
                 {name: "regDone"},
              ];
 public clickedItem = {name: "regArea"};
-onItemClicked(regArea) {
+onItemClicked(Area) {
    this.clickedItem = {name: "regInst"};;
 }
-onItemClicked(regInst) {
+onItemClicked(Inst) {
    this.clickedItem = {name: "regPack"};;
 }
-onItemClicked(regPack) {
+onItemClicked(Pack) {
    this.clickedItem = {name: "regData"};;
 }
-onItemClicked(regData) {
+onItemClicked(Data) {
    this.clickedItem = {name: "regDone"};;
 }
 
