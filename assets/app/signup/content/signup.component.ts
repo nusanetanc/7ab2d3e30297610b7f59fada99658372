@@ -74,13 +74,11 @@ import {Streetname} from "./street_name";
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
-                          <a href="signup.html" class="back btn btn-default dropdown-toggle">
-                              BACK
-                          </a>
-                          <a href="package.html" class="next btn btn-default dropdown-toggle">
-                              NEXT
-                          </a>
+                          <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
+                              {{ Item.name }}
+                          </button>
                       </div>
+                      {{clickedItem.name}}
                   </div>
               </div>
               </div>
@@ -90,6 +88,17 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class SignupComponent implements OnInit{
+
+public Items = [
+                {name: "Butter"},
+                {name: "Milk"},
+                {name: "Yogurt"},
+                {name: "Cheese"},
+             ];
+public clickedItem = {name: ""};
+onItemClicked(Item) {
+   this.clickedItem = Item;
+}
 
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
