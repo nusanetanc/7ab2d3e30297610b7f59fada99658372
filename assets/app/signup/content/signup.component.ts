@@ -120,7 +120,7 @@ export class SignupComponent implements OnInit{
     // Add one person to the API
     addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid) {
 
-        var body = name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}};
+        var body = name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid};
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -272,4 +272,5 @@ export class SignupComponent implements OnInit{
                 this.packages = packages
             })
     }
+
 }
