@@ -19,68 +19,68 @@ import {Streetname} from "./street_name";
 
               <div class="jumbotron signup-jumbotron">
               <div class="container">
-                  <div class="row">
-                      <div class="col-md-12"><!-- header SignUp -->
-                          <h3>Sign Up</h3>
-                      </div><!-- .header SignUp -->
-                  </div>
-                  <div class="row">
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
-                              <option value="0">-- Select your city --</option>
-                              <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                              <option value="0">-- Select your property --</option>
-                              <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                            <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
-                                <option value="0">-- Select your clusters --</option>
-                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                    <div class="row">
+                        <div class="col-md-12"><!-- header SignUp -->
+                            <h3>Sign Up</h3>
+                        </div><!-- .header SignUp -->
+                    </div>
+                    <div class="row" *ngIf="clickedItem.name == 'regData'">
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
+                                <option value="0">-- Select your city --</option>
+                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                             </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                              <option value="0">-- Select your blok or floor --</option>
-                              <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                              <option value="0">-- Select your street name --</option>
-                              <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <form>
-                          <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                              <option value="0">-- Select your no home --</option>
-                              <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
-                          </select><br/>
-                          </form>
-                      </div>
-                      <div class="col-md-4 col-md-offset-4">
-                          <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
-                              {{ Item.name }}
-                          </button>
-                      </div>
-                      {{clickedItem.name}}
-                  </div>
-              </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                <option value="0">-- Select your property --</option>
+                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                            </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                              <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                  <option value="0">-- Select your clusters --</option>
+                                  <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                              </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                            <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                                <option value="0">-- Select your blok or floor --</option>
+                                <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
+                            </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                            <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                <option value="0">-- Select your street name --</option>
+                                <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                            </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <form>
+                            <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
+                                <option value="0">-- Select your no home --</option>
+                                <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
+                            </select><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4">
+                            <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
+                                {{ Item.name }}
+                            </button>
+                        </div>
+                        {{clickedItem.name}}
+                    </div>
+                </div>
               </div>
 
               <!-- /Content -->
@@ -90,10 +90,10 @@ import {Streetname} from "./street_name";
 export class SignupComponent implements OnInit{
 
 public Items = [
-                {name: "Butter"},
-                {name: "Milk"},
-                {name: "Yogurt"},
-                {name: "Cheese"},
+                {name: "regArea"},
+                {name: "regInst"},
+                {name: "regPack"},
+                {name: "regData"},
              ];
 public clickedItem = {name: ""};
 onItemClicked(Item) {
