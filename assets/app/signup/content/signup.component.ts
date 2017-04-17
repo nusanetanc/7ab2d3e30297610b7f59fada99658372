@@ -92,6 +92,27 @@ import {Package} from "./package";
     directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent implements OnInit{
+// Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+
+    // Declare empty list of people
+    subs: any[] = [];
+    cities: any[] = [];
+    properties: any[] = [];
+    clusters: any[] = [];
+    blokfloors: any[] = [];
+    homes: any[] = [];
+    packages: any[] = [];
+    streetnames: any[] = [];
+
+    constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getAllSub();
+        this.getAllCity();
+        this.getAllPackage();
+    }
 
     // Add one person to the API
     addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
@@ -112,40 +133,6 @@ export class SignupComponent implements OnInit{
             });
     }
 
-
-/*    selectedCity: City;
-    selectedProperty: Property;
-    selectedCluster: Cluster;
-    selectedBlok: Blokfloor;
-    selectedNo: Home;
-    selectedPackage: Package;
-
-
-    onChangeCity(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedCity = deviceValue;
-    }
-    onChangeProperty(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedProperty = deviceValue;
-    }
-    onChangeCluster(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedCluster = deviceValue;
-    }
-    onChangeBlok(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedBlok = deviceValue;
-    }
-    onChangeNo(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedNo = deviceValue;
-    }
-    onChangePackage(deviceValue): void{
-        console.log(deviceValue);
-        this.selectedPackage = deviceValue;
-    }
-    */
 
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
@@ -204,27 +191,7 @@ export class SignupComponent implements OnInit{
         }
     }
 
-// Link to our api, pointing to localhost
-    API = 'http://202.162.207.164:3000';
 
-    // Declare empty list of people
-    subs: any[] = [];
-    cities: any[] = [];
-    properties: any[] = [];
-    clusters: any[] = [];
-    blokfloors: any[] = [];
-    homes: any[] = [];
-    packages: any[] = [];
-    streetnames: any[] = [];
-
-    constructor(private http: Http) {}
-
-    // Angular 2 Life Cycle event when component has been initialized
-    ngOnInit() {
-        this.getAllSub();
-        this.getAllCity();
-        this.getAllPackage();
-    }
 
     // Get all Sub from the API
     getAllSub() {
