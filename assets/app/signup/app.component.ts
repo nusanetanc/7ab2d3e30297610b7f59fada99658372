@@ -7,11 +7,6 @@ import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
 import {SignupComponent} from "./content/signup.component";
-import {DataComponent} from "./content/signup-data.component";
-import {PackageComponent} from "./content/signup-package.component";
-import {InstalldateComponent} from "./content/signup-installdate.component";
-import {ProvideComponent} from "./content/signup-provide.component";
-import {DoneComponent} from "./content/signup-done.component";
 
 @Component({
     selector: 'my-app',
@@ -25,11 +20,6 @@ import {DoneComponent} from "./content/signup-done.component";
 
 @RouteConfig([
     {path: '/signup-beta', name: 'Signup', component: SignupComponent, useAsDefault: true},
-    {path: '/signup-beta/signup-data', name: 'SignupData', component: DataComponent},
-    {path: '/signup-beta/signup-package', name: 'SignupPackage', component: PackageComponent},
-    {path: '/signup-beta/signup-installdate', name: 'SignupInstalldate', component: InstalldateComponent},
-    {path: '/signup-beta/signup-provide', name: 'SignupProvide', component: ProvideComponent},
-    {path: '/signup-beta/signup-done', name: 'SignupDone', component: DoneComponent},
 ])
 
 export class AppComponent{

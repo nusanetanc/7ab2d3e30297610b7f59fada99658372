@@ -24,7 +24,7 @@ import {Package} from "./package";
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <form>                            
+                            <form>
                                 <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                     <option value="0" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
@@ -79,66 +79,7 @@ import {Package} from "./package";
                                 </select>
                             </form>
                         </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <p>Please select a installation date</p>
-                                <div class="col-sm-6">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <div class="input-group date" id="datetimepicker1">
-                                                        <input #subdateinst id="subdateinst" type="date" class="form-control" />
-                                                        <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <script type="text/javascript">
-                                                $(function () {
-                                                    $('#datetimepicker1').datetimepicker();
-                                                });
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <p>Please select a available timeslot for that date</p>
-                            <div class="col-sm-6 col-sm-offset-4">
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
-                                    <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>                                        
-                                <form>
-                                    <div class="form-group">
-                                        <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
-                                        <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                        <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                        <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
-                                        <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
-                                        <!--<p>Upload your National Identity Card</p>
-                                        <div class="form-control">
-                                            <button type="button">choose file</button>
-                                            <p>No choose file</p>
-                                        </div>-->
-                                    </div>
-                                </form>
-                        </div>
-                        <div class="col-md-4 col-md-offset-4">
-                            <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
-                                NEXT
-                            </button>
-                        </div>
-                    </div>
+                        
                 </div>
             </div>
 `,
