@@ -35,12 +35,10 @@ import {Streetname} from "./street_name";
                       </div>
                       <div class="col-md-4 col-md-offset-4">
                           <form>
-                              <select name="type">
-                                  <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                  <option value="volvo">Jakarta</option>
-                                  <option value="saab">Bandung</option>
-                                  <option value="fiat">Medan</option>
-                              </select><br/>
+                          <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                              <option value="0">-- Select your property --</option>
+                              <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                          </select><br/>
                           </form>
                       </div>
                       <div class="col-md-4 col-md-offset-4">
