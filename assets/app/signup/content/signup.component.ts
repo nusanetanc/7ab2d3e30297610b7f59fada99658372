@@ -241,13 +241,6 @@ import {Streetname} from "./street_name";
 })
 export class SignupComponent implements OnInit{
 
-public Items = [
-                {name: "regArea"},
-                {name: "regInst"},
-                {name: "regPack"},
-                {name: "regData"},
-                {name: "regDone"},
-             ];
 public clickedItem = {name: "regArea"};
 onItemClicked(Area) {
    this.clickedItem = {name: "regInst"};;
