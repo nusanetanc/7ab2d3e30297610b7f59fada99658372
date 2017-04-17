@@ -59,8 +59,7 @@ import {Package} from "./package";
                                             <div class="container">
                                                 <div class="row">
                                                     <div class='col-sm-6'>
-                                                        <di
-     v class="form-group">
+                                                        <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker1'>
                                                                 <input #subdateinst id="subdateinst" type='text' class="form-control" />
                                                                 <span class="input-group-addon">
@@ -106,7 +105,7 @@ import {Package} from "./package";
                                     </div>
                                 </form>
                                     <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
-           NEXT
+                                    NEXT
                                     </button>
                             </div>
                         </div>
