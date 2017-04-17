@@ -24,7 +24,7 @@ import {Package} from "./package";
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-md-offset-4">
-                            <form>                            
+                            <form>
                                 <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
                                     <option value="0" style="height: 30px;">Select your city</option>
                                     <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
@@ -117,7 +117,7 @@ import {Package} from "./package";
                             </div>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
-                            <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>                                        
+                            <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
                                 <form>
                                     <div class="form-group">
                                         <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
@@ -206,56 +206,7 @@ export class SignupComponent implements OnInit{
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
 
-    onSelectCity(_id) {
-        this.properties = this.getAllPropertyByCity(){
-            this.http.get(`${this.API}/property/propertybycity/${_id}`)
-                .map(res => res.json())
-                .subscribe(properties => {
-                    this.properties = properties
-                })
-        }
-    }
-
-    onSelectProperty(_id) {
-        this.clusters = this.getAllClusterByProperty(){
-            this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
-                .map(res => res.json())
-                .subscribe(clusters => {
-                    this.clusters = clusters
-                })
-        }
-    }
-
-    onSelectCluster(_id) {
-        console.log(_id);
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
-                })
-        }
-    }
-
-    onSelectBlok(_id) {
-        this.streetnames = this.getAllStreetByBlok(){
-            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-                .map(res => res.json())
-                .subscribe(streetnames => {
-                    this.streetnames = streetnames
-                })
-        }
-    }
-
-    onSelectStreet(_id) {
-        this.homes = this.getAllHomeByStreet(){
-            this.http.get(`${this.API}/home/homebystreet/${_id}`)
-                .map(res => res.json())
-                .subscribe(homes => {
-                    this.homes = homes
-                })
-        }
-    }
+    
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
