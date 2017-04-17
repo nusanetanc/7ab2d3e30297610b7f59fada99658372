@@ -142,6 +142,14 @@ import {Streetname} from "./street_name";
                             </form>
                          </div>
                      </div>
+                       <div class="col-md-4 col-md-offset-4">
+                           <a href="package.html" class="back btn btn-default dropdown-toggle">
+                               BACK
+                           </a>
+                           <a href="provide.html" class="next btn btn-default dropdown-toggle">
+                               NEXT
+                           </a>
+                       </div>
                    </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
@@ -149,6 +157,7 @@ import {Streetname} from "./street_name";
                                 {{ Item.name }}
                             </button>
                         </div>
+                        {{clickedItem.name}}
                     </div>
                 </div>
               </div>
