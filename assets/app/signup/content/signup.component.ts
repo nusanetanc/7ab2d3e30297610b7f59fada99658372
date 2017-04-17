@@ -137,6 +137,8 @@ import {Package} from "./package";
             <button *ngIf="!click.data" button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                 NEXT
             </button>
+            <button (click)="person = male" [disabled]="person.sex=='m'">Male</button>
+            <button (click)="person = female" [disabled]="person.sex=='f'">Female</button>
         </div>
                         </div>
                     </div>
@@ -145,6 +147,14 @@ import {Package} from "./package";
     directives: [ROUTER_DIRECTIVES]
 })
 export class SignupComponent implements OnInit{
+
+private female = {
+        sex: 'f'
+    };
+private male = {
+    sex: 'm'
+};
+    private person = this.female;
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
