@@ -216,22 +216,18 @@ import {Streetname} from "./street_name";
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
-                                NEXT1
+                                NEXT
                             </button>
                             <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
-                                NEXT2
+                                NEXT
                             </button>
                             <button (click)="onItemClicked3(Pack)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
-                                NEXT3
+                                NEXT
                             </button>
-                            <button  (click)="onItemClicked4(Data)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
-                                NEXT4
-                            </button>
-                            <button  (click)="onItemClicked5(Done)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regDone'">
+                            <button  (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                                 FINNISH
                             </button>
                         </div>
-                        {{ clickedItem.name }}
                     </div>
                 </div>
               </div>
@@ -251,9 +247,6 @@ onItemClicked2(Inst) {
 }
 onItemClicked3(Pack) {
    this.clickedItem = {name: "regData"};;
-}
-onItemClicked4(Data) {
-   this.clickedItem = {name: "regDone"};;
 }
 
 selectedCity: City = new City(0, 'dummy');
@@ -353,7 +346,7 @@ addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgro
                 headers: headers
             })
         .subscribe(data => {
-            alert('Add New Subscribe Success');
+            this.clickedItem = {name: "regDone"};;
             this.getAllSub();
         }, error => {
             console.log(JSON.stringify(error.json()));
