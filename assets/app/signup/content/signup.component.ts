@@ -25,88 +25,118 @@ import {Package} from "./package";
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
                                 <form>
-                                    <select name="cars">
-                                        <option disabled="true" selected="true" style="height: 30px;">Select your city</option>
-                                        <option *ngFor="#city of cities" value="{{ city.name }}">{{ city.name }}</option>
+                                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" name="cars">
+                                        <option value="0" style="height: 30px;">Select your city</option>
+                                        <option *ngFor="#city of cities" value="{{ city._id }}">{{ city.name }}</option>
                                     </select>
-                                     <select name="property">
-                                        <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                        <option *ngFor="#property of properties" value="{{ property.name }}">{{property.name}}</option>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
+                                     <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" name="property">
+                                        <option class="option" value="0">-- Select Property Name --</option>
+                                        <option *ngFor="#property of properties" value="{{ property._id }}">{{property.name}}</option>
+                                    </select><br/>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
+                                    <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" name="cluster">
+                                        <option class="option" value="0">-- Select Cluster --</option>
+                                        <option *ngFor="#cluster of clusters" value="{{ cluster._id }}">{{ cluster.name }}</option>
                                     </select>
-                                    <select name="type">
-                                        <option class="option" disabled="true" selected="true">-- Select Type --</option>
-                                        <option *ngFor="#typeproperty of typeproperties" value="{{ typeproperty.name }}">{{ typeproperty.name }}</option>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
+                                    <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" name="block">
+                                        <option class="option" value="0">-- Select Block --</option>
+                                        <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor._id }}">{{ blokfloor.name }}</option>
                                     </select>
-                                    <select name="cluster">
-                                        <option class="option" disabled="true" selected="true">-- Select Cluster --</option>
-                                        <option *ngFor="#cluster of clusters" value="{{ cluster.name }}">{{ cluster.name }}</option>
+                                 </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
+                                    <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" name="street">
+                                        <option class="option" value="0">-- Select Street --</option>
+                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                     </select>
-                                    <select name="block">
-                                        <option class="option" disabled="true" selected="true">-- Select Block --</option>
-                                        <option *ngFor="#blokfloor of blokfloors" value="{{ blokfloor.name }}">{{ blokfloor.name }}</option>
-                                    </select>
+                                 </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
                                     <select #subgroovyid id="subgroovyid" name="no">
-                                        <option class="option" disabled="true" selected="true">-- Select No. --</option>
+     <option class="option" disabled="true" selected="true">-- Select No. --</option>
                                         <option *ngFor="#home of homes" value="{{ home.groovyid }}">{{ home.nohome }}</option>
                                     </select>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <form>
                                     <select #subpacklev id="subpacklev" name="package">
                                         <option disabled="true" selected="true">-- Select Package --</option>
                                         <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                     </select>
-                                    <div>
-                                        <p>Please select a installation date</p>
-                                        <div class="col-sm-6">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class='col-sm-6'>
-                                                        <div class="form-group">
-                                                            <div class='input-group date' id='datetimepicker1'>
-                                                                <input #subdateinst id="subdateinst" type='text' class="form-control" />
-                                                                <span class="input-group-addon">
-                                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                                </span>
-                                                            </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <p>Please select a installation date</p>
+                                    <div class="col-sm-6">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="input-group date" id="datetimepicker1">
+                                                            <input #subdateinst id="subdateinst" type="date" class="form-control" />
+                                                            <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
                                                         </div>
                                                     </div>
-                                                    <script type="text/javascript">
-                                                        $(function () {
-                                                            $('#datetimepicker1').datetimepicker();
-                                                        });
-                                                    </script>
                                                 </div>
+                                                <script type="text/javascript">
+                                                    $(function () {
+                                                        $('#datetimepicker1').datetimepicker();
+                                                    });
+                                                </script>
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <p>Please select a available timeslot for that date</p>
-                                        <div class="col-sm-6 col-sm-offset-4">
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm PST<br>
-                                                <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm PST
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <p>Please select a available timeslot for that date</p>
+                                <div class="col-sm-6 col-sm-offset-4">
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 9:00 am<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 10:00 am<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 11:00 am<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 12:00 am<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 1:00 pm<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 2:00 pm<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 3:00 pm<br>
+                                        <input id="subtimeinst" #subtimeinst type="radio" name="vehicle" value="Time" /> 4:00 pm
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <p>Please Provide Your Contact Information Below. Your Address : <br> 112 Diamond Cove Terrace Unit 12, 94134</p>
+        <form>
                                         <div class="form-group">
                                             <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
                                             <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
                                             <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                            <p>Upload your National Identity Card</p>
+                                            <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
+                                            <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
+                                            <!--<p>Upload your National Identity Card</p>
                                             <div class="form-control">
                                                 <button type="button">choose file</button>
                                                 <p>No choose file</p>
-                                            </div>
+                                            </div>-->
                                         </div>
-                                    </div>
-                                </form>
-                                    <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value)" class="next btn btn-default dropdown-toggle" style="">
+                                    </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-4">
+                                <button (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="next btn btn-default dropdown-toggle" style="">
                                     NEXT
-                                    </button>
+                                </button>
                             </div>
                         </div>
                     </div>
