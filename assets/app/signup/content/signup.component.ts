@@ -124,25 +124,25 @@ import {Streetname} from "./street_name";
                                </form>
                            </div>
                        </div>
-                       <div class="row" *ngIf="clickedItem.name == 'regPack'">
-                         <div class="col-md-4 col-md-offset-4">
-                         <form>
-                                <div class="form-group">
-                                    <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
-                                    <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
-                                    <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                                    <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
-                                    <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
-                                    <!--<p>Upload your National Identity Card</p>
-                                    <div class="form-control">
-                                        <button type="button">choose file</button>
-                                        <p>No choose file</p>
-                                    </div>-->
-                                </div>
-                            </form>
-                         </div>
-                     </div>
                    </div>
+                   <div class="row" *ngIf="clickedItem.name == 'regPack'">
+                     <div class="col-md-4 col-md-offset-4">
+                     <form>
+                            <div class="form-group">
+                                <input #subname id="subname" type="text" class="form-control" id="exampleInputName" placeholder="Full Name">
+                                <input #subphone id="subphone" type="text" class="form-control" id="exampleInputHp" placeholder="Handphone">
+                                <input #subemail id="subemail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                <input #subdatebirth id="subdatebirth" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="Date of Birth (yyyy/mm/dd)">
+                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" id="exampleInputEmail1" placeholder="NIK">
+                                <!--<p>Upload your National Identity Card</p>
+                                <div class="form-control">
+                                    <button type="button">choose file</button>
+                                    <p>No choose file</p>
+                                </div>-->
+                            </div>
+                        </form>
+                     </div>
+                 </div>
                       <div class="row">
                         <div class="col-md-4 col-md-offset-4">
                             <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
