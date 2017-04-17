@@ -231,6 +231,7 @@ import {Streetname} from "./street_name";
                                 FINNISH
                             </button>
                         </div>
+                        {{ clickedItem.name }}
                     </div>
                 </div>
               </div>
@@ -250,6 +251,9 @@ onItemClicked2(Inst) {
 }
 onItemClicked3(Pack) {
    clickedItem = {name: "regData"};;
+}
+onItemClicked4(Data) {
+   clickedItem = {name: "regDone"};;
 }
 
 selectedCity: City = new City(0, 'dummy');
