@@ -24,8 +24,7 @@ import {Streetname} from "./street_name";
                             <h3>Sign Up</h3>
                         </div><!-- .header SignUp -->
                     </div>
-                    <div class="row">
-                      <div *ngIf="clickedItem.name == 'regData'">
+                    <div class="row" *ngIf="clickedItem.name == 'regData'">
                         <div class="col-md-4 col-md-offset-4">
                             <form>
                             <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
@@ -75,6 +74,7 @@ import {Streetname} from "./street_name";
                             </form>
                         </div>
                       </div>
+                      <div class="row"
                         <div class="col-md-4 col-md-offset-4">
                             <button *ngFor="#Item of Items" (click)="onItemClicked(Item)" class="back btn btn-default dropdown-toggle">
                                 {{ Item.name }}
