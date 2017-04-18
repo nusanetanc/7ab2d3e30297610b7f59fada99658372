@@ -31,6 +31,13 @@ router.get('/listemp', function(req, res, next) {
    });
 });
 
+/* GET employe listing. */
+router.get('/list/:departement', function(req, res, next) {
+     Emp.find({departement:  req.params.departement}, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+});
 /* GET detail employe. */
 router.get('/emp/:id', function(req, res, next) {
 Emp.findById(req.params.id, function(err, emps) {

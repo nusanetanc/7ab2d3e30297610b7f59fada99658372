@@ -49,6 +49,7 @@ import { Http } from 'angular2/http';
 export class ContentAllEngineerComponent {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
+    departement = 'technical';
 
     // Declare empty list of people
     emps: any[] = [];
@@ -62,7 +63,7 @@ export class ContentAllEngineerComponent {
 
     // Get all users from the API
     getAllEmployee() {
-        this.http.get(`${this.API}/employee/listemp`)
+        this.http.get(`${this.API}/employee/list/${this.departement}`)
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
