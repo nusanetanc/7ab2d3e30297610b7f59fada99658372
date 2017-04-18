@@ -90,10 +90,10 @@ import 'rxjs/add/operator/map';
                                   </div>
                               </div>
                           </div>
-                          <div class="col-sm-6">
+                          <div class="col-sm-4">
                               <div class="row">
                                   <div class="col-xs-4 col-md-2">
-                                      <img class="avaProfile" src="ava.png" alt="ava">
+                                      <img class="avaProfile" src="images/ava.png" alt="ava">
                                   </div>
                               </div>
                           </div>
