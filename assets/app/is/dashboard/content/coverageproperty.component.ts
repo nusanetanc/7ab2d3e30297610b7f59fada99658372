@@ -94,7 +94,7 @@ constructor(private http: Http) {}
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
-    this.getAllProperty()
+    this.getAllPropertyByCity()
 }
 selectedCity: City = new City(0, 'dummy');
 onSelectCity(_id) {
@@ -116,13 +116,13 @@ onSelectCity(_id) {
             })
     }
     // Get all Property from the API
-        getAllProperty() {
-            this.http.get(`${this.API}/property/listproperty`)
-                .map(res => res.json())
-                .subscribe(propertys => {
-                    this.propertys = propertys
-                })
-        }
+    getAllPropertyByCity() {
+        this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
         callType(value){
           console.log(value);
         }
