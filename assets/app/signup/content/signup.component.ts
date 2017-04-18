@@ -94,17 +94,9 @@ import {Streetname} from "./street_name";
                                              <div class="form-group">
                                                  <div class="input-group date" id="datetimepicker1">
                                                      <input #subdateinst id="subdateinst" type="date" class="form-control" />
-                                                     <span class="input-group-addon">
-                                                         <span class="glyphicon glyphicon-calendar"></span>
-                                                     </span>
                                                  </div>
                                              </div>
                                          </div>
-                                         <script type="text/javascript">
-                                             $(function () {
-                                                 $('#datetimepicker1').datetimepicker();
-                                             });
-                                         </script>
                                      </div>
                                  </div>
                              </div>
