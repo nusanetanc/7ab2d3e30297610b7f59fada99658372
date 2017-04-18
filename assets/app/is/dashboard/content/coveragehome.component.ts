@@ -64,6 +64,12 @@ import { Street } from './street';
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                     </select><br/>
                                     </form>
+                                    <form>
+                                    <select #homestreet id="homestreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                        <option value="0" disabled="true">-- Select Street --</option>
+                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                    </select><br/>
+                                    </form>
                                         <input type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number">
                                         <button type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
                                             SEND
