@@ -15,8 +15,8 @@ import {Menu} from "./menu";
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
-                            <a class="name"><b>{{emps.name}}</b></a>
-                            <a class="user">{{emps.titlejob}}</a>
+                            <a class="name"><b></b></a>
+                            <a class="user"></a>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
