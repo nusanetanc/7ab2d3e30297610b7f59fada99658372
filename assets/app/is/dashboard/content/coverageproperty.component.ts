@@ -38,9 +38,9 @@ import { Property } from './property';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select #propertycity id="propertycity">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
                                                 <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities" value="58d3492416d72b7e166dd977">{{ city.name }}</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
@@ -65,10 +65,9 @@ import { Property } from './property';
                               <div class="row">
                                   <div class="col-sm-12">
                                     <div class="row">
-                                        <div class="col-sm-12" *ngFor="#property of propertys">
+                                        <div class="col-sm-12" *ngFor="#property of properties">
                                             <div class="row subInfo">
                                                 <div class="col-sm-6 invoiceList"><span>{{property.name}}</span></div>
-                                                <div class="col-sm-6 invoiceList"><span>{{property.city}}</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -97,6 +96,17 @@ ngOnInit() {
     this.getAllCity();
     this.getAllProperty()
 }
+selectedCity: City = new City(0, 'dummy');
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+}
+
 // Get all City from the API
     getAllCity() {
         this.http.get(`${this.API}/city/listcity`)
