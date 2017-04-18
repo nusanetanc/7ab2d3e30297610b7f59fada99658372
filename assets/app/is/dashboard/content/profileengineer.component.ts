@@ -99,13 +99,27 @@ import 'rxjs/add/operator/map';
                           </div>
                       </div>
                   </div>
-                  <div class="col-sm-12">
-                      <div class="row">
-                          <div class="col-sm-12">
-                              <h4>JOB INFORMATION</h4>
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <div class="row headerList paddingLR30">
+                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List City</strong></div>
+                          </div>
+                          <div class="row subInfo">
+                              <div class="col-sm-12">
+                                  <div class="row">
+                                      <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-12" *ngFor="#city of cities">
+                                                <div class="row subInfo">
+                                                    <div class="col-sm-8 invoiceList"><span>{{city.name}}</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
                           </div>
                       </div>
-
                   </div>
               </div>
           </div>
@@ -125,6 +139,7 @@ export class ContentProfileEngineerComponent implements OnInit {
 
     ngOnInit() {
         this.getEmp();
+        this.getJob();
     }
 
     getEmp(){
@@ -132,6 +147,13 @@ export class ContentProfileEngineerComponent implements OnInit {
         .map(res => res.json())
         .subscribe(emps => {
             this.emps = emps
+        })
+    }
+    getJob(){
+    this.http.get(`${this.API}/job/emp/${this._routeParams.get('id')}`)
+        .map(res => res.json())
+        .subscribe(jobs => {
+            this.jobs = jobs
         })
     }
 

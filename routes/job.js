@@ -18,6 +18,14 @@ Job.findById(req.params.id, function(err, jobs) {
    });
 });
 
+/* GET detail jobs. */
+router.get('/emp/:emp', function(req, res, next) {
+Job.find({emp1: req.params.emp}, function(err, jobs) {
+       console.log( jobs );
+       res.json(jobs);
+   });
+});
+
 /* Add job */
 router.post('/addjob', function(req, res, next) {
   var job = new Job();
