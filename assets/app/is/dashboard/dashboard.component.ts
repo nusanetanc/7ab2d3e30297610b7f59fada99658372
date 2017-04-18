@@ -33,7 +33,7 @@ import {Menu} from "./menu";
                             <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllEngineer']"><i class="material-icons">recent_actors</i> <strong>ENGINEER</strong></a>
+                            <a [routerLink]="['AllEngineer']"><i class="material-icons">recent_actors</i> <span class="fontWeight300">ENGINEER</span></a>
                         </li>
                         <li>
                             <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
