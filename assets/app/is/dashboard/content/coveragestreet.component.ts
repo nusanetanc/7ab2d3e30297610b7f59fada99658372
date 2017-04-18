@@ -79,7 +79,7 @@ import { Street } from './street';
               <div class="row">
                   <div class="col-sm-12">
                       <div class="row headerList paddingLR30">
-                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Jalan</strong></div>
+                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Street</strong></div>
                       </div>
                       <div class="row subInfo">
                           <div class="col-sm-12">
@@ -170,6 +170,14 @@ constructor(private http: Http) {}
 ngOnInit() {
     this.getAllSub();
     this.getAllCity();
+}
+// Get all City from the API
+getAllCity() {
+    this.http.get(`${this.API}/city/listcity`)
+        .map(res => res.json())
+        .subscribe(cities => {
+            this.cities = cities
+        })
 }
 // Get all Property by city from the API
 getAllPropertyByCity() {
