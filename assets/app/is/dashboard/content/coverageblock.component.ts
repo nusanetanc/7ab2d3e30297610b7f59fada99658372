@@ -47,13 +47,13 @@ import { Blokfloor } from './blokfloor';
                                         <form>
                                             <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
                                                 <option class="option" disabled="true" value="0">-- Select Property Name --</option>
-                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </form>
                                         <form>
-                                            <select #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)>
-                                                <option class="option" disabled="true" value="0">-- Select Cluster Name --</option>
-                                                <option *ngFor="#cluster of clusters">{{ cluster.name }}</option>
+                                            <select #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                                <option value="0">-- Select your clusters --</option>
+                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
