@@ -122,7 +122,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
     { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
     { path: '/is/profileemployee', component:ContentProfileEmployeeComponent, name:'ProfileEmployee'},
-    { path: '/is/profileengineer', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
+    { path: '/is/profileengineer:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
