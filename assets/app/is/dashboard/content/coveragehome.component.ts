@@ -64,12 +64,6 @@ import { Street } from './street';
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                     </select><br/>
                                     </form>
-                                    <form>
-                                    <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                                        <option value="0">-- Select your no home --</option>
-                                        <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
-                                    </select><br/>
-                                    </form>
 
                                         <input type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number">
                                         <button type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
