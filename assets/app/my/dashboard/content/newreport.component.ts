@@ -44,7 +44,7 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <input type="hidden" value="{{today | date:'medium'}}" class="form-control inputForm" />
+                                <input type="hidden" value="{{today | date:'medium'}}" #dateopen class="form-control inputForm" />
                                 <a (click)="addReport(category.value, subcategory.value, subs._id, dateopen.value)" class="btn btn-default">
                                     SEND
                                 </a>
