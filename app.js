@@ -25,6 +25,7 @@ var home = require('./routes/home');
 var information = require('./routes/information');
 var menu = require('./routes/menu');
 var problem = require('./routes/problem');
+var job = require('./routes/job');
 var streetname = require('./routes/street_name');
 
 // api for finnet
@@ -62,7 +63,7 @@ app.use('/modul', modul);
 app.use('/bill', bill);
 app.use('/city', city);
 app.use('/property', property);
-//app.use('/type', type);
+app.use('/job', job);
 app.use('/cluster', cluster);
 app.use('/blokfloor', blokfloor);
 app.use('/home', home);
