@@ -53,7 +53,7 @@ import { Blokfloor } from './blokfloor';
                                         <form>
                                             <select #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)>
                                                 <option class="option" disabled="true" value="0">-- Select Cluster Name --</option>
-                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                                                <option *ngFor="#cluster of clusters">{{ cluster.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
