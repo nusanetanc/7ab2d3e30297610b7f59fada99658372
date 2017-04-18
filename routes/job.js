@@ -25,6 +25,7 @@ router.post('/addjob', function(req, res, next) {
     job.status= req.body.status;
     job.emp1= req.body.emp1;
     job.emp2= req.body.emp2;
+    job.subs= req.body.subs;
     job.save(function(err) {
       if (err)
           res.send(err);
