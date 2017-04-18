@@ -6,6 +6,7 @@ var EmpSchema   = new Schema({
     idemployee: Number,
     name: String,
     email: String,
+    handphone: Number,
     password: String,
     departement: String,
     titlejob: String,
