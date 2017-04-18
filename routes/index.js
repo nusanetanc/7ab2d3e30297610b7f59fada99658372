@@ -1,6 +1,39 @@
 var express = require('express');
 var router = express.Router();
 var api = express.Router();
+var nodemailer = require("nodemailer");
+
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    pool: true,
+    host: 'smtp.gmail.com', // Gmail as mail client
+    port: 587,
+    secureConnection: false, // use SSL
+    debug: true,
+    tls: {cipher:'SSLv3'},
+    auth: {
+        user: "web.groovyplay",
+        pass: "groovyplay"
+    }
+});
+
+router.get('/send-contact',function(req,res, next){
+  var mailOptions={
+    to: "cs@groovy.id",
+   subject : "Contact Web Groovy",
+   text : "nama : "+req.query.name+", email : "+req.query.email+", Message: "+req.query.message
+}
+  console.log(mailOptions);
+  smtpTransport.sendMail(mailOptions, function(error, response){
+  if(error){
+  console.log(error);
+  res.end("error");
+  }else{
+  console.log("Message sent: " + response.message);
+  res.end("sent");
+  }
+  });
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

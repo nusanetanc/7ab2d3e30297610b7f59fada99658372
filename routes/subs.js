@@ -14,6 +14,21 @@ var jwtDecode = require('jwt-decode');
 var Bill = require('../models/bill');
 var City = require('../models/city');
 var Cluster = require('../models/cluster');
+var nodemailer = require("nodemailer");
+
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    pool: true,
+    host: 'smtp.gmail.com', // Gmail as mail client
+    port: 587,
+    secureConnection: false, // use SSL
+    debug: true,
+    tls: {cipher:'SSLv3'},
+    auth: {
+        user: "web.groovyplay",
+        pass: "groovyplay"
+    }
+});
 var multer = require('multer');
 var storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -136,8 +151,25 @@ router.post('/addsub', function(req, res, next) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
+      var mailOptions={
+      linkact: "http://groovy.id/activation/",
+      to: "cs@groovy.id",
+      subject : "Activation Your Registrastion",
+      text : "Hi.. "+req.body.name+", Register at groovy success, for account activation please click the following link: "+linkact+", then later our customer service right to contact your phone number to validate the data, then your account will be active groovy. Thanks"
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+      console.log(error);
+      res.end("error");
+      }else{
+      console.log("Message sent: " + response.message);
+      res.end("sent");
+      }
+      });
   });
 });
+
 
 router.put('/putsub/:id', function(req, res, next) {
 
