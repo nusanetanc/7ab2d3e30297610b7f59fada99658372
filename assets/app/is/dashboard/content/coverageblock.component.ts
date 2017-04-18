@@ -47,7 +47,7 @@ import { Blokfloor } from './blokfloor';
                                         <form>
                                             <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
                                                 <option class="option" disabled="true" value="0">-- Select Property Name --</option>
-                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </form>
                                         <form>
