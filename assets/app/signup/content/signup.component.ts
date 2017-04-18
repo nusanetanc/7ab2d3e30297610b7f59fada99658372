@@ -88,11 +88,11 @@ import {Streetname} from "./street_name";
                     <div class="col-md-4 col-md-offset-4">
                          <p>Please select a installation date</p>
                              <div class="col-sm-6">
-                                 <div class="container">
+                                 <div class="container text-center">
                                      <div class="row">
                                          <div class="col-sm-6">
                                              <div class="form-group">
-                                                 <div class="input-group date" id="datetimepicker1">
+                                                 <div class="input-group date">
                                                      <input #subdateinst id="subdateinst" type="date" class="form-control" />
                                                  </div>
                                              </div>
