@@ -1,8 +1,7 @@
-
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
-
+import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'form-profileengineer',
@@ -43,7 +42,7 @@ import { Http } from 'angular2/http';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>Jhon Doe</span>
+                                      <span>{{ emps.name }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -54,7 +53,7 @@ import { Http } from 'angular2/http';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>Jhon Doe</span>
+                                      <span>{{ emps.idemployee }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -65,7 +64,7 @@ import { Http } from 'angular2/http';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>johndoe@example.com</span>
+                                      <span>{{ emps.email }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -76,7 +75,7 @@ import { Http } from 'angular2/http';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>+62 812 1234 2222</span>
+                                      <span>{{ emps.phone }}</span>
                                   </div>
                               </div>
                               <div class="row marginTB10 marginL5">
@@ -87,7 +86,7 @@ import { Http } from 'angular2/http';
                                       <span>:</span>
                                   </div>
                                   <div class="col-xs-12 col-md-7">
-                                      <span>+62 812 1234 2222</span>
+                                      <span>{{ emps.departement }} - {{ emps.titlejob }}</span>
                                   </div>
                               </div>
                           </div>
@@ -114,6 +113,26 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentProfileEngineerComponent {
+export class ContentProfileEngineerComponent implements OnInit {
+
+
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+
+    emps: any[] = [];
+
+    constructor(private http: Http, private _routeParams: RouteParams) {}
+
+    ngOnInit() {
+        this.getEmp();
+    }
+
+    getEmp(){
+    this.http.get(`${this.API}/employee/emp/${this._routeParams.get('id')}`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        })
+    }
 
 }
