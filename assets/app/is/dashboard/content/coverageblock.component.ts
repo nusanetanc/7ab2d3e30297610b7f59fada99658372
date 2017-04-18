@@ -39,21 +39,21 @@ import { Blokfloor } from './blokfloor';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select #blockcity id="blockcity">
-                                                <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                <option *ngFor="#city of cities">{{ city._id }}</option>
+                                            <select #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
+                                                <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
                                         <form>
-                                            <select #blockproperty id="blockproperty">
-                                                <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                <option *ngFor="#property of propertys" >{{ property._id }}</option>
+                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
+                                                <option class="option" disabled="true" value="0">-- Select Property Name --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </form>
                                         <form>
-                                            <select #blockcluster id="blockcluster">
-                                                <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                <option *ngFor="#cluster of clusters" >{{ cluster._id }}</option>
+                                            <select #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)>
+                                                <option class="option" disabled="true" value="0">-- Select Cluster Name --</option>
+                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </form>
                                         <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
@@ -82,7 +82,6 @@ import { Blokfloor } from './blokfloor';
                                     <div class="col-sm-12" *ngFor="#blokfloor of blokfloors">
                                         <div class="row subInfo">
                                             <div class="col-sm-4 invoiceList"><span>Blok {{blokfloor.name}}</span></div>
-                                            <div class="col-sm-8 invoiceList"><span>{{blokfloor.cluster}}, {{blokfloor.city}}</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,12 +97,19 @@ import { Blokfloor } from './blokfloor';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoverageBlockComponent implements OnInit {
+
+selectedCity: City = new City(0, 'dummy');
+selectedProperty: City = new City(0, 'dummy');
+selectedCluster: City = new City(0, 'dummy');
+selectedBlok: City = new City(0, 'dummy');
+
 API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
 cities: any[] = [];
-propertys: any[] = [];
+properties: any[] = [];
 clusters: any[] = [];
+subs: any[] = [];
 blokfloors: any[] = [];
 
 constructor(private http: Http) {}
@@ -111,42 +117,85 @@ constructor(private http: Http) {}
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
-    this.getAllProperty();
-    this.getAllCluster();
-    this.getAllBlock();
+    this.getAllPropertyByCity();
+    this.getAllClusterByProperty();
+    this.getAllBLokfloorByCluster();
 }
-// Get all City from the API
-    getAllCity() {
-        this.http.get(`${this.API}/city/listcity`)
+
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
             .map(res => res.json())
-            .subscribe(cities => {
-                this.cities = cities
+            .subscribe(properties => {
+                this.properties = properties
             })
     }
-    // Get all Property from the API
-        getAllProperty() {
-            this.http.get(`${this.API}/property/listproperty`)
-                .map(res => res.json())
-                .subscribe(propertys => {
-                    this.propertys = propertys
-                })
-        }
-    // Get all Property from the API
-        getAllCluster() {
-            this.http.get(`${this.API}/cluster/listcluster`)
-                .map(res => res.json())
-                .subscribe(clusters => {
-                    this.clusters = clusters
-                })
-        }
-        // Get all BLock from the API
-            getAllBlock() {
-                this.http.get(`${this.API}/blokfloor/listblokfloor`)
-                    .map(res => res.json())
-                    .subscribe(blokfloors => {
-                        this.blokfloors = blokfloors
-                    })
-            }
+}
+
+onSelectProperty(_id) {
+    this.clusters = this.getAllClusterByProperty(){
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+}
+
+onSelectCluster(_id) {
+    console.log(_id);
+    this.blokfloors = this.getAllBLokfloorByCluster(){
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
+}
+
+onSelectBlok(_id) {
+    this.streetnames = this.getAllStreetByBlok(){
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
+            })
+    }
+}
+
+/// Get all City from the API
+getAllCity() {
+    this.http.get(`${this.API}/city/listcity`)
+        .map(res => res.json())
+        .subscribe(cities => {
+            this.cities = cities
+        })
+}
+
+// Get all Property by city from the API
+getAllPropertyByCity() {
+    this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+        .map(res => res.json())
+        .subscribe(properties => {
+            this.properties = properties
+        })
+}
+// Get all Type from the API
+getAllClusterByProperty() {
+    this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
+        .map(res => res.json())
+        .subscribe(clusters => {
+            this.clusters = clusters
+        })
+}
+// Get all BLokfloor from the API
+getAllBLokfloorByCluster() {
+    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
+        .map(res => res.json())
+        .subscribe(blokfloors => {
+            this.blokfloors = blokfloors
+        })
+}
     addBlock(blockname, blockcluster) {
 
         var body = `name=${blockname}&cluster=${blockcluster}`;
