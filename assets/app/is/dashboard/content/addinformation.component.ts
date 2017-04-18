@@ -1,7 +1,12 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http } from 'angular2/http';
-
+import { Http, Headers} from 'angular2/http';
+import 'rxjs/add/operator/map';
+import { City } from './cities';
+import { Property } from './property';
+import { Cluster } from './cluster';
+import { Blokfloor } from './blokfloor';
+import { Street } from './street';
 
 @Component({
     selector: 'form-addinformation',
