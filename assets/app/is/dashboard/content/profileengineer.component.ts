@@ -113,7 +113,7 @@ import 'rxjs/add/operator/map';
                                             <div class="col-sm-12" *ngFor="#job of jobs">
                                                 <div class="row subInfo">
                                                     <div class="col-sm-8 invoiceList"><span>{{job.name}}</span></div>
-                                                    <div class="col-sm-4 invoiceList"><span>{{job.progress}}</span></div>
+                                                    <div class="col-sm-4 invoiceList"><span>{{job.status}}</span></div>
                                                 </div>
                                             </div>
                                         </div>
