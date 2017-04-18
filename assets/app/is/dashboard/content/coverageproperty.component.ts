@@ -39,7 +39,7 @@ import { Property } from './property';
                                     <div class="formNewReport marginLR20">
                                         <form>
                                             <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
-                                                <option class="option" disabled="true" selected="true">-- Select City Name --</option>
+                                                <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
