@@ -39,15 +39,15 @@ import { Cluster } from './cluster';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <select #clustercity id="clustercity">
-                                                    <option class="option" disabled="true" selected="true">-- Select City Name --</option>
-                                                    <option *ngFor="#city of cities" value="58d3492416d72b7e166dd977">{{ city.name }}</option>
+                                                <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
+                                                    <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                                 </select><br/>
                                             </form>
                                             <form>
-                                                <select  #clusterproperty id="clusterproperty">
+                                                <select  #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
                                                     <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
-                                                    <option *ngFor="#property of propertys" value="58d3510309f03f0338136435">{{ property.name }}</option>
+                                                    <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                                 </select><br/>
                                             </form>
                                             <form>
@@ -95,6 +95,10 @@ import { Cluster } from './cluster';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoverageClusterComponent implements OnInit {
+
+selectedCity: City = new City(0, 'dummy');
+selectedProperty: City = new City(0, 'dummy');
+
 API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
@@ -104,36 +108,51 @@ clusters: any[] = [];
 
 constructor(private http: Http) {}
 
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+}
+
+onSelectProperty(_id) {
+    this.clusters = this.getAllClusterByProperty(){
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+}
+
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
     this.getAllProperty();
     this.getAllCluster();
 }
-// Get all City from the API
-    getAllCity() {
-        this.http.get(`${this.API}/city/listcity`)
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
             .map(res => res.json())
-            .subscribe(cities => {
-                this.cities = cities
+            .subscribe(properties => {
+                this.properties = properties
             })
     }
-    // Get all Property from the API
-        getAllProperty() {
-            this.http.get(`${this.API}/property/listproperty`)
-                .map(res => res.json())
-                .subscribe(propertys => {
-                    this.propertys = propertys
-                })
-        }
-    // Get all Property from the API
-        getAllCluster() {
-            this.http.get(`${this.API}/cluster/listcluster`)
-                .map(res => res.json())
-                .subscribe(clusters => {
-                    this.clusters = clusters
-                })
-        }
+}
+
+onSelectProperty(_id) {
+    this.clusters = this.getAllClusterByProperty(){
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+}
     addCluster(clustername, clusterproperty) {
 
         var body = `name=${clustername}&property=${clusterproperty}`;
