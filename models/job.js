@@ -8,4 +8,4 @@ var JobSchema   = new Schema({
   emp2: String
 });
 
-module.exports = mongoose.model('Job', CitySchema);
+module.exports = mongoose.model('Job', JobSchema);
