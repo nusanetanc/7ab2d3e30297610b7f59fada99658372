@@ -46,7 +46,7 @@ import { Cluster } from './cluster';
                                             </form>
                                             <form>
                                                 <select  #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                                                    <option class="option" disabled="true" selected="true">-- Select Property Name --</option>
+                                                    <option class="option" disabled="true" selected="true" value="0">-- Select Property Name --</option>
                                                     <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                                 </select><br/>
                                             </form>
