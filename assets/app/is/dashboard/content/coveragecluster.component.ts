@@ -103,7 +103,7 @@ API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
 cities: any[] = [];
-propertys: any[] = [];
+properties: any[] = [];
 clusters: any[] = [];
 
 constructor(private http: Http) {}
@@ -131,27 +131,33 @@ onSelectProperty(_id) {
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
-    this.getAllProperty();
-    this.getAllCluster();
+    this.getAllPropertyByCity();
+    this.getAllClusterByProperty();
 }
-onSelectCity(_id) {
-    this.properties = this.getAllPropertyByCity(){
-        this.http.get(`${this.API}/property/propertybycity/${_id}`)
-            .map(res => res.json())
-            .subscribe(properties => {
-                this.properties = properties
-            })
-    }
+// Get all City from the API
+getAllCity() {
+    this.http.get(`${this.API}/city/listcity`)
+        .map(res => res.json())
+        .subscribe(cities => {
+            this.cities = cities
+        })
 }
 
-onSelectProperty(_id) {
-    this.clusters = this.getAllClusterByProperty(){
-        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
-            .map(res => res.json())
-            .subscribe(clusters => {
-                this.clusters = clusters
-            })
-    }
+// Get all Property by city from the API
+getAllPropertyByCity() {
+    this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+        .map(res => res.json())
+        .subscribe(properties => {
+            this.properties = properties
+        })
+}
+// Get all Type from the API
+getAllClusterByProperty() {
+    this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
+        .map(res => res.json())
+        .subscribe(clusters => {
+            this.clusters = clusters
+        })
 }
     addCluster(clustername, clusterproperty) {
 
