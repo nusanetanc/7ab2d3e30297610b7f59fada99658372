@@ -99,19 +99,21 @@ import 'rxjs/add/operator/map';
                           </div>
                       </div>
                   </div>
+                  <br/><br/>
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="row headerList paddingLR30">
-                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List City</strong></div>
+                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Job</strong></div>
                           </div>
                           <div class="row subInfo">
                               <div class="col-sm-12">
                                   <div class="row">
                                       <div class="col-sm-6">
                                         <div class="row">
-                                            <div class="col-sm-12" *ngFor="#city of cities">
+                                            <div class="col-sm-12" *ngFor="#job of jobs">
                                                 <div class="row subInfo">
-                                                    <div class="col-sm-8 invoiceList"><span>{{city.name}}</span></div>
+                                                    <div class="col-sm-8 invoiceList"><span>{{job.name}}</span></div>
+                                                    <div class="col-sm-4 invoiceList"><span>{{job.progress}}</span></div>
                                                 </div>
                                             </div>
                                         </div>
