@@ -29,7 +29,7 @@ import { Complaint } from './complaints';
             <div class="row subInfo roboto grey8b">
                 <div class="col-sm-12">
                   <div class="row">
-                      <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subject }}</b><br>{{ complaints.category }} - {{ complaints.subcategory }}</span></div>
+                      <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subcategory }}</b><br>{{ complaints.category }} - {{ complaints.subcategory }}</span></div>
                       <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">{{ complaints.status }}s</span></span></div>
                   </div>
                   <div>
