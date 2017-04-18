@@ -92,7 +92,7 @@ import {Streetname} from "./street_name";
                                      <div class="row">
                                          <div class="col-sm-6">
                                              <div class="form-group">
-                                                     <input style="width:100%" #subdateinst id="subdateinst" type="date" class="form-control" />
+                                                     <input #subdateinst id="subdateinst" type="date" class="form-control" />
                                              </div>
                                          </div>
                                      </div>
