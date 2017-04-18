@@ -65,7 +65,7 @@ import { Street } from './street';
                                     </select><br/>
                                     </form>
                                     <form>
-                                    <select #homestreet id="homestreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                    <select #homestreet id="homestreet">
                                         <option value="0" disabled="true">-- Select Street --</option>
                                         <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                     </select><br/>
