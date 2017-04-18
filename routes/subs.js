@@ -152,10 +152,9 @@ router.post('/addsub', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
       var mailOptions={
-      linkact: "http://groovy.id/activation/",
       to: req.body.email,
       subject : "Activation Your Registrastion",
-      text : "Hi.. "+req.body.name+", Register at groovy success, for account activation please click the following link: "+linkact+", then later our customer service right to contact your phone number to validate the data, then your account will be active groovy. Thanks"
+      text : "Hi.. "+req.body.name+", Register at groovy success, for account activation please click the following link: http://groovy.id/activation/, then later our customer service right to contact your phone number to validate the data, then your account will be active groovy. Thanks"
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
