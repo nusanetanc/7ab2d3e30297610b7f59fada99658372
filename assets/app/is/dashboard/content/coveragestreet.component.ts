@@ -106,11 +106,61 @@ import { Street } from './street';
 export class ContentCoverageStreetComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
 
+selectedCity: City = new City(0, 'dummy');
+selectedProperty: City = new City(0, 'dummy');
+selectedCluster: City = new City(0, 'dummy');
+selectedBlok: City = new City(0, 'dummy');
+
+onSelectPackage(level) {
+    console.log(level)
+}
+
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+}
+
+onSelectProperty(_id) {
+    this.clusters = this.getAllClusterByProperty(){
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+}
+
+onSelectCluster(_id) {
+    console.log(_id);
+    this.blokfloors = this.getAllBLokfloorByCluster(){
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
+}
+
+onSelectBlok(_id) {
+    this.streetnames = this.getAllStreetByBlok(){
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
+            })
+    }
+}
+
+
 // Declare empty list of people
 cities: any[] = [];
-propertys: any[] = [];
+properties: any[] = [];
 clusters: any[] = [];
-blokfloors: any[] = [];
 blokfloors: any[] = [];
 streetnames: any[] = [];
 
@@ -118,52 +168,43 @@ constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
+    this.getAllSub();
     this.getAllCity();
-    this.getAllProperty();
-    this.getAllCluster();
-    this.getAllBlock();
-    this.getAllStreet();
 }
-// Get all City from the API
-    getAllCity() {
-        this.http.get(`${this.API}/city/listcity`)
-            .map(res => res.json())
-            .subscribe(cities => {
-                this.cities = cities
-            })
-    }
-    // Get all Property from the API
-        getAllProperty() {
-            this.http.get(`${this.API}/property/listproperty`)
-                .map(res => res.json())
-                .subscribe(propertys => {
-                    this.propertys = propertys
-                })
-        }
-    // Get all Property from the API
-        getAllCluster() {
-            this.http.get(`${this.API}/cluster/listcluster`)
-                .map(res => res.json())
-                .subscribe(clusters => {
-                    this.clusters = clusters
-                })
-        }
-      // Get all BLock from the API
-          getAllBlock() {
-              this.http.get(`${this.API}/blokfloor/listblokfloor`)
-                  .map(res => res.json())
-                  .subscribe(blokfloors => {
-                      this.blokfloors = blokfloors
-                  })
-          }
-      // Get all BLock from the API
-          getAllStreet() {
-              this.http.get(`${this.API}/streetname/liststreetname`)
-                  .map(res => res.json())
-                  .subscribe(streetnames => {
-                      this.streetnames = streetnames
-                  })
-          }
+// Get all Property by city from the API
+getAllPropertyByCity() {
+    this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+        .map(res => res.json())
+        .subscribe(properties => {
+            this.properties = properties
+        })
+}
+// Get all Type from the API
+getAllClusterByProperty() {
+    this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
+        .map(res => res.json())
+        .subscribe(clusters => {
+            this.clusters = clusters
+        })
+}
+
+// Get all Street from the API
+getAllStreetByBlok() {
+    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+        .map(res => res.json())
+        .subscribe(streetnames => {
+            this.streetnames = streetnames
+        })
+}
+
+// Get all BLokfloor from the API
+getAllBLokfloorByCluster() {
+    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
+        .map(res => res.json())
+        .subscribe(blokfloors => {
+            this.blokfloors = blokfloors
+        })
+}
     addBlock(streetname, blokfloor) {
 
         var body = `name=${streetname}&blokfloor=${streetblok}`;
