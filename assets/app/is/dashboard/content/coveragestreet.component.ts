@@ -168,8 +168,11 @@ constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
-    this.getAllSub();
-    this.getAllCity();
+this.getAllCity();
+this.getAllPropertyByCity();
+this.getAllClusterByProperty();
+this.getAllBLokfloorByCluster();
+this.getAllStreetByBlok();
 }
 // Get all City from the API
 getAllCity() {
