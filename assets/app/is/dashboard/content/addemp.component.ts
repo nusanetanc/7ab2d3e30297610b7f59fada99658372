@@ -41,12 +41,12 @@ import { City } from './cities';
                                                 <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                                 <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                                 <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                                <select #empdepartement class="form-control inputForm" id="empdepartement" (click)="onItemClicked(deps)">
                                                   <option disabled="true" value="0">-- Select Departement --</option>
                                                   <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                                 </select>
                                                 <br/>
-                                                <input #empaccess type="text" class="form-control inputForm" id="empaccess" placeholder="Access Role">
+                                                <input [(ngModel)]="clickedDeps.level" #empaccess type="text" class="form-control inputForm" id="empaccess" placeholder="Access Role">
                                                 <select  #emptitlejob id="emptitlejob">
                                                   <option disabled="true">-- Select Title Job --</option>
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
@@ -98,4 +98,8 @@ export class ContentAddEmpComponent implements OnInit {
                  {name: "Helpdesk", level: "8", sublevel: "8"},
                  {name: "Helpdesk", level: "8", sublevel: "801"},
               ];
+public clickedDeps = {name: "", level: ""};
+     onItemClicked(deps) {
+        this.clickedDeps = dep;
+     }
 }
