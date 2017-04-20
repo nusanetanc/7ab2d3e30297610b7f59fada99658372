@@ -41,8 +41,9 @@ import {Employee} from './employee';
                 <a [routerLink]="['ProfileEngineer', {id: emp._id}]">
                   <div class="row subInfo fontWeight300">
                       <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
-                      <div class="col-sm-8 invoiceList"><span>{{emp.name}}</span></div>
-                      <div class="col-sm-2 invoiceList"><span>{{emp.titlejob}}</span></div>
+                      <div class="col-sm-4 invoiceList"><span>{{emp.name}}</span></div>
+                      <div class="col-sm-3 invoiceList"><span>{{emp.departement}}</span></div>
+                      <div class="col-sm-3 invoiceList"><span>{{emp.titlejob}}</span></div>
                   </div>
                 </a>
               </div>
