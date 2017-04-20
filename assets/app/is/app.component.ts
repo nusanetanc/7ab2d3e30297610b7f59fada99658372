@@ -80,7 +80,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
         ContentDetailReportComponent,
         ContentDetailStockComponent,
         ContentInfoStockComponent,
-        ContentProfileEmployeeComponent,
+        ,
         ContentProfileEngineerComponent,
         ContentReplayReportComponent,
         ContentAllBillsComponent,
