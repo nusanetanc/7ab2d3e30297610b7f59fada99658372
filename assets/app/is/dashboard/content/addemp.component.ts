@@ -46,13 +46,17 @@ import { City } from './cities';
                                                   <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                                 </select>
                                                 <br/>
-                                                <input [(ngModel)]="clickedDeps.level" #empaccess type="text" class="form-control inputForm" id="empaccess" placeholder="Access Role">
                                                 <select  #emptitlejob id="emptitlejob">
                                                   <option disabled="true">-- Select Title Job --</option>
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
+                                                <br/>
+                                                <select #empaccess class="form-control inputForm" id="empaccess">
+                                                  <option disabled="true" value="0">-- Select Acces Role --</option>
+                                                  <option *ngFor="#job of jobs">{{ job.sublevel }} - {{ job.name }}</option>
+                                                </select>
                                             </form>
-                                            <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empaccess.value)" class="btn btn-default buttonOrange">
                                                 CREATE
                                             </button>
                                         </div>
@@ -69,6 +73,29 @@ import { City } from './cities';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddEmpComponent implements OnInit {
+
+        // Link to our api, pointing to localhost
+        API = 'http://202.162.207.164:3000';
+
+        // Declare empty list of people
+        emps: any[] = [];
+
+        constructor(private http: Http) {}
+
+        // Angular 2 Life Cycle event when component has been initialized
+        ngOnInit() {
+
+            this.getAllEmployee();
+        }
+
+        // Get all users from the API
+        getAllEmployee() {
+            this.http.get(`${this.API}/employee/listemp`)
+                .map(res => res.json())
+                .subscribe(emps => {
+                    this.emps = emps
+                })
+        }
 
     public deps = [
                    {name: "Sales", level: "2"},
@@ -98,8 +125,20 @@ export class ContentAddEmpComponent implements OnInit {
                  {name: "Helpdesk", level: "8", sublevel: "8"},
                  {name: "Helpdesk", level: "8", sublevel: "801"},
               ];
-public clickedDeps = {name: "", level: ""};
-     onItemClicked(deps) {
-        this.clickedDeps = dep;
-     }
+  addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empaccess) {
+      var body = `accessrole=${empaccess}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/employee/addemp`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add Employee Success');
+              this.getAllEmployee();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
 }

@@ -63,7 +63,11 @@ router.post('/addemp', function(req, res, next) {
     emp.name= req.body.name;
     emp.email= req.body.email;
     emp.handphone= req.body.handphone;
-    emp.password= passwordHash.generate(req.body.password);
+    emp.password= passwordHash.generate(require('node-sid')({
+   seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+   len:6,
+   headerField:'x-node-sid'
+  }).create());
     emp.departement= req.body.departement;
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
