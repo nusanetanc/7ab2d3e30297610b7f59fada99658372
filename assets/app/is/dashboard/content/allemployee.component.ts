@@ -38,7 +38,7 @@ import {Employee} from './employee';
             </div>
             <div class="row">
               <div class="col-sm-12" *ngFor="#emp of emps">
-                <a [routerLink]="['ProfileEngineer', {id: emp._id}]">
+                <a [routerLink]="['ProfileEmployee', {id: emp._id}]">
                   <div class="row subInfo fontWeight300">
                       <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
                       <div class="col-sm-4 invoiceList"><span>{{emp.name}}</span></div>
