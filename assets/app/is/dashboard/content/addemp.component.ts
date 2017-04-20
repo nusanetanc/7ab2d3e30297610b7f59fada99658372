@@ -51,9 +51,9 @@ import { City } from './cities';
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
                                                 <br/>
-                                                <select #empaccess id="empaccess">
+                                                <select [(ngModel)]="selectedAccess.sublevel" #empaccess id="empaccess">
                                                   <option disabled="true" value="0">-- Select Acces Role --</option>
-                                                  <option *ngFor="#job of jobs" value={{ job.sublevel }}>{{ job.sublevel }} - {{ job.name }}</option>
+                                                  <option *ngFor="#job of jobs" value={{job.sublevel}}>{{ job.sublevel }} - {{ job.name }}</option>
                                                 </select>
                                             </form>
                                             <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empaccess.value)" class="btn btn-default buttonOrange">
