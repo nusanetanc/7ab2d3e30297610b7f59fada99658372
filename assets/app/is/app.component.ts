@@ -36,6 +36,7 @@ import {ContentCoverageStreetComponent} from "./dashboard/content/coveragestreet
 import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.component";
 import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
 import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.component";
+import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 
 @Component({
    selector: 'is-app',
@@ -97,12 +98,14 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
         ContentCoverageHomeComponent,
         ContentInvoiceComponent,
         ContentBillSubscribeComponent,
+        ContentAddEmpComponent,
         ROUTER_DIRECTIVES
     ],
 })
 @RouteConfig([
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
     { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
+    { path: '/is/addemp', component:ContentAddEmpComponent, name:'AddEmp'},
     { path: '/is/createinvoice/:id', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
     { path: '/is/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
