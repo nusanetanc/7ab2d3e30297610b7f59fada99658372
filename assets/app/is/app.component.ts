@@ -20,7 +20,7 @@ import {ContentDetailInformationComponent} from "./dashboard/content/detailinfor
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentDetailStockComponent} from "./dashboard/content/detailstock.component";
 import {ContentInfoStockComponent} from "./dashboard/content/infostock.component";
-import {ContentProfileEmployeeComponent} from "./dashboard/content/profileemployee.component";
+import {ContentEmployeeComponent} from "./dashboard/content/employee.component";
 import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
@@ -80,7 +80,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
         ContentDetailReportComponent,
         ContentDetailStockComponent,
         ContentInfoStockComponent,
-        //ContentProfileEmployeeComponent,
+        ContentEmployeeComponent,
         ContentProfileEngineerComponent,
         ContentReplayReportComponent,
         ContentAllBillsComponent,
@@ -121,7 +121,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
     { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DetailReport'},
     { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
-    //{ path: '/is/profileemployee', component:ContentProfileEmployeeComponent, name:'ProfileEmployee'},
+    { path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
     { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
