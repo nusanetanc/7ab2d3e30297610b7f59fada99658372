@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passwordHash = require('password-hash');
-
+var nodemailer = require("nodemailer");
 var Emp = require('../models/employee');
 
 var cookieParser = require('cookie-parser');
@@ -22,6 +22,19 @@ router.use(upload.array());
 router.use(cookieParser());
 router.use(session({secret: "Your secret key"}));
 
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    pool: true,
+    host: 'smtp.gmail.com', // Gmail as mail client
+    port: 587,
+    secureConnection: false, // use SSL
+    debug: true,
+    tls: {cipher:'SSLv3'},
+    auth: {
+        user: "web.groovyplay",
+        pass: "groovyplay"
+    }
+});
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {
@@ -58,16 +71,17 @@ router.get('/detailemp', function(req, res, next) {
 
 /* Add employe */
 router.post('/addemp', function(req, res, next) {
+  var createpass = require('node-sid')({
+ seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+ len:6,
+ headerField:'x-node-sid'
+}).create();
   var emp = new Emp();
     emp.idemployee= req.body.idemployee;
     emp.name= req.body.name;
     emp.email= req.body.email;
     emp.handphone= req.body.handphone;
-    emp.password= passwordHash.generate(require('node-sid')({
-   seed:'0123456789abcdefghijklmnopqrstuvwxyz',
-   len:6,
-   headerField:'x-node-sid'
-  }).create());
+    emp.password= passwordHash.generate(createpass);
     emp.departement= req.body.departement;
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
@@ -77,6 +91,21 @@ router.post('/addemp', function(req, res, next) {
       if (err)
           res.send(err);
       res.json({ message: 'Data created!' });
+      var mailOptions={
+      to: req.body.email,
+      subject : "Akun Information System Groovy",
+      text : "akun is.groovy.id anda, email :"+req.body.email+", password : "+createpass
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+      console.log(error);
+      res.end("error");
+      }else{
+      console.log("Message sent: " + response.message);
+      res.end("sent");
+      }
+      });
   });
 });
 
