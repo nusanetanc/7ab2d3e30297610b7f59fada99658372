@@ -89,7 +89,7 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItem.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
-                <input #subdateinst id="subdateinst" type="date/text" class="formInput" />
+                <input #subdateinst id="subdateinst" type="date" class="formInput" />
              </div>
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
