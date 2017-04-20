@@ -90,20 +90,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
                 <div class="col-sm-6">
-                   <div class="container">
-                      <div class="row">
-                         <div class="col-sm-6">
-                            <div class="form-group">
-                               <div class="input-group formInput" id="datetimepicker1">
-                                  <input #subdateinst id="subdateinst" type="date" />
-                                  <span class="input-group-addon">
-                                  <span class="glyphicon glyphicon-calendar"></span>
-                                  </span>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
+                    <input #subdateinst id="subdateinst" type="date" class="formInput" />
                 </div>
              </div>
              <div class="col-md-4 col-md-offset-4">
