@@ -32,7 +32,7 @@ declare let kendo;
                                 <button onclick="printPenagihan()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
                                 </button>
-                                <button onclick="printPembayaran()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal" style="margin-left:20px !important;">
+                                <button onclick="printPembayaran()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     SAVE
                                 </button>
                             </div>
