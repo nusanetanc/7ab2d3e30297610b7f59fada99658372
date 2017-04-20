@@ -96,7 +96,7 @@
 <script>
     var generatePDF = function() {
 
-        kendo.drawing.drawDOM($("#printPembayaran")).then(function(group) {
+        kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
             kendo.drawing.pdf.saveAs(group, "invoice.pdf");
         });
 
