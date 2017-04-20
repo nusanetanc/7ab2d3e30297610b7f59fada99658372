@@ -38,7 +38,15 @@ import { City } from './cities';
                                         <div class="formNewReport marginLR20">
                                             <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                                <br/>
+                                            </form>
+                                            <form>
+                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                            </form>
+                                            <form>
+                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                            </form>
+                                            <form>
+                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                             </form>
                                             <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                 SEND
