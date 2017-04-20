@@ -44,8 +44,8 @@ import { Problem } from './problem';
                                     </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <input type="hidden" value="{{today | date:'medium'}}" #dateopen class="form-control inputForm" />
-                                <a (click)="addReport(category.value, subcategory.value, subs._id, dateopen.value)" class="btn btn-default">
+                                <input type="hidden" value="{{today | date:'medium'}}" #date class="form-control inputForm" />
+                                <a (click)="addReport(category.value, subcategory.value, subs._id, date.value, message.value)" class="btn btn-default">
                                     SEND
                                 </a>
                             </div>
@@ -85,8 +85,9 @@ import { Problem } from './problem';
 export class ContentNewReportComponent implements OnInit {
     today : Date = new Date();
     // Add one person to the API
-    addReport(category, subcategory, subs, dateopen) {
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${dateopen}`;
+    addReport(category, subcategory, subs, date, message) {
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}`;
+        var body2 = `sub=${subs}&date=${date}&message=${message}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -97,6 +98,17 @@ export class ContentNewReportComponent implements OnInit {
             .subscribe(data => {
                 alert('Add Your Report Success');
                 this.getAllComplaint();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+        this.http
+            .post(`${this.API}/chatcomplaint/addchat`,
+                body2, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Your Report Success');
+                this.getAllChat();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
@@ -136,6 +148,7 @@ export class ContentNewReportComponent implements OnInit {
   problems: any[] = [];
   descproblems: any[] = [];
   subs: any[] = [];
+  chats: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -149,6 +162,14 @@ export class ContentNewReportComponent implements OnInit {
       .map(res => res.json())
       .subscribe(complaints => {
         this.complaints = complaints
+      })
+  }
+
+  getAllChat() {
+    this.http.get(`${this.API}/chatcomplaint/listchat`)
+      .map(res => res.json())
+      .subscribe(chats => {
+        this.chats = chats
       })
   }
   getProblem() {
