@@ -37,17 +37,17 @@ import { City } from './cities';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee IDy">
+                                                <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee ID">
                                                 <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                                 <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                                 <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
                                                 <select #empdepartement class="form-control inputForm" id="empdepartement">
                                                   <option disabled="true" value="0">-- Select Departement --</option>
-                                                  <option *ngFor="#dep of deps" value={{ dep.level }}>{{ dep.name }}</option>
+                                                  <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                                 </select>
                                                 <br/>
                                                 <input #empaccess type="text" class="form-control inputForm" id="empaccess" placeholder="Access Role">
-                                                <select #emptitlejob class="form-control inputForm" id="emptitlejob">
+                                                <select  #emptitlejob id="emptitlejob">
                                                   <option disabled="true">-- Select Title Job --</option>
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
