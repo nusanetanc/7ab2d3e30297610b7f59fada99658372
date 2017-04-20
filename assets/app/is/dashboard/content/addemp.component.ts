@@ -37,14 +37,22 @@ import { City } from './cities';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                            </form>
-                                            <form>
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                            </form>
-                                            <form>
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee IDy">
+                                                <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
+                                                <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
+                                                <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
+                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                                  <option disabled="true">-- Select Departement --</option>
+                                                </select>
+                                                <select #emptitlejob class="form-control inputForm" id="emptitlejob">
+                                                  <option disabled="true">-- Select Title Job --</option>
+                                                </select>
+                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                                  <option disabled="true">-- Select Departement --</option>
+                                                </select>
+                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                                  <option disabled="true">-- Select Access Role --</option>
+                                                </select>
                                             </form>
                                             <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                 SEND
