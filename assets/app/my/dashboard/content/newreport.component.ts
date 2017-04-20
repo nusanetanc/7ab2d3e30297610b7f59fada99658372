@@ -43,7 +43,7 @@ import { Problem } from './problem';
                                         <option *ngFor="#problem of problems" [value] = "problem.desc" >{{ problem.subcategory }}</option>
                                     </select><br/>
                                 </form>
-                                <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
+                                <textarea #message class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <input type="hidden" value="{{today | date:'medium'}}" #date class="form-control inputForm" />
                                 <a (click)="addReport(category.value, subcategory.value, subs._id, date.value, message.value)" class="btn btn-default">
                                     SEND

@@ -94,8 +94,8 @@ import {Streetname} from "./street_name";
                       <div class="row">
                          <div class="col-sm-6">
                             <div class="form-group">
-                               <div class="input-group date" id="datetimepicker1">
-                                  <input #subdateinst id="subdateinst" type="date" class="formInput" />
+                               <div class="input-group formInput" id="datetimepicker1">
+                                  <input #subdateinst id="subdateinst" type="date" />
                                   <span class="input-group-addon">
                                   <span class="glyphicon glyphicon-calendar"></span>
                                   </span>
