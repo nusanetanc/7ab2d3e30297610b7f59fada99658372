@@ -38,8 +38,6 @@ import { City } from './cities';
                                         <div class="formNewReport marginLR20">
                                             <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                            </form>
-                                            <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                             </form>
                                             <form>
