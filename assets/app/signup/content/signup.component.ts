@@ -95,7 +95,7 @@ import {Streetname} from "./street_name";
                          <div class="col-sm-6">
                             <div class="form-group">
                                <div class="input-group date" id="datetimepicker1">
-                                  <input #subdateinst id="subdateinst" type="date" class="form-control" />
+                                  <input #subdateinst id="subdateinst" type="date" class="formInput" />
                                   <span class="input-group-addon">
                                   <span class="glyphicon glyphicon-calendar"></span>
                                   </span>
