@@ -34,50 +34,47 @@ import { Street } from './street';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>TYPE OF PROBLEMS</h4>
+                            <h4>CREATE NEW INFORMATION</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                  <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #homecity id="homecity">
-                                      <option value="0" disabled="true">-- Select your city --</option>
+                                  <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #infocity id="infocity">
+                                      <option value="0" disabled="true">-- All City --</option>
                                       <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                   </select><br/>
                                 </form>
                                 <form>
-                                  <select #homeproperty id="homeproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                                      <option value="0" disabled="true">-- Select your property --</option>
+                                  <select #infoproperty id="infoproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                      <option value="0" disabled="true">-- All Property --</option>
                                       <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                   </select><br/>
                                 </form>
                                 <form>
-                                  <select #homecluster id="homecluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
-                                      <option value="0" disabled="true">-- Select your clusters --</option>
+                                  <select #infocluster id="infocluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                      <option value="0" disabled="true">-- All Clusters --</option>
                                       <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                   </select><br/>
                                 </form>
                                 <form>
-                                <select #homeblok id="homeblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                    <option value="0" disabled="true">-- Select your blok or floor --</option>
+                                <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                                    <option value="0" disabled="true">-- All blok or floor --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                 </select><br/>
                                 </form>
                                 <form>
-                                <select #homestreet id="homestreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                                    <option value="0" disabled="true">-- Select Street --</option>
+                                <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                    <option value="0" disabled="true">-- All Street --</option>
                                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                 </select><br/>
                                 </form>
                                 <form>
-                                    <select name="internetProblem">
-                                        <option class="option" disabled="true" selected="true">-- Select Information Category --</option>
-                                        <option value="volvo">Internet Problem</option>
-                                        <option value="saab">TV Problem</option>
-                                        <option value="fiat">Billing Problem</option>
-                                        <option value="fiat">Account Problem</option>
-                                    </select><br/>
+                                <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                    <option value="0" disabled="true">-- All Street --</option>
+                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                </select><br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <a href="" class="btn btn-default">
