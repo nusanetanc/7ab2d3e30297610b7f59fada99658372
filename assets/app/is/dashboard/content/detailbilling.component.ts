@@ -31,7 +31,7 @@ declare let kendo;
                                 </a>
                                 <button onclick="printPenagihan()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
-                                </button>
+                                </button>&nbsp;&nbsp;
                                 <button onclick="printPembayaran()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     SAVE
                                 </button>
