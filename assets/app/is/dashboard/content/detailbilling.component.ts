@@ -504,7 +504,7 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span>Tgl. Jatuh Tempo <br> /<i>Billing Due Date</i></span>
+                                                            <span>Tgl. Pembayaran <br> /<i>Billing Payment Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
