@@ -41,16 +41,6 @@ import { City } from './cities';
                                                 <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                                 <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                                 <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                                <select #empdepartement class="form-control inputForm" id="empdepartement" (click)="onItemClicked(deps)">
-                                                  <option disabled="true" value="0">-- Select Departement --</option>
-                                                  <option *ngFor="#dep of deps">{{ dep.name }}</option>
-                                                </select>
-                                                <br/>
-                                                <select  #emptitlejob id="emptitlejob">
-                                                  <option disabled="true" value="0">-- Select Title Job --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.name }}</option>
-                                                </select>
-                                                <br/>
                                                 <select [(ngModel)]="selectedAccess.sublevel" #empaccess id="empaccess">
                                                   <option disabled="true" value="0">-- Select Acces Role --</option>
                                                   <option *ngFor="#job of jobs" value={{job.sublevel}}>{{ job.sublevel }} - {{ job.name }}</option>
