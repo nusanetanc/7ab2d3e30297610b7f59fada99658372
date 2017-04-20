@@ -51,9 +51,9 @@ import { City } from './cities';
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
                                                 <br/>
-                                                <select #empaccess class="form-control inputForm" id="empaccess">
+                                                <select #empaccess id="empaccess">
                                                   <option disabled="true" value="0">-- Select Acces Role --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.sublevel }} - {{ job.name }}</option>
+                                                  <option *ngFor="#job of jobs" value={{ job.sublevel }}>{{ job.sublevel }} - {{ job.name }}</option>
                                                 </select>
                                             </form>
                                             <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empaccess.value)" class="btn btn-default buttonOrange">
@@ -112,8 +112,8 @@ export class ContentAddEmpComponent implements OnInit {
                  {name: "Sales", level: "2", sublevel:"202"},
                  {name: "Technical Supervisior", level: "3", sublevel: "3"},
                  {name: "Field Enginner", level: "301", sublevel: "301"},
-                 {name: "Network Supervisior", level: "4", sublevel: ""},
-                 {name: "Network Enginner", level: "4"},
+                 {name: "Network Supervisior", level: "4", sublevel: "4"},
+                 {name: "Network Enginner", level: "4", sublevel: "401"},
                  {name: "Finnace Controller", level: "5", sublevel: "5"},
                  {name: "Billing", level: "5", sublevel: "501"},
                  {name: "Pajak", level: "5", sublevel: "502"},
