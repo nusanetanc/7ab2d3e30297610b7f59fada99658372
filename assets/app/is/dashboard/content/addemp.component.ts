@@ -42,20 +42,14 @@ import { City } from './cities';
                                                 <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                                 <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
                                                 <select #empdepartement class="form-control inputForm" id="empdepartement">
-                                                  <option disabled="true">-- Select Departement --</option>
-                                                  <option *ngFor="#dep of deps">{{ deps.name }}</option>
+                                                  <option disabled="true" value="0">-- Select Departement --</option>
+                                                  <option *ngFor="#dep of deps" value={{ dep.level }}>{{ dep.name }}</option>
                                                 </select>
                                                 <br/>
+                                                <input #empaccess type="text" class="form-control inputForm" id="empaccess" placeholder="Access Role">
                                                 <select #emptitlejob class="form-control inputForm" id="emptitlejob">
                                                   <option disabled="true">-- Select Title Job --</option>
-                                                </select>
-                                                <br/>
-                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
-                                                  <option disabled="true">-- Select Departement --</option>
-                                                </select>
-                                                <br/>
-                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
-                                                  <option disabled="true">-- Select Access Role --</option>
+                                                  <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
                                             </form>
                                             <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
@@ -85,4 +79,23 @@ export class ContentAddEmpComponent implements OnInit {
                    {name: "HR & GA", level: "7"},
                    {name: "Helpdesk", level: "8"},
                 ];
+  public jobs = [
+                 {name: "Sales Manager", level: "2", sublevel: "2"},
+                 {name: "Sales Supervisior", level:"2", sublevel: "201"},
+                 {name: "Sales", level: "2", sublevel:"202"},
+                 {name: "Technical Supervisior", level: "3", sublevel: "3"},
+                 {name: "Field Enginner", level: "301", sublevel: "301"},
+                 {name: "Network Supervisior", level: "4", sublevel: ""},
+                 {name: "Network Enginner", level: "4"},
+                 {name: "Finnace Controller", level: "5", sublevel: "5"},
+                 {name: "Billing", level: "5", sublevel: "501"},
+                 {name: "Pajak", level: "5", sublevel: "502"},
+                 {name: "CRO Manager", level: "6", sublevel: "6"},
+                 {name: "CRO", level: "6", sublevel: "601"},
+                 {name: "HR & GA Manager", level: "7", sublevel: "7"},
+                 {name: "HR", level: "7", sublevel: "701"},
+                 {name: "GA", level: "7", sublevel: "702"},
+                 {name: "Helpdesk", level: "8", sublevel: "8"},
+                 {name: "Helpdesk", level: "8", sublevel: "801"},
+              ];
 }
