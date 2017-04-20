@@ -11,10 +11,12 @@ import {SignupComponent} from "./content/signup.component";
 @Component({
     selector: 'my-app',
     template: `
-            <my-header></my-header><br>
-              <router-outlet></router-outlet>
-            <my-footer></my-footer>
-`,
+
+    <my-header></my-header><br>
+        <router-outlet></router-outlet>
+    <my-footer></my-footer>
+    
+    `,
     directives: [HeaderComponent, FooterComponent, SignupComponent, ROUTER_DIRECTIVES]
 })
 

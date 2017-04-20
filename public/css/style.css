@@ -533,6 +533,15 @@ body{
     padding: 12.5px 40px 12.5px 40px;
 }
 
+.buttonNext {
+    background-color: #FC592E;
+    border: none;
+    border-radius: 0px;
+    color: #FFF;
+    float: right;
+    margin-top: 20px;
+    padding: 12.5px 40px 12.5px 40px;
+}
 
 .jumbotron > .container > .row > .col-md-4 {
     margin-bottom: 20px;
@@ -566,7 +575,7 @@ body{
     font-size:14px;
     height: 45px;
     margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
+    padding: 0px 0px 0px 20px;
     width: 100%;
 }
 
@@ -577,7 +586,7 @@ body{
     font-size:14px;
     height: 45px;
     margin: 0 0 20px 0;
-    padding: 22px 0px 26px 20px;
+    padding: 0px 0px 0px 20px;
     width: 100%;
 }
 
