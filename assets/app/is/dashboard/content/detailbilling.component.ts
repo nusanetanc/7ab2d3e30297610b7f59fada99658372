@@ -649,7 +649,7 @@ export class ContentDetailBillingComponent implements OnInit {
 
 
         var print = function() {
-            kendo.drawing.drawDOM($('#printPenagihan')).then(function(group) {
+            kendo.drawing.drawDOM($('#printPembayaran')).then(function(group) {
                 kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
             });
         }
