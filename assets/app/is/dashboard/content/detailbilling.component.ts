@@ -241,7 +241,7 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="zoom: 80%;">
-                           <div id="formConfirmation">
+                           <div id="printPenagihan">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
                                  <div id="header" class="row">
@@ -450,7 +450,7 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="zoom: 80%;">
-                           <div id="formConfirmation">
+                           <div id="printPembayaran">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
                                  <div id="header" class="row">
@@ -648,7 +648,7 @@ export class ContentDetailBillingComponent implements OnInit {
     public print() {
 
         var print = function() {
-            kendo.drawing.drawDOM($('#billing')).then(function(group) {
+            kendo.drawing.drawDOM($('#printPenagihan')).then(function(group) {
                 kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
             });
         }
