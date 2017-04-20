@@ -94,7 +94,7 @@
 </script>
 
 <script>
-    var generatePDF = function() {
+    var printPenagihan = function() {
 
         kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
             kendo.drawing.pdf.saveAs(group, "invoice.pdf");
@@ -103,7 +103,7 @@
     }
 </script>
 <script>
-    var generatePDF = function() {
+    var printPembayaran = function() {
 
         kendo.drawing.drawDOM($("#printPembayaran")).then(function(group) {
             kendo.drawing.pdf.saveAs(group, "invoice.pdf");

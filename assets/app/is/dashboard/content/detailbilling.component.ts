@@ -29,8 +29,11 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
+                                <button onclick="printPenagihan()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
                                     PRINT
+                                </button>
+                                <button onclick="printPembayaran()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
+                                    SAVE
                                 </button>
                             </div>
                         </div>
