@@ -127,7 +127,7 @@ export class ContentAddEmpComponent implements OnInit {
                  {name: "Helpdesk", level: "8", sublevel: "801"},
               ];
   addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empaccess) {
-      var body = `accessrole=${empaccess}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
+      var body = `accessrole=${empaccess}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http
