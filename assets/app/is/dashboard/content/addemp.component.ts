@@ -43,19 +43,23 @@ import { City } from './cities';
                                                 <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
                                                 <select #empdepartement class="form-control inputForm" id="empdepartement">
                                                   <option disabled="true">-- Select Departement --</option>
+                                                  <option *ngFor="#dep of deps">{{ deps.name }}</option>
                                                 </select>
+                                                <br/>
                                                 <select #emptitlejob class="form-control inputForm" id="emptitlejob">
                                                   <option disabled="true">-- Select Title Job --</option>
                                                 </select>
+                                                <br/>
                                                 <select #empdepartement class="form-control inputForm" id="empdepartement">
                                                   <option disabled="true">-- Select Departement --</option>
                                                 </select>
+                                                <br/>
                                                 <select #empdepartement class="form-control inputForm" id="empdepartement">
                                                   <option disabled="true">-- Select Access Role --</option>
                                                 </select>
                                             </form>
                                             <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
-                                                SEND
+                                                CREATE
                                             </button>
                                         </div>
                                     </div>
@@ -71,4 +75,14 @@ import { City } from './cities';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddEmpComponent implements OnInit {
+
+    public deps = [
+                   {name: "Sales", level: "2"},
+                   {name: "Technical", level: "3"},
+                   {name: "Network", level: "4"},
+                   {name: "Finnace", level: "5"},
+                   {name: "CRO", level: "6"},
+                   {name: "HR & GA", level: "7"},
+                   {name: "Helpdesk", level: "8"},
+                ];
 }
