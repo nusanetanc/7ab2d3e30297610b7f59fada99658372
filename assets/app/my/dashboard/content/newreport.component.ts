@@ -107,7 +107,6 @@ export class ContentNewReportComponent implements OnInit {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Your Report Success');
                 this.getAllChat();
             }, error => {
                 console.log(JSON.stringify(error.json()));
