@@ -21,7 +21,7 @@ import {Employee} from './employee';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['Createinvoice']" class="btn btn-default buttonOrange">
+                    <a href="" class="btn btn-default buttonOrange">
                         ADD NEW EMPLOYEE
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
