@@ -29,8 +29,11 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="generatePDF()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
-                                    PRINT
+                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal">
+                                    Print Penagihan
+                                </button>
+                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal">
+                                    Print Pembayaran
                                 </button>
                             </div>
                         </div>
@@ -241,7 +244,7 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="zoom: 80%;">
-                           <div id="formConfirmation">
+                           <div id="printPenagihan">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
                                  <div id="header" class="row">
@@ -450,7 +453,7 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="zoom: 80%;">
-                           <div id="formConfirmation">
+                           <div id="printPembayaran">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
                                  <div id="header" class="row">
@@ -645,20 +648,7 @@ declare let kendo;
 })
 export class ContentDetailBillingComponent implements OnInit {
 
-    public print() {
 
-        var print = function() {
-            kendo.drawing.drawDOM($('#billing')).then(function(group) {
-                kendo.drawing.pdf.saveAs(group, 'invoice.pdf');
-            });
-        }
-
-        $('button').on('click', function(){
-            $('button').removeClass('active');
-            $(this).addClass('active');
-        });
-
-    }
 
 
     // Link to our api, pointing to localhost
