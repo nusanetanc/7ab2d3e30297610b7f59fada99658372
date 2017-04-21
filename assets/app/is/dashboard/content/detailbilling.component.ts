@@ -298,36 +298,36 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:12px;">Tgl Jatuh Tempo<br>/<i>Billing Due Date</i></span>
+                                                            <span style="font-size:14px;">Tgl. Jatuh Tempo<br>/<i>Billing Due Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:12px;">09 April 2017</span>
+                                                            <span style="font-size:14px;">09 April 2017</span>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:12px;">Tanggal Cetak<br>/<i>Billing Date</i></span>
+                                                            <span style="font-size:14px;">Tanggal Cetak<br>/<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:12px;">06 April 2017</span>
+                                                            <span style="font-size:14px;">06 April 2017</span>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:12px;">No. Tagihan<br>/<i>Billing Number</i></span>
+                                                            <span style="font-size:14px;">No. Tagihan<br>/<i>Billing Number</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:12px;">{{ bills.noinvoice }}</span>
+                                                            <span style="font-size:14px;">{{ bills.noinvoice }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
