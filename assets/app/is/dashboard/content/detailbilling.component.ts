@@ -507,36 +507,36 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:16;">Tgl. Pembayaran<br> /<i>Payment Date</i></span>
+                                                            <span style="font-size:16px;">Tgl. Pembayaran<br> /<i>Payment Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16;">09 April 2017</span>
+                                                            <span style="font-size:16px;">09 April 2017</span>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:16;">Tanggal Cetak<br> /<i>Billing Date</i></span>
+                                                            <span style="font-size:16px;">Tanggal Cetak<br> /<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16;">06 April 2017</span>
+                                                            <span style="font-size:16px;">06 April 2017</span>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span style="font-size:16;">No. Tagihan<br> /<i>Billing Number</i></span>
+                                                            <span style="font-size:16px;">No. Tagihan<br> /<i>Billing Number</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16;">{{ bills.noinvoice }}</span>
+                                                            <span style="font-size:16px;">{{ bills.noinvoice }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
