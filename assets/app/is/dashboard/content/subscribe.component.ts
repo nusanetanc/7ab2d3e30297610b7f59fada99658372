@@ -186,7 +186,7 @@ import { Job } from './job';
                                       <form>
                                           <select #empjob1 id="empjob1" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp.name }}</option>
+                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
                                           </select><br/>
                                       </form>
                                     </div>
@@ -218,7 +218,7 @@ import { Job } from './job';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubscribeComponent {
+export class ContentSubscribeComponent implements OnInit {
   // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -249,7 +249,7 @@ export class ContentSubscribeComponent {
           })
   }
   addJob(datejob, detailjob, typejob, empjob1, empjob2) {
-      var body = `name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${typejob}`;
+      var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http
