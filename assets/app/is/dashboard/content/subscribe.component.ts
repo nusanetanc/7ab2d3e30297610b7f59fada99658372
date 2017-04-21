@@ -30,10 +30,8 @@ import { Sub } from './subs';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h2>#{{ subs.subid }}</h2>
+                            <h3 style="text-color:FC592E;">#{{ subs.subid }}</h3>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-12">
                             <h4>PERSONAL INFORMATION</h4>
                         </div>
