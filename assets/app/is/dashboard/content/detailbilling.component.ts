@@ -243,7 +243,7 @@ declare let kendo;
                         
                         
                         <!-- Content Print -->
-                        <div class="print" style="zoom: 80%;">
+                        <div class="print" style="width: 50%;">
                            <div id="printPenagihan">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
