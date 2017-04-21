@@ -179,8 +179,7 @@ import { Sub } from './subs';
                                         <option class="option" value="Take Device">Take Device</option>
                                     </select><br/><br/>
                                 </form>
-                                <textarea #device id="device" placeholder="Input Device" class="form-control inputForm" rows="4" cols="50"></textarea>
-                                <textarea #maintenance id="maintenance" placeholder="Input Detail Maintenance" class="form-control inputForm" rows="4" cols="50"></textarea>
+                                <textarea #maintenance id="maintenance" placeholder="Input Detail Job" class="form-control inputForm" rows="4" cols="50"></textarea>
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
