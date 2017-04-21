@@ -187,22 +187,16 @@ import { Sub } from './subs';
                                     <div class="col-sm-6">
                                       <form>
                                           <select #typejob id="typejob" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0">-- Select Type Job --</option>
-                                              <option class="option" value="Installation">Installation</option>
-                                              <option class="option" value="Maintenance">Maintenance</option>
-                                              <option class="option" value="Switch Devices">Switch Devices</option>
-                                              <option class="option" value="Take Device">Take Device</option>
+                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                              <option *ngFor="#emp of emps" class="option">{{ emp.name }}</option>
                                           </select><br/>
                                       </form>
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
                                           <select #typejob id="typejob" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0">-- Select Type Job --</option>
-                                              <option class="option" value="Installation">Installation</option>
-                                              <option class="option" value="Maintenance">Maintenance</option>
-                                              <option class="option" value="Switch Devices">Switch Devices</option>
-                                              <option class="option" value="Take Device">Take Device</option>
+                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                              <option *ngFor="#emp of emps" class="option">{{ emp.name }}</option>
                                           </select><br/><br/>
                                       </form>
                                     </div>
@@ -232,6 +226,7 @@ export class ContentSubscribeComponent {
 
     // Declare empty list of people
     subs: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -239,11 +234,20 @@ export class ContentSubscribeComponent {
       this.getSubs();
     }
 
-getSubs() {
-this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
-  .map(res => res.json())
-  .subscribe(subs => {
-    this.subs = subs
-  })
+  getSubs() {
+    this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+      .map(res => res.json())
+      .subscribe(subs => {
+        this.subs = subs
+        this.getAllEmployee();
+      })
+    }
+  // Get all users from the API
+  getAllEmployee() {
+      this.http.get(`${this.API}/employee/list/technical`)
+          .map(res => res.json())
+          .subscribe(emps => {
+              this.emps = emps
+          })
   }
 }
