@@ -30,10 +30,10 @@ declare let kendo;
                                     BACK
                                 </a>
                                 <button onclick="printPenagihan()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
-                                    PRINT
+                                    Print Penagihan
                                 </button>
                                 <button onclick="printPembayaran()" class="btn btn-default billInfoPrint" type="button" data-toggle="modal">
-                                    SAVE
+                                    Print Pembayaran
                                 </button>
                             </div>
                         </div>
