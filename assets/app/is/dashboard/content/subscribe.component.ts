@@ -4,6 +4,7 @@ import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
 import { Sub } from './subs';
+import { Job } from './job';
 
 @Component({
     selector: 'form-subscriber',
@@ -169,7 +170,7 @@ import { Sub } from './subs';
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
-                                <input #datejob type="text" class="form-control inputForm" id="datejob" placeholder="Date Job">
+                                <input #datejob type="date" class="form-control inputForm" id="datejob" placeholder="Date Job">
                                 <form>
                                     <select #typejob id="typejob">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Type Job --</option>
@@ -179,11 +180,11 @@ import { Sub } from './subs';
                                         <option class="option" value="Take Device">Take Device</option>
                                     </select><br/><br/>
                                 </form>
-                                <textarea #maintenance id="maintenance" placeholder="Input Detail Job" class="form-control inputForm" rows="4" cols="50"></textarea>
+                                <textarea #detailjob id="detailjob" placeholder="Input Detail Job" class="form-control inputForm" rows="4" cols="50"></textarea>
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #typejob id="typejob" class="form-control inputForm">
+                                          <select #empjob1 id="empjob1" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
                                               <option *ngFor="#emp of emps" class="option">{{ emp.name }}</option>
                                           </select><br/>
@@ -191,14 +192,14 @@ import { Sub } from './subs';
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #typejob id="typejob" class="form-control inputForm">
+                                          <select #empjob2 id="empjob2" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option" value={{ emp.idemployee }}>{{ emp.name }}</option>
+                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
                                           </select><br/><br/>
                                       </form>
                                     </div>
                                 </div>
-                                <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
                                     SEND
                                 </button>
                             </div>
@@ -246,5 +247,20 @@ export class ContentSubscribeComponent {
           .subscribe(emps => {
               this.emps = emps
           })
+  }
+  addJob(datejob, typejob, detailjob, typejob, empjob1, empjob2) {
+      var body = `name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${typejob}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/job/addjob`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add Job Success');
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
   }
 }

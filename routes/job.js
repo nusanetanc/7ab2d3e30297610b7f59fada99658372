@@ -30,7 +30,8 @@ Job.find({emp1: req.params.emp}, function(err, jobs) {
 router.post('/addjob', function(req, res, next) {
   var job = new Job();
     job.name= req.body.name;
-    job.status= req.body.status;
+    job.detail= req.body.detail;
+    job.status= 'On Progress';
     job.emp1= req.body.emp1;
     job.emp2= req.body.emp2;
     job.subs= req.body.subs;
