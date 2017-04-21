@@ -29,10 +29,10 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:1px solid #fff;">
                                     Print Penagihan
                                 </button>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:1px solid white;">
+                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:1px solid #fff;">
                                     Print Pembayaran
                                 </button>
                             </div>
