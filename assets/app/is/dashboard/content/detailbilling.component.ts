@@ -244,7 +244,7 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
-                           <div id="printPenagihan" style="width: 80%;">
+                           <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
                                  <div id="header" class="row">
@@ -298,7 +298,7 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span>Tgl. Jatuh Tempo <br> /<i>Billing Due Date</i></span>
+                                                            <span>Tgl Jatuh Tempo<br> /<i>Billing Due Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
@@ -310,7 +310,7 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span>Tanggal Cetak <br> /<i>Billing Date</i></span>
+                                                            <span>Tanggal Cetak<br> /<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
@@ -322,7 +322,7 @@ declare let kendo;
                                                    <div class="col-sm-4">
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
-                                                            <span>No. Tagihan <br> /<i>Billing Number</i></span>
+                                                            <span>No. Tagihan<br> /<i>Billing Number</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
