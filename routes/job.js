@@ -31,6 +31,7 @@ router.post('/addjob', function(req, res, next) {
   var job = new Job();
     job.name= req.body.name;
     job.detail= req.body.detail;
+    job.date= req.body.date;
     job.status= 'On Progress';
     job.emp1= req.body.emp1;
     job.emp2= req.body.emp2;
