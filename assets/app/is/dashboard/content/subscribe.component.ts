@@ -231,6 +231,7 @@ export class ContentSubscribeComponent implements OnInit {
 
     ngOnInit() {
       this.getSubs();
+      this.getAllJob();
     }
 
   getSubs() {
@@ -251,7 +252,7 @@ export class ContentSubscribeComponent implements OnInit {
   }
   // Get all users from the API
   getAllJob() {
-      this.http.get(`${this.API}/job/)
+      this.http.get(`${this.API}/job/listjob`)
           .map(res => res.json())
           .subscribe(emps => {
               this.emps = emps
