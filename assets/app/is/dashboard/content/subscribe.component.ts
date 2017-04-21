@@ -225,6 +225,7 @@ export class ContentSubscribeComponent implements OnInit {
     // Declare empty list of people
     subs: any[] = [];
     emps: any[] = [];
+    jobs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -248,8 +249,16 @@ export class ContentSubscribeComponent implements OnInit {
               this.emps = emps
           })
   }
+  // Get all users from the API
+  getAllJob() {
+      this.http.get(`${this.API}/job/)
+          .map(res => res.json())
+          .subscribe(emps => {
+              this.emps = emps
+          })
+  }
   addJob(datejob, detailjob, typejob, empjob1, empjob2) {
-      var body = `subs=${this._routeParams.get('id')}`;
+      var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http
@@ -259,6 +268,7 @@ export class ContentSubscribeComponent implements OnInit {
               })
           .subscribe(data => {
               alert('Add Job Success');
+              this.getAllJob();
           }, error => {
               console.log(JSON.stringify(error.json()));
           });
