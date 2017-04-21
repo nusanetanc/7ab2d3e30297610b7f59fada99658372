@@ -452,10 +452,10 @@ declare let kendo;
                         <br><br>
                         
                         <!-- Content Print -->
-                        <div class="print" style="zoom: 80%;">
-                           <div id="printPembayaran">
+                        <div class="print" style="width: 100%;">
+                           <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
-                              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
+                              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
                                  <div id="header" class="row">
                                     <div class="col-sm-12" style="margin-bottom: 30px;">
                                        <div class="col-sm-6">
