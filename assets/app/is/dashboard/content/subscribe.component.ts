@@ -248,3 +248,19 @@ export class ContentSubscribeComponent {
               this.emps = emps
           })
   }
+  addJob(datejob, detailjob, typejob, empjob1, empjob2) {
+      var body = `name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${typejob}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/job/addjob`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add Job Success');
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
+}
