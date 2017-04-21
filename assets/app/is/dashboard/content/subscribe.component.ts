@@ -174,19 +174,19 @@ import { Sub } from './subs';
                                 <input #datejob type="text" class="form-control inputForm" id="datejob" placeholder="Date Job">
                                 <form>
                                     <select #typejob id="typejob">
-                                        <option class="option" disabled="true" value="0">-- Select Type Job --</option>
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Type Job --</option>
                                         <option class="option" value="Installation">Installation</option>
                                         <option class="option" value="Maintenance">Maintenance</option>
                                         <option class="option" value="Switch Devices">Switch Devices</option>
                                         <option class="option" value="Take Device">Take Device</option>
-                                    </select><br/>
+                                    </select><br/><br/>
                                 </form>
                                 <textarea #device id="device" placeholder="Input Device" class="form-control inputForm" rows="4" cols="50"></textarea>
                                 <textarea #maintenance id="maintenance" placeholder="Input Detail Maintenance" class="form-control inputForm" rows="4" cols="50"></textarea>
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #typejob id="typejob">
+                                          <select #typejob id="typejob" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0">-- Select Type Job --</option>
                                               <option class="option" value="Installation">Installation</option>
                                               <option class="option" value="Maintenance">Maintenance</option>
@@ -197,13 +197,13 @@ import { Sub } from './subs';
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #typejob id="typejob">
+                                          <select #typejob id="typejob" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0">-- Select Type Job --</option>
                                               <option class="option" value="Installation">Installation</option>
                                               <option class="option" value="Maintenance">Maintenance</option>
                                               <option class="option" value="Switch Devices">Switch Devices</option>
                                               <option class="option" value="Take Device">Take Device</option>
-                                          </select><br/>
+                                          </select><br/><br/>
                                       </form>
                                     </div>
                                 </div>
