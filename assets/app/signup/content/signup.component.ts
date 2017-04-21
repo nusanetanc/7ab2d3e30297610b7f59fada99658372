@@ -28,6 +28,7 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItem.name == 'regArea'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
+                <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                    <option value="0">-- Select your city --</option>
                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
