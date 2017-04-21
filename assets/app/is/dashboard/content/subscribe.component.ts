@@ -25,8 +25,8 @@ import { Sub } from './subs';
                         BACK
                     </a>
                     <div class="right">
-                      <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button">
-                          CREATE INVOICE
+                      <a class="btn btn-default buttonOrange" type="button">
+                          #{{ subs.name }}
                       </a>
                     </div>
                 </div>
@@ -162,13 +162,29 @@ import { Sub } from './subs';
                         </div>
                     </div>
                 </div>
-                
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>Add Technician Job</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="formNewReport marginLR20">
+                                <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
+                                <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
+                                    SEND
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="right">
-                    <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
+                    <a class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
                         <i class="material-icons">create</i>
                     </a>
                 </div>
-                
+
             </div>
         </div>
     </div>
