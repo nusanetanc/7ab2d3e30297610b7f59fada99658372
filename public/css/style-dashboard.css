@@ -1034,6 +1034,18 @@ a.buttonOrange:hover {
     text-decoration: none;
 }
 
+a.buttonOrange:active {
+    background-color: #FC592E;
+    color: #FFF;
+    text-decoration: none;
+}
+
+a.buttonOrange:focus {
+    background-color: #FC592E;
+    color: #FFF;
+    text-decoration: none;
+}
+
 button.buttonOrange:hover {
     background-color: #FC592E !important;
     color: #FFF !important;
@@ -1041,6 +1053,12 @@ button.buttonOrange:hover {
 }
 
 button.buttonOrange:active {
+    background-color: #FC592E !important;
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+button.buttonOrange:focus {
     background-color: #FC592E !important;
     color: #FFF !important;
     text-decoration: none;

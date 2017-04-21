@@ -29,11 +29,11 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
-                                    Print Penagihan
-                                </button>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
                                     Print Pembayaran
+                                </button>
+                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
+                                    Print Penagihan
                                 </button>
                             </div>
                         </div>
@@ -243,10 +243,10 @@ declare let kendo;
                         
                         
                         <!-- Content Print -->
-                        <div class="print" style="zoom: 80%;">
-                           <div id="printPenagihan">
+                        <div class="print" style="width: 100%;">
+                           <div id="printPenagihan" style="width: 80%;">
                               <!-- Content List -->
-                              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300;">
+                              <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:80%;">
                                  <div id="header" class="row">
                                     <div class="col-sm-12" style="margin-bottom: 30px;">
                                        <div class="col-sm-6">
