@@ -193,7 +193,7 @@ import { Sub } from './subs';
                                       <form>
                                           <select #typejob id="typejob" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp.name }}</option>
+                                              <option *ngFor="#emp of emps" class="option" value={{ emp.idemployee }}>{{ emp.name }}</option>
                                           </select><br/><br/>
                                       </form>
                                     </div>
