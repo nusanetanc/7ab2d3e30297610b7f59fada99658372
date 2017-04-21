@@ -165,13 +165,48 @@ import { Sub } from './subs';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>Add Technician Job</h4>
+                            <h4>ADD  TECHNICIAN JOB</h4>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
-                                <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
+                                <input #datejob type="text" class="form-control inputForm" id="datejob" placeholder="Date Job">
+                                <form>
+                                    <select #typejob id="typejob">
+                                        <option class="option" disabled="true" value="0">-- Select Type Job --</option>
+                                        <option class="option" value="Installation">Installation</option>
+                                        <option class="option" value="Maintenance">Maintenance</option>
+                                        <option class="option" value="Switch Devices">Switch Devices</option>
+                                        <option class="option" value="Take Device">Take Device</option>
+                                    </select><br/>
+                                </form>
+                                <textarea #device id="device" placeholder="Input Device" class="form-control inputForm"></textarea>
+                                <textarea #maintenance id="maintenance" placeholder="Input Detail Maintenance" class="form-control inputForm"></textarea>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                      <form>
+                                          <select #typejob id="typejob">
+                                              <option class="option" disabled="true" value="0">-- Select Type Job --</option>
+                                              <option class="option" value="Installation">Installation</option>
+                                              <option class="option" value="Maintenance">Maintenance</option>
+                                              <option class="option" value="Switch Devices">Switch Devices</option>
+                                              <option class="option" value="Take Device">Take Device</option>
+                                          </select><br/>
+                                      </form>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <form>
+                                          <select #typejob id="typejob">
+                                              <option class="option" disabled="true" value="0">-- Select Type Job --</option>
+                                              <option class="option" value="Installation">Installation</option>
+                                              <option class="option" value="Maintenance">Maintenance</option>
+                                              <option class="option" value="Switch Devices">Switch Devices</option>
+                                              <option class="option" value="Take Device">Take Device</option>
+                                          </select><br/>
+                                      </form>
+                                    </div>
+                                </div>
                                 <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                     SEND
                                 </button>
