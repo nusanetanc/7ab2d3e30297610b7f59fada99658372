@@ -1046,6 +1046,12 @@ button.buttonOrange:active {
     text-decoration: none;
 }
 
+button.buttonOrange:focus {
+    background-color: #FC592E !important;
+    color: #FFF !important;
+    text-decoration: none;
+}
+
 .ava {
     border-radius: 50%;
     height: 50px;
