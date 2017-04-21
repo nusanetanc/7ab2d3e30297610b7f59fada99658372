@@ -29,6 +29,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                 <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
+                <input type="text" class="form-control" is-open="$parent.opened" datepicker-popup="MM/dd/yyyy 00:00:00" ng-model="field.value"  close-text="Close" />
                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                    <option value="0">-- Select your city --</option>
                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
