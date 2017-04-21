@@ -449,7 +449,9 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
                         
-                        <br><br>
+                        <br>
+                            <h3 class="text-center">PRINT PAYMENT</h3>
+                        <br>
                         
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
