@@ -240,7 +240,7 @@ declare let kendo;
                         </div>
                         <!-- /Content List -->
                         
-                        
+                        <br>
                         
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
