@@ -297,37 +297,37 @@ declare let kendo;
                                                 <div class="col-sm-6" style="margin-bottom: 0px;">
                                                    <div class="col-sm-4">
                                                       <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px;">
-                                                            <span>Tgl Jatuh Tempo<br>/<i>Billing Due Date</i></span>
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span style="font-size:16px;">Tgl. Jatuh Tempo<br>/<i>Billing Due Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px; background-color: #e2e2e2;">
-                                                            <span>09 April 2017</span>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                   <div class="col-sm-4">
-                                                      <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px;">
-                                                            <span>Tanggal Cetak<br>/<i>Billing Date</i></span>
-                                                         </div>
-                                                      </div>
-                                                      <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px; background-color: #e2e2e2;">
-                                                            <span>06 April 2017</span>
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">09 April 2017</span>
                                                          </div>
                                                       </div>
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px;">
-                                                            <span>No. Tagihan<br>/<i>Billing Number</i></span>
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span style="font-size:16px;">Tanggal Cetak<br>/<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
                                                       <div class="row">
-                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 4px; background-color: #e2e2e2;">
-                                                            <span>{{ bills.noinvoice }}</span>
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">06 April 2017</span>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="col-sm-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px;">
+                                                            <span style="font-size:16px;">No. Tagihan<br>/<i>Billing Number</i></span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">{{ bills.noinvoice }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
