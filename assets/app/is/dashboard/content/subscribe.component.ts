@@ -200,7 +200,7 @@ import { City } from './cities';
                                       </form>
                                     </div>
                                 </div>
-                                <button type="submit" (click)="addJob(typejob.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="addJob(detailjob.value)" class="btn btn-default buttonOrange">
                                     SEND
                                 </button>
                             </div>
@@ -236,8 +236,8 @@ export class ContentSubscribeComponent implements OnInit {
       this.getAllEmployee();
     }
 
-    addJob(typejob) {
-        var body = `name=${typejob}`;
+    addJob(detailjob) {
+        var body = `name=${detailjob}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
