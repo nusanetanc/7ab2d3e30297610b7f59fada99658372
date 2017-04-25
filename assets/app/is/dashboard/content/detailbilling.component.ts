@@ -29,14 +29,14 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button (click)="onItemClicked1(Area)" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
+                                <button (click)="onItemClicked1(Area)" *ngIf="clickedItem.name == 'regArea'" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
                                     Print
                                 </button>
-                                <button (click)="onItemClicked2(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
-                                    Print Pembayaran
-                                </button>
-                                <button (click)="onItemClicked3(Pack)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
+                                <button (click)="onItemClicked2(Inst)" onclick="printPenagihan()" *ngIf="clickedItem.name == 'regInst'" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
                                     Print Penagihan
+                                </button>
+                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" *ngIf="clickedItem.name == 'regPack'" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                    Print Pembayaran
                                 </button>
                             </div>
                         </div>
