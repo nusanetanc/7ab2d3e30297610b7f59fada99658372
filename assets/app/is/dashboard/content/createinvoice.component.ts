@@ -397,7 +397,6 @@ total:number;
   var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
   promoname=${promoname}&pricepromo=${promoprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
   billdate=${invoicedate}&duedate=${duedate}&status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
-  console.log('tes');
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
