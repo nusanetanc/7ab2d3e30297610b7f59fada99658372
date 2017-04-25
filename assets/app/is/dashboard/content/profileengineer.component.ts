@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
           <h3 id="home" class="fontWeight300">
              <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
              </a>
-             &nbsp; Engineer Profile
+             &nbsp; Profile
           </h3>
        </div>
        <div class="page-content inset" data-spy="scroll" data-target="#spy">
