@@ -71,7 +71,7 @@ import { Street } from './street';
                                 </select><br/>
                                 </form>
                                 <form>
-                                <select #infohome id="infohome" [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)">
+                                <select #infohome id="infohome" [(ngModel)]="selectedHome._id">
                                     <option value="0" disabled="true">-- All Home --</option>
                                     <option *ngFor="#home of homes" value={{home._id}}>{{ home.name }}</option>
                                 </select><br/>
@@ -105,6 +105,7 @@ export class ContentAddInformationComponent implements OnInit {
     selectedCluster: City = new City(0, 'dummy');
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
+    selectedHome: City = new City(0, 'dummy');
 
     onSelectPackage(level) {
         console.log(level)
