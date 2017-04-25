@@ -645,15 +645,11 @@ export class ContentDetailBillingComponent implements OnInit {
     public clickedItem = {name: "regArea"};
 
     onItemClicked1(Area) {
-        this.clickedItem = {name: "regInst"};
-    }
-
-    onItemClicked2(Inst) {
         this.clickedItem = {name: "regPack"};
     }
 
     onItemClicked3(Pack) {
-        this.clickedItem = {name: "regData"};
+        this.clickedItem = {name: "regInst"};
     }
 
     // Link to our api, pointing to localhost
