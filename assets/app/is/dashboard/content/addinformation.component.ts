@@ -223,7 +223,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
 
-        var body = `to=${infocity}&date='2017/04/25'&subject=${subject}&desc=${message}`;
+        var body = `to=${infocity}&date='2017/04/25'&subject='${subject}'&desc=${message}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
