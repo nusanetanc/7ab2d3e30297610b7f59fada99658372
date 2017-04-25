@@ -186,7 +186,7 @@ import { Job } from './job';
                                       <form>
                                           <select #empjob1 id="empjob1" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
+                                              <option *ngFor="#emp of emps" class="option" value={{ emp._id }}>{{ emp._id }}</option>
                                           </select><br/>
                                       </form>
                                     </div>
@@ -194,7 +194,7 @@ import { Job } from './job';
                                       <form>
                                           <select #empjob2 id="empjob2" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
+                                              <option *ngFor="#emp of emps" class="option" value={{ emp._id }}>{{ emp._id }}</option>
                                           </select><br/><br/>
                                       </form>
                                     </div>
@@ -235,7 +235,7 @@ export class ContentSubscribeComponent implements OnInit {
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
-        var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&subs=${this._routeParams.get('id')}`;
+        var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
