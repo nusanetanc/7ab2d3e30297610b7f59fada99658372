@@ -99,7 +99,7 @@ import 'rxjs/add/operator/map';
              </div>
           </div>
           <br/><br/>
-          <div class="row">
+          <div *ngIf="emps.departement == 'technical'" class="row">
              <div class="col-sm-12">
                 <div class="row headerList paddingLR30">
                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Job</strong></div>
