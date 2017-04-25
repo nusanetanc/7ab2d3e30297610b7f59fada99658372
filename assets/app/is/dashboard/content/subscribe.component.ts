@@ -235,7 +235,7 @@ export class ContentSubscribeComponent implements OnInit {
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
-        var body = `emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
+        var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&subs=${this._routeParams.get('id')}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
