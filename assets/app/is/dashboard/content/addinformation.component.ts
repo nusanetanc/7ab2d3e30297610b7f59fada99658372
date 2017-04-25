@@ -71,9 +71,7 @@ import { Street } from './street';
                                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                 </select><br/>
                                 </form>
-                                <form>
-                                    <input #subject type="text" class="form-control inputForm" id="subject" placeholder="Subject Information">
-                                </form>
+                                <input #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                 <textarea id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea>
                                 <button type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
                                     SHARE
