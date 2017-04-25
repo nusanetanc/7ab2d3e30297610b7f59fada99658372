@@ -1,7 +1,8 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
-
+import 'rxjs/add/operator/map';
+import {Subscription} from "rxjs/Rx";
 @Component({
     selector: 'form-detailinformation',
     template: `
@@ -51,7 +52,7 @@ export class ContentDetailInformationComponent {
 
     informations: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
         this.getAllInformation();
@@ -59,7 +60,7 @@ export class ContentDetailInformationComponent {
 
     // Get all users from the API
     getAllInformation() {
-        this.http.get(`${this.API}/information/information/:id`)
+        this.http.get(`${this.API}/information/information/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(informations => {
                 this.informations = informations
