@@ -232,6 +232,7 @@ export class ContentSubscribeComponent implements OnInit {
     ngOnInit() {
       this.getSubs();
       this.getAllJob();
+      this.getAllEmployee();
     }
 
     addJob(typejob) {
