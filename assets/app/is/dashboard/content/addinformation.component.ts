@@ -71,18 +71,21 @@ import { Street } from './street';
                                 </select><br/>
                                 </form>
                                 <form>
-                                <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                                    <option value="0" disabled="true">-- All Street --</option>
-                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                <select #infohome id="infohome" [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)">
+                                    <option value="0" disabled="true">-- All Home --</option>
+                                    <option *ngFor="#home of homes" value={{home._id}}>{{ home.name }}</option>
                                 </select><br/>
                                 </form>
                                 <form>
-                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                    <input #subject type="text" class="form-control inputForm" id="subject" placeholder="Subject Information">
                                 </form>
-                                <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
+                                <textarea id="message" class="input width100" #message rows="10" placeholder="*note"></textarea>
                                 <a href="" class="btn btn-default">
                                     SEND
                                 </a>
+                                <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                                SHARE
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -227,5 +230,28 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(homes => {
                 this.homes = homes
             })
+    }
+    to: String,
+    date: Date,
+    desc: String,
+    status: String,
+    usercreate: {type: Schema.Types.ObjectId, ref: 'Emp'}
+
+    addCity(cityname) {
+
+        var body = `name=${cityname}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/city/addcity`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add City Success');
+                this.getAllCity();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 }
