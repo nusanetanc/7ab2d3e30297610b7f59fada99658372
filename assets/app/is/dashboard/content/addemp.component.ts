@@ -98,48 +98,50 @@ export class ContentAddEmpComponent implements OnInit {
                 })
         }
 
-    public deps = [
-                   {name: "Sales", level: "2"},
-                   {name: "Technical", level: "3"},
-                   {name: "Network", level: "4"},
-                   {name: "Finnace", level: "5"},
-                   {name: "CRO", level: "6"},
-                   {name: "HR & GA", level: "7"},
-                   {name: "Helpdesk", level: "8"},
-                ];
-  public jobs = [
-                 {name: "Sales Manager", level: "2", sublevel: "2"},
-                 {name: "Sales Supervisior", level:"2", sublevel: "201"},
-                 {name: "Sales", level: "2", sublevel:"202"},
-                 {name: "Technical Supervisior", level: "3", sublevel: "3"},
-                 {name: "Field Enginner", level: "301", sublevel: "301"},
-                 {name: "Network Supervisior", level: "4", sublevel: "4"},
-                 {name: "Network Enginner", level: "4", sublevel: "401"},
-                 {name: "Finnace Controller", level: "5", sublevel: "5"},
-                 {name: "Billing", level: "5", sublevel: "501"},
-                 {name: "Pajak", level: "5", sublevel: "502"},
-                 {name: "CRO Manager", level: "6", sublevel: "6"},
-                 {name: "CRO", level: "6", sublevel: "601"},
-                 {name: "HR & GA Manager", level: "7", sublevel: "7"},
-                 {name: "HR", level: "7", sublevel: "701"},
-                 {name: "GA", level: "7", sublevel: "702"},
-                 {name: "Helpdesk", level: "8", sublevel: "8"},
-                 {name: "Helpdesk", level: "8", sublevel: "801"},
-              ];
-  addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empaccess) {
-      var body = `accessrole=${empaccess}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
-      var headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      this.http
-          .post(`${this.API}/employee/addemp`,
-              body, {
-                  headers: headers
-              })
-          .subscribe(data => {
-              alert('Add Employee Success');
-              this.getAllEmployee();
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
-  }
+        public deps = [
+            {name: "Sales", level: "2"},
+            {name: "Technical", level: "3"},
+            {name: "Network", level: "4"},
+            {name: "Finnace", level: "5"},
+            {name: "CRO", level: "6"},
+            {name: "HR & GA", level: "7"},
+            {name: "Helpdesk", level: "8"},
+        ];
+
+        public jobs = [
+            {name: "Sales Manager", level: "2", sublevel: "2"},
+            {name: "Sales Supervisior", level:"2", sublevel: "201"},
+            {name: "Sales", level: "2", sublevel:"202"},
+            {name: "Technical Supervisior", level: "3", sublevel: "3"},
+            {name: "Field Enginner", level: "301", sublevel: "301"},
+            {name: "Network Supervisior", level: "4", sublevel: "4"},
+            {name: "Network Enginner", level: "4", sublevel: "401"},
+            {name: "Finnace Controller", level: "5", sublevel: "5"},
+            {name: "Billing", level: "5", sublevel: "501"},
+            {name: "Pajak", level: "5", sublevel: "502"},
+            {name: "CRO Manager", level: "6", sublevel: "6"},
+            {name: "CRO", level: "6", sublevel: "601"},
+            {name: "HR & GA Manager", level: "7", sublevel: "7"},
+            {name: "HR", level: "7", sublevel: "701"},
+            {name: "GA", level: "7", sublevel: "702"},
+            {name: "Helpdesk", level: "8", sublevel: "8"},
+            {name: "Helpdesk", level: "8", sublevel: "801"},
+        ];
+
+        addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empaccess) {
+            var body = `accessrole=${empaccess}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
+            var headers = new Headers();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            this.http
+                .post(`${this.API}/employee/addemp`,
+                    body, {
+                    headers: headers
+                })
+                .subscribe(data => {
+                    alert('Add Employee Success');
+                    this.getAllEmployee();
+                }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
 }
