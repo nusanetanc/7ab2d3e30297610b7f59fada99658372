@@ -29,13 +29,13 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button (click)="onItemClicked1(Area)" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                <button (click)="onItemClicked1(Area)" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print
                                 </button>
-                                <button (click)="onItemClicked2(Inst)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                <button (click)="onItemClicked2(Inst)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Penagihan
                                 </button>
-                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;">
+                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Pembayaran
                                 </button>
                             </div>
