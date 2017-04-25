@@ -241,13 +241,9 @@ declare let kendo;
                         <!-- /Content List -->
 
                         <br>
-<<<<<<< HEAD
                             <h3 class="text-center">PRINT INVOICE</h3>
                         <br>
                         
-=======
-
->>>>>>> 20e6c0053fbf7cceb3a403a3ac1a45e84f271a25
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
                            <div id="printPenagihan" style="width: 100%;">
