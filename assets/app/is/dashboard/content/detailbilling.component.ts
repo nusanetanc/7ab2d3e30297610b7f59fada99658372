@@ -43,7 +43,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regArea'">
+                        <div class="row rowBillInfoContList">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -244,7 +244,7 @@ declare let kendo;
                         <!-- /Content List -->
                         
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regArea'">
                            <h3 class="text-center">PRINT INVOICE</h3>
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
@@ -452,7 +452,7 @@ declare let kendo;
                         <!-- /Content Print -->
 
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
                            <h3 class="text-center">PRINT PAYMENT</h3>
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
