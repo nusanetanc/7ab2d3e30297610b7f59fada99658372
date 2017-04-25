@@ -20,7 +20,7 @@ import {Subscription} from "rxjs/Rx";
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                      <a href="information.html" class="btn btn-default buttonBack" type="button">
+                      <a [routerLink]="['Information']" class="btn btn-default buttonBack" type="button">
                           BACK
                       </a>
                 </div>
