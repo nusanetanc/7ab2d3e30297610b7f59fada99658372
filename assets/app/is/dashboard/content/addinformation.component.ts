@@ -76,6 +76,10 @@ import { Street } from './street';
                                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                 </select><br/>
                                 </form>
+                                <form>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                    <br/>
+                                </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <a href="" class="btn btn-default">
                                     SEND
