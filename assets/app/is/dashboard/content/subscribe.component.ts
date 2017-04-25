@@ -184,18 +184,18 @@ import { Job } from './job';
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
-                                        <select #empjob1 id="empjob1" class="form-control inputForm">
-                                            <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                            <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
-                                        </select><br/>
+                                          <select #empjob2 id="empjob2" class="form-control inputForm">
+                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                              <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
+                                          </select><br/>
                                       </form>
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #empjob2 id="empjob2" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
-                                          </select><br/><br/>
+                                        <select #empjob1 id="empjob1" class="form-control inputForm">
+                                            <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                            <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
+                                        </select><br/><br/>
                                       </form>
                                     </div>
                                 </div>
