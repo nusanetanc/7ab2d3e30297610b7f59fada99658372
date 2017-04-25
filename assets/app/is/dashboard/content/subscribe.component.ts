@@ -220,61 +220,35 @@ import { City } from './cities';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentSubscribeComponent implements OnInit {
-  // Link to our api, pointing to localhost
-    API = 'http://202.162.207.164:3000';
-
-    // Declare empty list of people
-    subs: any[] = [];
-    emps: any[] = [];
-    jobs: any[] = [];
-
-    constructor(private http: Http, private _routeParams: RouteParams) {}
-
-    ngOnInit() {
-      this.getSubs();
-      this.getAllJob();
-      this.getAllEmployee();
-    }
-
-    addJob(detailjob) {
-        var body = `name=${detailjob}`;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http
-            .post(`${this.API}/city/addcity`,
-                body, {
-                    headers: headers
-                })
-            .subscribe(data => {
-                alert('Add City Success');
-                //this.getAllCity();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
-    }
-
-  getSubs() {
-    this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
-      .map(res => res.json())
-      .subscribe(subs => {
-        this.subs = subs
-        this.getAllEmployee();
-      })
-    }
-  // Get all users from the API
-  getAllEmployee() {
-      this.http.get(`${this.API}/employee/list/technical`)
-          .map(res => res.json())
-          .subscribe(emps => {
-              this.emps = emps
-          })
+API = 'http://202.162.207.164:3000';
+cities: City[];
+  ngOnInit() {
+      this.getAllCity();
   }
-  // Get all users from the API
-  getAllJob() {
-      this.http.get(`${this.API}/job/listjob`)
-          .map(res => res.json())
-          .subscribe(emps => {
-              this.emps = emps
-          })
+  constructor(private http: Http) {}
+  // Get all City from the API
+      getAllCity() {
+          this.http.get(`${this.API}/city/listcity`)
+              .map(res => res.json())
+              .subscribe(cities => {
+                  this.cities = cities
+              })
+      }
+  addJob(detailjob) {
+
+      var body = `name=${detailjob}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/city/addcity`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add City Success');
+              this.getAllCity();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
   }
 }
