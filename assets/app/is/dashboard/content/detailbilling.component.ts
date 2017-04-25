@@ -241,13 +241,9 @@ declare let kendo;
                         <!-- /Content List -->
 
                         <br>
-<<<<<<< HEAD
-                            <h3 class="text-center">PRINT INVOICE</h3>
+                        <h3 class="text-center">PRINT INVOICE</h3>
                         <br>
                         
-=======
-
->>>>>>> 20e6c0053fbf7cceb3a403a3ac1a45e84f271a25
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
                            <div id="printPenagihan" style="width: 100%;">
@@ -456,7 +452,7 @@ declare let kendo;
                         <!-- /Content Print -->
 
                         <br>
-                            <h3 class="text-center">PRINT PAYMENT</h3>
+                        <h3 class="text-center">PRINT PAYMENT</h3>
                         <br>
 
                         <!-- Content Print -->
@@ -481,7 +477,7 @@ declare let kendo;
                                        <div class="row" style="margin-bottom: 30px;">
                                           <div class="col-sm-12" >
                                              <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
-                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI PEMBAYARAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; BILLING INFORMATION</i></span>
+                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI PEMBAYARAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; PAYMENT INFORMATION</i></span>
                                              </div>
                                           </div>
                                        </div>
