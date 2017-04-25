@@ -32,10 +32,10 @@ declare let kendo;
                                 <button (click)="onItemClicked2(Inst)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
                                     Print
                                 </button>
-                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInst'">
+                                <button class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInst'">
                                     Print Penagihan
                                 </button>
-                                <button  class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
+                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
                                     Print Pembayaran
                                 </button>
                             </div>
