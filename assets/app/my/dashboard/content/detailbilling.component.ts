@@ -26,7 +26,7 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['Billing']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
                                 <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
@@ -649,9 +649,6 @@ declare let kendo;
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailBillingComponent implements OnInit {
-
-
-
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
