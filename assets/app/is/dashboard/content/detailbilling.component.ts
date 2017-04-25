@@ -239,11 +239,15 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-                        
+
                         <br>
+<<<<<<< HEAD
                             <h3 class="text-center">PRINT INVOICE</h3>
                         <br>
                         
+=======
+
+>>>>>>> 20e6c0053fbf7cceb3a403a3ac1a45e84f271a25
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
                            <div id="printPenagihan" style="width: 100%;">
@@ -450,11 +454,11 @@ declare let kendo;
                            </div>
                         </div>
                         <!-- /Content Print -->
-                        
+
                         <br>
                             <h3 class="text-center">PRINT PAYMENT</h3>
                         <br>
-                        
+
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;">
                            <div id="printPembayaran" style="width: 100%;">
@@ -629,7 +633,7 @@ declare let kendo;
                                              </div>
                                           </div>
                                        </div>
-                                       
+
                                     </div>
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
@@ -638,9 +642,9 @@ declare let kendo;
                            </div>
                         </div>
                         <!-- /Content Print -->
-                        
-                        
-                        
+
+
+
                     </div>
                 </div>
             </div>

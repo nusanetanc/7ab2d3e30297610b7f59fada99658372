@@ -7,6 +7,6 @@ export class Job {
   detail: String,
   emp1: String,
   emp2: String,
-  subs: String
+  subs: String,
   ) {  }
 }

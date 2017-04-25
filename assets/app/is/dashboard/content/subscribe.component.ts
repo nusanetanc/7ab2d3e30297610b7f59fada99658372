@@ -1,6 +1,6 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
 import { Sub } from './subs';
@@ -184,18 +184,18 @@ import { Job } from './job';
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #empjob1 id="empjob1" class="form-control inputForm">
+                                          <select #empjob2 id="empjob2" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
+                                              <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
                                           </select><br/>
                                       </form>
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #empjob2 id="empjob2" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option">{{ emp._id }}</option>
-                                          </select><br/><br/>
+                                        <select #empjob1 id="empjob1" class="form-control inputForm">
+                                            <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                            <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
+                                        </select><br/><br/>
                                       </form>
                                     </div>
                                 </div>
@@ -234,6 +234,23 @@ export class ContentSubscribeComponent implements OnInit {
       this.getAllJob();
     }
 
+    addJob(datejob, detailjob, typejob, empjob1, empjob2) {
+        var body = `date=${datejob}&name=${detailjob}&detail=${typejob}&emp1=${empjob2}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/job/addjob`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Job Success');
+                this.getAllJob();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+
   getSubs() {
     this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
       .map(res => res.json())
@@ -257,21 +274,5 @@ export class ContentSubscribeComponent implements OnInit {
           .subscribe(emps => {
               this.emps = emps
           })
-  }
-  addJob(datejob, detailjob, typejob, empjob1, empjob2) {
-      var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
-      var headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      this.http
-          .post(`${this.API}/job/addjob`,
-              body, {
-                  headers: headers
-              })
-          .subscribe(data => {
-              alert('Add Job Success');
-              this.getAllJob();
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
   }
 }

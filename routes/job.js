@@ -42,6 +42,15 @@ router.post('/addjob', function(req, res, next) {
       res.json({ message: 'Data created!' });
   });
 });
+router.delete('/deljob/:id', function(req, res, next) {
+        Job.remove({
+            _id: req.params.id
+        }, function(err, bear) {
+            if (err)
+                res.send(err);
 
+            res.json({ message: 'Successfully deleted' });
+   });
+});
 
 module.exports = router;
