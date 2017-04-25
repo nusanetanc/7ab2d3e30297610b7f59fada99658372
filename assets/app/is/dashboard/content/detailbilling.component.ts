@@ -29,10 +29,13 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button (click)="onItemClicked2(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
+                                <button (click)="onItemClicked1(Area)" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
+                                    Print
+                                </button>
+                                <button (click)="onItemClicked2(Inst)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInst'">
                                     Print Penagihan
                                 </button>
-                                <button (click)="onItemClicked3(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'" *ngIf="clickedItem.name == 'regInst'">
+                                <button (click)="onItemClicked3(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
                                     Print Pembayaran
                                 </button>
                             </div>
