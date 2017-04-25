@@ -32,7 +32,7 @@ declare let kendo;
                                 <button (click)="onItemClicked2(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
                                     Print Penagihan
                                 </button>
-                                <button (click)="onItemClicked3(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInst'">
+                                <button (click)="onItemClicked3(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
                                     Print Pembayaran
                                 </button>
                             </div>
@@ -242,7 +242,6 @@ declare let kendo;
                         
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
-                           <h3 class="text-center">PRINT INVOICE</h3>
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -450,7 +449,6 @@ declare let kendo;
 
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
-                           <h3 class="text-center">PRINT PAYMENT</h3>
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
