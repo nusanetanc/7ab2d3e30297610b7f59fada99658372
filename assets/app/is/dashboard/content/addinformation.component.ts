@@ -69,13 +69,13 @@ import { Street } from './street';
                                     <option value="0" disabled="true">-- All Street --</option>
                                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                 </select><br/>
-                                </form>
+                                </form><!--
                                 <form>
                                 <select #infohome id="infohome" [(ngModel)]="selectedHome._id">
                                     <option value="0" disabled="true">-- All Home --</option>
                                     <option *ngFor="#home of homes" value={{home._id}}>{{ home.name }}</option>
                                 </select><br/>
-                                </form>
+                                </form> -->
                                 <form>
                                     <input #subject type="text" class="form-control inputForm" id="subject" placeholder="Subject Information">
                                 </form>
