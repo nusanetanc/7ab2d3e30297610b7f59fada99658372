@@ -71,12 +71,6 @@ import { Street } from './street';
                                 </select><br/>
                                 </form>
                                 <form>
-                                <select #infohome id="infohome" [(ngModel)]="selectedHome._id" >
-                                    <option value="0" disabled="true">-- All Home --</option>
-                                    <option *ngFor="#home of homes" value={{home._id}}>{{ home.name }}</option>
-                                </select><br/>
-                                </form>
-                                <form>
                                     <input #subjectinformation type="text" class="form-control inputForm" id="subjectinformation" placeholder="Subject Information">
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
