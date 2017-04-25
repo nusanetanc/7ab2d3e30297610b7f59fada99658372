@@ -242,13 +242,10 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-
-                        <br>
-                        <h3 class="text-center">PRINT INVOICE</h3>
-                        <br>
                         
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
+                           <h3 class="text-center">PRINT INVOICE</h3>
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -454,12 +451,9 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
 
-                        <br>
-                        <h3 class="text-center">PRINT PAYMENT</h3>
-                        <br>
-
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
+                           <h3 class="text-center">PRINT PAYMENT</h3>
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
@@ -641,8 +635,6 @@ declare let kendo;
                            </div>
                         </div>
                         <!-- /Content Print -->
-
-
 
                     </div>
                 </div>
