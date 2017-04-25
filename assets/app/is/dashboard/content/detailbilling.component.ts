@@ -240,6 +240,7 @@ declare let kendo;
                         </div>
                         <!-- /Content List -->
 
+                        <br>
                         <h3 class="text-center">PRINT INVOICE</h3>
                         <br>
                         
@@ -451,7 +452,7 @@ declare let kendo;
                         <!-- /Content Print -->
 
                         <br>
-                            <h3 class="text-center">PRINT PAYMENT</h3>
+                        <h3 class="text-center">PRINT PAYMENT</h3>
                         <br>
 
                         <!-- Content Print -->
