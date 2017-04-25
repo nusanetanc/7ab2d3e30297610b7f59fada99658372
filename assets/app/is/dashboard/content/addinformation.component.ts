@@ -78,7 +78,6 @@ import { Street } from './street';
                                 </form>
                                 <form>
                                     <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                    <br/>
                                 </form>
                                 <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <a href="" class="btn btn-default">
