@@ -32,7 +32,7 @@ declare let kendo;
                                 <button (click)="onItemClicked1(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
                                     Print Penagihan
                                 </button>
-                                <button (click)="onItemClicked2(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
+                                <button (click)="onItemClicked2(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
                                     Print Pembayaran
                                 </button>
                             </div>
@@ -648,7 +648,7 @@ export class ContentDetailBillingComponent implements OnInit {
         this.clickedItem = {name: "regPack"};
     }
 
-    onItemClicked3(Pack) {
+    onItemClicked2(Pack) {
         this.clickedItem = {name: "regInst"};
     }
 
