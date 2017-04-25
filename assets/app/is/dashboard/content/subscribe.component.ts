@@ -199,7 +199,7 @@ import { Job } from './job';
                                       </form>
                                     </div>
                                 </div>
-                                <button type="submit" (click)="addJob(typejob.value, detailjob.value, datejob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
                                     SEND
                                 </button>
                             </div>
@@ -234,8 +234,8 @@ export class ContentSubscribeComponent implements OnInit {
       this.getAllJob();
     }
 
-    addJob(typejob, detailjob, datejob, empjob1, empjob2) {
-        var body = `name=${typejob}&detail=${detailjob}&date=${datejob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
+    addJob(datejob, detailjob, typejob, empjob1, empjob2) {
+        var body = `date=${datejob}&name=${typejob}&detail=${detailjob}&emp1=${empjob1}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
