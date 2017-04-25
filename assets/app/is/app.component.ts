@@ -120,7 +120,7 @@ import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
     { path: '/is/allengineer', component:ContentAllEngineerComponent, name:'AllEngineer'},
     { path: '/is/allreport', component:ContentAllReportsComponent, name:'AllReport'},
     { path: '/is/allstock', component:ContentAllStocksComponent, name:'AllStock'},
-    { path: '/is/detialinformation', component:ContentDetailInformationComponent, name:'DetailInformation'},
+    { path: '/is/detailinformation/:id', component:ContentDetailInformationComponent, name:'DetailInformation'},
     { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DetailReport'},
     { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
