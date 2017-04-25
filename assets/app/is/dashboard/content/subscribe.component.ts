@@ -244,8 +244,8 @@ export class ContentSubscribeComponent implements OnInit {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Job Success');
-                this.getAllJob();
+                alert('Add City Success');
+                //this.getAllCity();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
