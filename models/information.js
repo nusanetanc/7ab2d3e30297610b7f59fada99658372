@@ -7,6 +7,7 @@ var InformationSchema   = new Schema({
   date: Date,
   desc: String,
   status: String,
+  subject: String,
   usercreate: {type: Schema.Types.ObjectId, ref: 'Emp'}
 
 });

@@ -24,7 +24,7 @@ router.post('/addinformation', function(req, res, next) {
   var information = new Information();
     information.to= req.body.to;
     information.date= req.body.date;
-    information.subject= 'req.body.subject';
+    information.subject= req.body.subject;
     information.desc= req.body.desc;
     information.usercreate= req.body.usercreate;
 
