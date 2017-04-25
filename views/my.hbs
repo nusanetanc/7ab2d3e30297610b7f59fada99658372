@@ -8,21 +8,13 @@
     <base href="/">
     <title>Groovy - MY</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,200i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Material Icons -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel='stylesheet' href='/css/style.css'/>
     <link rel='stylesheet' href='/css/style-dashboard.css'/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.24/system.js"></script>
     <script src="https://npmcdn.com/rxjs@5.0.0-beta.2/bundles/Rx.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.14/angular2-polyfills.min.js"></script>
@@ -34,33 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
-
-    <!-- Add the router library -->
-    <script src="https://code.angularjs.org/2.0.0-beta.14/router.dev.js"></script>
-    <script src="/js/app/is/bundle.js"></script>
-
-    <script type="text/javascript">
-        var datefield=document.createElement("input")
-        datefield.setAttribute("type", "date")
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
-            document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
-            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
-            document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
-        }
-    </script>
-
-    <script>
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-            jQuery(function($){ //on document.ready
-                $('#subdateinst').datepicker();
-            })
-        }
-        if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
-            jQuery(function($){ //on document.ready
-                $('#subdatebirth').datepicker();
-            })
-        }
-    </script>
+    <script src="/js/app/my/bundle.js"></script>
     <style>
       .loader {
         border: 16px solid #fff;
