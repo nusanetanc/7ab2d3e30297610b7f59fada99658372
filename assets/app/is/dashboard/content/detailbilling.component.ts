@@ -29,10 +29,13 @@ declare let kendo;
                                 <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
                                     BACK
                                 </a>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
+                                <button (click)="onItemClicked1(Area)" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
+                                    Print
+                                </button>
+                                <button (click)="onItemClicked2(Inst)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
                                     Print Pembayaran
                                 </button>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
+                                <button (click)="onItemClicked3(Pack)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
                                     Print Penagihan
                                 </button>
                             </div>
@@ -40,7 +43,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regArea'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -239,13 +242,10 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-
-                        <br>
-                        <h3 class="text-center">PRINT INVOICE</h3>
-                        <br>
                         
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
+                           <h3 class="text-center">PRINT INVOICE</h3>
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -451,12 +451,9 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
 
-                        <br>
-                        <h3 class="text-center">PRINT PAYMENT</h3>
-                        <br>
-
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
+                           <h3 class="text-center">PRINT PAYMENT</h3>
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
@@ -639,8 +636,6 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
 
-
-
                     </div>
                 </div>
             </div>
@@ -652,8 +647,19 @@ declare let kendo;
 })
 export class ContentDetailBillingComponent implements OnInit {
 
+    public clickedItem = {name: "regArea"};
 
+    onItemClicked1(Area) {
+        this.clickedItem = {name: "regInst"};
+    }
 
+    onItemClicked2(Inst) {
+        this.clickedItem = {name: "regPack"};
+    }
+
+    onItemClicked3(Pack) {
+        this.clickedItem = {name: "regData"};
+    }
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
