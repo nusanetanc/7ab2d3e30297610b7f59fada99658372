@@ -1,7 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http, Headers} from 'angular2/http';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
+import {Subscription} from "rxjs/Rx";
 import { City } from './cities';
 import { Property } from './property';
 import { Cluster } from './cluster';
@@ -71,12 +72,12 @@ import { Street } from './street';
                                 </select><br/>
                                 </form>
                                 <form>
-                                    <input #subjectinformation type="text" class="form-control inputForm" id="subjectinformation" placeholder="Subject Information">
+                                    <input #subject type="text" class="form-control inputForm" id="subject" placeholder="Subject Information">
                                 </form>
-                                <textarea id="message" class="input width100" name="message" rows="10" placeholder="*note"></textarea>
-                                <a href="" class="btn btn-default">
-                                    SEND
-                                </a>
+                                <textarea id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea>
+                                <button type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
+                                    SHARE
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -221,5 +222,28 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(homes => {
                 this.homes = homes
             })
+    }
+    addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
+
+    public to: String,
+    public date: Date,
+    public subject: String,
+    public desc: String,
+    public status: String,
+    public usercreate: String
+
+        var body = `to=${infocity}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/information/addinformation`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Information Success');
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 }
