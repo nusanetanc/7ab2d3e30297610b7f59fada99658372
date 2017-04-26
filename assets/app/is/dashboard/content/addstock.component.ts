@@ -1,6 +1,8 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import { Goods } from './goods';
+import { Stock } from './stock';
 
 @Component({
     selector: 'form-dashboard',
@@ -56,7 +58,7 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddStockComponent {
+export class ContentAddStockComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
