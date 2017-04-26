@@ -80,7 +80,7 @@ export class ContentAddStockComponent {
   }
   / Get all users from the API
   getAllStocks() {
-    this.http.get(`${this.API}/stock/goods/${_id}`)
+    this.http.get(`${this.API}/stock/goods/${this.goodsid}`)
       .map(res => res.json())
       .subscribe(stocks => {
         this.stocks = stocks
