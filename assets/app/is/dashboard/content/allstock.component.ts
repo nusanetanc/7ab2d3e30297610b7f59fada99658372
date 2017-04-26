@@ -36,10 +36,10 @@ import { Http } from 'angular2/http';
             </div>
         </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12" *ngFor="#good of goods">
                     <div class="row subInfo fontWeight300">
-                        <div class="col-sm-11 invoiceId"><span><a href="stock-information.html" class="grey333">Bullet M5</a></span></div>
-                        <div class="col-sm-1 invoiceList"><span>50</span></div>
+                        <div class="col-sm-11 invoiceId"><span>{{ good.name }}</span></div>
+                        <div class="col-sm-1 invoiceList"><span>{{ good.stock }}</span></div>
                     </div>
                 </div>
             </div>
@@ -49,5 +49,23 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllStocksComponent {
+    // Link to our api, pointing to localhost
+      API = 'http://202.162.207.164:3000';
 
+      goods: any[] = [];
+
+      constructor(private http: Http) {}
+
+      ngOnInit() {
+        this.getAllGoods();
+      }
+
+    // Get all users from the API
+    getAllGoods() {
+      this.http.get(`${this.API}/goods/list`)
+        .map(res => res.json())
+        .subscribe(goods => {
+          this.goods = goods
+        })
+    }
 }
