@@ -89,7 +89,7 @@ import { Street } from './street';
 })
 export class ContentAddInformationComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
-    toinfo = 'AllCity';
+
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
@@ -108,7 +108,6 @@ export class ContentAddInformationComponent implements OnInit {
                     this.properties = properties
                 })
         }
-      //  toinfo = ${_id};
     }
 
     onSelectProperty(_id) {
@@ -119,7 +118,6 @@ export class ContentAddInformationComponent implements OnInit {
                     this.clusters = clusters
                 })
         }
-      //  toinfo = ${_id};
     }
 
     onSelectCluster(_id) {
@@ -131,7 +129,6 @@ export class ContentAddInformationComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-    //    toinfo = ${_id};
     }
 
     onSelectBlok(_id) {
@@ -142,7 +139,6 @@ export class ContentAddInformationComponent implements OnInit {
                     this.streetnames = streetnames
                 })
         }
-    //    toinfo = ${_id};
     }
 
     onSelectStreet(_id) {
@@ -153,7 +149,6 @@ export class ContentAddInformationComponent implements OnInit {
                     this.homes = homes
                 })
         }
-      //  toinfo = ${_id};
     }
 
 
@@ -190,7 +185,6 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(properties => {
                 this.properties = properties
             })
-            toinfo = ${this.city_id};
     }
     // Get all Type from the API
     getAllClusterByProperty() {
