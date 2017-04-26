@@ -29,7 +29,7 @@ import { Stock } from './stock';
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row headerList paddingLR30">
-                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add City</strong></div>
+                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Stock</strong></div>
                         </div>
                         <div class="row subInfo">
                             <div class="col-sm-12">
@@ -58,41 +58,24 @@ import { Stock } from './stock';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddStockComponent implements OnInit {
-    // Link to our api, pointing to localhost
-      API = 'http://202.162.207.164:3000';
+export class ContentAddStockComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
-      goods: any[] = [];
+  goods: any[] = [];
 
-      constructor(private http: Http) {}
+  constructor(private http: Http) {}
 
-      ngOnInit() {
-        this.getAllGoods();
-      }
-
-    // Get all users from the API
-    getAllGoods() {
-      this.http.get(`${this.API}/goods/list`)
-        .map(res => res.json())
-        .subscribe(goods => {
-          this.goods = goods
-        })
-    }
-  addCity(cityname) {
-
-      var body = `name=${cityname}`;
-      var headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      this.http
-          .post(`${this.API}/city/addcity`,
-              body, {
-                  headers: headers
-              })
-          .subscribe(data => {
-              alert('Add City Success');
-              this.getAllCity();
-          }, error => {
-              console.log(JSON.stringify(error.json()));
-          });
+  ngOnInit() {
+    this.getAllGoods();
   }
+
+// Get all users from the API
+getAllGoods() {
+  this.http.get(`${this.API}/goods/list`)
+    .map(res => res.json())
+    .subscribe(goods => {
+      this.goods = goods
+    })
+}
 }
