@@ -108,7 +108,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.properties = properties
                 })
         }
-        toinfo = ${_id};
+      //  toinfo = ${_id};
     }
 
     onSelectProperty(_id) {
@@ -119,7 +119,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.clusters = clusters
                 })
         }
-        toinfo = ${_id};
+      //  toinfo = ${_id};
     }
 
     onSelectCluster(_id) {
@@ -131,7 +131,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-        toinfo = ${_id};
+    //    toinfo = ${_id};
     }
 
     onSelectBlok(_id) {
@@ -142,7 +142,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.streetnames = streetnames
                 })
         }
-        toinfo = ${_id};
+    //    toinfo = ${_id};
     }
 
     onSelectStreet(_id) {
@@ -153,7 +153,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.homes = homes
                 })
         }
-        toinfo = ${_id};
+      //  toinfo = ${_id};
     }
 
 
