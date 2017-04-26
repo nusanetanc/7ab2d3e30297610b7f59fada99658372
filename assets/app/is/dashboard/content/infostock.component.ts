@@ -31,9 +31,9 @@ import {Subscription} from "rxjs/Rx";
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Bullet M5 (120 pcs)</strong></div>
                     </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-11 invoiceId"><span><a href="stock-detail.html" class="grey333">1109482746</a></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">In Use</span></div>
+                    <div class="row subInfo" *ngFor="#stock of stocks">
+                        <div class="col-sm-11 invoiceId"><span>{{ stock.barcode }}</span></div>
+                        <div class="col-sm-1 invoiceList"><span class="red">{{ stock.status }}</span></div>
                     </div>
                 </div>
             </div>
@@ -58,8 +58,8 @@ export class ContentInfoStockComponent {
 getAllStocks() {
   this.http.get(`${this.API}/stock/goods/${this._routeParams.get('id')}`)
     .map(res => res.json())
-    .subscribe(goods => {
-      this.goods = goods
+    .subscribe(stocks => {
+      this.stocks = stocks
     })
 }
 }
