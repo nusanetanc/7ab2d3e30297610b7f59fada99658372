@@ -94,16 +94,17 @@
 </script>
 
 <script>
+    var date = new Date();
+    document.getElementById().innerHTML = d.toDateString();
+
     var printPenagihan = function() {
 
-        var d = new Date();
-        document.getElementById().innerHTML = d.toDateString();
-
         kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, d + ".pdf");
+            kendo.drawing.pdf.saveAs(group, date + ".pdf");
         });
 
     }
+
 </script>
 <script>
     var printPembayaran = function() {
