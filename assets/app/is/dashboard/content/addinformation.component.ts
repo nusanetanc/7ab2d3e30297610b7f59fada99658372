@@ -109,7 +109,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.properties = properties
                 })
         }
-        toInfo = ${this._id};
+        this.toInfo = ${this._id};
     }
 
     onSelectProperty(_id) {
@@ -120,7 +120,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.clusters = clusters
                 })
         }
-        toInfo = ${this._id};
+        this.toInfo = ${this._id};
     }
 
     onSelectCluster(_id) {
