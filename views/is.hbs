@@ -95,13 +95,23 @@
 
 <script>
 
-    var date = new Date("YYYY-MM");
-    document = date.toDateString();
+    var todaysDate = new Date();
+
+    function convertDate(date) {
+        var yyyy = date.getFullYear().toString();
+        var mm = (date.getMonth()+1).toString();
+        var dd  = date.getDate().toString();
+
+        var mmChars = mm.split('');
+        var ddChars = dd.split('');
+
+        return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
+    }
 
     var printPenagihan = function() {
 
         kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "Invoice" + " " + "-" + " " + date + ".pdf");
+            kendo.drawing.pdf.saveAs(group, "Invoice" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
     }
