@@ -25,6 +25,7 @@ Information.findById(req.params.id, function(err, informations) {
          nameusercretae: emps.name,
          jabusercretae: emps.titlejob
        });
+     });
    });
 });
 
