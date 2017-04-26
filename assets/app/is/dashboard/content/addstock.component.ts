@@ -37,9 +37,9 @@ import { Stock } from './stock';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
+                                                <select #inputGoods id="inputGoods">
                                                     <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
-                                                    <option *ngFor="#good of goods" value={{good._id}}>{{ good.name }}</option>
+                                                    <option *ngFor="#good of goods" >{{ good._id }}</option>
                                                 </select><br/>
                                             </form>
                                             <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
