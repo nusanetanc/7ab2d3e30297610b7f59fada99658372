@@ -89,7 +89,7 @@ import { Street } from './street';
 })
 export class ContentAddInformationComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
-
+    toinfo = 'AllCity';
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
@@ -182,7 +182,6 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(cities => {
                 this.cities = cities
             })
-            toinfo = 'AllCity';
     }
     // Get all Property by city from the API
     getAllPropertyByCity() {
@@ -200,7 +199,6 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(clusters => {
                 this.clusters = clusters
             })
-            toinfo = ${this.property_id};
     }
 
     // Get all Street from the API
@@ -210,7 +208,6 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(streetnames => {
                 this.streetnames = streetnames
             })
-            toinfo = ${this.blok_id};
     }
 
     // Get all BLokfloor from the API
@@ -229,7 +226,6 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(homes => {
                 this.homes = homes
             })
-            toinfo = ${this.street_id};
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
 
