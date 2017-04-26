@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
@@ -30,11 +30,11 @@ import { Complaint } from './complaints';
                 <div class="col-sm-12">
                   <div class="row">
                       <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subject }}</b><br>{{ complaints.category }} - {{ complaints.subcategory }}</span></div>
-                      <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">{{ complaints.status }}s</span></span></div>
+                      <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">{{ complaints.status }}</span></span></div>
                   </div>
                   <div>
                       <div class="row">
-                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">11 Feb 2017 - 11.00 PM</b> by <b class="grey333">Jhon Doe</b></span></div>
+                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ complaints.dateopen }}</b> by <b class="grey333">Jhon Doe</b></span></div>
                       </div>
                       <div class="row">
                           <div class="col-sm-11 infoDetail">
@@ -52,12 +52,11 @@ import { Complaint } from './complaints';
 export class ContentDetailReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Report_ID = '58c24c1948bfc66fd001dbb8';
 
 complaints: any[] = [];
 chatcomplaints: any[] = [];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailReport();
@@ -65,14 +64,14 @@ chatcomplaints: any[] = [];
   }
 
 getDetailReport() {
-  this.http.get(`${this.API}/complaint/complaint/${this.Report_ID}`)
+  this.http.get(`${this.API}/complaint/complaint/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
     })
 }
 getChatReport() {
-  this.http.get(`${this.API}/chatcomplaint/chat/${this.Report_ID}`)
+  this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(chatcomplaints => {
       this.chatcomplaints = complaints
