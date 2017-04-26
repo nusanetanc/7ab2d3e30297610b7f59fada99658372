@@ -339,4 +339,10 @@ getAllBLokfloorByCluster() {
             this.blokfloors = blokfloors
         })
 }
+
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+            jQuery(function($){ //on document.ready
+            $('#subdateinst').datepicker();
+        })
+        }
 }
