@@ -40,8 +40,6 @@ import { Http } from 'angular2/http';
                                                     <option *ngFor="#good of goods" value={{good._id}}>{{ good.name }}</option>
                                                 </select><br/>
                                             </form>
-                                            *ngFor="#good of goods"
-                                            {{good._id}}
                                             <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
                                             <button type="submit" class="btn btn-default buttonOrange">
                                                 SEND
