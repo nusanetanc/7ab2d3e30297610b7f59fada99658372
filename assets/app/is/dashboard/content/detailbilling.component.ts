@@ -26,16 +26,14 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regArea'">
                                     BACK
                                 </a>
-                                <button class="btn btn-default buttonOrange" type="button" style="float:right;" >
-                                    Print
-                                </button>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" >
+                                
+                                <button (click)="onItemClicked1(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
                                     Print Penagihan
                                 </button>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" >
+                                <button (click)="onItemClicked2(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
                                     Print Pembayaran
                                 </button>
                             </div>
@@ -648,15 +646,11 @@ export class ContentDetailBillingComponent implements OnInit {
     public clickedItem = {name: "regArea"};
 
     onItemClicked1(Area) {
-        this.clickedItem = {name: "regInst"};
-    }
-
-    onItemClicked2(Inst) {
         this.clickedItem = {name: "regPack"};
     }
 
-    onItemClicked3(Pack) {
-        this.clickedItem = {name: "regData"};
+    onItemClicked2(Pack) {
+        this.clickedItem = {name: "regInst"};
     }
 
     // Link to our api, pointing to localhost
