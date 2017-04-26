@@ -103,24 +103,24 @@ export class ContentAddInformationComponent implements OnInit {
 
     onSelectCity(_id) {
         this.properties = this.getAllPropertyByCity(){
+          toInfo = ${_id};
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
                 .map(res => res.json())
                 .subscribe(properties => {
                     this.properties = properties
                 })
         }
-        this.toInfo = ${this._id};
     }
 
     onSelectProperty(_id) {
         this.clusters = this.getAllClusterByProperty(){
+          toInfo = ${_id};
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
                 .subscribe(clusters => {
                     this.clusters = clusters
                 })
         }
-        this.toInfo = ${this._id};
     }
 
     onSelectCluster(_id) {
