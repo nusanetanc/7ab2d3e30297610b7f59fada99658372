@@ -80,7 +80,7 @@ export class ContentAddStockComponent implements OnInit {
               })
       }
   }
-  / Get all users from the API
+  // Get all users from the API
   getAllStocks() {
     this.http.get(`${this.API}/stock/goods/${this.goodsid}`)
       .map(res => res.json())
