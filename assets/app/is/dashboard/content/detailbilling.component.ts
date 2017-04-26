@@ -351,7 +351,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
-                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level {{ bills.namepack }} Package (Internet)</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>{{ bills.pricepack }}</span>
@@ -558,7 +558,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
-                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level {{ bills.namepack }} Package (Internet)</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>{{ bills.pricepack }}</span>

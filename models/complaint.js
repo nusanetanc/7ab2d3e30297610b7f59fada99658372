@@ -10,6 +10,7 @@ var ComplaintSchema   = new Schema({
   dateclose: String,
   status: String,
   lastchat: [String],
+  complaintId: String,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'}
 });
 
