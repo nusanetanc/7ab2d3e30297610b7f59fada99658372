@@ -363,7 +363,7 @@ body{
     text-align: center;
     padding: 15px 0 15px 0;
     transition: 0.3s all;
-    -moz-transition: 0.2s3all;
+    -moz-transition: 0.3all;
 }
 
 #price-box-container:hover > #price-box-header-level {
