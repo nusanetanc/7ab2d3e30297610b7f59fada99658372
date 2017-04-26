@@ -98,7 +98,7 @@ router.get('/career', function(req, res, next) {
 });
 
 router.get('/event', function(req, res, next) {
-  res.render('coming-soon', { title: 'Groovy - Event' });
+  res.render('event', { title: 'Groovy - Event' });
 });
 
 router.get('/terms-of-use', function(req, res, next) {
