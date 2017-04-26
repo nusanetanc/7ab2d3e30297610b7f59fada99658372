@@ -362,6 +362,8 @@ body{
     font-weight: 200;
     text-align: center;
     padding: 15px 0 15px 0;
+    transition: 0.3s all;
+    -moz-transition: 0.3s all;
 }
 
 #price-box-container:hover > #price-box-header-level {
