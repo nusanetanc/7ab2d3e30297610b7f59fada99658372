@@ -89,7 +89,7 @@ import { Street } from './street';
 })
 export class ContentAddInformationComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
-
+    toInfo = 'AllCity'
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
@@ -101,6 +101,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectCity(_id) {
+    toInfo = ${_id};
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
                 .map(res => res.json())
@@ -223,7 +224,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
 
-        var body = `to=${this.toinfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
+        var body = `to=${this.toInfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
