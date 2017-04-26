@@ -95,18 +95,8 @@
 
 <script>
 
-    var todaysDate = new Date(convertDate());
-
-    function convertDate(date) {
-        var yyyy = date.getFullYear().toDateString();
-        var mm = (date.getMonth()+1).toDateString()
-        var dd  = date.getDate().toDateString();
-
-        var mmChars = mm.split('');
-        var ddChars = dd.split('');
-
-        return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
-    }
+    var todaysDate = new Date();
+    document = todaysDate.toDateString();
 
     var printPenagihan = function() {
 
@@ -119,13 +109,13 @@
 </script>
 <script>
 
-    var date = new Date();
-    document = date.toDateString();
+    var todaysDate = new Date();
+    document = todaysDate.toDateString();
 
     var printPembayaran = function() {
 
         kendo.drawing.drawDOM($("#printPembayaran")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + date + ".pdf");
+            kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
     }
