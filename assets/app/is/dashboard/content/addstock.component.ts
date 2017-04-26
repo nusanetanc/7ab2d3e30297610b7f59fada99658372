@@ -38,7 +38,7 @@ import { Stock } from './stock';
                                         <div class="formNewReport marginLR20">
                                             <form>
                                                 <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
-                                                    <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                                    <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                                     <option *ngFor="#good of goods" value={{good._id}}>{{ good.name }}</option>
                                                 </select><br/>
                                             </form>
