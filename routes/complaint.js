@@ -22,6 +22,12 @@ Complaint.findById(req.params.id, function(err, complaints) {
 /* Add complaint */
 router.post('/addcomplaint', function(req, res, next) {
   var complaint = new Complaint();
+    var id = require('node-sid')({
+        seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+        len:6,
+        headerField:'x-node-sid'
+    }).create();
+    complaint.complaintId = id;
     complaint.sub= req.body.sub;
     complaint.subject= req.body.subject;
     complaint.category= req.body.category;
@@ -41,7 +47,7 @@ router.post('/addcomplaint', function(req, res, next) {
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
-    chat.complaint= req.body.complaint;
+    chat.complaintId= id;
 
     chat.save(function(err) {
         if (err)
