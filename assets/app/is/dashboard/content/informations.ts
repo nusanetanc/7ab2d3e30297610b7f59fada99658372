@@ -4,7 +4,6 @@ export class Information {
   public date: Date,
   public subject: String,
   public desc: String,
-  public status: String,
-  public usercreate: String
+  public usercreate: String,
   ) {  }
 }

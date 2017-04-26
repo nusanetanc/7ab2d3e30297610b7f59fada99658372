@@ -39,13 +39,13 @@ import {Menu} from "./menu";
                             <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
-                        </li>
-                        <li>
                             <a [routerLink]="['AllEmployee']" ><i class="material-icons">recent_actors</i> <span class="fontWeight300">EMPLOYEE</span></a>
                         </li>
                         <li>
                             <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
                         </li>
                     </ul>
                     <div class="sidebar-footer">

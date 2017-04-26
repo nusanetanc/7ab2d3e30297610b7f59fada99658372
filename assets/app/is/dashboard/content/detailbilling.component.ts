@@ -26,21 +26,22 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regArea'">
                                     BACK
                                 </a>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
-                                    Print Pembayaran
-                                </button>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
+                                
+                                <button (click)="onItemClicked1(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
                                     Print Penagihan
+                                </button>
+                                <button (click)="onItemClicked2(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
+                                    Print Pembayaran
                                 </button>
                             </div>
                         </div>
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regArea'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -240,10 +241,8 @@ declare let kendo;
                         </div>
                         <!-- /Content List -->
                         
-                        <br>
-                        
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -448,11 +447,9 @@ declare let kendo;
                            </div>
                         </div>
                         <!-- /Content Print -->
-                        
-                        <br><br>
-                        
+
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
@@ -473,7 +470,7 @@ declare let kendo;
                                        <div class="row" style="margin-bottom: 30px;">
                                           <div class="col-sm-12" >
                                              <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
-                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI TAGIHAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; BILLING INFORMATION</i></span>
+                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI PEMBAYARAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; PAYMENT INFORMATION</i></span>
                                              </div>
                                           </div>
                                        </div>
@@ -625,7 +622,7 @@ declare let kendo;
                                              </div>
                                           </div>
                                        </div>
-                                       
+
                                     </div>
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
@@ -634,9 +631,7 @@ declare let kendo;
                            </div>
                         </div>
                         <!-- /Content Print -->
-                        
-                        
-                        
+
                     </div>
                 </div>
             </div>
@@ -648,8 +643,15 @@ declare let kendo;
 })
 export class ContentDetailBillingComponent implements OnInit {
 
+    public clickedItem = {name: "regArea"};
 
+    onItemClicked1(Area) {
+        this.clickedItem = {name: "regPack"};
+    }
 
+    onItemClicked2(Pack) {
+        this.clickedItem = {name: "regInst"};
+    }
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';

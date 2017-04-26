@@ -26,7 +26,6 @@ router.post('/addinformation', function(req, res, next) {
     information.date= req.body.date;
     information.subject= req.body.subject;
     information.desc= req.body.desc;
-    information.status= req.body.status;
     information.usercreate= req.body.usercreate;
 
     information.save(function(err) {
@@ -46,7 +45,6 @@ router.put('/putinformation/:id', function(req, res, next) {
                 information.date= req.body.date;
                 information.subject= req.body.subject;
                 information.desc= req.body.desc;
-                information.status= req.body.status;
                 information.usercreate= req.body.usercreate;
               if (err)
                 res.send(err);

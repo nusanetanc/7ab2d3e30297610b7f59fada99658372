@@ -154,14 +154,17 @@ import {Streetname} from "./street_name";
 export class SignupComponent implements OnInit{
 
 public clickedItem = {name: "regArea"};
+
 onItemClicked1(Area) {
-   this.clickedItem = {name: "regInst"};;
+   this.clickedItem = {name: "regInst"};
 }
+
 onItemClicked2(Inst) {
-   this.clickedItem = {name: "regPack"};;
+   this.clickedItem = {name: "regPack"};
 }
+
 onItemClicked3(Pack) {
-   this.clickedItem = {name: "regData"};;
+   this.clickedItem = {name: "regData"};
 }
 
 selectedCity: City = new City(0, 'dummy');

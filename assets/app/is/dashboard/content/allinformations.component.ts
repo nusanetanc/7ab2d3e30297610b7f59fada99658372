@@ -38,7 +38,7 @@ import { Information } from './allinformation';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#information of informations">
-                <a [routerLink]="['Information']">
+                <a [routerLink]="['DetailInformation', {id: information._id}]">
                     <div class="row subInfo fontWeight300">
                         <div class="col-sm-3 invoiceId"><span><a href="" class="grey333">{{ information.date }}</a></span></div>
                         <div class="col-sm-7 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>

@@ -97,7 +97,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-8">
-                                        Jln. Nusantara Block E, Grogol, Jakarta, Indonesia
+                                        {{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}, Indonesia
                                     </div>
                                 </div>
                             </div>
@@ -109,20 +109,18 @@ import { Bill } from './bills';
                     <div class="row contList">
                         <div class="col-md-12">
                             <div class="row hid">
-                                <div class="col-sm-2 invoiceIdHeader"><strong>Invoice ID</strong></div>
-                                <div class="col-sm-4 invoiceListHeader"><strong>Description</strong></div>
-                                <div class="col-sm-2 invoiceListHeader"><strong>Invoice Date</strong></div>
-                                <div class="col-sm-2 invoiceListHeader"><strong>Total</strong></div>
-                                <div class="col-sm-2 invoiceListHeader"><strong>Status</strong></div>
+                                <div class="col-sm-3 invoiceIdHeader"><strong>Invoice ID</strong></div>
+                                <div class="col-sm-3 invoiceListHeader"><strong>Invoice Date</strong></div>
+                                <div class="col-sm-3 invoiceListHeader"><strong>Total</strong></div>
+                                <div class="col-sm-3 invoiceListHeader"><strong>Status</strong></div>
                             </div>
                             <div *ngFor="#bill of bills">
                             <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="row">
-                                <div class="col-sm-2 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
-                                <div class="col-sm-4 invoiceList"><span>{{ bill.desc }}</span></div>
-                                <div class="col-sm-2 invoiceList"><span>{{ bill.billdate }}</span></div>
-                                <div class="col-sm-2 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
-                                <div class="col-sm-2 invoiceList"><span class="red">Waiting For Payment</span></div>
+                                <div class="col-sm-3 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
+                                <div class="col-sm-3 invoiceList"><span>{{ bill.billdate }}</span></div>
+                                <div class="col-sm-3 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
+                                <div class="col-sm-3 invoiceList"><span class="red">{{ bill.status }}</span></div>
                             </div>
                             </a>
                             </div>
