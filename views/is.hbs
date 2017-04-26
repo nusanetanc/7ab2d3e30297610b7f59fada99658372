@@ -101,7 +101,7 @@
     var printPenagihan = function() {
 
         kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "Invoice" + "-" + date + ".pdf");
+            kendo.drawing.pdf.saveAs(group, "Invoice" + " " + "-" + " " + date + ".pdf");
         });
 
     }
@@ -115,7 +115,7 @@
     var printPembayaran = function() {
 
         kendo.drawing.drawDOM($("#printPembayaran")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "Payment" + "-" + date + ".pdf");
+            kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + date + ".pdf");
         });
 
     }
