@@ -29,10 +29,9 @@ import {Subscription} from "rxjs/Rx";
                 <div class="col-sm-12">
                   <div class="row">
                       <div class="col-sm-10 invoiceId grey333"><span><b>{{informations.subject}}</b></span></div>
-                      <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{informations.status}}</span></span></div>
                   </div>
                   <div class="row">
-                      <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{informations.date}}</b> by <b>{{informations.usercreat}}</b></span></div>
+                      <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{informations.date}}</b> by <b>{{informations.nameusercretae}}</b> - {{informations.jabusercretae}}</span></div>
                   </div>
                   <div class="row">
                       <div class="col-sm-11 infoDetail">

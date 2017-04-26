@@ -2,6 +2,7 @@ var express = require('express');
 var passwordHash = require('password-hash');
 var router = express.Router();
 var Information = require('../models/information');
+var Emp = require('../models/employee');
 
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
@@ -14,8 +15,16 @@ router.get('/listinformation', function(req, res, next) {
 /* GET detail sub. */
 router.get('/information/:id', function(req, res, next) {
 Information.findById(req.params.id, function(err, informations) {
-       console.log( informations );
-       res.json(informations);
+  Emp.findById(informations.usercreate, function(err, emps) {
+       res.json({
+         _id: informations._id,
+         to: informations.to,
+         date: informations.date,
+         subject: informations.subject,
+         desc: informations.desc,
+         nameusercretae: emps.name,
+         jabusercretae: emps.titlejob
+       });
    });
 });
 
