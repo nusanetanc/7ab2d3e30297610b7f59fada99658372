@@ -18,20 +18,23 @@ import { Http } from 'angular2/http';
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
-            <div class="row marginB20 marginR0">
-                <div class="col-sm-12">
-                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                    <div class="dropdown right">
-                        <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            NAME
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">NAME</a></li>
-                            <li><a href="#">ID</a></li>
-                        </ul>
-                    </div>
+        <div class="row marginB20 marginR0">
+            <div class="col-sm-12">
+               <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
+                    ADD NEW STOCK
+                </a>
+                <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                <div class="dropdown right">
+                    <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        DATE
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">NAME</a></li>
+                        <li><a href="#">ID</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row subInfo fontWeight300">
