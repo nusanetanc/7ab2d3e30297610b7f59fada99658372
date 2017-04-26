@@ -157,6 +157,10 @@ public clickedItem = {name: "regArea"};
 
 onItemClicked1(Area) {
    this.clickedItem = {name: "regInst"};
+}
+
+onItemClicked2(Inst) {
+   this.clickedItem = {name: "regPack"};
     var datefield=document.createElement("input")
     datefield.setAttribute("type", "date")
     if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
@@ -165,15 +169,11 @@ onItemClicked1(Area) {
         document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
     }
 
-   if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+    if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
         jQuery(function($){ //on document.ready
             $('#subdateinst').datepicker();
         })
     }
-}
-
-onItemClicked2(Inst) {
-   this.clickedItem = {name: "regPack"};
 }
 
 onItemClicked3(Pack) {
