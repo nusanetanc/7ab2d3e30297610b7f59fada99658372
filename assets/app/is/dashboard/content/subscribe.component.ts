@@ -180,7 +180,7 @@ import { Job } from './job';
                                         <option class="option" value="Take Device">Take Device</option>
                                     </select><br/><br/>
                                 </form>
-                                <textarea #detailjob id="detailjob" placeholder="Input Detail Job" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
+                                <textarea #detailjob id="detailjob" placeholder="Input Detail Job" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"/>
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
