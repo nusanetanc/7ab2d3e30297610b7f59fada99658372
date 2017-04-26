@@ -113,7 +113,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectProperty(_id) {
-      toInfo = ${_id};
+    this.toInfo = ${_id};
         this.clusters = this.getAllClusterByProperty(){
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
@@ -124,7 +124,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectCluster(_id) {
-      toInfo = ${_id};
+      this.toInfo = ${_id};
         this.blokfloors = this.getAllBLokfloorByCluster(){
             this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
                 .map(res => res.json())
@@ -135,7 +135,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectBlok(_id) {
-      toInfo = ${_id};
+      this.toInfo = ${_id};
         this.streetnames = this.getAllStreetByBlok(){
             this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
                 .map(res => res.json())
@@ -146,7 +146,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectStreet(_id) {
-      toInfo = ${_id};
+      this.toInfo = ${_id};
         this.homes = this.getAllHomeByStreet(){
             this.http.get(`${this.API}/home/homebystreet/${_id}`)
                 .map(res => res.json())
