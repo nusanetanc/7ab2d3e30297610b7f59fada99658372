@@ -182,6 +182,7 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(cities => {
                 this.cities = cities
             })
+            toinfo = 'AllCity';
     }
     // Get all Property by city from the API
     getAllPropertyByCity() {
@@ -190,6 +191,7 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(properties => {
                 this.properties = properties
             })
+            toinfo = ${this.city_id};
     }
     // Get all Type from the API
     getAllClusterByProperty() {
@@ -198,6 +200,7 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(clusters => {
                 this.clusters = clusters
             })
+            toinfo = ${this.property_id};
     }
 
     // Get all Street from the API
@@ -207,6 +210,7 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(streetnames => {
                 this.streetnames = streetnames
             })
+            toinfo = ${this.blok_id};
     }
 
     // Get all BLokfloor from the API
@@ -225,6 +229,7 @@ export class ContentAddInformationComponent implements OnInit {
             .subscribe(homes => {
                 this.homes = homes
             })
+            toinfo = ${this.street_id};
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
 
