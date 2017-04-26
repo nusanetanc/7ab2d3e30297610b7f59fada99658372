@@ -17,7 +17,6 @@ router.post('/add', function(req, res, next) {
     stock.goods= req.body.goods;
     stock.barcode= req.body.barcode;
     stock.status= req.body.status;
-    stock.subs= req.body.subs;
     stock.save(function(err) {
       if (err)
           res.send(err);
