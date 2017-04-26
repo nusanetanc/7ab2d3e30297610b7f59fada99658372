@@ -4,7 +4,7 @@ var Stock = require('../models/stock');
 
 /* GET jobs listing. */
 router.get('/list', function(req, res, next) {
-     Job.find(function(err, stocks) {
+     Stock.find(function(err, stocks) {
        console.log( stocks );
        res.json(stocks);
    });
