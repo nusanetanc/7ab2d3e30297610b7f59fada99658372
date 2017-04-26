@@ -113,7 +113,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectProperty(_id) {
-    //toInfo = ${_id};
+    this.toInfo = ${_id};
         this.clusters = this.getAllClusterByProperty(){
             this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
                 .map(res => res.json())
