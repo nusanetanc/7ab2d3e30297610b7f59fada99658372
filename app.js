@@ -27,6 +27,7 @@ var menu = require('./routes/menu');
 var problem = require('./routes/problem');
 var job = require('./routes/job');
 var goods = require('./routes/goods');
+var stock = require('./routes/stock');
 var streetname = require('./routes/street_name');
 
 // api for finnet
@@ -73,6 +74,7 @@ app.use('/menu', menu);
 app.use('/problem', problem);
 app.use('/streetname', streetname);
 app.use('/goods', goods);
+app.use('/stock', stock);
 app.use('/api/finnet', finnet);
 
 
