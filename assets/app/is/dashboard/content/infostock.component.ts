@@ -46,12 +46,12 @@ export class ContentInfoStockComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-  goods: any[] = [];
+  stocks: any[] = [];
 
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
-    this.getAllGoods();
+    this.getAllStocks();
   }
 
 // Get all users from the API
