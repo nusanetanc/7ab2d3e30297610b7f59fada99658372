@@ -24,7 +24,7 @@ router.post('/addcomplaint', function(req, res, next) {
   var complaint = new Complaint();
     var id = require('node-sid')({
         seed:'0123456789abcdefghijklmnopqrstuvwxyz',
-        len:,
+        len:20,
         headerField:'x-node-sid'
     }).create();
     complaint.complaintId = id;
