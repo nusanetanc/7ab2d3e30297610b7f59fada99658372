@@ -13,9 +13,9 @@ router.get('/listchat', function(req, res, next) {
 
 /* GET detail bill one account. */
 router.get('/chat/:id', function(req, res, next) {
-    Chat.find({complaint: req.params.id}, function(err, chats) {
-       console.log( chats );
-       res.json(chats);
+    Chat.find({complaint: req.params.id}, function(err, chat) {
+       console.log( chat );
+       res.json(chat);
    });
 });
 
