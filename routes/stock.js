@@ -10,6 +10,14 @@ router.get('/list', function(req, res, next) {
    });
 });
 
+/* GET jobs listing. */
+router.get('/goods/:id', function(req, res, next) {
+     Stock.find({goods: req.params.id}, function(err, stocks) {
+       console.log( stocks );
+       res.json(stocks);
+   });
+});
+
 
 /* Add job */
 router.post('/add', function(req, res, next) {

@@ -1,7 +1,8 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
-
+import 'rxjs/add/operator/map';
+import {Subscription} from "rxjs/Rx";
 
 @Component({
     selector: 'form-infostock',
@@ -42,6 +43,23 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentInfoStockComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  goods: any[] = [];
+
+  constructor(private http: Http, private _routeParams: RouteParams) {}
+
+  ngOnInit() {
+    this.getAllGoods();
+  }
+
+// Get all users from the API
+getAllStocks() {
+  this.http.get(`${this.API}/stock/goods/${this._routeParams.get('id')}`)
+    .map(res => res.json())
+    .subscribe(goods => {
+      this.goods = goods
+    })
 }
-
+}
