@@ -41,8 +41,8 @@ import { Complaint } from './complaints';
                 <a [routerLink]="['Detailreport', {id: complaint._id}]">
                     <div class="row subInfo">
                         <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ complaint.dateopen }}</a></span></div>
-                        <div class="col-sm-8 invoiceList"><span><a class="grey333">{{ complaint.subcategory }} </a></span></div>
-                        <div class="col-sm-2 invoiceList"><span class="red">{{ complaint.status }}</span></div>
+                        <div class="col-sm-6 invoiceList"><span><a class="grey333">{{ complaint.subcategory }} </a></span></div>
+                        <div class="col-sm-3 invoiceList"><span class="red">{{ complaint.status }}</span></div>
                     </div>
                 </a>
                 </div>
