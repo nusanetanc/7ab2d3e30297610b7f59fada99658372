@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Complaint = require('../models/complaint');
+var Chat = require('../models/chatcomplaint');
 
 /* GET complaintloye listing. */
 router.get('/listcomplaint', function(req, res, next) {
@@ -35,6 +36,18 @@ router.post('/addcomplaint', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+    var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= req.body.date;
+    chat.sub= req.body.sub;
+    chat.emp= req.body.emp;
+    chat.complaint= req.body.complaint;
+
+    chat.save(function(err) {
+        if (err)
+            res.send(err);
+        res.json({ message: 'Data created!' });
+    });
 });
 
 router.put('/putcomplaint/:id', function(req, res, next) {

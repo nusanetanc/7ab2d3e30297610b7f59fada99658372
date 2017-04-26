@@ -95,19 +95,12 @@ export class ContentNewReportComponent implements OnInit {
                 body, {
                     headers: headers
                 })
-            .subscribe(data => {
-                alert('Add Your Report Success');
-                this.getAllComplaint();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
-        this.http
-            .post(`${this.API}/chatcomplaint/addchat`,
                 body2, {
                     headers: headers
                 })
             .subscribe(data => {
-                this.getAllChat();
+                alert('Add Your Report Success');
+                this.getAllComplaint();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
