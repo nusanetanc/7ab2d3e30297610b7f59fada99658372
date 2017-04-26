@@ -28,7 +28,7 @@ Complaint.findById(req.params.id, function(err, complaints) {
             lastchat: complaints.lastchat,
             subname: subs.name,
         });
-    })
+    });
    });
 });
 

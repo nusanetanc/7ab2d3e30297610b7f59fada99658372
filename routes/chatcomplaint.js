@@ -51,7 +51,7 @@ router.put('/putchat/:id', function(req, res, next) {
               if (err)
                 res.send(err);
 
-            Chat.save(function(err) {
+            chat.save(function(err) {
                 if (err)
                     res.send(err);
 
