@@ -20,7 +20,7 @@ import { Http } from 'angular2/http';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
         <div class="row marginB20 marginR0">
             <div class="col-sm-12">
-               <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
+               <a [routerLink]="['AddStock']" class="btn btn-default buttonOrange">
                     ADD NEW STOCK
                 </a>
                 <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
