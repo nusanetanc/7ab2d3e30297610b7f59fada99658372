@@ -223,7 +223,19 @@ export class ContentAddInformationComponent implements OnInit {
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
 
-        var body = `to=${infocity}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
+    if(${infocity} =="0"){
+      toinfo = 'AllCity';
+    } else if(${infoproperty} =="0"){
+      toinfo = ${infocity};
+    } else if(${infocluster} =="0"){
+      toinfo = ${infoproperty};
+    } else if(${infoblok} =="0"){
+      toinfo = ${infocluster};
+    } else if(${infostreet} =="0"){
+      toinfo = ${infoblok};
+    }
+
+        var body = `to=${this.toinfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
