@@ -1,7 +1,8 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
-
+import 'rxjs/add/operator/map';
+import {Subscription} from "rxjs/Rx";
 
 @Component({
     selector: 'form-infostock',
@@ -30,9 +31,9 @@ import { Http } from 'angular2/http';
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Bullet M5 (120 pcs)</strong></div>
                     </div>
-                    <div class="row subInfo">
-                        <div class="col-sm-11 invoiceId"><span><a href="stock-detail.html" class="grey333">1109482746</a></span></div>
-                        <div class="col-sm-1 invoiceList"><span class="red">In Use</span></div>
+                    <div class="row subInfo" *ngFor="#stock of stocks">
+                        <div class="col-sm-11 invoiceId"><span>{{ stock.barcode }}</span></div>
+                        <div class="col-sm-1 invoiceList"><span class="red">{{ stock.status }}</span></div>
                     </div>
                 </div>
             </div>
@@ -42,6 +43,23 @@ import { Http } from 'angular2/http';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentInfoStockComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+  goods: any[] = [];
+
+  constructor(private http: Http, private _routeParams: RouteParams) {}
+
+  ngOnInit() {
+    this.getAllGoods();
+  }
+
+// Get all users from the API
+getAllStocks() {
+  this.http.get(`${this.API}/stock/goods/${this._routeParams.get('id')}`)
+    .map(res => res.json())
+    .subscribe(stocks => {
+      this.stocks = stocks
+    })
 }
-
+}
