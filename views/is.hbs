@@ -98,9 +98,9 @@
     var todaysDate = new Date(convertDate());
 
     function convertDate(date) {
-        var yyyy = date.getFullYear().toString();
-        var mm = (date.getMonth()+1).toString();
-        var dd  = date.getDate().toString();
+        var yyyy = date.getFullYear().toDateString();
+        var mm = (date.getMonth()+1).toDateString()
+        var dd  = date.getDate().toDateString();
 
         var mmChars = mm.split('');
         var ddChars = dd.split('');
