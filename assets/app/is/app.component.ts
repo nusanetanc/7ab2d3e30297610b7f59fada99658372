@@ -125,7 +125,7 @@ import {ContentAddStockComponent} from "./dashboard/content/addstock.component";
     { path: '/is/detailinformation/:id', component:ContentDetailInformationComponent, name:'DetailInformation'},
     { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DetailReport'},
     { path: '/is/detailstock', component:ContentDetailStockComponent, name:'DetailStock'},
-    { path: '/is/infostock', component:ContentInfoStockComponent, name:'InfoStock'},
+    { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
     { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
     { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
