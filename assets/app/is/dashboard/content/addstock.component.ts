@@ -42,8 +42,10 @@ import { Stock } from './stock';
                                                     <option *ngFor="#good of goods" value={{good._id}}>{{ good.name }}</option>
                                                 </select><br/>
                                             </form>
+                                            *ngFor="#good of goods"
+                                            {{good._id}}
                                             <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
-                                            <button type="submit" (click)="addStock(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
