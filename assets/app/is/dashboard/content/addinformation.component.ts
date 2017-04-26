@@ -89,7 +89,7 @@ import { Street } from './street';
 })
 export class ContentAddInformationComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
-    toInfo = 'AllCity'
+    toInfo = 'All Subsricbe';
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
@@ -101,7 +101,7 @@ export class ContentAddInformationComponent implements OnInit {
     }
 
     onSelectCity(_id) {
-    toInfo = ${_id};
+    this.toInfo = ${_id};
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
                 .map(res => res.json())
