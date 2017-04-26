@@ -108,6 +108,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.properties = properties
                 })
         }
+        toinfo = ${_id};
     }
 
     onSelectProperty(_id) {
@@ -118,6 +119,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.clusters = clusters
                 })
         }
+        toinfo = ${_id};
     }
 
     onSelectCluster(_id) {
@@ -129,6 +131,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
+        toinfo = ${_id};
     }
 
     onSelectBlok(_id) {
@@ -139,6 +142,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.streetnames = streetnames
                 })
         }
+        toinfo = ${_id};
     }
 
     onSelectStreet(_id) {
@@ -149,6 +153,7 @@ export class ContentAddInformationComponent implements OnInit {
                     this.homes = homes
                 })
         }
+        toinfo = ${_id};
     }
 
 
@@ -222,18 +227,6 @@ export class ContentAddInformationComponent implements OnInit {
             })
     }
     addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
-
-    if(${infocity} =="0"){
-      toinfo = 'AllCity';
-    } else if(${infoproperty} =="0"){
-      toinfo = ${infocity};
-    } else if(${infocluster} =="0"){
-      toinfo = ${infoproperty};
-    } else if(${infoblok} =="0"){
-      toinfo = ${infocluster};
-    } else if(${infostreet} =="0"){
-      toinfo = ${infoblok};
-    }
 
         var body = `to=${this.toinfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate='58b6a0d77dfd7052a9fe53c9'`;
         var headers = new Headers();
