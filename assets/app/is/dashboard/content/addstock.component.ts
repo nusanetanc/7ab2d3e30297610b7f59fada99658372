@@ -61,13 +61,31 @@ export class ContentAddStockComponent {
   API = 'http://202.162.207.164:3000';
 
   goods: any[] = [];
-
+  stocks: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllGoods();
+    getAllStocks();
   }
-
+  selectedGoods: Goods = new Goods(0, 'dummy');
+  onSelectGoods(_id) {
+      this.stocks = this.getAllStockByGoods(){
+          this.http.get(`${this.API}/stock/goods/${_id}`)
+              .map(res => res.json())
+              .subscribe(stocks => {
+                  this.stocks = stocks
+              })
+      }
+  }
+  / Get all users from the API
+  getAllStocks() {
+    this.http.get(`${this.API}/stock/goods/${_id}`)
+      .map(res => res.json())
+      .subscribe(stocks => {
+        this.stocks = stocks
+      })
+  }
 // Get all users from the API
 getAllGoods() {
   this.http.get(`${this.API}/goods/list`)
