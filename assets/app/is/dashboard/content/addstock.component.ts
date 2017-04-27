@@ -24,7 +24,7 @@ import { Stock } from './stocks';
                 <div class="col-sm-6">
                     <div class="formNewReport marginLR20">
                         <form>
-                            <select [(ngModel)]="selectedGoods._id" #inputGoods id="inputGoods">
+                            <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
                                 <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                 <option *ngFor="#good of goods" value={{ good._id }}>{{ good._id }}</option>
                             </select><br/>
@@ -54,7 +54,16 @@ export class ContentAddStocksComponent implements OnInit {
         this.getAllGoods();
         this.getAllStock();
       }
-
+      selectedGoods: Good = new Good(0, 'dummy');
+      onSelectGoods(_id) {
+          this.properties = this.getAllStock() {
+            this.http.get(`${this.API}/stock/list`)
+              .map(res => res.json())
+              .subscribe(stocks => {
+                this.stocks = stocks
+              })
+          }
+      }
     // Get all users from the API
     getAllGoods() {
       this.http.get(`${this.API}/goods/list`)
