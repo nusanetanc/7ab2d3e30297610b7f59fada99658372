@@ -1020,4 +1020,12 @@ margin-bottom: 20px;
     margin-top: 80px;
 }
 
+.cardThumbnail {
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    box-shadow: 3px 3px 1px rgba(0,0,0,0.2);
+}
+
 /*--- /Event Page ----*/
