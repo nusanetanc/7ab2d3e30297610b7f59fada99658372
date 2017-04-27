@@ -1051,11 +1051,31 @@ margin-bottom: 20px;
     left: 0;
     max-width: 100%;
     padding: 24px;
-    z-index: 1;
 }
 
-.caption{
-    padding: 5px 10px;
+.cardThumbnail .card-content {
+    padding: 24px;
+    -webkit-border-radius:0 0 2px 2px;
+    -moz-border-radius:0 0 2px 2px;
+    border-radius:0 0 2px 2px;
+}
+
+.cardThumbnail .card-content p {
+    margin: 0;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+}
+
+.cardThumbnail .card-action:last-child {
+    border-radius: 0 0 2px 2px;
+}
+
+.cardThumbnail .card-action {
+    position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
 }
 
 /*--- /Event Page ----*/
