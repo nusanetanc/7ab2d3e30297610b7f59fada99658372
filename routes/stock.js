@@ -30,7 +30,7 @@ router.get('/detail/:id', function(req, res, next) {
          if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
            subs.groovyid = "5898330cc0d0992a46465109";
          }
-       Goods.findById(stocks.goods, function(err, goods) {
+       Goods.find({_id: stocks.goods}, function(err, goods) {
            Home.findById(subs.groovyid, function(err, homes) {
              if(homes.cluster == "" || homes.cluster == null){
                homes.cluster = "58982738f60815180d148f14";
