@@ -33,6 +33,7 @@ router.get('/detail/:id', function(req, res, next) {
                 City.findOne({_id:homes.city}, function(err, cities) {
                       res.json({
                        barcode: stocks.barcode,
+                       status: stocks.status,
                        goodsname: goods.name,
                        name: subs.name,
                        subid: subs.subid,
