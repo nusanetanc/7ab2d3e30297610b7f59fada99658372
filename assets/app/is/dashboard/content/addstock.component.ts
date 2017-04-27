@@ -56,11 +56,11 @@ export class ContentAddStocksComponent implements OnInit {
       }
       selectedGoods: Good = new Good(0, 'dummy');
       onSelectGoods(_id) {
-          this.properties = this.getAllGoods() {
-            this.http.get(`${this.API}/goods/list`)
+          this.stocks = this.getAllStock() {
+            this.http.get(`${this.API}/stock/list`)
               .map(res => res.json())
-              .subscribe(goods => {
-                this.goods = goods
+              .subscribe(stocks => {
+                this.stocks = stocks
               })
           }
       }
