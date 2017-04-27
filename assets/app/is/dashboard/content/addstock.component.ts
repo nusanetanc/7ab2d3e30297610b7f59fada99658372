@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Stock } from './stocks';
-
+import { Goods } from './goods';
 
 @Component({
     selector: 'form-addstocks',
