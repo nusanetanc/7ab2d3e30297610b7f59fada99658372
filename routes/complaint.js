@@ -14,7 +14,7 @@ router.get('/listcomplaint', function(req, res, next) {
 
 /* GET detail complaint. */
 router.get('/complaint/:id', function(req, res, next) {
-Complaint.find({complaintId: req.params.id}, function(err, complaints) {
+Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
     Sub.findById(complaints.sub, function(err, subs) {
         res.json({
             _id: complaints._id,
