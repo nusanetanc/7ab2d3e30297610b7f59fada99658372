@@ -54,16 +54,7 @@ export class ContentAddStocksComponent implements OnInit {
         this.getAllGoods();
         this.getAllStock();
       }
-      selectedGoods: Good = new Good(0, 'dummy');
-      onSelectGoods(_id) {
-          this.stocks = this.getAllStock() {
-            this.http.get(`${this.API}/stock/list`)
-              .map(res => res.json())
-              .subscribe(stocks => {
-                this.stocks = stocks
-              })
-          }
-      }
+      
     // Get all users from the API
     getAllGoods() {
       this.http.get(`${this.API}/goods/list`)
