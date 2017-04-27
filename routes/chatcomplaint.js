@@ -11,13 +11,14 @@ router.get('/listchat', function(req, res, next) {
    });
 });
 
-/* GET detail bill one account. */
+
 router.get('/chat/:complaint', function(req, res, next) {
-Chat.find({complaint: req.params.complaint}, function(err, chatcomplaints) {
-       console.log( chatcomplaints );
-       res.json(chatcomplaints);
-   });
+    Chat.find({complaintId: req.params.complaint}, function(err, chats) {
+        console.log( chats );
+        res.json(chats);
+    });
 });
+
 
 /* Add chat */
 router.post('/addchat', function(req, res, next) {
@@ -51,7 +52,7 @@ router.put('/putchat/:id', function(req, res, next) {
               if (err)
                 res.send(err);
 
-            Chat.save(function(err) {
+            chat.save(function(err) {
                 if (err)
                     res.send(err);
 
