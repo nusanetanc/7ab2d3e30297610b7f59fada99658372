@@ -29,7 +29,7 @@ import {Subscription} from "rxjs/Rx";
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Bullet M5 (120 pcs)</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>{{goods.name}} ({{goods.stock)}}</strong></div>
                     </div>
                       <div class="row subInfo" *ngFor="#stock of stocks">
                         <a [routerLink]="['DetailStock', {id: stock._id}]">
@@ -54,6 +54,7 @@ export class ContentInfoStockComponent {
 
   ngOnInit() {
     this.getAllStocks();
+    this.getGoods();
   }
 
 // Get all users from the API
@@ -62,6 +63,14 @@ getAllStocks() {
     .map(res => res.json())
     .subscribe(stocks => {
       this.stocks = stocks
+    })
+}
+// Get all users from the API
+getGoods() {
+  this.http.get(`${this.API}/goods/detail/${this._routeParams.get('id')}`)
+    .map(res => res.json())
+    .subscribe(goods => {
+      this.goods = goods
     })
 }
 }
