@@ -26,7 +26,7 @@ import { Stock } from './stocks';
                         <form>
                             <select #inputGoods id="inputGoods">
                                 <option class="option" disabled="true">-- Select Goods Name --</option>
-                                <option *ngFor="#good of goods" >{{ good._id }}</option>
+                                <option *ngFor="#good of goods" value={{ good._id }}>{{ good._id }}</option>
                             </select><br/>
                         </form>
                         <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
