@@ -54,7 +54,7 @@ export class ContentAddStocksComponent implements OnInit {
         this.getAllGoods();
         this.getAllStock();
       }
-      selectedGoods: Good = new Good(0, 'dummy');
+      selectedGoods: Goods = new Goods(0, 'dummy');
       onSelectGoods(_id) {
           this.stocks = this.getAllStock() {
             this.http.get(`${this.API}/stock/goods/${_id}`)
