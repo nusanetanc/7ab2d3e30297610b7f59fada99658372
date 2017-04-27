@@ -34,7 +34,7 @@ import { Complaint } from './complaints';
                   </div>
                   <div>
                       <div class="row">
-                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ complaints.dateopen }}</b> by <b class="grey333">{{ complaints.subname }}</b></span></div>
+                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ complaints.dateopen }}</b> by <b class="grey333">aaa</b></span></div>
                       </div>
                       <div class="row">
                           <div class="col-sm-11 infoDetail">
@@ -71,7 +71,7 @@ getDetailReport() {
     })
 }
 getChatReport() {
-  this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('complaintId')}`)
+  this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(chatcomplaints => {
       this.chatcomplaints = complaints
