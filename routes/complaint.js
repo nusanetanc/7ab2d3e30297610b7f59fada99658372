@@ -62,11 +62,13 @@ router.post('/addcomplaint', function(req, res, next) {
         if (err)
             res.send(err);
         res.json({ message: 'Data created!' });
+
+        chat.save(function(err) {
+            res.json({ message: 'Data created!' });
+        });
     });
 
-    chat.save(function(err) {
-        res.json({ message: 'Data created!' });
-    });
+
 });
 
 router.put('/putcomplaint/:id', function(req, res, next) {
