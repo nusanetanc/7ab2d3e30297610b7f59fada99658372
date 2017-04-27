@@ -87,6 +87,29 @@ router.post('/add', function(req, res, next) {
       res.json({ message: 'Data created!' });
   });
 });
+
+router.put('/put/:id', function(req, res, next) {
+
+        Stock.findById(req.params.id, function(err, stock) {
+
+            if (err)
+                res.send(err);
+
+                stock.goods= req.body.goods;
+                stock.barcode= req.body.barcode;
+                stock.status= req.body.status;
+                stock.subs= req.body.subs;
+              if (err)
+                res.send(err);
+
+            stock.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
 router.delete('/del/:id', function(req, res, next) {
         Stock.remove({
             _id: req.params.id
