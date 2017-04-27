@@ -1,11 +1,10 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
-//import { Goods } from './goods';
-//import { Stock } from './stock';
+
 
 @Component({
-    selector: 'form-dashboard',
+    selector: 'form-allstocks',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
@@ -51,24 +50,24 @@ import { Http } from 'angular2/http';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentAddStockComponent implements OnInit {
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
+export class ContentAddStocksComponent {
+    // Link to our api, pointing to localhost
+      API = 'http://202.162.207.164:3000';
 
-  goods: any[] = [];
-  //stocks: any[] = [];
-  constructor(private http: Http) {}
+      goods: any[] = [];
 
-  ngOnInit() {
-    getAllGoods();
-  }
+      constructor(private http: Http) {}
 
-// Get all users from the API
-getAllGoods() {
-  this.http.get(`${this.API}/goods/list`)
-    .map(res => res.json())
-    .subscribe(goods => {
-      this.goods = goods
-    })
-}
+      ngOnInit() {
+        this.getAllGoods();
+      }
+
+    // Get all users from the API
+    getAllGoods() {
+      this.http.get(`${this.API}/goods/list`)
+        .map(res => res.json())
+        .subscribe(goods => {
+          this.goods = goods
+        })
+    }
 }
