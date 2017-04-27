@@ -28,15 +28,27 @@ router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
         Goods.findOne({_id: stocks.goods}, function(err, goods) {
           Sub.findOne({_id: stocks.subs}, function(err, subs) {
+            Home.findOne({_id: subs.groovyid}, function(err, homes) {
+              Cluster.findOne({_id:homes.cluster}, function(err, clusters) {
+                City.findOne({_id:homes.city}, function(err, cities) {
                       res.json({
                        barcode: stocks.barcode,
-                       groovyid: subs.groovyid,
-                       goodsname: goods.name
+                       goodsname: goods.name,
+                       name: subs.name,
+                       subid: subs.subid,
+                       nova: subs.nova,
+                       address: homes.address,
+                       nohome: homes.nohome,
+                       cluster: clusters.name,
+                       city: cities.name
                      });
                     });
                   });
                 });
               });
+            });
+          });
+        });
 
 
 /* Add job */
