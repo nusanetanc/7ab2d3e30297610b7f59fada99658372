@@ -34,7 +34,7 @@ import 'rxjs/add/operator/map';
                    <div class="col-sm-6">
                       <div class="row marginTB10 marginL5">
                          <div class="col-xs-6 col-sm-4">
-                            <span>Fullname</span>
+                            <span>Full Name</span>
                          </div>
                          <div class="col-xs-6 col-sm-1">
                             <span>:</span>
@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                       </div>
                       <div class="row marginTB10 marginL5">
                          <div class="col-xs-6 col-sm-4">
-                            <span>ID Employee</span>
+                            <span>Employee Id</span>
                          </div>
                          <div class="col-xs-6 col-sm-1">
                             <span>:</span>
@@ -78,13 +78,13 @@ import 'rxjs/add/operator/map';
                       </div>
                       <div class="row marginTB10 marginL5">
                          <div class="col-xs-6 col-sm-4">
-                            <span>Dept & Office</span>
+                            <span>Dept / Job Title</span>
                          </div>
                          <div class="col-xs-6 col-sm-1">
                             <span>:</span>
                          </div>
                          <div class="col-xs-12 col-md-7">
-                            <span>{{ emps.departement }} - {{ emps.titlejob }}</span>
+                            <span>{{ emps.departement }} / {{ emps.titlejob }}</span>
                          </div>
                       </div>
                    </div>
