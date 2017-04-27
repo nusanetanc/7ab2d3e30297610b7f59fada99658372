@@ -24,7 +24,7 @@ router.post('/add', function(req, res, next) {
   var stock = new Stock();
     stock.goods= req.body.goods;
     stock.barcode= req.body.barcode;
-    stock.status= req.body.status;
+    stock.status= "onstock";
     stock.save(function(err) {
       if (err)
           res.send(err);

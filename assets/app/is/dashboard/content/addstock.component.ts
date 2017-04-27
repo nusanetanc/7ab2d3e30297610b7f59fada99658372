@@ -29,7 +29,7 @@ import { Stock } from './stocks';
                                 <option *ngFor="#good of goods" >{{ good._id }}</option>
                             </select><br/>
                         </form>
-                        <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
+                        <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
                         <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
                             SUBMIT
                         </button>
@@ -73,7 +73,7 @@ export class ContentAddStocksComponent implements OnInit {
     }
     addStock(inputGoods, idbarcode) {
 
-        var body = `goods=${inputGoods}&barcode=${idbarcode}&status='onstock'`;
+        var body = `goods=${inputGoods}&barcode=${idbarcode}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
