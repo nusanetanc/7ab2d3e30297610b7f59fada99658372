@@ -27,14 +27,16 @@ router.get('/goods/:id', function(req, res, next) {
 router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
         Goods.findOne({_id: stocks.goods}, function(err, goods) {
+          Sub.findOne({_id: stocks.subs}, function(err, subs) {
                       res.json({
                        barcode: stocks.barcode,
-                       subs: stocks.subs,
+                       groovyid: subs.groovyid,
                        goodsname: goods.name
                      });
                     });
                   });
                 });
+              });
 
 
 /* Add job */
