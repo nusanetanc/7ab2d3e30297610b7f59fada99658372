@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
-import { Goods } from './goods';
-import { Stock } from './stock';
+//import { Goods } from './goods';
+//import { Stock } from './stock';
 
 @Component({
     selector: 'form-dashboard',
@@ -42,6 +42,7 @@ import { Stock } from './stock';
                                                     <option *ngFor="#good of goods" >{{ good._id }}</option>
                                                 </select><br/>
                                             </form>
+                                            
                                             <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
                                             <button type="submit" class="btn btn-default buttonOrange">
                                                 SEND
