@@ -26,10 +26,7 @@ router.get('/goods/:id', function(req, res, next) {
 /* GET jobs listing. */
 router.get('/detail/:id', function(req, res, next) {
       Stock.find({_id: req.params.id}, function(err, stocks) {
-                     res.json({
-                       goods: stocks.goods,
-                       subs: stocks.subs
-                     });
+                     res.json(stocks);
                     });
                   });
 
