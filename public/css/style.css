@@ -1021,11 +1021,31 @@ margin-bottom: 20px;
 }
 
 .cardThumbnail {
-    display: block;
-    margin-bottom: 20px;
-    line-height: 1.42857143;
+    position: relative;
+    margin: .5rem 0 1rem 0;
     background-color: #fff;
-    box-shadow: 3px 3px 1px rgba(0,0,0,0.2);
+    transition: box-shadow .25s;
+    border-radius: 2px;
+}
+
+.cardThumbnail .image-card img{
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.cardThumbnail .image-card .card-title {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 24px;
 }
 
 .caption{
