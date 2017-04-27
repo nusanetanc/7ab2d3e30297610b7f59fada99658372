@@ -65,14 +65,14 @@ import {Streetname} from "./street_name";
                                         </div>
                                         <p>Please select a available timeslot for that date</p>
                                         <div class="marginB20 col-sm-offset-4">
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
-                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 AM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 AM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 AM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 AM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 PM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 PM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 PM<br>
+                                            <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 PM
                                         </div>
                                     </div>
                                 </div>
@@ -102,37 +102,37 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
-                                                <option value="0">-- Select your city --</option>
+                                                <option value="0">-- Select City --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your property --</option>
+                                                <option value="0">-- Select Property --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your clusters --</option>
+                                                <option value="0">-- Select Clusters --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your blok or floor --</option>
+                                                <option value="0">-- Select Blok or Floor --</option>
                                                 <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
-                                                <option value="0">-- Select your street name --</option>
+                                                <option value="0">-- Select Street Name --</option>
                                                 <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
                                             <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                                                <option value="0">-- Select your no home --</option>
+                                                <option value="0">-- Select Home Number --</option>
                                                 <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
                                             </select><br/>
                                         </div>
