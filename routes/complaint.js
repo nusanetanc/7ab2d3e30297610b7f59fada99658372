@@ -52,7 +52,7 @@ router.post('/addcomplaint', function(req, res, next) {
 
     complaint.save(function(err) {
       if (err)
-          res.send(err);
+          return res.send(err);
       res.json({ message: 'Data created!' });
   });
     var chat = new Chat();
@@ -64,7 +64,7 @@ router.post('/addcomplaint', function(req, res, next) {
 
     chat.save(function(err) {
         if (err)
-            res.send(err);
+            return res.send(err);
         res.json({ message: 'Data created!' });
     });
 });
