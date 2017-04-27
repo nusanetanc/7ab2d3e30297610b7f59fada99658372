@@ -1046,6 +1046,7 @@ margin-bottom: 20px;
     left: 0;
     max-width: 100%;
     padding: 24px;
+    z-index: 1;
 }
 
 .caption{
