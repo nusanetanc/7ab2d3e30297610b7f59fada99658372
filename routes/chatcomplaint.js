@@ -23,11 +23,16 @@ router.get('/chat/:complaint', function(req, res, next) {
 /* Add chat */
 router.post('/addchat', function(req, res, next) {
   var chat = new Chat();
+    var id = require('node-sid')({
+        seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+        len:20,
+        headerField:'x-node-sid'
+    }).create();
     chat.message= req.body.message;
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
-    chat.complaint= req.body.complaint;
+    chat.complaintId= id;
 
     chat.save(function(err) {
       if (err)
