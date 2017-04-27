@@ -8,56 +8,46 @@ import { Http } from 'angular2/http';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-        <div id="page-content-wrapper">
-            <div class="content-header">
-                <h3 id="home" class="fontWeight300">
-                    <a [routerLink]="['Coverage']" id="menu-toggle" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+    <div id="page-content-wrapper">
+        <div class="content-header">
+            <h3 id="home" class="fontWeight300">
+                <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                </a>
+                &nbsp; All Stock
+            </h3>
+
+        </div>
+
+        <div class="page-content inset" data-spy="scroll" data-target="#spy">
+        <div class="row marginB20 marginR0">
+            <div class="col-sm-12">
+               <a [routerLink]="['AddStock']" class="btn btn-default buttonOrange">
+                    ADD NEW STOCK
+                </a>
+                <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                <div class="dropdown right">
+                    <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        DATE
                     </a>
-                    &nbsp; Add Stock
-                </h3>
-
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">NAME</a></li>
+                        <li><a href="#">ID</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                <div class="row marginB20 marginR0">
-                    <div class="col-sm-12">
-                        <a [routerLink]="['AllStock']" class="btn btn-default buttonBack" type="button">
-                            BACK
-                        </a>
-                    </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-12" *ngFor="#good of goods">
+                    <a [routerLink]="['InfoStock', {id: good._id}]">
+                      <div class="row subInfo fontWeight300">
+                          <div class="col-sm-11 invoiceId"><span>{{ good.name }}</span></div>
+                          <div class="col-sm-1 invoiceList"><span>{{ good.stock }}</span></div>
+                      </div>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row headerList paddingLR30">
-                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Stock</strong></div>
-                        </div>
-                        <div class="row subInfo">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="formNewReport marginLR20">
-                                            <form>
-                                                <select #inputGoods id="inputGoods">
-                                                    <option class="option" disabled="true">-- Select Goods Name --</option>
-                                                    <option *ngFor="#good of goods" >{{ good._id }}</option>
-                                                </select><br/>
-                                            </form>
-                                            <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
-                                            <button type="submit" class="btn btn-default buttonOrange">
-                                                SEND
-                                            </button>
-                                        </div>
-                                        <ul *ngFor="#good of goods">
-                                          <li>{{ good._id }}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-        </div><!-- END CONTENT -->
+            </div>
+        </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
