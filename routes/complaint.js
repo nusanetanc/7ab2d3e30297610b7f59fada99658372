@@ -55,6 +55,18 @@ router.post('/addcomplaint', function(req, res, next) {
           res.send(err);
           res.json({ message: 'Data created!' });
       });
+    var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= req.body.date;
+    chat.sub= req.body.sub;
+    chat.emp= req.body.emp;
+    chat.complaintId= id;
+
+    chat.save(function(err) {
+        if (err)
+            res.send(err);
+            res.json({ message: 'Data created!' });
+        });
 });
 
 router.put('/putcomplaint/:id', function(req, res, next) {
