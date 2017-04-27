@@ -29,6 +29,26 @@ import { Http } from 'angular2/http';
                 </div>
             </div>
         </div>
+                        <div class="row subInfo">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="formNewReport marginLR20">
+                                            <form>
+                                                <select #inputGoods id="inputGoods">
+                                                    <option class="option" disabled="true">-- Select Goods Name --</option>
+                                                    <option *ngFor="#good of goods" >{{ good._id }}</option>
+                                                </select><br/>
+                                            </form>
+                                            <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
+                                            <button type="submit" class="btn btn-default buttonOrange">
+                                                SEND
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
