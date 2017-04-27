@@ -49,6 +49,7 @@ export class ContentInfoStockComponent {
   API = 'http://202.162.207.164:3000';
 
   stocks: any[] = [];
+  goods: any[] = [];
 
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
