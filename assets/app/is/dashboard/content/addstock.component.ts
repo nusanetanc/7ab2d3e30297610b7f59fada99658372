@@ -73,7 +73,7 @@ export class ContentAddStocksComponent implements OnInit {
     }
     addStock(inputGoods, idbarcode) {
 
-        var body = `goods=${inputGoods}&barcode=${idbarcode}`;
+        var body = `goods=${inputGoods}&barcode=${idbarcode}&status='onstock'`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
