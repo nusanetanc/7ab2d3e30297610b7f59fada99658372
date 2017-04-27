@@ -24,8 +24,8 @@ import { Stock } from './stocks';
                 <div class="col-sm-6">
                     <div class="formNewReport marginLR20">
                         <form>
-                            <select #inputGoods id="inputGoods">
-                                <option [(ngModel)]="selectedGoods._id" class="option" disabled="true" value="0">-- Select Goods Name --</option>
+                            <select [(ngModel)]="selectedGoods._id" #inputGoods id="inputGoods">
+                                <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                 <option *ngFor="#good of goods" value={{ good._id }}>{{ good._id }}</option>
                             </select><br/>
                         </form>
