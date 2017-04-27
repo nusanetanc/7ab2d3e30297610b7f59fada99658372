@@ -26,11 +26,11 @@ router.get('/goods/:id', function(req, res, next) {
 /* GET jobs listing. */
 router.get('/detail/:id', function(req, res, next) {
      Stock.find({goods: req.params.id}, function(err, stocks) {
+       Sub.findById({_id: stocks.subs}, function(err, subs) {
+         if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+           subs.groovyid = "5898330cc0d0992a46465109";
+         }
        Goods.findById(stocks.goods, function(err, goods) {
-         Sub.findById(stocks.subs, function(err, subs) {
-           if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-             subs.groovyid = "5898330cc0d0992a46465109";
-           }
            Home.findById(subs.groovyid, function(err, homes) {
              if(homes.cluster == "" || homes.cluster == null){
                homes.cluster = "58982738f60815180d148f14";
