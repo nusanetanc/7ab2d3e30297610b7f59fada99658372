@@ -32,6 +32,7 @@ router.get('/detail/:id', function(req, res, next) {
               Cluster.findOne({_id:homes.cluster}, function(err, clusters) {
                 City.findOne({_id:homes.city}, function(err, cities) {
                       res.json({
+                      goodsid: stocks.goods,
                        barcode: stocks.barcode,
                        status: stocks.status,
                        goodsname: goods.name,
