@@ -14,7 +14,7 @@ router.get('/listcomplaint', function(req, res, next) {
 
 /* GET detail complaint. */
 router.get('/complaint/:id', function(req, res, next) {
-Complaint.find({complaintId: req.params.id}, function(err, complaints) {
+Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
     Sub.findById(complaints.sub, function(err, subs) {
         res.json({
             _id: complaints._id,
@@ -52,7 +52,7 @@ router.post('/addcomplaint', function(req, res, next) {
 
     complaint.save(function(err) {
       if (err)
-          res.send(err);
+          return res.send(err);
       res.json({ message: 'Data created!' });
   });
     var chat = new Chat();
@@ -64,7 +64,7 @@ router.post('/addcomplaint', function(req, res, next) {
 
     chat.save(function(err) {
         if (err)
-            res.send(err);
+            return res.send(err);
         res.json({ message: 'Data created!' });
     });
 });

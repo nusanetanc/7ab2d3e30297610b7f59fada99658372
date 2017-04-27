@@ -43,7 +43,7 @@ import { Sub } from './subs';
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Fullname</span>
+                                    <span>Full Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
@@ -87,7 +87,7 @@ import { Sub } from './subs';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>No Identy Card</span>
+                                    <span>National Identity Card No.</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
@@ -98,7 +98,7 @@ import { Sub } from './subs';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Birth Date</span>
+                                    <span>Date of Birth</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
@@ -151,7 +151,7 @@ import { Sub } from './subs';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>No Virtual Account</span>
+                                    <span>Virtual Account No.</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
