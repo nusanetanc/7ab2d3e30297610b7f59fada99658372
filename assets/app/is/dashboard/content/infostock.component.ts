@@ -31,12 +31,12 @@ import {Subscription} from "rxjs/Rx";
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Bullet M5 (120 pcs)</strong></div>
                     </div>
-                    <a [routerLink]="['DetailStock', {id: stock._id}]">
                       <div class="row subInfo" *ngFor="#stock of stocks">
+                        <a [routerLink]="['DetailStock', {id: stock._id}]">
                           <div class="col-sm-11 invoiceId"><span>{{ stock.barcode }}</span></div>
                           <div class="col-sm-1 invoiceList"><span class="red">{{ stock.status }}</span></div>
+                        </a>
                       </div>
-                    </a>
                 </div>
             </div>
         </div>
