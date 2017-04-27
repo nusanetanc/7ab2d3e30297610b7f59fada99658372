@@ -67,27 +67,9 @@ export class ContentAddStockComponent implements OnInit {
   constructor(private http: Http) {}
 
   ngOnInit() {
-    this.getAllGoods();
     getAllStocks();
   }
-  selectedGoods: Goods = new Goods(0, 'dummy');
-  onSelectGoods(_id) {
-      this.stocks = this.getAllStockByGoods(){
-          this.http.get(`${this.API}/stock/goods/${_id}`)
-              .map(res => res.json())
-              .subscribe(stocks => {
-                  this.stocks = stocks
-              })
-      }
-  }
-  // Get all users from the API
-  getAllStocks() {
-    this.http.get(`${this.API}/stock/goods/${this.goodsid}`)
-      .map(res => res.json())
-      .subscribe(stocks => {
-        this.stocks = stocks
-      })
-  }
+
 // Get all users from the API
 getAllGoods() {
   this.http.get(`${this.API}/goods/list`)
