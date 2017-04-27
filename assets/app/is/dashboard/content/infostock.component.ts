@@ -29,7 +29,7 @@ import {Subscription} from "rxjs/Rx";
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>{{goods.name}} ({{goods.stock)}}</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>{{goods.name}} (amount: {{goods.stock}})</strong></div>
                     </div>
                       <div class="row subInfo" *ngFor="#stock of stocks">
                         <a [routerLink]="['DetailStock', {id: stock._id}]">
