@@ -12,7 +12,7 @@ import { Http } from 'angular2/http';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; All Stock
+                &nbsp; Add Stock
             </h3>
 
         </div>
@@ -28,8 +28,8 @@ import { Http } from 'angular2/http';
                             </select><br/>
                         </form>
                         <input #idbarcode type="text" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
-                        <button type="submit" class="btn btn-default buttonOrange">
-                            SEND
+                        <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
+                            SUBMIT
                         </button>
                     </div>
                 </div>
@@ -43,12 +43,14 @@ export class ContentAddStocksComponent {
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
 
-      goods: any[] = [];
+      goods: any[] = [];]
+      stocks: any[] = [];
 
       constructor(private http: Http) {}
 
       ngOnInit() {
         this.getAllGoods();
+        this.getAllStock();
       }
 
     // Get all users from the API
@@ -58,5 +60,30 @@ export class ContentAddStocksComponent {
         .subscribe(goods => {
           this.goods = goods
         })
+    }
+    // Get all users from the API
+    getAllStock() {
+      this.http.get(`${this.API}/stock/list`)
+        .map(res => res.json())
+        .subscribe(stocks => {
+          this.stocks = stocks
+        })
+    }
+    addStock(inputGoods, idbarcode) {
+
+        var body = `goods=${inputGoods}&barcode=${idbarcode}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/stock/add`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Stock Success');
+                this.getAllStock();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 }
