@@ -45,7 +45,7 @@ export class ContentAddStocksComponent implements OnInit {
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
 
-      goods: any[] = [];]
+      goods: any[] = [];
       stocks: any[] = [];
 
       constructor(private http: Http) {}
