@@ -35,7 +35,7 @@ import {Report} from './allreports';
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
                                               <i class="material-icons font100Margin30">info</i>
-                                              <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATION</h4>
+                                              <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
                                           </div>
                                       </div>
                                   </div>
@@ -65,7 +65,7 @@ import {Report} from './allreports';
                               <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
                           </div>
                           <div class="row subInfo">
-                              <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all report</a></span></div>
+                              <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
                           </div>
                       </div>
                   </div>

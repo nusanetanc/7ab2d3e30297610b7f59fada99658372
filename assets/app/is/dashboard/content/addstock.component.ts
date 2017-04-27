@@ -29,7 +29,7 @@ import { Stock } from './stocks';
                                 <option *ngFor="#good of goods" >{{ good._id }}</option>
                             </select><br/>
                         </form>
-                        <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Code Barcode">
+                        <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
                         <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
                             SUBMIT
                         </button>

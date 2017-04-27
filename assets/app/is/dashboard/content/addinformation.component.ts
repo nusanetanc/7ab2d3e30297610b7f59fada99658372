@@ -61,7 +61,7 @@ import { Street } from './street';
                                 </form>
                                 <form>
                                 <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                    <option value="0" disabled="true">-- All blok or floor --</option>
+                                    <option value="0" disabled="true">-- All Block or Floor --</option>
                                     <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                 </select><br/>
                                 </form>
