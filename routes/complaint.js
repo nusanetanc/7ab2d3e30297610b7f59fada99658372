@@ -42,6 +42,7 @@ router.post('/addcomplaint', function(req, res, next) {
         headerField:'x-node-sid'
     }).create();
 
+    complaint.complaintId = id;
     complaint.sub= req.body.sub;
     complaint.subject= req.body.subject;
     complaint.category= req.body.category;
@@ -51,10 +52,11 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.status= req.body.status;
     complaint.lastchat= req.body.lastchat;
 
-    chat.message= req.body.message;
+    /*chat.message= req.body.message;
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
+    chat.complaintId= id;*/
 
     complaint.save(function(err) {
         if (err)
@@ -62,11 +64,11 @@ router.post('/addcomplaint', function(req, res, next) {
         res.json({ message: 'Data created!' });
     });
 
-    chat.save(function(err) {
+    /*chat.save(function(err) {
         if (err)
             res.send(err);
         res.json({ message: 'Data created!' });
-    });
+    });*/
 });
 
 router.put('/putcomplaint/:id', function(req, res, next) {
