@@ -26,53 +26,12 @@ router.get('/goods/:id', function(req, res, next) {
 /* GET jobs listing. */
 router.get('/detail/:id', function(req, res, next) {
      Stock.find({goods: req.params.id}, function(err, stocks) {
-       Sub.find({_id: "58b3cdac45912d052e2c85a5"}, function(err, subs) {
-         if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-           subs.groovyid = "5898330cc0d0992a46465109";
-         }
-       Goods.find({_id: stocks.goods}, function(err, goods) {
-           Home.findById(subs.groovyid, function(err, homes) {
-             if(homes.cluster == "" || homes.cluster == null){
-               homes.cluster = "58982738f60815180d148f14";
-             }
-             Cluster.findById(homes.cluster, function(err, clusters) {
-               if(homes.city == "" || homes.city == null){
-                 homes.city = "58d3492416d72b7e166dd977";
-               }
-              City.findById(homes.city, function(err, cities) {
                      res.json({
-                       goodsname: goods.name,
-                       barcode: stocks.barcode,
-                       status: stocks.status,
-                       email: subs.email,
-                       name: subs.name,
-                       nova: subs.nova,
-                       packlev: subs.packlev,
-                       packprice: subs.packprice,
-                       phone: subs.phone,
-                       status: subs.status,
-                       datebirth: subs.datebirth,
-                       idnumber: subs.idnumber,
-                       subid: subs.subid,
-                       dateinst: subs.dateinst,
-                       timeinst: subs.timeinst,
-                       regisby: subs.regisby,
-                       regisref: subs.regisref,
-                       activedate: subs.activedate,
-                       promo: subs.promo,
-                       groovyid: homes.groovyid,
-                       address: homes.address,
-                       nohome: homes.nohome,
-                       cluster: clusters.name,
-                       city: cities.name
+                       goods: stocks.goods,
+                       subs: stocks.subs
                      });
                     });
                   });
-                });
-              });
-            });
-          });
-        });
 
 
 /* Add job */
