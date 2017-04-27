@@ -37,7 +37,7 @@ import {ContentCoverageHomeComponent} from "./dashboard/content/coveragehome.com
 import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
 import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.component";
 import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
-import {ContentAddStockComponent} from "./dashboard/content/addstock.component";
+import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 
 @Component({
    selector: 'is-app',
@@ -100,7 +100,7 @@ import {ContentAddStockComponent} from "./dashboard/content/addstock.component";
         ContentInvoiceComponent,
         ContentBillSubscribeComponent,
         ContentAddEmpComponent,
-        ContentAddStockComponent,
+        ContentAddStocksComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -136,7 +136,7 @@ import {ContentAddStockComponent} from "./dashboard/content/addstock.component";
     { path: '/is/addblok', component:ContentCoverageBlockComponent, name:'AddBlock'},
     { path: '/is/addstreet', component:ContentCoverageStreetComponent, name:'AddStreet'},
     { path: '/is/addhome', component:ContentCoverageHomeComponent, name:'AddHome'},
-    { path: '/is/addstock', component:ContentAddStockComponent, name:'AddStock'},
+    { path: '/is/addstock', component:ContentAddStocksComponent, name:'AddStock'},
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
 ])

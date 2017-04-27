@@ -4,7 +4,7 @@ import { Http } from 'angular2/http';
 
 
 @Component({
-    selector: 'form-allstocks',
+    selector: 'form-addstocks',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
