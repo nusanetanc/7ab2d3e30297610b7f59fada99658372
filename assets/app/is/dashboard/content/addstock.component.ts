@@ -66,11 +66,11 @@ export class ContentAddStockComponent implements OnInit {
   API = 'http://202.162.207.164:3000';
 
   goods: any[] = [];
-  stocks: any[] = [];
+  //stocks: any[] = [];
   constructor(private http: Http) {}
 
   ngOnInit() {
-    getAllStocks();
+    getAllGoods();
   }
 
 // Get all users from the API
