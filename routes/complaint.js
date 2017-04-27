@@ -52,11 +52,11 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.status= req.body.status;
     complaint.lastchat= req.body.lastchat;
 
-    /*chat.message= req.body.message;
+    chat.message= req.body.message;
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
-    chat.complaintId= id;*/
+    chat.complaintId= id;
 
     complaint.save(function(err) {
         if (err)
@@ -64,11 +64,9 @@ router.post('/addcomplaint', function(req, res, next) {
         res.json({ message: 'Data created!' });
     });
 
-    /*chat.save(function(err) {
-        if (err)
-            res.send(err);
+    chat.save(function(err) {
         res.json({ message: 'Data created!' });
-    });*/
+    });
 });
 
 router.put('/putcomplaint/:id', function(req, res, next) {
