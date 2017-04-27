@@ -74,7 +74,7 @@ getChatReport() {
   this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(chatcomplaints => {
-      this.chatcomplaints = complaints
+      this.chatcomplaints = chatcomplaints
     })
 }
 }
