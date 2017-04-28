@@ -101,8 +101,8 @@ router.get('/event', function(req, res, next) {
   res.render('event', { title: 'Groovy - Event' });
 });
 
-router.get('/event-detail', function(req, res, next) {
-  res.render('event-detail', { title: 'Groovy - Event' });
+router.get('/event-detail', function (req,res,next) {
+    res.render('event-detail' { title: 'Groovy - Event' });
 });
 
 router.get('/terms-of-use', function(req, res, next) {
