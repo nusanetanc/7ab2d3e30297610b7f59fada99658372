@@ -45,6 +45,7 @@ import { Problem } from './problem';
                                 </form>
                                 <textarea #message class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <input type="hidden" value="{{today | date:'medium'}}" #date class="form-control inputForm" />
+                                <input type="text" value="{{generate_id}}" class="form-control inputForm" />
                                 <a (click)="addReport(category.value, subcategory.value, subs._id, date.value, message.value)" class="btn btn-default">
                                     SEND
                                 </a>
@@ -83,6 +84,18 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
+    guid() {
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+            s4() + '-' + s4() + s4() + s4();
+    }
+
+    s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+    }
+    generate_id : this.guid();
+
     today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
@@ -143,6 +156,8 @@ export class ContentNewReportComponent implements OnInit {
   ngOnInit() {
     this.getAllComplaint();
     this.getAcountSub();
+      this.guid();
+      this.s4()
   }
 
   getAllComplaint() {
