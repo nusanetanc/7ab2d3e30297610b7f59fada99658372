@@ -23,6 +23,13 @@ router.get('/goods/:id', function(req, res, next) {
    });
 });
 
+router.get('/id/:id', function(req, res, next) {
+      Stock.findOne({_id: req.params.id}, function(err, stocks) {
+        console.log( stocks );
+        res.json(stocks);
+  });
+});
+
 /* GET jobs listing. */
 router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
