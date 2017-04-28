@@ -83,7 +83,7 @@ export class ContentUpdateStocksComponent implements OnInit {
         })
     }
     UpdateStock(inputSub, idgoods, idbarcode) {
-
+alert('Tes1');
         var body = `goods=${inputSub}&goods=${inputSub}&goods=${inputSub}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
