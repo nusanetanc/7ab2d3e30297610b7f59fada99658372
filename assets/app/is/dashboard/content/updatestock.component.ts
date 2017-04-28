@@ -82,19 +82,19 @@ export class ContentUpdateStocksComponent implements OnInit {
           this.stocks = stocks
         })
     }
-    addStock(inputGoods) {
+    UpdateStock(inputSub, idgoods, idbarcode) {
 
-        var body = `goods=${inputSub}`;
+        var body = `goods=${inputSub}&goods=${inputSub}&goods=${inputSub}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/stock/add`,
+            .post(`${this.API}/stock/put/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Stock Success');
-                this.getAllStock();
+                alert('Edit Stock Success');
+                this.getStock();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });

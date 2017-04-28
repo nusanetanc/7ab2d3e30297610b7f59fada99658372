@@ -82,7 +82,7 @@ router.put('/put/:id', function(req, res, next) {
 
                 stock.goods= req.body.goods;
                 stock.barcode= req.body.barcode;
-                stock.status= req.body.status;
+                stock.status= "inuse";
                 stock.subs= req.body.subs;
               if (err)
                 res.send(err);
