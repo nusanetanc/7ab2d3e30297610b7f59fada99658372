@@ -28,7 +28,7 @@ import { Sub } from './subs';
                       <input value="{{stocks.barcode}}" #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode" disabled="true" />
                         <form>
                             <select [(ngModel)]="selectedSub._id" (change)="onSelectSub($event.target.value)" #inputSub id="inputSub">
-                                <option selected="true" disabled="true" [value]="0">-- Select Subscribe --</option>
+                                <option selected="true"  [value]="0">-- Select Subscribe --</option>
                                 <option *ngFor="#sub of subs" [value]=sub._id>{{ sub.subid }} - {{ sub.name }}</option>
                             </select><br/>
                         </form>
