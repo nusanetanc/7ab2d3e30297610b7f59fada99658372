@@ -19,7 +19,7 @@ Information.findById(req.params.id, function(err, informations) {
        res.json({
          _id: informations._id,
          to: informations.to,
-         date: informations.date,
+         date: date.toUTCString(informations.date),
          subject: informations.subject,
          desc: informations.desc,
          nameusercretae: emps.name,
