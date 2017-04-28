@@ -93,7 +93,6 @@ export class ContentUpdateStocksComponent implements OnInit {
                 })
             .subscribe(data => {
                 alert('Edit Stock Success');
-                this.getStock();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
