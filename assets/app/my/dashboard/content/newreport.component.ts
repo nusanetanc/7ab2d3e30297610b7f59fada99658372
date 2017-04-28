@@ -86,8 +86,7 @@ export class ContentNewReportComponent implements OnInit {
     today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}`;
-        var body2 = `&sub=${subs}&dateopen=${date}&date=${date}&message=${message}`;
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}&date=${date}&message=${message}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -98,16 +97,6 @@ export class ContentNewReportComponent implements OnInit {
             .subscribe(data => {
                 alert('Add Your Report Success');
                 this.getAllComplaint();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
-        this.http
-            .post(`${this.API}/chatcomplaint/addchat`,
-                body2, {
-                    headers: headers
-                })
-            .subscribe(data => {
-                this.getAllChat();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });

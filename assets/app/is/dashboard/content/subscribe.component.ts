@@ -206,11 +206,11 @@ import { Job } from './job';
                         </div>
                     </div>
                 </div>
-                <div class="right">
+                <!-- <div class="right">
                     <a class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
                         <i class="material-icons">create</i>
                     </a>
-                </div>
+                </div> -->
 
             </div>
         </div>
