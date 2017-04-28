@@ -23,6 +23,8 @@ import { Sub } from './subs';
             <div class="row">
                 <div class="col-sm-6">
                     <div class="formNewReport marginLR20">
+                      <input #idgoods type="number" class="form-control inputForm" id="idgoods" placeholder="Goods"><br/>
+                      <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
                         <form>
                             <select [(ngModel)]="selectedSub._id" (change)="onSelectSub($event.target.value)" #inputSub id="inputSub">
                                 <option selected="true" disabled="true" value="0">-- Select Subscribe --</option>
