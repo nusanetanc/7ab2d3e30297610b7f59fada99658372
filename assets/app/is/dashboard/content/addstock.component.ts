@@ -26,7 +26,7 @@ import { Goods } from './goods';
                         <form>
                             <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
                                 <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
-                                <option *ngFor="#good of goods">{{ good._id }}</option>
+                                <option *ngFor="#good of goods" [value]=good._id>{{ good._id }}</option>
                             </select><br/>
                         </form>
                         <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
