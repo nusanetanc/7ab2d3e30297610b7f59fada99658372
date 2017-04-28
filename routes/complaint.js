@@ -50,11 +50,6 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.status= req.body.status;
     complaint.lastchat= req.body.lastchat;
 
-    complaint.save(function(err) {
-      if (err)
-          res.send(err);
-          res.json({ message: 'Data created!' });
-      });
     var chat = new Chat();
     chat.message= req.body.message;
     chat.date= req.body.date;
@@ -62,7 +57,7 @@ router.post('/addcomplaint', function(req, res, next) {
     chat.emp= req.body.emp;
     chat.complaintId= id;
 
-    chat.save(function(err) {
+    complaint.save && chat.save(function(err) {
         if (err)
             res.send(err);
             res.json({ message: 'Data created!' });
