@@ -33,6 +33,7 @@ import {Subscription} from "rxjs/Rx";
                     </div>
                       <div class="row subInfo" *ngFor="#stock of stocks">
                         <a *ngIf="stock.status == 'inuse'" [routerLink]="['DetailStock', {id: stock._id}]">
+                        <a *ngIf="stock.status == 'onstock'">
                           <div class="col-sm-11 invoiceId"><span>{{ stock.barcode }}</span></div>
                           <div class="col-sm-1 invoiceList"><span class="red">{{ stock.status }}</span></div>
                         </a>
