@@ -87,7 +87,7 @@ export class ContentUpdateStocksComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/stock/put/${this._routeParams.get('id')}`,
+            .put(`${this.API}/stock/put/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
