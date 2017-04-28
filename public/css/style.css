@@ -1041,7 +1041,7 @@ margin-bottom: 20px;
 .cardThumbnail-p:hover {
     position: relative;
     margin: .5rem 0 1rem 0;
-    margin-top: -5rem;
+    margin-top: -1rem;
     background-color: #fff;
     transition: box-shadow .25s;
     border-radius: 2px;
