@@ -36,7 +36,8 @@ import {Subscription} from "rxjs/Rx";
                         <a *ngIf="stock.status == 'onstock'">
                           <div class="col-sm-11 invoiceId"><span>{{ stock.barcode }}</span></div>
                           <div class="col-sm-1 invoiceList"><span class="red">{{ stock.status }}</span></div>
-                        </a>
+                        </a *ngIf="stock.status == 'inuse'">
+                        </a *ngIf="stock.status == 'onstock'">
                       </div>
                 </div>
             </div>
