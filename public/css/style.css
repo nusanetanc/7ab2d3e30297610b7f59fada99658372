@@ -1016,10 +1016,6 @@ margin-bottom: 20px;
 
 /*--- Event Page ---*/
 
-.event-content {
-    margin-top: 80px;
-}
-
 .cardThumbnail {
     position: relative;
     margin: .5rem 0 1rem 0;
@@ -1065,4 +1061,8 @@ a.link-blog:hover div div h3 {
     text-decoration: none;
 }
 
+.card-date {
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 24px 5px 24px;
+}
 /*--- /Event Page ----*/
