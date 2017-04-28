@@ -83,7 +83,7 @@ export class ContentUpdateStocksComponent implements OnInit {
         })
     }
     UpdateStock(inputSub, idgoods, idbarcode) {
-        var body = `goods=${inputSub}&goods=${idgoods}&goods=${idbarcode}`;
+        var body = `sub=${inputSub}&goods=${idgoods}&barcode=${idbarcode}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -93,6 +93,7 @@ export class ContentUpdateStocksComponent implements OnInit {
                 })
             .subscribe(data => {
                 alert('Edit Stock Success');
+                window.location.href = `/is/detailstock/${this._routeParams.get('id')}`;
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
