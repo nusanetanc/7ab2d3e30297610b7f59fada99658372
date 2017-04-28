@@ -25,8 +25,8 @@ import { Sub } from './subs';
                     <div class="formNewReport marginLR20">
                         <form>
                             <select [(ngModel)]="selectedSub._id" (change)="onSelectSub($event.target.value)" #inputSub id="inputSub">
-                                <option class="option" disabled="true" value="0">-- Select Subscribe --</option>
-                                <option *ngFor="#sub of subs" [value]=sub._id>{{ sub.name }}</option>
+                                <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
+                                <option *ngFor="#sub of subs" [value]=sub._id>{{ sub.subid }} - {{ sub.name }}</option>
                             </select><br/>
                         </form>
                         <button type="submit" (click)="addStock(inputSub.value)" class="btn btn-default buttonOrange">
