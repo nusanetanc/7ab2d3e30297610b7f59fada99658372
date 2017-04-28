@@ -38,6 +38,7 @@ import {ContentInvoiceComponent} from "./dashboard/content/invoice.component";
 import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.component";
 import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
+import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 
 @Component({
    selector: 'is-app',
@@ -101,6 +102,7 @@ import {ContentAddStocksComponent} from "./dashboard/content/addstock.component"
         ContentBillSubscribeComponent,
         ContentAddEmpComponent,
         ContentAddStocksComponent,
+        ContentUpdateStocksComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -139,6 +141,7 @@ import {ContentAddStocksComponent} from "./dashboard/content/addstock.component"
     { path: '/is/addstock', component:ContentAddStocksComponent, name:'AddStock'},
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
+    { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
 ])
 
 export class AppComponent {
