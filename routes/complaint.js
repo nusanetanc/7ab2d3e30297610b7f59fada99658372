@@ -33,13 +33,14 @@ Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
 });
 
 /* Add complaint */
+var id = require('node-sid')({
+    seed:'0123456789abcdefghijklmnopqrstuvwxyz',
+    len:20,
+    headerField:'x-node-sid'
+}).create();
+
 router.post('/addcomplaint', function(req, res, next) {
-  var complaint = new Complaint();
-    var id = require('node-sid')({
-        seed:'0123456789abcdefghijklmnopqrstuvwxyz',
-        len:20,
-        headerField:'x-node-sid'
-    }).create();
+    var complaint = new Complaint();
     complaint.complaintId = id;
     complaint.sub= req.body.sub;
     complaint.subject= req.body.subject;
@@ -50,6 +51,14 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.status= req.body.status;
     complaint.lastchat= req.body.lastchat;
 
+    complaint.save(function(err) {
+      if (err)
+          res.send(err);
+          res.json({ message: 'Data created!' });
+      });
+});
+
+router.post('/addchat', function(req, res, next) {
     var chat = new Chat();
     chat.message= req.body.message;
     chat.date= req.body.date;
@@ -57,7 +66,7 @@ router.post('/addcomplaint', function(req, res, next) {
     chat.emp= req.body.emp;
     chat.complaintId= id;
 
-    complaint.save && chat.save(function(err) {
+    chat.save(function(err) {
         if (err)
             res.send(err);
             res.json({ message: 'Data created!' });

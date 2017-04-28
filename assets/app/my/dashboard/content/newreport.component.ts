@@ -86,7 +86,8 @@ export class ContentNewReportComponent implements OnInit {
     today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}&date=${date}&message=${message}`;
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}`;
+        var body2 = `sub=${subs}&date=${date}&message=${message}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -97,6 +98,17 @@ export class ContentNewReportComponent implements OnInit {
             .subscribe(data => {
                 alert('Add Your Report Success');
                 this.getAllComplaint();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+        this.http
+            .post(`${this.API}/complaint/addchat`,
+                body2, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Your Report Success');
+                this.getAllChat();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
@@ -143,6 +155,7 @@ export class ContentNewReportComponent implements OnInit {
   ngOnInit() {
     this.getAllComplaint();
     this.getAcountSub();
+      this.newGuid();
   }
 
   getAllComplaint() {
@@ -196,4 +209,11 @@ export class ContentNewReportComponent implements OnInit {
         this.descproblems = descproblems
       })
   }*/
+
+    newGuid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
 }
