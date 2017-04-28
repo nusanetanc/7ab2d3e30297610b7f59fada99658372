@@ -23,6 +23,13 @@ router.get('/goods/:id', function(req, res, next) {
    });
 });
 
+router.get('/id/:id', function(req, res, next) {
+      Stock.findOne({_id: req.params.id}, function(err, stocks) {
+        console.log( stocks );
+        res.json(stocks);
+  });
+});
+
 /* GET jobs listing. */
 router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
@@ -75,7 +82,7 @@ router.put('/put/:id', function(req, res, next) {
 
                 stock.goods= req.body.goods;
                 stock.barcode= req.body.barcode;
-                stock.status= req.body.status;
+                stock.status= "inuse";
                 stock.subs= req.body.subs;
               if (err)
                 res.send(err);

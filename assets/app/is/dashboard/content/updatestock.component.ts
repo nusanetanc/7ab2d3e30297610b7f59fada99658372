@@ -1,9 +1,10 @@
-import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
+import {Subscription} from "rxjs/Rx";
 import { Stock } from './stocks';
-import { Sub } from './sub';
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-updatestocks',
@@ -23,13 +24,15 @@ import { Sub } from './sub';
             <div class="row">
                 <div class="col-sm-6">
                     <div class="formNewReport marginLR20">
+                      <input value="{{stocks.goods}}" #idgoods type="text" class="form-control inputForm" id="idgoods" placeholder="Goods" disabled="true" /><br/>
+                      <input value="{{stocks.barcode}}" #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode" disabled="true" />
                         <form>
                             <select [(ngModel)]="selectedSub._id" (change)="onSelectSub($event.target.value)" #inputSub id="inputSub">
-                                <option class="option" disabled="true" value="0">-- Select Subscribe --</option>
-                                <option *ngFor="#sub of subs" [value]=sub._id>{{ sub.name }}</option>
+                                <option selected="true"  [value]="0">-- Select Subscribe --</option>
+                                <option *ngFor="#sub of subs" [value]=sub._id>{{ sub.subid }} - {{ sub.name }}</option>
                             </select><br/>
                         </form>
-                        <button type="submit" (click)="addStock(inputSub.value)" class="btn btn-default buttonOrange">
+                        <button type="submit" (click)="UpdateStock(inputSub.value, idgoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
                             SUBMIT
                         </button>
                     </div>
@@ -47,16 +50,16 @@ export class ContentUpdateStocksComponent implements OnInit {
       subs: any[] = [];
       stocks: any[] = [];
 
-      constructor(private http: Http) {}
+      constructor(private http: Http, private _routeParams: RouteParams) {}
 
       ngOnInit() {
         this.getAllSubs();
-        this.getAllStock();
+        this.getStock();
       }
       selectedSub: Sub = new Sub(0, 'dummy');
       onSelectSub(_id) {
-          this.stocks = this.getAllStock() {
-            this.http.get(`${this.API}/stock/list`)
+          this.stocks = this.getStock() {
+            this.http.get(`${this.API}/stock/${this._routeParams.get('id')}`)
               .map(res => res.json())
               .subscribe(stocks => {
                 this.stocks = stocks
@@ -72,26 +75,24 @@ export class ContentUpdateStocksComponent implements OnInit {
         })
     }
     // Get all users from the API
-    getAllStock() {
-      this.http.get(`${this.API}/stock//list`)
+    getStock() {
+      this.http.get(`${this.API}/stock/id/${this._routeParams.get('id')}`)
         .map(res => res.json())
         .subscribe(stocks => {
           this.stocks = stocks
         })
     }
-    addStock(inputGoods) {
-
-        var body = `goods=${inputSub}`;
+    UpdateStock(inputSub, idgoods, idbarcode) {
+        var body = `goods=${inputSub}&goods=${idgoods}&goods=${idbarcode}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/stock/add`,
+            .put(`${this.API}/stock/put/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Stock Success');
-                this.getAllStock();
+                alert('Edit Stock Success');
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
