@@ -83,7 +83,7 @@ export class ContentUpdateStocksComponent implements OnInit {
         })
     }
     UpdateStock(inputSub, idgoods, idbarcode) {
-        var body = `sub=${inputSub}&goods=${idgoods}&barcode=${idbarcode}`;
+        var body = `subs=${inputSub}&goods=${idgoods}&barcode=${idbarcode}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
