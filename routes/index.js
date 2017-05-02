@@ -21,7 +21,7 @@ router.get('/send-contact',function(req,res, next){
   var mailOptions={
     to: "cs@groovy.id",
    subject : "Contact Web Groovy",
-   text : "nama : "+req.query.name+", email : "+req.query.email+", Message: "+req.query.message
+   html : "<h1>tes</h1>"
 }
   console.log(mailOptions);
   smtpTransport.sendMail(mailOptions, function(error, response){
