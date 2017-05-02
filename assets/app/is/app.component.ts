@@ -14,7 +14,7 @@ import {ContentAddInformationComponent} from "./dashboard/content/addinformation
 import {ContentAddReportComponent} from "./dashboard/content/addreport.component";
 import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee.component";
 import {ContentAllEngineerComponent} from "./dashboard/content/allengineer.component";
-import {ContentAllReportsComponent} from "./dashboard/content/allreports.component";
+import {ContentAllReportsComponent} from "./dashboard/content/allreports1.component";
 import {ContentAllStocksComponent} from "./dashboard/content/allstock.component";
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
