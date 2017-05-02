@@ -39,7 +39,7 @@ body{
 }
 
 .navbar-right {
-    margin-right: none;
+    margin-right: 0;
 }
 /*--------------------End Navbar----------------------------*/
 
