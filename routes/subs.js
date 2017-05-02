@@ -210,7 +210,7 @@ router.post('/addsub', function(req, res, next) {
             </div>
             <div style="background-color:#fff;padding:20px 30px 20px 30px;color:#444;">
                 <p style="line-height:1.5">
-                Hello John Doe,<br/><br/>
+                Hello `+req.body.name+`,<br/><br/>
                 Your registration at Groovy success. To activate your account, click the following button.
                 </p>
                 <div style="text-align:left;margin-top:30px">
