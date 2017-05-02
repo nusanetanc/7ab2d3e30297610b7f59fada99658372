@@ -128,7 +128,7 @@ import {Streetname} from "./street_name";
                                                 <option value="0" disabled="true" selected="true">-- Select Registrasi By --</option>
                                                 <option value="0">-- Personal --</option>
                                                 <option value="0" disabled="true">-- Sales --</option>
-                                                <option value="0">-- Media Sosial --</option>
+                                                <option value="0" *ngFor="#emp of emps">{{emp.name}}</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -268,6 +268,7 @@ export class ContentEditSubsComponent implements OnInit {
     homes: any[] = [];
     packages: any[] = [];
     streetnames: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -276,6 +277,7 @@ export class ContentEditSubsComponent implements OnInit {
         this.getAllSub();
         this.getAllCity();
         this.getAllPackage();
+        this.getAllEmployee();
     }
 
 
@@ -365,6 +367,14 @@ export class ContentEditSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(blokfloors => {
                 this.blokfloors = blokfloors
+            })
+    }
+    // Get all users from the API
+    getAllEmployee() {
+        this.http.get(`${this.API}/employee/list/sales`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
             })
     }
 }
