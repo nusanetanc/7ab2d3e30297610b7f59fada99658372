@@ -199,7 +199,7 @@ router.post('/addsub', function(req, res, next) {
       var mailOptions={
       to: req.body.email,
       subject : "Activation Your Registrastion",
-      text : "Hi "+req.body.name+", Register at groovy success, for account activation please click the following link: http://groovy.id/activation/, then later our customer service right to contact your phone number to validate the data, then your account will be active groovy. Thanks"
+      html : "<h1>tes</h1>"
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
