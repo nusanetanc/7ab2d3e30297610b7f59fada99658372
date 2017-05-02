@@ -128,7 +128,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
     { path: '/is/allreport', component:ContentAllReportsComponent, name:'AllReport'},
     { path: '/is/allstock', component:ContentAllStocksComponent, name:'AllStock'},
     { path: '/is/detailinformation/:id', component:ContentDetailInformationComponent, name:'DetailInformation'},
-    { path: '/is/detailreport', component:ContentDetailReportComponent, name:'DetailReport'},
+    { path: '/is/detailreport/:id', component:ContentDetailReportComponent, name:'DetailReport'},
     { path: '/is/detailstock/:id', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
