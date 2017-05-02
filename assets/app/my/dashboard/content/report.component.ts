@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -40,7 +40,7 @@ import { Complaint } from './complaints';
                 <div class="col-sm-12" *ngFor="#complaint of complaints">
                 <a [routerLink]="['Detailreport', {id: complaint.complaintId}]">
                     <div class="row subInfo">
-                        <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ complaint.dateopen | date:'yyyy-MM-dd HH:mm:ss' }}</a></span></div>
+                        <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ complaint.dateopen | date:'medium' }}</a></span></div>
                         <div class="col-sm-7 invoiceList"><span><a class="grey333">{{ complaint.subcategory }} </a></span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">{{ complaint.status }}</span></div>
                     </div>
@@ -55,7 +55,6 @@ import { Complaint } from './complaints';
 export class ContentReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Session_ID = '58c24c1948bfc66fd001dbb8';
 
   complaints: any[] = [];
 
