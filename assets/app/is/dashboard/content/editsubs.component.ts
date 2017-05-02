@@ -38,11 +38,14 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
+                                                <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required>
                                                 <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required>
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
                                                 <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
+                                                <input #subnova id="subnova" type="text" class="form-control inputForm" placeholder="No VA" required>
+
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
 
@@ -74,6 +77,10 @@ import {Streetname} from "./street_name";
                                             <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 PM<br>
                                             <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 PM
                                         </div>
+                                        <p>Please input a active date</p>
+                                        <div class="form-group paddingR30">
+                                                <input #subdateactive id="subdateactive" type="date" class="form-control inputForm" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -89,6 +96,28 @@ import {Streetname} from "./street_name";
                                             <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                                                 <option value="0">-- Select Package --</option>
                                                 <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                            </select><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4 class="titleH4">REGISTRATION DETAIL</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 paddingL35">
+                                        <div class="marginT20 paddingR30">
+                                            <select #subregisref id="subregisref" name="package" class="inputForm">
+                                                <option value="0" disabled="true" selected="true">-- Select Referensi Registrasi --</option>
+                                                <option value="0" disabled="true">-- Sales --</option>
+                                                <option value="0">-- Select Package --</option>
+                                                <option value="0" disabled="true">-- Media Sosial --</option>
+                                                <option value="0">-- Facebook --</option>
+                                                <option value="0">-- Instagram --</option>
+                                                <option value="0">-- Twitter --</option>
+                                                <option value="0">-- Youtube --</option>
+                                                <option value="0">-- Other --</option>
                                             </select><br/>
                                         </div>
                                     </div>
