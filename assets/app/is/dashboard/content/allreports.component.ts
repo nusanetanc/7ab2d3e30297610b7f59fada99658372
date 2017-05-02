@@ -1,6 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import 'rxjs/add/operator/map';
 import {Report} from './allreports';
 
 
@@ -24,7 +25,7 @@ import {Report} from './allreports';
                    <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
                         NEW REPORT
                     </a>
-                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                    <a [routerLink]="['DetailReport', {id: complaint.complaintId}] class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
                         <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             DATE
