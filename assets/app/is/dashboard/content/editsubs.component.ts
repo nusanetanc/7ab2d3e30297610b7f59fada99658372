@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
-                    &nbsp; New Subscribers
+                    &nbsp; Edit Subscribers
                 </h3>
             </div>
             <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -97,6 +97,13 @@ import {Streetname} from "./street_name";
                                                 <option value="0">-- Select Package --</option>
                                                 <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                             </select><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 paddingL35">
+                                        <div class="marginT20 paddingR30">
+                                            <input #subpromo id="subpromo" type="text" class="form-control inputForm" placeholder="PROMO" required>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +188,7 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
-                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
+                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">SUBMIT</button>
                                     </div>
                                 </div>
                             </div>
