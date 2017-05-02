@@ -142,6 +142,9 @@ import {Streetname} from "./street_name";
                 <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                 NEXT
                 </button>
+                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                    BACK
+                </button>
                 <button (click)="onItemClicked3(Pack)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                 NEXT
                 </button>
