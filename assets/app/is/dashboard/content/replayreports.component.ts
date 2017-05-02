@@ -20,7 +20,7 @@ import { Http } from 'angular2/http';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a href="reportshistory.html" class="btn btn-default buttonBack" type="button">
+                    <a [routerLink]="['AllReport']" class="btn btn-default buttonBack" type="button">
                         BACK
                     </a>
                 </div>
