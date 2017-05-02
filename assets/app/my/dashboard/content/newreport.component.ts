@@ -83,7 +83,7 @@ import { Problem } from './problem';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentNewReportComponent implements OnInit {
-    today : Date = new Date("<YYYY-mm-ddTHH:MM:ss>");
+    today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
         var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}`;
