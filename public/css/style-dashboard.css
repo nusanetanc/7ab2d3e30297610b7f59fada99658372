@@ -1204,13 +1204,8 @@ button.active{
 }
 
 /*--- Dropdown ---*/
-.dropbtn {
-    background-color: #E2E2E2;
-    color: #676767;
-    padding: 16px;
-    border: none;
+.buttonDrop {
     cursor: pointer;
-    text-decoration: none;
 }
 
 .dropdown {
@@ -1240,7 +1235,7 @@ button.active{
     display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .buttonDrop {
     background-color: #E2E2E2;
 }
 /*--- /Dropdown ---*/
