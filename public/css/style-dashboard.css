@@ -1014,15 +1014,6 @@ hr {
     text-decoration: none;
 }
 
-.buttonSortReport {
-    background-color: #E2E2E2;
-    border: none;
-    border-radius: 0px;
-    color: #676767;
-    padding: 12.5px 15px 12.5px 40px;
-    text-decoration: none;
-}
-
 .width100 {
     width: 100%;
 }
@@ -1211,3 +1202,45 @@ button.buttonOrange:focus {
 button.active{
     display: block;
 }
+
+/*--- Dropdown ---*/
+.dropbtn {
+    background-color: #E2E2E2;
+    color: #676767;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/*--- /Dropdown ---*/
