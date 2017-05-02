@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                       <input #subemail id="subemail" type="email" class="form-control" placeholder="Email">
                       <input #subdatebirth id="subdatebirth" type="date" class="form-control inputForm" placeholder="Date of Birth">
                       <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="NIK">
-                      <a (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                      <a (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                           BACK
                       </a>
                       <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
@@ -145,7 +145,7 @@ import {Streetname} from "./street_name";
                 <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                     BACK
                 </button>
                 <button (click)="onItemClicked3(Pack)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
