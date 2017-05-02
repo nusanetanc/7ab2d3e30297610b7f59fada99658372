@@ -314,7 +314,7 @@ hr {
     color: #333;
     float: right;
     margin-left: 15px;
-    padding: 15px;
+    padding: 18px;
     text-decoration: none;
 }
 
@@ -1233,6 +1233,7 @@ button.active{
 
 .dropdown:hover .dropdown-content {
     display: block;
+    right: 0;
 }
 
 .dropdown:hover .buttonDrop {
