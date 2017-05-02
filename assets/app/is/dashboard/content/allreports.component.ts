@@ -25,7 +25,7 @@ import {Report} from './allreports';
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
                         <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            DATE <span href="" class="glyphicon glyphicon-chevron-down"></span>
+                            DATE &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">NAME</a></li>
