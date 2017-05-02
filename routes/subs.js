@@ -173,6 +173,11 @@ Bill.find({sub: sessionSubId}, function(err, bills) {
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
   var sub = new Sub();
+  var codeactivation = require('node-sid')({
+ seed:'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+ len:50,
+ headerField:'x-node-sid'
+}).create();
     var Random = String(randomInt(10000, 99999));
     var checkdigit = damm.append(Random);
     sub.subid = "GR"+checkdigit;
@@ -191,7 +196,7 @@ router.post('/addsub', function(req, res, next) {
     sub.groovyid= req.body.groovyid;
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
-
+    sub.codeactivation = codeactivation;
     sub.save(function(err) {
       if (err)
           res.send(err);
@@ -214,7 +219,7 @@ router.post('/addsub', function(req, res, next) {
                 Your registration at Groovy success. To activate your account, click the following button.
                 </p>
                 <div style="text-align:left;margin-top:30px">
-                    <a href="#" style="padding:12px 50px 12px 50px;font-size:14px;border-radius:3px;background-color:#FC592E;color:#fff;text-decoration:none;box-shadow:1px 1px 5px #999;">CONFIRM EMAIL</a>
+                    <a href="http://202.162.207.164:3000/activated/`+codeactivation+`" style="padding:12px 50px 12px 50px;font-size:14px;border-radius:3px;background-color:#FC592E;color:#fff;text-decoration:none;box-shadow:1px 1px 5px #999;">CONFIRM EMAIL</a>
                 </div>
                 <p style="line-height:1.5;margin-top:40px;">
                 Then our customer service will be contact your phone number to
