@@ -1233,6 +1233,7 @@ button.active{
 
 .dropdown:hover .dropdown-content {
     display: block;
+    margin-left: -40px;
 }
 
 .dropdown:hover .buttonDrop {
