@@ -39,12 +39,12 @@ import {Streetname} from "./street_name";
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
                                                 <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required value={{subs.subid}}>
-                                                <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required>
-                                                <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
-                                                <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
-                                                <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
-                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
-                                                <input #subnova id="subnova" type="text" class="form-control inputForm" placeholder="No VA" required>
+                                                <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required value={{subs.name}}>
+                                                <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required value={{subs.phone}}>
+                                                <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required value={{subs.email}}>
+                                                <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required value={{subs.datebirth}}>
+                                                <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required value={{subs.cardid}}>
+                                                <input #subnova id="subnova" type="text" class="form-control inputForm" placeholder="No VA" required value={{subs.nova}}>
 
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
