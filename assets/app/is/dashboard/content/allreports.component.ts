@@ -26,8 +26,8 @@ import {Report} from './allreports';
                       <button class="buttonDrop buttonSort">REPORT &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
                       <div class="dropdown-content">
                         <a href="">OPEN</a>
-                        <a (click)="onItemClicked1(Area)">SOLVED</a>
-                        <a (click)="onItemClicked2(Pack)">DONE</a>
+                        <button (click)="onItemClicked1(Area)">SOLVED</button>
+                        <button (click)="onItemClicked2(Pack)">DONE</button>
                       </div>
                     </div>
                 </div>
