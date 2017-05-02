@@ -116,12 +116,12 @@ import {Streetname} from "./street_name";
                       <input #subemail id="subemail" type="email" class="form-control" placeholder="Email">
                       <input #subdatebirth id="subdatebirth" type="date" class="form-control inputForm" placeholder="Date of Birth">
                       <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="NIK">
-                      <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
-                      REGISTER
-                      </button>
                    </div>
                 </form>
              </div>
+             <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
+             REGISTER
+             </button>
           </div>
           <div class="row" *ngIf="clickedItem.name == 'regDone'">
              <div class="col-md-12">
