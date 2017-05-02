@@ -26,7 +26,7 @@ import { Job } from './job';
                         BACK
                     </a>
                     <div class="right">
-                      <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button">
+                      <a [routerLink]="['EditSubs', {id: subs._id}]" class="btn btn-default buttonOrange" type="button">
                           EDIT DATA SUBSCRIBE
                       </a>
                     </div>

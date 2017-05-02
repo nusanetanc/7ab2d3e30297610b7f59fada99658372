@@ -39,6 +39,7 @@ import {ContentBillSubscribeComponent} from "./dashboard/content/detailsubbill.c
 import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
+import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 
 @Component({
    selector: 'is-app',
@@ -103,10 +104,12 @@ import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.comp
         ContentAddEmpComponent,
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
+        ContentEditSubsComponent,
         ROUTER_DIRECTIVES
     ],
 })
 @RouteConfig([
+    { path: '/is/editsubs/:id', component:ContentEditSubsComponent, name:'EditSubs'},
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
     { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
     { path: '/is/addemp', component:ContentAddEmpComponent, name:'AddEmp'},
