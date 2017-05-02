@@ -136,7 +136,7 @@ import {Streetname} from "./street_name";
                 <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                     BACK
                 </a>
                 <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
