@@ -133,7 +133,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
     { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
     { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
-    { path: '/is/replayreport', component:ContentReplayReportComponent, name:'ReplayReport'},
+    { path: '/is/replayreport/:id', component:ContentReplayReportComponent, name:'ReplayReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
     { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
