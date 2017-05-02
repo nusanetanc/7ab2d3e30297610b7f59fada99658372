@@ -25,14 +25,14 @@ import {Report} from './allreports';
                     <div class="dropdown right">
                       <button class="buttonDrop buttonSort">REPORT &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
                       <div class="dropdown-content">
-                        <a (click)="onItemClicked0(Area)">OPEN</a>
-                        <a (click)="onItemClicked1(Pack)">SOLVED</a>
-                        <a (click)="onItemClicked2(Inst)">DONE</a>
+                        <a (click)="onItemClicked0(open)">OPEN</a>
+                        <a (click)="onItemClicked1(solved)">SOLVED</a>
+                        <a (click)="onItemClicked2(done)">DONE</a>
                       </div>
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="clickedItem.name == 'regArea'">
+            <div class="row" *ngIf="clickedItem.name == 'regOpen'">
                 <div class="col-sm-12">
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
@@ -43,7 +43,7 @@ import {Report} from './allreports';
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="clickedItem.name == 'regPack'">
+            <div class="row" *ngIf="clickedItem.name == 'regSolved'">
                 <div class="col-sm-12">
                     SOLVED
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
@@ -55,7 +55,7 @@ import {Report} from './allreports';
                     </div>
                 </div>
             </div>
-            <div class="row" *ngIf="clickedItem.name == 'regInst'">
+            <div class="row" *ngIf="clickedItem.name == 'regDone'">
                 <div class="col-sm-12">
                     DONE
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
@@ -74,18 +74,18 @@ import {Report} from './allreports';
 })
 export class ContentAllReportsComponent {
 
-    public clickedItem = {name: "regArea"};
+    public clickedItem = {name: "regOpen"};
 
-    onItemClicked0(Area) {
-        this.clickedItem = {name: "regArea"};
+    onItemClicked0(open) {
+        this.clickedItem = {name: "regOpen"};
     }
 
-    onItemClicked1(Pack) {
-        this.clickedItem = {name: "regPack"};
+    onItemClicked1(solved) {
+        this.clickedItem = {name: "regSolved"};
     }
 
-    onItemClicked2(Inst) {
-        this.clickedItem = {name: "regInst"};
+    onItemClicked2(done) {
+        this.clickedItem = {name: "regDone"};
     }
 
     // Link to our api, pointing to localhost
