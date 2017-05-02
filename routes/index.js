@@ -21,7 +21,7 @@ router.get('/send-contact',function(req,res, next){
   var mailOptions={
     to: "cs@groovy.id",
    subject : "Contact Web Groovy",
-   text : "nama : "+req.query.name+", email : "+req.query.email+", Message: "+req.query.message
+   html : "<h1>tes</h1>"
 }
   console.log(mailOptions);
   smtpTransport.sendMail(mailOptions, function(error, response){
@@ -106,7 +106,7 @@ router.get('/event-detail', function (req,res,next) {
 });
 
 router.get('/terms-of-use', function(req, res, next) {
-  res.render('coming-soon', { title: 'Groovy - Terms-of-use' });
+  res.render('terms-of-use', { title: 'Groovy - Terms-of-use' });
 });
 
 router.get('/test', function(req, res, next) {

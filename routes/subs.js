@@ -199,7 +199,55 @@ router.post('/addsub', function(req, res, next) {
       var mailOptions={
       to: req.body.email,
       subject : "Activation Your Registrastion",
-      text : "Hi "+req.body.name+", Register at groovy success, for account activation please click the following link: http://groovy.id/activation/, then later our customer service right to contact your phone number to validate the data, then your account will be active groovy. Thanks"
+      html : "
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Groovy</title>
+</head>
+<body style="font-family:Arial;font-size:15px;">
+    <div style="max-width:600px;margin:0 auto;margin-top:30px;">
+        <div style="height:76px;width:100%;background-color:#fff;">
+            <img src="http://202.162.207.164:3000/images/logo-groovy.png" height="37px" style="margin:20px 0 0 30px"/>
+        </div>
+        <div style="background-color:#FC592E;padding:70px 30px 85px 30px;color:#fff;">
+            <h2 style="font-weight:200;margin:0;padding:0;font-size:30px;">Welcome to Groovy</h2>
+            <p style="font-weight:200;margin:0;padding-top:10px;">Happy is simple. Start from your home right now!</p>
+        </div>
+        <div style="background-color:#fff;padding:20px 30px 20px 30px;color:#444;">
+            <p style="line-height:1.5">
+            Hello John Doe,<br/><br/>
+            Your registration at Groovy success. To activate your account, click the following button.
+            </p>
+            <div style="text-align:left;margin-top:30px">
+                <a href="#" style="padding:12px 50px 12px 50px;font-size:14px;border-radius:3px;background-color:#FC592E;color:#fff;text-decoration:none;box-shadow:1px 1px 5px #999;">CONFIRM EMAIL</a>
+            </div>
+            <p style="line-height:1.5;margin-top:40px;">
+            Then our customer service will be contact your phone number to
+validate the data, then your Groovy account will be activated.<br/><br/>
+            Thanks.</p>
+        </div>
+    </div>
+    <div style="max-width:600px;margin:0 auto;margin-top:10px;margin-bottom:50px;">
+        <div style="background-color:#fff;height:80px;padding:20px 30px 20px 30px;color:#444;font-size:12px">
+            <div style="display:block;">
+                <div style="float:left;width:50%">
+                    <a href="" style="color:#555;font-weight:600;text-decoration:none">support@groovy.id</a>
+                    <br/><br/>
+                    Groovy - PT Media Andalan Nusa<br/>
+                    Cyber Building 7th Floor, Jl Kuningan Barat 8<br/>
+                    Jakarta 12710, Indonesia
+                </div>
+                <div style="float:left;width:50%">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+      "
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
