@@ -38,7 +38,7 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
-                                                <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required value="{{subs.}}">
+                                                <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required value="{{subs.subid}}">
                                                 <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required>
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
