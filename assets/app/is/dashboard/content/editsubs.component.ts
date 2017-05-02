@@ -110,13 +110,13 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select #subregisref id="subregisref" name="package" class="inputForm">
                                                 <option value="0" disabled="true" selected="true">-- Select Referensi Registrasi --</option>
-                                                <option value="0">-- Sales --</option>
+                                                <option value="sales">Sales</option>
                                                 <option value="0" disabled="true">-- Media Sosial --</option>
-                                                <option value="0">-- Facebook --</option>
-                                                <option value="0">-- Instagram --</option>
-                                                <option value="0">-- Twitter --</option>
-                                                <option value="0">-- Youtube --</option>
-                                                <option value="0">-- Other --</option>
+                                                <option value="Facebook">Facebook</option>
+                                                <option value="Instagram">Instagram</option>
+                                                <option value="Twitter">Twitter</option>
+                                                <option value="Youtube">Youtube</option>
+                                                <option value="Other">Other</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -126,9 +126,9 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select #subregisby id="subregisby" name="package" class="inputForm">
                                                 <option value="0" disabled="true" selected="true">-- Select Registrasi By --</option>
-                                                <option value="0">-- Personal --</option>
+                                                <option value="Personal">-- Personal --</option>
                                                 <option value="0" disabled="true">-- Sales --</option>
-                                                <option value="0" *ngFor="#emp of emps">{{emp.name}}</option>
+                                                <option *ngFor="#emp of emps">{{emp.name}}</option>
                                             </select><br/>
                                         </div>
                                     </div>
