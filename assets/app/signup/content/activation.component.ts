@@ -8,13 +8,13 @@ import 'rxjs/add/operator/map';
     template: `
     <div class="container container-auth-client">
     <div class="top-margin text-center">
+        <h4>Enter new password for your Groovy Account</h4>
         <div class="form">
             <div class="form-group">
-                <input type="text" class="form-control" id="email" placeholder="Email">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="New Password">
+                <input type="password" class="form-control" id="password" placeholder="Re-Type Password">
             </div>
-            <a href="#" class="btn button-submit">SIGN IN</a>
-            <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
+            <button href="#" class="btn button-submit">SUBMIT</button>
         </div>
     </div>
 </div>
