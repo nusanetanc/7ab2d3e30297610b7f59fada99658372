@@ -26,7 +26,7 @@ import { Complaint } from './complaints';
                       </a>
                 </div>
             </div>
-            <div class="row subInfo roboto grey8b">
+            <div  *ngFor="#chat of chatcomplaints" class="row subInfo roboto grey8b">
                 <div class="col-sm-12">
                   <div class="row">
                       <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subcategory }}</b><br>{{ complaints.category }}</span></div>
@@ -38,7 +38,7 @@ import { Complaint } from './complaints';
                       </div>
                       <div class="row">
                           <div class="col-sm-11 infoDetail">
-                              <span *ngFor="#chat of chatcomplaints">{{ chat.message }}</span>
+                              <span>{{ chat.message }}</span>
                           </div>
                       </div>
                     </div>
