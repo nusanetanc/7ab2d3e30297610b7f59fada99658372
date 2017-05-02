@@ -15,13 +15,14 @@ import {SignupComponent} from "./content/signup.component";
     <my-header></my-header><br>
         <router-outlet></router-outlet>
     <my-footer></my-footer>
-    
+
     `,
     directives: [HeaderComponent, FooterComponent, SignupComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
     {path: '/signup-beta', name: 'Signup', component: SignupComponent, useAsDefault: true},
+    {path: '/activation', name: 'Signup', component: SignupComponent, useAsDefault: true},
 ])
 
 export class AppComponent{
