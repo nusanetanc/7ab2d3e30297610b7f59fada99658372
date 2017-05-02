@@ -14,6 +14,7 @@ var SubSchema   = new Schema({
     packlev: String,
     cardid: String,
     promo: String,
+    codeactivation: String,
     nova: Number,
     status: String,
     regisby: String,
