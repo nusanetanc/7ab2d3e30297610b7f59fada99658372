@@ -37,6 +37,10 @@ body{
     height:40px;
     margin:10px 15px 10px 15px;
 }
+
+.navbar-right {
+    margin-right: none;
+}
 /*--------------------End Navbar----------------------------*/
 
 /*----------------------Content-----------------------------*/
