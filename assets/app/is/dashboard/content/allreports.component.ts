@@ -23,7 +23,7 @@ import {Report} from './allreports';
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                     <div class="dropdown right">
-                        <a class="btn btn-default dropdown-toggle buttonSortReport" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             REPORT &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
