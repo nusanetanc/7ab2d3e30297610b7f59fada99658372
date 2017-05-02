@@ -110,14 +110,25 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select #subregisref id="subregisref" name="package" class="inputForm">
                                                 <option value="0" disabled="true" selected="true">-- Select Referensi Registrasi --</option>
-                                                <option value="0" disabled="true">-- Sales --</option>
-                                                <option value="0">-- Select Package --</option>
+                                                <option value="0">-- Sales --</option>
                                                 <option value="0" disabled="true">-- Media Sosial --</option>
                                                 <option value="0">-- Facebook --</option>
                                                 <option value="0">-- Instagram --</option>
                                                 <option value="0">-- Twitter --</option>
                                                 <option value="0">-- Youtube --</option>
                                                 <option value="0">-- Other --</option>
+                                            </select><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 paddingL35">
+                                        <div class="marginT20 paddingR30">
+                                            <select #subregisby id="subregisby" name="package" class="inputForm">
+                                                <option value="0" disabled="true" selected="true">-- Select Registrasi By --</option>
+                                                <option value="0">-- Personal --</option>
+                                                <option value="0" disabled="true">-- Sales --</option>
+                                                <option value="0">-- Media Sosial --</option>
                                             </select><br/>
                                         </div>
                                     </div>
