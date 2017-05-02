@@ -25,9 +25,9 @@ import {Report} from './allreports';
                     <div class="dropdown right">
                       <button class="buttonDrop buttonSort">REPORT &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
                       <div class="dropdown-content">
-                        <a href="">OPEN</a>
-                        <a (click)="onItemClicked1(Area)">SOLVED</a>
-                        <a (click)="onItemClicked2(Pack)">DONE</a>
+                        <a (click)="onItemClicked0(Area)">OPEN</a>
+                        <a (click)="onItemClicked1(Pack)">SOLVED</a>
+                        <a (click)="onItemClicked2(Inst)">DONE</a>
                       </div>
                     </div>
                 </div>
@@ -76,11 +76,15 @@ export class ContentAllReportsComponent {
 
     public clickedItem = {name: "regArea"};
 
-    onItemClicked1(Area) {
+    onItemClicked0(Area) {
+        this.clickedItem = {name: "regArea"};
+    }
+
+    onItemClicked1(Pack) {
         this.clickedItem = {name: "regPack"};
     }
 
-    onItemClicked2(Pack) {
+    onItemClicked2(Inst) {
         this.clickedItem = {name: "regInst"};
     }
 
