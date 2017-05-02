@@ -25,7 +25,7 @@ import {Report} from './allreports';
                    <a [routerLink]="['AddReport']" class="btn btn-default buttonOrange">
                         NEW REPORT
                     </a>
-                    <a [routerLink]="['DetailReport']" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
                         <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             DATE
@@ -40,9 +40,11 @@ import {Report} from './allreports';
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                        <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                        <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                        <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                        <a class="grey333" [routerLink]="['DetailReport', {id: complaint.complaintId}]">
+                            <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                            <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
+                            <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                        </a>
                     </div>
                 </div>
             </div>

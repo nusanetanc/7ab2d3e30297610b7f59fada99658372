@@ -106,7 +106,7 @@ router.get('/event-detail', function (req,res,next) {
 });
 
 router.get('/terms-of-use', function(req, res, next) {
-  res.render('coming-soon', { title: 'Groovy - Terms-of-use' });
+  res.render('terms-of-use', { title: 'Groovy - Terms-of-use' });
 });
 
 router.get('/test', function(req, res, next) {
