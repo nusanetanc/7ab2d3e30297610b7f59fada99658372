@@ -58,6 +58,14 @@ router.get('/listsub', function(req, res, next) {
        res.json(subs);
    });
 });
+
+/* GET detail sub. */
+router.get('/id/:id', function(req, res, next) {
+  Sub.findById(req.params.id, function(err, subs) {
+  console.log( subs );
+  res.json(subs);
+});
+});
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
