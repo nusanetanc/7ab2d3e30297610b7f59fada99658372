@@ -6,7 +6,7 @@ var ComplaintSchema   = new Schema({
   subject: String,
   category: String,
   subcategory: String,
-  dateopen: Date,
+  dateopen: { $dateToString: { format: "%Y-%m-%d", date: "$date" } },
   dateclose: Date,
   status: String,
   lastchat: [String],
