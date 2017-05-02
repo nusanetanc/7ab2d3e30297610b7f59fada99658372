@@ -7,6 +7,7 @@ import { Sub } from './subs';
 import {HeaderComponent} from "./header.component";
 import {FooterComponent} from "./footer.component";
 import {SignupComponent} from "./content/signup.component";
+import {ActivationComponent} from "./content/activation.component";
 
 @Component({
     selector: 'my-app',
@@ -17,12 +18,12 @@ import {SignupComponent} from "./content/signup.component";
     <my-footer></my-footer>
 
     `,
-    directives: [HeaderComponent, FooterComponent, SignupComponent, ROUTER_DIRECTIVES]
+    directives: [HeaderComponent, FooterComponent, SignupComponent, ActivationComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
     {path: '/signup-beta', name: 'Signup', component: SignupComponent, useAsDefault: true},
-    {path: '/activation', name: 'Signup', component: SignupComponent, useAsDefault: true},
+    {path: '/activation', name: 'Activation', component: ActivationComponent},
 ])
 
 export class AppComponent{
