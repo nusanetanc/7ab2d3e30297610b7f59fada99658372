@@ -151,12 +151,6 @@ import {Streetname} from "./street_name";
                 <button (click)="onItemClicked3(Pack)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
-                    BACK
-                </button>
-                <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
-                REGISTER
-                </button>
              </div>
           </div>
        </div>
