@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -38,7 +38,7 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
-                                                <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required>
+                                                <input #subid id="subid" type="text" class="form-control inputForm" placeholder="Subscribe ID" required value="{{subs.}}">
                                                 <input #subname id="subname" type="text" class="form-control inputForm" placeholder="Full Name" required>
                                                 <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
@@ -277,7 +277,7 @@ export class ContentEditSubsComponent implements OnInit {
     streetnames: any[] = [];
     emps: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -308,8 +308,8 @@ export class ContentEditSubsComponent implements OnInit {
     }
 
     // Get all Sub from the API
-    getAllSub() {
-        this.http.get(`${this.API}/subscribe/listsub`)
+    getSub() {
+        this.http.get(`${this.API}/subscribe/id/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(subs => {
                 this.subs = subs
