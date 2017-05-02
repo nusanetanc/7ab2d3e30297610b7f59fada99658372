@@ -85,6 +85,10 @@ router.get('/signup-beta/**', function(req, res, next) {
   res.render('signup', { title: 'Groovy - Signup' });
 });
 
+router.get('/activation', function(req, res, next) {
+  res.render('signup', { title: 'Groovy - Signup' });
+});
+
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Groovy - Contact' });
 });
