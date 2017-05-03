@@ -28,8 +28,8 @@ import {Employee} from './employee';
                     <div class="dropdown right">
                       <button class="buttonDrop buttonSort">SORT BY &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
                       <div class="dropdown-content">
-                        <a >NAME</a>
-                        <a >DEPARMENT</a>
+                        <a (click)="sortByName()">NAME</a>
+                        <a (click)="sortByDep()">DEPARMENT</a>
                         <a >TITLE JOB</a>
                       </div>
                     </div>
@@ -55,7 +55,7 @@ import {Employee} from './employee';
 export class ContentAllEmployeeComponent {
 
     // Sort By
-    /*sortByName(){
+    sortByName(){
         this.emps.sort( function(name1, name2) {
             if ( name1.name < name2.name ){
                 return -1;
@@ -65,9 +65,9 @@ export class ContentAllEmployeeComponent {
                 return 0;
             }
         });
-    }*/
+    }
 
-    /*sortByDep(){
+    sortByDep(){
         this.emps.sort( function(dep1, dep2) {
             if ( dep1.departement < dep2.departement ){
                 return -1;
@@ -77,7 +77,7 @@ export class ContentAllEmployeeComponent {
                 return 0;
             }
         });
-    }*/
+    }
 
   // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
