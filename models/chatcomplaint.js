@@ -5,7 +5,7 @@ var Sub = require('../models/subs');
 
 var ChatSchema   = new Schema({
   message: String,
-  date: Date,
+  date: String,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'},
   emp: {type: Schema.Types.ObjectId, ref: 'Emp'},
   complaintId: String,
