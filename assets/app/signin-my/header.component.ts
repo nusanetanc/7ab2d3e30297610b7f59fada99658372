@@ -18,7 +18,7 @@ import {Http} from 'angular2/http';
                 <a href="../"><img class="navbar-logo" src="images/logo-groovy.png" alt="logo-groovy"/></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right fontWeight300">
                     <li><a href="about"><span class="navbar-menus">ABOUT</span></a></li>
                     <li><a href="features"><span class="navbar-menus">FEATURES</span></a></li>
                     <li><a href="packages"><span class="navbar-menus">PACKAGES</span></a></li>
