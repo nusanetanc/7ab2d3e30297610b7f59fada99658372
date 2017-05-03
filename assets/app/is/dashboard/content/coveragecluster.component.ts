@@ -13,7 +13,7 @@ import { Cluster } from './cluster';
         <div id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
-                    <a [routerLink]="['Coverage']" id="menu-toggle" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                    <a id="menu-toggle" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
                     &nbsp; Add Coverage Area
                 </h3>
