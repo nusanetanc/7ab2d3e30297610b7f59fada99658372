@@ -19,10 +19,10 @@ router.get('/chat/:complaint', function(req, res, next) {
         Sub.findById(chats.sub, function(err, subs) {
             res.json({
                 _id: chats._id,
-                message: chats.message;
-                date: chats.date;
-                sub: subs.name;
-                complaintId: chats.complaintId;
+                message: chats.message,
+                date: chats.date,
+                sub: subs.name,
+                complaintId: chats.complaintId,
             });
         });
     });
