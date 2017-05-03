@@ -26,10 +26,10 @@ import { Http } from 'angular2/http';
                 <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                 <div class="dropdown right">
                     <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        DATE
+                        NAME
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">NAME</a></li>
+                        <li><a href="#">DATE</a></li>
                         <li><a href="#">ID</a></li>
                     </ul>
                 </div>
