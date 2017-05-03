@@ -12,7 +12,7 @@ import {ContentSubscribeComponent} from "./dashboard/content/subscribe.component
 import {SigninComponent} from "./authentication/signin.component";
 import {ContentAddInformationComponent} from "./dashboard/content/addinformation.component";
 import {ContentAddReportComponent} from "./dashboard/content/addreport.component";
-import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee1.component";
+import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee.component";
 import {ContentAllEngineerComponent} from "./dashboard/content/allengineer.component";
 import {ContentAllReportsComponent} from "./dashboard/content/allreports.component";
 import {ContentAllStocksComponent} from "./dashboard/content/allstock.component";
