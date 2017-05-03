@@ -34,9 +34,7 @@ import {Report} from './allreports';
             </div>
             <div class="row" *ngIf="clickedItem.name == 'regOpen'">
                 <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>OPEN</strong></div>
-                    </div>
+                    OPEN
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
@@ -48,9 +46,7 @@ import {Report} from './allreports';
             </div>
             <div class="row" *ngIf="clickedItem.name == 'regSolved'">
                 <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>SOLVED</strong></div>
-                    </div>
+                    TEST
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
@@ -62,9 +58,7 @@ import {Report} from './allreports';
             </div>
             <div class="row" *ngIf="clickedItem.name == 'regDone'">
                 <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>DONE</strong></div>
-                    </div>
+                    TEST1
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
