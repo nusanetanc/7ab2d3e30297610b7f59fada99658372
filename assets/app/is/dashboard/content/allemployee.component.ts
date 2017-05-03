@@ -26,13 +26,12 @@ import {Employee} from './employee';
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
-                        <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            NAME
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">NAME</a></li>
-                            <li><a href="#">ID</a></li>
-                        </ul>
+                      <button class="buttonDrop buttonSort">SORT BY &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
+                      <div class="dropdown-content">
+                        <a (click)="sortByName()">NAME</a>
+                        <a (click)="sortByDep()">DEPARMENT</a>
+                        <a (click)="">TITLE JOB</a>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -61,6 +60,18 @@ export class ContentAllEmployeeComponent {
             if ( name1.name < name2.name ){
                 return -1;
             }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortByDep(){
+        this.emps.sort( function(dep1, dep2) {
+            if ( dep1.departement < dep2.departement ){
+                return -1;
+            }else if( dep1.departement > dep2.departement ){
                 return 1;
             }else{
                 return 0;
