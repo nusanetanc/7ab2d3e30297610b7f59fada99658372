@@ -16,13 +16,7 @@ router.get('/listchat', function(req, res, next) {
 router.get('/chat/:complaint', function(req, res, next) {
     Chat.findOne({complaintId: req.params.complaint}, function(err, chats) {
         Sub.findById(chats.sub, function(err, subs) {
-            res.json({
-                _id: chats._id,
-                message: chats.message,
-                date: chats.date,
-                subname: subs.name,
-                complaintId: chats.complaintId,
-            });
+            res.json({subname: subs.name, chats});
         });
     });
 });
