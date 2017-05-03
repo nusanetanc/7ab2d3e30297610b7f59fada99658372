@@ -1,13 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var Chat = require('../models/chatcomplaint');
+var Sub = require('../models/subs')
+var Emp = require('../models/employee')
 //var Complaint = require('../models/complaint');                                                                    = require('../models/complaint');
 
 /* GET chatloye listing. */
 router.get('/listchat', function(req, res, next) {
      Chat.find(function(err, chats) {
-       console.log( chats );
-       res.json(chats);
+         Sub.findById(complaints.sub, function(err, subs) {
+             Emp.findById(complaints.sub, function(err, emps) {
+                   res.json({
+                     message= chats.message;
+                     date= chats.date;
+                     complaintId= chats.complaintId;
+                     name= subs.name && emps.name;
+                   });
+           });
+       });
    });
 });
 

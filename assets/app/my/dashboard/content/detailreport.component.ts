@@ -34,7 +34,7 @@ import { Complaint } from './complaints';
                   </div>
                   <div *ngFor="#chat of chatcomplaints">
                       <div class="row">
-                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333">{{ chat.sub }}</b></span></div>
+                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333">{{ chat.name }}</b></span></div>
                       </div>
                       <div class="row">
                           <div class="col-sm-11 infoDetail">
