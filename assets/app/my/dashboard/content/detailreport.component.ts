@@ -32,7 +32,7 @@ import { Complaint } from './complaints';
                       <div class="col-sm-10 invoiceId"><span><b class="grey333">{{ complaints.subcategory }}</b><br>{{ complaints.category }}</span></div>
                       <div class="col-sm-2 invoiceList"><span class="grey333">Status : <span class="red">{{ complaints.status }}</span></span></div>
                   </div>
-                  <div>
+                  <div *ngFor="#chat of chats">
                       <div class="row">
                           <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333">{{ chat.subname }}</b></span></div>
                       </div>
