@@ -30,7 +30,7 @@ import {Employee} from './employee';
                       <div class="dropdown-content">
                         <a (click)="sortByName()">NAME</a>
                         <a (click)="sortByDep()">DEPARMENT</a>
-                        <a >TITLE JOB</a>
+                        <a (click)="sortByTit()">TITLE JOB</a>
                       </div>
                     </div>
                 </div>
@@ -72,6 +72,18 @@ export class ContentAllEmployeeComponent {
             if ( dep1.departement < dep2.departement ){
                 return -1;
             }else if( dep1.departement > dep2.departement ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortByTit(){
+        this.emps.sort( function(tit1, tit2) {
+            if ( tit1.titlejob < tit2.titlejob){
+                return -1;
+            }else if( tit1.titlejob > tit2.titlejob ){
                 return 1;
             }else{
                 return 0;
