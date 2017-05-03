@@ -14,7 +14,8 @@ router.get('/listchat', function(req, res, next) {
                      message= chats.message;
                      date= chats.date;
                      complaintId= chats.complaintId;
-                     name= [subs.name, emps.name];
+                     name= subs.name;
+                     name= emps.name;
                    });
            });
        });
