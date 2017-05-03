@@ -11,7 +11,7 @@ import { Complaint } from './complaints';
     <div id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
-                <a id="menu-toggle" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Reports History
             </h3>

@@ -19,7 +19,7 @@ import {Streetname} from "./street_name";
         <div id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
-                    <a id="menu-toggle" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                    <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
                     &nbsp; Edit Subscribers
                 </h3>
