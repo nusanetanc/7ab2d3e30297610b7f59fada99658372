@@ -251,9 +251,6 @@ hr {
 }
 
 @media (max-width: 410px) {
-    .content-header h3 {
-        display: none;
-    }
 
     .page-content {
         display: none;
