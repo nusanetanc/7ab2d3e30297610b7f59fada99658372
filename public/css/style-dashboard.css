@@ -250,7 +250,21 @@ hr {
     padding: 12.5px 30px 12.5px 30px;
 }
 
-@media (max-width: 210px) {
+@media (max-width: 500px) {
+
+    .page-content {
+        display: none;
+    }
+}
+
+@media only screen {
+
+    .page-content {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 200px) {
 
     .page-content {
         display: none;
