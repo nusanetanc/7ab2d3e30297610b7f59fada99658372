@@ -57,7 +57,7 @@ import {Report} from './allreports';
                   <div class="row paddingLR15Margin20">
                       <div class="col-sm-12">
                           <div class="row headerList paddingLR30">
-                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><span class="fontWeight300">LATEST USER REPORT</span></div>
+                              <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
                           </div>
                           <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                               <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
