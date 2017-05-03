@@ -1241,7 +1241,7 @@ button.active{
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
-.dropdown:active .dropdown-content {
+.dropdown:focus .dropdown-content {
     display: block;
     right: 0;
 }
