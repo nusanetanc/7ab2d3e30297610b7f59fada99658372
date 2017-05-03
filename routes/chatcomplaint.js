@@ -9,7 +9,7 @@ var Emp = require('../models/employee')
 router.get('/listchat', function(req, res, next) {
      Chat.find(function(err, chats) {
          Sub.findById(complaints.sub, function(err, subs) {
-             Emp.findById(complaints.sub, function(err, emps) {
+             Emp.findById(complaints.emp, function(err, emps) {
                    res.json({
                      message= chats.message;
                      date= chats.date;
