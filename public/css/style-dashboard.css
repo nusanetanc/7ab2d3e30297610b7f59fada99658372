@@ -264,7 +264,7 @@ hr {
     }
 }
 
-@media only screen and (max-width: 200px) {
+@media only screen and (max-width: 110px) {
 
     .page-content {
         display: none;
