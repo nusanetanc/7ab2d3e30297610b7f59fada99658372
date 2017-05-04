@@ -12,11 +12,27 @@ import { Menu } from './menu';
             <div id="sidebar-wrapper">
                 <nav id="spy">
                     <div class="sidebar-brand">
-                        <div class="title">
-                            <img src="./images/ava.png" alt="ava">
-                            <a [routerLink]="['Account']"  class="name"><span class="fontWeight300">{{ subs.name }}</span></a>
-                            <a class="user">Subscriber - Level {{ subs.packlev }}</a>
-                            <span class="caret"></span>
+                        <div class="row" style="padding: 10px; color: #FFFFFF;">
+                          <div class="col-sm-12">
+                              <div class="col-sm-4" style="padding: 10px;">
+                                  <img class="img-nav-profile" src="./images/ava.png" alt="ava">
+                              </div>
+                              <div class="col-sm-8" style="padding: 10px;">
+                                  <div class="row" style="padding: 5px 0px;">
+                                      <div class="col-sm-9">
+                                          <a [routerLink]="['Account']" class="nav-name">{{ subs.name }}</a>
+                                      </div>
+                                      <div class="col-sm-2 hid">
+                                          <span class="caret"></span>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="padding: 5px 0px;">
+                                      <div class="col-sm-12">
+                                          <span class="nav-tit">Subscriber - Level {{ subs.packlev }}</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
