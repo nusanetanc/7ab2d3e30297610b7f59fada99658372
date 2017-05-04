@@ -150,6 +150,18 @@ img.img-nav-profile {
         border-radius: 50%;
         width: 40%;
     }
+
+    .nav-name {
+        color: #FFF;
+        float: right;
+        font-size: 14px;
+    }
+
+    .nav-tit {
+        color: #FFF;
+        float: right;
+        font-size: 12px;
+    }
 }
 
 .nav-name {
