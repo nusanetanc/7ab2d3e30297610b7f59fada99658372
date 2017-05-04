@@ -26,7 +26,7 @@ import {Employee} from './employee';
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
-                      <button class="buttonDrop buttonSort">SORT BY &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
+                      <button class="buttonDrop buttonSort">SORT BY</button>
                       <div class="dropdown-content">
                         <a (click)="sortByName()">NAME</a>
                         <a (click)="sortByDep()">DEPARMENT</a>
