@@ -15,7 +15,7 @@ router.get('/listchat', function(req, res, next) {
 
 
 router.get('/chat/:complaint', function(req, res, next) {
-    Chat.find({$or: [{complaintId: req.params.complaint}, {sub: req.body.sub}, {emp: req.body.emp} ]}, function(err, chats) {
+    Chat.find({$or: [{complaintId: req.params.complaint}, {sub: "58b3cdac45912d052e2c85a5"}, {emp: "58b6a0d77dfd7052a9fe53c9"} ]}, function(err, chats) {
         Sub.findById(chats.sub, function(err, sub) {
         Emp.findById(chats.emp, function(err, emp) {
             res.json({
