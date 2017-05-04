@@ -128,17 +128,24 @@
 
   /*Menu-toggle*/
   
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
-  });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
   
-  $(window).load(function(){
-                var w = $(window).width();
-                if(w < 700) {
-                    $("#wrapper").toggleClass("active");
-                }
-            });
+    $(window).load(function(){
+        var w = $(window).width();
+        if(w < 700) {
+            $("#wrapper").toggleClass("active");
+        }
+    });
+
+  $(window).resize(function(){
+      var w = $(window).width();
+      if(w < 700) {
+          $("#wrapper").toggleClass("active");
+      }
+  });
   
 
   /*Scroll Spy*/

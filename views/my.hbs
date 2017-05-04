@@ -90,6 +90,20 @@
       $("#wrapper").toggleClass("active");
   });
 
+  $(window).load(function(){
+      var w = $(window).width();
+      if(w < 700) {
+          $("#wrapper").toggleClass("active");
+      }
+  });
+
+  $(window).resize(function(){
+      var w = $(window).width();
+      if(w < 700) {
+          $("#wrapper").toggleClass("active");
+      }
+  });
+
   /*Scroll Spy*/
   $('body').scrollspy({ target: '#spy', offset:80});
 
