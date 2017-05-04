@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Chat = require('../models/chatcomplaint');
 var Sub = require('../models/subs');
+var Emp = require('../models/employee');
 //var Complaint = require('../models/complaint');                                                                    = require('../models/complaint');
 
 /* GET chatloye listing. */
@@ -14,15 +15,18 @@ router.get('/listchat', function(req, res, next) {
 
 
 router.get('/chat/:complaint', function(req, res, next) {
-    Chat.findOne({complaintId: req.params.complaint}, function(err, chats) {
+    Chat.find({complaintId: req.params.complaint}, function(err, chats) {
         Sub.findById(chats.sub, function(err, sub) {
+        Emp.findById(chats.emp, function(err, emp) {
             res.json({
                 message: chats.message,
                 date: chats.date,
                 complaintId: chats.complaintId,
                 sub: sub.name,
+                emp: emp.name,
             });
-        })
+        });
+        });
     });
 });
 

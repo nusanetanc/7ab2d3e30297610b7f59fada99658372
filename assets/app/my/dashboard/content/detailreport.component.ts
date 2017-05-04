@@ -34,7 +34,7 @@ import { Complaint } from './complaints';
                   </div>
                   <div>
                       <div class="row">
-                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ chats.date }}</b> by <b class="grey333">{{ chats.sub }}</b></span></div>
+                          <div class="col-sm-12 invoiceId"><span>Posted <b class="grey333">{{ chats.date }}</b> by <b class="grey333">{{ chats.sub }}{{ chats.emp }}</b></span></div>
                       </div>
                       <div class="row">
                           <div class="col-sm-11 infoDetail">
