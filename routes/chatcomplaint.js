@@ -15,14 +15,15 @@ router.get('/listchat', function(req, res, next) {
 
 
 router.get('/chat/:complaint', function(req, res, next) {
-    Chat.findOne({complaintId: req.params.complaint}, function(err, chats) {
+    Chat.find({$or [{complaintId: req.params.complaint}, {sub: chats.sub}, {emp: chats.emp} ]}, function(err, chats) {
         Sub.findById(chats.sub, function(err, sub) {
         Emp.findById(chats.emp, function(err, emp) {
             res.json({
                 message: chats.message,
                 date: chats.date,
                 complaintId: chats.complaintId,
-                name: sub.name && emp.name,
+                subname: sub.name,
+                empname: emp.name,
             });
         });
         });
