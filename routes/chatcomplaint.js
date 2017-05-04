@@ -15,13 +15,12 @@ router.get('/listchat', function(req, res, next) {
 
 
 router.get('/chat/:complaint', function(req, res, next) {
-    Chat.findOne({complaintId: req.params.complaint}, function(err, chats) {
+    Chat.find({complaintId: req.params.complaint}, function(err, chats) {
         Emp.findById(chats.emp, function(err, emps) {
             res.json({
                 message: chats.message,
                 date: chats.date,
                 complaintId: chats.complaintId,
-                emp: emps.email,
             });
         });
     });
