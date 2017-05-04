@@ -14,7 +14,7 @@ import { Menu } from './menu';
                     <div class="sidebar-brand">
                         <div class="title">
                             <img src="./images/ava.png" alt="ava">
-                            <a [routerLink]="['Account']"  class="name"><strong>{{ subs.name }}</strong></a>
+                            <a [routerLink]="['Account']"  class="name"><span class="fontWeight300">{{ subs.name }}</span></a>
                             <a class="user">Subscriber - Level {{ subs.packlev }}</a>
                         </div>
                     </div>
