@@ -145,26 +145,6 @@ img.img-nav-profile {
     width: 100%;
 }
 
-@media only screen and (max-width: 767px) {
-    img.img-nav-profile {
-        border-radius: 50%;
-        width: 40%;
-    }
-
-    .nav-name {
-        color: #FFF;
-        float: right;
-        right: 0;
-        font-size: 14px;
-    }
-
-    .nav-tit {
-        color: #FFF;
-        float: right;
-        font-size: 12px;
-    }
-}
-
 .nav-name {
     color: #FFF;
     font-size: 14px;
