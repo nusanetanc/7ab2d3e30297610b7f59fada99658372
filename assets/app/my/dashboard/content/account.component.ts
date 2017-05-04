@@ -91,8 +91,8 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-5">
                                     <div class="form-control">
-                                        <button type="button">choose file</button>
-                                        <p>No choose file</p>
+                                        <button type="button" style="margin-top:10px;">choose file</button>
+                                        <p style="margin-top:10px;">No choose file</p>
                                     </div>
                                 </div>
                             </div>
