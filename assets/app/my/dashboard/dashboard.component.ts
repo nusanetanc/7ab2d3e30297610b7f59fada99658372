@@ -16,6 +16,7 @@ import { Menu } from './menu';
                             <img src="./images/ava.png" alt="ava">
                             <a [routerLink]="['Account']"  class="name"><span class="fontWeight300">{{ subs.name }}</span></a>
                             <a class="user">Subscriber - Level {{ subs.packlev }}</a>
+                            <span class="caret"></span>
                         </div>
                     </div>
                     <ul class="sidebar-nav nav">
