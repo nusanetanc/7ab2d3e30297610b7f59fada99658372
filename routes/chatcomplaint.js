@@ -22,8 +22,7 @@ router.get('/chat/:complaint', function(req, res, next) {
                 message: chats.message,
                 date: chats.date,
                 complaintId: chats.complaintId,
-                sub: sub.name,
-                emp: emp.name,
+                name: sub.name && emp.name,
             });
         });
         });
