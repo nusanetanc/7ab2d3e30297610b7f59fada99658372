@@ -26,14 +26,21 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regArea'">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regBill'">
                                     BACK
                                 </a>
+                                <button (click)="onItemClicked0(Bill)" onclick="printPenagihan()" class="btn btn-default billInfoBack" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
+                                    BACK
+                                </button>
+                                <button (click)="onItemClicked1(Inovice)" onclick="printPembayaran()" class="btn btn-default billInfoBack" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPayment'">
+                                    BACK
+                                </button>
                                 
-                                <button (click)="onItemClicked1(Area)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regArea'">
+                                
+                                <button (click)="onItemClicked1(Invoice)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
                                     Print Penagihan
                                 </button>
-                                <button (click)="onItemClicked2(Pack)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPack'">
+                                <button (click)="onItemClicked2(Payment)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
                                     Print Pembayaran
                                 </button>
                             </div>
@@ -41,7 +48,7 @@ declare let kendo;
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regArea'">
+                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -242,7 +249,7 @@ declare let kendo;
                         <!-- /Content List -->
                         
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPack'">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInvoice'">
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -449,7 +456,7 @@ declare let kendo;
                         <!-- /Content Print -->
 
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInst'">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPayment'">
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
@@ -643,14 +650,18 @@ declare let kendo;
 })
 export class ContentDetailBillingComponent implements OnInit {
 
-    public clickedItem = {name: "regArea"};
+    public clickedItem = {name: "regBill"};
 
-    onItemClicked1(Area) {
-        this.clickedItem = {name: "regPack"};
+    onItemClicked0(Bill) {
+        this.clickedItem = {name: "regBill"};
     }
 
-    onItemClicked2(Pack) {
-        this.clickedItem = {name: "regInst"};
+    onItemClicked1(Invoice) {
+        this.clickedItem = {name: "regInvoice"};
+    }
+
+    onItemClicked2(Payment) {
+        this.clickedItem = {name: "regPayment"};
     }
 
     // Link to our api, pointing to localhost
