@@ -26,21 +26,29 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['Billing']" class="btn btn-default billInfoBack" type="button">
+                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regBill'">
                                     BACK
                                 </a>
-                                <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-left:5px solid #F0F0F0;">
-                                    Print Pembayaran
+                                <button (click)="onItemClicked0(Bill)" onclick="printPenagihan()" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regInvoice'">
+                                    BACK
                                 </button>
-                                <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" data-toggle="modal" style="float:right;border-right:5px solid #F0F0F0;">
+                                <button (click)="onItemClicked1(Inovice)" onclick="printPembayaran()" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regPayment'">
+                                    BACK
+                                </button>
+                                
+                                
+                                <button (click)="onItemClicked1(Invoice)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
                                     Print Penagihan
+                                </button>
+                                <button (click)="onItemClicked2(Payment)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
+                                    Print Pembayaran
                                 </button>
                             </div>
                         </div>
                         <!-- /Row Button -->
 
                         <!-- Content List -->
-                        <div class="row rowBillInfoContList">
+                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -239,11 +247,9 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-
-                        <br>
-
+                        
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInvoice'">
                            <div id="printPenagihan" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width:100%;">
@@ -352,7 +358,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
-                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level {{ bills.namepack }} Package (Internet)</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>{{ bills.pricepack }}</span>
@@ -449,12 +455,8 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
 
-                        <br>
-                            <h3 class="text-center">PRINT PAYMENT</h3>
-                        <br>
-
                         <!-- Content Print -->
-                        <div class="print" style="width: 100%;">
+                        <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regPayment'">
                            <div id="printPembayaran" style="width: 100%;">
                               <!-- Content List -->
                               <div id="body" class="container" style="background-color: #ffffff;padding: 40px 40px; color: #000; font-weight:300; width: 100%;">
@@ -475,7 +477,7 @@ declare let kendo;
                                        <div class="row" style="margin-bottom: 30px;">
                                           <div class="col-sm-12" >
                                              <div class="col-sm-12 text-center" style="padding: 5px;background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);">
-                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI TAGIHAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; BILLING INFORMATION</i></span>
+                                                <span style="color: #FFF; font-size: 22px; font-weight: 700;">INFORMASI PEMBAYARAN <i style="opacity: 0.5;"> &nbsp; / &nbsp; PAYMENT INFORMATION</i></span>
                                              </div>
                                           </div>
                                        </div>
@@ -563,7 +565,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
-                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level 3 Package (Internet)</i></span>
+                                                   <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level {{ bills.namepack }} Package (Internet)</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>{{ bills.pricepack }}</span>
@@ -637,8 +639,6 @@ declare let kendo;
                         </div>
                         <!-- /Content Print -->
 
-
-
                     </div>
                 </div>
             </div>
@@ -649,6 +649,20 @@ declare let kendo;
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailBillingComponent implements OnInit {
+
+    public clickedItem = {name: "regBill"};
+
+    onItemClicked0(Bill) {
+        this.clickedItem = {name: "regBill"};
+    }
+
+    onItemClicked1(Invoice) {
+        this.clickedItem = {name: "regInvoice"};
+    }
+
+    onItemClicked2(Payment) {
+        this.clickedItem = {name: "regPayment"};
+    }
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
