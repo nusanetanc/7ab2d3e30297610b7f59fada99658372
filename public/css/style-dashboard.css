@@ -154,6 +154,7 @@ img.img-nav-profile {
     .nav-name {
         color: #FFF;
         float: right;
+        right: 0;
         font-size: 14px;
     }
 
