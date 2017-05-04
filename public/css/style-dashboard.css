@@ -145,6 +145,13 @@ img.img-nav-profile {
     width: 100%;
 }
 
+@media only screen and (max-width: 767px) {
+    img.img-nav-profile {
+        border-radius: 50%;
+        width: 70%;
+    }
+}
+
 .nav-name {
     color: #FFF;
     font-size: 14px;
