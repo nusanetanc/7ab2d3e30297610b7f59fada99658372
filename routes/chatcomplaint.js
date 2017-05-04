@@ -16,8 +16,13 @@ router.get('/listchat', function(req, res, next) {
 
 router.get('/chat/:complaint', function(req, res, next) {
     Chat.find({complaintId: req.params.complaint}, function(err, chats) {
-        Emp.findById(chats.emp, function(err, emps) {
-            res.json({emp: emps.name});
+        Sub.findById(chats.sub, function(err, subs) {
+            res.json({
+                message: chats.message,
+                date: chats.date,
+                complaintId: chats.complaintId,
+                sub: subs.name,
+            });
         });
     });
 });
