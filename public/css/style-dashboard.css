@@ -1232,10 +1232,15 @@ button.active{
 
 .dropdown:hover .dropdown-content {
     display: block;
-    right: 0;
 }
 
 .dropdown:hover .buttonDrop {
     background-color: #E2E2E2;
+}
+
+@media (min-width: 767px){
+    .dropdown:hover .dropdown-content {
+        right: 0;
+    }
 }
 /*--- /Dropdown ---*/
