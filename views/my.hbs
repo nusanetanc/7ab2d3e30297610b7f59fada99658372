@@ -64,24 +64,36 @@
     System.import('boot')
             .then(null, console.error.bind(console));
 </script>
+
 <script>
+
+    var todaysDate = new Date();
+    document = todaysDate.toDateString();
+
     var printPenagihan = function() {
 
         kendo.drawing.drawDOM($("#printPenagihan")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "invoice.pdf");
+            kendo.drawing.pdf.saveAs(group, "Invoice" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
     }
+
 </script>
 <script>
+
+    var todaysDate = new Date();
+    document = todaysDate.toDateString();
+
     var printPembayaran = function() {
 
         kendo.drawing.drawDOM($("#printPembayaran")).then(function(group) {
-            kendo.drawing.pdf.saveAs(group, "invoice.pdf");
+            kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
     }
+
 </script>
+
 <!-- Collaps JS -->
 <script type="text/javascript">
   /*Menu-toggle*/
