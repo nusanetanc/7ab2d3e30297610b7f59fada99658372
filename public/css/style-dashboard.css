@@ -150,6 +150,11 @@ img.img-nav-profile {
     font-size: 14px;
 }
 
+.nav-tit {
+    color: #FFF;
+    font-size: 12px;
+}
+
 .sidebar-footer {
     bottom: 0px;
     position: absolute;
