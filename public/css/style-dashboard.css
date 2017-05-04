@@ -224,6 +224,7 @@ hr {
 
 .content-header > h3 {
     color: #666C6E;
+    font-weight: 300;
     margin-left: 20px;
     margin-top: 20px;
     text-decoration: none;
