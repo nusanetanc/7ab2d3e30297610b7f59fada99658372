@@ -20,15 +20,14 @@ import { Menu } from './menu';
                               <div class="col-sm-8" style="padding: 10px;">
                                  <div class="row dropdown" style="padding: 5px 0px;">
                                     <div class="col-sm-9">
-                                       <a [routerLink]="['Account']" class="nav-name">{{ subs.name }}</a>
+                                       <span class="nav-name">{{ subs.name }}</span>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
                                     </div>
-                                    <div class="dropdown-content">
-                                        <a (click)="sortByName()">NAME</a>
-                                        <a (click)="sortByDep()">DEPARMENT</a>
-                                        <a (click)="sortByTit()">TITLE JOB</a>
+                                    <div class="dropdown-content" style="margin-top: 30px;">
+                                        <a [routerLink]="['Account']">Account</a>
+                                        <a >Logout</a>
                                     </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
