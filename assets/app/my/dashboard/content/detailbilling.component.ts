@@ -26,7 +26,7 @@ declare let kendo;
                         <!-- Row Button -->
                         <div class="row rowButton">
                             <div class="col-sm-12">
-                                <a [routerLink]="['AllBill']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regBill'">
+                                <a [routerLink]="['Billing']" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regBill'">
                                     BACK
                                 </a>
                                 <button (click)="onItemClicked0(Bill)" onclick="printPenagihan()" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regInvoice'">
