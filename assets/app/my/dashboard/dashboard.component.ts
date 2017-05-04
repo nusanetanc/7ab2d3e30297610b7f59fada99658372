@@ -25,7 +25,7 @@ import { Menu } from './menu';
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
                                     </div>
-                                    <div class="dropdown-content" style="margin-top: 10px;">
+                                    <div class="dropdown-content" style="margin-top: 20px;">
                                         <a [routerLink]="['Account']">Account</a>
                                         <a >Logout</a>
                                     </div>
