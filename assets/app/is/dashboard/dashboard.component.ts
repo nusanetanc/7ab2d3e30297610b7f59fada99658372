@@ -14,7 +14,7 @@ import {Menu} from "./menu";
             <div id="sidebar-wrapper">
                 <nav id="spy">
                     <div class="sidebar-brand">
-                        <div class="row" style="padding: 10px; color: #FFFFFF; margin-right: none;">
+                        <div class="row" style="padding: 10px; color: #FFFFFF; margin-right: 0px;">
                            <div class="col-sm-12">
                               <div class="col-sm-4" style="padding: 10px;">
                                  <img class="img-nav-profile" src="./images/ava.png" alt="ava">
