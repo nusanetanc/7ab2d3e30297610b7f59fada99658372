@@ -21,16 +21,16 @@ import { Menu } from './menu';
                     <ul class="sidebar-nav nav">
 
                         <li class="firstLiSidebar">
-                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <strong>DASHBOARD</strong></a>
+                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <strong>BILLING</strong></a>
+                          <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">BILLING</span></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <strong>REPORTS</strong></a>
+                          <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
                         </li>
                         <li>
-                          <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <strong>INFORMATION</strong></a>
+                          <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
                         </li>
 
                     </ul>
