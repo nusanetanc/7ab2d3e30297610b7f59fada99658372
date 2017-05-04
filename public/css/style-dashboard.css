@@ -137,39 +137,17 @@ hr {
 }
 
 .sidebar-brand {
-    line-height: 40px;
-    text-indent: 20px;
-}
-
-.sidebar-brand > a {
-    background: none;
-    color: #FFF;
-    text-decoration: none;
-}
-
-.sidebar-brand > a:hover {
-    background: none;
-}
-
-.title {
     background-color: #FC592E;
-    height: 100px;
 }
 
-.sidebar-brand > .title > img {
+img.img-nav-profile {
     border-radius: 50%;
-    float: left;
-    height: 60px;
-    margin: 20px 0px 10px 20px;
-    width: 60px;
+    width: 100%;
 }
 
-.sidebar-brand > .title > a {
+.nav-name {
     color: #FFF;
-    float: left;
     font-size: 14px;
-    margin-left: -5px;
-    text-decoration: none;
 }
 
 .sidebar-footer {
