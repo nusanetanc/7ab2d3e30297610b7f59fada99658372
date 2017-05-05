@@ -140,7 +140,7 @@ import {Streetname} from "./street_name";
                 <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
+                <button (click)="onItemClicked0(early)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
                     BACK
                 </button>
                 <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
@@ -164,6 +164,9 @@ export class SignupComponent implements OnInit{
 
 public clickedItem = {name: "regArea"};
 
+onItemClicked0(early) {
+   this.clickedItem = {name: "regArea"};
+}
 onItemClicked1(Area) {
    this.clickedItem = {name: "regInst"};
 }
