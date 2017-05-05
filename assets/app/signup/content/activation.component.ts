@@ -44,9 +44,6 @@ API = 'http://202.162.207.164:3000';
               })
       }
   Activation(password, repassword) {
-  if(${password} =! ${repassword}){
-    alert('Password Not Match');
-  }
       var body = `password=${password}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -56,7 +53,6 @@ API = 'http://202.162.207.164:3000';
                   headers: headers
               })
           .subscribe(data => {
-          alert('test');
               this.getSubs();
           }, error => {
               console.log(JSON.stringify(error.json()));
