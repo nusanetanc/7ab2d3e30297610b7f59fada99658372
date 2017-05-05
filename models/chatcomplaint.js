@@ -8,6 +8,8 @@ var ChatSchema   = new Schema({
   date: String,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'},
   emp: {type: Schema.Types.ObjectId, ref: 'Emp'},
+  subname: String,
+  empname: String,
   complaintId: String,
 });
 
