@@ -25,7 +25,7 @@ import { Information } from './allinformation';
                         NEW INFORMATION
                     </a>
                     <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down right"></a>
-                    <a (click)="sortDate()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <a (click)="sortDate()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         DATE
                     </a>
                 </div>
