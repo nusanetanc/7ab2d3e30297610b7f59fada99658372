@@ -39,27 +39,43 @@ import { Menu } from './menu';
                            </div>
                         </div>
                     </div>
-                    <ul class="sidebar-nav nav">
+                    <div class="row" style="margin-right: 0px;">
+                        <div class="col-sm-12">
+                            <ul class="sidebar-nav nav" style="margin-right: -15px">
 
-                        <li class="firstLiSidebar">
-                          <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
-                        </li>
-                        <li>
-                          <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">BILLING</span></a>
-                        </li>
-                        <li>
-                          <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
-                        </li>
-                        <li>
-                          <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
-                        </li>
+                                <li class="firstLiSidebar">
+                                  <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                  <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">BILLING</span></a>
+                                </li>
+                                <li>
+                                  <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
+                                </li>
+                                <li>
+                                  <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
+                                </li>
 
-                    </ul>
-                    <div class="sidebar-footer">
-                        <div>
-                            <img src="./images/groovy-grayscale.png" alt="ava">
-                            <a href="">Privacy</a>
-                            <a href="">Terms</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row sidebar-footer" style="margin-right: 0px; bottom: 0px; position: absolute;">
+                        <div class="col-sm-12">
+                            <div class="row" style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;">
+                                <div class="col-sm-6 col-xs-6" style="padding: 15px 25px;">
+                                    <img src="images/groovy-grayscale.png" alt="ava" style="width: 100%;">
+                                </div>
+                                <div class="col-sm-6 col-xs-6" style="padding: 15px 25px 15px 0px;text-decoration: none;">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="" style="color: #FFF;font-weight: 300;">Privacy</a>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="" style="color: #FFF;font-weight: 300;">Terms</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>

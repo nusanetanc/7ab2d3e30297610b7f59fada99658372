@@ -16,21 +16,25 @@ import {Menu} from "./menu";
                     <div class="sidebar-brand">
                         <div class="row" style="padding: 10px; color: #FFFFFF; margin-right: 0px;">
                            <div class="col-sm-12">
-                              <div class="col-sm-4" style="padding: 10px;">
+                              <div class="col-sm-4 col-xs-6" style="padding: 10px;">
                                  <img class="img-nav-profile" src="./images/ava.png" alt="ava">
                               </div>
-                              <div class="col-sm-8" style="padding: 10px;">
-                                 <div class="row" style="padding: 5px 0px;">
+                              <div class="col-sm-8 col-xs-6" style="padding: 10px;">
+                                 <div class="row dropdown" style="padding: 5px 0px;">
                                     <div class="col-sm-9">
-                                       <a class="nav-name"></a>
+                                       <span class="nav-name"></span>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
                                     </div>
+                                    <div class="dropdown-content" style="margin-top: 20px;">
+                                        <a >Account</a>
+                                        <a >Logout</a>
+                                    </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-12">
-                                       <span class="nav-tit"></span>
+                                       <span class="nav-tit">Subscriber - Level </span>
                                     </div>
                                  </div>
                               </div>
@@ -88,7 +92,7 @@ import {Menu} from "./menu";
                                 </div>
                             </div>
                         </div>
-                  </div>
+                    </div>
                 </nav>
             </div>
             <!-- /Sidebar -->
