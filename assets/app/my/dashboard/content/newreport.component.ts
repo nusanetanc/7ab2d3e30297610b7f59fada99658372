@@ -86,8 +86,8 @@ export class ContentNewReportComponent implements OnInit {
     today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subs._id}&dateopen=${date}`;
-        var body2 = `sub=${subs._id}&date=${date}&message=${message}&subname${subs.name}`;
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}`;
+        var body2 = `sub=${subs}&date=${date}&message=${message}&subname${subs}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
