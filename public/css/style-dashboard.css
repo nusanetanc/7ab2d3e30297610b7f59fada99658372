@@ -155,10 +155,10 @@ img.img-nav-profile {
     font-size: 12px;
 }
 
-.sidebar-footer {
+/*.sidebar-footer {
     bottom: 0px;
     position: absolute;
-}
+}*/
 
 @media only screen and (max-height: 543px) {
     .sidebar-footer {
@@ -167,7 +167,7 @@ img.img-nav-profile {
     }
 }
 
-.sidebar-footer > div {
+/*.sidebar-footer > div {
     border-top: 0.3px solid #B3B3B3;
     height: 60px;
     width: 250px;
@@ -189,7 +189,7 @@ img.img-nav-profile {
     margin-top: 25px;
     font-size: 12px;
     text-decoration: none;
-}
+}*/
 
 /*--- /Sidebar ---*/
 

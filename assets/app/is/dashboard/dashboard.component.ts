@@ -16,61 +16,81 @@ import {Menu} from "./menu";
                     <div class="sidebar-brand">
                         <div class="row" style="padding: 10px; color: #FFFFFF; margin-right: 0px;">
                            <div class="col-sm-12">
-                              <div class="col-sm-4" style="padding: 10px;">
+                              <div class="col-sm-4 col-xs-6" style="padding: 10px;">
                                  <img class="img-nav-profile" src="./images/ava.png" alt="ava">
                               </div>
-                              <div class="col-sm-8" style="padding: 10px;">
-                                 <div class="row" style="padding: 5px 0px;">
+                              <div class="col-sm-8 col-xs-6" style="padding: 10px;">
+                                 <div class="row dropdown" style="padding: 5px 0px;">
                                     <div class="col-sm-9">
-                                       <a class="nav-name"></a>
+                                       <span class="nav-name">Purwanto</span>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
                                     </div>
+                                    <div class="dropdown-content" style="margin-top: 20px;">
+                                        <a >Account</a>
+                                        <a >Logout</a>
+                                    </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-12">
-                                       <span class="nav-tit"></span>
+                                       <span class="nav-tit">ANC </span>
                                     </div>
                                  </div>
                               </div>
                            </div>
                         </div>
                     </div>
-                    <ul class="sidebar-nav nav">
-                        <li class="firstLiSidebar">
-                            <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">EMPLOYEE</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
-                        </li>
-                        <li>
-                            <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
-                        </li>
-                    </ul>
-                    <div class="sidebar-footer">
-                        <div>
-                            <img src="./images/groovy-grayscale.png" alt="ava">
-                            <a href="">Privacy</a>
-                            <a href="">Terms</a>
+                    <div class="row" style="margin-right: 0px;">
+                        <div class="col-sm-12">
+                            <ul class="sidebar-nav nav" style="margin-right: -15px">
+                                <li class="firstLiSidebar">
+                                    <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">EMPLOYEE</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row sidebar-footer" style="margin-right: 0px; bottom: 0px; position: absolute;">
+                        <div class="col-sm-12">
+                            <div class="row" style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;">
+                                <div class="col-sm-6 col-xs-6" style="padding: 15px 25px;">
+                                    <img src="images/groovy-grayscale.png" alt="ava" style="width: 100%;">
+                                </div>
+                                <div class="col-sm-6 col-xs-6" style="padding: 15px 25px 15px 0px;text-decoration: none;">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="" style="color: #FFF;font-weight: 300;">Privacy</a>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6">
+                                            <a href="" style="color: #FFF;font-weight: 300;">Terms</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>
