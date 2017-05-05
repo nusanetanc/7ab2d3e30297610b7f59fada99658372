@@ -115,7 +115,7 @@ import {Streetname} from "./street_name";
                       <input #subphone id="subphone" type="text" class="form-control" placeholder="Handphone">
                       <input #subemail id="subemail" type="email" class="form-control" placeholder="Email">
                       <input #subdatebirth id="subdatebirth" type="date" class="form-control inputForm" placeholder="Date of Birth">
-                      <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="NIK">
+                      <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Id Card Number">
                       <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                           CANCEL
                       </button>
