@@ -22,7 +22,7 @@ import {Menu} from "./menu";
                               <div class="col-sm-8" style="padding: 10px;">
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-9">
-                                       <a [routerLink]="['Account']" class="nav-name">{{ subs.name }}</a>
+                                       <a class="nav-name">{{ subs.name }}</a>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
