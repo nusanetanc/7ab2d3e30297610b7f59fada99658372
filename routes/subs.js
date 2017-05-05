@@ -190,7 +190,7 @@ router.post('/addsub', function(req, res, next) {
     sub.timeinst= req.body.timeinst;
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
-    sub.status= req.body.status;
+    sub.status= "Registration";
     sub.regisby= req.body.regisby;
     sub.regisref= req.body.regisref;
     sub.groovyid= req.body.groovyid;
@@ -203,7 +203,7 @@ router.post('/addsub', function(req, res, next) {
       res.json({ message: 'Data created!' });
       var mailOptions={
       to: req.body.email,
-      subject : "Activation Your Registrastion",
+      subject : "Groovy - Activate Your Account",
       html : `<body style="font-family:Arial;font-size:15px;">
         <div style="max-width:600px;margin:0 auto;margin-top:30px;">
             <div style="height:76px;width:100%;background-color:#fff;">
