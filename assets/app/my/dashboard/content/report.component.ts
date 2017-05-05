@@ -55,6 +55,7 @@ import { Complaint } from './complaints';
 export class ContentReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+    session = this.getAcountSub()._id;
 
   complaints: any[] = [];
   subs: any[] = [];
@@ -67,7 +68,7 @@ export class ContentReportComponent {
   }
 
 getAllComplaint() {
-  this.http.get(`${this.API}/${this.subs['_id']}`)
+  this.http.get(`${this.API}/complaint/${this.session}`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
