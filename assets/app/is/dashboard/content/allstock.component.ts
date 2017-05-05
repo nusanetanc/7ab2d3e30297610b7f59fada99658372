@@ -60,7 +60,7 @@ export class ContentAllStocksComponent {
     }
 
     sortRev(){
-        this.emps.sort( function(name1, name2) {
+        this.goods.sort( function(name1, name2) {
             if ( name1.name < name2.name ){
                 return 1;
             }else if( name1.name > name2.name ){
