@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -21,34 +21,34 @@ import 'rxjs/add/operator/map';
 `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ActivationComponent{
+export class ActivationComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
 cities: City[];
   ngOnInit() {
-      this.getAllCity();
+      this.getSubs();
   }
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
   // Get all City from the API
-      getAllCity() {
-          this.http.get(`${this.API}/city/listcity`)
+      getSubs() {
+          this.http.get(`${this.API}/subscribe/activationid/${this._routeParams.get('id')}`)
               .map(res => res.json())
-              .subscribe(cities => {
-                  this.cities = cities
+              .subscribe(subs => {
+                  this.subs = subs
               })
       }
-  addCity(cityname) {
+  Activation(password, repassword) {
 
-      var body = `name=${cityname}`;
+      var body = `password=${password}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http
-          .post(`${this.API}/city/addcity`,
+          .put(`${this.API}/subscribe/activationemail/${this._routeParams.get('id')}`,
               body, {
                   headers: headers
               })
           .subscribe(data => {
-              alert('Add City Success');
-              this.getAllCity();
+          alert('test');
+              this.getSubs();
           }, error => {
               console.log(JSON.stringify(error.json()));
           });
