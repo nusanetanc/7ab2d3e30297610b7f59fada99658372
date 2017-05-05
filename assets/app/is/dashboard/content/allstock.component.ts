@@ -20,19 +20,13 @@ import { Http } from 'angular2/http';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
         <div class="row marginB20 marginR0">
             <div class="col-sm-12">
-               <a [routerLink]="['AddStock']" class="btn btn-default buttonOrange">
+                <a [routerLink]="['AddStock']" class="btn btn-default buttonOrange">
                     ADD NEW STOCK
                 </a>
-                <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                <div class="dropdown right">
-                    <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        NAME
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">DATE</a></li>
-                        <li><a href="#">ID</a></li>
-                    </ul>
-                </div>
+                <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    NAME
+                </button>
             </div>
         </div>
             <div class="row">
@@ -59,6 +53,18 @@ export class ContentAllStocksComponent {
                 return -1;
             }else if( name1.name > name2.name ){
                 return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.goods.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return 1;
+            }else if( name1.name > name2.name ){
+                return -1;
             }else{
                 return 0;
             }

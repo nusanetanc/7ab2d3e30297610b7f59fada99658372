@@ -24,16 +24,10 @@ import { Information } from './allinformation';
                     <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
                         NEW INFORMATION
                     </a>
-                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                    <div class="dropdown right">
-                        <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            DATE
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">NAME</a></li>
-                            <li><a href="#">ID</a></li>
-                        </ul>
-                    </div>
+                    <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down right"></a>
+                    <a (click)="sortDate()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        DATE
+                    </a>
                 </div>
             </div>
             <div class="row">
@@ -53,6 +47,31 @@ import { Information } from './allinformation';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllInformationComponent {
+
+    sortByDate(){
+        this.informations.sort( function(date1, date2) {
+            if ( date1.date < date2.date ){
+                return -1;
+            }else if( date1.date > date2.date ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.informations.sort( function(date1, date2) {
+            if ( date1.date < date2.date ){
+                return 1;
+            }else if( date1.date > date2.date ){
+                return -1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
 
