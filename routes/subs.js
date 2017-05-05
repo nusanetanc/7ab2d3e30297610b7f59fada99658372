@@ -297,6 +297,14 @@ router.put('/putsub/:id', function(req, res, next) {
         });
 });
 
+/* GET detail sub. */
+router.get('/activationid/:id', function(req, res, next) {
+  Sub.findOne({codeactivation: req.params.id}, function(err, subs) {
+  console.log( subs );
+  res.json(subs);
+});
+});
+
 router.put('/activationemail/:id', function(req, res, next) {
 
         Sub.findOne({codeactivation: req.params.id}, function(err, sub) {

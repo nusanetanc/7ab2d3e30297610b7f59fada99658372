@@ -22,6 +22,36 @@ import 'rxjs/add/operator/map';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ActivationComponent{
+API = 'http://202.162.207.164:3000';
+cities: City[];
+  ngOnInit() {
+      this.getAllCity();
+  }
+  constructor(private http: Http) {}
+  // Get all City from the API
+      getAllCity() {
+          this.http.get(`${this.API}/city/listcity`)
+              .map(res => res.json())
+              .subscribe(cities => {
+                  this.cities = cities
+              })
+      }
+  addCity(cityname) {
 
+      var body = `name=${cityname}`;
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http
+          .post(`${this.API}/city/addcity`,
+              body, {
+                  headers: headers
+              })
+          .subscribe(data => {
+              alert('Add City Success');
+              this.getAllCity();
+          }, error => {
+              console.log(JSON.stringify(error.json()));
+          });
+  }
 
 }
