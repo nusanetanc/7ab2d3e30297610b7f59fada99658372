@@ -39,7 +39,7 @@ cities: City[];
   Activation(password, repassword) {
   if(${password} =! ${repassword}){
     alert('Password Not Match')
-  }
+  } else {
       var body = `password=${password}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -55,5 +55,5 @@ cities: City[];
               console.log(JSON.stringify(error.json()));
           });
   }
-
+}
 }
