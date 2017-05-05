@@ -25,11 +25,9 @@ import { Sub } from './subs';
                       NEW SUBSCRIBER
                   </a>
                   <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                  
-                      <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          NAME
-                      </button>
-                      
+                  <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    NAME
+                  </button>     
               </div>
           </div>
           <div class="row">
