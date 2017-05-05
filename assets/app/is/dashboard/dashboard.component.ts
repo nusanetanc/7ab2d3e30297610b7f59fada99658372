@@ -22,7 +22,7 @@ import {Menu} from "./menu";
                               <div class="col-sm-8 col-xs-6" style="padding: 10px;">
                                  <div class="row dropdown" style="padding: 5px 0px;">
                                     <div class="col-sm-9">
-                                       <span class="nav-name"></span>
+                                       <span class="nav-name">Purwanto</span>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
@@ -34,7 +34,7 @@ import {Menu} from "./menu";
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-12">
-                                       <span class="nav-tit">Subscriber - Level </span>
+                                       <span class="nav-tit">ANC </span>
                                     </div>
                                  </div>
                               </div>
