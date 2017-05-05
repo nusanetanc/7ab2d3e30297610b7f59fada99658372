@@ -21,15 +21,9 @@ import {Billing} from './allbill';
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                    <div class="dropdown right">
-                        <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            NAME
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">NAME</a></li>
-                            <li><a href="#">ID</a></li>
-                        </ul>
-                    </div>
+                    <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        NAME
+                    </button>
                 </div>
             </div>
             <div class="row">
