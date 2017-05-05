@@ -72,7 +72,7 @@ import {Menu} from "./menu";
                     </div>
                     <div class="row sidebar-footer" style="margin-right: 0px; bottom: 0px; position: absolute;">
                         <div class="col-sm-12">
-                            <div class="row" style="border-top: 0.3px solid #B3B3B3;margin-right:15px;">
+                            <div class="row" style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;">
                                 <div class="col-sm-6 col-xs-6" style="padding: 15px 25px;">
                                     <img src="images/groovy-grayscale.png" alt="ava" style="width: 100%;">
                                 </div>
