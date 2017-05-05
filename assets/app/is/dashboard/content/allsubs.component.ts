@@ -24,7 +24,7 @@ import { Sub } from './subs';
                   <a [routerLink]="['AddSubs']" class="btn btn-default buttonOrange">
                       NEW SUBSCRIBER
                   </a>
-                  <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                  <a (click)="sortRev()" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     NAME
                   </button>     
@@ -56,6 +56,18 @@ export class ContentAllSubsComponent {
                 return -1;
             }else if( name1.name > name2.name ){
                 return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.subs.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return 1;
+            }else if( name1.name > name2.name ){
+                return -1;
             }else{
                 return 0;
             }
