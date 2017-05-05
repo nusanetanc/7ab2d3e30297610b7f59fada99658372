@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
@@ -55,20 +55,31 @@ import { Complaint } from './complaints';
 export class ContentReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+    session = subs._id;
 
   complaints: any[] = [];
+  subs: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
+    this.getAcountSub();
   }
 
 getAllComplaint() {
-  this.http.get(`${this.API}/complaint/listcomplaint`)
+  this.http.get(`${this.API}/${this.session}`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
     })
 }
+
+    getAcountSub() {
+        this.http.get(`${this.API}/subscribe/detailsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
 }
