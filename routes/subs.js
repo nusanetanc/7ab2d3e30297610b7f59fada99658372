@@ -267,6 +267,24 @@ router.put('/putsub/:id', function(req, res, next) {
             if (err)
                 res.send(err);
                 sub.subid= req.body.subid;
+                sub.name= req.body.name;
+                sub.email= req.body.email;
+                sub.password= passwordHash.generate(req.body.password);
+                sub.phone= req.body.phone;
+                sub.packlev= req.body.packlev;
+                sub.packprice= req.body.packprice;
+                sub.dateinst= req.body.dateinst;
+                sub.timeinst= req.body.timeinst;
+                sub.cardid= req.body.cardid;
+                sub.nova= req.body.nova;
+                sub.status= req.body.status;
+                sub.regisby= req.body.regisby;
+                sub.regisref= req.body.regisref;
+                sub.groovyid= req.body.groovyid;
+                sub.idnumber= req.body.idnumber;
+                sub.datebirth= req.body.datebirth;
+                sub.activedate= req.body.activedate;
+                sub.promo= req.body.promo;
               if (err)
                 res.send(err);
 
@@ -278,6 +296,27 @@ router.put('/putsub/:id', function(req, res, next) {
             });
         });
 });
+
+router.put('/activationemail/:id', function(req, res, next) {
+
+        Sub.findOne({codeactivation: req.params.id}, function(err, sub) {
+
+            if (err)
+                res.send(err);
+                sub.status= 'Email Activation';
+                sub.password= passwordHash.generate(req.body.password);
+              if (err)
+                res.send(err);
+
+            sub.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 
 router.delete('/delsub/:id', function(req, res, next) {
         Sub.remove({
