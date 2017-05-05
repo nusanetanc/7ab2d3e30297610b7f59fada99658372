@@ -11,10 +11,10 @@ import 'rxjs/add/operator/map';
         <h4>Enter new password for your Groovy Account</h4>
         <div class="form">
             <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="New Password">
-                <input type="password" class="form-control" id="password" placeholder="Re-Type Password">
+                <input type="password" class="form-control" id="password" #password placeholder="New Password">
+                <input type="password" class="form-control" id="repassword" #repassword placeholder="Re-Type Password">
             </div>
-            <button href="#" class="btn button-submit">SUBMIT</button>
+            <button type="submit" (click)="Activation(password.value, repassword.value)" class="btn button-submit">SUBMIT</button>
         </div>
     </div>
 </div>
