@@ -24,8 +24,8 @@ import { Information } from './allinformation';
                     <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
                         NEW INFORMATION
                     </a>
-                    <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
-                    <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down right"></a>
+                    <a (click)="sortDate()" class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         DATE
                     </a>
                 </div>
@@ -49,11 +49,23 @@ import { Information } from './allinformation';
 export class ContentAllInformationComponent {
 
     sortByDate(){
-        this.informations.sort( function(info1, info2) {
-            if ( info1.name < info2.name ){
+        this.informations.sort( function(date1, date2) {
+            if ( date1.date < date2.date ){
                 return -1;
-            }else if( info1.name > info2.name ){
+            }else if( date1.date > date2.date ){
                 return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.informations.sort( function(date1, date2) {
+            if ( date1.date < date2.date ){
+                return 1;
+            }else if( date1.date > date2.date ){
+                return -1;
             }else{
                 return 0;
             }
