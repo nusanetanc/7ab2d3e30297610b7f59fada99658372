@@ -55,7 +55,7 @@ import { Complaint } from './complaints';
 export class ContentReportComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-    session = this.getAcountSub()._id;
+    session =;
 
   complaints: any[] = [];
   subs: any[] = [];
@@ -68,18 +68,18 @@ export class ContentReportComponent {
   }
 
 getAllComplaint() {
-  this.http.get(`${this.API}/complaint/${this.session}`)
+  this.http.get(`${this.API}/complaint/listcomplaint`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
     })
 }
 
-    getAcountSub() {
-        this.http.get(`${this.API}/subscribe/detailsub`)
-            .map(res => res.json())
-            .subscribe(subs => {
-                this.subs = subs
-            })
+getAcountSub() {
+    this.http.get(`${this.API}/subscribe/detailsub`)
+        .map(res => res.json())
+        .subscribe(subs => {
+            this.subs = subs
+        })
     }
 }
