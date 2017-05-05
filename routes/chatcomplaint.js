@@ -16,7 +16,8 @@ router.get('/listchat', function(req, res, next) {
 
 router.get('/chat/:complaint', function(req, res, next) {
     Chat.find({complaintId: req.params.complaint}, function(err, chats) {
-            res.json(chats);
+        console.log( chats );
+        res.json(chats);
     });
 });
 
