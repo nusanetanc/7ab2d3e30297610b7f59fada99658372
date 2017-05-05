@@ -15,15 +15,8 @@ router.get('/listchat', function(req, res, next) {
 
 
 router.get('/chat/:complaint', function(req, res, next) {
-    Chat.findOne({complaintId: req.params.complaint}, function(err, chats) {
-        Sub.findById(chats.sub, function(err, subs) {
-            res.json({
-                message: chats.message,
-                date: chats.date,
-                complaintId: chats.complaintId,
-                sub: subs.name,
-            });
-        });
+    Chat.find({complaintId: req.params.complaint}, function(err, chats) {
+            res.json(chats);
     });
 });
 
@@ -35,6 +28,8 @@ router.post('/addchat', function(req, res, next) {
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
+    chat.subname= req.body.subname;
+    chat.empname= req.body.empname;
     chat.complaintId= req.body.complaintId;
 
     chat.save(function(err) {
@@ -55,6 +50,8 @@ router.put('/putchat/:id', function(req, res, next) {
                 chat.date= req.body.date;
                 chat.sub= req.body.sub;
                 chat.emp= req.body.emp;
+                chat.subname= req.body.subname;
+                chat.empname= req.body.empname;
                 chat.complaintId= req.body.complaintId;
 
               if (err)

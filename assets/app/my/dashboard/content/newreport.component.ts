@@ -45,7 +45,7 @@ import { Problem } from './problem';
                                 </form>
                                 <textarea #message class="input width100" name="message" rows="10" placeholder="*note"></textarea>
                                 <input type="hidden" value="{{today | date:'medium'}}" #date class="form-control inputForm" />
-                                <a (click)="addReport(category.value, subcategory.value, subs._id, date.value, message.value)" class="btn btn-default">
+                                <a (click)="addReport(category.value, subcategory.value, subs._id, date.value, message.value, subs.name)" class="btn btn-default">
                                     SEND
                                 </a>
                             </div>
@@ -86,8 +86,8 @@ export class ContentNewReportComponent implements OnInit {
     today : Date = new Date();
     // Add one person to the API
     addReport(category, subcategory, subs, date, message) {
-        var body = `category=${category}&subcategory=${subcategory}&sub=${subs}&dateopen=${date}`;
-        var body2 = `sub=${subs}&date=${date}&message=${message}`;
+        var body = `category=${category}&subcategory=${subcategory}&sub=${subs['_id']}&dateopen=${date}`;
+        var body2 = `sub=${subs['_id']}&date=${date}&message=${message}&subname${subs['name']}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
