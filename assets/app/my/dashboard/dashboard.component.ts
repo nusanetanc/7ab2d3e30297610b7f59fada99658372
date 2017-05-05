@@ -18,7 +18,7 @@ import { Menu } from './menu';
                                  <img class="img-nav-profile" src="./images/ava.png" alt="ava">
                               </div>
                               <div class="col-sm-8 col-xs-6" style="padding: 10px;">
-                                 <div class="row dropdown" style="padding: 5px 0px;">
+                                 <div class="row dropdown" style="padding: 3px 0px;">
                                     <div class="col-sm-9">
                                        <span class="nav-name">{{ subs.name }}</span>
                                     </div>
