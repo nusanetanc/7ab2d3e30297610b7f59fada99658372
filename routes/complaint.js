@@ -64,6 +64,8 @@ router.post('/addchat', function(req, res, next) {
     chat.date= req.body.date;
     chat.sub= req.body.sub;
     chat.emp= req.body.emp;
+    chat.subname= req.body.subname;
+    chat.empname= req.body.empname;
     chat.complaintId= id;
 
     chat.save(function(err) {
