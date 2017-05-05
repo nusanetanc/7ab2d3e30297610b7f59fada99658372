@@ -24,7 +24,7 @@ import { Sub } from './subs';
                   <a [routerLink]="['AddSubs']" class="btn btn-default buttonOrange">
                       NEW SUBSCRIBER
                   </a>
-                  <a (click)="sortRev()" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                  <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     NAME
                   </button>     
