@@ -27,8 +27,8 @@ import {Streetname} from "./street_name";
           </div>
           <div class="row" *ngIf="clickedItem.name == 'regArea'">
              <div class="col-md-4 col-md-offset-4">
-                <form #formCtrl="ngForm">
-                   <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm" ngControl="passwordCtrl" required>
+                <form>
+                   <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                    <option value="0">-- Select your city --</option>
                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                    </select><br/>
@@ -137,7 +137,7 @@ import {Streetname} from "./street_name";
           </div>
           <div class="row">
              <div class="col-md-4 col-md-offset-4">
-                <button [disabled]="!formCtrl.form.valid" (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
                 NEXT
                 </button>
                 <button (click)="onItemClicked0(early)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
