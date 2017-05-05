@@ -17,6 +17,10 @@ import 'rxjs/add/operator/map';
             <button type="submit" (click)="Activation(password.value, repassword.value)" class="btn button-submit">SUBMIT</button>
         </div>
     </div>
+    <div class="top-margin text-center" *ngIf="subs.status == 'Email Activation'">
+      <h4>You have successfully set your Groovy Password.</h4>
+      <h5>Please wait for our customer service to confirm your phone number</h5>
+    </div>
 </div>
 `,
     directives: [ROUTER_DIRECTIVES],
@@ -39,7 +43,7 @@ cities: City[];
   Activation(password, repassword) {
   if(${password} =! ${repassword}){
     alert('Password Not Match');
-  } if(${password} = ${repassword}) {
+  }
       var body = `password=${password}`;
       var headers = new Headers();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -55,5 +59,4 @@ cities: City[];
               console.log(JSON.stringify(error.json()));
           });
   }
-}
 }
