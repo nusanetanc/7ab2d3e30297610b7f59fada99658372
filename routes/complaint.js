@@ -14,10 +14,29 @@ router.get('/listcomplaint', function(req, res, next) {
 
 /* GET detail complaint. */
 router.get('/complaint/:id', function(req, res, next) {
-Complaint.find({sub: req.params.id}, function(err, complaints) {
-    console.log(complaints);
-    res.json(complaints);
+Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
+    Sub.findById(complaints.sub, function(err, subs) {
+        res.json({
+            _id: complaints._id,
+            complaintId: complaints.complaintId,
+            subject: complaints.subject,
+            category: complaints.category,
+            subcategory: complaints.subcategory,
+            dateopen: complaints.dateopen,
+            dateclose: complaints.dateclose,
+            status: complaints.status,
+            lastchat: complaints.lastchat,
+            subname: subs.name,
+        });
+    });
    });
+});
+
+router.get('/:id', function(req, res, next) {
+    Complaint.find({sub: req.params.id}, function(err, complaints) {
+        console.log(complaints);
+        res.json(complaints);
+    });
 });
 
 /* Add complaint */
