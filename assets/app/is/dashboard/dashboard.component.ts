@@ -83,10 +83,10 @@ import {Menu} from "./menu";
                                 <div class="col-sm-6 col-xs-6" style="padding: 15px 25px 15px 0px;text-decoration: none;">
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-6">
-                                            <a href="" style="color: #FFF;font-weight: 300;">Privacy</a>
+                                            <a href="http://www.groovy.id/privacy-policy" style="color: #FFF;font-weight: 300;">Privacy</a>
                                         </div>
                                         <div class="col-sm-6 col-xs-6">
-                                            <a href="" style="color: #FFF;font-weight: 300;">Terms</a>
+                                            <a href="http://www.groovy.id/terms-of-use" style="color: #FFF;font-weight: 300;">Terms</a>
                                         </div>
                                     </div>
                                 </div>
