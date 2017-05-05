@@ -24,7 +24,7 @@ import {Employee} from './employee';
                     <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange">
                         ADD NEW EMPLOYEE
                     </a>
-                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                    <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
                       <button class="buttonDrop buttonSort">SORT BY</button>
                       <div class="dropdown-content">
@@ -85,6 +85,18 @@ export class ContentAllEmployeeComponent {
                 return -1;
             }else if( tit1.titlejob > tit2.titlejob ){
                 return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.emps.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return 1;
+            }else if( name1.name > name2.name ){
+                return -1;
             }else{
                 return 0;
             }

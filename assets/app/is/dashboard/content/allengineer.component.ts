@@ -20,14 +20,14 @@ import {Employee} from './employee';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
+                    <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
-                        <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            NAME
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">ID</a></li>
-                        </ul>
+                      <button class="buttonDrop buttonSort">SORT BY</button>
+                      <div class="dropdown-content">
+                        <a (click)="sortByName()">NAME</a>
+                        <a (click)="sortByDep()">DEPARMENT</a>
+                        <a (click)="sortByTit()">TITLE JOB</a>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -48,6 +48,56 @@ import {Employee} from './employee';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllEngineerComponent {
+
+    // Sort By
+    sortByName(){
+        this.emps.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return -1;
+            }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortByDep(){
+        this.emps.sort( function(dep1, dep2) {
+            if ( dep1.departement < dep2.departement ){
+                return -1;
+            }else if( dep1.departement > dep2.departement ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortByTit(){
+        this.emps.sort( function(tit1, tit2) {
+            if ( tit1.titlejob < tit2.titlejob){
+                return -1;
+            }else if( tit1.titlejob > tit2.titlejob ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
+    sortRev(){
+        this.emps.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return 1;
+            }else if( name1.name > name2.name ){
+                return -1;
+            }else{
+                return 0;
+            }
+        });
+    }
+
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     departement = 'technical';
