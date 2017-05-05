@@ -28,7 +28,7 @@ import 'rxjs/add/operator/map';
 })
 export class ActivationComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
-cities: City[];
+    subs: any[] = [];
   ngOnInit() {
       this.getSubs();
   }
