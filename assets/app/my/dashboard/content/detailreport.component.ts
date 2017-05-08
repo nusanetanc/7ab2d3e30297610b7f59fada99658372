@@ -44,12 +44,12 @@ import { Complaint } from './complaints';
                     <div class="row">
                         <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                          <div class="col-sm-10 col-xs-12">
-                            <textarea id="message" class="input width100" name="message" rows="10" placeholder="*Type message here"></textarea>
+                            <textarea id="message" #message class="input width100" name="message" rows="10" placeholder="*Type message here"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-10 col-sm-offset-1 marginB20">
-                            <button class="btn btn-default buttonOrange">
+                            <button (click)="addReport(message.value)" class="btn btn-default buttonOrange">
                                 SEND
                             </button>
                         </div>
@@ -88,5 +88,20 @@ getChatReport() {
     .subscribe(chats => {
       this.chats = chats
     })
+}
+addReport(message) {
+    var body = `message=${message}`;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+        .post(`${this.API}/complaint/addchat/${this._routeParams.get('id')}`,
+            body, {
+                headers: headers
+            })
+        .subscribe(data => {
+            this.getAllChat();
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
 }
 }

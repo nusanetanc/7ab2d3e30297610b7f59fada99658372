@@ -21,17 +21,13 @@ router.get('/chat/:complaint', function(req, res, next) {
     });
 });
 
-
+var dnow = new Date();
 /* Add chat */
-router.post('/addchat', function(req, res, next) {
+router.post('/addchat/:id', function(req, res, next) {
   var chat = new Chat();
     chat.message= req.body.message;
-    chat.date= req.body.date;
-    chat.sub= req.body.sub;
-    chat.emp= req.body.emp;
-    chat.subname= req.body.subname;
-    chat.empname= req.body.empname;
-    chat.complaintId= req.body.complaintId;
+    chat.date= dnow;
+    chat.complaintId= req.params.id;
 
     chat.save(function(err) {
       if (err)
