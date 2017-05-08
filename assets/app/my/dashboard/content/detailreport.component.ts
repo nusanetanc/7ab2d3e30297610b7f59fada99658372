@@ -94,12 +94,12 @@ addReport(message) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
-        .post(`${this.API}/complaint/addchat/${this._routeParams.get('id')}`,
+        .post(`${this.API}/chatcomplaint/addchat/${this._routeParams.get('id')}`,
             body, {
                 headers: headers
             })
         .subscribe(data => {
-            this.getAllChat();
+            this.getChatReport();
         }, error => {
             console.log(JSON.stringify(error.json()));
         });
