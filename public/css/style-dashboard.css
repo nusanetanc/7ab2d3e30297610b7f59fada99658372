@@ -922,6 +922,10 @@ img.img-nav-profile {
     text-decoration: none;
 }
 
+a.linkViewAll:hover {
+    color: #ACACAC;
+}
+
 .marginB20 {
     margin-bottom: 20px;
 }
