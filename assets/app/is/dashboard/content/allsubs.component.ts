@@ -27,7 +27,7 @@ import { Sub } from './subs';
                   <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     NAME
-                  </button>     
+                  </button>
               </div>
           </div>
           <div class="row">
@@ -37,7 +37,6 @@ import { Sub } from './subs';
                       <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
                       <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
                       <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
-                      <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
                   </div>
                 </a>
               </div>
