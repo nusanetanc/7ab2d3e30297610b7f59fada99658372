@@ -45,18 +45,15 @@ var id = require('node-sid')({
     len:20,
     headerField:'x-node-sid'
 }).create();
-
+var dnow = new Date();
 router.post('/addcomplaint', function(req, res, next) {
     var complaint = new Complaint();
     complaint.complaintId = id;
-    complaint.sub= req.body.sub;
-    complaint.subject= req.body.subject;
     complaint.category= req.body.category;
     complaint.subcategory= req.body.subcategory;
-    complaint.dateopen= req.body.dateopen;
-    complaint.dateclose= req.body.dateclose;
-    complaint.status= req.body.status;
-    complaint.lastchat= req.body.lastchat;
+    complaint.status= "open";
+    complaint.dateopen= dnow;
+    complaint.lastchat= dnow;
 
     complaint.save(function(err) {
       if (err)
@@ -68,11 +65,7 @@ router.post('/addcomplaint', function(req, res, next) {
 router.post('/addchat', function(req, res, next) {
     var chat = new Chat();
     chat.message= req.body.message;
-    chat.date= req.body.date;
-    chat.sub= req.body.sub;
-    chat.emp= req.body.emp;
-    chat.subname= req.body.subname;
-    chat.empname= req.body.empname;
+    chat.date= dnow;
     chat.complaintId= id;
 
     chat.save(function(err) {
