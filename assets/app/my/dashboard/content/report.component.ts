@@ -39,8 +39,8 @@ import { Complaint } from './complaints';
             <div class="row">
                 <div class="col-sm-12" *ngFor="#complaint of complaints">
                     <div class="row subInfo">
-                            <div class="col-sm-3 invoiceId"><span>{{ complaint.dateopen }}</span></div>
-                            <div class="col-sm-7 invoiceList"><span>{{ complaint.subcategory }}</span></div>
+                            <div class="col-sm-4 invoiceId"><span>{{ complaint.dateopen }}</span></div>
+                            <div class="col-sm-6 invoiceList"><span>{{ complaint.subcategory }}</span></div>
                             <div class="col-sm-2 invoiceList"><span class="red">{{ complaint.status }}</span></div>
                     </div>
                 </div>
