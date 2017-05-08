@@ -176,7 +176,6 @@ import { Job } from './job';
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="formNewReport marginLR20">
-                            <input #datejob type="date" class="form-control inputForm" id="datejob" placeholder="Date Job">
                             <form>
                                 <select #typestatus id="typestatus">
                                     <option class="option" disabled="true" selected="true" value="0">-- Select Status --</option>
@@ -281,7 +280,22 @@ export class ContentSubscribeComponent implements OnInit {
                 console.log(JSON.stringify(error.json()));
             });
     }
-
+    editStatus(typestatus) {
+        var body = `status=${typestatus}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/subscribe/activationaccount/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Edit Status Succses');
+                this.getSubs();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
   getSubs() {
     this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
       .map(res => res.json())

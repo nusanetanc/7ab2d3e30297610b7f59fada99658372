@@ -331,7 +331,7 @@ router.put('/activationaccount/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                sub.status= 'Account Active';
+                sub.status= req.body.status;
               if (err)
                 res.send(err);
 
