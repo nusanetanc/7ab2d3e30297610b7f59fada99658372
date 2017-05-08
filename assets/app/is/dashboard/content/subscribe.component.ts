@@ -180,7 +180,7 @@ import { Job } from './job';
                                 <select #typestatus id="typestatus">
                                     <option class="option" disabled="true" selected="true" value="0">-- Select Status --</option>
                                     <option class="option" value="Account Active">Account Active</option>>
-                                    <option class="option" value="Account & Service Active">Account & Service Active</option>
+                                    <option class="option" value="Account and Service Active">Account and Service Active</option>
                                     <option class="option" value="Account Unactive">Account Unactive</option>
                                 </select><br/><br/>
                             </form>
