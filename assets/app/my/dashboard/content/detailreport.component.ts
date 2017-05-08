@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 
@@ -49,7 +49,7 @@ import { Complaint } from './complaints';
                     </div>
                     <div class="row">
                         <div class="col-sm-10 col-sm-offset-1 marginB20">
-                            <button (click)="addReport(message.value)" type="submit" class="btn btn-default buttonOrange">
+                            <button type="submit" (click)="addReport(message.value)" class="btn btn-default buttonOrange">
                                 SEND
                             </button>
                         </div>
@@ -61,7 +61,7 @@ import { Complaint } from './complaints';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailReportComponent {
+export class ContentDetailReportComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
