@@ -58,10 +58,6 @@ import { Complaint } from './complaints';
             </div>
         </div>
     </div>
-
-</div>
-        </div>
-    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
