@@ -38,11 +38,13 @@ import { Complaint } from './complaints';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#complaint of complaints">
+                <a [routerLink]="['Detailreport', {id: complaint.complaintId}]">
                     <div class="row subInfo">
                             <div class="col-sm-4 invoiceId"><span>{{ complaint.dateopen }}</span></div>
                             <div class="col-sm-6 invoiceList"><span>{{ complaint.subcategory }}</span></div>
                             <div class="col-sm-2 invoiceList"><span class="red">{{ complaint.status }}</span></div>
                     </div>
+                </a>
                 </div>
               </div>
         </div>
