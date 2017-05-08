@@ -17,12 +17,13 @@ import {LoginComponent} from "./dashboard/content/login.component";
 @Component({
    selector: 'my-app',
    template: `
-   <!-- START CONTENT -->
-  <div id="wrapper">
-    <dashboard ></dashboard>
-    <router-outlet></router-outlet>
-  </div ><!-- END CONTENT -->
-`,
+    <!-- START CONTENT -->
+    <div id="wrapper">
+        <dashboard ></dashboard>
+        <router-outlet></router-outlet>
+    </div >
+    <!-- END CONTENT -->
+    `,
     directives: [ DashboardComponent,
                   ContentDashboardComponent,
                   ContentBillingComponent,
