@@ -917,7 +917,7 @@ img.img-nav-profile {
     padding-left: 10px;
 }
 
-.linkViewAll {
+a.linkViewAll {
     color: #ACACAC;
     text-decoration: none;
 }
