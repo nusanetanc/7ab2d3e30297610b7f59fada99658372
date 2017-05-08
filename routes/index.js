@@ -66,7 +66,7 @@ router.get('/signin', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-    res.render('login', { title: 'Groovy - Signin' });
+    res.render('login', { title: 'Groovy - Login' });
 });
 
 router.get('/forgot-password', function(req, res, next) {
