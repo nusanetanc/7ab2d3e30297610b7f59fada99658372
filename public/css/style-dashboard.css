@@ -917,9 +917,13 @@ img.img-nav-profile {
     padding-left: 10px;
 }
 
-.linkViewAll {
+a.linkViewAll {
     color: #ACACAC;
     text-decoration: none;
+}
+
+a.linkViewAll:hover {
+    color: #ACACAC;
 }
 
 .marginB20 {
