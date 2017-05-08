@@ -12,7 +12,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
-import {LoginComponent} from "./dashboard/content/login.component";
+
 
 @Component({
    selector: 'my-app',
@@ -33,7 +33,7 @@ import {LoginComponent} from "./dashboard/content/login.component";
                   ContentDetailBillingComponent,
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
-                  LoginComponent,
+
                   ROUTER_DIRECTIVES
     ],
 })
@@ -47,7 +47,7 @@ import {LoginComponent} from "./dashboard/content/login.component";
   { path: '/my/detailreport/:id', component:ContentDetailReportComponent, name:'Detailreport'},
   { path: '/my/account', component:ContentAccountComponent, name:'Account'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
-  { path: '/login', component:LoginComponent, name:'Login'}
+
 ])
 
 export class AppComponent {
