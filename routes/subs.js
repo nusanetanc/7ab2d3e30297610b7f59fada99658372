@@ -113,9 +113,7 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-  if(req.session.subs){
-      var sessionSubId = req.session.subs;
-}
+      var sessionSubId = "58b3cdac45912d052e2c85a5";
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
       subs.groovyid = "5898330cc0d0992a46465109";
@@ -161,9 +159,7 @@ router.get('/detailsub', function(req, res, next) {
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
-  if(req.session.subs){
-      var sessionSubId = req.session.subs;
-  }
+var sessionSubId = "58b3cdac45912d052e2c85a5";
 Bill.find({sub: sessionSubId}, function(err, bills) {
        console.log( bills );
        res.json(bills);
