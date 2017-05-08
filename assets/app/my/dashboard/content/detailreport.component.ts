@@ -35,7 +35,6 @@ import { Complaint } from './complaints';
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
                         <div class="col-sm-11 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333">Tes Admin</b><br><br>{{ chat.message }}</span></div>
-                        <hr  />
                     </div>
                     <div class="row">
                         <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
