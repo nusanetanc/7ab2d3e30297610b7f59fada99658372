@@ -186,39 +186,6 @@ import { Job } from './job';
                                         <option class="option" value="Take Device">Take Device</option>
                                     </select><br/><br/>
                                 </form>
-                                <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
-                                    SEND
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="right">
-                    <a class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
-                        <i class="material-icons">create</i>
-                    </a>
-                </div> -->
-
-            </div>
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4>ADD  TECHNICIAN JOB</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="formNewReport marginLR20">
-                                <input #datejob type="date" class="form-control inputForm" id="datejob" placeholder="Date Job">
-                                <form>
-                                    <select #typejob id="typejob">
-                                        <option class="option" disabled="true" selected="true" value="0">-- Select Job Type --</option>
-                                        <option class="option" value="Installation">Installation</option>
-                                        <option class="option" value="Maintenance">Maintenance</option>
-                                        <option class="option" value="Switch Devices">Switch Devices</option>
-                                        <option class="option" value="Take Device">Take Device</option>
-                                    </select><br/><br/>
-                                </form>
                                 <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
                                 <div class="row">
                                     <div class="col-sm-6">
