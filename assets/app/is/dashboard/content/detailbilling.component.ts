@@ -398,7 +398,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
+                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE &nbsp; &nbsp;</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
                                                    <span>{{ bills.totalprice }}</span>
@@ -414,7 +414,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
+                                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT &nbsp; &nbsp;</i></b></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
                                                    <span><b>{{ bills.totalpay }}</b></span>
@@ -605,7 +605,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE</i></span>
+                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE &nbsp; &nbsp;</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
                                                    <span>{{ bills.totalprice }}</span>
@@ -621,7 +621,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT</i></b></span>
+                                                   <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT &nbsp; &nbsp;</i></b></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
                                                    <span><b>{{ bills.totalpay }}</b></span>
