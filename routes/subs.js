@@ -259,6 +259,39 @@ validate the data, then your Groovy account will be activated.<br/><br/>
   });
 });
 
+/* Add sub */
+router.post('/addsubs', function(req, res, next) {
+  var sub = new Sub();
+  var codeactivation = require('node-sid')({
+ seed:'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+ len:50,
+ headerField:'x-node-sid'
+}).create();
+    var Random = String(randomInt(10000, 99999));
+    var checkdigit = damm.append(Random);
+    sub.subid = "GR"+checkdigit;
+    sub.name= req.body.name;
+    sub.email= req.body.email;
+    sub.phone= req.body.phone;
+    sub.packlev= req.body.packlev;
+    sub.packprice= req.body.packprice;
+    sub.dateinst= req.body.dateinst;
+    sub.timeinst= req.body.timeinst;
+    sub.cardid= req.body.cardid;
+    sub.nova= req.body.nova;
+    sub.status= 'Registration';
+    sub.regisby= req.body.regisby;
+    sub.regisref= req.body.regisref;
+    sub.groovyid= req.body.groovyid;
+    sub.idnumber= req.body.idnumber;
+    sub.datebirth= req.body.datebirth;
+    sub.codeactivation = codeactivation;
+    sub.save(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
 
 router.put('/putsub/:id', function(req, res, next) {
 

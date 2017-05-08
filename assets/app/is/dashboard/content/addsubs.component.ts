@@ -45,9 +45,9 @@ import {Streetname} from "./street_name";
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
                                                 <!--<p>Upload your National Identity Card</p>
                                                 <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
-                                                
+
                                                 <!-- komen -->
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -246,7 +246,7 @@ export class ContentAddSubsComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/subscribe/addsub`,
+            .post(`${this.API}/subscribe/addsubs`,
                 body, {
                     headers: headers
                 })
