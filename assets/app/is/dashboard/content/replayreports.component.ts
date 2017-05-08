@@ -38,7 +38,7 @@ import { Complaint } from './complaints';
                     </div>
                     <div class="row">
                         <div class="col-sm-10 col-sm-offset-1">
-                            <hr  />
+                            <hr class="hr-shadow">
                         </div>
                     </div>
                     <div class="row">
