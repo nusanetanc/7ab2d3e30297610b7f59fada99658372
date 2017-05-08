@@ -285,7 +285,7 @@ export class ContentSubscribeComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/subscribe/activationaccount/${this._routeParams.get('id')}`,
+            .put(`${this.API}/subscribe/activationaccount/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
