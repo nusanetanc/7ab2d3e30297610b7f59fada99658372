@@ -35,8 +35,8 @@ import { Sub } from './subs';
               <a [routerLink]="['Subscribe', {id: sub._id}]">
                   <div class="row subInfo fontWeight300">
                       <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
-                      <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
-                      <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
+                      <div class="col-sm-6 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
+                      <div class="col-sm-4 invoiceList"><span class="green">{{ sub.status }}</span></div>
                   </div>
                 </a>
               </div>
