@@ -119,7 +119,7 @@ import {Streetname} from "./street_name";
                       <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                           CANCEL
                       </button>
-                      <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subpacklev.valuesubname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
+                      <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subpacklev.value, subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
                       REGISTER
                       </button>
                    </div>
