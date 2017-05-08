@@ -15,7 +15,6 @@ router.get('/listcomplaint', function(req, res, next) {
 /* GET detail complaint. */
 router.get('/complaint/:id', function(req, res, next) {
 Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
-    Sub.findById(complaints.sub, function(err, subs) {
         res.json({
             _id: complaints._id,
             complaintId: complaints.complaintId,
@@ -26,8 +25,6 @@ Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {
             dateclose: complaints.dateclose,
             status: complaints.status,
             lastchat: complaints.lastchat,
-            subname: subs.name,
-        });
     });
    });
 });
