@@ -1197,15 +1197,7 @@ button.active{
     display: block;
 }
 
-.hr-shadow {
-    border:none;
-    height: 5px;
-    width: 90%;
-    height: 50px;
-    margin-top: 0;
-    border-bottom: 0px solid #1f1209;
-    box-shadow: 0 20px 20px -20px #333;
-}
+
 
 /*--- Dropdown ---*/
 .buttonDrop {
