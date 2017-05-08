@@ -119,7 +119,7 @@ import {Streetname} from "./street_name";
                       <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
                           CANCEL
                       </button>
-                      <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subpacklev.value, subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
+                      <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
                       REGISTER
                       </button>
                    </div>
@@ -265,8 +265,8 @@ ngOnInit() {
 
 
 // Add one person to the API
-addSub(subpacklev, subname, subphone, subemail, subdatebirth, subidnumber) {
-    var body = `packlev=${subpacklev}&name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
+addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http

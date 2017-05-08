@@ -236,14 +236,6 @@ validate the data, then your Groovy account will be activated.<br/><br/>
                         Groovy - PT Media Andalan Nusa<br/>
                         Cyber Building 7th Floor, Jl Kuningan Barat 8<br/>
                         Jakarta 12710, Indonesia
-                    </div>
-                    <div style="float:left;width:50%">
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
     </body>`
       }
       console.log(mailOptions);
