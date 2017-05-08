@@ -406,7 +406,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
+                                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10% &nbsp; &nbsp;</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
                                                    <span>{{ bills.changetax }}</span>
@@ -613,7 +613,7 @@ declare let kendo;
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10%</i></span>
+                                                   <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10% &nbsp; &nbsp;</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
                                                    <span>{{ bills.changetax }}</span>
