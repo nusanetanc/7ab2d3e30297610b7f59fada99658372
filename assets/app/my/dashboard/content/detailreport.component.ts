@@ -42,7 +42,7 @@ import { Complaint } from './complaints';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="ava.png" alt="ava"></div>
+                        <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                          <div class="col-sm-10 col-xs-12">
                             <textarea id="message" class="input width100" name="message" rows="10" placeholder="*Type message here"></textarea>
                         </div>
