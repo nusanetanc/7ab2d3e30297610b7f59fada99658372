@@ -325,6 +325,24 @@ router.put('/activationemail/:id', function(req, res, next) {
         });
 });
 
+router.put('/activationaccount/:id', function(req, res, next) {
+
+        Sub.findOne({_id: req.params.id}, function(err, sub) {
+
+            if (err)
+                res.send(err);
+                sub.status= 'Account Active';
+              if (err)
+                res.send(err);
+
+            sub.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
 
 router.delete('/delsub/:id', function(req, res, next) {
         Sub.remove({
