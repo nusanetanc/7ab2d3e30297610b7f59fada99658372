@@ -50,7 +50,6 @@ import { Emp } from './emp';
 export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Information_ID = '58afac48129a7b7bfcddb735';
   Information_Emp = '58b6a0d77dfd7052a9fe53c9';
 
 informations: any[] = [];
@@ -70,12 +69,12 @@ getDetailInformation() {
     })
 }
 
-getUserCreate() {
+/*getUserCreate() {
   this.http.get(`${this.API}/employee/emp/${this.Information_Emp}`)
     .map(res => res.json())
     .subscribe(emps => {
       this.emps = emps
     })
-}
+}*/
 
 }
