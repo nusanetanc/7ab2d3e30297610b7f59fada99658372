@@ -25,12 +25,11 @@ var dnow = new Date();
 /* Add chat */
 router.post('/addchat/subs/:id', function(req, res, next) {
   var chat = new Chat();
-  chat.message= req.body.message;
-  chat.date= dnow;
-  chat.complaintId= id;
-  chat.userId = "58b3cdac45912d052e2c85a5";
-  chat.userStatus ="Subscribe";
-
+    chat.message= req.body.message;
+    chat.date= dnow;
+    chat.complaintId= req.params.id;
+    chat.userId = "58b3cdac45912d052e2c85a5";
+    chat.userStatus ="Subscribe";
     chat.save(function(err) {
       if (err)
           res.send(err);
