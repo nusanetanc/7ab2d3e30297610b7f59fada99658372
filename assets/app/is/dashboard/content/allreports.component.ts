@@ -77,7 +77,7 @@ import {ContentSubsNameComponent} from './subsname.component';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ContentSubsComponent, ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentAllReportsComponent {
 
