@@ -10,7 +10,7 @@ import { Sub } from './subs';
     template: `
         <div class="container container-auth-login">
             <div class="top-margin text-center">
-                <div class="form">s
+                <div class="form">
                     <center><img src="images/logo-groovy.png" alt="logo-groovy" width="30%"/></center>
                     <div class="form-group">
                         <h3 class="text-center" style="color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-weight: 700;">INFORMATION SYSTEM</h3><br>
