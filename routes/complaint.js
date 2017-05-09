@@ -65,6 +65,8 @@ router.post('/addchat', function(req, res, next) {
     chat.message= req.body.message;
     chat.date= dnow;
     chat.complaintId= id;
+    chat.userId = "58b3cdac45912d052e2c85a5";
+    chat.userStatus ="Subscribe";
 
     chat.save(function(err) {
         if (err)
