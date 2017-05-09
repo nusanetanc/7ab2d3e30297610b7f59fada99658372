@@ -12,6 +12,7 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentSubsComponent implements OnInit {
+@Input() idsubs: string;
 API = 'http://202.162.207.164:3000';
 subs: any[] = [];
   ngOnInit() {
