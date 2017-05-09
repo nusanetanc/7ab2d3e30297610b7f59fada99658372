@@ -33,7 +33,7 @@ import { Emp } from './emp';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>11 Feb 2017 - 11.00 PM</b> by <b>{{ emps.name }} ({{ emps.titlejob }})</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{informations.date}}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
@@ -50,16 +50,12 @@ import { Emp } from './emp';
 export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-  Information_ID = '58afac48129a7b7bfcddb735';
-  Information_Emp = '58b6a0d77dfd7052a9fe53c9';
 
 informations: any[] = [];
-emps: any[] = [];
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailInformation();
-    this.getUserCreate();
   }
 
 getDetailInformation() {
@@ -69,13 +65,4 @@ getDetailInformation() {
       this.informations = informations
     })
 }
-
-getUserCreate() {
-  this.http.get(`${this.API}/employee/emp/${this.Information_Emp}`)
-    .map(res => res.json())
-    .subscribe(emps => {
-      this.emps = emps
-    })
-}
-
 }
