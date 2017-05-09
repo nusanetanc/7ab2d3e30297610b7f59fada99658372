@@ -39,8 +39,8 @@ import {ContentSubsNameComponent} from './subsname.component';
                           <a *ngIf="chat.userStatus == 'Subscribe'" [routerLink]="['Subscribe', {id: chat.userId}]">
                               <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
                           </a>
-                          <a *ngIf="chat.userStatus == 'Helpdesk'" [routerLink]="['Subscribe', {id: chat.userId}]">
-                              <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
+                          <a *ngIf="chat.userStatus == 'Helpdesk'">
+                              <b class="grey333"><form-subs [idemps]=chat.userId></form-subs></b>
                           </a>
                           <u>{{ chat.userStatus }}</u><br><br>{{ chat.message }}</span></div>
                         <div class="col-sm-10 col-xs-12 col-sm-offset-1">
