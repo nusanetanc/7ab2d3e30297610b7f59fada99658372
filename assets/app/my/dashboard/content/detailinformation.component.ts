@@ -55,7 +55,7 @@ export class ContentDetailInformationComponent {
 
 informations: any[] = [];
 emps: any[] = [];
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailInformation();
@@ -63,7 +63,7 @@ emps: any[] = [];
   }
 
 getDetailInformation() {
-  this.http.get(`${this.API}/information/information/${this.routeParams.get('id')}`)
+  this.http.get(`${this.API}/information/information/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations

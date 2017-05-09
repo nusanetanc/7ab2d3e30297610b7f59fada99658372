@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#FC592E" />
     <base href="/">
-    <title>Groovy</title>
+    <title>Groovy - Login IS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -29,7 +29,7 @@
     <script src="https://npmcdn.com/angular2@2.0.0-beta.14/es6/dev/src/testing/shims_for_IE.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.13/http.dev.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.2/angular-local-storage.js"></script>
-    <script src="/js/app/signin/bundle.js"></script>
+    <script src="/js/app/login/bundle.js"></script>
 
     <style>
         .loader {
@@ -56,50 +56,13 @@
 </head>
 <body class="form-auth-is">
 
-<div class="container container-auth-login">
-    <div class="top-margin text-center">
-        <div class="form">
-            <div class="form-group">
-                <h2 class="text-center" style="color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-weight: 300;">Groovy Information System</h2><br>
-                <input type="text" class="form-control" id="signEmail" placeholder="Email">
-                <input type="password" class="form-control" id="signPassword" placeholder="Password">
-            </div>
-            <button type="submit" class="btn button-submit">SIGN IN</button>
-            <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-        </div>
-    </div>
-</div>
+<my-app></my-app>
 
 <script>
     System.import('boot')
             .then(null, console.error.bind(console));
 </script>
-<!-- Collaps JS -->
-<script type="text/javascript">
-    /*Menu-toggle*/
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
 
-    /*Scroll Spy*/
-    $('body').scrollspy({ target: '#spy', offset:80});
-
-    /*Smooth link animation*/
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
-            }
-        }
-    });
-</script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 
