@@ -4,6 +4,7 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
+import {ContentEmpsNameComponent} from './empsname.component';
 
 @Component({
     selector: 'form-dashboard',
@@ -66,7 +67,7 @@ import {ContentSubsNameComponent} from './subsname.component';
         </div>
     </div>
     `,
-    directives: [ContentSubsNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentReplayReportComponent implements OnInit {
 // Link to our api, pointing to localhost

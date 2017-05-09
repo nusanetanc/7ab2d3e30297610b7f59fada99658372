@@ -11,7 +11,7 @@ import { Employee } from './employee';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentSubsNameComponent implements OnInit {
+export class ContentEmpsNameComponent implements OnInit {
 @Input() idemps: string;
 API = 'http://202.162.207.164:3000';
 emps: any[] = [];
