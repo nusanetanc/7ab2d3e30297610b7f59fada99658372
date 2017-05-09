@@ -41,7 +41,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
                               <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
                           </a>
                           <a *ngIf="chat.userStatus == 'Helpdesk'">
-                              <b class="grey333"><form-subs [idemps]=chat.userId></form-subs></b>
+                              <b class="grey333"><form-emps [idemps]=chat.userId></form-emps></b>
                           </a>
                           <u>{{ chat.userStatus }}</u><br><br>{{ chat.message }}</span></div>
                         <div class="col-sm-10 col-xs-12 col-sm-offset-1">
