@@ -4,9 +4,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
-import {HeaderComponent} from "./header.component";
-import {FooterComponent} from "./footer.component";
-import {LoginComponent, SigninComponent} from "./login.component";
+import {LoginComponent} from "./login.component";
 
 @Component({
     selector: 'my-app',
