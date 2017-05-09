@@ -40,7 +40,6 @@ import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
-import {ContentSubsComponent} from './dashboard/content/subs.component';
 
 @Component({
    selector: 'is-app',
@@ -106,7 +105,6 @@ import {ContentSubsComponent} from './dashboard/content/subs.component';
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
-        ContentSubsComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -147,7 +145,6 @@ import {ContentSubsComponent} from './dashboard/content/subs.component';
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
-    { path: '/is/testsubs', component:ContentSubsComponent, name:'TestSubs'},
 ])
 
 export class AppComponent {
