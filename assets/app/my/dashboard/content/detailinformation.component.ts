@@ -33,7 +33,7 @@ import { Emp } from './emp';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>11 Feb 2017 - 11.00 PM</b> by <b>{{ emps.name }} ({{ emps.titlejob }})</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>11 Feb 2017 - 11.00 PM</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
@@ -65,5 +65,4 @@ getDetailInformation() {
       this.informations = informations
     })
 }
-
 }
