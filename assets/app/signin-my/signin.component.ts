@@ -8,21 +8,19 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-signin',
     template: `
-        <div class="container container-auth-login">
-            <div class="top-margin text-center">
-                <div class="form">
-                    <center><img src="images/logo-groovy.png" alt="logo-groovy" width="30%"/></center>
-                    <div class="form-group">
-                        <h3 class="text-center" style="color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-weight: 700;">INFORMATION SYSTEM</h3><br>
-                        <input type="text" class="form-control" id="signEmail" placeholder="Email">
-                        <input type="password" class="form-control" id="signPassword" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn button-submit">SIGN IN</button>
-                    <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-                </div>
-            </div>
+        <div class="container container-auth-client">
+           <div class="top-margin text-center">
+              <div class="form">
+                 <div class="form-group">
+                    <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
+                    <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                 </div>
+                 <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                 <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
+              </div>
+           </div>
         </div>
-`,
+    `,
     directives: [ROUTER_DIRECTIVES]
 })
 export class SigninComponent implements OnInit {
