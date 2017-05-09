@@ -270,6 +270,11 @@ body{
     padding: 130px 0px 250px 0px;
 }
 
+.container-auth-login{
+    width: 500px;
+    padding: 130px 0px 0px 0px;
+}
+
 .resend-link{
     font-size: 16px;
 }
