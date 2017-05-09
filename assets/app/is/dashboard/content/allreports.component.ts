@@ -2,7 +2,6 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
-import {Report} from './allreports';
 import {ContentSubsComponent} from './subs.component';
 
 @Component({
@@ -40,7 +39,7 @@ import {ContentSubsComponent} from './subs.component';
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                            <div class="col-sm-3 invoiceList"><form-subs idsubs="complaint.subs"></form-subs></div>
+                            <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.subs></form-subs></div>
                             <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
                         </a>
