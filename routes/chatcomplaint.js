@@ -36,6 +36,20 @@ router.post('/addchat/subs/:id', function(req, res, next) {
       res.json({ message: 'Data created!' });
   });
 });
+/* Add chat */
+router.post('/addchat/helpdesk/:id', function(req, res, next) {
+  var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= dnow;
+    chat.complaintId= req.params.id;
+    chat.userId = "58b6a0d77dfd7052a9fe53c9";
+    chat.userStatus ="Helpdesk";
+    chat.save(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
 
 router.put('/putchat/:id', function(req, res, next) {
 
