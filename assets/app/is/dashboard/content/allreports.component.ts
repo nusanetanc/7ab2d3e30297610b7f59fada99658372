@@ -40,7 +40,7 @@ import {ContentSubsComponent} from './subs.component';
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                            <div class="col-sm-3 invoiceList"><subs></subs></div>
+                            <div class="col-sm-3 invoiceList"><form-subs></form-subs></div>
                             <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
                         </a>
@@ -78,7 +78,7 @@ import {ContentSubsComponent} from './subs.component';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ROUTER_DIRECTIVES, ContentSubsComponent],
+    directives: [ContentSubsComponent, ROUTER_DIRECTIVES],
 })
 export class ContentAllReportsComponent {
 
