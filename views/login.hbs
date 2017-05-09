@@ -56,51 +56,13 @@
 </head>
 <body class="form-auth-is">
 
-<div class="container container-auth-login">
-    <div class="top-margin text-center">
-        <div class="form">
-            <center><img src="images/logo-groovy.png" alt="logo-groovy" width="30%"/></center>
-            <div class="form-group">
-                <h3 class="text-center" style="color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-weight: 700;">INFORMATION SYSTEM</h3><br>
-                <input type="text" class="form-control" id="signEmail" placeholder="Email">
-                <input type="password" class="form-control" id="signPassword" placeholder="Password">
-            </div>
-            <button type="submit" class="btn button-submit">SIGN IN</button>
-            <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
-        </div>
-    </div>
-</div>
+<my-app></my-app>
 
 <script>
     System.import('boot')
             .then(null, console.error.bind(console));
 </script>
-<!-- Collaps JS -->
-<script type="text/javascript">
-    /*Menu-toggle*/
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
 
-    /*Scroll Spy*/
-    $('body').scrollspy({ target: '#spy', offset:80});
-
-    /*Smooth link animation*/
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
-            }
-        }
-    });
-</script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 
