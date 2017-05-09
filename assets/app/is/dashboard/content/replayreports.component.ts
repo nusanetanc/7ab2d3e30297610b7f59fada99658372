@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
+import {ContentSubsNameComponent} from './subsname.component';
 
 @Component({
     selector: 'form-dashboard',
@@ -34,12 +35,12 @@ import { Complaint } from './complaints';
                     </div>
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
-                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333">Tes Admin</b><br><br>{{ chat.message }}</span></div>
+                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b><br><br>{{ chat.message }}</span></div>
                         <div class="col-sm-10 col-xs-12 col-sm-offset-1">
                             <hr class="hr-report">
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                          <div class="col-sm-10 col-xs-12">
@@ -58,7 +59,7 @@ import { Complaint } from './complaints';
         </div>
     </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentReplayReportComponent implements OnInit {
 // Link to our api, pointing to localhost
