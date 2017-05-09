@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
@@ -35,7 +35,7 @@ import { Information } from './informations';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#information of informations">
-                <a [routerLink]="['Detailinformation']">
+                <a [routerLink]="['Detailinformation', {id: information._id]">
                   <div class="row subInfo">
                       <div class="col-sm-2 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ information.date }}</span></div>
                       <div class="col-sm-8 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.subject }}</span></div>

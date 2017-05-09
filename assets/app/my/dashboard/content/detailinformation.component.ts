@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit} from 'angular2/core';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
@@ -63,7 +63,7 @@ emps: any[] = [];
   }
 
 getDetailInformation() {
-  this.http.get(`${this.API}/information/information/${this.Information_ID}`)
+  this.http.get(`${this.API}/information/information/${this.routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations
