@@ -13,7 +13,7 @@ import { Sub } from './subs';
 })
 export class ContentSubsComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
-cities: City[];
+subs: Sub[];
   ngOnInit() {
       this.getSubs();
   }
