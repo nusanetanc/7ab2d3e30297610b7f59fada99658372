@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Sub } from './subs';
 
 @Component({
-    selector: 'subs',
+    selector: 'form-subs',
     template: `
       <span>{{subs.name}}</span>
     `,
@@ -13,7 +13,7 @@ import { Sub } from './subs';
 })
 export class ContentSubsComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
-subs: Sub[];
+subs: any[] = [];
   ngOnInit() {
       this.getSubs();
   }
