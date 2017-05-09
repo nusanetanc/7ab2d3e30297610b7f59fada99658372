@@ -40,7 +40,7 @@ import {ContentSubsComponent} from './subs.component';
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
                             <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                            <div class="col-sm-3 invoiceList"><form-subs [idsubs]="58b3cdac45912d052e2c85a5" ></form-subs></div>
+                            <div class="col-sm-3 invoiceList"><form-subs></form-subs></div>
                             <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
                         </a>
