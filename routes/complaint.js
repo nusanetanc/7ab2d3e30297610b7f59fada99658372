@@ -51,6 +51,7 @@ router.post('/addcomplaint', function(req, res, next) {
     complaint.status= "open";
     complaint.dateopen= dnow;
     complaint.lastchat= dnow;
+    complaint.sub= "58b3cdac45912d052e2c85a5";
 
     complaint.save(function(err) {
       if (err)
