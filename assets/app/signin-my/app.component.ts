@@ -11,9 +11,9 @@ import {SigninComponent} from "./signin.component";
 @Component({
     selector: 'my-app',
     template: `
-            <my-header></my-header><br>
+            <!-- <my-header></my-header><br> -->
             <router-outlet></router-outlet>
-            <my-footer></my-footer>
+            <!-- <my-footer></my-footer> -->
 `,
     directives: [HeaderComponent, FooterComponent, SigninComponent, ROUTER_DIRECTIVES]
 })
