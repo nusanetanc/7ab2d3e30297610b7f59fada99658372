@@ -13,7 +13,7 @@ import {LoginComponent, SigninComponent} from "./login.component";
     template: `
             <router-outlet></router-outlet>
 `,
-    directives: [HeaderComponent, FooterComponent, SigninComponent, ROUTER_DIRECTIVES]
+    directives: [LoginComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
