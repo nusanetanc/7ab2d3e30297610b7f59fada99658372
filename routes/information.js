@@ -12,7 +12,7 @@ router.get('/listinformation', function(req, res, next) {
    });
 });
 
-/* GET subloye listing. */
+/* GET information listing by area. */
 router.get('/listinformation/:id', function(req, res, next) {
      Information.find({to : req.params.id}, function(err, informations) {
        console.log( informations );
