@@ -37,12 +37,8 @@ import {ContentEmpsNameComponent} from './empsname.component';
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
                         <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by
-                          <a *ngIf="chat.userStatus == 'Subscribe'" [routerLink]="['Subscribe', {id: chat.userId}]">
-                              <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
-                          </a>
-                          <a *ngIf="chat.userStatus == 'Helpdesk'">
-                              <b class="grey333"><form-emps [idemps]=chat.userId></form-emps></b>
-                          </a>
+                              <b *ngIf="chat.userStatus == 'Subscribe'" class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
+                              <b *ngIf="chat.userStatus == 'Helpdesk'" class="grey333"><form-emps [idemps]=chat.userId></form-emps></b>
                           <u>{{ chat.userStatus }}</u><br><br>{{ chat.message }}</span></div>
                         <div class="col-sm-10 col-xs-12 col-sm-offset-1">
                             <hr class="hr-report">
