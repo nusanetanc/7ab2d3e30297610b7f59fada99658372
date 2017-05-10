@@ -1081,3 +1081,95 @@ a.link-blog:hover div div h3 {
 }
 /*--- /Event Page ----*/
 
+
+/*--- Login Page ---*/
+
+body.body-login {
+    background-color: #E2E2E2;
+}
+
+.card-login {
+    background-color: #FFF;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0);
+    margin-left:30%;
+    margin-top:8%;
+    padding: 50px;
+    position: absolute;
+}
+
+@media only screen and (max-width: 767px) {
+
+    body.body-login {
+        background-color: #FFF;
+    }
+
+    .card-login {
+        box-shadow:none;
+        margin: 0;
+    }
+}
+
+.form-login {
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 48px;
+    line-height: 1.42857143;
+    padding: 6px 12px;
+    transition: 0.4s all;
+    width: 100%;
+}
+
+.form-login:focus {
+    border-bottom: 1px solid #FC592E;
+    outline:none;
+    transition: 0.4s all;
+}
+
+.btn {
+    letter-spacing: .5px;
+}
+
+.btn-login {
+    background-color: #FC592E;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    color: #FFF;
+    cursor: pointer;
+    float: right;
+    padding: 8px 16px;
+    position: relative;
+    transition: 0.4s all;
+}
+
+.btn-login:hover {
+    background-color: #FC592E;
+    color: #FFF;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.btn-login:hover {
+    background-color: #FC592E;
+    color: #FFF;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s all;
+}
+
+.grey-text{
+    color: #757575;
+}
+
+.form-forgot {
+    margin-bottom: 40px;
+    margin-top: -15px;
+}
+
+/*--- /Login Page ---*/
+
