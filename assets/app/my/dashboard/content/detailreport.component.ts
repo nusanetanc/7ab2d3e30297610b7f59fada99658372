@@ -7,6 +7,7 @@ import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
 import {AccordionModule} from 'primeng/primeng';
 import {MenuItem} from 'primeng/primeng';
+import {Message} from 'primeng/primeng';
 
 @Component({
     selector: 'form-dashboard',
@@ -63,6 +64,15 @@ import {MenuItem} from 'primeng/primeng';
             </div>
         </div>
     </div>
+    <p-growl [value]="msgs" sticky="sticky"></p-growl>
+    <div>
+        <button type="button" pButton (click)="showSuccess()" label="Success" class="ui-button-success"></button>
+        <button type="button" pButton (click)="showInfo()" label="Info" class="ui-button-info"></button>
+        <button type="button" pButton (click)="showWarn()" label="Warn" class="ui-button-warning"></button>
+        <button type="button" pButton (click)="showError()" label="Error" class="ui-button-error"></button>
+        <button type="button" pButton (click)="showMultiple()" label="Multiple"></button>
+        <button type="button" pButton (click)="clear()" icon="fa-close" style="float:right" label="Clear"></button>
+    </div>
     `,
     directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
@@ -109,4 +119,33 @@ addReport(message) {
             console.log(JSON.stringify(error.json()));
         });
 }
+
+
+msgs: Message[] = [];
+
+    showInfo() {
+        this.msgs = [];
+        this.msgs.push({severity:'info', summary:'Info Message', detail:'PrimeNG rocks'});
+    }
+
+    showWarn() {
+        this.msgs = [];
+        this.msgs.push({severity:'warn', summary:'Warn Message', detail:'There are unsaved changes'});
+    }
+
+    showError() {
+        this.msgs = [];
+        this.msgs.push({severity:'error', summary:'Error Message', detail:'Validation failed'});
+    }
+
+    showMultiple() {
+        this.msgs = [];
+        this.msgs.push({severity:'info', summary:'Message 1', detail:'PrimeNG rocks'});
+        this.msgs.push({severity:'info', summary:'Message 2', detail:'PrimeUI rocks'});
+        this.msgs.push({severity:'info', summary:'Message 3', detail:'PrimeFaces rocks'});
+    }
+
+    clear() {
+        this.msgs = [];
+    }
 }
