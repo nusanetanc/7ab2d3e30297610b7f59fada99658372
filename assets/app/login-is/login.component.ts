@@ -14,7 +14,7 @@ import { Sub } from './subs';
                     <div class="row">
                         <div class="col-sm-5 card-login">
                             <form class="form-horizontal">
-                                <center><img src="logo-groovy.png" alt="logo-groovy" width="40%">
+                                <center><img src="logo-groovy.png" alt="images/logo-groovy" width="40%">
                                 <h5><b class="grey-text">INFORMATION SYSTEM</b></h5></center><br><br>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="control-label grey-text">Email</label><br>
