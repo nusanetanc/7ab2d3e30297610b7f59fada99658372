@@ -34,7 +34,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+    <link rel="stylesheet" type="text/css" href="YOUR_PATH/font-awesome.min.css" />
     <!-- Add the router library -->
     <script src="https://code.angularjs.org/2.0.0-beta.14/router.dev.js"></script>
     <script src="/js/app/is/bundle.js"></script>
@@ -126,7 +128,7 @@
 <script type="text/javascript">
 
   /*Menu-toggle*/
-  
+
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
@@ -138,7 +140,7 @@
             $("#wrapper").toggleClass("active");
         }
     });*/
-  
+
 
   /*Scroll Spy*/
   $('body').scrollspy({ target: '#spy', offset:80});

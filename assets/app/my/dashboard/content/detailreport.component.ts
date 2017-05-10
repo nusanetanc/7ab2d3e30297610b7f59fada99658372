@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
+import {AccordionModule} from 'primeng/primeng';
+import {MenuItem} from 'primeng/primeng';
 
 @Component({
     selector: 'form-dashboard',
