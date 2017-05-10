@@ -70,7 +70,7 @@ import {GrowlModule} from 'primeng/primeng';
     <button type="button" (click)="show()">Show</button>
     <button type="button" (click)="clear()">Hide</button>
     `,
-    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, Message, ROUTER_DIRECTIVES],
 })
 export class ContentDetailReportComponent implements OnInit {
 // Link to our api, pointing to localhost
