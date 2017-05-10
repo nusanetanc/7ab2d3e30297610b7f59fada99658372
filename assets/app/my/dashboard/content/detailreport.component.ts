@@ -5,8 +5,8 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
-import {AccordionModule} from 'primeng/primeng';
-import {MenuItem} from 'primeng/primeng';
+import {AccordionModule} from 'primeng/components/accordion/accordion';
+import {MenuItem} from 'primeng/components/common/api';
 import {Message} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
 
