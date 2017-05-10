@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
-import { PushNotificationComponent } from 'ng2-notifications'
+import { PushNotificationComponent } from '../../../../ng2-notifications'
 
 @Component({
     selector: 'form-dashboard',
