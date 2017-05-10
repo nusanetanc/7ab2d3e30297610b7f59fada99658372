@@ -23,8 +23,8 @@ import {Report} from './allreports';
                               <div class="col-sm-4">
                                   <div class="cardDashboardSub">
                                       <div class="row">
-                                          <div class="col-sm-12">
-                                              <p class="text-center font70MarginT35"><b>112</b></p>
+                                          <div class="col-sm-12" *ngFor="#sub of subs">
+                                              <p class="text-center font70MarginT35"><b>{{sub.length}}</b></p>
                                               <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                           </div>
                                       </div>
@@ -80,11 +80,13 @@ export class ContentDashboardComponent {
     API = 'http://202.162.207.164:3000';
 
     complaints: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http) {}
 
     ngOnInit() {
         this.getAllReport();
+        this.getAllSub();
     }
 
     // Get all users from the API
@@ -95,4 +97,14 @@ export class ContentDashboardComponent {
                 this.complaints = complaints
             })
     }
+
+    // Get all users from the API
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
+
 }
