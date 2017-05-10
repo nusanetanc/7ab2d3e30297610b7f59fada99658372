@@ -8,17 +8,31 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-login',
     template: `
-        <div class="container container-auth-login">
-            <div class="top-margin text-center">
-                <div class="form">
-                    <center><img src="images/logo-groovy.png" alt="logo-groovy" width="30%"/></center>
-                    <div class="form-group">
-                        <h3 class="text-center" style="color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-weight: 700;">INFORMATION SYSTEM</h3><br>
-                        <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                        <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-5 card-login">
+                            <form class="form-horizontal">
+                                <center><img src="logo-groovy.png" alt="logo-groovy" width="40%">
+                                <h5><b class="grey-text">INFORMATION SYSTEM</b></h5></center><br><br>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="control-label grey-text">Email</label><br>
+                                    <input type="email" class="form-login" id="signEmail" #signEmail placeholder="Email"><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="control-label grey-text">Password</label><br>
+                                    <input type="password" class="form-login" id="signPassword" #signPassword placeholder="Password"><br>
+                                </div>
+                                <div class="form-group text-center form-forgot">
+                                    <a href="" class="grey-text">I forgot password</a>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <button type="submit" (click)="signEmp(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
-                    <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
                 </div>
             </div>
         </div>
