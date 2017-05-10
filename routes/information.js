@@ -12,6 +12,14 @@ router.get('/listinformation', function(req, res, next) {
    });
 });
 
+/* GET information listing by area. */
+router.get('/listinformation/:id', function(req, res, next) {
+     Information.find({to : req.params.id}, function(err, informations) {
+       console.log( informations );
+       res.json(informations);
+   });
+});
+
 /* GET detail sub. */
 router.get('/information/:id', function(req, res, next) {
 Information.findById(req.params.id, function(err, informations) {
