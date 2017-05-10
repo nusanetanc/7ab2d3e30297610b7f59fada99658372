@@ -20,8 +20,8 @@ import {Report} from './allreports';
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="row marginLR15">
-                              <a [routerLink]="['AllSubs']">
-                                  <div class="col-sm-4">
+                              <div class="col-sm-4">
+                                    <a [routerLink]="['AllSubs']">
                                       <div class="cardDashboardSub">
                                           <div class="row">
                                               <div class="col-sm-12">
@@ -30,9 +30,10 @@ import {Report} from './allreports';
                                               </div>
                                           </div>
                                       </div>
-                                  </div>
-                              </a>
+                                    </a>
+                              </div>
                               <div class="col-sm-4">
+                                <a [routerLink]="['Information']">
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
@@ -41,6 +42,7 @@ import {Report} from './allreports';
                                           </div>
                                       </div>
                                   </div>
+                                </a>
                               </div>
                               <div class="col-sm-4">
                                   <div class="cardDashboardSub">
