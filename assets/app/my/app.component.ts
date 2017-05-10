@@ -12,7 +12,7 @@ import {ContentDetailBillingComponent} from "./dashboard/content/detailbilling.c
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
-
+import {TestComponent} from "./dashboard/content/test";
 
 @Component({
    selector: 'my-app',
@@ -33,7 +33,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
                   ContentDetailBillingComponent,
                   ContentDetailInformationComponent,
                   ContentDetailReportComponent,
-
+                  TestComponent,
                   ROUTER_DIRECTIVES
     ],
 })
@@ -46,6 +46,7 @@ import {ContentAccountComponent} from "./dashboard/content/account.component";
   { path: '/my/detailinformation', component:ContentDetailInformationComponent, name:'Detailinformation'},
   { path: '/my/detailreport/:id', component:ContentDetailReportComponent, name:'Detailreport'},
   { path: '/my/account', component:ContentAccountComponent, name:'Account'},
+  { path: '/my/test', component:TestComponent, name:'Test'},
   { path: '/my/information', component:ContentInformationComponent, name:'Information'}
 
 ])

@@ -10,11 +10,6 @@ import { PushNotificationComponent } from './ng2-notifications'
 @Component({
     selector: 'form-dashboard',
     template: `
-    <push-notification
-      title="ng2-notifications"
-      body="Component for Native Push Notifications"
-      icon="https://goo.gl/3eqeiE">
-    </push-notification>
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
