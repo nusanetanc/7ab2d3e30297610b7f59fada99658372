@@ -5,10 +5,16 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
+import { PushNotificationComponent } from 'ng2-notifications'
 
 @Component({
     selector: 'form-dashboard',
     template: `
+    <push-notification
+      title="ng2-notifications"
+      body="Component for Native Push Notifications"
+      icon="https://goo.gl/3eqeiE">
+    </push-notification>
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
@@ -62,7 +68,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
         </div>
     </div>
     `,
-    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, PushNotificationComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailReportComponent implements OnInit {
 // Link to our api, pointing to localhost
