@@ -6,7 +6,7 @@ import {
   OnDestroy,
   Input,
   Output
-} from '@angular/core';
+} from 'angular2/core';
 
 declare var Notification;
 
