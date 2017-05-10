@@ -5,10 +5,6 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
-import {AccordionModule} from 'primeng/components/accordion/accordion';
-import {MenuItem} from 'primeng/components/common/api';
-import {Message} from 'primeng/primeng';
-import {GrowlModule} from 'primeng/primeng';
 
 @Component({
     selector: 'form-dashboard',
@@ -65,17 +61,12 @@ import {GrowlModule} from 'primeng/primeng';
             </div>
         </div>
     </div>
-    <p-growl [value]="msgs"></p-growl>
-
-    <button type="button" (click)="show()">Show</button>
-    <button type="button" (click)="clear()">Hide</button>
     `,
-    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, Message, ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailReportComponent implements OnInit {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
-msgs: Message[] = [];
 complaints: any[] = [];
 chats: any[] = [];
 
@@ -114,12 +105,5 @@ addReport(message) {
         }, error => {
             console.log(JSON.stringify(error.json()));
         });
-}
-show() {
-    this.msgs.push({severity:'info', summary:'Info Message', detail:'PrimeNG rocks'});
-}
-
-hide() {
-    this.msgs = [];
 }
 }
