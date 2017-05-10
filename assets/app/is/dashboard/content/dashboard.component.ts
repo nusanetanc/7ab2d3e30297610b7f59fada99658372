@@ -20,7 +20,7 @@ import {Report} from './allreports';
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="row marginLR15">
-                              <a [routerlink]="['AllSubs']">
+                              <a [routerLink]="['AllSubs']">
                                   <div class="col-sm-4">
                                       <div class="cardDashboardSub">
                                           <div class="row">
