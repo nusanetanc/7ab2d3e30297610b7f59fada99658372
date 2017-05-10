@@ -1113,7 +1113,7 @@ body.body-login {
     background-color: #fff;
     background-image: none;
     border: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
     color: #555;
     display: block;
     font-size: 14px;
@@ -1162,13 +1162,30 @@ body.body-login {
     transition: 0.3s all;
 }
 
-.grey-text{
+.grey-text {
     color: #757575;
+}
+
+.orange-text {
+    color: #FC592E;
 }
 
 .form-forgot {
     margin-bottom: 40px;
     margin-top: -15px;
+}
+
+/* Overriding styles */
+
+::-webkit-input-placeholder {
+    font-size: 13px!important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px!important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    font-size: 13px!important;
 }
 
 /*--- /Login Page ---*/
