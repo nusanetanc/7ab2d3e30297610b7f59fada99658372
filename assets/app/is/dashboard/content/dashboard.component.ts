@@ -20,16 +20,18 @@ import {Report} from './allreports';
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="row marginLR15">
-                              <div class="col-sm-4">
-                                  <div class="cardDashboardSub">
-                                      <div class="row">
-                                          <div class="col-sm-12">
-                                              <p class="text-center font70MarginT35" *ngFor="#sub of subs"><b>{{sub.length}}</b></p>
-                                              <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                              <a [routerLink]="['AllSubs']">
+                                  <div class="col-sm-4">
+                                      <div class="cardDashboardSub">
+                                          <div class="row">
+                                              <div class="col-sm-12">
+                                                  <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
+                                                  <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                              </div>
                                           </div>
                                       </div>
                                   </div>
-                              </div>
+                              </a>
                               <div class="col-sm-4">
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
