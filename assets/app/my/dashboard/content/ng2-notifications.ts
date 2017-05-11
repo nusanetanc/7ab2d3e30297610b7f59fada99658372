@@ -12,7 +12,7 @@ declare var Notification;
 
 @Component({
   selector: 'push-notification',
-  styles: [':host { display: inline; }'],
+  styles: [':host { display: none; }'],
   template: ''
 })
 
