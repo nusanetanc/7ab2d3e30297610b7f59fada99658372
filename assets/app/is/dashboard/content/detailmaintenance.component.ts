@@ -44,22 +44,11 @@ import 'rxjs/add/operator/map';
                                 <div class="col-xs-6 col-sm-6">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7 col-md-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
                                     <span>IBNU ZULKIVLI</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7 col-md-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
                                     <span>AHMAD CAHYADI</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Perangkat</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.email }}</span>
                                 </div>
                             </div>
                         </div>
