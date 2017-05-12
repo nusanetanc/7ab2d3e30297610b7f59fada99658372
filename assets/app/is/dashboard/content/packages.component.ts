@@ -33,7 +33,7 @@ import { Cluster } from './cluster';
                                         <div class="formNewReport marginLR20">
                                             <form>
                                                 <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
-                                                <br/><br/>
+                                                <br/>
                                                 <select name="package">
                                                     <option disabled="true" selected="true">-- Select Cluster Level --</option>
                                                     <option value="level1">A</option>
