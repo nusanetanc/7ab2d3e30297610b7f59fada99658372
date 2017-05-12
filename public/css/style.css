@@ -1179,6 +1179,10 @@ body.body-login {
     font-size: 12px;
 }
 
+.form-horizontal h5 {
+    font-weight: 500;
+}
+
 /* Overriding styles */
 
 ::-webkit-input-placeholder {
