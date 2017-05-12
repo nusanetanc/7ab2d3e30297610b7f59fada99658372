@@ -47,7 +47,7 @@ import {Menu} from "./menu";
                                 <li class="firstLiSidebar">
                                     <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
-                                <li class="firstLiSidebar">
+                                <li>
                                     <a [routerLink]="['DashboardHelpdesk']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
