@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
-                    &nbsp; Add Coverage Area
+                    &nbsp; Maintenance
                 </h3>
 
             </div>
@@ -43,17 +43,6 @@ import 'rxjs/add/operator/map';
                                                     <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
                                                     <option ></option>
                                                 </select><br/>
-                                            </form>
-                                            <form>
-                                                <select id="clusterlevel">
-                                                    <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
-                                                </select><br/>
-                                            </form>
-                                            <form>
-                                                <input type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
-                                                <br/>
                                             </form>
                                             <button type="submit" class="btn btn-default buttonOrange">
                                                 SEND
