@@ -102,7 +102,7 @@ import 'rxjs/add/operator/map';
                                         <option class="option" value="Account Active">Account Active</option>>
                                         <option class="option" value="Account and Service Active">Account and Service Active</option>
                                         <option class="option" value="Account Unactive">Account Unactive</option>
-                                    </select><br/><br/>
+                                    </select><br/>
                                 </form>
                                 <form>
                                     <select #typestatus id="typestatus">
