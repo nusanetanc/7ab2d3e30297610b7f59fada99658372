@@ -1091,7 +1091,7 @@ body.body-login {
 .card-login {
     background-color: #FFF;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0);
-    margin-left:30%;
+    margin-left:33%;
     margin-top:8%;
     padding: 60px;
     position: absolute;
@@ -1106,8 +1106,11 @@ body.body-login {
     .card-login {
         box-shadow:none;
         margin: 0;
-        padding: 40px;
     }
+}
+
+.form-horizontal h6 {
+    font-weight: 500;
 }
 
 .form-login {
@@ -1177,10 +1180,6 @@ body.body-login {
 
 .form-forgot a {
     font-size: 12px;
-}
-
-.form-horizontal h5 {
-    font-weight: 500;
 }
 
 /* Overriding styles */
