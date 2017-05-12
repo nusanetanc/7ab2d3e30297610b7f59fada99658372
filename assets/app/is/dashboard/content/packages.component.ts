@@ -32,7 +32,7 @@ import { Cluster } from './cluster';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <input #level type="text" class="form-control inputForm" id="level" placeholder="Level">
+                                                <input #level type="text" class="inputForm" id="level" placeholder="Level">
                                             </form>
                                             <form>
                                                 <select name="package">
