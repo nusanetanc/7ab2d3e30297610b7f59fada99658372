@@ -45,10 +45,36 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-7">
-                                    <span>IBNU ZULKIVLI</span>
+                                    <span>- IBNU ZULKIVLI</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-7">
-                                    <span>AHMAD CAHYADI</span>
+                                    <span>- AHMAD CAHYADI</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- IVAN DUGEM</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- BALAMON DARTU</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-6">
+                                    <span>Perangkat</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- ROUTER</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- RADIO</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- RJ-45</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                    <span>- BALLET</span>
                                 </div>
                             </div>
                         </div>
