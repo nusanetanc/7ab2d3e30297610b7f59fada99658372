@@ -168,7 +168,7 @@ declare let kendo;
                                                             <span>STB Rent</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">RP. {{ bills.pricestb | number:'2.2-4' }}</span>
+                                                            <span class="right">Rp. {{ bills.pricestb | number:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
