@@ -34,23 +34,17 @@ import { Cluster } from './cluster';
                                             <form>
                                                 <input #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                                 <br/>
-                                            </form>
-                                            <form>
                                                 <select name="package">
                                                     <option disabled="true" selected="true">-- Select Cluster Level --</option>
                                                     <option value="level1">A</option>
                                                     <option value="level2">B</option>
                                                 </select><br/>
-                                            </form>
-                                            <form>
                                                 <select name="package">
                                                     <option disabled="true" selected="true">-- Select Detail --</option>
                                                     <option value="level1">Internet</option>
                                                     <option value="level2">Internet + TV</option>
                                                     <option value="level6">Internet + TV + Voice</option>
                                                 </select><br/>
-                                            </form>
-                                            <form>
                                                 <input #harga type="text" class="form-control inputForm" id="harga" placeholder="Harga">
                                                 <br/>
                                             </form>
