@@ -2,9 +2,6 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { City } from './cities';
-import { Property } from './property';
-import { Cluster } from './cluster';
 
 @Component({
     selector: 'form-cpackages',
@@ -34,21 +31,21 @@ import { Cluster } from './cluster';
                                             <form>
                                                 <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                                 <br/>
-                                                <select name="package">
+                                                <select #clusterlevel id="clusterlevel" name="package">
                                                     <option disabled="true" selected="true">-- Select Cluster Level --</option>
-                                                    <option value="level1">A</option>
-                                                    <option value="level2">B</option>
+                                                    <option value="A">A</option>
+                                                    <option value="B">B</option>
                                                 </select><br/><br/>
-                                                <select name="package">
+                                                <select #detail id="detail" name="package">
                                                     <option disabled="true" selected="true">-- Select Detail --</option>
-                                                    <option value="level1">Internet</option>
-                                                    <option value="level2">Internet + TV</option>
-                                                    <option value="level6">Internet + TV + Voice</option>
+                                                    <option value="Internet">Internet</option>
+                                                    <option value="Internet + T">Internet + TV</option>
+                                                    <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                                 </select><br/><br/>
                                                 <input #harga type="text" class="form-control inputForm" id="harga" placeholder="Harga">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterlevel.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, harga.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
@@ -88,37 +85,9 @@ import { Cluster } from './cluster';
 })
 export class ContentPackageComponent implements OnInit {
 
-selectedCity: City = new City(0, 'dummy');
-selectedProperty: City = new City(0, 'dummy');
-
 API = 'http://202.162.207.164:3000';
 
-// Declare empty list of people
-cities: any[] = [];
-properties: any[] = [];
-clusters: any[] = [];
-
 constructor(private http: Http) {}
-
-onSelectCity(_id) {
-    this.properties = this.getAllPropertyByCity(){
-        this.http.get(`${this.API}/property/propertybycity/${_id}`)
-            .map(res => res.json())
-            .subscribe(properties => {
-                this.properties = properties
-            })
-    }
-}
-
-onSelectProperty(_id) {
-    this.clusters = this.getAllClusterByProperty(){
-        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
-            .map(res => res.json())
-            .subscribe(clusters => {
-                this.clusters = clusters
-            })
-    }
-}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -126,15 +95,6 @@ ngOnInit() {
     this.getAllPropertyByCity();
     this.getAllClusterByProperty();
 }
-// Get all City from the API
-getAllCity() {
-    this.http.get(`${this.API}/city/listcity`)
-        .map(res => res.json())
-        .subscribe(cities => {
-            this.cities = cities
-        })
-}
-
 // Get all Property by city from the API
 getAllPropertyByCity() {
     this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
@@ -151,7 +111,7 @@ getAllClusterByProperty() {
             this.clusters = clusters
         })
 }
-    addCluster(clusterproperty, clustername, clusterlevel, clusterbuilding) {
+    addPackage(clusterproperty, clustername, clusterlevel, clusterbuilding) {
 
         var body = `name=${clustername}&property=${clusterproperty}&level=${clusterlevel}&building=${clusterbuilding}`;
         var headers = new Headers();
