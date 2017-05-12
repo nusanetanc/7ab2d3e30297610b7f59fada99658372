@@ -93,7 +93,7 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class DetailMaintenanceComponent implements OnInit {
+export class ContentDetailMaintenanceComponent implements OnInit {
 
 }
 
