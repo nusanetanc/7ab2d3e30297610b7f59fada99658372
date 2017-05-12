@@ -172,7 +172,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row" *ngIf="bills.statussub =! 'Account Active'">
+                                                <div class="row" *ngIf="bills.statussub != 'Account Active'">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Cable & RJ45</span>
