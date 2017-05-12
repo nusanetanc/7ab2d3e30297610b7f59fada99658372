@@ -55,6 +55,7 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               name: subs.name,
               subid: subs.subid,
               nova: subs.nova,
+              statussub: subs.status,
               address: homes.address,
               nohome: homes.nohome,
               cluster: clusters.name,

@@ -35,8 +35,8 @@ declare let kendo;
                                 <button (click)="onItemClicked1(Inovice)" onclick="printPembayaran()" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regPayment'">
                                     BACK
                                 </button>
-                                
-                                
+
+
                                 <button (click)="onItemClicked1(Invoice)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
                                     Print Penagihan
                                 </button>
@@ -172,7 +172,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" *ngIf="bills.statussub =! 'Account Active'">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Cable & RJ45</span>
@@ -247,7 +247,7 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-                        
+
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInvoice'">
                            <div id="printPenagihan" style="width: 100%;">
