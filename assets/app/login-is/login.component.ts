@@ -12,7 +12,7 @@ import { Sub } from './subs';
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
-                        <div class="col-sm-5 card-login">
+                        <div class="col-sm-4 card-login">
                             <form class="form-horizontal">
                                 <center><img src="images/logo-groovy.png" alt="Logo Groovy" width="40%">
                                 <h5 class="grey-text">INFORMATION SYSTEM</h5></center><br><br>
