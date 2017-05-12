@@ -135,7 +135,7 @@ declare let kendo;
                                                             <span>Description</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">Amount (Rp.)</span>
+                                                            <span class="right">Amount (IDR)</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -158,7 +158,7 @@ declare let kendo;
                                                             <span>Router rent</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.pricerouter }}</span>
+                                                            <span class="right">{{ bills.pricerouter | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,7 +168,7 @@ declare let kendo;
                                                             <span>STB Rent</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.pricestb }}</span>
+                                                            <span class="right">{{ bills.pricestb | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -178,7 +178,7 @@ declare let kendo;
                                                             <span>Cable & RJ45</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.pricerj45cable }}</span>
+                                                            <span class="right">{{ bills.pricerj45cable | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -188,7 +188,7 @@ declare let kendo;
                                                             <span>Instalation Charge</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.priceinstal }}</span>
+                                                            <span class="right">{{ bills.priceinstal | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -201,7 +201,7 @@ declare let kendo;
                                                             <span class="right">TOTAL PRICE</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.totalprice }}</span>
+                                                            <span class="right">{{ bills.totalprice | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -211,7 +211,7 @@ declare let kendo;
                                                             <span class="right">TAX 10%</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.changetax }}</span>
+                                                            <span class="right">{{ bills.changetax | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -221,7 +221,7 @@ declare let kendo;
                                                             <span class="right">TOTAL PAYMENT</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.totalpay }}</span>
+                                                            <span class="right">{{ bills.totalpay | currency:'IDR':true:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
