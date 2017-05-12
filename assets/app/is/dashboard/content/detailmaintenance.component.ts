@@ -31,7 +31,7 @@ import 'rxjs/add/operator/map';
                             <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
-                            <h4>MAINTENANCE / INSTALASI</h4>
+                            <h4>MAINTENANCE / INSTALLATION</h4>
                         </div>
                     </div>
     
@@ -83,7 +83,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>ADD BARANG</h4>
+                            <h4>ADD GOODS</h4>
                         </div>
                     </div>
                     <div class="row">
@@ -115,7 +115,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>TECHNICIAN JOB</h4>
+                            <h4>TECHNICAL JOB</h4>
                         </div>
                     </div>
                     
