@@ -42,7 +42,11 @@ import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.comp
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
+<<<<<<< HEAD
 import {ContentPackageComponent} from "./dashboard/content/packages.component";
+=======
+import {ContentDetailMaintenanceComponent} from "./dashboard/content/detailmaintenance.component";
+>>>>>>> 3f1ba550719a609ff12f3ce9ed0b48e8028bfdba
 
 @Component({
    selector: 'is-app',
@@ -110,7 +114,11 @@ import {ContentPackageComponent} from "./dashboard/content/packages.component";
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
+<<<<<<< HEAD
         ContentPackageComponent,
+=======
+        ContentDetailMaintenanceComponent,
+>>>>>>> 3f1ba550719a609ff12f3ce9ed0b48e8028bfdba
         ROUTER_DIRECTIVES
     ],
 })
@@ -153,7 +161,11 @@ import {ContentPackageComponent} from "./dashboard/content/packages.component";
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
+<<<<<<< HEAD
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
+=======
+    { path: '/is/maintenance', component:ContentDetailMaintenanceComponent, name:'DetailMaintenance'},
+>>>>>>> 3f1ba550719a609ff12f3ce9ed0b48e8028bfdba
 ])
 
 export class AppComponent {
