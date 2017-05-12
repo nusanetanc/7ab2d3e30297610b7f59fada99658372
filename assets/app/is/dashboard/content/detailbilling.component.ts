@@ -221,7 +221,7 @@ declare let kendo;
                                                             <span class="right">TOTAL PAYMENT</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.totalpay | currency:'IDR':true:'2.2-4' }}</span>
+                                                            <span class="right">RP. {{ bills.totalpay | number::'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
