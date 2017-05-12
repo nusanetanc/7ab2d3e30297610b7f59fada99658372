@@ -45,7 +45,7 @@ import {Menu} from "./menu";
                         <div class="col-sm-12">
                             <ul class="sidebar-nav nav" style="margin-right: -15px">
                                 <li class="firstLiSidebar">
-                                    <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                    <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD (AM)</span></a>
                                 </li>
                                 <li class="firstLiSidebar">
                                     <a [routerLink]="['DashboardHelpdesk']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD (HELPDESK)</span></a>
