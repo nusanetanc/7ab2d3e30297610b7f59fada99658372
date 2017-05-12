@@ -31,7 +31,7 @@ import 'rxjs/add/operator/map';
                             <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
-                            <h4>PERSONAL INFORMATION</h4>
+                            <h4>SUBSCRIBER</h4>
                         </div>
                     </div>
     
@@ -39,7 +39,7 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Full Name</span>
+                                    <span>Subscriber</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
@@ -50,57 +50,13 @@ import 'rxjs/add/operator/map';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Email</span>
+                                    <span>Perangkat</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>{{ subs.email }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Handphone</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.phone }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Address</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>National Identy Card No.</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.idnumber }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Date of Birth</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
                                 </div>
                             </div>
                         </div>
