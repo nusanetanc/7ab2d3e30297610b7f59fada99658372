@@ -32,7 +32,7 @@ router.post('/addcluster', function(req, res, next) {
     cluster.name= req.body.name;
     cluster.level= req.body.level;
     cluster.property= req.body.property;
-
+    cluster.building= req.body.building;
     cluster.save(function(err) {
       if (err)
           res.send(err);
@@ -49,6 +49,7 @@ router.put('/putcluster/:id', function(req, res, next) {
 
                 cluster.name= req.body.name;
                 cluster.level= req.body.level;
+                cluster.building= req.body.building;
               if (err)
                 res.send(err);
 
