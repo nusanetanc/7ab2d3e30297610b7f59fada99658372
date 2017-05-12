@@ -42,6 +42,7 @@ import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.comp
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
+import {ContentPackageComponent} from "./dashboard/content/packages.component";
 
 @Component({
    selector: 'is-app',
@@ -109,6 +110,7 @@ import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(bi
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
+        ContentPackageComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -151,6 +153,7 @@ import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(bi
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
+    { path: '/is/package', component:ContentPackageComponent, name:'Package'},
 ])
 
 export class AppComponent {
