@@ -52,7 +52,7 @@ import { Cluster } from './cluster';
                                             </form>
                                             <form>
                                                 <select  #clusterproperty id="clusterproperty">
-                                                    <option class="option" disabled="true"  value="0">-- Select Level Cluster --</option>
+                                                    <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
                                                 </select><br/>
