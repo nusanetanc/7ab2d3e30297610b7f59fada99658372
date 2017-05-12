@@ -45,10 +45,10 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <span>IBNU ZULKIVLI</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <span>AHMAD CAHYADI</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
