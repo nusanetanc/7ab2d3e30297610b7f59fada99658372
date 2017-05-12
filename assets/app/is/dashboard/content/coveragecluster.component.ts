@@ -51,7 +51,7 @@ import { Cluster } from './cluster';
                                                 </select><br/>
                                             </form>
                                             <form>
-                                                <select  #clusterproperty id="clusterproperty">
+                                                <select  #clusterlevel id="clusterlevel">
                                                     <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
                                                     <option value="A">A</option>
                                                     <option value="B">B</option>
@@ -61,7 +61,7 @@ import { Cluster } from './cluster';
                                                 <input #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addCluster(levelproperty.value, clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
@@ -164,9 +164,9 @@ getAllClusterByProperty() {
             this.clusters = clusters
         })
 }
-    addCluster(clustername, clusterproperty) {
+    addCluster(clusterlevel, clustername, clusterproperty) {
 
-        var body = `name=${clustername}&property=${clusterproperty}`;
+        var body = `name=${clustername}&level=${clusterlevel}&property=${clusterproperty}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
