@@ -12,7 +12,7 @@ import {Report} from './allreports';
                   <h3 id="home" class="fontWeight300">
                       <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
-                      &nbsp; Dashboard
+                      &nbsp; Dashboard (AM)
                   </h3>
               </div>
 
