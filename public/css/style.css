@@ -1106,6 +1106,7 @@ body.body-login {
     .card-login {
         box-shadow:none;
         margin: 0;
+        padding: 40px;
     }
 }
 
