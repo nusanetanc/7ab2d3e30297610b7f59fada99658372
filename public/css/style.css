@@ -1107,6 +1107,11 @@ body.body-login {
         box-shadow:none;
         margin: 0;
     }
+
+    .form-horizontal h6 {
+        font-size: 10px;
+        font-weight: 500;
+    }
 }
 
 .form-horizontal h6 {
