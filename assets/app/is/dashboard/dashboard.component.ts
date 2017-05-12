@@ -63,11 +63,7 @@ import {Menu} from "./menu";
                                     <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                                 </li>
                                 <li>
-<<<<<<< HEAD
                                     <a [routerLink]="['Package']" ><i class="material-icons">room</i> <span class="fontWeight300">PACKAGES</span></a>
-=======
-                                    <a><i class="material-icons">view_module</i> <span class="fontWeight300">PACKAGES</span></a>
->>>>>>> 3f1ba550719a609ff12f3ce9ed0b48e8028bfdba
                                 </li>
                                 <li>
                                     <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
