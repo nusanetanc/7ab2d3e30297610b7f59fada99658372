@@ -6,6 +6,7 @@ var ClusterSchema   = new Schema({
   name: String,
   level: String,
   level: String,
+  building: String,
   property: {type: Schema.Types.ObjectId, ref: 'Property'}
 });
 

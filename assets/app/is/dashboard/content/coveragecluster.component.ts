@@ -58,10 +58,17 @@ import { Cluster } from './cluster';
                                                 </select><br/>
                                             </form>
                                             <form>
+                                                <select  #clusterbuilding id="clusterbuilding">
+                                                    <option class="option" disabled="true"  selected="true" value="0">-- Select Building Cluster --</option>
+                                                    <option value="Land House">Land House</option>
+                                                    <option value="Apartment">Apartment</option>
+                                                </select><br/>
+                                            </form>
+                                            <form>
                                                 <input #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addCluster(levelproperty.value, clusterproperty.value, clustername.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterlevel.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
@@ -164,9 +171,9 @@ getAllClusterByProperty() {
             this.clusters = clusters
         })
 }
-    addCluster(clusterlevel, clustername, clusterproperty) {
+    addCluster(clusterproperty, clustername, clusterlevel, clusterbuilding) {
 
-        var body = `name=${clustername}&level=${clusterlevel}&property=${clusterproperty}`;
+        var body = `name=${clustername}&property=${clusterproperty}&level=${clusterlevel}&building=${clusterbuilding}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
