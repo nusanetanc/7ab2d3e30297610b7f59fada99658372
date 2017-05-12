@@ -78,13 +78,6 @@ import 'rxjs/add/operator/map';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -178,50 +171,7 @@ import 'rxjs/add/operator/map';
                         </div>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="formNewReport marginLR20">
-                                <input #datejob type="date" class="form-control inputForm" id="datejob" placeholder="Date Job">
-                                <form>
-                                    <select #typejob id="typejob">
-                                        <option class="option" disabled="true" selected="true" value="0">-- Select Job Type --</option>
-                                        <option class="option" value="Installation">Installation</option>
-                                        <option class="option" value="Maintenance">Maintenance</option>
-                                        <option class="option" value="Switch Devices">Switch Devices</option>
-                                        <option class="option" value="Take Device">Take Device</option>
-                                    </select><br/><br/>
-                                </form>
-                                <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                      <form>
-                                          <select #empjob2 id="empjob2" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
-                                          </select><br/>
-                                      </form>
-                                    </div>
-                                    <div class="col-sm-6">
-                                      <form>
-                                        <select #empjob1 id="empjob1" class="form-control inputForm">
-                                            <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                            <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
-                                        </select><br/><br/>
-                                      </form>
-                                    </div>
-                                </div>
-                                <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
-                                    SEND
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- <div class="right">
-                    <a class="btn btn-default buttonOrange" type="button" style="margin-right: 50px !important;">
-                        <i class="material-icons">create</i>
-                    </a>
-                </div> -->
     
             </div>
         </div>
