@@ -1107,11 +1107,21 @@ body.body-login {
         box-shadow:none;
         margin: 0;
     }
+
+    .form-horizontal h6 {
+        font-size: 9px;
+        font-weight: 500;
+    }
 }
 
 .form-horizontal h6 {
     font-size: 11px;
     font-weight: 500;
+}
+
+.form-group .orange-text {
+    font-size: 11px;
+    font-weight: 400;
 }
 
 .form-login {
@@ -1179,7 +1189,7 @@ body.body-login {
     margin-top: -15px;
 }
 
-.form-forgot a {
+.form-forgot .orange-text {
     font-size: 12px;
 }
 
