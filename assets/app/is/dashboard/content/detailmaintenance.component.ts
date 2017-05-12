@@ -44,10 +44,10 @@ import 'rxjs/add/operator/map';
                                 <div class="col-xs-6 col-sm-6">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7 col-md-offset-6">
+                                <div class="col-xs-12 col-md-7 col-md-offset-7">
                                     <span>IBNU ZULKIVLI</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7 col-md-offset-6">
+                                <div class="col-xs-12 col-md-7 col-md-offset-7">
                                     <span>AHMAD CAHYADI</span>
                                 </div>
                             </div>
