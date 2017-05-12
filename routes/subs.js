@@ -318,6 +318,25 @@ router.put('/putsub/:id', function(req, res, next) {
         });
 });
 
+router.put('/editgroovyid/:id', function(req, res, next) {
+
+        Sub.findById(req.params.id, function(err, sub) {
+
+            if (err)
+                res.send(err);
+                sub.groovyid= req.body.groovyid;
+              if (err)
+                res.send(err);
+
+            sub.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 /* GET detail sub. */
 router.get('/activationid/:id', function(req, res, next) {
   Sub.findOne({codeactivation: req.params.id}, function(err, subs) {
