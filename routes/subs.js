@@ -74,7 +74,7 @@ Sub.findById(req.params.id, function(err, subs) {
   }
   Home.findById(subs.groovyid, function(err, homes) {
     if(homes.cluster == "" || homes.cluster == null){
-      homes.cluster = "58982738f60815180d148f14";
+      homes.cluster = "591517e7a170450e63d1ac34";
     }
     Cluster.findById(homes.cluster, function(err, clusters) {
       if(homes.city == "" || homes.city == null){
