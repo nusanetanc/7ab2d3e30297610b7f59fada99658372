@@ -1119,6 +1119,11 @@ body.body-login {
     font-weight: 500;
 }
 
+.form-group .orange-text {
+    font-size: 11px;
+    font-weight: 400;
+}
+
 .form-login {
     background-color: #fff;
     background-image: none;

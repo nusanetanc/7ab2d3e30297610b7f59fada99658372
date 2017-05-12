@@ -17,11 +17,11 @@ import { Sub } from './subs';
                                 <center><img src="images/logo-groovy.png" alt="Logo Groovy" width="40%">
                                 <h6 class="grey-text">INFORMATION SYSTEM</h6></center><br><br>
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="control-label orange-text" style="font-size: 11px; font-weight: 300;">Email</label><br>
+                                    <label for="inputEmail3" class="control-label orange-text">Email</label><br>
                                     <input type="email" class="form-login" id="signEmail" #signEmail placeholder="Type your mail"><br>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputPassword3" class="control-label orange-text" style="font-size: 11px; font-weight: 300;">Password</label><br>
+                                    <label for="inputPassword3" class="control-label orange-text">Password</label><br>
                                     <input type="password" class="form-login" id="signPassword" #signPassword placeholder="Type your password"><br>
                                 </div><br>
                                 <div class="form-group form-forgot">
