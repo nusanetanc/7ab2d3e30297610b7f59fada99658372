@@ -26,7 +26,7 @@ import {Report} from './allreports';
                                           <div class="row">
                                               <div class="col-sm-12">
                                                   <h4 class="fontWeight300">WAITING VERIFICATION</h4>
-                                                  <p class="text-center font70"><b>12</b></p>
+                                                  <p class="text-center font70MarginT35"><b>12</b></p>
                                                   <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                               </div>
                                           </div>
