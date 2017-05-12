@@ -32,24 +32,18 @@ import { Cluster } from './cluster';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form>
-                                                <input #level type="text" class="inputForm" id="level" placeholder="Level">
-                                            </form>
-                                            <form>
+                                                <input #level type="text" class="inputForm" id="level" placeholder="Level"><br/><br/>
                                                 <select name="package">
                                                     <option disabled="true" selected="true">-- Select Cluster Level --</option>
                                                     <option value="level1">A</option>
                                                     <option value="level2">B</option>
-                                                </select><br/>
-                                            </form>
-                                            <form>
+                                                </select><br/><br/>
                                                 <select name="package">
                                                     <option disabled="true" selected="true">-- Select Detail --</option>
                                                     <option value="level1">Internet</option>
                                                     <option value="level2">Internet + TV</option>
                                                     <option value="level6">Internet + TV + Voice</option>
-                                                </select><br/>
-                                            </form>
-                                            <form>
+                                                </select><br/><br/>
                                                 <input #harga type="text" class="form-control inputForm" id="harga" placeholder="Harga">
                                                 <br/>
                                             </form>
