@@ -12,7 +12,7 @@ import {Report} from './allreports';
                   <h3 id="home" class="fontWeight300">
                       <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
-                      &nbsp; Dashboard (AM)
+                      &nbsp; Dashboard (Helpdesk)
                   </h3>
               </div>
 
@@ -21,16 +21,16 @@ import {Report} from './allreports';
                       <div class="col-sm-12">
                           <div class="row marginLR15">
                               <div class="col-sm-4">
-                                    <a [routerLink]="['AllSubs']">
-                                      <div class="cardDashboardSub">
-                                          <div class="row">
-                                              <div class="col-sm-12">
-                                                  <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
-                                                  <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
-                                              </div>
+                                <a [routerLink]="['Information']">
+                                  <div class="cardDashboardSub">
+                                      <div class="row marginB10">
+                                          <div class="col-sm-12 text-center">
+                                              <i class="material-icons font100Margin30">mode_edit</i>
+                                              <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
                                           </div>
                                       </div>
-                                    </a>
+                                  </div>
+                                </a>
                               </div>
                               <div class="col-sm-4">
                                 <a [routerLink]="['Information']">
@@ -43,15 +43,6 @@ import {Report} from './allreports';
                                       </div>
                                   </div>
                                 </a>
-                              </div>
-                              <div class="col-sm-4">
-                                  <div class="cardDashboardSub">
-                                      <div class="row marginB10">
-                                          <div class="col-sm-12 text-center">
-                                            
-                                          </div>
-                                      </div>
-                                  </div>
                               </div>
                           </div>
                       </div>
@@ -79,7 +70,7 @@ import {Report} from './allreports';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDashboardComponent {
+export class ContentDashboardHelpdeskComponent {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
