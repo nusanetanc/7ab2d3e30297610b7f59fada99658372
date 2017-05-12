@@ -1093,7 +1093,7 @@ body.body-login {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0);
     margin-left:30%;
     margin-top:8%;
-    padding: 50px;
+    padding: 60px;
     position: absolute;
 }
 
@@ -1119,7 +1119,6 @@ body.body-login {
     font-size: 14px;
     height: 48px;
     line-height: 1.42857143;
-    padding: 6px 12px;
     transition: 0.4s all;
     width: 100%;
 }
