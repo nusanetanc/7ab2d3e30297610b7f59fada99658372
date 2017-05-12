@@ -34,13 +34,13 @@ import 'rxjs/add/operator/map';
                                         <div class="formNewReport marginLR20">
                                             <form>
                                                 <select id="clustercity">
-                                                    <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                                    <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                                     <option ></option>
                                                 </select><br/>
                                             </form>
                                             <form>
                                                 <select id="clusterproperty" >
-                                                    <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
+                                                    <option class="option" disabled="true"  value="0">-- Select Barcode --</option>
                                                     <option ></option>
                                                 </select><br/>
                                             </form>
