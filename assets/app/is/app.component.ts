@@ -41,6 +41,7 @@ import {ContentAddStocksComponent} from "./dashboard/content/addstock.component"
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
+import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 
 @Component({
    selector: 'is-app',
@@ -71,7 +72,8 @@ import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(h
 `,
     directives: [
         DashboardComponent,
-        ContentDashboardHelpdeskComponent
+        ContentDashboardHelpdeskComponent,
+        ContentDashboardBillingComponent,
         ContentAllSubsComponent,
         ContentDashboardComponent,
         ContentSubscribeComponent,
@@ -148,6 +150,7 @@ import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(h
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
+    { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
 ])
 
 export class AppComponent {
