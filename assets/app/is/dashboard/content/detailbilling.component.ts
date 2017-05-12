@@ -148,7 +148,7 @@ declare let kendo;
                                                             <span>Level {{ bills.namepack }} Package</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">{{ bills.pricepack | currency:'IDR':true}}</span>
+                                                            <span class="right">{{ bills.pricepack | currency:'USD':true:'2.2-4'}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
