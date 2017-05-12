@@ -161,11 +161,8 @@ import {ContentDetailMaintenanceComponent} from "./dashboard/content/detailmaint
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
-<<<<<<< HEAD
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
-=======
     { path: '/is/maintenance', component:ContentDetailMaintenanceComponent, name:'DetailMaintenance'},
->>>>>>> 3f1ba550719a609ff12f3ce9ed0b48e8028bfdba
 ])
 
 export class AppComponent {
