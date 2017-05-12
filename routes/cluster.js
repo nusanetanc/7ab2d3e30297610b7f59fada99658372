@@ -30,6 +30,7 @@ router.get('/clusterbyproperty/:id', function(req, res, next) {
 router.post('/addcluster', function(req, res, next) {
   var cluster = new Cluster();
     cluster.name= req.body.name;
+    cluster.status= req.body.status;
     cluster.property= req.body.property;
 
     cluster.save(function(err) {
