@@ -70,7 +70,7 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-    subs.groovyid = "5898330cc0d0992a46465109";
+    subs.groovyid = "59151abc9cfd4f10d697879e";
   }
   Home.findById(subs.groovyid, function(err, homes) {
     if(homes.cluster == "" || homes.cluster == null){
