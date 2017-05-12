@@ -24,10 +24,8 @@ import { Sub } from './subs';
                                     <label for="inputPassword3" class="control-label orange-text" style="font-size: 11px; font-weight: 300;">Password</label><br>
                                     <input type="password" class="form-login" id="signPassword" #signPassword placeholder="Type your password"><br>
                                 </div>
-                                <div class="form-group text-center form-forgot">
-                                    <a href="" class="grey-text">I forgot password</a>
-                                </div>
-                                <div class="form-group">
+                                <div class="form-group form-forgot">
+                                    <a href="" class="orange-text">I forgot password</a>
                                     <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>

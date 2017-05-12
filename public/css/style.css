@@ -1175,6 +1175,10 @@ body.body-login {
     margin-top: -15px;
 }
 
+.form-forgot a {
+    font-size: 12px;
+}
+
 /* Overriding styles */
 
 ::-webkit-input-placeholder {
