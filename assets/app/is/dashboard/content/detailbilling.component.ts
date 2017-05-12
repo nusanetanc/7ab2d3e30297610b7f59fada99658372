@@ -568,7 +568,7 @@ declare let kendo;
                                                    <span>Paket Level {{ bills.namepack }} <i style="color: #999999;">  &nbsp; / &nbsp; Level {{ bills.namepack }} Package (Internet)</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                   <span>{{ bills.pricepack }}</span>
+                                                   <span>Rp. {{ bills.pricepack  | number:'2.2-4'}}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -576,7 +576,7 @@ declare let kendo;
                                                    <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                   <span>{{ bills.pricerouter }}</span>
+                                                   <span>Rp. {{ bills.pricerouter  | number:'2.2-4'}}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -584,7 +584,7 @@ declare let kendo;
                                                    <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                   <span>{{ bills.pricestb }}</span>
+                                                   <span>Rp. {{ bills.pricestb  | number:'2.2-4'}}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -592,7 +592,7 @@ declare let kendo;
                                                    <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                   <span>{{ bills.pricerj45cable }}</span>
+                                                   <span>Rp. {{ bills.pricerj45cable  | number:'2.2-4'}}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -600,15 +600,7 @@ declare let kendo;
                                                    <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
-                                                   <span>{{ bills.priceinstal }}</span>
-                                                </div>
-                                             </div>
-                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
-                                                <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE &nbsp; &nbsp;</i></span>
-                                                </div>
-                                                <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>{{ bills.totalprice }}</span>
+                                                   <span>Rp. {{ bills.totalprice | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -616,7 +608,7 @@ declare let kendo;
                                                    <span>PPN 10% <i style="color: #999999;"> &nbsp; / &nbsp; TAX 10% &nbsp; &nbsp;</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
-                                                   <span>{{ bills.changetax }}</span>
+                                                   <span>Rp. {{ bills.changetax | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
@@ -624,7 +616,7 @@ declare let kendo;
                                                    <span><b>TOTAL PEMBAYARAN <i style="color: #999999;"> &nbsp; &nbsp; / &nbsp; TOTAL PAYMENT &nbsp; &nbsp;</i></b></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="border: 1px solid orangered; padding: 5px;">
-                                                   <span><b>{{ bills.totalpay }}</b></span>
+                                                   <span><b>Rp. {{ bills.totalpay | number:'2.2-4' }}</b></span>
                                                 </div>
                                              </div>
                                           </div>
