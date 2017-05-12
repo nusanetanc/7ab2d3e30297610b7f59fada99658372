@@ -38,42 +38,42 @@ import 'rxjs/add/operator/map';
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-6">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Subscriber</span>
                                 </div>
-                                <div class="col-xs-6 col-sm-6">
+                                <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- IBNU ZULKIVLI</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- AHMAD CAHYADI</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- IVAN DUGEM</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- BALAMON DARTU</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-6">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Perangkat</span>
                                 </div>
-                                <div class="col-xs-6 col-sm-6">
+                                <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- ROUTER</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- RADIO</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- RJ-45</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-7">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- BALLET</span>
                                 </div>
                             </div>
@@ -168,10 +168,10 @@ import 'rxjs/add/operator/map';
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-4">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- ERWANDO</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-4">
+                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>- ARIF</span>
                                 </div>
                             </div>
