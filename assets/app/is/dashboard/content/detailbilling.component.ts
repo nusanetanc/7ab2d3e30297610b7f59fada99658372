@@ -162,7 +162,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pricestb != '0' || bills.pricestb != '' || bills.pricestb != null" class="row">
+                                                <div *ngIf="bills.pricestb != null" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>STB Rent</span>
@@ -172,7 +172,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pricerj45cable != '0' || bills.pricerj45cable != '' || bills.pricerj45cable != null" class="row">
+                                                <div *ngIf="bills.pricerj45cable != null" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Cable & RJ45</span>
