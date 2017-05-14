@@ -182,7 +182,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row"  *ngIf="bills.priceinstal != '0' || bills.priceinstal != '' || bills.priceinstal != null">
+                                                <div class="row"  *ngIf="bills.priceinstal != null">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Instalation Charge</span>
