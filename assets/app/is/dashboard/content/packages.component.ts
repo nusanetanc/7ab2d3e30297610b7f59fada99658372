@@ -109,7 +109,7 @@ getAllPackages() {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/cluster/addcluster`,
+            .post(`${this.API}/package/addpackage`,
                 body, {
                     headers: headers
                 })
