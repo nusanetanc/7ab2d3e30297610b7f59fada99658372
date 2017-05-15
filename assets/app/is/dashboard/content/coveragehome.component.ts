@@ -247,7 +247,7 @@ getAllHomeByStreet() {
 }
 
     addBlock(homecity, homeproperty, homecluster, homeblok, homestreet, homeno) {
-        var body = `city=${homecity}&property=${homeproperty}&cluster=${homecluster}&blokfloor=${homeblok}&street=${homestreet}&nohome=${homeno}`;
+        var body = `city=${homecity}&property=${homeproperty}&cluster=${homecluster}&blokfloor=${homeblok}&streetname=${homestreet}&nohome=${homeno}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
