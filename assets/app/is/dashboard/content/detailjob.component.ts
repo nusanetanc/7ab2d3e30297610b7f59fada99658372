@@ -249,7 +249,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getJob(){
-        this.http.get(`${this.API}/job/job/${this._routeParams.get('_id')}`)
+        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(jobs => {
                 this.jobs = jobs
