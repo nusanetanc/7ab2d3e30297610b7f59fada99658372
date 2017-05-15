@@ -142,12 +142,12 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select #inputGoods id="inputGoods">
+                                    <select >
                                         <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                         <option >test</option>
                                     </select><br/>
                                 </form>
-                                <input type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
+                                <input type="number" class="form-control inputForm" placeholder="Barcode">
                                 <button type="submit" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
