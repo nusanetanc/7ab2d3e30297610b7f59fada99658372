@@ -116,6 +116,26 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
+                            <h4>GOODS USED</h4>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-12 col-sm-12">
+                                    <span>Router</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-12">
+                                    <span>Bullet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <h4>ADD GOODS</h4>
                         </div>
                     </div>
@@ -212,7 +232,9 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailMaintenanceComponent implements OnInit {
+export class ContentDetailJobComponent implements OnInit {
+
+
 
 }
 

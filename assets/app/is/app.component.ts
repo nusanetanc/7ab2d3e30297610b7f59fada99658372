@@ -43,7 +43,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 import {ContentPackageComponent} from "./dashboard/content/packages.component";
-import {ContentDetailMaintenanceComponent} from "./dashboard/content/detailmaintenance.component";
+import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
 
 @Component({
    selector: 'is-app',
@@ -112,7 +112,7 @@ import {ContentDetailMaintenanceComponent} from "./dashboard/content/detailmaint
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
         ContentPackageComponent,
-        ContentDetailMaintenanceComponent,
+        ContentDetailJobComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -156,7 +156,7 @@ import {ContentDetailMaintenanceComponent} from "./dashboard/content/detailmaint
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
-    { path: '/is/maintenance', component:ContentDetailMaintenanceComponent, name:'DetailMaintenance'},
+    { path: '/is/job', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
 
 export class AppComponent {
