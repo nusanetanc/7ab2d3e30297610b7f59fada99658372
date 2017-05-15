@@ -39,7 +39,7 @@ packages: any[] = [];
           .map(res => res.json())
           .subscribe(clusters => {
               this.clusters = clusters['level'];
-              getAllPackageByCluster(clusters);
+              this.getAllPackageByCluster(clusters);
           })
   }
   getAllPackageByCluster(cluster) {
