@@ -142,13 +142,13 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
+                                    <select #inputGoods id="inputGoods">
                                         <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
-                                <option *ngFor="#good of goods" [value]=good._id>{{ good.name }}</option>
+                                        <option >test</option>
                                     </select><br/>
                                 </form>
-                                <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
-                                <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
+                                <input type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
+                                <button type="submit" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
                             </div>
@@ -228,61 +228,12 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
-    goods: any[] = [];
-    stocks: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllJob();
-        this.getAllGoods();
-        this.getAllStock();
-    }
-
-    selectedGoods: Goods = new Goods(0, 'dummy');
-    onSelectGoods(_id) {
-        this.stocks = this.getAllStock() {
-            this.http.get(`${this.API}/stock/goods/${_id}`)
-                .map(res => res.json())
-                .subscribe(stocks => {
-                    this.stocks = stocks
-                })
-        }
-    }
-
-    // Get all users from the API
-    getAllGoods() {
-        this.http.get(`${this.API}/goods/list`)
-            .map(res => res.json())
-            .subscribe(goods => {
-                this.goods = goods
-            })
-    }
-    // Get all users from the API
-    getAllStock() {
-        this.http.get(`${this.API}/stock/goods/${this.good_id}`)
-            .map(res => res.json())
-            .subscribe(stocks => {
-                this.stocks = stocks
-            })
-    }
-    addStock(inputGoods, idbarcode) {
-
-        var body = `goods=${inputGoods}&barcode=${idbarcode}`;
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http
-            .post(`${this.API}/stock/add`,
-                body, {
-                    headers: headers
-                })
-            .subscribe(data => {
-                alert('Add Stock Success');
-                this.getAllStock();
-            }, error => {
-                console.log(JSON.stringify(error.json()));
-            });
     }
 
     // Get all users from the API
