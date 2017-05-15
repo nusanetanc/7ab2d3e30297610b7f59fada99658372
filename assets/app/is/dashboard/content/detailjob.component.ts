@@ -99,7 +99,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subbrith }}</span>
+                                    <span>{{ jobs.subbirth }}</span>
                                 </div>
                             </div>
                         </div>
