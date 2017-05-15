@@ -39,11 +39,11 @@ packages: any[] = [];
           .map(res => res.json())
           .subscribe(clusters => {
               this.clusters = clusters['level'];
-              getAllPackageByCluster(cluster);
+              getAllPackageByCluster(clusters);
           })
   }
   getAllPackageByCluster(cluster) {
-      this.http.get(`${this.API}/package/cluster/${this.clusters['level']}`)
+      this.http.get(`${this.API}/package/cluster/${clusters}`)
           .map(res => res.json())
           .subscribe(packages => {
               this.packages = packages
