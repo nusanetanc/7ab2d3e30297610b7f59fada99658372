@@ -29,6 +29,10 @@ packages: any[] = [];
       this.getAllPackageByCluster();
       this.getCluster();
   }
+
+  clusters: any[] = [];
+  packages: any[] = [];
+
   constructor(private http: Http) {}
   getCluster() {
       this.http.get(`${this.API}/cluster/cluster/${this.IDCluster}`)
@@ -38,7 +42,7 @@ packages: any[] = [];
           })
   }
   getAllPackageByCluster() {
-      this.http.get(`${this.API}/package/cluster/B`)
+      this.http.get(`${this.API}/package/cluster/${this.clusters['level']}`)
           .map(res => res.json())
           .subscribe(packages => {
               this.packages = packages
