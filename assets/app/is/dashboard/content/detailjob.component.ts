@@ -123,10 +123,10 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-12 col-sm-12">
-                                    <span>{{ good.name }}</span>
+                                    <span>Router</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-12">
-                                    <span>{{ good.name }}</span>
+                                    <span>Bullet</span>
                                 </div>
                             </div>
                         </div>
@@ -142,13 +142,22 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select >
-                                        <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
-                                        <option >test</option>
+                                    <select #typestatus id="typestatus">
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
+                                        <option class="option" value="Account Active">Account Active</option>>
+                                        <option class="option" value="Account and Service Active">Account and Service Active</option>
+                                        <option class="option" value="Account Unactive">Account Unactive</option>
                                     </select><br/>
                                 </form>
-                                <input type="number" class="form-control inputForm" placeholder="Barcode">
-                                <button type="submit" class="btn btn-default buttonOrange">
+                                <form>
+                                    <select #typestatus id="typestatus">
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
+                                        <option class="option" value="Account Active">Account Active</option>>
+                                        <option class="option" value="Account and Service Active">Account and Service Active</option>
+                                        <option class="option" value="Account Unactive">Account Unactive</option>
+                                    </select><br/><br/>
+                                </form>
+                                <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
                             </div>
