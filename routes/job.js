@@ -16,7 +16,7 @@ router.get('/listjob', function(req, res, next) {
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
         Sub.findById(jobs.subs, function(err, subs) {
-            Home.findById(subs.groovyid, function(err, homes) {
+            Cluster.findById(homes.cluster, function(err, clusters) {
                         res.json({
                             _id: jobs._id,
                             name: jobs.name,
@@ -28,8 +28,7 @@ router.get('/job/:id', function(req, res, next) {
                             subcardid: subs.idnumber,
                             subbirth: subs.datebirth,
                             subid: subs.subid,
-                            subaddress: homes.address,
-                            subnohome: homes.nohome,
+                            cluster: clusters.name,
                         });
             });
         });
