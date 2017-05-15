@@ -13,21 +13,41 @@ router.get('/listjob', function(req, res, next) {
 
 /* GET detail jobs. */
 router.get('/job/:id', function(req, res, next) {
-Job.findById(req.params.id, function(err, jobs) {
-Sub.findById(jobs.subs, function(err, subs) {
-    res.json({
-        _id: jobs._id,
-        name: jobs.name,
-        detail: jobs.detail,
-        date: jobs.date,
-        subname: subs.name,
-        submail: subs.email,
-        subphone: subs.phone,
-        subcardid: subs.idnumber,
-        subbirth: subs.datebirth,
+    Job.findById(req.params.id, function(err, jobs) {
+        Sub.findById(jobs.subs, function(err, subs) {
+        if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+            subs.groovyid = "591916077a149b7469259903";
+        }
+            Home.findById(subs.groovyid, function(err, homes) {
+            if(homes.cluster == "" || homes.cluster == null){
+                homes.cluster = "59152634f2c0f31ac56ada67";
+            }
+                Cluster.findById(homes.cluster, function(err, clusters) {
+                if(homes.city == "" || homes.city == null){
+                    homes.city = "58d3492416d72b7e166dd977";
+                }
+                    City.findById(homes.city, function(err, cities) {
+                        res.json({
+                            _id: jobs._id,
+                            name: jobs.name,
+                            detail: jobs.detail,
+                            date: jobs.date,
+                            subname: subs.name,
+                            submail: subs.email,
+                            subphone: subs.phone,
+                            subcardid: subs.idnumber,
+                            subbirth: subs.datebirth,
+                            subid: subs.subid,
+                            subaddress: homes.address,
+                            subnohome: homes.nohome,
+                            subcluster: clusters.name,
+                            subcity: cities.name
+                        });
+                    });
+                });
+            });
+        });
     });
-   });
-   });
 });
 
 /* GET detail jobs. */
