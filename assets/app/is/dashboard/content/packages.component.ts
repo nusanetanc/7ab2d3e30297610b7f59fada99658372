@@ -42,10 +42,10 @@ import 'rxjs/add/operator/map';
                                                     <option value="Internet + T">Internet + TV</option>
                                                     <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                                 </select><br/><br/>
-                                                <input #harga type="text" class="form-control inputForm" id="harga" placeholder="Harga">
+                                                <input #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                                 <br/>
                                             </form>
-                                            <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, harga.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, price.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
                                         </div>
@@ -103,9 +103,9 @@ getAllPackages() {
             this.packages = packages
         })
 }
-    addPackage(level, clusterlevel, detail, harga) {
+    addPackage(level, clusterlevel, detail, price) {
 
-        var body = `level=${level}&clusterlevel=${clusterlevel}&detail=${detail}&harga=${harga}`;
+        var body = `level=${level}&clusterlevel=${clusterlevel}&detail=${detail}&price=${price}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
