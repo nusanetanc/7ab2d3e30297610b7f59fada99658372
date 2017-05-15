@@ -239,11 +239,13 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
+        this.getSub();
         this.getJob();
     }
 
@@ -253,6 +255,15 @@ export class ContentDetailJobComponent implements OnInit {
             .map(res => res.json())
             .subscribe(jobs => {
                 this.jobs = jobs
+            })
+    }
+
+    // Get all users from the API
+    getSub() {
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
             })
     }
 
