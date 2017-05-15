@@ -11,7 +11,7 @@ import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
-
+import {ContentListPackageComponent} from "./listpackage.component";
 @Component({
     selector: 'form-addsubs',
     template: `
@@ -131,10 +131,7 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
-                                                <option value="0" selected="true" disabled="true">-- Select Package --</option>
-                                                <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                            </select><br/>
+                                            <form-package></form-package>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +148,7 @@ import {Streetname} from "./street_name";
             </div>
         </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentListPackageComponent, ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
