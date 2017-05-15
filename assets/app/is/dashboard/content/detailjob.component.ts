@@ -27,7 +27,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 style="color:#FC592E;">#{{ jobs.subid }}</h4>
+                            <h4 style="color:#FC592E;">#</h4>
                         </div>
                         <div class="col-sm-12">
                             <h4>PERSONAL INFORMATION</h4>
@@ -192,7 +192,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{job.name}}</span>
+                                    <span>{{jobs.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
