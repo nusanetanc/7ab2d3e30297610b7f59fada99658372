@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Component({
     selector: 'form-detailmaintenance',
     template: `
-    {{ jobs.cluster }}
+    {{ homes.address }}
     `,
     directives: [ROUTER_DIRECTIVES],
 })
