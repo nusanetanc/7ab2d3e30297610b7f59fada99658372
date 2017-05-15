@@ -181,7 +181,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>25 / 04 / 2017</span>
+                                    <span>{{ jobs.date }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -203,7 +203,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Maintenance Rajawali block 4, lantai 7, no. 45</span>
+                                    <span>{{ jobs.detail }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -214,10 +214,10 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- ERWANDO</span>
+                                    <span>{{ jobs.emp1 }}</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- ARIF</span>
+                                    <span>{{ jobs.emp2 }}</span>
                                 </div>
                             </div>
                         </div>
