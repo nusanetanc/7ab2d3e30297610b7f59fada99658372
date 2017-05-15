@@ -22,28 +22,15 @@ onSelectPackage(level) {
     console.log(level)
 }
 //@Input() idsubs: string;
-IDCluster = '59152634f2c0f31ac56ada67';
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
       this.getAllPackageByCluster();
-      this.getCluster();
   }
 
-  clusters: any[] = [];
   packages: any[] = [];
-
-  constructor(private http: Http) {}
-  getCluster() {
-      this.http.get(`${this.API}/cluster/cluster/${this.IDCluster}`)
-          .map(res => res.json())
-          .subscribe(clusters => {
-              this.clusters = clusters['level'];
-              this.getAllPackageByCluster(clusters);
-          })
-  }
   getAllPackageByCluster(cluster) {
-      this.http.get(`${this.API}/package/cluster/${clusters}`)
+      this.http.get(`${this.API}/package/cluster/B`)
           .map(res => res.json())
           .subscribe(packages => {
               this.packages = packages
