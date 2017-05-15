@@ -156,7 +156,7 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
-    { path: '/is/job', component:ContentDetailJobComponent, name:'DetailJob'},
+    { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
 
 export class AppComponent {
