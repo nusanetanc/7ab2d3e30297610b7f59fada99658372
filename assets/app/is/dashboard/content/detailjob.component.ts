@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
@@ -234,7 +234,27 @@ import 'rxjs/add/operator/map';
 })
 export class ContentDetailJobComponent implements OnInit {
 
+// Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
 
+    // Declare empty list of people
+    subs: any[] = [];
+
+    constructor(private http: Http, private _routeParams: RouteParams) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+        this.getSub();
+    }
+
+    // Get all users from the API
+    getSub() {
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+            })
+    }
 
 }
 
