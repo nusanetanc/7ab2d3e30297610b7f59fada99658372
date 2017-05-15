@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
+var Sub = require('../models/subs');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
@@ -13,8 +14,19 @@ router.get('/listjob', function(req, res, next) {
 /* GET detail jobs. */
 router.get('/job/:id', function(req, res, next) {
 Job.findById(req.params.id, function(err, jobs) {
-       console.log( jobs );
-       res.json(jobs);
+Sub.findById(jobs.subs, function(err, subs) {
+    res.json({
+        _id: jobs._id,
+        name: jobs.name,
+        detail: jobs.detail,
+        date: jobs.date,
+        subname: subs.name,
+        submail: subs.mail,
+        subphone: subs.phone,
+        subcardid: subs.idnumber,
+        subbirth: subs.datebirth,
+    });
+   });
    });
 });
 
