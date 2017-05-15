@@ -27,6 +27,9 @@ packages: any[] = [];
   ngOnInit() {
       this.getAllPackageByCluster();
   }
+
+  packages: any[] = [];
+
   getAllPackageByCluster() {
       this.http.get(`${this.API}/package/cluster/B`)
           .map(res => res.json())
