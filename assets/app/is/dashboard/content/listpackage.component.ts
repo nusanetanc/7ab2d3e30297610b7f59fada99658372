@@ -40,12 +40,10 @@ packages: any[] = [];
           .subscribe(clusters => {
               this.clusters = clusters
           })
-  }
-  getAllPackageByCluster() {
-      this.http.get(`${this.API}/package/cluster/${this.clusters['level']}`)
-          .map(res => res.json())
-          .subscribe(packages => {
-              this.packages = packages
-          })
+          this.http.get(`${this.API}/package/cluster/clusters['level']}`)
+              .map(res => res.json())
+              .subscribe(packages => {
+                  this.packages = packages
+              })
   }
 }
