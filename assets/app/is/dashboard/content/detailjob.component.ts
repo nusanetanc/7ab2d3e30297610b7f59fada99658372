@@ -77,7 +77,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>test No. test,<br>test, test</span>
+                                    <span>{{ jobs.address }} No. {{ jobs.nohome }},<br>test, test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -237,16 +237,27 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
+    home: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllJob();
+        this.getAllHome();
     }
 
     // Get all users from the API
     getAllJob(){
+        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(jobs => {
+                this.jobs = jobs
+            })
+    }
+
+    // Get all users from the API
+    getAllHome(){
         this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(jobs => {
