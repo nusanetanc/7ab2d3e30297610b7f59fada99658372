@@ -28,7 +28,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
+                            <h4 style="color:#FC592E;">#</h4>
                         </div>
                         <div class="col-sm-12">
                             <h4>PERSONAL INFORMATION</h4>
@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>sadsakd{{ jobs.subname }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -56,7 +56,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.submail }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -67,7 +67,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subphone }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -78,7 +78,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{jobs.subname}}</span>
+                                    <span> No. ,<br>, </span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -89,7 +89,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subcardid }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -100,7 +100,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subdate }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Maintenance</span>
+                                    <span>{{jobs.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -248,7 +248,7 @@ export class ContentDetailJobComponent implements OnInit {
     }
 
     // Get all users from the API
-    getJob() {
+    getJob(){
         this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(jobs => {
