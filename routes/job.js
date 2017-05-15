@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
 var Sub = require('../models/subs');
-var Cluster = require('../models/cluster');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
@@ -16,7 +15,6 @@ router.get('/listjob', function(req, res, next) {
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
         Sub.findById(jobs.subs, function(err, subs) {
-            Cluster.findById(homes.cluster, function(err, clusters) {
                         res.json({
                             _id: jobs._id,
                             name: jobs.name,
@@ -30,7 +28,6 @@ router.get('/job/:id', function(req, res, next) {
                             subid: subs.subid,
                             cluster: clusters.name,
                         });
-            });
         });
     });
 });
