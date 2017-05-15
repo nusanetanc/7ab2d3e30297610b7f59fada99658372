@@ -235,7 +235,7 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllPackage();
+        this.getAllPackageByCluster();
     }
 
 
@@ -303,7 +303,7 @@ export class ContentAddSubsComponent implements OnInit {
 
     // Get all Package from the API
     getAllPackageByCluster() {
-        this.http.get(`${this.API}/package/listpackage`)
+        this.http.get(`${this.API}/package/cluster/A`)
             .map(res => res.json())
             .subscribe(packages => {
                 this.packages = packages
