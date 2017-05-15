@@ -27,7 +27,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 style="color:#FC592E;">#{{ jobs.subid }}</h4>
+                            <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
                             <h4>PERSONAL INFORMATION</h4>
@@ -44,7 +44,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subname }}</span>
+                                    <span>{{ subs.name }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -55,7 +55,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.submail }}</span>
+                                    <span>{{ subs.email }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -66,7 +66,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subphone }}</span>
+                                    <span>{{ subs.phone }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -77,7 +77,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subaddress }} No. {{ jobs.subnohome }},<br>{{ jobs.subcluster }}, {{ jobs.subcity }}</span>
+                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -88,7 +88,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subcardid }}</span>
+                                    <span>{{ subs.idnumber }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -99,7 +99,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subbirth }}</span>
+                                    <span>{{ subs.datebrith }}</span>
                                 </div>
                             </div>
                         </div>
@@ -232,27 +232,27 @@ import 'rxjs/add/operator/map';
 })
 export class ContentDetailJobComponent implements OnInit {
 
-// Link to our api, pointing to localhost
+    // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    jobs: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
-    // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getAllJob();
+        this.getSubs();
     }
 
-    // Get all users from the API
-    getAllJob(){
-        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
+
+    getSubs() {
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
             .map(res => res.json())
-            .subscribe(jobs => {
-                this.jobs = jobs
+            .subscribe(subs => {
+                this.subs = subs
             })
     }
+
 
 }
 
