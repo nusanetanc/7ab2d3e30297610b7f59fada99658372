@@ -45,7 +45,7 @@ import {Subscription} from "rxjs/Rx";
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailInformationComponent implements OnInit {
+export class ContentDetailInformationComponent {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
