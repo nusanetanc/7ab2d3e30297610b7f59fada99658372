@@ -17,7 +17,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
-    home: any[] = [];
+    homes: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -38,10 +38,10 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getAllHome(){
-        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
+        this.http.get(`${this.API}/home/${this._routeParams.get('id')}`)
             .map(res => res.json())
-            .subscribe(jobs => {
-                this.jobs = jobs
+            .subscribe(homes => {
+                this.homes = homes
             })
     }
 
