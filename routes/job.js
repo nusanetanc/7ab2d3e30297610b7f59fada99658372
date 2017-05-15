@@ -21,7 +21,7 @@ Sub.findById(jobs.subs, function(err, subs) {
         detail: jobs.detail,
         date: jobs.date,
         subname: subs.name,
-        submail: subs.mail,
+        submail: subs.email,
         subphone: subs.phone,
         subcardid: subs.idnumber,
         subbirth: subs.datebirth,
