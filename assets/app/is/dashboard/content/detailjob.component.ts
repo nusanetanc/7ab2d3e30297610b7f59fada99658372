@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subname }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -56,7 +56,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.submail }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -67,7 +67,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subphone }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -78,7 +78,11 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+=======
+                                    <span> No. ,<br>, </span>
+>>>>>>> f207ba89b45e7b1f0d5e06e2079cd13f4c22c212
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -89,7 +93,11 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span>{{ subs.idnumber }}</span>
+=======
+                                    <span>test</span>
+>>>>>>> f207ba89b45e7b1f0d5e06e2079cd13f4c22c212
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -100,7 +108,11 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span>{{ jobs.date }}</span>
+=======
+                                    <span>test</span>
+>>>>>>> f207ba89b45e7b1f0d5e06e2079cd13f4c22c212
                                 </div>
                             </div>
                         </div>
