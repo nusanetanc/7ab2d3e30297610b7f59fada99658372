@@ -28,7 +28,7 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
+                            <h4 style="color:#FC592E;">#</h4>
                         </div>
                         <div class="col-sm-12">
                             <h4>PERSONAL INFORMATION</h4>
@@ -78,7 +78,11 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span> No. ,<br>, </span>
+=======
+                                    <span>{{jobs.subname}}</span>
+>>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -89,7 +93,11 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span>test</span>
+=======
+                                    <span>{{ jobs.subcardid }}</span>
+>>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -100,14 +108,18 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+<<<<<<< HEAD
                                     <span>test</span>
+=======
+                                    <span>{{ jobs.subdate }}</span>
+>>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-xs-6 col-md-3">
-                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
+                                    <img class="avaProfile" src="images/.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -193,7 +205,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Maintenance</span>
+                                    <span>{{jobs.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -248,7 +260,7 @@ export class ContentDetailJobComponent implements OnInit {
     }
 
     // Get all users from the API
-    getJob() {
+    getJob(){
         this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(jobs => {
