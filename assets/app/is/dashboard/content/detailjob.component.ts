@@ -232,7 +232,7 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentDetailMaintenanceComponent implements OnInit {
+export class ContentDetailJobComponent implements OnInit {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
