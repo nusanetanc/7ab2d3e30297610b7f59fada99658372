@@ -216,7 +216,7 @@ getAllBLokfloorByCluster() {
             this.blokfloors = blokfloors
         })
 }
-    addBlock(streetname, blokfloor) {
+    addBlock(streetname, streetblok) {
 
         var body = `name=${streetname}&blokfloor=${streetblok}`;
         var headers = new Headers();
