@@ -20,22 +20,31 @@ import { Goods } from './goods';
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="formNewReport marginLR20">
-                        <form>
-                            <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
-                                <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
-                                <option *ngFor="#good of goods" [value]=good._id>{{ good.name }}</option>
-                            </select><br/>
-                        </form>
-                        <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
-                        <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
-                            SUBMIT
-                        </button>
+            <div class="row marginB20 marginR0">
+                <div class="col-sm-12">
+                      <a [routerLink]="['AllStock']" class="btn btn-default buttonBack" type="button">
+                          BACK
+                      </a>
+                </div>
+            </div>
+            <div class="row subInfo">
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <div class="formNewReport marginLR20">
+                            <form>
+                                <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
+                                    <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
+                                    <option *ngFor="#good of goods" [value]=good._id>{{ good.name }}</option>
+                                </select><br/>
+                            </form>
+                            <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
+                            <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
+                                SUBMIT
+                            </button>
+                        </div>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     `,
