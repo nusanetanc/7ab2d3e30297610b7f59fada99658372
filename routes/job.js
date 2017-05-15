@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
 var Sub = require('../models/subs');
+var Home = require('../models/home');
+var Cluster = require('../models/cluster');
+var City = require('../models/city');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
