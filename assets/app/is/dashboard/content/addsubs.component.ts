@@ -80,21 +80,6 @@ import {Streetname} from "./street_name";
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12 paddingL35">
-                                        <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
-                                                <option value="0">-- Select Package --</option>
-                                                <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                            </select><br/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
                                         <h4 class="titleH4">ADDRESS</h4>
                                     </div>
                                 </div>
@@ -134,6 +119,21 @@ import {Streetname} from "./street_name";
                                             <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                                 <option value="0">-- Select Home Number --</option>
                                                 <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
+                                            </select><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 paddingL35">
+                                        <div class="marginT20 paddingR30">
+                                            <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                                <option value="0">-- Select Package --</option>
+                                                <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                             </select><br/>
                                         </div>
                                     </div>
@@ -302,7 +302,7 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     // Get all Package from the API
-    getAllPackage() {
+    getAllPackageByCluster() {
         this.http.get(`${this.API}/package/listpackage`)
             .map(res => res.json())
             .subscribe(packages => {

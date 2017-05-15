@@ -18,6 +18,14 @@ Package.findById(req.params.id, function(err, packages) {
    });
 });
 
+/* GET detail package. */
+router.get('/cluster/:id', function(req, res, next) {
+Package.find({clusterlevel: req.params.id}, function(err, packages) {
+       console.log( packages );
+       res.json(packages);
+   });
+});
+
 /* Add package */
 router.post('/addpackage', function(req, res, next) {
   var package = new Package();
