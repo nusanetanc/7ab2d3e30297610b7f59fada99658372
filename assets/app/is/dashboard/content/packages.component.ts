@@ -66,9 +66,11 @@ import 'rxjs/add/operator/map';
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="row">
-                                            <div class="col-sm-12" *ngFor="#cluster of clusters">
+                                            <div class="col-sm-12" *ngFor="#package of packages">
                                                 <div class="row subInfo">
-                                                    <div class="col-sm-6 invoiceList"><span>{{cluster.name}}</span></div>
+                                                    <div class="col-sm-6 invoiceList"><span>Level {{package.name}} - Cluster {{package.clusterlevel}}</span></div>
+                                                    <div class="col-sm-3 invoiceList"><span>{{package.price}}</span></div>
+                                                    <div class="col-sm-3 invoiceList"><span>{{package.detail}}</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,24 +93,14 @@ constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
-    this.getAllCity();
-    this.getAllPropertyByCity();
-    this.getAllClusterByProperty();
+    this.getAllPackages();
 }
 // Get all Property by city from the API
-getAllPropertyByCity() {
-    this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+getAllPackages() {
+    this.http.get(`${this.API}/package/listpackage`)
         .map(res => res.json())
-        .subscribe(properties => {
-            this.properties = properties
-        })
-}
-// Get all Type from the API
-getAllClusterByProperty() {
-    this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
-        .map(res => res.json())
-        .subscribe(clusters => {
-            this.clusters = clusters
+        .subscribe(packages => {
+            this.packages = packages
         })
 }
     addPackage(clusterproperty, clustername, clusterlevel, clusterbuilding) {
@@ -122,8 +114,8 @@ getAllClusterByProperty() {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Cluster Success');
-                this.getAllCluster();
+                alert('Add Packages Success');
+                this.getAllPackages();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
