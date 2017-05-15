@@ -103,9 +103,9 @@ getAllPackages() {
             this.packages = packages
         })
 }
-    addPackage(clusterproperty, clustername, clusterlevel, clusterbuilding) {
+    addPackage(level, clusterlevel, detail, harga)" {
 
-        var body = `name=${clustername}&property=${clusterproperty}&level=${clusterlevel}&building=${clusterbuilding}`;
+        var body = `level=${level}&clusterlevel=${clusterlevel}&detail=${detail}&harga=${harga}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
