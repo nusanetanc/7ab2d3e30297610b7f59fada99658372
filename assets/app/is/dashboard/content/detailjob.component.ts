@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ jobs.subname }}</span>
+                                    <span>sadasd{{ jobs.subname }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
