@@ -78,11 +78,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-<<<<<<< HEAD
                                     <span> No. ,<br>, </span>
-=======
-                                    <span>{{jobs.subname}}</span>
->>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -93,11 +89,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-<<<<<<< HEAD
                                     <span>test</span>
-=======
-                                    <span>{{ jobs.subcardid }}</span>
->>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -108,11 +100,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-<<<<<<< HEAD
                                     <span>test</span>
-=======
-                                    <span>{{ jobs.subdate }}</span>
->>>>>>> 03b4340f35c61dc56734b9857a8fed50250c08b6
                                 </div>
                             </div>
                         </div>
