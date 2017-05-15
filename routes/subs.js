@@ -70,11 +70,11 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-    subs.groovyid = "59151abc9cfd4f10d697879e";
+    subs.groovyid = "591916077a149b7469259903";
   }
   Home.findById(subs.groovyid, function(err, homes) {
     if(homes.cluster == "" || homes.cluster == null){
-      homes.cluster = "591517e7a170450e63d1ac34";
+      homes.cluster = "59152634f2c0f31ac56ada67";
     }
     Cluster.findById(homes.cluster, function(err, clusters) {
       if(homes.city == "" || homes.city == null){
@@ -116,11 +116,11 @@ router.get('/detailsub', function(req, res, next) {
       var sessionSubId = "58b3cdac45912d052e2c85a5";
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-      subs.groovyid = "5898330cc0d0992a46465109";
+      subs.groovyid = "591916077a149b7469259903";
     }
     Home.findOne({_id: subs.groovyid}, function(err, homes) {
       if(homes.cluster == "" || homes.cluster == null){
-        homes.cluster = "58982738f60815180d148f14";
+        homes.cluster = "59152634f2c0f31ac56ada67";
       }
       Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
         if(homes.city == "" || homes.city == null){
