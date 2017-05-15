@@ -116,6 +116,29 @@ import 'rxjs/add/operator/map';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
+                            <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
+                        </div>
+                        <div class="col-sm-12">
+                            <h4>GOODS USED</h4>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-12 col-sm-12">
+                                    <span>Router</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-12">
+                                    <span>Bullet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <h4>ADD GOODS</h4>
                         </div>
                     </div>
