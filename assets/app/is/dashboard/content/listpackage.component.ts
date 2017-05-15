@@ -25,13 +25,15 @@ onSelectPackage(level) {
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
-      this.getAllPackageByCluster();
+      this.getPackages();
   }
-  getAllPackageByCluster() {
-      this.http.get(`${this.API}/package/cluster/B`)
-          .map(res => res.json())
-          .subscribe(packages => {
-              this.packages = packages
-          })
-  }
+  constructor(private http: Http) {}
+  // Get all Packages from the API
+      getPackages() {
+          this.http.get(`${this.API}/package/cluster/B`)
+              .map(res => res.json())
+              .subscribe(packages => {
+                  this.subs = packages
+              })
+      }
 }
