@@ -234,5 +234,64 @@ import 'rxjs/add/operator/map';
 })
 export class ContentDetailMaintenanceComponent implements OnInit {
 
+    // Link to our api, pointing to localhost
+    API = 'http://202.162.207.164:3000';
+
+    // Declare empty list of people
+    subs: any[] = [];
+    emps: any[] = [];
+    jobs: any[] = [];
+
+    constructor(private http: Http, private _routeParams: RouteParams) {}
+
+    ngOnInit() {
+        this.getSubs();
+        this.getAllJob();
+    }
+
+    addJob(datejob, detailjob, typejob, empjob1, empjob2) {
+        var body = `date=${datejob}&name=${detailjob}&detail=${typejob}&emp1=${empjob2}&emp2=${empjob2}&subs=${this._routeParams.get('id')}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/job/addjob`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Add Job Success');
+                this.getAllJob();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+
+    getSubs() {
+        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(subs => {
+                this.subs = subs
+                this.getAllEmployee();
+            })
+    }
+
+    // Get all users from the API
+    getAllEmployee() {
+        this.http.get(`${this.API}/employee/list/technical`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            })
+    }
+
+    // Get all users from the API
+    getAllJob() {
+        this.http.get(`${this.API}/job/listjob`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            })
+    }
+
 }
 
