@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <span>{{ jobs.subname }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -56,7 +56,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.email }}</span>
+                                    <span>{{ jobs.submail }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -67,7 +67,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.phone }}</span>
+                                    <span>{{ jobs.subphone }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -100,7 +100,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
+                                    <span>{{ jobs.date }}</span>
                                 </div>
                             </div>
                         </div>
@@ -238,21 +238,21 @@ export class ContentDetailJobComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    subs: any[] = [];
+    jobs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getSub();
+        this.getJob();
     }
 
     // Get all users from the API
-    getSub() {
-        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
+    getJob() {
+        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
-            .subscribe(subs => {
-                this.subs = subs
+            .subscribe(jobs => {
+                this.jobs = jobs
             })
     }
 
