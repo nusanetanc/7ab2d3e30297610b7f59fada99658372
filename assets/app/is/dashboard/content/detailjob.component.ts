@@ -45,7 +45,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <span>test</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -193,7 +193,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{jobs.name}}</span>
+                                    <span>{{job.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -249,7 +249,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getJob(){
-        this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
+        this.http.get(`${this.API}/job/job/58feb7956e5308395eb6eb04`)
             .map(res => res.json())
             .subscribe(jobs => {
                 this.jobs = jobs
