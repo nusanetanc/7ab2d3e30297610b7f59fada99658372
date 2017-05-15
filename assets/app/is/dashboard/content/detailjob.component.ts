@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 @Component({
     selector: 'form-detailmaintenance',
     template: `
-    <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
@@ -19,7 +18,7 @@ import 'rxjs/add/operator/map';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['ProfileEngineer']" class="btn btn-default buttonBack" type="button">
+                    <a class="btn btn-default buttonBack" type="button">
                         BACK
                     </a>
                 </div>
@@ -45,7 +44,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <span>{{jobs.subname}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -193,7 +192,7 @@ import 'rxjs/add/operator/map';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{jobs.name}}</span>
+                                    <span>{{job.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -227,7 +226,6 @@ import 'rxjs/add/operator/map';
                 </div>
     
             </div>
-        </div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -239,31 +237,20 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
-    subs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getSub();
-        this.getJob();
+        this.getAllJob();
     }
 
     // Get all users from the API
-    getJob(){
+    getAllJob(){
         this.http.get(`${this.API}/job/job/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(jobs => {
                 this.jobs = jobs
-            })
-    }
-
-    // Get all users from the API
-    getSub() {
-        this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
-            .map(res => res.json())
-            .subscribe(subs => {
-                this.subs = subs
             })
     }
 
