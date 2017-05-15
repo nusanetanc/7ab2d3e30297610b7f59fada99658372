@@ -111,7 +111,7 @@ import 'rxjs/add/operator/map';
                             <div class="row">
                                <div class="col-sm-12" *ngFor="#job of jobs">
                                   <div class="row subInfo">
-                                  <a [routerLink]="['DetailJob', {id: sub._id}]">
+                                  <a [routerLink]="['DetailJob', {id: job._id}]">
                                      <div class="col-sm-8 invoiceList"><span>{{job.name}}</span></div>
                                      <div class="col-sm-4 invoiceList"><span>{{job.status}}</span></div>
                                   </a>
