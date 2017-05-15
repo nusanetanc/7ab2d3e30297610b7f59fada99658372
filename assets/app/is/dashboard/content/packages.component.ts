@@ -103,7 +103,7 @@ getAllPackages() {
             this.packages = packages
         })
 }
-    addPackage(level, clusterlevel, detail, harga)" {
+    addPackage(level, clusterlevel, detail, harga) {
 
         var body = `level=${level}&clusterlevel=${clusterlevel}&detail=${detail}&harga=${harga}`;
         var headers = new Headers();
