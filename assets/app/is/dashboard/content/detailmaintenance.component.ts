@@ -31,7 +31,7 @@ import 'rxjs/add/operator/map';
                             <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
-                            <h4>MAINTENANCE / INSTALLATION</h4>
+                            <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
     
@@ -39,42 +39,75 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Subscriber</span>
+                                    <span>Full Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- IBNU ZULKIVLI</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- AHMAD CAHYADI</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- IVAN DUGEM</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- BALAMON DARTU</span>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.name }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Perangkat</span>
+                                    <span>Email</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- ROUTER</span>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.email }}</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- RADIO</span>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Handphone</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- RJ-45</span>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
-                                    <span>- BALLET</span>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.phone }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Address</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>National Identy Card No.</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.idnumber }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Date of Birth</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.datebrith }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
                                 </div>
                             </div>
                         </div>
