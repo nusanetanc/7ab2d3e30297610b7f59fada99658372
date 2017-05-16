@@ -131,7 +131,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <form-package [levelbuild]=`B`></form-package>
+                                            <form-package [levelbuild]=TEST></form-package>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +222,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-
+    TEST = 'B';
     // Declare empty list of people
     cities: any[] = [];
     properties: any[] = [];
