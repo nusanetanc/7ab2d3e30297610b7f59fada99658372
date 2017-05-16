@@ -2,29 +2,29 @@ import {Component, Input, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Package } from './package';
+import { Sub } from './subs';
 
 @Component({
-    selector: 'form-package',
+    selector: 'form-subs',
     template: `
-      <span *ngFor="#package of packages" >{{package.name}}</span>
+      <span>{{subs.name}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentListPackageComponent implements OnInit {
-//@Input() idsubs: string;
+@Input() idsubs: string;
 API = 'http://202.162.207.164:3000';
-packages: any[] = [];
+subs: any[] = [];
   ngOnInit() {
-      this.getPackages();
+      this.getSubs();
   }
   constructor(private http: Http) {}
   // Get all Subs from the API
-      getPackages() {
-          this.http.get(`${this.API}/package/cluster/B`)
+      getSubs() {
+          this.http.get(`${this.API}/subscribe/subs/${this.idsubs}`)
               .map(res => res.json())
-              .subscribe(packages => {
-                  this.packages = packages
+              .subscribe(subs => {
+                  this.subs = subs
               })
       }
 }
