@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Package } from './package';
 
 @Component({
-    selector: 'form-subs',
+    selector: 'form-package',
     template: `
     <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
         <option value="0">-- Select Package --</option>
