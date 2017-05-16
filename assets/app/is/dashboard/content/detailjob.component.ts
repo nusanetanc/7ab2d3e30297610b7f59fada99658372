@@ -157,12 +157,12 @@ import {Goods} from "./goods";
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select #typestatus id="typestatus">
+                                    <select>
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
                                         <option *ngFor="#stock of stocks" class="option" value={{stock.barcode}}>{{ stock.barcode }}</option>
                                     </select><br/>
                                 </form>
-                                <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="editStock(typestatus.value)" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
                             </div>
