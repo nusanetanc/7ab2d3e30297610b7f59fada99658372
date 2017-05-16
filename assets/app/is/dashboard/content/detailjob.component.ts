@@ -2,7 +2,6 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Goods } from 'goods'
 
 @Component({
     selector: 'form-detailmaintenance',
@@ -151,15 +150,15 @@ import { Goods } from 'goods'
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select>
+                                    <select #typestatus id="typestatus">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
                                         <option class="option" value={{ good._id }} *ngFor="#good of goods">{{ good.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select>
+                                    <select #typestatus id="typestatus">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
-                                        <option class="option" value={{stock._id}} *ngFor="#stock of stocks">{{ stock.barcode }}</option>
+                                        <option class="option" value="Account Active" *ngFor="#stock of stocks">{{ stock.barcode }}</option>
                                     </select><br/>
                                 </form>
                                 <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
@@ -274,7 +273,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getAllStocks() {
-        this.http.get(`${this.API}/stock/goods/${this.stock_id}`)
+        this.http.get(`${this.API}/stock/list`)
             .map(res => res.json())
             .subscribe(stocks => {
                 this.stocks = stocks
