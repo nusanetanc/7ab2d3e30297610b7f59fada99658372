@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Goods } from 'goods'
 
 @Component({
     selector: 'form-detailmaintenance',
@@ -150,9 +151,9 @@ import 'rxjs/add/operator/map';
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select #typestatus id="typestatus">
+                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
-                                        <option class="option" value="Account Active" *ngFor="#good of goods">{{ good.name }}</option>
+                                        <option class="option" value={{ good._id }} *ngFor="#good of goods">{{ good.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form>
@@ -236,6 +237,16 @@ import 'rxjs/add/operator/map';
 })
 export class ContentDetailJobComponent implements OnInit {
 
+    onSelectGoods(_id) {
+        this.stocks = this.getAllStocks(){
+            this.http.get(`${this.API}/stock/goods/${_id}`)
+                .map(res => res.json())
+                .subscribe(stocks => {
+                    this.stocks = stocks
+                })
+        }
+    }
+
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -273,7 +284,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getAllStocks() {
-        this.http.get(`${this.API}/stock/list`)
+        this.http.get(`${this.API}/stock/goods/${this.stock_id}`)
             .map(res => res.json())
             .subscribe(stocks => {
                 this.stocks = stocks
