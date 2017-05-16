@@ -20,7 +20,8 @@ selectedPackage: Package = new Package(0, 'dummy');
 onSelectPackage(level) {
     console.log(level)
 }
-@Input() levelbuild: string;
+//@Input() levelbuild: string;
+levelbuild = 'A'
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
