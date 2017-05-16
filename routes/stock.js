@@ -75,7 +75,7 @@ router.post('/add', function(req, res, next) {
 
 router.put('/put/:id', function(req, res, next) {
 
-        Stock.findById(req.params.id, function(err, stock) {
+        Stock.findOne({barcode: req.params.id}, function(err, stock) {
 
             if (err)
                 res.send(err);
@@ -84,6 +84,7 @@ router.put('/put/:id', function(req, res, next) {
                 stock.barcode= req.body.barcode;
                 stock.status= "inuse";
                 stock.subs= req.body.subs;
+                stock.jobs= req.body.jobs;
               if (err)
                 res.send(err);
 

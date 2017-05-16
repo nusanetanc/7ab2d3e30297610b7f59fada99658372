@@ -22,6 +22,7 @@ var SubSchema   = new Schema({
     idnumber: Number,
     packprice: Number,
     activedate: Date,
+    pinaltypay: Number,
     billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}],
     history: [{type: Schema.Types.ObjectId, ref: 'History'}]
 

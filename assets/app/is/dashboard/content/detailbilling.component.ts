@@ -49,6 +49,16 @@ declare let kendo;
 
                         <!-- Content List -->
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
+                          <div class="col-md-12">
+                              <div class="row">
+                                  <div class="col-sm-3">
+                                      <span><b>Tes</b></span>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <span><b>tes</b></span>
+                                  </div>
+                              </div>
+                          </div>
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>

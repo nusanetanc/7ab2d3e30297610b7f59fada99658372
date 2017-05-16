@@ -135,6 +135,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         </div>
                                     </div>
                                 </div>
+                                {{detailclusters.level}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
@@ -189,13 +190,6 @@ export class ContentAddSubsComponent implements OnInit {
                 .map(res => res.json())
                 .subscribe(blokfloors => {
                     this.blokfloors = blokfloors
-                })
-        }
-        this.detailclusters = this.this.getAllPackageByCluster(){
-            this.http.get(`${this.API}/cluster/cluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(clusters => {
-                    this.detailclusters = detailclusters
                 })
         }
     }
@@ -302,15 +296,6 @@ export class ContentAddSubsComponent implements OnInit {
             .map(res => res.json())
             .subscribe(homes => {
                 this.homes = homes
-            })
-    }
-
-    // Get all Package from the API
-    getAllPackageByCluster() {
-        this.http.get(`${this.API}/package/cluster/A`)
-            .map(res => res.json())
-            .subscribe(packages => {
-                this.packages = packages
             })
     }
 
