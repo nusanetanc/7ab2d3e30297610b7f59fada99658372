@@ -236,7 +236,7 @@ import { City } from 'cities';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
-    selectedGoods:  = new City(0, 'dummy');
+    selectedGoods: City  = new City(0, 'dummy');
 
     onSelectGoods(_id) {
         console.log(_id)
