@@ -98,7 +98,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select [(ngModel)]="selectedCluster._id || selectedCluster.name" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
                                                 <option value="0">-- Select Clusters --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }} - {{ cluster.level }}</option>
                                             </select><br/>
@@ -192,10 +192,6 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-    }
-
-    onSelectCluster(name) {
-        console.log(name);
     }
 
     onSelectBlok(_id) {
