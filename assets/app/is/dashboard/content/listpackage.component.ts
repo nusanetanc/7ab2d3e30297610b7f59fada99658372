@@ -7,7 +7,7 @@ import { Package } from './package';
 @Component({
     selector: 'form-package',
     template: `
-      <span>{{packages.name}}</span>
+      <span *ngFor="#package of packages" >{{packages.name}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
