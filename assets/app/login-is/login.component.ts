@@ -12,7 +12,7 @@ import { Sub } from './subs';
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
-                        <!-- <div class="col-sm-4 card-login">
+                        <div class="col-sm-4 card-login">
                             <form class="form-horizontal">
                                 <center><img src="images/logo-groovy.png" alt="Logo Groovy" width="40%">
                                 <h6 class="grey-text">INFORMATION SYSTEM</h6></center><br><br>
@@ -29,18 +29,7 @@ import { Sub } from './subs';
                                     <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
-                        </div> -->
-                        
-                        <div class="col-sm-4 card-login">
-                            <center><img src="images/logo-groovy.png" alt="Logo Groovy" width="40%">
-                            <h6 class="grey-text">INFORMATION SYSTEM</h6><br><br>
-                            <input class="login" placeholder="Username" type="text" required>
-                            <input class="login" placeholder="Password" type="password" required></center>
-                            <div class="form-group form-forgot">
-                                <a href="" class="orange-text">I forgot password</a>
-                                <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
-                            </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

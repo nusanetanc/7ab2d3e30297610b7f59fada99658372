@@ -1123,7 +1123,7 @@ body.body-login {
     font-size: 11px;
     font-weight: 400;
 }
-/*
+
 .form-login {
     background-color: #fff;
     background-image: none;
@@ -1142,7 +1142,7 @@ body.body-login {
     border-bottom: 1px solid #FC592E;
     outline:none;
     transition: 0.4s all;
-} */
+}
 
 .btn {
     letter-spacing: .5px;
@@ -1195,7 +1195,7 @@ body.body-login {
 
 /* Overriding styles */
 
-/* ::-webkit-input-placeholder {
+::-webkit-input-placeholder {
     font-size: 13px!important;
 }
 
@@ -1204,45 +1204,6 @@ body.body-login {
 }
 ::-moz-placeholder {
     font-size: 13px!important;
-} */
-
-input.login {
-    margin: 40px 25px;
-    width: 250px;
-    display: block;
-    border: none;
-    padding: 10px 0;
-    border-bottom: solid 1px #FC592E;
-    -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #FC592E 4%);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #FC592E 4%);
-    background-position: -250px 0;
-    background-size: 250px 100%;
-    background-repeat: no-repeat;
-    color: #0e6252;
-}
-
-
-
-input.login:focus, input.login:valid {
-    box-shadow: none;
-    outline: none;
-    background-position: 0 0;
-}
-
-input.login::-webkit-input-placeholder {
-    font-family: 'roboto', sans-serif;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-input.login:focus::-webkit-input-placeholder, input.login:valid::-webkit-input-placeholder {
-    color: #FC592E;
-    font-size: 11px;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-    visibility: visible !important;
 }
 
 /*--- /Login Page ---*/
