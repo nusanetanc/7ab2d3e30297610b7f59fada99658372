@@ -152,8 +152,7 @@ import 'rxjs/add/operator/map';
                                 <form>
                                     <select #typestatus id="typestatus">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
-                                        <option class="option" value="Account Active">Router</option>
-                                        <option class="option" value="Account Active">Bullet</option>
+                                        <option class="option" value="Account Active" *ngFor="#good of goods">{{ good.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form>
@@ -243,12 +242,14 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Declare empty list of people
     jobs: any[] = [];
+    goods: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllJob();
+        this.getAllGoods();
     }
 
     // Get all users from the API
@@ -257,6 +258,15 @@ export class ContentDetailJobComponent implements OnInit {
             .map(res => res.json())
             .subscribe(jobs => {
                 this.jobs = jobs
+            })
+    }
+
+    // Get all users from the API
+    getAllGoods() {
+        this.http.get(`${this.API}/goods/list`)
+            .map(res => res.json())
+            .subscribe(goods => {
+                this.goods = goods
             })
     }
 
