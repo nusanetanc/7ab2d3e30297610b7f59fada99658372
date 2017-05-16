@@ -131,7 +131,7 @@ import 'rxjs/add/operator/map';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-12 col-sm-6">
-                                    <span class="text-center">Router</span>
+                                    <span>Router</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <span>05803480678573</span>
