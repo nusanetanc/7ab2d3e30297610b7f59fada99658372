@@ -7,7 +7,7 @@ import { Package } from './package';
 @Component({
     selector: 'form-subs',
     template: `
-      <span>{{packages.name}}</span>
+      <span>{{packages.level}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
