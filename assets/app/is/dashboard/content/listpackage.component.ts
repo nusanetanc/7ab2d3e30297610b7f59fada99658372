@@ -20,7 +20,7 @@ selectedPackage: Package = new Package(0, 'dummy');
 onSelectPackage(level) {
     console.log(level)
 }
-//@Input() idsubs: string;
+@Input() levelbuild: string;
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
@@ -29,7 +29,7 @@ packages: any[] = [];
   constructor(private http: Http) {}
   // Get all Subs from the API
       getSubs() {
-          this.http.get(`${this.API}/package/cluster/B`)
+          this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
               .map(res => res.json())
               .subscribe(packages => {
                   this.packages = packages

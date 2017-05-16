@@ -131,7 +131,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <form-package></form-package>
+                                            <form-package [levelbuild]=detailclusters.level></form-package>
                                         </div>
                                     </div>
                                 </div>
@@ -191,6 +191,13 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
+        this.detailclusters = this.this.getAllPackageByCluster(){
+            this.http.get(`${this.API}/cluster/cluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(clusters => {
+                    this.detailclusters = detailclusters
+                })
+        }
     }
 
     onSelectBlok(_id) {
@@ -225,6 +232,7 @@ export class ContentAddSubsComponent implements OnInit {
     homes: any[] = [];
     packages: any[] = [];
     streetnames: any[] = [];
+    detailclusters: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -232,7 +240,6 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
-        this.getAllPackageByCluster();
     }
 
 
