@@ -44,7 +44,7 @@ import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(h
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 import {ContentPackageComponent} from "./dashboard/content/packages.component";
 import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
-import {ContentListPackageComponent} from "./listpackage.component";
+import {ContentListPackageComponent} from "./dashboard/content/listpackage.component";
 
 @Component({
    selector: 'is-app',
