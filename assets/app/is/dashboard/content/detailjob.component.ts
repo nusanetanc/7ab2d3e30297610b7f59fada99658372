@@ -151,7 +151,7 @@ import { Goods } from 'goods'
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select (change)="onSelectGoods($event.target.value)">
+                                    <select>
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
                                         <option class="option" value={{ good._id }} *ngFor="#good of goods">{{ good.name }}</option>
                                     </select><br/>
@@ -236,17 +236,6 @@ import { Goods } from 'goods'
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
-
-    onSelectGoods(_id) {
-        console.log(_id)
-        this.stocks = this.getAllStocks(){
-            this.http.get(`${this.API}/stock/goods/${_id}`)
-                .map(res => res.json())
-                .subscribe(stocks => {
-                    this.stocks = stocks
-                })
-        }
-    }
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
