@@ -45,7 +45,7 @@ declare let kendo;
                                 <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regPayment'">
                                     Print Pembayaran
                                 </button>
-                                <button (click)="onItemClicked2(Payment)" class="btn btn-default buttonOrange" type="button" style="float:right; margin-right:20px;" *ngIf="clickedItem.name == 'regInvoice'">
+                                <button (click)="onItemClicked2(Payment)" class="btn btn-default buttonOrange" type="button" style="float:right; margin-right:8px;" *ngIf="clickedItem.name == 'regInvoice'">
                                     Pembayaran
                                 </button>
                             </div>
