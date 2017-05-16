@@ -1084,7 +1084,7 @@ a.link-blog:hover div div h3 {
 
 /*--- Login Page ---*/
 
-/*--- body.body-login {
+body.body-login {
     background-color: #E2E2E2;
 }
 
@@ -1123,7 +1123,7 @@ a.link-blog:hover div div h3 {
     font-size: 11px;
     font-weight: 400;
 }
-
+/*
 .form-login {
     background-color: #fff;
     background-image: none;
@@ -1142,7 +1142,7 @@ a.link-blog:hover div div h3 {
     border-bottom: 1px solid #FC592E;
     outline:none;
     transition: 0.4s all;
-}
+} */
 
 .btn {
     letter-spacing: .5px;
@@ -1191,7 +1191,7 @@ a.link-blog:hover div div h3 {
 
 .form-forgot .orange-text {
     font-size: 12px;
-} */
+}
 
 /* Overriding styles */
 
