@@ -158,8 +158,7 @@ import 'rxjs/add/operator/map';
                                 <form>
                                     <select #typestatus id="typestatus">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
-                                        <option class="option" value="Account Active">Router</option>
-                                        <option class="option" value="Account Active">Bullet</option>
+                                        <option class="option" value="Account Active" *ngFor="#stock of stocks">{{ stock.barcode }}</option>
                                     </select><br/>
                                 </form>
                                 <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
@@ -243,6 +242,7 @@ export class ContentDetailJobComponent implements OnInit {
     // Declare empty list of people
     jobs: any[] = [];
     goods: any[] = [];
+    stocks: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -250,6 +250,8 @@ export class ContentDetailJobComponent implements OnInit {
     ngOnInit() {
         this.getAllJob();
         this.getAllGoods();
+        this.getAllStocks();
+        this.getGoods();
     }
 
     // Get all users from the API
@@ -270,5 +272,22 @@ export class ContentDetailJobComponent implements OnInit {
             })
     }
 
+    // Get all users from the API
+    getAllStocks() {
+        this.http.get(`${this.API}/stock/goods/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(stocks => {
+                this.stocks = stocks
+            })
+    }
+
+    // Get all users from the API
+    getGoods() {
+        this.http.get(`${this.API}/goods/detail/${this._routeParams.get('id')}`)
+            .map(res => res.json())
+            .subscribe(goods => {
+                this.goods = goods
+            })
+    }
 }
 
