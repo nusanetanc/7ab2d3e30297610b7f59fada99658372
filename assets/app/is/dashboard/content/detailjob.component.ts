@@ -152,7 +152,7 @@ import 'rxjs/add/operator/map';
                                 <form>
                                     <select #typestatus id="typestatus">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
-                                        <option class="option" value="Account Active" *ngFor="#good of goods">{{ good.name }}</option>
+                                        <option *ngFor="#good of goods" class="option" value={{good._id}}>{{ good.name }}</option>
                                     </select><br/>
                                 </form>
                                 <form>
