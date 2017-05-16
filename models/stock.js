@@ -8,7 +8,7 @@ var StockSchema   = new Schema({
   goods: {type: Schema.Types.ObjectId, ref: 'Goods'},
   barcode: String,
   status: String,
-  subs: {type: Schema.Types.ObjectId, ref: 'Sub'}
+  subs: {type: Schema.Types.ObjectId, ref: 'Sub'},
   jobs: {type: Schema.Types.ObjectId, ref: 'Jobs'}
 });
 
