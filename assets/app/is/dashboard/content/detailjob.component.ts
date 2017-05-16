@@ -236,7 +236,6 @@ import { Goods } from 'goods'
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
-    selectedGoods: Goods = new Goods(0, 'dummy');
 
     onSelectGoods(_id) {
         this.stocks = this.getAllStocks(){
