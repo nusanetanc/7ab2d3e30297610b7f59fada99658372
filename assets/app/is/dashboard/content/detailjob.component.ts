@@ -132,7 +132,7 @@ import {Goods} from "./goods";
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-12 col-sm-6">
-                                    <span>Bullet {{jobs._id}}</span>
+                                    <span>Bullet</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <span>0636364364573</span>
