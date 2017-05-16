@@ -195,7 +195,7 @@ export class ContentAddSubsComponent implements OnInit {
         this.detailclusters = this.getAllPackageByCluster(){
             this.http.get(`${this.API}/cluster/cluster/${_id}`)
                 .map(res => res.json())
-                .subscribe(detailclusters => {
+                .subscribe(clusters => {
                     this.detailclusters = detailclusters
                 })
         }
