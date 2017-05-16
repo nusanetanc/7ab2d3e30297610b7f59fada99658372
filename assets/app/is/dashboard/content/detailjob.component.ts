@@ -249,7 +249,22 @@ export class ContentDetailJobComponent implements OnInit {
     }
 
     onSelectBarcode(_id) {
-        console.log(_id)
+        editStock(this.jobs) {
+            var body = `jobs=${this.jobs}`;
+            var headers = new Headers();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            this.http
+                .put(`${this.API}/stock/put/${_id}`,
+                    body, {
+                        headers: headers
+                    })
+                .subscribe(data => {
+                    alert('Edit Status Succses');
+                    this.getAllStocks();
+                }, error => {
+                    console.log(JSON.stringify(error.json()));
+                });
+        }
     }
 
 // Link to our api, pointing to localhost
