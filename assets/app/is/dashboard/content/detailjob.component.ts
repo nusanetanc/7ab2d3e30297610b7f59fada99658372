@@ -148,7 +148,13 @@ import 'rxjs/add/operator/map';
                                         <option class="option" value="Account Active">Bullet</option>
                                     </select><br/>
                                 </form>
-                                <input type="number" class="form-control inputForm" placeholder="Barcode">
+                                <form>
+                                    <select #typestatus id="typestatus">
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
+                                        <option class="option" value="Account Active">Router</option>
+                                        <option class="option" value="Account Active">Bullet</option>
+                                    </select><br/>
+                                </form>
                                 <button type="submit" (click)="editStatus(typestatus.value)" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
