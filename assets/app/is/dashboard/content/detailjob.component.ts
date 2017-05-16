@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Goods } from 'goods'
+import { City } from 'cities'
 
 @Component({
     selector: 'form-detailmaintenance',
@@ -236,7 +236,7 @@ import { Goods } from 'goods'
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
-    selectedGoods: Goods = new Goods(0, 0, 0, 0);
+    selectedGoods: City = new City(0, 'dummy');
 
     onSelectGoods(_id) {
         this.stocks = this.getAllStocks(){
