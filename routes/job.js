@@ -15,19 +15,18 @@ router.get('/listjob', function(req, res, next) {
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
         Sub.findById(jobs.subs, function(err, subs) {
-                        res.json({
-                            _id: jobs._id,
-                            name: jobs.name,
-                            detail: jobs.detail,
-                            date: jobs.date,
-                            subname: subs.name,
-                            submail: subs.email,
-                            subphone: subs.phone,
-                            subcardid: subs.idnumber,
-                            subbirth: subs.datebirth,
-                            subid: subs.subid,
-                            cluster: clusters.name,
-                        });
+            res.json({
+                _id: jobs._id,
+                name: jobs.name,
+                detail: jobs.detail,
+                date: jobs.date,
+                subname: subs.name,
+                submail: subs.email,
+                subphone: subs.phone,
+                subcardid: subs.idnumber,
+                subbirth: subs.datebirth,
+                subid: subs.subid,
+            });
         });
     });
 });
