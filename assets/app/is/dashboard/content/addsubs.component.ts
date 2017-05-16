@@ -131,7 +131,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <form-package [levelbuild]=detailclusters.level></form-package>
+                                            <form-package [levelbuild]="A"></form-package>
                                         </div>
                                     </div>
                                 </div>
