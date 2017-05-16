@@ -44,6 +44,7 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               promoname: bills.promoname,
               pricepromo: bills.pricepromo,
               pricerj45cable: bills.pricerj45cable,
+              pinalty: bills.pinalty,
               changetax: bills.changetax,
               totalprice: bills.totalprice,
               totalpay: bills.totalpay,
@@ -83,6 +84,7 @@ router.post('/addbill', function(req, res, next) {
     bill.billid= req.body.billid;
     bill.propertiname= req.body.propertiname;
     bill.changetax= req.body.changetax;
+    bill.pinalty= req.body.pinalty;
     bill.totalprice= req.body.totalprice;
     bill.totalpay= req.body.totalpay;
     bill.billdate= req.body.billdate;
@@ -117,6 +119,7 @@ router.put('/putbill/:id', function(req, res, next) {
                 bill.billid= req.body.billid;
                 bill.propertiname= req.body.propertiname;
                 bill.changetax= req.body.changetax;
+                bill.pinalty= req.body.pinalty;
                 bill.totalprice= req.body.totalprice;
                 bill.totalpay= req.body.totalpay;
                 bill.billdate= req.body.billdate;
