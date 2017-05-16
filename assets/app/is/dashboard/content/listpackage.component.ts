@@ -7,30 +7,24 @@ import { Package } from './package';
 @Component({
     selector: 'form-package',
     template: `
-    <li *ngFor="#package of packages">{{package.level}}</li>
+      <span>{{packages.name}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentListPackageComponent implements OnInit {
-//selectedPackage: Package = new Package(0, 'dummy');
-
-
-//onSelectPackage(level) {
-//    console.log(level)
-//}
 //@Input() idsubs: string;
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
-      this.getAllPackages();
+      this.getPackages();
   }
   constructor(private http: Http) {}
-  // Get all Packages from the API
-      getAllPackages() {
+  // Get all Subs from the API
+      getPackages() {
           this.http.get(`${this.API}/package/cluster/B`)
               .map(res => res.json())
               .subscribe(packages => {
-                  this.subs = packages
+                  this.packages = packages
               })
       }
 }
