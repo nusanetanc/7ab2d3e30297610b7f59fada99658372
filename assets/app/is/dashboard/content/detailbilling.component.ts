@@ -36,7 +36,7 @@ declare let kendo;
                                     BACK
                                 </button>
 
-                                <button onclick="printPenagihan()" (click)="onItemClicked2(Payment)" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
+                                <button (click)="onItemClicked2(Payment)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
                                     Print Penagihan
                                 </button>
                                 <button (click)="onItemClicked1(Invoice)" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
