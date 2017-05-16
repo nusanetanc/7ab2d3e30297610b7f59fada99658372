@@ -157,7 +157,7 @@ import {Goods} from "./goods";
                                     </select><br/>
                                 </form>
                                 <form>
-                                    <select>
+                                    <select (change)="onSelectBarcode($event.target.value)">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
                                         <option *ngFor="#stock of stocks" class="option" value={{stock.barcode}}>{{ stock.barcode }}</option>
                                     </select><br/>
@@ -237,6 +237,7 @@ import {Goods} from "./goods";
 })
 export class ContentDetailJobComponent implements OnInit {
     selectedGoods: Goods = new Goods(0, 'dummy');
+
     onSelectGoods(_id) {
         this.stocks = this.getAllStocks(){
             this.http.get(`${this.API}/stock/goods/${_id}`)
@@ -245,6 +246,10 @@ export class ContentDetailJobComponent implements OnInit {
                     this.stocks = stocks
                 })
         }
+    }
+
+    onSelectBarcode(_id) {
+        console.log(_id)
     }
 
 // Link to our api, pointing to localhost
