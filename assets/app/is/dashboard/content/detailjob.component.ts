@@ -285,7 +285,7 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getAllStocks() {
-        this.http.get(`${this.API}/stock/goods${this.stock_id}`)
+        this.http.get(`${this.API}/stock/goods/${this.stock_id}`)
             .map(res => res.json())
             .subscribe(stocks => {
                 this.stocks = stocks
