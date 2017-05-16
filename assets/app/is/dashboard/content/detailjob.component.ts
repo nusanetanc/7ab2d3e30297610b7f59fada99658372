@@ -251,7 +251,6 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllJob();
         this.getAllGoods();
         this.getAllStocks();
-        this.getGoods();
     }
 
     // Get all users from the API
@@ -274,19 +273,10 @@ export class ContentDetailJobComponent implements OnInit {
 
     // Get all users from the API
     getAllStocks() {
-        this.http.get(`${this.API}/stock/goods/${this._routeParams.get('id')}`)
+        this.http.get(`${this.API}/stock/list`)
             .map(res => res.json())
             .subscribe(stocks => {
                 this.stocks = stocks
-            })
-    }
-
-    // Get all users from the API
-    getGoods() {
-        this.http.get(`${this.API}/goods/detail/${this._routeParams.get('id')}`)
-            .map(res => res.json())
-            .subscribe(goods => {
-                this.goods = goods
             })
     }
 }
