@@ -150,7 +150,7 @@ import 'rxjs/add/operator/map';
                                 </form>
                                 <form>
                                     <select #typestatus id="typestatus">
-                                        <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
                                         <option class="option" value="Account Active">Router</option>
                                         <option class="option" value="Account Active">Bullet</option>
                                     </select><br/>
