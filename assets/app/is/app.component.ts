@@ -44,7 +44,6 @@ import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(h
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 import {ContentPackageComponent} from "./dashboard/content/packages.component";
 import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
-import {ContentListPackageComponent} from "./dashboard/content/listpackage.component";
 
 @Component({
    selector: 'is-app',
@@ -114,7 +113,6 @@ import {ContentListPackageComponent} from "./dashboard/content/listpackage.compo
         ContentEditSubsComponent,
         ContentPackageComponent,
         ContentDetailJobComponent,
-        ContentListPackageComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -159,7 +157,6 @@ import {ContentListPackageComponent} from "./dashboard/content/listpackage.compo
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
     { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
-    { path: '/is/testlist', component:ContentListPackageComponent, name:'Testlist'},
 ])
 
 export class AppComponent {
