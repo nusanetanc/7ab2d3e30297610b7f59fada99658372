@@ -12,12 +12,12 @@ import { Package } from './package';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentListPackageComponent implements OnInit {
-selectedPackage: Package = new Package(0, 'dummy');
+//selectedPackage: Package = new Package(0, 'dummy');
 
 
-onSelectPackage(level) {
-    console.log(level)
-}
+//onSelectPackage(level) {
+//    console.log(level)
+//}
 //@Input() idsubs: string;
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
