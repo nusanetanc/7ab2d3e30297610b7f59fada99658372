@@ -122,11 +122,19 @@ import 'rxjs/add/operator/map';
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-12 col-sm-12">
+                                <div class="col-xs-12 col-sm-6">
                                     <span>Router</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-12">
-                                    <span>Bullet</span>
+                                <div class="col-xs-12 col-sm-6">
+                                    <span>05803480678573</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-12 col-sm-6">
+                                    <span>Router</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <span>05803480678573</span>
                                 </div>
                             </div>
                         </div>
