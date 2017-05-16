@@ -14,7 +14,7 @@ router.get('/listjob', function(req, res, next) {
 /* GET detail jobs. */
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
-        Sub.findById(jobs.subs, function(err, subs) {
+        Sub.findById(jobs.subs.id, function(err, subs) {
             res.json({
                 _id: jobs._id,
                 name: jobs.name,
