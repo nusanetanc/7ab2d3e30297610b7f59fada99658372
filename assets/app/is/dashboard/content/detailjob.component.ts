@@ -151,7 +151,7 @@ import { Goods } from 'goods'
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
                                 <form>
-                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)">
+                                    <select (change)="onSelectGoods($event.target.value)">
                                         <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
                                         <option class="option" value={{ good._id }} *ngFor="#good of goods">{{ good.name }}</option>
                                     </select><br/>
@@ -236,8 +236,6 @@ import { Goods } from 'goods'
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
-    selectedGoods: Goods = new Goods(0, 0, 0, 0);
-
     onSelectGoods(_id) {
         this.stocks = this.getAllStocks(){
             this.http.get(`${this.API}/stock/goods/${_id}`)
