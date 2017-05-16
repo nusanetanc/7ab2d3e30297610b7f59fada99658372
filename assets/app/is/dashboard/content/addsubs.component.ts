@@ -135,6 +135,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         </div>
                                     </div>
                                 </div>
+                                {{detailclusters.level}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
