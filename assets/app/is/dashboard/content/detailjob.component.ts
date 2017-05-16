@@ -249,7 +249,7 @@ export class ContentDetailJobComponent implements OnInit {
     }
 
     editStock(jobs, barcode) {
-        var body = `jobs=${jobs}`;
+        var body = `jobs=${jobs}&barcode=${barcode}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
