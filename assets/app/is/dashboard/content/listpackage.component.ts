@@ -7,10 +7,7 @@ import { Package } from './package';
 @Component({
     selector: 'form-package',
     template: `
-      <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
-          <option value="0" selected="true" disabled="true">-- Select Package --</option>
-          <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-      </select><br/>
+    <li *ngFor="#package of packages">{{package.level}}</li>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -25,11 +22,11 @@ onSelectPackage(level) {
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
-      this.getPackages();
+      this.getAllPackages();
   }
   constructor(private http: Http) {}
   // Get all Packages from the API
-      getPackages() {
+      getAllPackages() {
           this.http.get(`${this.API}/package/cluster/B`)
               .map(res => res.json())
               .subscribe(packages => {
