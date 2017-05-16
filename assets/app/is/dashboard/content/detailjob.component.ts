@@ -249,8 +249,8 @@ export class ContentDetailJobComponent implements OnInit {
     }
 
     onSelectBarcode(_id) {
-        editStock(this.jobs) {
-            var body = `jobs=${this.jobs}`;
+        editStock(jobs) {
+            var body = `jobs=${jobs}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
