@@ -37,8 +37,8 @@ declare let kendo;
                                 </button>
 
 
-                                <button (click)="onItemClicked1(Invoice)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
-                                    Print Penagihan
+                                <button (click)="onItemClicked1(Invoice)" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
+                                    Penagihan
                                 </button>
                                 <button (click)="onItemClicked2(Payment)" onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regInvoice'">
                                     Print Pembayaran
@@ -450,6 +450,10 @@ declare let kendo;
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
                               </div>
+                              
+                              <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;">
+                                    Print Penagihan
+                                </button>
                               <!-- /Content List -->
                            </div>
                         </div>
