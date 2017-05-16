@@ -132,7 +132,7 @@ import {Goods} from "./goods";
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-12 col-sm-6">
-                                    <span>Bullet</span>
+                                    <span>Bullet {{jobs._id}}</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <span>0636364364573</span>
@@ -162,7 +162,7 @@ import {Goods} from "./goods";
                                         <option *ngFor="#stock of stocks" class="option" value={{stock.barcode}}>{{ stock.barcode }}</option>
                                     </select><br/>
                                 </form>
-                                <button type="submit" (click)="editStock(typestatus.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="editStock(jobs._id)" class="btn btn-default buttonOrange">
                                     ADD
                                 </button>
                             </div>
