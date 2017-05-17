@@ -49,16 +49,18 @@ declare let kendo;
 
                         <!-- Content List -->
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
-                          <div class="col-md-12">
-                              <div class="row">
-                                  <div class="col-sm-3">
-                                      <span><b>Tes</b></span>
-                                  </div>
-                                  <div class="col-sm-3">
-                                      <span><b>tes</b></span>
-                                  </div>
-                              </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <span><b>Tes</b></span>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <span><b>tes</b></span>
+                                    </div>
+                                </div>
+                            </div>
                           </div>
+                          <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
@@ -460,7 +462,7 @@ declare let kendo;
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
                               </div>
-                              
+
                               <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Penagihan
                                 </button>
@@ -640,7 +642,7 @@ declare let kendo;
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
                               </div>
-                              
+
                               <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Pembayaran
                                 </button>
