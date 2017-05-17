@@ -55,7 +55,7 @@ declare let kendo;
                                             <div class="col-sm-6">
                                                 <div class="formNewReport marginLR20">
                                                 <div class="row">
-                                                  <div class="col-sm-6">
+                                                  <div class="col-sm-2">
                                                       <span>Payment Date</span>
                                                     </div>
                                                     <div class="col-sm-6">
