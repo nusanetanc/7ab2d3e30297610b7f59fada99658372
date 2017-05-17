@@ -158,6 +158,8 @@ router.put('/paymentconfrim/:id', function(req, res, next) {
             subs.save(function(err) {
                 if (err)
                     res.send(err);
+
+                res.json({ message: 'Data updated!' });
             });
         });
     });
