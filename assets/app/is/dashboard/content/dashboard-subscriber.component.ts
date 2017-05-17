@@ -24,7 +24,7 @@ import {Report} from './allreports';
                          <div class="row margin10White">
                             <div class="col-sm-12 text-center">
                                <i class="material-icons font100Margin30">announcement</i>
-                               <h4 style="fontWeight300">REPORT PROBLEM</h4>
+                               <h4 class="fontWeight300">REPORT PROBLEM</h4>
                             </div>
                          </div>
                       </div>
@@ -34,7 +34,7 @@ import {Report} from './allreports';
                          <div class="row margin10White">
                             <div class="col-sm-12 text-center">
                                <i class="material-icons font100Margin30">credit_card</i>
-                               <h4 style="fontWeight300">BILLING</h4>
+                               <h4 class="fontWeight300">BILLING</h4>
                             </div>
                          </div>
                       </div>
