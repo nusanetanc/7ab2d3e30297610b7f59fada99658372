@@ -26,7 +26,7 @@ import {Report} from './allreports';
                                               <div class="row">
                                                   <div class="col-sm-12">
                                                       <h4 class="fontWeight300 marginT20 marginL20">WAITING VERIFICATION</h4>
-                                                      <p class="text-center numberInCardBilling"><b>12</b></p>
+                                                      <p class="text-center numberInCardBilling" style="padding-top: 10px;"><b>12</b></p>
                                                       <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                                   </div>
                                               </div>
@@ -39,7 +39,7 @@ import {Report} from './allreports';
                                           <div class="row">
                                               <div class="col-sm-12">
                                                   <h4 class="fontWeight300 marginT20 marginL20">UNPAID</h4>
-                                                  <p class="text-center numberInCardBilling"><b>4</b></p>
+                                                  <p class="text-center numberInCardBilling" style="padding-top: 10px;"><b>4</b></p>
                                                   <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                               </div>
                                           </div>
