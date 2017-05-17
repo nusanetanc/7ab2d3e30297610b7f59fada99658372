@@ -19,36 +19,42 @@ import {Report} from './allreports';
           <div class="row">
              <div class="col-sm-12">
                 <div class="row marginLR15">
-                   <div class="col-sm-4">
-                      <div class="cardDashboardSub">
-                         <div class="row">
-                            <div class="col-sm-12">
-                               <p class="text-center font70MarginT35"><b>112</b></p>
-                               <h4 class="text-center">SUBSCRIBERS</h4>
+                    <div class="col-sm-4">
+                        <a [routerLink]="['AllSubs']">
+                            <div class="cardDashboardSub">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
+                                        <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                    </div>
+                                </div>
                             </div>
-                         </div>
+                        </a>
+                    </div>
+                      <div class="col-sm-4">
+                        <a [routerLink]="['Information']">
+                          <div class="cardDashboardSub">
+                              <div class="row marginB10">
+                                  <div class="col-sm-12 text-center">
+                                      <i class="material-icons font100Margin30">info</i>
+                                      <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                  </div>
+                              </div>
+                          </div>
+                        </a>
                       </div>
-                   </div>
-                   <div class="col-sm-4">
-                      <div class="cardDashboardSub">
-                         <div class="row margin10White">
-                            <div class="col-sm-12 text-center">
-                               <i class="material-icons font100Margin30">info</i>
-                               <h4 class="marginLR20">VIEW ALL INFORMATION</h4>
-                            </div>
-                         </div>
+                      <div class="col-sm-4">
+                        <a [routerLink]="['AddInformation']">
+                          <div class="cardDashboardSub">
+                              <div class="row marginB10">
+                                  <div class="col-sm-12 text-center">
+                                      <i class="material-icons font100Margin30">mode_edit</i>
+                                      <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
+                                  </div>
+                              </div>
+                          </div>
+                        </a>
                       </div>
-                   </div>
-                   <div class="col-sm-4">
-                      <div class="cardDashboardSub">
-                         <div class="row margin10White">
-                            <div class="col-sm-12 text-center">
-                               <i class="material-icons font100Margin30">edit</i>
-                               <h4 class="marginLR20">POST MAINTENANCE INFORMATION</h4>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
                 </div>
              </div>
           </div>
