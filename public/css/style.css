@@ -1199,10 +1199,10 @@ body.body-login {
     font-size: 13px!important;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
     font-size: 13px!important;
 }
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
     font-size: 13px!important;
 }
 

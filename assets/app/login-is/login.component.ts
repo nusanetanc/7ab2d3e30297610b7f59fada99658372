@@ -29,7 +29,7 @@ import { Sub } from './subs';
                                     <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
