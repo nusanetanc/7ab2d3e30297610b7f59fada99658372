@@ -36,7 +36,7 @@ import {Report} from './allreports';
                          <div class="row margin10White">
                             <div class="col-sm-12 text-center">
                                <i class="material-icons font100Margin30">info</i>
-                               <h4 class="marginLR20">VIEW ALL INFORMATION</h4>
+                               <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATION</h4>
                             </div>
                          </div>
                       </div>
