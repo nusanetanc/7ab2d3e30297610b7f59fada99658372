@@ -63,9 +63,6 @@ import {Menu} from "./menu";
                                     <a [routerLink]="['DashboardManager']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['DashboardSub']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
-                                </li>
-                                <li>
                                     <a [routerLink]="['DashboardTech']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>

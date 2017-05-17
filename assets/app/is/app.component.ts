@@ -47,7 +47,6 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component
 import {ContentDashboardCroComponent} from "./dashboard/content/dashboard-cro.component";
 import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.component";
 import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
-import {ContentDashboardSubComponent} from "./dashboard/content/dashboard-subscriber.component";
 import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
 
 @Component({
@@ -121,7 +120,6 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         ContentDashboardCroComponent,
         ContentDashboardHrdComponent,
         ContentDashboardManagerComponent,
-        ContentDashboardSubComponent,
         ContentDashboardTechComponent,
         ROUTER_DIRECTIVES
     ],
@@ -170,7 +168,6 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
     { path: '/is/cro', component:ContentDashboardCroComponent, name:'DashboardCro'},
     { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
-    { path: '/is/subscriber', component:ContentDashboardSubComponent, name:'DashboardSub'},
     { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
 ])
 
