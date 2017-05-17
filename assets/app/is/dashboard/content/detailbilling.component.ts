@@ -49,23 +49,23 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="formNewReport marginLR20">
-                                            <form>
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                                <br/>
-                                            </form>
-                                            <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
-                                                SEND
-                                            </button>
+                                <div class="row subInfo">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="formNewReport marginLR20">
+                                                    <form>
+                                                        <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                        <br/>
+                                                    </form>
+                                                    <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
+                                                        SEND
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                          </div>
                           <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
