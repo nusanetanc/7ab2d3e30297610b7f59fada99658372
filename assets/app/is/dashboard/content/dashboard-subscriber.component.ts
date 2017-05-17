@@ -41,7 +41,6 @@ import {Report} from './allreports';
                    </div>
                    <div class="col-sm-4">
                       <div class="cardDashboardSub">
-                      <center>
                          <div class="row">
                             <div class="col-sm-12 marginTop40">
                                <div class="row marginBL10White">
@@ -84,7 +83,6 @@ import {Report} from './allreports';
                                </div>
                             </div>
                          </div>
-                      </center>
                       </div>
                    </div>
                 </div>
