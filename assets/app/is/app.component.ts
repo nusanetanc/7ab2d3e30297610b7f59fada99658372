@@ -44,6 +44,11 @@ import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(h
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 import {ContentPackageComponent} from "./dashboard/content/packages.component";
 import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
+import {ContentDashboardCroComponent} from "./dashboard/content/dashboard-cro.component";
+import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.component";
+import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
+import {ContentDashboardSubComponent} from "./dashboard/content/dashboard-subscriber.component";
+import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
 
 @Component({
    selector: 'is-app',
@@ -113,6 +118,11 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component
         ContentEditSubsComponent,
         ContentPackageComponent,
         ContentDetailJobComponent,
+        ContentDashboardCroComponent,
+        ContentDashboardHrdComponent,
+        ContentDashboardManagerComponent,
+        ContentDashboardSubComponent,
+        ContentDashboardTechComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -157,6 +167,11 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
     { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
+    { path: '/is/cro', component:ContentDashboardCroComponent, name:'DashboardCro'},
+    { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
+    { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
+    { path: '/is/subscriber', component:ContentDashboardSubComponent, name:'DashboardSub'},
+    { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
 ])
 
 export class AppComponent {
