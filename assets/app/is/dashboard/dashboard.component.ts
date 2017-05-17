@@ -54,6 +54,21 @@ import {Menu} from "./menu";
                                     <a [routerLink]="['DashboardBilling']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
+                                    <a [routerLink]="['DashboardCro']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['DashboardHrd']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['DashboardManager']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['DashboardSub']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['DashboardTech']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                </li>
+                                <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                                 </li>
                                 <li>
