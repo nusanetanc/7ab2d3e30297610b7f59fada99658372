@@ -22,7 +22,7 @@ import {Report} from './allreports';
                    <div class="col-sm-4">
                    <a [routerLink]="['AllSubs']">
                       <div class="cardDashboardSub">
-                         <div class="row white">
+                         <div class="row">
                             <div class="col-sm-12">
                                <h4 class="marginT20 marginL20">WAITING INSTALLATION</h4>
                                <br>
@@ -47,7 +47,7 @@ import {Report} from './allreports';
                    </div>
                    <div class="col-sm-4">
                       <div class="cardDashboardSub">
-                         <div class="row white">
+                         <div class="row">
                             <div class="col-sm-12">
                                <h4 class="marginT20 marginL20">WAITING DISMANTLE</h4>
                                <br>
