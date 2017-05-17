@@ -142,10 +142,10 @@ router.put('/putbill/:id', function(req, res, next) {
 router.put('/paymentconfrim/:id', function(req, res, next) {
 
         Bill.findById(req.params.id, function(err, bill) {
-
+          Sub.findById(bill.sub, function(err, subs) {
             if (err)
                 res.send(err);
-
+                subs.pinaltypay= req.body.pinaltypay;
                 bill.paydate= req.body.paydate;
                 bill.status= 'Paid';
               if (err)
@@ -157,7 +157,14 @@ router.put('/paymentconfrim/:id', function(req, res, next) {
 
                 res.json({ message: 'Data updated!' });
             });
+            subs.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
         });
+    });
 });
 
 router.delete('/delbill/:id', function(req, res, next) {

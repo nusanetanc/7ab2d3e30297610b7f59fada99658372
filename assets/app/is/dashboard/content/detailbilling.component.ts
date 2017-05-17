@@ -58,14 +58,14 @@ declare let kendo;
                                                     <form>
                                                         <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
                                                     </form>
-                                                    
+
                                                     <form>
                                                         <select #pinaltyInput id="pinaltyInput">
                                                             <option class="option" value="0">0</option>
                                                             <option value="25000">25.000</option>
                                                         </select><br/>
                                                     </form>
-                                                    <button type="submit" (click)="AddPay(paydateInput.value)" class="btn btn-default buttonOrange">
+                                                    <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value)" class="btn btn-default buttonOrange">
                                                         CONFRIM
                                                     </button>
                                                 </div>
@@ -705,8 +705,8 @@ export class ContentDetailBillingComponent implements OnInit {
             this.bills = bills
         })
     }
-    AddPay(paydateInput) {
-        var body = `paydate=${paydateInput}`;
+    AddPay(pinaltyInput, paydateInput) {
+        var body = `paydate=${paydateInput}&pinaltypay=${pinaltyInput}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http

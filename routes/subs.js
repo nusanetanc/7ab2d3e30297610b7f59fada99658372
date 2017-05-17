@@ -384,6 +384,7 @@ router.put('/activationaccount/:id', function(req, res, next) {
         });
 });
 
+
 router.delete('/delsub/:id', function(req, res, next) {
         Sub.remove({
             _id: req.params.id
