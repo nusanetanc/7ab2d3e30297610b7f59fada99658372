@@ -154,18 +154,15 @@ router.put('/paymentconfrim/:id', function(req, res, next) {
             bill.save(function(err) {
                 if (err)
                     res.send(err);
-
-                res.json({ message: 'Data updated!' });
             });
             subs.save(function(err) {
                 if (err)
                     res.send(err);
-
-                res.json({ message: 'Data updated!' });
             });
         });
     });
 });
+
 
 router.delete('/delbill/:id', function(req, res, next) {
         Bill.remove({
