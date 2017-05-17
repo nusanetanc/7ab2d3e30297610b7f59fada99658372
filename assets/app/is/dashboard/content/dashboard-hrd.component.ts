@@ -12,7 +12,7 @@ import {Report} from './allreports';
           <h3 id="home">
              <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
              </a>
-             &nbsp; Dashboard
+             &nbsp; Dashboard-HRD
           </h3>
        </div>
        <div class="page-content inset" data-spy="scroll" data-target="#spy">
