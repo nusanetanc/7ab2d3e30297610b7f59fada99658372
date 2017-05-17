@@ -22,15 +22,15 @@ import {Report} from './allreports';
                           <div class="row marginLR15">
                               <div class="col-sm-4">
                                     <a [routerLink]="['AllSubs']">
-                                      <div class="cardDashboardSub">
-                                          <div class="row">
-                                              <div class="col-sm-12">
-                                                  <h4 class="fontWeight300">WAITING VERIFICATION</h4>
-                                                  <p class="text-center font70MarginT35"><b>12</b></p>
-                                                  <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                          <div class="cardDashboardSub">
+                                              <div class="row">
+                                                  <div class="col-sm-12">
+                                                      <h4 class="fontWeight300 marginT20 marginL20">WAITING VERIFICATION</h4>
+                                                      <p class="text-center font70MarginT35"><b>12</b></p>
+                                                      <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                                  </div>
                                               </div>
                                           </div>
-                                      </div>
                                     </a>
                               </div>
                               <div class="col-sm-4">
@@ -38,7 +38,7 @@ import {Report} from './allreports';
                                       <div class="cardDashboardSub">
                                           <div class="row">
                                               <div class="col-sm-12">
-                                                  <h4 class="fontWeight300">UNPAID</h4>
+                                                  <h4 class="fontWeight300 marginT20 marginL20">UNPAID</h4>
                                                   <p class="text-center font70MarginT35"><b>4</b></p>
                                                   <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                               </div>

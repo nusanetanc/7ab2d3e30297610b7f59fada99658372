@@ -20,18 +20,18 @@ import {Report} from './allreports';
              <div class="col-sm-12">
                 <div class="row marginLR15">
                    <div class="col-sm-4">
-                   <a [routerLink]="['AllSubs']">
-                      <div class="cardDashboardSub">
-                         <div class="row">
-                            <div class="col-sm-12">
-                               <h4 class="marginT20 marginL20">WAITING INSTALLATION</h4>
-                               <br>
-                               <p class="text-center numberInCardBilling"><b>12</b></p>
-                               <h4 class="text-center">SUBSCRIBERS</h4>
-                            </div>
-                         </div>
-                      </div>
-                   </a>
+                       <a [routerLink]="['AllSubs']">
+                          <div class="cardDashboardSub">
+                             <div class="row">
+                                <div class="col-sm-12">
+                                   <h4 class="marginT20 marginL20">WAITING INSTALLATION</h4>
+                                   <br>
+                                   <p class="text-center numberInCardBilling"><b>12</b></p>
+                                   <h4 class="text-center">SUBSCRIBERS</h4>
+                                </div>
+                             </div>
+                          </div>
+                       </a>
                    </div>
                    <div class="col-sm-4">
                       <div class="cardDashboardSub">
