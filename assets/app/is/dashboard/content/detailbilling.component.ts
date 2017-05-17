@@ -49,15 +49,26 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <!-- Content List -->
-                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <span><b>Tes</b></span>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <span><b>tes</b></span>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row headerList paddingLR30">
+                                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add City</strong></div>
+                                </div>
+                                <div class="row subInfo">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="formNewReport marginLR20">
+                                                    <form>
+                                                        <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                        <br/>
+                                                    </form>
+                                                    <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
+                                                        SEND
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
