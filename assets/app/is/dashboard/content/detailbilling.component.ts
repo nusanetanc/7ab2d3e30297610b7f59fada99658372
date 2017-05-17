@@ -55,8 +55,8 @@ declare let kendo;
                                             <div class="col-sm-6">
                                                 <div class="formNewReport marginLR20">
                                                     <form>
+                                                        <span>Payment Date</span><br/>
                                                         <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
-                                                        <br/>
                                                     </form>
                                                     <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                         SEND
