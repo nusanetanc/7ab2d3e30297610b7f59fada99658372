@@ -66,7 +66,7 @@ import {Menu} from "./menu";
                                     <a [routerLink]="['DashboardSub']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['Dashboardech']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                                    <a [routerLink]="['DashboardTech']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
