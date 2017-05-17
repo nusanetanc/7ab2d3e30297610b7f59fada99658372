@@ -52,31 +52,22 @@ import {Report} from './allreports';
                 </div>
              </div>
           </div>
+          
           <!-- Content List -->
           <div class="row paddingLR15Margin20">
-             <div class="col-sm-12">
-                <div class="row headerList paddingLR30">
-                   <div class="col-sm-12 paddingT20 paddingL35 hid headerSubList"><strong>LATEST USER REPORT</strong></div>
-                </div>
-                <div class="row subInfo">
-                   <div class="col-sm-2 invoiceId"><span><a href="" class="grey333">11 Feb 2017</a></span></div>
-                   <div class="col-sm-8 invoiceList"><span><a href="" class="grey333">Unstable Internet Connection</a></span></div>
-                   <div class="col-sm-2 invoiceList"><span class="red">On Progress</span></div>
-                </div>
-                <div class="row subInfo">
-                   <div class="col-sm-2 invoiceId"><span>09 Feb 2017</span></div>
-                   <div class="col-sm-8 invoiceList"><span>Account can't login in other device</span></div>
-                   <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                </div>
-                <div class="row subInfo">
-                   <div class="col-sm-2 invoiceId"><span>21 Jan 2017</span></div>
-                   <div class="col-sm-8 invoiceList"><span>Unstable Internet Connection</span></div>
-                   <div class="col-sm-2 invoiceList"><span class="green">Solved</span></div>
-                </div>
-                <div class="row subInfo">
-                   <div class="col-sm-12 invoiceId"><span><a href="" class="linkViewAll"><b>View all informaiton</b></a></span></div>
-                </div>
-             </div>
+              <div class="col-sm-12">
+                  <div class="row headerList paddingLR30">
+                      <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
+                  </div>
+                  <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
+                      <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                      <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
+                      <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                  </div>
+                  <div class="row subInfo">
+                      <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
+                  </div>
+              </div>
           </div>
           <!-- /Content List -->
        </div>
