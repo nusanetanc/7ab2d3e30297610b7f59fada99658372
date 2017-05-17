@@ -24,10 +24,10 @@ import {Report} from './allreports';
                           <div class="cardDashboardSub">
                              <div class="row">
                                 <div class="col-sm-12">
-                                   <h4 class="marginT20 marginL20">WAITING INSTALLATION</h4>
+                                   <h4 class="marginT20 marginL20 fontWeight300">WAITING INSTALLATION</h4>
                                    <br>
                                    <p class="text-center numberInCardBilling"><b>12</b></p>
-                                   <h4 class="text-center">SUBSCRIBERS</h4>
+                                   <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                                 </div>
                              </div>
                           </div>
@@ -37,10 +37,10 @@ import {Report} from './allreports';
                       <div class="cardDashboardSub">
                          <div class="row">
                             <div class="col-sm-12">
-                               <h4 class="marginT20 marginL20">WAITING MAINTENANCE</h4>
+                               <h4 class="marginT20 marginL20 fontWeight300">WAITING MAINTENANCE</h4>
                                <br>
                                <p class="text-center numberInCardBilling"><b>2</b></p>
-                               <h4 class="text-center">SUBSCRIBERS</h4>
+                               <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                             </div>
                          </div>
                       </div>
@@ -49,10 +49,10 @@ import {Report} from './allreports';
                       <div class="cardDashboardSub">
                          <div class="row">
                             <div class="col-sm-12">
-                               <h4 class="marginT20 marginL20">WAITING DISMANTLE</h4>
+                               <h4 class="marginT20 marginL20 fontWeight300">WAITING DISMANTLE</h4>
                                <br>
                                <p class="text-center numberInCardBilling"><b>3</b></p>
-                               <h4 class="text-center">SUBSCRIBERS</h4>
+                               <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
                             </div>
                          </div>
                       </div>
