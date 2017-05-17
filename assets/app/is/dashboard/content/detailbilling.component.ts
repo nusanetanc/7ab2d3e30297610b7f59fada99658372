@@ -58,8 +58,8 @@ declare let kendo;
                                                     <form>
                                                         <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
                                                     </form>
-                                                    <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
-                                                        SEND
+                                                    <button type="submit" (click)="AddPay(paydateInput.value)" class="btn btn-default buttonOrange">
+                                                        CONFRIM
                                                     </button>
                                                 </div>
                                             </div>
@@ -697,6 +697,23 @@ export class ContentDetailBillingComponent implements OnInit {
         .subscribe(bills => {
             this.bills = bills
         })
+    }
+    AddPay(paydateInput) {
+
+        var body = `paydate=${paydateInput}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .post(`${this.API}/bill/paymentconfrim/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Confirmation Payments Success');
+                this.getBills();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 
 }

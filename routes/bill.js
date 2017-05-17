@@ -139,6 +139,27 @@ router.put('/putbill/:id', function(req, res, next) {
         });
 });
 
+router.put('/paymentconfrim/:id', function(req, res, next) {
+
+        Bill.findById(req.params.id, function(err, bill) {
+
+            if (err)
+                res.send(err);
+
+                bill.paydate= req.body.paydate;
+                bill.status= 'Paid';
+              if (err)
+                res.send(err);
+
+            bill.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 router.delete('/delbill/:id', function(req, res, next) {
         Bill.remove({
             _id: req.params.id
