@@ -41,7 +41,7 @@ import {Report} from './allreports';
                    </div>
                    <div class="col-sm-4">
                       <div class="cardDashboardSub">
-                         <div class="row">
+                         <div class="row" style="padding-left:10px;">
                             <div class="col-sm-12 marginTop40">
                                <div class="row marginBL10White">
                                   <div class="col-xs-6 col-sm-5">
