@@ -49,7 +49,7 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                                <div class="row subInfo">
+                                <div class="row subInfo" *ngIf="bills.status =! 'Paid'">
                                     <div class="col-sm-12">
                                         <div class="row">
                                             <div class="col-sm-6">
