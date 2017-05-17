@@ -699,7 +699,7 @@ export class ContentDetailBillingComponent implements OnInit {
         })
     }
     AddPay(paydateInput) {
-
+      alert('Tes');
         var body = `paydate=${paydateInput}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
