@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
-import { Http } from 'angular2/http';
+import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 declare let kendo;
