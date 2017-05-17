@@ -49,11 +49,8 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row">
+                        <div class="row rowBillInfoContList">
                             <div class="col-sm-12">
-                                <div class="row headerList paddingLR30">
-                                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add City</strong></div>
-                                </div>
                                 <div class="row subInfo">
                                     <div class="col-sm-12">
                                         <div class="row">
