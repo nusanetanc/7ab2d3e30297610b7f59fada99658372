@@ -140,7 +140,7 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
-                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subpacklev.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
+                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
                                     </div>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@ export class ContentAddSubsComponent implements OnInit {
 
 
 // Add one person to the API
-    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subpacklev, subgroovyid, subdatebirth, subidnumber) {
+    addSub(subname, subphone, subemail, subdateinst, subtimeinst, subgroovyid, subdatebirth, subidnumber) {
 
         var body = `name=${subname}&phone=${subphone}&email=${subemail}&dateinst=${subdateinst}&timeinst=${subtimeinst}&packlev=${subpacklev}&groovyid=${subgroovyid}&datebirth=${subdatebirth}&idnumber=${subidnumber}`;
         var headers = new Headers();
