@@ -26,7 +26,7 @@ import {Report} from './allreports';
                             <div class="col-sm-12">
                                <h4 class="marginT20 marginL20">WAITING INSTALLATION</h4>
                                <br>
-                               <p class="text-center numberInCardBilling"><b>{{subs.length}}</b></p>
+                               <p class="text-center numberInCardBilling"><b>12</b></p>
                                <h4 class="text-center">SUBSCRIBERS</h4>
                             </div>
                          </div>
@@ -35,7 +35,7 @@ import {Report} from './allreports';
                    </div>
                    <div class="col-sm-4">
                       <div class="cardDashboardSub">
-                         <div class="row white">
+                         <div class="row">
                             <div class="col-sm-12">
                                <h4 class="marginT20 marginL20">WAITING MAINTENANCE</h4>
                                <br>
