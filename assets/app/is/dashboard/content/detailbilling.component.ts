@@ -58,9 +58,12 @@ declare let kendo;
                                                     <form>
                                                         <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
                                                     </form>
-                                                    <span>Pinalty Pay</span>
+                                                    
                                                     <form>
-                                                        <input #pinaltyInput type="number" class="form-control inputForm" id="pinaltyInput" placeholder="Payment Pinalty" value="0">
+                                                        <select #pinaltyInput id="pinaltyInput">
+                                                            <option class="option" value="0">0</option>
+                                                            <option value="25000">25.000</option>
+                                                        </select><br/>
                                                     </form>
                                                     <button type="submit" (click)="AddPay(paydateInput.value)" class="btn btn-default buttonOrange">
                                                         CONFRIM

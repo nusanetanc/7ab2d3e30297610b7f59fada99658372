@@ -11,7 +11,7 @@ import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
-import {ContentListPackageComponent} from "./listpackage.component";
+//import {ContentListPackageComponent} from "./listpackage.component";
 @Component({
     selector: 'form-addsubs',
     template: `
@@ -128,6 +128,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
@@ -135,7 +136,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         </div>
                                     </div>
                                 </div>
-                                {{detailclusters.level}}
+                                {{detailclusters.level}} -->
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
@@ -149,7 +150,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
             </div>
         </div>
     `,
-    directives: [ContentListPackageComponent, ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
