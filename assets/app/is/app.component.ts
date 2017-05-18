@@ -40,7 +40,15 @@ import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
-//import {ContentPackageComponent} from "./dashboard/content/package.component";
+import {ContentPackageComponent} from "./dashboard/content/package.component";
+import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
+import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
+import {ContentPackageComponent} from "./dashboard/content/packages.component";
+import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
+import {ContentDashboardCroComponent} from "./dashboard/content/dashboard-cro.component";
+import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.component";
+import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
+import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
 
 @Component({
    selector: 'is-app',
@@ -108,9 +116,12 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
-      //  ContentPackageComponent,
-        //ContentDetailJobComponent,
-
+        ContentPackageComponent,
+        ContentDetailJobComponent,
+        ContentDashboardCroComponent,
+        ContentDashboardHrdComponent,
+        ContentDashboardManagerComponent,
+        ContentDashboardTechComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -151,10 +162,14 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
-    //{ path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
-    //{ path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
-    //{ path: '/is/package', component:ContentPackageComponent, name:'Package'},
-    //{ path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
+    { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
+    { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
+    { path: '/is/package', component:ContentPackageComponent, name:'Package'},
+    { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
+    { path: '/is/cro', component:ContentDashboardCroComponent, name:'DashboardCro'},
+    { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
+    { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
+    { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
 ])
 
 export class AppComponent {
