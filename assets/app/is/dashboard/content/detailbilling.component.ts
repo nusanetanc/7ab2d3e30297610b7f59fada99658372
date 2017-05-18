@@ -217,6 +217,16 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12 listWhite">
+                                                        <div class="col-sm-10">
+                                                            <span>Pinalty Payment</span>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <span class="right">Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <!-- /List -->
 
                                                 <!-- TotalList -->
