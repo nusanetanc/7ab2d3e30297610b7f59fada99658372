@@ -7,6 +7,7 @@ var Job = require('../models/job');
 var Sub = require('../models/subs');
 var Home = require('../models/home');
 var Goods = require('../models/goods');
+var Emp = require('../models/employee');
 
 /* GET jobs listing. */
 router.get('/list', function(req, res, next) {
@@ -42,7 +43,7 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
         Goods.findOne({_id: stocks.goods}, function(err, goods) {
-          Job.findOne({_id: stocks.jobs}, function(err, goods) {
+          Job.findOne({_id: stocks.jobs}, function(err, jobs) {
           Sub.findOne({_id: jobs.subs}, function(err, subs) {
             Home.findOne({_id: subs.groovyid}, function(err, homes) {
               Cluster.findOne({_id:homes.cluster}, function(err, clusters) {
@@ -58,7 +59,10 @@ router.get('/detail/:id', function(req, res, next) {
                        address: homes.address,
                        nohome: homes.nohome,
                        cluster: clusters.name,
-                       city: cities.name
+                       city: cities.name,
+                       jobname: jobs.name;
+                       emp1: jobs.emp1;
+                       emp2: jobs.emp2;
                      });
                     });
                   });
