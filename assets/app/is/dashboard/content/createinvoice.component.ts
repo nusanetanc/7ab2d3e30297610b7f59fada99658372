@@ -380,9 +380,10 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
-    <!-- END CONTENT   -->
+    <!-- END CONTENT   -->`,
     directives: [ROUTER_DIRECTIVES],
 })
+
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
 
