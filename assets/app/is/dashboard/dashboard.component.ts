@@ -44,7 +44,6 @@ import {Menu} from "./menu";
                     <div class="row" style="margin-right: 0px;">
                         <div class="col-sm-12">
                             <ul class="sidebar-nav nav" style="margin-right: -15px">
-                            <!--
                                 <li class="firstLiSidebar">
                                     <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
@@ -65,7 +64,7 @@ import {Menu} from "./menu";
                                 </li>
                                 <li>
                                     <a [routerLink]="['DashboardTech']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
-                                </li> -->
+                                </li>
                                 <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                                 </li>
