@@ -3,6 +3,7 @@ var router = express.Router();
 var Stock = require('../models/stock');
 var City = require('../models/city');
 var Cluster = require('../models/cluster');
+var Job = require('../models/job');
 var Sub = require('../models/subs');
 var Home = require('../models/home');
 var Goods = require('../models/goods');
@@ -41,7 +42,8 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/detail/:id', function(req, res, next) {
       Stock.findOne({_id: req.params.id}, function(err, stocks) {
         Goods.findOne({_id: stocks.goods}, function(err, goods) {
-          Sub.findOne({_id: stocks.subs}, function(err, subs) {
+          Job.findOne({_id: stocks.jobs}, function(err, goods) {
+          Sub.findOne({_id: jobs.subs}, function(err, subs) {
             Home.findOne({_id: subs.groovyid}, function(err, homes) {
               Cluster.findOne({_id:homes.cluster}, function(err, clusters) {
                 City.findOne({_id:homes.city}, function(err, cities) {
@@ -65,6 +67,7 @@ router.get('/detail/:id', function(req, res, next) {
             });
           });
         });
+      });
 
 
 /* Add job */
