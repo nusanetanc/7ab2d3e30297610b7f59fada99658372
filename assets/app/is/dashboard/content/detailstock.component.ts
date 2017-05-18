@@ -34,7 +34,7 @@ import {Subscription} from "rxjs/Rx";
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>{{stocks.goodsname}}</strong></div>
                     </div>
                     <div class="row subInfo">
-                        <div class="col-sm-11 invoiceId"><span>{{stocks.barcode}}</span></div>
+                        <div class="col-sm-11 invoiceId"><span><h3>{{stocks.barcode}}</h3></span></div>
                         <div class="col-sm-1 invoiceList"><span class="red">{{stocks.status}}</span></div>
                     </div>
                     <div class="row subInfo">
@@ -78,6 +78,36 @@ import {Subscription} from "rxjs/Rx";
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row subInfo">
+                        <div class="col-sm-12 invoiceId roboto">
+                            <span><b>PIC</b></span>
+                        </div>
+                    </div>
+                    <div class="row subInfo">
+                        <div class="col-sm-12">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Name - ID Employee</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{stocks.name}}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Jobs Name</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{stocks.jobname}}</span>
+                                </div>
+                            </div>
                     </div>
                 </div>
                 </div>
