@@ -74,10 +74,10 @@ import {Menu} from "./menu";
                                 </li>
                                 <li>
                                     <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
-                                </li>
+                                </li> <!--
                                 <li>
                                     <a [routerLink]="['Package']" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
                                 </li>
