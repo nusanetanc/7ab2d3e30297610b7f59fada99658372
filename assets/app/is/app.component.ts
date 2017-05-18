@@ -43,7 +43,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 import {ContentPackagesComponent} from "./dashboard/content/packages.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
-import {ContentDetailJobComponent} from "./dashboard/content/detailbilling.component";
+import {ContentDetailJobComponent} from "./dashboard/content/detailjob.component";
 
 @Component({
    selector: 'is-app',
