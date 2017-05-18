@@ -109,7 +109,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
       //  ContentPackageComponent,
-        ContentDetailJobComponent,
+        //ContentDetailJobComponent,
 
         ROUTER_DIRECTIVES
     ],
@@ -154,7 +154,7 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
     //{ path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     //{ path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     //{ path: '/is/package', component:ContentPackageComponent, name:'Package'},
-    { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
+    //{ path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
 
 export class AppComponent {
