@@ -15,7 +15,7 @@ import {Goods} from "./goods";
                 &nbsp; Job Description
             </h3>
         </div>
-    
+
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
@@ -34,7 +34,7 @@ import {Goods} from "./goods";
                             <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -119,23 +119,15 @@ import {Goods} from "./goods";
                             <h4>GOODS USED</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-12 col-sm-6">
-                                    <span>Router</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-6">
+                                <div class="col-xs-6 col-sm-3">
                                     <span>05803480678573</span>
                                 </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-12 col-sm-6">
-                                    <span>Bullet</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-6">
-                                    <span>0636364364573</span>
+                                <div class="col-xs-6 col-sm-3">
+                                    <span>Router</span>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +167,7 @@ import {Goods} from "./goods";
                             <h4>TECHNICAL JOB</h4>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -227,9 +219,9 @@ import {Goods} from "./goods";
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-    
+
             </div>
     </div>
     `,
@@ -308,4 +300,3 @@ export class ContentDetailJobComponent implements OnInit {
                 this.stocks = stocks
             })
 }
-
