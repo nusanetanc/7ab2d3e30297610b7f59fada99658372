@@ -251,7 +251,7 @@ export class ContentDetailJobComponent implements OnInit {
                 })
             .subscribe(data => {
                 alert('Edit Status Succses');
-                this.getAllStocks();
+                this.getStocksForJobs();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
@@ -272,7 +272,7 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllJob();
         this.getAllGoods();
         this.getAllStocks();
-        this.getStocksForJobs()
+        this.getStocksForJobs();
     }
 
     // Get all users from the API
