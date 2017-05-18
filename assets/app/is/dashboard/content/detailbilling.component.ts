@@ -220,7 +220,7 @@ declare let kendo;
                                                 <div *ngIf="bills.pinaltypay != 0" class="row">
                                                     <div  class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
-                                                            <span>Pinalty Payment</span>
+                                                            <span>Pinalty Charge</span>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <span class="right">Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
@@ -431,6 +431,14 @@ declare let kendo;
                                                    <span>Rp. {{ bills.priceinstal | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
+                                             <div *ngIf="bills.pinaltypay != 0" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
+                                                </div>
+                                             </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
                                                    <span>TOTAL HARGA <i style="color: #999999;"> &nbsp; / &nbsp; TOTAL PRICE &nbsp; &nbsp;</i></span>
@@ -639,6 +647,14 @@ declare let kendo;
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.totalprice | number:'2.2-4' }}</span>
+                                                </div>
+                                             </div>
+                                             <div *ngIf="bills.pinaltypay != 0" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                                <div class="col-sm-9" style="padding: 5px;">
+                                                   <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
+                                                </div>
+                                                <div class="col-sm-3 text-right" style="padding: 5px;">
+                                                   <span>Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
