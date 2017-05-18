@@ -168,7 +168,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
     { path: '/is/cro', component:ContentDashboardCroComponent, name:'DashboardCro'},
     { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
-    { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
+    //{ path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
 ])
 
 export class AppComponent {
