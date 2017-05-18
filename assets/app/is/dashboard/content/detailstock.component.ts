@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
-import { ContentEmpsNameComponent } from './empsname.component';
+import {ContentEmpsNameComponent} from './empsname.component';
 
 @Component({
     selector: 'form-detailstock',
@@ -104,7 +104,7 @@ import { ContentEmpsNameComponent } from './empsname.component';
                                     <span></span>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
-                                    
+
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
