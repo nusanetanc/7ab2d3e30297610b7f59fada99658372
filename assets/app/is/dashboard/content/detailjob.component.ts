@@ -128,7 +128,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>{{usestock.barcode}}</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <form-goods [idgoods]={{usestock.goods}}></form-goods>
+                                    <form-goods [idgoods]=usestock.goods></form-goods>
                                 </div>
                             </div>
                         </div>
