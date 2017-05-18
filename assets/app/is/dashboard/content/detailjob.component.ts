@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Goods} from "./goods";
+import {ContentGoodsNameComponent} from "./goodsname.component";
 
 @Component({
     selector: 'form-detailmaintenance',
@@ -127,7 +128,7 @@ import {Goods} from "./goods";
                                     <span>{{usestock.barcode}}</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-3">
-                                    <span>Router</span>
+                                    <form-goods [idgoods]={{usestock.goods}}></form-goods>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +226,7 @@ import {Goods} from "./goods";
             </div>
     </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentGoodsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
     selectedGoods: Goods = new Goods(0, 'dummy');
