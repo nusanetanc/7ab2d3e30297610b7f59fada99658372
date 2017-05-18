@@ -40,7 +40,7 @@ import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
-
+import {ContentPackageComponent} from "./dashboard/content/package.component";
 
 @Component({
    selector: 'is-app',
