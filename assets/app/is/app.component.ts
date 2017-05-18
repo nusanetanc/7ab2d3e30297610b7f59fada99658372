@@ -141,7 +141,23 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailbilling.compo
     { path: '/is/detailstock/:id', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
-    
+    { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
+    { path: '/is/replayreport/:id', component:ContentReplayReportComponent, name:'ReplyReport'},
+    { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
+    { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
+    { path: '/is/addcity', component:ContentAddCityComponent, name:'AddCity'},
+    { path: '/is/addcluster', component:ContentCoverageClusterComponent, name:'AddCluster'},
+    { path: '/is/addblok', component:ContentCoverageBlockComponent, name:'AddBlock'},
+    { path: '/is/addstreet', component:ContentCoverageStreetComponent, name:'AddStreet'},
+    { path: '/is/addhome', component:ContentCoverageHomeComponent, name:'AddHome'},
+    { path: '/is/addstock', component:ContentAddStocksComponent, name:'AddStock'},
+    { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
+    { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
+    { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
+    { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
+    { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
+    { path: '/is/packages', component:ContentPackagesComponent, name:'Package'},
+    { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
 
 export class AppComponent {
