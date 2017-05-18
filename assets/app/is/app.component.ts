@@ -40,7 +40,7 @@ import {ContentAddEmpComponent} from "./dashboard/content/addemp.component";
 import {ContentAddStocksComponent} from "./dashboard/content/addstock.component";
 import {ContentUpdateStocksComponent} from "./dashboard/content/updatestock.component";
 import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
-import {ContentPackageComponent} from "./dashboard/content/package.component";
+import {ContentPackagesComponent} from "./dashboard/content/packages.component";
 import {ContentDashboardHelpdeskComponent} from "./dashboard/content/dashboard(helpdesk).component";
 import {ContentDashboardBillingComponent} from "./dashboard/content/dashboard(billing).component";
 import {ContentDetailJobComponent} from "./dashboard/content/detailbilling.component";
@@ -112,7 +112,7 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailbilling.compo
         ContentAddStocksComponent,
         ContentUpdateStocksComponent,
         ContentEditSubsComponent,
-        ContentPackageComponent,
+        ContentPackagesComponent,
         ContentDetailJobComponent,
         ROUTER_DIRECTIVES
     ],
@@ -156,7 +156,7 @@ import {ContentDetailJobComponent} from "./dashboard/content/detailbilling.compo
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
-    { path: '/is/package', component:ContentPackageComponent, name:'Package'},
+    { path: '/is/packages', component:ContentPackagesComponent, name:'Package'},
     { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
 
