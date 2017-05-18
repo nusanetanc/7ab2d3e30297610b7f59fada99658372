@@ -272,6 +272,7 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllJob();
         this.getAllGoods();
         this.getAllStocks();
+        this.getStocksForJobs()
     }
 
     // Get all users from the API
