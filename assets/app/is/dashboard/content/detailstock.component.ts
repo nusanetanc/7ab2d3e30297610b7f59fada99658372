@@ -104,7 +104,7 @@ import { ContentEmpsNameComponent } from './empsname.component';
                                     <span></span>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
-                                    <form-emps [idemps]=stocks.emp2></form-emps>
+                                    
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
