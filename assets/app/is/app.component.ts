@@ -71,8 +71,8 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
 `,
     directives: [
         DashboardComponent,
-        ContentDashboardHelpdeskComponent,
-        ContentDashboardBillingComponent,
+        //ContentDashboardHelpdeskComponent,
+        //ContentDashboardBillingComponent,
         ContentAllSubsComponent,
         ContentDashboardComponent,
         ContentSubscribeComponent,
@@ -151,8 +151,8 @@ import {ContentEditSubsComponent} from "./dashboard/content/editsubs.component";
     { path: '/is/createinvoice1', component:ContentInvoiceComponent, name:'Invoice'},
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
-    { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
-    { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
+    //{ path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
+    //{ path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/package', component:ContentPackageComponent, name:'Package'},
     { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
 ])
