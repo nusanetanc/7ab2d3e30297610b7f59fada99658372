@@ -85,7 +85,7 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentPackageComponent implements OnInit {
+export class ContentPackagesComponent implements OnInit {
 
 API = 'http://202.162.207.164:3000';
 
