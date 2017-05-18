@@ -87,7 +87,7 @@ import { ContentEmpsNameComponent } from './empsname.component';
                         <div class="col-sm-12">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-2">
-                                    <span>Name - ID Employee</span>
+                                    <span>Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
