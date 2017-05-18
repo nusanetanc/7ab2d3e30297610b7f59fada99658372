@@ -121,7 +121,7 @@ import {Goods} from "./goods";
                     </div>
 
                     <div class="row">
-                        <div *ngFor="#usestock of usestocks"  class="col-sm-6">
+                        <div *ngFor="#usestock of usestocks"  class="col-sm-12">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-12 col-sm-3">
                                     <span>{{usestock.barcode}}</span>
