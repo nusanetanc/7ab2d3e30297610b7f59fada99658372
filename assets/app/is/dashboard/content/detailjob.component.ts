@@ -305,7 +305,7 @@ export class ContentDetailJobComponent implements OnInit {
   getStocksForJobs(){
       this.http.get(`${this.API}/stock/jobs/${this._routeParams.get('id')}`)
           .map(res => res.json())
-          .subscribe(stocks => {
+          .subscribe(usestocks => {
               this.usestocks = usestocks
           })
         }
