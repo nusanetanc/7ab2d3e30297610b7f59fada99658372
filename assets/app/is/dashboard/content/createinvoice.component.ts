@@ -321,7 +321,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.pinaltypay" type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled/>
+                                    <input type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
