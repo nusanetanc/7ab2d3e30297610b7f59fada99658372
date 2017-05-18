@@ -3,8 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
-
-
+import { ContentEmpDetailComponent } from './empdetail';
 
 @Component({
     selector: 'form-detailstock',
@@ -94,7 +93,18 @@ import {Subscription} from "rxjs/Rx";
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
-                                    <span>{{stocks.name}}</span>
+                                    <form-emp [idemps]=stocks.emp1></form-emp>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-2">
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span></span>
+                                </div>
+                                <div class="col-xs-12 col-md-3">
+                                    <form-emp [idemps]=stocks.emp2></form-emp>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -114,7 +124,7 @@ import {Subscription} from "rxjs/Rx";
             </div>
         </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentEmpDetailComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailStockComponent {
   // Link to our api, pointing to localhost
