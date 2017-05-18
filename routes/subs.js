@@ -102,6 +102,7 @@ Sub.findById(req.params.id, function(err, subs) {
               groovyid: homes.groovyid,
               address: homes.address,
               nohome: homes.nohome,
+              pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
               city: cities.name
             });
