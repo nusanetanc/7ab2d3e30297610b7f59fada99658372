@@ -121,10 +121,10 @@ import {Goods} from "./goods";
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div *ngFor="#usestock of usestocks"  class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-3">
-                                    <span>05803480678573</span>
+                                    <span>{{usestock.barcode}}</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-3">
                                     <span>Router</span>
@@ -299,4 +299,13 @@ export class ContentDetailJobComponent implements OnInit {
             .subscribe(stocks => {
                 this.stocks = stocks
             })
+          }
+  // Get all users from the API
+  getStocksForJobs(){
+      this.http.get(`${this.API}/stock/jobs/${this.stock_id}`)
+          .map(res => res.json())
+          .subscribe(stocks => {
+              this.usestocks = usestocks
+          })
+        }
 }
