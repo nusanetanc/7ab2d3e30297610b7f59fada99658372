@@ -60,9 +60,9 @@ router.get('/detail/:id', function(req, res, next) {
                        nohome: homes.nohome,
                        cluster: clusters.name,
                        city: cities.name,
-                       jobname: jobs.name;
-                       emp1: jobs.emp1;
-                       emp2: jobs.emp2;
+                       jobname: jobs.name,
+                       emp1: jobs.emp1,
+                       emp2: jobs.emp2
                      });
                     });
                   });
