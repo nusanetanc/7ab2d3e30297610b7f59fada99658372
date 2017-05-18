@@ -459,6 +459,7 @@ total:number;
       if(subs['status'] =! 'registrasi'){
         this.totalharga = this.totalharga + 75000;
       }
+      this.totalharga = this.totalharga + subs['pinaltypay'];
       this.tax = this.totalharga * 0.1;
       this.totalbayar = this.totalharga + this.tax;
     })
