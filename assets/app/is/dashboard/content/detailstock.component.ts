@@ -45,35 +45,35 @@ import {Subscription} from "rxjs/Rx";
                     <div class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-3">
+                                <div class="col-xs-6 col-sm-2">
                                     <span>Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-5">
+                                <div class="col-xs-12 col-md-3">
                                     <span>{{stocks.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
+                                <div class="col-xs-6 col-sm-2">
                                     <span>Subscriber ID</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7">
+                                <div class="col-xs-12 col-md-3">
                                     <span>{{stocks.subid}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
+                                <div class="col-xs-6 col-sm-2">
                                     <span>Address</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7">
+                                <div class="col-xs-12 col-md-3">
                                     <span>{{stocks.address}} No.{{stocks.nohome}} ,<br>{{stocks.cluster}}, {{stocks.city}}</span>
                                 </div>
                             </div>
@@ -87,24 +87,24 @@ import {Subscription} from "rxjs/Rx";
                     <div class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
+                                <div class="col-xs-6 col-sm-2">
                                     <span>Name - ID Employee</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7">
+                                <div class="col-xs-12 col-md-3">
                                     <span>{{stocks.name}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
+                                <div class="col-xs-6 col-sm-2">
                                     <span>Jobs Name</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-md-7">
+                                <div class="col-xs-12 col-md-3">
                                     <span>{{stocks.jobname}}</span>
                                 </div>
                             </div>
