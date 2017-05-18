@@ -93,6 +93,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-3">
+                                {{stocks.emp1}}
                                     <form-emps [idemps]=stocks.emp1></form-emps>
                                 </div>
                             </div>
