@@ -27,7 +27,7 @@ body{
 
 .navbar-nav > li > a > .navbar-menus {
     margin: 0 10px 0 10px;
-    font-weight: 300;
+    font-weight: 300 !important;
 }
 
 .navbar-nav > li > a > .sign-in-only {
