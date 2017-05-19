@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Job = require('../models/job');
 var Sub = require('../models/subs');
+var Emp = require('../models/employee');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
@@ -15,18 +16,25 @@ router.get('/listjob', function(req, res, next) {
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
         Sub.findById(jobs.subs, function(err, subs) {
-            res.json({
-                _id: jobs._id,
-                name: jobs.name,
-                detail: jobs.detail,
-                date: jobs.date,
-                report: jobs.report,
-                subname: subs.name,
-                submail: subs.email,
-                subphone: subs.phone,
-                subcardid: subs.idnumber,
-                subbirth: subs.datebirth,
-                subid: subs.subid,
+            Emp.findById(jobs.emp1, function(err, emps1) {
+                Emp.findById(jobs.emp2, function(err, emps2) {
+                    res.json({
+                        _id: jobs._id,
+                        name: jobs.name,
+                        detail: jobs.detail,
+                        date: jobs.date,
+                        report: jobs.report,
+                        subname: subs.name,
+                        submail: subs.email,
+                        subphone: subs.phone,
+                        subcardid: subs.idnumber,
+                        subbirth: subs.datebirth,
+                        subid: subs.subid,
+                        emp1: emps1.name,
+                        emp2: emps2.name,
+
+                    });
+                });
             });
         });
     });
