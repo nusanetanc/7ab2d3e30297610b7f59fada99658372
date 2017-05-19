@@ -201,13 +201,11 @@ export class ContentAddSubsComponent implements OnInit {
                     this.detailclusters = detailclusters
                     levelbuild= detailclusters['level']
                 })
-        }
-        this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
-                .map(res => res.json())
-                .subscribe(packages => {
-                    this.packages = packages
-                })
+                this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
+                    .map(res => res.json())
+                    .subscribe(packages => {
+                        this.packages = packages
+                    })
         }
     }
 
