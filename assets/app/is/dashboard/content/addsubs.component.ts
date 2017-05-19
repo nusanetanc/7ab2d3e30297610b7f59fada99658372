@@ -128,7 +128,6 @@ import {Streetname} from "./street_name";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
-                                {{levelbuild}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
