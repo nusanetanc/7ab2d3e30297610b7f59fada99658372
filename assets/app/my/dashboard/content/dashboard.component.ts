@@ -95,10 +95,10 @@ import { Sub } from './subs';
              </div>
           </div>
           <!-- Content List -->
-          <div class="row paddingLR15Margin20">
+          <div class="row paddingLR15Margin20 fontWeight300">
              <div class="col-sm-12">
                 <div class="row headerList paddingLR30">
-                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>INFORMATION</strong></div>
+                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList">INFORMATION</div>
                 </div>
                 <div *ngFor="#information of informations">
                    <a [routerLink]="['Detailinformation']">
