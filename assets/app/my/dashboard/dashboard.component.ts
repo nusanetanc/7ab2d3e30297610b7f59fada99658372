@@ -27,7 +27,7 @@ import { Menu } from './menu';
                                     </div>
                                     <div class="dropdown-content" style="margin-top: 20px;">
                                         <a [routerLink]="['Account']">Account</a>
-                                        <a >Logout</a>
+                                        <a (click)="onLogout()">Logout</a>
                                     </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
@@ -105,6 +105,9 @@ getAcountSub() {
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
+  if(subs['_id'] != '' || subs['_id'] != null){
+      window.location.href = `/signin`;
+  }
     })
 }
 }
