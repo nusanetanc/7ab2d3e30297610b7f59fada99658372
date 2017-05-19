@@ -8,7 +8,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
 @Component({
     selector: 'form-levelbuild',
     template: `
-    {{idcluster}}
+    {{clusters.level}}
       <form-package [levelbuild]=clusters.level></form-package>
     `,
     directives: [ContentListPackageComponent,
