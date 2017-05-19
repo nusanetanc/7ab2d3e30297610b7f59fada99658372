@@ -131,7 +131,7 @@ import {ContentLevelBuildComponent} from "./levelbuild.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                            <form-package [idcluster]=selectedCluster._id></form-package>
+                                            <form-levelbuild [idcluster]=selectedCluster._id></form-levelbuild>
                                         </div>
                                     </div>
                                 </div>
