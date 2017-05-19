@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Input} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -132,7 +132,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                          <select [buildlevel]=detailclusters.level [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                          <select [levelbuild]=detailclusters.level [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
                                               <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
@@ -165,7 +165,7 @@ export class ContentAddSubsComponent implements OnInit {
     onSelectPackage(level) {
         console.log(level)
     }
-
+@Input() levelbuild: string;
     onSelectCity(_id) {
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
