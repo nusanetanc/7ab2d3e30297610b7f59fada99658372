@@ -128,6 +128,7 @@ import {ContentLevelBuildComponent} from "./levelbuild.component";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
+                                {{selectedCluster._id}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
