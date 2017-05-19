@@ -20,6 +20,7 @@ router.get('/job/:id', function(req, res, next) {
                 name: jobs.name,
                 detail: jobs.detail,
                 date: jobs.date,
+                report: jobs.report,
                 subname: subs.name,
                 submail: subs.email,
                 subphone: subs.phone,
