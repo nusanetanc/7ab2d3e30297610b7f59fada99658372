@@ -128,7 +128,6 @@ import {Streetname} from "./street_name";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
-                                {{detailclusters.level}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
@@ -186,7 +185,6 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectCluster(_id) {
-        console.log(_id);
         this.blokfloors = this.getAllBLokfloorByCluster(){
             this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
                 .map(res => res.json())
@@ -199,6 +197,13 @@ export class ContentAddSubsComponent implements OnInit {
                 .map(res => res.json())
                 .subscribe(detailclusters => {
                     this.detailclusters = detailclusters
+                })
+        }
+        this.packages = this.getAllPackagesByCluster(){
+            this.http.get(`${this.API}/package/cluster/A`)
+                .map(res => res.json())
+                .subscribe(packages => {
+                    this.packages = packages
                 })
         }
     }
