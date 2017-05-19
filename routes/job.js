@@ -66,4 +66,23 @@ router.delete('/deljob/:id', function(req, res, next) {
    });
 });
 
+/*Add report job*/
+router.put('/report/:id', function(req, res, next){
+    Job.findById(req.params.id, function(err, job) {
+        if (err)
+            res.send(err);
+
+        job.report= req.body.report;
+        job.status= req.body.status;
+        if (err)
+            res.send(err);
+
+        job.save(function(err) {
+            if (err)
+                res.send(err);
+
+            res.json({ message: 'Data updated!' });
+        });
+    });
+});
 module.exports = router;
