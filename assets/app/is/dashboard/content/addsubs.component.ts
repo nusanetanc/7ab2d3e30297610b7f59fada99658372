@@ -128,7 +128,7 @@ import {Streetname} from "./street_name";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
-                                {{detailclusters.level}}
+                                {{levelbuild}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
@@ -201,11 +201,13 @@ export class ContentAddSubsComponent implements OnInit {
                     this.detailclusters = detailclusters
                     levelbuild= detailclusters['level']
                 })
-                this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
-                    .map(res => res.json())
-                    .subscribe(packages => {
-                        this.packages = packages
-                    })
+        }
+        this.packages = this.getAllPackagesByCluster(){
+            this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
+                .map(res => res.json())
+                .subscribe(packages => {
+                    this.packages = packages
+                })
         }
     }
 
