@@ -201,13 +201,6 @@ export class ContentAddSubsComponent implements OnInit {
                     this.detailclusters = detailclusters
                 })
         }
-        this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/A`)
-                .map(res => res.json())
-                .subscribe(packages => {
-                    this.packages = packages
-                })
-        }
     }
 
     onSelectBlok(_id) {
