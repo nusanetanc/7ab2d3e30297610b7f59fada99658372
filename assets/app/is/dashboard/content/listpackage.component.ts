@@ -7,6 +7,7 @@ import { Package } from './package';
 @Component({
     selector: 'form-package',
     template: `
+    {{levelbuild}}
     <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
         <option value="0">-- Select Package --</option>
         <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>

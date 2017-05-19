@@ -217,10 +217,12 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-5">
                                     <span>{{ jobs.emp2 }}</span>
                                 </div>
-                                <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
-                                <button type="submit" (click)="editJob(jobs._id, barcode.value)" class="btn btn-default buttonOrange">
-                                    JOB DONE
-                                </button>
+                                <div class="formNewReport marginLR20">
+                                    <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
+                                    <button type="submit" (click)="editJob(jobs._id, barcode.value)" class="btn btn-default buttonOrange">
+                                        JOB DONE
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
