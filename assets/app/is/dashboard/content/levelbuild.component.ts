@@ -14,13 +14,10 @@ import {ContentListPackageComponent} from "./listpackage.component";
     directives: [ContentListPackageComponent,
                   ROUTER_DIRECTIVES],
 })
-export class ContentLevelBuildComponent implements OnInit {
+export class ContentLevelBuildComponent {
 @Input() idcluster: string;
 API = 'http://202.162.207.164:3000';
 clusters: any[] = [];
-  ngOnInit() {
-      this.getCluster();
-  }
   constructor(private http: Http) {}
   // Get all Subs from the API
       getCluster() {
