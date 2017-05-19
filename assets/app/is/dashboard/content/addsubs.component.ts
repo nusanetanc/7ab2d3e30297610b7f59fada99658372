@@ -128,7 +128,6 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
                                     </div>
                                 </div>
-                                <!--
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
@@ -136,7 +135,6 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                         </div>
                                     </div>
                                 </div>
-                                {{detailclusters.level}} -->
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <!-- Small modal -->
