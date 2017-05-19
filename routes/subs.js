@@ -114,7 +114,7 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-      if(sessionSubId == "" || sessionSubId == null || sessionSubId == "0"){
+      if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
           window.location("http://202.162.207.164:3000/signin");
       } else {
         var sessionSubId = req.session.subs;
