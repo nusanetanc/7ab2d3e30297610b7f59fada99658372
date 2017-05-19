@@ -114,7 +114,7 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-      var sessionSubId = "58b3cdac45912d052e2c85a5";
+      var sessionSubId = req.session.subs;
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
       subs.groovyid = "591916077a149b7469259903";
