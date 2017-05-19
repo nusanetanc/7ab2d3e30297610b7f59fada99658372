@@ -11,7 +11,7 @@ import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
-import {ContentListPackageComponent} from "./listpackage.component";
+
 @Component({
     selector: 'form-addsubs',
     template: `
@@ -132,7 +132,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                          <select [levelbuild]=detailclusters.level [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                          <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
                                               <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
@@ -152,7 +152,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
             </div>
         </div>
     `,
-    directives: [ContentListPackageComponent, ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
@@ -165,7 +165,6 @@ export class ContentAddSubsComponent implements OnInit {
     onSelectPackage(level) {
         console.log(level)
     }
-@Input() levelbuild: string;
     onSelectCity(_id) {
         this.properties = this.getAllPropertyByCity(){
             this.http.get(`${this.API}/property/propertybycity/${_id}`)
@@ -200,10 +199,11 @@ export class ContentAddSubsComponent implements OnInit {
                 .map(res => res.json())
                 .subscribe(detailclusters => {
                     this.detailclusters = detailclusters
+                    levelbuild= detailclusters.level
                 })
         }
         this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/${this.buildlevel}`)
+            this.http.get(`${this.API}/package/cluster/${this.levelbuild}`)
                 .map(res => res.json())
                 .subscribe(packages => {
                     this.packages = packages
