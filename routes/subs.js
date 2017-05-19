@@ -114,9 +114,10 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-      var sessionSubId = req.session.subs;
-        if(sessionSubId == "" || sessionSubId == null || sessionSubId == "0"){
-          window.location.replace("http://202.162.207.164:3000/signin");
+      if(sessionSubId == "" || sessionSubId == null || sessionSubId == "0"){
+          window.location("http://202.162.207.164:3000/signin");
+      } else {
+        var sessionSubId = req.session.subs;
       }
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
