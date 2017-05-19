@@ -132,7 +132,7 @@ import {ContentListPackageComponent} from "./listpackage.component";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                          <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                          <select [buildlevel]=detailclusters.level [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
                                               <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
@@ -203,7 +203,7 @@ export class ContentAddSubsComponent implements OnInit {
                 })
         }
         this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/${this.detailclusters[level]}`)
+            this.http.get(`${this.API}/package/cluster/${this.buildlevel}`)
                 .map(res => res.json())
                 .subscribe(packages => {
                     this.packages = packages
