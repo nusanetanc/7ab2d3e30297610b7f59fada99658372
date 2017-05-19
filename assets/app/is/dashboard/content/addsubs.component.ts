@@ -332,4 +332,11 @@ export class ContentAddSubsComponent implements OnInit {
                 this.blokfloors = blokfloors
             })
     }
+    getAllPackagesByCluster(){
+        this.http.get(`${this.API}/package/cluster/B`)
+            .map(res => res.json())
+            .subscribe(packages => {
+                this.packages = packages
+            })
+    }
 }
