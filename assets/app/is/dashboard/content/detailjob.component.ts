@@ -211,7 +211,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
-                                <div class="col-xs-12 col-sm-7 col-sm-offset-5">
+                                <div class="col-xs-12 col-sm-7">
                                     <span>- {{ jobs.emp1 }}</span>
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-sm-offset-5">
