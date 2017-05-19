@@ -229,6 +229,17 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>{{ jobs.report }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Status</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ jobs.status }}</span>
+                                </div>
+                            </div>
                             <div class="formNewReport marginLR20">
                                 <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
                                 <button type="submit" (click)="editJob(reportjob.value)" class="btn btn-default buttonOrange">
