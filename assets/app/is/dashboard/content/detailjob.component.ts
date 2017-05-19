@@ -264,7 +264,7 @@ export class ContentDetailJobComponent implements OnInit {
             });
     }
 
-    editStock(reportjob) {
+    editJob(reportjob) {
         var body = `report=${reportjob}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
