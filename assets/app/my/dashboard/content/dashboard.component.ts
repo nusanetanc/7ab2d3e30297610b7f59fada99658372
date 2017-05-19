@@ -27,7 +27,7 @@ import { Sub } from './subs';
                             <div class="row marginB10">
                                <div class="col-sm-12 text-center">
                                   <i class="material-icons font100Margin30">announcement</i>
-                                  <h4>REPORT PROBLEM</h4>
+                                  <h4 class="fontWeight300">REPORT PROBLEM</h4>
                                </div>
                             </div>
                          </div>
@@ -39,16 +39,16 @@ import { Sub } from './subs';
                             <div class="row marginB10">
                                <div class="col-sm-12 text-center">
                                   <i class="material-icons font100Margin30">credit_card</i>
-                                  <h4>BILLING</h4>
+                                  <h4 class="fontWeight300">BILLING</h4>
                                </div>
                             </div>
                          </div>
                       </a>
                    </div>
                    <div class="col-sm-4">
-                      <div class="cardDashboardSub">
+                      <div class="cardDashboardSub paddingT20">
                          <div class="row">
-                            <div class="col-sm-12 marginTop40">
+                            <div class="col-sm-12">
                                <div class="row marginBL10">
                                   <div class="col-xs-6 col-sm-5">
                                      Current Plan
@@ -84,7 +84,7 @@ import { Sub } from './subs';
                                </div>
                                <div class="row marginB10">
                                   <div class="col-sm-12">
-                                     <h4 class="text-center">SUBSCRIPTION PLAN</h4>
+                                     <h4 class="text-center fontWeight300">SUBSCRIPTION PLAN</h4>
                                   </div>
                                </div>
                             </div>
@@ -95,10 +95,10 @@ import { Sub } from './subs';
              </div>
           </div>
           <!-- Content List -->
-          <div class="row paddingLR15Margin20">
+          <div class="row paddingLR15Margin20 fontWeight300">
              <div class="col-sm-12">
                 <div class="row headerList paddingLR30">
-                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>INFORMATION</strong></div>
+                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList">INFORMATION</div>
                 </div>
                 <div *ngFor="#information of informations">
                    <a [routerLink]="['Detailinformation']">
