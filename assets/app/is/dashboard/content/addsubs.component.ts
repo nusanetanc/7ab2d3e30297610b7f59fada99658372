@@ -129,6 +129,7 @@ import {ContentLevelBuildComponent} from "./levelbuild.component";
                                     </div>
                                 </div>
                                 {{selectedCluster._id}}
+                                {{detailclusters.level}}
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
@@ -190,6 +191,13 @@ export class ContentAddSubsComponent implements OnInit {
                 .map(res => res.json())
                 .subscribe(blokfloors => {
                     this.blokfloors = blokfloors
+                })
+        }
+        this.clusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/cluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(detailclusters => {
+                    this.detailclusters = detailclusters
                 })
         }
     }
