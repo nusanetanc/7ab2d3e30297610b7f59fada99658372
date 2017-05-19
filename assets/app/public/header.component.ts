@@ -16,7 +16,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
                     <a [routerLink]="['Home']"><img class="navbar-logo" src="images/logo-groovy.png" alt="logo-groovy"/></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right fontWeight300">
                       <li><a [routerLink]="['Features']"><span class="navbar-menus">FEATURES</span></a></li>
                       <li><a [routerLink]="['Packages']"><span class="navbar-menus">PACKAGES</span></a></li>
                       <li><a [routerLink]="['Support']"><span class="navbar-menus">SUPPORT</span></a></li>

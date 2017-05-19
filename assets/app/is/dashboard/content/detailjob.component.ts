@@ -220,7 +220,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                             </div>
                             <div class="formNewReport marginLR20">
                                 <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
-                                <button type="submit" (click)="editJob(jobs._id, barcode.value)" class="btn btn-default buttonOrange">
+                                <button type="submit" (click)="editJob(reportjob.value)" class="btn btn-default buttonOrange">
                                     JOB DONE
                                 </button>
                             </div>
@@ -259,6 +259,23 @@ export class ContentDetailJobComponent implements OnInit {
             .subscribe(data => {
                 alert('Edit Status Succses');
                 this.getStocksForJobs();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+
+    editJob(reportjob) {
+        var body = `report=${reportjob}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/job/report/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Job is Done');
+                this.getAllJob();
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });

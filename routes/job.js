@@ -73,7 +73,7 @@ router.put('/report/:id', function(req, res, next){
             res.send(err);
 
         job.report= req.body.report;
-        job.status= req.body.status;
+        job.status= 'Done';
         if (err)
             res.send(err);
 
