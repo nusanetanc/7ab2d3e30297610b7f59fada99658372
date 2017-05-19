@@ -24,6 +24,7 @@ router.get('/job/:id', function(req, res, next) {
                         detail: jobs.detail,
                         date: jobs.date,
                         report: jobs.report,
+                        status: jobs.status,
                         subname: subs.name,
                         submail: subs.email,
                         subphone: subs.phone,
