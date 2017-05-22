@@ -70,7 +70,7 @@ router.get('/detailemp', function(req, res, next) {
       title: "No user Please Signin"
     });
   } else {
-    var sessionEmpId = req.session.subs;
+    var sessionEmpId = req.session.emp;
      Emp.findOne({_id: sessionEmpId}, function(err, emps) {
        console.log( emps );
        res.json(emps);
