@@ -105,9 +105,7 @@ getAcountSub() {
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      error => {
           window.location.href = `/signin`;
-      }
     })
 }
 }

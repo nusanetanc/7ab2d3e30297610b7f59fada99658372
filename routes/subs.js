@@ -115,10 +115,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
       if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
-        return res.status(404).json({
-          title: "No user found",
-          error: {message: 'User could not be found.'}
-        });
+           res.redirect('/signin');
       } else {
         var sessionSubId = req.session.subs;
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
