@@ -114,8 +114,8 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-      if(req.session.subs == null){
-          window.location("http://202.162.207.164:3000/signin");
+      if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+          window.location.assign("https://www.w3schools.com");
       } else {
         var sessionSubId = req.session.subs;
       }
