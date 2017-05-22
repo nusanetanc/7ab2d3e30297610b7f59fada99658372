@@ -177,14 +177,10 @@ router.post('/signin', function(req, res, next){
         if(!req.session.emp){
             req.session.emp = doc.id;
       }
-      if(!req.session.accessrole){
-          req.session.accessrole = doc.accessrole;
-    }
         res.status(200).json({
             message: 'Success',
             token: token,
             sessionId: doc.id,
-            accessrole: req.session.accessrole
         })
     })
 });
