@@ -115,7 +115,7 @@ Sub.findById(req.params.id, function(err, subs) {
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
       if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
-          window.location.assign("https://www.w3schools.com");
+          window.location("https://www.w3schools.com");
       } else {
         var sessionSubId = req.session.subs;
       }
