@@ -16,6 +16,8 @@ var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
 
+var upload = multer({ storage:storage });
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
