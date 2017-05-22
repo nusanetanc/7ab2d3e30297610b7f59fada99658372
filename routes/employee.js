@@ -66,12 +66,12 @@ Emp.findById(req.params.id, function(err, emps) {
 });
 
 router.get('/detailemp', function(req, res, next) {
-  if(req.session.emp != "" || req.session.emp != null || req.session.emp != "0"){
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
       title: "No user Please Signin"
     });
   } else {
-    var sessionEmpId = req.session.subs;
+    var sessionEmpId = req.session.emp;
      Emp.findOne({_id: sessionEmpId}, function(err, emps) {
        console.log( emps );
        res.json(emps);
