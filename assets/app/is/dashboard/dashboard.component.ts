@@ -5,7 +5,7 @@ import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Emp} from "./emp";
-import {Menu} from "./menu";
+//import {Menu} from "./menu";
 
 @Component({
     selector: 'dashboard',
@@ -129,12 +129,10 @@ export class DashboardComponent {
     content_access = '202';
 
 emps: any[] = [];
-//menus: any[] = [];
 constructor(private http: Http) {}
 
     ngOnInit() {
         this.getAcountEmp();
-      //  this.getContentMenu()
     }
 
 
@@ -150,11 +148,4 @@ constructor(private http: Http) {}
           )
     }
 
-  //  getContentMenu() {
-  //      this.http.get(`${this.API}/menu/listmenu`)
-  //          .map(res => res.json())
-  //          .subscribe(menus => {
-                this.menus = menus
-    //        })
-//    }
 }
