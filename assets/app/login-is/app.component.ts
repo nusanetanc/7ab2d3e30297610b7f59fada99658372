@@ -15,7 +15,7 @@ import {LoginComponent} from "./login.component";
 })
 
 @RouteConfig([
-    {path: '/login', name: 'Login', component: LoginComponent, useAsDefault: true}
+    {path: '/is/signin', name: 'Login', component: LoginComponent, useAsDefault: true}
 ])
 
 export class AppComponent{
