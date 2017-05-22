@@ -28,7 +28,7 @@ router.use(session({
 }));
 
 */
- GET menu listing.
+ //GET menu listing.
 router.get('/listmenu', function(req, res, next) {
     Menu.find(function(err, menus) {
         console.log( menus );
