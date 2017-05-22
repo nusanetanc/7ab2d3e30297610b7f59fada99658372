@@ -22,7 +22,7 @@ import {Menu} from "./menu";
                               <div class="col-sm-8 col-xs-6" style="padding: 10px;">
                                  <div class="row dropdown" style="padding: 3px 0px;">
                                     <div class="col-sm-9">
-                                       <span class="nav-name">Purwanto</span>
+                                       <span class="nav-name">{{emps.name}}</span>
                                     </div>
                                     <div class="col-sm-2 hid">
                                        <span class="caret"></span>
@@ -34,7 +34,7 @@ import {Menu} from "./menu";
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-12">
-                                       <span class="nav-tit">ANC </span>
+                                       <span class="nav-tit">{{emps.titlejob}}</span>
                                     </div>
                                  </div>
                               </div>
@@ -73,10 +73,10 @@ import {Menu} from "./menu";
                                 </li>
                                 <li>
                                     <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a [routerLink]="['Package']" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
                                 </li>
@@ -142,7 +142,11 @@ export class DashboardComponent {
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
-            })
+            },
+            error => {
+              window.location.href = `/login`;
+            }
+          )
     }
 
     getContentMenu() {
