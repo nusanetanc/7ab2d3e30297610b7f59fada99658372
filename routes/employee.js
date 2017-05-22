@@ -16,17 +16,6 @@ var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
 
-var multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, 'public/uploads');
-    },
-    filename: function(req, file, cb){
-        cb(null, file.originalname);
-    }
-});
-var upload = multer({ storage:storage });
-
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(upload.array());
@@ -36,6 +25,7 @@ router.use(session({
   saveUninitialized: true,
   resave: true,
   maxAge: 200000000000000000000
+
 }));
 
 var smtpTransport = nodemailer.createTransport({
@@ -76,12 +66,12 @@ Emp.findById(req.params.id, function(err, emps) {
 });
 
 router.get('/detailemp', function(req, res, next) {
-  if(req.session.emp == null){
+  if(req.session.emp != "" || req.session.emp != null || req.session.emp != "0"){
     return res.status(404).json({
       title: "No user Please Signin"
     });
   } else {
-    var sessionEmpId = req.session.emp;
+    var sessionEmpId = req.session.subs;
      Emp.findOne({_id: sessionEmpId}, function(err, emps) {
        console.log( emps );
        res.json(emps);
@@ -192,6 +182,9 @@ router.post('/signin', function(req, res, next){
         if(!req.session.emp){
             req.session.emp = doc.id;
       }
+      if(!req.session.accessrole){
+          req.session.accessrole = doc.accessrole;
+    }
         res.status(200).json({
             message: 'Success',
             token: token,
