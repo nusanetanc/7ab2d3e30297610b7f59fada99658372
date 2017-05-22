@@ -13,6 +13,7 @@ import {ContentDetailInformationComponent} from "./dashboard/content/detailinfor
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
 import {TestComponent} from "./dashboard/content/test";
+import { Sub } from './content/subs';
 
 @Component({
    selector: 'my-app',
