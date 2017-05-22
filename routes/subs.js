@@ -118,7 +118,6 @@ router.get('/detailsub', function(req, res, next) {
            res.redirect('/signin');
       } else {
         var sessionSubId = req.session.subs;
-      }
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
       subs.groovyid = "591916077a149b7469259903";
@@ -160,6 +159,7 @@ router.get('/detailsub', function(req, res, next) {
           });
         });
   });
+      }
 });
 
 /* GET detail bill one account. */
