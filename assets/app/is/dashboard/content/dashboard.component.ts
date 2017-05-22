@@ -13,7 +13,7 @@ import {Report} from './allreports';
           <h3 id="home">
              <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
              </a>
-             &nbsp; Dashboard1
+             &nbsp; Dashboard
           </h3>
        </div>
        <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -83,7 +83,7 @@ import {Report} from './allreports';
                   <h3 id="home" class="fontWeight300">
                       <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
-                      &nbsp; Dashboard2
+                      &nbsp; Dashboard
                   </h3>
               </div>
 
@@ -154,7 +154,7 @@ import {Report} from './allreports';
                 <h3 id="home">
                    <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                    </a>
-                   &nbsp; Dashboard3
+                   &nbsp; Dashboard
                 </h3>
              </div>
              <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -230,7 +230,7 @@ import {Report} from './allreports';
                         <h3 id="home" class="fontWeight300">
                             <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                             </a>
-                            &nbsp; Dashboard4
+                            &nbsp; Dashboard
                         </h3>
                     </div>
 
@@ -295,7 +295,7 @@ import {Report} from './allreports';
                       <h3 id="home">
                          <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                          </a>
-                         &nbsp; Dashboard5
+                         &nbsp; Dashboard
                       </h3>
                    </div>
                    <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -358,7 +358,7 @@ import {Report} from './allreports';
                               <h3 id="home" class="fontWeight300">
                                   <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                                   </a>
-                                  &nbsp; Dashboard7
+                                  &nbsp; Dashboard
                               </h3>
                           </div>
 
