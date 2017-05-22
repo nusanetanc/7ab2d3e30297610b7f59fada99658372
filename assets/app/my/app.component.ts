@@ -52,5 +52,28 @@ import {TestComponent} from "./dashboard/content/test";
 ])
 
 export class AppComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
 
+
+subs: any[] = [];
+
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAcountSub();
+  }
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/detailsub`)
+    .map(res => res.json())
+    .subscribe(
+    error => {
+      window.location.href = `/signin`;
+    },
+      subs => {
+          this.subs = subs
+    }
+    );
+}
 }
