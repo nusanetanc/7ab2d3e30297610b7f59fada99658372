@@ -103,12 +103,14 @@ subs: any[] = [];
 getAcountSub() {
   this.http.get(`${this.API}/subscribe/detailsub`)
     .map(res => res.json())
-    .subscribe(subs => {
-      if(subs == null){
-        window.location.href = `/my`;
-      }else{
+    .subscribe(
+      subs => {
           this.subs = subs
-      }
-    })
+    },
+    error => {
+      alert(error.text());
+      console.log(error.text());
+    }
+    );
 }
 }
