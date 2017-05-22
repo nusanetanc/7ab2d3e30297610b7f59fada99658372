@@ -13,7 +13,6 @@ import {ContentDetailInformationComponent} from "./dashboard/content/detailinfor
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
 import {TestComponent} from "./dashboard/content/test";
-import { Sub } from './dashboard/content/subs';
 
 @Component({
    selector: 'my-app',
@@ -53,28 +52,4 @@ import { Sub } from './dashboard/content/subs';
 ])
 
 export class AppComponent {
-// Link to our api, pointing to localhost
-  API = 'http://202.162.207.164:3000';
-
-
-subs: any[] = [];
-
-  constructor(private http: Http) {}
-
-  ngOnInit() {
-    this.getAcountSub();
-  }
-
-getAcountSub() {
-  this.http.get(`${this.API}/subscribe/detailsub`)
-    .map(res => res.json())
-    .subscribe(
-    error => {
-      window.location.href = `/signin`;
-    },
-      subs => {
-          this.subs = subs
-    }
-    );
-}
 }
