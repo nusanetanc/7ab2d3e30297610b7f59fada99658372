@@ -18,9 +18,15 @@ var jwtDecode = require('jwt-decode');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-router.use(upload.array());
 router.use(cookieParser());
-router.use(session({secret: "Your secret key"}));
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 200000000000000000000
+
+}));
+
 
 /* GET menu listing. */
 router.get('/listmenu', function(req, res, next) {

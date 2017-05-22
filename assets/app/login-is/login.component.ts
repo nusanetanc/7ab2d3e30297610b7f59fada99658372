@@ -33,7 +33,7 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     `,
     directives: [ROUTER_DIRECTIVES]
 })
