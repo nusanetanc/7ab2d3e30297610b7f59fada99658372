@@ -76,7 +76,7 @@ Emp.findById(req.params.id, function(err, emps) {
 });
 
 router.get('/detailemp', function(req, res, next) {
-  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+  if(req.session.emp == null){
     return res.status(404).json({
       title: "No user Please Signin"
     });
