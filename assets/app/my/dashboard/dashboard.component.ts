@@ -109,7 +109,7 @@ getAcountSub() {
     },
     error => {
       alert(error.text());
-      console.log(error.text());
+      window.location.href = `/signin`;
     }
     );
 }
