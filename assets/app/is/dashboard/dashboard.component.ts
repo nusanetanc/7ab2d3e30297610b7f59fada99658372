@@ -127,14 +127,14 @@ export class DashboardComponent {
     API = 'http://202.162.207.164:3000';
     //Session_ID = '58b6a0d77dfd7052a9fe53c9';
     content_access = '202';
-    
+
 emps: any[] = [];
-menus: any[] = [];
+//menus: any[] = [];
 constructor(private http: Http) {}
 
     ngOnInit() {
         this.getAcountEmp();
-        this.getContentMenu()
+      //  this.getContentMenu()
     }
 
 
@@ -150,11 +150,11 @@ constructor(private http: Http) {}
           )
     }
 
-    getContentMenu() {
-        this.http.get(`${this.API}/menu/listmenu`)
-            .map(res => res.json())
-            .subscribe(menus => {
+  //  getContentMenu() {
+  //      this.http.get(`${this.API}/menu/listmenu`)
+  //          .map(res => res.json())
+  //          .subscribe(menus => {
                 this.menus = menus
-            })
-    }
+    //        })
+//    }
 }
