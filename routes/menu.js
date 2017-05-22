@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Menu = require('../models/menu');
-
+/*
 var Emp = require('../models/employee');
 
 var cookieParser = require('cookie-parser');
@@ -15,7 +15,7 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
-/*
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(cookieParser());
