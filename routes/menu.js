@@ -15,7 +15,7 @@ var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
-
+/*
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(cookieParser());
@@ -28,7 +28,7 @@ router.use(session({
 }));
 
 
-/* GET menu listing. */
+ GET menu listing.
 router.get('/listmenu', function(req, res, next) {
   if(req.session.accessrole){
     sessionEmpAccess = req.session.accessrole;
@@ -38,7 +38,7 @@ router.get('/listmenu', function(req, res, next) {
         res.json(menus);
     });
 });
-
+*/
 /* GET detail menu. */
 router.get('/menu/:id', function(req, res, next) {
     Menu.findById(req.params.id, function(err, menus) {
