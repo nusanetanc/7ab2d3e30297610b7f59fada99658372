@@ -28,7 +28,7 @@
     <script src="https://npmcdn.com/angular2@2.0.0-beta.14/es6/dev/src/testing/shims_for_IE.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.13/http.dev.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.2/angular-local-storage.js"></script>
-    <script src="/js/app/signin/bundle.js"></script>
+    <!-- <script src="/js/app/signin/bundle.js"></script> -->
 
     <style>
         .loader {
@@ -57,7 +57,21 @@
 <body class="form-auth-is">
 
 <my-app>
-    LOADING....
+    <style>
+        .load > img {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height:159px;
+            width:500px;
+        }
+    </style>
+    <div class="load">
+        <img src="logo-groovy.png">
+    </div>
 </my-app>
 
 <script>
