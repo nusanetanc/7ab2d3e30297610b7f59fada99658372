@@ -3,19 +3,25 @@ var passwordHash = require('password-hash');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
-var Sub = require('../models/subs');
-var Home = require('../models/home');
+var Emp = require('../models/employee');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
-var Bill = require('../models/bill');
-var City = require('../models/city');
-var Cluster = require('../models/cluster');
 var nodemailer = require("nodemailer");
-var Emp = require('../models/employee');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(cookieParser());
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 200000000000000000000
+
+}));
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -30,27 +36,6 @@ var smtpTransport = nodemailer.createTransport({
         pass: "groovyplay"
     }
 });
-var multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, 'public/uploads');
-    },
-    filename: function(req, file, cb){
-        cb(null, file.originalname);
-    }
-});
-var upload = multer({ storage:storage });
-
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(upload.array());
-router.use(cookieParser());
-router.use(session({
-  secret: 'Your secret key',
-  saveUninitialized: true,
-  resave: true,
-  maxAge: 200000000000000000000
-}));
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {
@@ -192,10 +177,14 @@ router.post('/signin', function(req, res, next){
         if(!req.session.emp){
             req.session.emp = doc.id;
       }
+      if(!req.session.accessrole){
+          req.session.accessrole = doc.accessrole;
+    }
         res.status(200).json({
             message: 'Success',
             token: token,
             sessionId: doc.id,
+            accessrole: req.session.accessrole
         })
     })
 });
