@@ -108,7 +108,6 @@ getAcountSub() {
           this.subs = subs
     },
     error => {
-      alert(error.text());
       window.location.href = `/signin`;
     }
     );
