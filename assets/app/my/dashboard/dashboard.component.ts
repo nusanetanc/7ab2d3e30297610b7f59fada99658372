@@ -104,11 +104,11 @@ getAcountSub() {
   this.http.get(`${this.API}/subscribe/detailsub`)
     .map(res => res.json())
     .subscribe(
-    error => {
-      window.location.href = `/signin`;
-    },
       subs => {
           this.subs = subs
+    },
+    error => {
+      window.location.href = `/signin`;
     }
     );
 }
