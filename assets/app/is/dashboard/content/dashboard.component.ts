@@ -7,12 +7,12 @@ import {Report} from './allreports';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-          <div id="page-content-wrapper">
+          <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202'" id="page-content-wrapper">
               <div class="content-header">
                   <h3 id="home" class="fontWeight300">
                       <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
-                      &nbsp; Dashboard (AM)
+                      &nbsp; Dashboard (MARKETING)
                   </h3>
               </div>
 
@@ -48,7 +48,7 @@ import {Report} from './allreports';
                                   <div class="cardDashboardSub">
                                       <div class="row marginB10">
                                           <div class="col-sm-12 text-center">
-                                            
+
                                           </div>
                                       </div>
                                   </div>
@@ -76,6 +76,82 @@ import {Report} from './allreports';
                   <!-- /Content List -->
               </div>
           </div>
+
+          <!-- START CONTENT -->
+          <div *ngIf="emps.accessrole == '3' || emps.accessrole == '301'" id="page-content-wrapper" >
+             <div class="content-header">
+                <h3 id="home">
+                   <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                   </a>
+                   &nbsp; Dashboard [Technical]
+                </h3>
+             </div>
+             <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                <div class="row">
+                   <div class="col-sm-12">
+                      <div class="row marginLR15">
+                         <div class="col-sm-4">
+                             <a [routerLink]="['AllSubs']">
+                                <div class="cardDashboardSub">
+                                   <div class="row">
+                                      <div class="col-sm-12">
+                                         <h4 class="marginT20 marginL20 fontWeight300">WAITING INSTALLATION</h4>
+                                         <br>
+                                         <p class="text-center numberInCardBilling"><b>12</b></p>
+                                         <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                      </div>
+                                   </div>
+                                </div>
+                             </a>
+                         </div>
+                         <div class="col-sm-4">
+                            <div class="cardDashboardSub">
+                               <div class="row">
+                                  <div class="col-sm-12">
+                                     <h4 class="marginT20 marginL20 fontWeight300">WAITING MAINTENANCE</h4>
+                                     <br>
+                                     <p class="text-center numberInCardBilling"><b>2</b></p>
+                                     <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-sm-4">
+                            <div class="cardDashboardSub">
+                               <div class="row">
+                                  <div class="col-sm-12">
+                                     <h4 class="marginT20 marginL20 fontWeight300">WAITING DISMANTLE</h4>
+                                     <br>
+                                     <p class="text-center numberInCardBilling"><b>3</b></p>
+                                     <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+
+                <!-- Content List -->
+                <div class="row paddingLR15Margin20">
+                    <div class="col-sm-12">
+                        <div class="row headerList paddingLR30">
+                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
+                        </div>
+                        <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
+                            <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                            <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
+                            <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                        </div>
+                        <div class="row subInfo">
+                            <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Content List -->
+             </div>
+          </div>
+          <!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -85,12 +161,14 @@ export class ContentDashboardComponent {
 
     complaints: any[] = [];
     subs: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http) {}
 
     ngOnInit() {
         this.getAllReport();
         this.getAllSub();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -109,6 +187,17 @@ export class ContentDashboardComponent {
             .subscribe(subs => {
                 this.subs = subs
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            },
+            error => {
+              window.location.href = `/login`;
+            }
+          )
     }
 
 }
