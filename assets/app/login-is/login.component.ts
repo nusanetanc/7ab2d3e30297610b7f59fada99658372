@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .post(`${this.API}/subscribe/login`,
+            .post(`${this.API}/employee/signin`,
                 body, {
                     headers: headers
                 })
