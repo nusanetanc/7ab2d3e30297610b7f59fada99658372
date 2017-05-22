@@ -1,20 +1,16 @@
 var express = require('express');
-var router = express.Router();
 var passwordHash = require('password-hash');
-var nodemailer = require("nodemailer");
-var Emp = require('../models/employee');
-
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
 var router = express.Router();
+var Emp = require('../models/employee');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
+var nodemailer = require("nodemailer");
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
