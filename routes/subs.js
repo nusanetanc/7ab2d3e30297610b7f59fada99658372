@@ -116,9 +116,6 @@ Sub.findById(req.params.id, function(err, subs) {
 router.get('/detailsub', function(req, res, next) {
         var sessionSubId = req.session.subs;
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
-    if (err) {
-      error: {message: 'User could not be found.'}
-    } else {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
       subs.groovyid = "591916077a149b7469259903";
     }
@@ -159,7 +156,7 @@ router.get('/detailsub', function(req, res, next) {
           });
         });
 
-  }});
+  });
 });
 
 /* GET detail bill one account. */
