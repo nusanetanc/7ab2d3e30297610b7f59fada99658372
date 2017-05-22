@@ -3,6 +3,9 @@ var router = express.Router();
 var Job = require('../models/job');
 var Sub = require('../models/subs');
 var Emp = require('../models/employee');
+var Home = require('../models/home');
+var Cluster = require('../models/cluster');
+var City = require('../models/city');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
@@ -16,29 +19,43 @@ router.get('/listjob', function(req, res, next) {
 router.get('/job/:id', function(req, res, next) {
     Job.findById(req.params.id, function(err, jobs) {
         Sub.findById(jobs.subs, function(err, subs) {
-            Emp.findById(jobs.emp1, function(err, emps1) {
-                Emp.findById(jobs.emp2, function(err, emps2) {
-                    res.json({
-                        _id: jobs._id,
-                        name: jobs.name,
-                        detail: jobs.detail,
-                        date: jobs.date,
-                        report: jobs.report,
-                        status: jobs.status,
-                        subname: subs.name,
-                        submail: subs.email,
-                        subphone: subs.phone,
-                        subcardid: subs.idnumber,
-                        subbirth: subs.datebirth,
-                        substreet: subs.address,
-                        subnohome: subs.nohome,
-                        subnohome: subs.nohome,
-                        subcluster: subs.cluster,
-                        subcity: subs.city,
-                        subid: subs.subid,
-                        emp1: emps1.name,
-                        emp2: emps2.name,
+            if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+                subs.groovyid = "591916077a149b7469259903";
+            }
+            Home.findById(subs.groovyid, function(err, homes) {
+                if(homes.cluster == "" || homes.cluster == null){
+                    homes.cluster = "59152634f2c0f31ac56ada67";
+                }
+                Cluster.findById(homes.cluster, function(err, clusters) {
+                    if(homes.city == "" || homes.city == null){
+                        homes.city = "58d3492416d72b7e166dd977";
+                    }
+                    City.findById(homes.city, function(err, cities) {
+                        Emp.findById(jobs.emp1, function(err, emps1) {
+                            Emp.findById(jobs.emp2, function(err, emps2) {
+                                res.json({
+                                    _id: jobs._id,
+                                    name: jobs.name,
+                                    detail: jobs.detail,
+                                    date: jobs.date,
+                                    report: jobs.report,
+                                    status: jobs.status,
+                                    subname: subs.name,
+                                    submail: subs.email,
+                                    subphone: subs.phone,
+                                    subcardid: subs.idnumber,
+                                    subbirth: subs.datebirth,
+                                    substreet: homes.address,
+                                    subnohome: homes.nohome,
+                                    subcluster: clusters.name,
+                                    subcity: cities.name,
+                                    subid: subs.subid,
+                                    emp1: emps1.name,
+                                    emp2: emps2.name,
 
+                                });
+                            });
+                        });
                     });
                 });
             });
