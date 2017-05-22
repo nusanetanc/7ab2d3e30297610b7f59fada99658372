@@ -5,6 +5,7 @@ var Sub = require('../models/subs');
 var Emp = require('../models/employee');
 var Home = require('../models/home');
 var Cluster = require('../models/cluster');
+var City = require('../models/city');
 
 /* GET jobs listing. */
 router.get('/listjob', function(req, res, next) {
