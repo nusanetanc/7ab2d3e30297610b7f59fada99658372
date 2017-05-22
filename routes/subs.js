@@ -15,6 +15,7 @@ var Bill = require('../models/bill');
 var City = require('../models/city');
 var Cluster = require('../models/cluster');
 var nodemailer = require("nodemailer");
+var Emp = require('../models/employee');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -436,5 +437,38 @@ router.post('/signin', function(req, res){
         })
     })
 })
+
+router.post('/login', function(req, res, next){
+    Emp.findOne({email: req.body.email}, function(err, doc){
+        if (err) {
+            return res.status(404).json({
+                title: 'An error occured',
+                error: err
+            });
+        }
+        if (!doc) {
+            return res.status(404).json({
+                title: 'No user found',
+                error: {message: 'User could not be found'}
+            });
+        }
+        if (!passwordHash.verify(req.body.password, doc.password)){
+            return res.status(404).json({
+                title: 'Could not sign you in',
+                error: {message: 'Invalid password'}
+            });
+        }
+        var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
+        if(!req.session.emp){
+            req.session.emp = doc.id;
+      }
+        res.status(200).json({
+            message: 'Success',
+            token: token,
+            sessionId: doc.id,
+        })
+    })
+});
+
 
 module.exports = router;
