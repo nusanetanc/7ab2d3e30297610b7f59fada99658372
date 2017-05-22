@@ -114,13 +114,11 @@ Sub.findById(req.params.id, function(err, subs) {
 
 /* GET detail sub. */
 router.get('/detailsub', function(req, res, next) {
-      if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
-        var link="https://www.w3schools.com"
-          window.location(link);
-      } else {
         var sessionSubId = req.session.subs;
-      }
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
+    if (err) {
+      error: {message: 'User could not be found.'}
+    }
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
       subs.groovyid = "591916077a149b7469259903";
     }
