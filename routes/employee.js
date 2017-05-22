@@ -3,25 +3,19 @@ var passwordHash = require('password-hash');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
-var Emp = require('../models/employee');
+var Sub = require('../models/subs');
+var Home = require('../models/home');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
 var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
+var Bill = require('../models/bill');
+var City = require('../models/city');
+var Cluster = require('../models/cluster');
 var nodemailer = require("nodemailer");
-
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(cookieParser());
-router.use(session({
-  secret: 'Your secret key',
-  saveUninitialized: true,
-  resave: true,
-  maxAge: 200000000000000000000
-
-}));
+var Emp = require('../models/employee');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -36,6 +30,27 @@ var smtpTransport = nodemailer.createTransport({
         pass: "groovyplay"
     }
 });
+var multer = require('multer');
+var storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, 'public/uploads');
+    },
+    filename: function(req, file, cb){
+        cb(null, file.originalname);
+    }
+});
+var upload = multer({ storage:storage });
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(cookieParser());
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: true,
+  resave: true,
+  maxAge: 200000000000000000000
+}));
 
 /* GET employe listing. */
 router.get('/listemp', function(req, res, next) {

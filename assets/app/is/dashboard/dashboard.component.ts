@@ -137,7 +137,7 @@ constructor(private http: Http) {}
 
 
     getAcountEmp() {
-        this.http.get(`${this.API}/subscribe/detailemp`)
+        this.http.get(`${this.API}/employee/detailemp`)
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
