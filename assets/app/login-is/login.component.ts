@@ -29,7 +29,7 @@ import { Sub } from './subs';
                                     <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,6 +42,23 @@ export class LoginComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     constructor(private http: Http) {}
+
+    // Angular 2 Life Cycle event when component has been initialized
+    ngOnInit() {
+      this.getAllEmp();
+    }
+
+  // Declare empty list of people
+  emps: any[] = [];
+
+  // Get all Sub from the API
+  getAllEmp() {
+    this.http.get(`${this.API}/employee/listemp`)
+      .map(res => res.json())
+      .subscribe(emps => {
+        this.emps = emps
+      })
+  }
 
 // Add one person to the API
     signEmp(signEmail, signPassword) {
