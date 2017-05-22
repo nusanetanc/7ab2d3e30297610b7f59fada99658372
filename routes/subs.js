@@ -60,6 +60,20 @@ router.get('/listsub', function(req, res, next) {
    });
 });
 
+router.get('/detailemp', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "No user Please Signin"
+    });
+  } else {
+    var sessionEmpId = req.session.emp;
+     Emp.findOne({_id: sessionEmpId}, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
+
 /* GET detail sub. */
 router.get('/id/:id', function(req, res, next) {
   Sub.findById(req.params.id, function(err, subs) {
