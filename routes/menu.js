@@ -27,31 +27,13 @@ router.use(session({
 
 }));
 
-
- GET menu listing.
+*/
+ //GET menu listing.
 router.get('/listmenu', function(req, res, next) {
-  if(req.session.accessrole){
-    sessionEmpAccess = req.session.accessrole;
-}
-    Menu.find({access: sessionEmpAccess}, function(err, menus) {
+    Menu.find(function(err, menus) {
         console.log( menus );
         res.json(menus);
     });
-});
-*/
-
-router.get('/detailemp', function(req, res, next) {
-  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
-    return res.status(404).json({
-      title: "No user Please Signin"
-    });
-  } else {
-    var sessionEmpId = req.session.emp;
-     Emp.findOne({_id: sessionEmpId}, function(err, emps) {
-       console.log( emps );
-       res.json(emps);
-   });
- }
 });
 
 /* GET detail menu. */
