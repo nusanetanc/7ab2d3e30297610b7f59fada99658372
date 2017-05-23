@@ -9,7 +9,7 @@ import { Sub } from './subs';
     selector: 'form-billsubscriber',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -117,7 +117,7 @@ import { Sub } from './subs';
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
@@ -181,6 +181,9 @@ import { Sub } from './subs';
             </div>
             <!-- /Content List -->
         </div>
+    </div>
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'" class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
