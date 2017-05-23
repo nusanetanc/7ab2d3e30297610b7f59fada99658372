@@ -50,7 +50,7 @@ import {Emp} from "./emp";
                                 <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                                 </li>
-                                <li>
+                                <li ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '5' || emps.accessrole != '501' || emps.accessrole != '502'">
                                     <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                                 </li>
                                 <li>
@@ -104,7 +104,7 @@ import {Emp} from "./emp";
 })
 
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
     //Session_ID = '58b6a0d77dfd7052a9fe53c9';
