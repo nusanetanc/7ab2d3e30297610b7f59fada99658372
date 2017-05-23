@@ -50,11 +50,9 @@ import {Emp} from "./emp";
                                 <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                                 </li>
-                                <div ngIf="emps.accessrole != '0'">
-                                <li>
+                                < ngIf="emps.accessrole != '0'" li>
                                     <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                                 </li>
-                                </div>
                                 <li>
                                     <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                                 </li>
