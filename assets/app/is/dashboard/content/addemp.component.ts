@@ -52,7 +52,7 @@ import { City } from './cities';
                                                 </select>
                                                 <br/><br/>
                                                 <select #empaccess id="empaccess">
-                                                  <option disabled="true" >-- Select Acces Role --</option>
+                                                  <option disabled="true" value="-">-- Select Acces Role --</option>
                                                   <option value="0">Admin Web</option>
                                                   <option value="1">Direktur</option>
                                                   <option value="2">Sales Manager</option>
