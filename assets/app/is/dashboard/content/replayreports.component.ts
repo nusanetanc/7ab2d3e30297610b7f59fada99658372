@@ -10,7 +10,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div  id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -49,13 +49,13 @@ import {ContentEmpsNameComponent} from './empsname.component';
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '801'" class="row">
                         <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                          <div class="col-sm-10 col-xs-12">
                             <textarea id="message" #message class="input width100" rows="10" placeholder="*Type message here"></textarea>
                         </div>
                     </div>
-                    <div class="row">
+                    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '801'" class="row">
                         <div class="col-sm-10 col-sm-offset-1 marginB20">
                             <button type="submit" (click)="addReport(message.value)" class="btn btn-default buttonOrange">
                                 SEND
@@ -66,6 +66,9 @@ import {ContentEmpsNameComponent} from './empsname.component';
             </div>
         </div>
     </div>
+    <div class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
     `,
     directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
@@ -75,12 +78,14 @@ export class ContentReplayReportComponent implements OnInit {
 
 complaints: any[] = [];
 chats: any[] = [];
+emps: any[] = [];
 
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailReport();
     this.getChatReport();
+    this.getAcountEmp();
   }
 
 getDetailReport() {
@@ -111,5 +116,13 @@ addReport(message) {
         }, error => {
             console.log(JSON.stringify(error.json()));
         });
+}
+getAcountEmp() {
+    this.http.get(`${this.API}/subscribe/detailemp`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        }
+      )
 }
 }
