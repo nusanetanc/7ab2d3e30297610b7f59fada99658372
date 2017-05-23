@@ -74,6 +74,21 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         </div>
     </div>
 
+   </div>
+   <style *ngIf="emps.accessrole == null">
+       .load > img {
+           bottom: 0;
+           left: 0;
+           margin: auto;
+           position: absolute;
+           right: 0;
+           top: 0;
+           height:159px;
+           width:500px;
+       }
+   </style>
+   <div *ngIf="emps.accessrole == null" class="load">
+       <img src="images/logo-groovy.png">
    </div><!-- END CONTENT -->
 `,
     directives: [
