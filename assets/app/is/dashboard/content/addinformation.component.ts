@@ -13,7 +13,7 @@ import { Street } from './street';
     selector: 'form-addinformation',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '801'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -84,6 +84,9 @@ import { Street } from './street';
         </div>
     </div>
     <!-- Page content -->
+    <div *ngIf="emps.accessrole != '0' || emps.accessrole != '801'" class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -164,7 +167,7 @@ export class ContentAddInformationComponent implements OnInit {
     blokfloors: any[] = [];
     streetnames: any[] = [];
     emps: any[] = [];
-    
+
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
