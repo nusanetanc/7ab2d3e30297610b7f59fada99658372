@@ -209,6 +209,7 @@ export class ContentBillSubscribeComponent {
     // Declare empty list of people
     bills: any[] = [];
     subs: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -216,6 +217,7 @@ export class ContentBillSubscribeComponent {
     ngOnInit() {
         this.getAllBill();
         this.getSub();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -234,5 +236,13 @@ export class ContentBillSubscribeComponent {
             .subscribe(subs => {
                 this.subs = subs
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }
