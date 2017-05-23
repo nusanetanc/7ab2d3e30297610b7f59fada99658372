@@ -79,7 +79,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{jobs.substreet}} No. test,<br>test, test</span>
+                                    <span>{{jobs.substreet}} No. {{jobs.subnohome}},<br>{{jobs.subcluster}}, {{jobs.subcity}}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
