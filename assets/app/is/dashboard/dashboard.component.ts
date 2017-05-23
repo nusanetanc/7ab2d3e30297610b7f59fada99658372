@@ -41,40 +41,40 @@ import {Emp} from "./emp";
                            </div>
                         </div>
                     </div>
-                    <div *ngIf="emps.accessrole == '0'" class="row" style="margin-right: 0px;">
+                    <div class="row" style="margin-right: 0px;">
                         <div class="col-sm-12">
-                            <ul class="sidebar-nav nav" style="margin-right: -15px">
-                                <li class="firstLiSidebar">
-                                    <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
-                                </li>
-                                <li >
-                                    <a [routerLink]="['Package']" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
-                                </li>
-                                <li >
-                                    <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">EMPLOYEE</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
-                                </li>
-                                <li>
-                                    <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
-                                </li>
-                            </ul>
+                        <ul class="sidebar-nav nav" style="margin-right: -15px">
+                            <li class="firstLiSidebar">
+                                <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '5' || emps.accessrole != '501' || emps.accessrole != '502'">
+                                <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
+                            </li>
+                            <li ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
+                                <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
+                                <a [routerLink]="['Package']" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '3' || emps.accessrole != '301' || emps.accessrole != '4' || emps.accessrole != '401' || emps.accessrole != '402' || emps.accessrole != '6' || emps.accessrole != '601'">
+                                <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '7' || emps.accessrole != '701'">
+                                <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">EMPLOYEE</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '7' || emps.accessrole != '702'">
+                                <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
+                            </li>
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '501' || emps.accessrole != '601' || emps.accessrole != '801' || emps.accessrole != '8' || emps.accessrole != '301' || emps.accessrole != '3'">
+                                <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
+                            </li>
+                        </ul>
                         </div>
                     </div>
                     <div class="row sidebar-footer" style="margin-right: 0px; bottom: 0px; position: absolute;">
