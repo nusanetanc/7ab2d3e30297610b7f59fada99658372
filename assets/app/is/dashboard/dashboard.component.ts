@@ -102,7 +102,7 @@ import {Emp} from "./emp";
             </div>
             <!-- /Sidebar -->
     `,
-    directives: [ ROUTER_DIRECTIVES], providers: [],
+    directives: [ ROUTER_DIRECTIVES]
 })
 
 
