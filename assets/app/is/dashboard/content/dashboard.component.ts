@@ -11,7 +11,7 @@ import {Report} from './allreports';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1'" id="page-content-wrapper">
        <div class="content-header">
           <h3 id="home">
-             <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+             <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
              </a>
              &nbsp; Dashboard
           </h3>
