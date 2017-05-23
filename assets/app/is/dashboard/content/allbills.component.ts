@@ -8,7 +8,7 @@ import {Billing} from './allbill';
     selector: 'form-allbills',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -16,7 +16,7 @@ import {Billing} from './allbill';
                 All Billing
             </h3>
         </div>
-    
+
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
@@ -39,6 +39,9 @@ import {Billing} from './allbill';
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '5' || emps.accessrole != '501' || emps.accessrole != '502'" class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -75,12 +78,14 @@ export class ContentAllBillsComponent {
 
     // Declare empty list of people
     subs: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllSub();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -90,6 +95,14 @@ export class ContentAllBillsComponent {
             .subscribe(subs => {
                 this.subs = subs
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 
 }
