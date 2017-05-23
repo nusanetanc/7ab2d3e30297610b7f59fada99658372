@@ -78,12 +78,14 @@ export class ContentAllSubsComponent {
 
     // Declare empty list of people
       subs: any[] = [];
-
+      emps: any[] = [];
+      
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getAllSub();
+      this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -93,6 +95,17 @@ export class ContentAllSubsComponent {
             .subscribe(subs => {
             this.subs = subs
         })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            },
+            error => {
+              window.location.href = `/login`;
+            }
+          )
     }
 
 }

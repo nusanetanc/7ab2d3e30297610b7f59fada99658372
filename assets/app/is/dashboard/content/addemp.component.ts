@@ -52,8 +52,27 @@ import { City } from './cities';
                                                 </select>
                                                 <br/><br/>
                                                 <select #empaccess id="empaccess">
-                                                  <option disabled="true" value="0">-- Select Acces Role --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.sublevel }}</option>
+                                                  <option disabled="true" >-- Select Acces Role --</option>
+                                                  <option value="0">Admin Web</option>
+                                                  <option value="1">Direktur</option>
+                                                  <option value="2">Sales Manager</option>
+                                                  <option value="201">Sales Spv</option>
+                                                  <option value="202">Sales</option>
+                                                  <option value="3">Teknis Spv</option>
+                                                  <option value="301">Field Engineer</option>
+                                                  <option value="4">Network Spv</option>
+                                                  <option value="401">Network Staff</option>
+                                                  <option value="402">System Administator</option>
+                                                  <option value="5">Finnace Controler</option>
+                                                  <option value="501">Billing</option>
+                                                  <option value="502">Acounting - Tax</option>
+                                                  <option value="6">CRO Spv</option>
+                                                  <option value="601">CRO Staff</option>
+                                                  <option value="7">HR & GA Spv</option>
+                                                  <option value="701">HR</option>
+                                                  <option value="702">GA</option>
+                                                  <option value="8">Helpdesk Spv</option>
+                                                  <option value="801">Helpdesk Staff</option>
                                                 </select>
                                                 <br/>
                                             </form>
