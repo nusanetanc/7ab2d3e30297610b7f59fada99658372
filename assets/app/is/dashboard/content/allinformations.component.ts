@@ -21,7 +21,7 @@ import { Information } from './allinformation';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a *ngIf="emps.accessrole != '0' || emps.accessrole != '801'" [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
+                    <a *ngIf="emps.accessrole == '0' || emps.accessrole == '801'" [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
                         NEW INFORMATION
                     </a>
                     <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down right"></a>
