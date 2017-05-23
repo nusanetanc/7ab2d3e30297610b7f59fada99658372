@@ -41,8 +41,7 @@ import {Emp} from "./emp";
                            </div>
                         </div>
                     </div>
-                    <div ngIf="emps.accessrole == '0'" class="row" style="margin-right: 0px;">
-                      <div ngIf="emps.accessrole == '0'">
+                    <div *ngIf="emps.accessrole == '0'" class="row" style="margin-right: 0px;">
                         <div class="col-sm-12">
                             <ul class="sidebar-nav nav" style="margin-right: -15px">
                                 <li class="firstLiSidebar">
@@ -77,7 +76,6 @@ import {Emp} from "./emp";
                                 </li>
                             </ul>
                         </div>
-                      </div>
                     </div>
                     <div class="row sidebar-footer" style="margin-right: 0px; bottom: 0px; position: absolute;">
                         <div class="col-sm-12">
