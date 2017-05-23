@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
     selector: 'form-cpackages',
     template: `
     <!-- Page content -->
-        <div id="page-content-wrapper">
+        <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -81,6 +81,9 @@ import 'rxjs/add/operator/map';
                     </div>
                 </div>
             </div>
+        </div>
+        <div *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
+            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
         </div><!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -88,12 +91,13 @@ import 'rxjs/add/operator/map';
 export class ContentPackagesComponent implements OnInit {
 
 API = 'http://202.162.207.164:3000';
-
+emps: any[] = [];
 constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllPackages();
+    this.getAcountEmp();
 }
 // Get all Property by city from the API
 getAllPackages() {
@@ -119,5 +123,13 @@ getAllPackages() {
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }
