@@ -21,7 +21,7 @@ import { Information } from './allinformation';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
+                    <a *ngIf="emps.accessrole != '0' || emps.accessrole != '801'" [routerLink]="['AddInformation']" class="btn btn-default buttonOrange">
                         NEW INFORMATION
                     </a>
                     <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down right"></a>
@@ -76,11 +76,13 @@ export class ContentAllInformationComponent {
       API = 'http://202.162.207.164:3000';
 
       informations: any[] = [];
+      emps: any[] = [];
 
       constructor(private http: Http) {}
 
       ngOnInit() {
         this.getAllInformation();
+        this.getAcountEmp();
       }
 
     // Get all users from the API
@@ -90,5 +92,13 @@ export class ContentAllInformationComponent {
         .subscribe(informations => {
           this.informations = informations
         })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }

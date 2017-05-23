@@ -41,9 +41,6 @@ import {Billing} from './allbill';
             </div>
         </div>
     </div>
-    <div *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '5' || emps.accessrole != '501' || emps.accessrole != '502'" class='fullscreenDiv'>
-        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
-    </div>
     <!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
