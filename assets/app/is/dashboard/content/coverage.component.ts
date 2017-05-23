@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 
@@ -6,7 +6,7 @@ import { Http } from 'angular2/http';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -98,9 +98,30 @@ import { Http } from 'angular2/http';
             </div>
         </div>
     </div>
+    <div *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'" class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoverageComponent {
+// Link to our api, pointing to localhost
+API = 'http://202.162.207.164:3000';
+//Session_ID = '58b6a0d77dfd7052a9fe53c9';
+content_access = '202';
 
+emps: any[] = [];
+constructor(private http: Http) {}
+
+ngOnInit() {
+    this.getAcountEmp();
+}
+getAcountEmp() {
+    this.http.get(`${this.API}/subscribe/detailemp`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        }
+      )
+}
 }
