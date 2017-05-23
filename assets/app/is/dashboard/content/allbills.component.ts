@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Response, Headers, Request, RequestOptions, RequestMethod, URLSearchParams } from 'angular2/http';
+import 'rxjs/add/operator/map';
 import {Billing} from './allbill';
 
 
