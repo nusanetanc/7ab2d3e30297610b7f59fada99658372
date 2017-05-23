@@ -1,6 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
+import 'rxjs/add/operator/map';
+import {Emp} from "./emp";
 
 @Component({
     selector: 'form-dashboard',
