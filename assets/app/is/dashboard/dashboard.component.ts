@@ -42,8 +42,8 @@ import {Emp} from "./emp";
                         </div>
                     </div>
                     <div class="row" style="margin-right: 0px;">
-                        <div class="col-sm-12">
-                            <ul ngIf="emps.accessrole != '0'" class="sidebar-nav nav" style="margin-right: -15px">
+                        <div ngIf="emps.accessrole == '0'" class="col-sm-12">
+                            <ul class="sidebar-nav nav" style="margin-right: -15px">
                                 <li class="firstLiSidebar">
                                     <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
