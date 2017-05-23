@@ -13,15 +13,31 @@ import {ContentDetailInformationComponent} from "./dashboard/content/detailinfor
 import {ContentDetailReportComponent} from "./dashboard/content/detailreport.component";
 import {ContentAccountComponent} from "./dashboard/content/account.component";
 import {TestComponent} from "./dashboard/content/test";
+//import { Sub } from './content/subs';
 
 @Component({
    selector: 'my-app',
    template: `
     <!-- START CONTENT -->
-    <div id="wrapper">
+    <div *ngIf="subs._id != null" id="wrapper">
         <dashboard ></dashboard>
         <router-outlet></router-outlet>
     </div >
+    <style *ngIf="subs._id == null">
+        .load > img {
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height:159px;
+            width:500px;
+        }
+    </style>
+    <div *ngIf="subs._id == null" class="load">
+        <img src="images/logo-groovy.png">
+    </div>
     <!-- END CONTENT -->
     `,
     directives: [ DashboardComponent,
@@ -52,4 +68,29 @@ import {TestComponent} from "./dashboard/content/test";
 ])
 
 export class AppComponent {
+// Link to our api, pointing to localhost
+  API = 'http://202.162.207.164:3000';
+
+
+subs: any[] = [];
+
+  constructor(private http: Http) {}
+
+  ngOnInit() {
+    this.getAcountSub();
+  }
+
+getAcountSub() {
+  this.http.get(`${this.API}/subscribe/detailsub`)
+    .map(res => res.json())
+    .subscribe(
+      subs => {
+          this.subs = subs
+    },
+    error => {
+      window.location.href = `/signin`;
+    }
+    );
+}
+
 }
