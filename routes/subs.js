@@ -49,7 +49,7 @@ router.use(session({
   secret: 'Your secret key',
   saveUninitialized: true,
   resave: true,
-  maxAge: 200000000000000000000
+  maxAge: 99999999999999999999
 }));
 
 /* GET subloye listing. */
