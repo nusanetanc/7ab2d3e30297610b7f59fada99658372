@@ -53,7 +53,7 @@ import {Emp} from "./emp";
                             <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '5' || emps.accessrole != '501' || emps.accessrole != '502'">
                                 <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                             </li>
-                            <li ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
+                            <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
                                 <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                             </li>
                             <li *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
