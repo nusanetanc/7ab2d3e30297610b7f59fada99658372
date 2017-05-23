@@ -163,7 +163,8 @@ export class ContentAddInformationComponent implements OnInit {
     clusters: any[] = [];
     blokfloors: any[] = [];
     streetnames: any[] = [];
-
+    emps: any[] = [];
+    
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
@@ -174,6 +175,7 @@ export class ContentAddInformationComponent implements OnInit {
     this.getAllBLokfloorByCluster();
     this.getAllStreetByBlok();
     this.getAllHomeByStreet();
+    this.getAcountEmp();
     }
     // Get all City from the API
     getAllCity() {
@@ -241,5 +243,13 @@ export class ContentAddInformationComponent implements OnInit {
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }
