@@ -11,7 +11,7 @@ import {Emp} from "./emp";
     selector: 'dashboard',
     template: `
             <!-- Sidebar -->
-            <div *ngIf="emps.accessrole != '' || emps.accessrole != null" id="sidebar-wrapper">
+            <div id="sidebar-wrapper">
                 <nav id="spy">
                     <div class="sidebar-brand">
                         <div class="row" style="padding: 10px; color: #FFFFFF; margin-right: 0px;">
