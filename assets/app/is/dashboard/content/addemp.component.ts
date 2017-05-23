@@ -53,7 +53,7 @@ import { City } from './cities';
                                                 <br/><br/>
                                                 <select #empaccess id="empaccess">
                                                   <option disabled="true" value="0">-- Select Acces Role --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.sublevel }} - {{ job.name }}</option>
+                                                  <option *ngFor="#job of jobs">{{ job.sublevel }}</option>
                                                 </select>
                                                 <br/>
                                             </form>
