@@ -21,7 +21,7 @@ import { Sub } from './subs';
       <div class="page-content inset" data-spy="scroll" data-target="#spy">
           <div class="row marginB20 marginR0">
               <div class="col-sm-12">
-                  <a [routerLink]="['AddSubs']" class="btn btn-default buttonOrange">
+                  <a *ngIf="emps.accessrole == '0' || emps.accessrole == '202' || emps.accessrole == '601'" [routerLink]="['AddSubs']" class="btn btn-default buttonOrange">
                       NEW SUBSCRIBER
                   </a>
                   <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
@@ -79,7 +79,7 @@ export class ContentAllSubsComponent {
     // Declare empty list of people
       subs: any[] = [];
       emps: any[] = [];
-      
+
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
