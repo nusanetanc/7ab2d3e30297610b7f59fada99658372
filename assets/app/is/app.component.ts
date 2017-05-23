@@ -53,7 +53,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
    selector: 'is-app',
    template: `
    <!-- START CONTENT -->
-   <div id="wrapper">
+   <div *ngIf="emps.accessrole != null" id="wrapper">
    <dashboard></dashboard>
    <router-outlet></router-outlet>
 
@@ -173,5 +173,29 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
 ])
 
 export class AppComponent {
+// Link to our api, pointing to localhost
+API = 'http://202.162.207.164:3000';
+//Session_ID = '58b6a0d77dfd7052a9fe53c9';
+content_access = '202';
+
+emps: any[] = [];
+constructor(private http: Http) {}
+
+ngOnInit() {
+    this.getAcountEmp();
+}
+
+
+getAcountEmp() {
+    this.http.get(`${this.API}/subscribe/detailemp`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        },
+        error => {
+          window.location.href = `/login`;
+        }
+      )
+}
 
 }
