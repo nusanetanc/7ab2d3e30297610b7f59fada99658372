@@ -8,7 +8,7 @@ import { City } from './cities';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-        <div id="page-content-wrapper">
+        <div  *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -75,14 +75,19 @@ import { City } from './cities';
                     </div>
                 </div>
         </div><!-- END CONTENT -->
+        <div *ngIf="emps.accessrole != '0' || emps.accessrole != '1' || emps.accessrole != '6' || emps.accessrole != '601'">
+            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+        </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddCityComponent implements OnInit {
 API = 'http://202.162.207.164:3000';
 cities: City[];
+emps: any[] = [];
   ngOnInit() {
       this.getAllCity();
+      this.getAcountEmp();
   }
   constructor(private http: Http) {}
   // Get all City from the API
@@ -109,5 +114,13 @@ cities: City[];
           }, error => {
               console.log(JSON.stringify(error.json()));
           });
+  }
+  getAcountEmp() {
+      this.http.get(`${this.API}/subscribe/detailemp`)
+          .map(res => res.json())
+          .subscribe(emps => {
+              this.emps = emps
+          }
+        )
   }
 }
