@@ -48,6 +48,7 @@ import {ContentDashboardCroComponent} from "./dashboard/content/dashboard-cro.co
 import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.component";
 import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
 import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
+import {ContentNotFoundComponent} from "./dashboard/content/not-found.component";
 
 @Component({
    selector: 'is-app',
@@ -137,6 +138,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         ContentDashboardHrdComponent,
         ContentDashboardManagerComponent,
         ContentDashboardTechComponent,
+        ContentNotFoundComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -185,6 +187,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
     { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
     { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
+    { path: '/is/not-found', component:ContentNotFoundComponent, name:'NotFound'},
 ])
 
 export class AppComponent {
