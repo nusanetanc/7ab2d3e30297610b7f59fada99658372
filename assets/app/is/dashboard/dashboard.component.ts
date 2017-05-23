@@ -43,14 +43,14 @@ import {Emp} from "./emp";
                     </div>
                     <div class="row" style="margin-right: 0px;">
                         <div class="col-sm-12">
-                            <ul class="sidebar-nav nav" style="margin-right: -15px">
+                            <ul ngIf="emps.accessrole != '0'" class="sidebar-nav nav" style="margin-right: -15px">
                                 <li class="firstLiSidebar">
                                     <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
                                 <li>
                                     <a [routerLink]="['AllSubs']" ><i class="material-icons">people</i> <span class="fontWeight300">SUBSCRIBE</span></a>
                                 </li>
-                                <li ngIf="emps.accessrole != '0'">
+                                <li>
                                     <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                                 </li>
                                 <li>
