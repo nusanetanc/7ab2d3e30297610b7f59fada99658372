@@ -21,14 +21,7 @@ import 'rxjs/add/operator/map';
                  <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
                     BACK
                  </a>
-                 <div>
-                     <button *ngIf="emps.status='Disabled'" type="submit" (click)="AccountEnabled()" class="btn btn-default buttonOrange right">
-                         Enable Account
-                     </button>
-                     <button *ngIf="emps.status='Enabled'" type="submit" (click)="AccountDisabled()" class="btn btn-default buttonOrange right">
-                         Disabled Account
-                     </button>
-                  </div>
+                 
              </div>
           </div>
           <div class="row subInfo">
