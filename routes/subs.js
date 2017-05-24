@@ -76,8 +76,8 @@ router.get('/detailemp', function(req, res, next) {
 });
 
 router.get('/listcomplaint', function(req, res, next) {
-  var sessionEmpId = req.session.emp;
-    Complaint.find({sub: sessionEmpId}, function(err, complaints) {
+  var sessionSubId = req.session.subs;
+    Complaint.find({sub: sessionSubId}, function(err, complaints) {
         console.log(complaints);
         res.json(complaints);
     });
