@@ -80,6 +80,7 @@ router.post('/addemp', function(req, res, next) {
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
     emp.photo= req.body.photo;
+    emp.status= 'Aktif';
 
     emp.save(function(err) {
       if (err)
