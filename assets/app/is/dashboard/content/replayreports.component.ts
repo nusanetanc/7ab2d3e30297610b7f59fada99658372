@@ -26,6 +26,11 @@ import {ContentEmpsNameComponent} from './empsname.component';
                       <a [routerLink]="['AllReport']" class="btn btn-default buttonBack" type="button">
                           BACK
                       </a>
+                      <div *ngIf="emps.accessrole == '0' || emps.accessrole == '801'">
+                          <button *ngIf="complaints.status=='open'" type="submit" (click)="CloseReport()" class="btn btn-default buttonOrange right">
+                              Close Report
+                          </button>
+                       </div>
                 </div>
             </div>
             <div class="row subInfo roboto grey8b reportDetail">
