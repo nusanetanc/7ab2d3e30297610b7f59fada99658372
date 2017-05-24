@@ -56,12 +56,14 @@ export class ContentInfoStockComponent {
 
   stocks: any[] = [];
   goods: any[] = [];
+  emps: any[] = [];
 
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getAllStocks();
     this.getGoods();
+    this.getAcountEmp();
   }
 
 // Get all users from the API
@@ -79,5 +81,16 @@ getGoods() {
     .subscribe(goods => {
       this.goods = goods
     })
+}
+getAcountEmp() {
+    this.http.get(`${this.API}/subscribe/detailemp`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        },
+        error => {
+          window.location.href = `/login`;
+        }
+      )
 }
 }

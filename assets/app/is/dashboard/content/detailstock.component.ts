@@ -134,11 +134,13 @@ export class ContentDetailStockComponent {
     API = 'http://202.162.207.164:3000';
 
     stocks: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
       this.getAllStocks();
+      this.getAcountEmp();
     }
 
   // Get all users from the API
@@ -148,5 +150,16 @@ export class ContentDetailStockComponent {
       .subscribe(stocks => {
         this.stocks = stocks
       })
+  }
+  getAcountEmp() {
+      this.http.get(`${this.API}/subscribe/detailemp`)
+          .map(res => res.json())
+          .subscribe(emps => {
+              this.emps = emps
+          },
+          error => {
+            window.location.href = `/login`;
+          }
+        )
   }
 }
