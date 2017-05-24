@@ -21,7 +21,7 @@ import 'rxjs/add/operator/map';
                  <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
                     BACK
                  </a>
-                 <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701'">
+                 <div>
                      <button *ngIf="emps.status='Disabled'" type="submit" (click)="AccountEnabled()" class="btn btn-default buttonOrange right">
                          Enable Account
                      </button>
