@@ -4,7 +4,7 @@ import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 @Component({
-    selector: 'form-profileengineer',
+    selector: 'form-profilemp',
     template: `
     <!-- Page content -->
     <div id="page-content-wrapper">
