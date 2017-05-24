@@ -130,7 +130,7 @@ import 'rxjs/add/operator/map';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentProfileEngineerComponent implements OnInit {
+export class ContentProfileEmpComponent implements OnInit {
 
 
     // Link to our api, pointing to localhost

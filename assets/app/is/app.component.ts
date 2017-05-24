@@ -21,7 +21,7 @@ import {ContentDetailReportComponent} from "./dashboard/content/detailreport.com
 import {ContentDetailStockComponent} from "./dashboard/content/detailstock.component";
 import {ContentInfoStockComponent} from "./dashboard/content/infostock.component";
 import {ContentEmployeeComponent} from "./dashboard/content/employee.component";
-import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
+import {ContentProfileEmpComponent} from "./dashboard/content/profileemp.component";
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
@@ -112,7 +112,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
         ContentDetailStockComponent,
         ContentInfoStockComponent,
         //ContentEmployeeComponent,
-        ContentProfileEngineerComponent,
+        ContentProfileEmpComponent,
         ContentReplayReportComponent,
         ContentAllBillsComponent,
         AuthenticationComponent,
@@ -166,7 +166,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
     { path: '/is/detailstock/:id', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
-    { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
+    { path: '/is/profileemp/:id', component:ContentProfileEmpComponent, name:'ProfileEmp'},
     { path: '/is/replayreport/:id', component:ContentReplayReportComponent, name:'ReplyReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
