@@ -1,6 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
-import { Http, Response, Headers, Request, RequestOptions, RequestMethod, URLSearchParams } from 'angular2/http';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Employee} from './employee';
 
@@ -131,6 +132,9 @@ export class ContentAllEngineerComponent {
             .map(res => res.json())
             .subscribe(accountemps => {
                 this.accountemps = accountemps
+            },
+            error => {
+              window.location.href = `/login`;
             }
           )
     }
