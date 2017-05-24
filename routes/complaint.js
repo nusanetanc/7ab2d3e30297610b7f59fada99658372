@@ -101,6 +101,27 @@ router.put('/putcomplaint/:id', function(req, res, next) {
         });
 });
 
+router.put('/close/:id', function(req, res, next) {
+
+        Complaint.findById(req.params.id, function(err, complaint) {
+
+            if (err)
+                res.send(err);
+
+                complaint.dateclose= dnow;
+                complaint.status= 'close';
+              if (err)
+                res.send(err);
+
+            complaint.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 router.delete('/delcomplaint/:id', function(req, res, next) {
         Complaint.remove({
             _id: req.params.id

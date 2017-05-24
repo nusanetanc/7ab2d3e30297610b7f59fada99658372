@@ -117,6 +117,22 @@ addReport(message) {
             console.log(JSON.stringify(error.json()));
         });
 }
+CloseReport(){
+    var body = `status='close'`;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+        .post(`${this.API}/complaint/close/${this._routeParams.get('id')}`,
+            body, {
+                headers: headers
+            })
+        .subscribe(data => {
+            this.getDetailReport();
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
+    }
+}
 getAcountEmp() {
     this.http.get(`${this.API}/subscribe/detailemp`)
         .map(res => res.json())
