@@ -16,6 +16,7 @@ var City = require('../models/city');
 var Cluster = require('../models/cluster');
 var nodemailer = require("nodemailer");
 var Emp = require('../models/employee');
+var Complaint = require('../models/complaint');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -72,6 +73,13 @@ router.get('/detailemp', function(req, res, next) {
        res.json(emps);
    });
  }
+});
+
+router.get('/listcomplaint', function(req, res, next) {
+    Complaint.find({sub: sessionSubId}, function(err, complaints) {
+        console.log(complaints);
+        res.json(complaints);
+    });
 });
 
 /* GET detail sub. */
