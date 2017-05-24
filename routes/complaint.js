@@ -103,11 +103,12 @@ router.put('/putcomplaint/:id', function(req, res, next) {
 
 router.put('/close/:id', function(req, res, next) {
 
-        Complaint.findById(req.params.id, function(err, complaint) {
+        Complaint.findOne({complaintId: req.params.id}, function(err, complaint) {
 
             if (err)
                 res.send(err);
 
+                complaint.dateclose= new Date();
                 complaint.status= 'close';
               if (err)
                 res.send(err);
