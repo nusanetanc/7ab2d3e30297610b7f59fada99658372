@@ -95,13 +95,13 @@ import 'rxjs/add/operator/map';
                       </div>
                       <div class="row marginTB10 marginL5">
                          <div class="col-xs-6 col-sm-4">
-                            <span></span>
+                            <span>Account Status</span>
                          </div>
                          <div class="col-xs-6 col-sm-1">
                             <span>:</span>
                          </div>
                          <div class="col-xs-12 col-md-7">
-                            <span>{{ emps.departement }} / {{ emps.titlejob }}</span>
+                            <span>{{ emps.status }}</span>
                          </div>
                       </div>
                    </div>
@@ -177,7 +177,6 @@ export class ContentProfileEmpComponent implements OnInit {
         })
     }
     AccountEnabled() {
-    alert('Account Employee Enabled');
         var body = `status='Enabled'`
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -194,7 +193,6 @@ export class ContentProfileEmpComponent implements OnInit {
             });
     }
     AccountDisabled() {
-alert('Account Employee Disabled');
         var body = `status='Disabled'`
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
