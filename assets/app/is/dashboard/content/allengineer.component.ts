@@ -7,7 +7,7 @@ import {Employee} from './employee';
     selector: 'form-allengineer',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -43,6 +43,9 @@ import {Employee} from './employee';
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="accountemps.accessrole != '0' || accountemps.accessrole != '1' || accountemps.accessrole != '3' || accountemps.accessrole != '301' || accountemps.accessrole != '4' || accountemps.accessrole != '401' || accountemps.accessrole != '402' || accountemps.accessrole != '6' || accountemps.accessrole != '601'">
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -104,12 +107,14 @@ export class ContentAllEngineerComponent {
 
     // Declare empty list of people
     emps: any[] = [];
+    accountemps: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
         this.getAllEmployee();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -119,5 +124,13 @@ export class ContentAllEngineerComponent {
             .subscribe(emps => {
                 this.emps = emps
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(accountemps => {
+                this.accountemps = accountemps
+            }
+          )
     }
 }
