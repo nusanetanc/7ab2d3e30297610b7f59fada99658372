@@ -132,7 +132,6 @@ CloseReport(){
             console.log(JSON.stringify(error.json()));
         });
     }
-}
 getAcountEmp() {
     this.http.get(`${this.API}/subscribe/detailemp`)
         .map(res => res.json())
