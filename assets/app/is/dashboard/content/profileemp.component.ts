@@ -18,12 +18,12 @@ import 'rxjs/add/operator/map';
        <div class="page-content inset" data-spy="scroll" data-target="#spy">
           <div class="row marginB20 marginR0">
              <div class="col-sm-12">
-                 <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange">
+                 <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
+                    BACK
+                 </a>
+                 <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange right">
                      ADD NEW EMPLOYEE
                  </a>
-                <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
-                BACK
-                </a>
              </div>
           </div>
           <div class="row subInfo">
