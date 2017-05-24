@@ -10,7 +10,7 @@ declare let kendo;
     template: `
 
         <!-- Page content -->
-        <div id="page-content-wrapper">
+        <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'" id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -692,6 +692,9 @@ declare let kendo;
                 </div>
             </div>
         </div>
+        <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '6' || emps.accessrole == '601' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8' || emps.accessrole == '801'">
+            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+        </div>
         <!-- Page Content -->
 
     `,
@@ -717,11 +720,13 @@ export class ContentDetailBillingComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     bills: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
         this.getBills();
+        this.getAcountEmp();
     }
 
     getBills(){
@@ -746,6 +751,14 @@ export class ContentDetailBillingComponent implements OnInit {
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 
 }
