@@ -47,7 +47,7 @@ import {Employee} from './employee';
             </div>
         </div>
     </div>
-    <div *ngIf="accountemps.accessrole != '0' || accountemps.accessrole != '1' || accountemps.accessrole != '3' || accountemps.accessrole != '301' || accountemps.accessrole != '4' || accountemps.accessrole != '401' || accountemps.accessrole != '402' || accountemps.accessrole != '6' || accountemps.accessrole != '601'">
+    <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '5' || accountemps.accessrole == '501' || accountemps.accessrole == '502' || accountemps.accessrole == '402'">
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     `,
