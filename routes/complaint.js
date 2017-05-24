@@ -108,7 +108,6 @@ router.put('/close/:id', function(req, res, next) {
             if (err)
                 res.send(err);
 
-                complaint.dateclose= new Date();
                 complaint.status= 'close';
               if (err)
                 res.send(err);
