@@ -80,7 +80,7 @@ router.post('/addemp', function(req, res, next) {
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
     emp.photo= req.body.photo;
-    emp.status= 'Aktif';
+    emp.status= 'Enable';
 
     emp.save(function(err) {
       if (err)
@@ -130,6 +130,44 @@ router.put('/putemp/:id', function(req, res, next) {
             });
         });
 });
+
+router.put('/enableaccount/:id', function(req, res, next) {
+
+        Emp.findById(req.params.id, function(err, emp) {
+
+            if (err)
+                res.send(err);
+
+                emp.status= 'Enabled';
+
+            // save the bear
+            emp.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+router.put('/disableaccount/:id', function(req, res, next) {
+
+        Emp.findById(req.params.id, function(err, emp) {
+
+            if (err)
+                res.send(err);
+
+                emp.status= 'Disabled';
+
+            // save the bear
+            emp.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 
 router.delete('/delemp/:id', function(req, res, next) {
         Emp.remove({

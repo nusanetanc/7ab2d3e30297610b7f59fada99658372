@@ -22,7 +22,10 @@ import 'rxjs/add/operator/map';
                     BACK
                  </a>
                  <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange right">
-                     ADD NEW EMPLOYEE
+                     Enable Account
+                 </a>
+                 <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange right">
+                     Disabled Account
                  </a>
              </div>
           </div>
