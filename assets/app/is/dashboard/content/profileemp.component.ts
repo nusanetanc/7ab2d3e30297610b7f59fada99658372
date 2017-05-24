@@ -21,12 +21,12 @@ import 'rxjs/add/operator/map';
                  <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
                     BACK
                  </a>
-                 <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange right">
+                 <button type="submit" (click)="AccountEnabled()" class="btn btn-default buttonOrange right">
                      Enable Account
-                 </a>
-                 <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange right">
+                 </button>
+                 <button type="submit" (click)="AccountDisabled()" class="btn btn-default buttonOrange right">
                      Disabled Account
-                 </a>
+                 </button>
              </div>
           </div>
           <div class="row subInfo">
@@ -175,6 +175,38 @@ export class ContentProfileEmpComponent implements OnInit {
         .subscribe(jobs => {
             this.jobs = jobs
         })
+    }
+    AccountEnabled() {
+
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/employee/enableaccount`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Account Employee Enabled');
+                this.getEmp();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+    AccountDisabled() {
+
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/employee/disableaccount`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Account Employee Disabled');
+                this.getEmp();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
     }
 
 }
