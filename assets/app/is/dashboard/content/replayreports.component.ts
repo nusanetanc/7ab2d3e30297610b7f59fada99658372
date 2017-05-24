@@ -122,7 +122,7 @@ CloseReport(){
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
-        .post(`${this.API}/complaint/close/${this._routeParams.get('id')}`,
+        .put(`${this.API}/complaint/close/${this._routeParams.get('id')}`,
             body, {
                 headers: headers
             })
