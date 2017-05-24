@@ -21,10 +21,10 @@ import 'rxjs/add/operator/map';
                  <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
                     BACK
                  </a>
-                 <button *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '701' || emps.status='Disabled'" type="submit" (click)="AccountEnabled()" class="btn btn-default buttonOrange right">
+                 <button *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701' || emps.status='Disabled'" type="submit" (click)="AccountEnabled()" class="btn btn-default buttonOrange right">
                      Enable Account
                  </button>
-                 <button *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '701' || emps.status='Enabled'" type="submit" (click)="AccountDisabled()" class="btn btn-default buttonOrange right">
+                 <button *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701' || emps.status='Enabled'" type="submit" (click)="AccountDisabled()" class="btn btn-default buttonOrange right">
                      Disabled Account
                  </button>
              </div>
