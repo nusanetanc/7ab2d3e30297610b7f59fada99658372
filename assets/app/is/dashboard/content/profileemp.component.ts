@@ -181,7 +181,7 @@ export class ContentProfileEmpComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .put(`${this.API}/employee/enableaccount`,
+            .put(`${this.API}/employee/enableaccount/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
@@ -197,7 +197,7 @@ export class ContentProfileEmpComponent implements OnInit {
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
-            .put(`${this.API}/employee/disableaccount`,
+            .put(`${this.API}/employee/disableaccount/${this._routeParams.get('id')}`,
                 body, {
                     headers: headers
                 })
