@@ -118,7 +118,7 @@ addReport(message) {
         });
 }
 CloseReport(){
-    var body = `status='close'`;
+    var body = `status='close'&dateclose=''`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
