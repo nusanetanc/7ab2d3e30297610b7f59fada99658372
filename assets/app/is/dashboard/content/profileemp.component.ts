@@ -178,6 +178,7 @@ export class ContentProfileEmpComponent implements OnInit {
     }
     AccountEnabled() {
     alert('Account Employee Enabled');
+        var body = `status='Enabled'`
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -194,6 +195,7 @@ export class ContentProfileEmpComponent implements OnInit {
     }
     AccountDisabled() {
 alert('Account Employee Disabled');
+        var body = `status='Disabled'`
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
