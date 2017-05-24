@@ -93,6 +93,17 @@ import 'rxjs/add/operator/map';
                             <span>{{ emps.departement }} / {{ emps.titlejob }}</span>
                          </div>
                       </div>
+                      <div class="row marginTB10 marginL5">
+                         <div class="col-xs-6 col-sm-4">
+                            <span></span>
+                         </div>
+                         <div class="col-xs-6 col-sm-1">
+                            <span>:</span>
+                         </div>
+                         <div class="col-xs-12 col-md-7">
+                            <span>{{ emps.departement }} / {{ emps.titlejob }}</span>
+                         </div>
+                      </div>
                    </div>
                    <div class="col-sm-4">
                       <div class="row">
