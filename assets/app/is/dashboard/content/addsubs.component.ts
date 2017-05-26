@@ -16,7 +16,7 @@ import {Streetname} from "./street_name";
     selector: 'form-addsubs',
     template: `
         <!-- Page content -->
-        <div id="page-content-wrapper">
+        <div *ngIf="emps.accessrole == '0' || emps.accessrole == '202' || emps.accessrole == '601'" id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -150,6 +150,9 @@ import {Streetname} from "./street_name";
                 </div>
             </div>
         </div>
+        <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' ||  emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8' || emps.accessrole == '801'" class='fullscreenDiv'>
+            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+        </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -241,6 +244,7 @@ export class ContentAddSubsComponent implements OnInit {
     packages: any[] = [];
     streetnames: any[] = [];
     detailclusters: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -248,6 +252,7 @@ export class ContentAddSubsComponent implements OnInit {
     ngOnInit() {
         this.getAllSub();
         this.getAllCity();
+        this.getAcountEmp();
     }
 
 
@@ -335,5 +340,13 @@ export class ContentAddSubsComponent implements OnInit {
             .subscribe(packages => {
                 this.packages = packages
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }

@@ -8,7 +8,7 @@ import { City } from './cities';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-        <div id="page-content-wrapper">
+        <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '702'" id="page-content-wrapper">
             <div class="content-header">
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -52,8 +52,27 @@ import { City } from './cities';
                                                 </select>
                                                 <br/><br/>
                                                 <select #empaccess id="empaccess">
-                                                  <option disabled="true" value="0">-- Select Acces Role --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.sublevel }} - {{ job.name }}</option>
+                                                  <option>-- Select Acces Role --</option>
+                                                  <option value="0">Admin Web</option>
+                                                  <option value="1">Direktur</option>
+                                                  <option value="2">Sales Manager</option>
+                                                  <option value="201">Sales Spv</option>
+                                                  <option value="202">Sales</option>
+                                                  <option value="3">Teknis Spv</option>
+                                                  <option value="301">Field Engineer</option>
+                                                  <option value="4">Network Spv</option>
+                                                  <option value="401">Network Staff</option>
+                                                  <option value="402">System Administator</option>
+                                                  <option value="5">Finnace Controler</option>
+                                                  <option value="501">Billing</option>
+                                                  <option value="502">Acounting - Tax</option>
+                                                  <option value="6">CRO Spv</option>
+                                                  <option value="601">CRO Staff</option>
+                                                  <option value="7">HR & GA Spv</option>
+                                                  <option value="701">HR</option>
+                                                  <option value="702">GA</option>
+                                                  <option value="8">Helpdesk Spv</option>
+                                                  <option value="801">Helpdesk Staff</option>
                                                 </select>
                                                 <br/>
                                             </form>
@@ -70,6 +89,9 @@ import { City } from './cities';
                   <br/>
                 </div>
         </div><!-- END CONTENT -->
+        <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601' || accountemps.accessrole == '701' || accountemps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || accountemps.accessrole == '8' || accountemps.accessrole == '801'">
+            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+        </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -80,6 +102,7 @@ export class ContentAddEmpComponent implements OnInit {
 
         // Declare empty list of people
         emps: any[] = [];
+        accountemps: any[] = [];
 
         constructor(private http: Http) {}
 
@@ -87,6 +110,7 @@ export class ContentAddEmpComponent implements OnInit {
         ngOnInit() {
 
             this.getAllEmployee();
+            this.getAcountEmp();
         }
 
         // Get all users from the API
@@ -143,5 +167,16 @@ export class ContentAddEmpComponent implements OnInit {
                 }, error => {
                 console.log(JSON.stringify(error.json()));
             });
+        }
+        getAcountEmp() {
+            this.http.get(`${this.API}/subscribe/detailemp`)
+                .map(res => res.json())
+                .subscribe(accountemps => {
+                    this.accountemps = accountemps
+                },
+                error => {
+                  window.location.href = `/login`;
+                }
+              )
         }
 }

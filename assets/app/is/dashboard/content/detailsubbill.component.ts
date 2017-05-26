@@ -9,7 +9,7 @@ import { Sub } from './subs';
     selector: 'form-billsubscriber',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -117,7 +117,7 @@ import { Sub } from './subs';
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
@@ -182,6 +182,10 @@ import { Sub } from './subs';
             <!-- /Content List -->
         </div>
     </div>
+    {{emps.accessrole}}
+    <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '6' || emps.accessrole == '601' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8' || emps.accessrole == '801'" class='fullscreenDiv'>
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -206,6 +210,7 @@ export class ContentBillSubscribeComponent {
     // Declare empty list of people
     bills: any[] = [];
     subs: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -213,6 +218,7 @@ export class ContentBillSubscribeComponent {
     ngOnInit() {
         this.getAllBill();
         this.getSub();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -231,5 +237,13 @@ export class ContentBillSubscribeComponent {
             .subscribe(subs => {
                 this.subs = subs
             })
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(emps => {
+                this.emps = emps
+            }
+          )
     }
 }

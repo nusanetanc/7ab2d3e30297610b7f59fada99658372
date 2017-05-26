@@ -21,7 +21,7 @@ import {ContentDetailReportComponent} from "./dashboard/content/detailreport.com
 import {ContentDetailStockComponent} from "./dashboard/content/detailstock.component";
 import {ContentInfoStockComponent} from "./dashboard/content/infostock.component";
 import {ContentEmployeeComponent} from "./dashboard/content/employee.component";
-import {ContentProfileEngineerComponent} from "./dashboard/content/profileengineer.component";
+import {ContentProfileEmpComponent} from "./dashboard/content/profileemp.component";
 import {ContentReplayReportComponent} from "./dashboard/content/replayreports.component";
 import {ContentAllBillsComponent} from "./dashboard/content/allbills.component";
 import {ContentCreateInvoiceComponent} from "./dashboard/content/createinvoice.component";
@@ -48,12 +48,13 @@ import {ContentDashboardCroComponent} from "./dashboard/content/dashboard-cro.co
 import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.component";
 import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
 import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
+import {ContentNotFoundComponent} from "./dashboard/content/not-found.component";
 
 @Component({
    selector: 'is-app',
    template: `
    <!-- START CONTENT -->
-   <div id="wrapper">
+   <div *ngIf="emps.accessrole != null" id="wrapper">
    <dashboard></dashboard>
    <router-outlet></router-outlet>
 
@@ -74,6 +75,21 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         </div>
     </div>
 
+   </div>
+   <style *ngIf="emps.accessrole == null">
+       .load > img {
+           bottom: 0;
+           left: 0;
+           margin: auto;
+           position: absolute;
+           right: 0;
+           top: 0;
+           height:159px;
+           width:500px;
+       }
+   </style>
+   <div *ngIf="emps.accessrole == null" class="load">
+       <img src="images/logo-groovy.png">
    </div><!-- END CONTENT -->
 `,
     directives: [
@@ -96,7 +112,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         ContentDetailStockComponent,
         ContentInfoStockComponent,
         //ContentEmployeeComponent,
-        ContentProfileEngineerComponent,
+        ContentProfileEmpComponent,
         ContentReplayReportComponent,
         ContentAllBillsComponent,
         AuthenticationComponent,
@@ -122,6 +138,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
         ContentDashboardHrdComponent,
         ContentDashboardManagerComponent,
         ContentDashboardTechComponent,
+        ContentNotFoundComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -149,7 +166,7 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
     { path: '/is/detailstock/:id', component:ContentDetailStockComponent, name:'DetailStock'},
     { path: '/is/infostock/:id', component:ContentInfoStockComponent, name:'InfoStock'},
     //{ path: '/is/emp', component:ContentEmployeeComponent, name:'ProfileEmployee'},
-    { path: '/is/profileengineer/:id', component:ContentProfileEngineerComponent, name:'ProfileEngineer'},
+    { path: '/is/profileemp/:id', component:ContentProfileEmpComponent, name:'ProfileEmp'},
     { path: '/is/replayreport/:id', component:ContentReplayReportComponent, name:'ReplyReport'},
     { path: '/is/testsort', component:ContentTestComponent, name:'TestSort'},
     { path: '/is/coverage', component:ContentCoverageComponent, name:'Coverage'},
@@ -170,8 +187,33 @@ import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-techn
     { path: '/is/hrd', component:ContentDashboardHrdComponent, name:'DashboardHrd'},
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
     { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
+    { path: '/is/not-found', component:ContentNotFoundComponent, name:'NotFound'},
 ])
 
 export class AppComponent {
+// Link to our api, pointing to localhost
+API = 'http://202.162.207.164:3000';
+//Session_ID = '58b6a0d77dfd7052a9fe53c9';
+content_access = '202';
+
+emps: any[] = [];
+constructor(private http: Http) {}
+
+ngOnInit() {
+    this.getAcountEmp();
+}
+
+
+getAcountEmp() {
+    this.http.get(`${this.API}/subscribe/detailemp`)
+        .map(res => res.json())
+        .subscribe(emps => {
+            this.emps = emps
+        },
+        error => {
+          window.location.href = `/login`;
+        }
+      )
+}
 
 }

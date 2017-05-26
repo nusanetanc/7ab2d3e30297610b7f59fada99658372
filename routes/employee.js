@@ -7,21 +7,10 @@ var Emp = require('../models/employee');
 var randomInt = require('random-int');
 var damm = require('damm');
 var jwt = require('jsonwebtoken');
-var session = require('express-session');
+//var session = require('express-session');
 var localStorage = require('localStorage');
 var jwtDecode = require('jwt-decode');
 var nodemailer = require("nodemailer");
-
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(cookieParser());
-router.use(session({
-  secret: 'Your secret key',
-  saveUninitialized: true,
-  resave: true,
-  maxAge: 200000000000000000000
-
-}));
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -91,6 +80,7 @@ router.post('/addemp', function(req, res, next) {
     emp.titlejob= req.body.titlejob;
     emp.accessrole= req.body.accessrole;
     emp.photo= req.body.photo;
+    emp.status= 'Enable';
 
     emp.save(function(err) {
       if (err)
@@ -141,6 +131,44 @@ router.put('/putemp/:id', function(req, res, next) {
         });
 });
 
+router.put('/enableaccount/:id', function(req, res, next) {
+
+        Emp.findById(req.params.id, function(err, emp) {
+
+            if (err)
+                res.send(err);
+
+                emp.status= 'Enabled';
+
+            // save the bear
+            emp.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+router.put('/disableaccount/:id', function(req, res, next) {
+
+        Emp.findById(req.params.id, function(err, emp) {
+
+            if (err)
+                res.send(err);
+
+                emp.status= 'Disabled';
+
+            // save the bear
+            emp.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
+
 router.delete('/delemp/:id', function(req, res, next) {
         Emp.remove({
             _id: req.params.id
@@ -150,43 +178,6 @@ router.delete('/delemp/:id', function(req, res, next) {
 
             res.json({ message: 'Successfully deleted' });
    });
-});
-
-//signin employee
-router.post('/signin', function(req, res, next){
-    Emp.findOne({email: req.body.email}, function(err, doc){
-        if (err) {
-            return res.status(404).json({
-                title: 'An error occured',
-                error: err
-            });
-        }
-        if (!doc) {
-            return res.status(404).json({
-                title: 'No user found',
-                error: {message: 'User could not be found'}
-            });
-        }
-        if (!passwordHash.verify(req.body.password, doc.password)){
-            return res.status(404).json({
-                title: 'Could not sign you in',
-                error: {message: 'Invalid password'}
-            });
-        }
-        var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
-        if(!req.session.emp){
-            req.session.emp = doc.id;
-      }
-      if(!req.session.accessrole){
-          req.session.accessrole = doc.accessrole;
-    }
-        res.status(200).json({
-            message: 'Success',
-            token: token,
-            sessionId: doc.id,
-            accessrole: req.session.accessrole
-        })
-    })
 });
 
 module.exports = router;

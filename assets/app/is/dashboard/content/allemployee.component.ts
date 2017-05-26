@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Response, Headers, Request, RequestOptions, RequestMethod, URLSearchParams } from 'angular2/http';
 import {Employee} from './employee';
@@ -8,7 +8,7 @@ import {Employee} from './employee';
     selector: 'form-allempoloyee',
     template: `
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '701'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -37,7 +37,7 @@ import {Employee} from './employee';
             </div>
             <div class="row">
               <div class="col-sm-12" *ngFor="#emp of emps">
-                <a [routerLink]="['ProfileEngineer', {id: emp._id}]">
+                <a [routerLink]="['ProfileEmp', {id: emp._id}]">
                   <div class="row subInfo fontWeight300">
                       <div class="col-sm-2 invoiceId"><span>{{emp.idemployee}}</span></div>
                       <div class="col-sm-4 invoiceList"><span>{{emp.name}}</span></div>
@@ -48,6 +48,9 @@ import {Employee} from './employee';
               </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601' || accountemps.accessrole == '702' || accountemps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || accountemps.accessrole == '8' || accountemps.accessrole == '801'">
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -108,6 +111,7 @@ export class ContentAllEmployeeComponent {
 
   // Declare empty list of people
   emps: any[] = [];
+  accountemps: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -115,6 +119,7 @@ export class ContentAllEmployeeComponent {
   ngOnInit() {
 
       this.getAllEmployee();
+      this.getAcountEmp();
   }
 
   // Get all users from the API
@@ -124,5 +129,16 @@ export class ContentAllEmployeeComponent {
           .subscribe(emps => {
               this.emps = emps
           })
+  }
+  getAcountEmp() {
+      this.http.get(`${this.API}/subscribe/detailemp`)
+          .map(res => res.json())
+          .subscribe(accountemps => {
+              this.accountemps = accountemps
+          },
+          error => {
+            window.location.href = `/login`;
+          }
+        )
   }
 }

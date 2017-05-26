@@ -72,6 +72,7 @@ hr {
     position: fixed;
     transition: all 0.4s ease 0s;
     width: 250px;
+    z-index: 1;
 }
 
 #wrapper.active {
@@ -1250,3 +1251,30 @@ button.active{
     }
 }
 /*--- /Dropdown ---*/
+
+/*--- Not Found ---*/
+.fullscreenDiv {
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    top: 0px;
+    left: 0;
+    position: absolute;
+}
+.center {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    margin-top: -25px;
+    margin-left: -50px;
+}
+hr.hr1 {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #c1c1c1, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #c1c1c1, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #c1c1c1, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #c1c1c1, #f0f0f0);
+}
+/*--- /Not Found ---*/

@@ -8,7 +8,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
 @Component({
     selector: 'form-detailmaintenance',
     template: `
-    <div id="page-content-wrapper">
+    <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -240,7 +240,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>{{ jobs.status }}</span>
                                 </div>
                             </div>
-                            <div class="formNewReport marginLR20">
+                            <div *ngIf="jobs.status != 'Done'" class="formNewReport marginLR20">
                                 <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
                                 <button type="submit" (click)="editJob(reportjob.value)" class="btn btn-default buttonOrange">
                                     JOB DONE
@@ -252,6 +252,9 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                 </div>
 
             </div>
+    </div>
+    <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '5' || accountemps.accessrole == '501' || accountemps.accessrole == '502' || accountemps.accessrole == '402'">
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     `,
     directives: [ContentGoodsNameComponent, ROUTER_DIRECTIVES],
@@ -310,6 +313,7 @@ export class ContentDetailJobComponent implements OnInit {
     jobs: any[] = [];
     goods: any[] = [];
     stocks: any[] = [];
+    accountemps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -319,6 +323,7 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllGoods();
         this.getAllStocks();
         this.getStocksForJobs();
+        this.getAcountEmp();
     }
 
     // Get all users from the API
@@ -354,5 +359,16 @@ export class ContentDetailJobComponent implements OnInit {
           .subscribe(usestocks => {
               this.usestocks = usestocks
           })
+        }
+        getAcountEmp() {
+            this.http.get(`${this.API}/subscribe/detailemp`)
+                .map(res => res.json())
+                .subscribe(accountemps => {
+                    this.accountemps = accountemps
+                },
+                error => {
+                  window.location.href = `/login`;
+                }
+              )
         }
 }

@@ -18,7 +18,7 @@ import { Job } from './job';
                 &nbsp; Subscriber
             </h3>
         </div>
-    
+
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
@@ -43,7 +43,7 @@ import { Job } from './job';
                             <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -128,7 +128,7 @@ import { Job } from './job';
                             <h4>BILLING INFORMATION</h4>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
@@ -167,7 +167,7 @@ import { Job } from './job';
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
                             <h4>EDIT STATUS</h4>
@@ -191,7 +191,7 @@ import { Job } from './job';
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
                             <h4>ADD  TECHNICIAN JOB</h4>
@@ -241,7 +241,7 @@ import { Job } from './job';
                         <i class="material-icons">create</i>
                     </a>
                 </div> -->
-    
+
             </div>
         </div>
     </div>
@@ -256,12 +256,14 @@ export class ContentSubscribeComponent implements OnInit {
     subs: any[] = [];
     emps: any[] = [];
     jobs: any[] = [];
+    sessionemps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
       this.getSubs();
       this.getAllJob();
+      this.getAcountEmp();
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
@@ -319,5 +321,13 @@ export class ContentSubscribeComponent implements OnInit {
           .subscribe(emps => {
               this.emps = emps
           })
+  }
+  getAcountEmp() {
+      this.http.get(`${this.API}/subscribe/detailemp`)
+          .map(res => res.json())
+          .subscribe(sessionemps => {
+              this.sessionemps = sessionemps
+          }
+        )
   }
 }
