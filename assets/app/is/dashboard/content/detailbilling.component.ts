@@ -49,7 +49,7 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row" *ngIf="bills.status != 'Paid'">
+                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -72,7 +72,7 @@ declare let kendo;
                                     </div>
                                 </div>
                             </div>
-                        </div><br>
+                        </div><br />
                         
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
