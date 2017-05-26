@@ -11,6 +11,7 @@ var EmpSchema   = new Schema({
     departement: String,
     titlejob: String,
     accessrole: String,
+    status: String,
     photo: String
 });
 

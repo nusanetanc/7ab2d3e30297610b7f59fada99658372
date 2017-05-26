@@ -67,7 +67,7 @@ export class ContentReportComponent {
   }
 
 getAllComplaint() {
-  this.http.get(`${this.API}/complaint/listcomplaint`)
+  this.http.get(`${this.API}/subscribe/listcomplaint`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
