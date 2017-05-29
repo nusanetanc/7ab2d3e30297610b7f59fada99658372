@@ -39,7 +39,7 @@ import { City } from './cities';
                                             <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
-                                                
+                                                <div class="g-recaptcha" data-sitekey="6LeSRiMUAAAAADnvbK81VC7BeXJiCch-G1lp8ma8">test</div>
                                                 <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                     SEND
                                                 </button>
