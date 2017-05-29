@@ -133,11 +133,11 @@ declare let kendo;
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>{{ stringAsDate2(bills.billdate) | date }}</span>
+                                                            <span>{{ stringAsDate(bills.billdate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ stringAsDate3(bills.paydate) | date }}</span>
+                                                            <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
@@ -734,12 +734,12 @@ export class ContentDetailBillingComponent implements OnInit {
         return new Date(dateStr);
     }
 
-    stringAsDate2(dateStr2: string) {
-        return new Date(dateStr2);
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
     }
 
-    stringAsDate3(dateStr3: string) {
-        return new Date(dateStr3);
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
     }
 
     getBills(){
