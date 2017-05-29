@@ -732,6 +732,7 @@ export class ContentDetailBillingComponent implements OnInit {
 
     stringAsDate(dateStr: string) {
         return new Date(dateStr);
+        return new Date(dateStr);
     }
 
     getBills(){
