@@ -78,6 +78,9 @@ import { Problem } from './problem';
             </div>
         </div>
     </div>
+    <div *ngIf="opencomplaints._id == null">
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> Can not Create Report</span><br><hr class="hr1"></div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -215,9 +218,6 @@ export class ContentNewReportComponent implements OnInit {
       .map(res => res.json())
       .subscribe(opencomplaints => {
         this.opencomplaints = opencomplaints
-        if(opencomplaints['id'] != null){
-          window.location.href = `/my/reports`;
-        }
       })
   }
 
