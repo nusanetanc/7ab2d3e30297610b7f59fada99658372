@@ -35,8 +35,8 @@ declare let kendo;
                                 <button (click)="onItemClicked1(Inovice)" onclick="printPembayaran()" class="btn btn-default billInfoBack" type="button" *ngIf="clickedItem.name == 'regPayment'">
                                     BACK
                                 </button>
-                                
-                                
+
+
                                 <button (click)="onItemClicked1(Invoice)" onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;" *ngIf="clickedItem.name == 'regBill'">
                                     Print Penagihan
                                 </button>
@@ -162,7 +162,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div *ngIf="bills.pricestb != null" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>STB Rent</span>
@@ -172,7 +172,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div *ngIf="bills.pricerj45cable != null" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Cable & RJ45</span>
@@ -182,13 +182,23 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row"  *ngIf="bills.priceinstal != null">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Instalation Charge</span>
                                                         </div>
                                                         <div class="col-sm-2">
                                                             <span class="right">Rp. {{ bills.priceinstal | number:'2.2-4' }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div *ngIf="bills.pinaltypay != 0" class="row">
+                                                    <div  class="col-sm-12 listWhite">
+                                                        <div class="col-sm-10">
+                                                            <span>Pinalty Charge</span>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <span class="right">Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,7 +257,7 @@ declare let kendo;
                             </div>
                         </div>
                         <!-- /Content List -->
-                        
+
                         <!-- Content Print -->
                         <div class="print" style="width: 100%;" *ngIf="clickedItem.name == 'regInvoice'">
                            <div id="printPenagihan" style="width: 100%;">
