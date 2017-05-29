@@ -179,7 +179,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ stringAsDate(jobs.date) | date }}</span>
+                                    <span>{{ stringAsDate(jobs.date) | date:'dd MM yy HH:mm:ss' }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
