@@ -257,6 +257,11 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
     directives: [ContentGoodsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailJobComponent implements OnInit {
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
+
     selectedGoods: Goods = new Goods(0, 'dummy');
 
     onSelectGoods(_id) {
@@ -319,10 +324,6 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllGoods();
         this.getAllStocks();
         this.getStocksForJobs();
-    }
-
-    stringAsDate(dateStr: string) {
-        return new Date(dateStr);
     }
 
     // Get all users from the API
