@@ -133,11 +133,11 @@ declare let kendo;
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>{{ bills.billdate }}</span>
+                                                            <span>{{ stringAsDate(bills.billdate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ stringAsBillDate(bills.paydate) | date }}</span>
+                                                            <span>{{ bills.paydate }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
