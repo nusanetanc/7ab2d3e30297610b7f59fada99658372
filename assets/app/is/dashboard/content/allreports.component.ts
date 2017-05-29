@@ -89,7 +89,8 @@ export class ContentAllReportsComponent {
     constructor(private http: Http) {}
 
     ngOnInit() {
-        this.getAllReport();
+        this.getAllReportOpen();
+        this.getAllReportClose();
     }
 
     stringAsDate(dateStr: string) {
