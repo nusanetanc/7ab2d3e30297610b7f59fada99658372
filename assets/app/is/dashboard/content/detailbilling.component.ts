@@ -734,10 +734,6 @@ export class ContentDetailBillingComponent implements OnInit {
         return new Date(dateStr);
     }
 
-    stringAsBillDate(dateStrr: string) {
-        return new Date(dateStrr);
-    }
-
     getBills(){
     this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
         .map(res => res.json())
