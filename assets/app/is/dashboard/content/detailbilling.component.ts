@@ -49,31 +49,32 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                                <div class="row subInfo" *ngIf="bills.status != 'Paid'">
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="formNewReport marginLR20">
-                                                    <span>Payment Date</span>
-                                                    <form>
-                                                        <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
-                                                    </form>
+                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="formNewReport marginLR20">
+                                            <span>Payment Date</span>
+                                            <form>
+                                                <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
+                                            </form>
 
-                                                    <form>
-                                                        <select #pinaltyInput id="pinaltyInput">
-                                                            <option class="option" value="0">0</option>
-                                                            <option value="25000">25.000</option>
-                                                        </select><br/>
-                                                    </form>
-                                                    <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value)" class="btn btn-default buttonOrange">
-                                                        CONFRIM
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            <form>
+                                                <select #pinaltyInput id="pinaltyInput">
+                                                    <option class="option" value="0">0</option>
+                                                    <option value="25000">25.000</option>
+                                                </select><br/>
+                                            </form>
+                                            <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value)" class="btn btn-default buttonOrange">
+                                                CONFRIM
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                          <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
+                            </div>
+                        </div><br />
+                        
+                        <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>BILLING INFORMATION</strong></div>
