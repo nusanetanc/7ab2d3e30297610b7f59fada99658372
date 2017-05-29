@@ -8,7 +8,7 @@ import { Problem } from './problem';
 @Component({
     selector: 'form-newreport',
     template: `
-    <div *ngIf="opencomplaints._id == null" id="page-content-wrapper">
+    <div *ngIf="opencomplaints._id != null" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -215,7 +215,7 @@ export class ContentNewReportComponent implements OnInit {
       .map(res => res.json())
       .subscribe(opencomplaints => {
         this.opencomplaints = opencomplaints
-        if(opencomplaints['id'] == null){
+        if(opencomplaints['id'] != null){
           window.location.href = `/my/reports`;
         }
       })
