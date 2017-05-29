@@ -21,7 +21,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                     <a href="/is/allenginer" class="btn btn-default buttonBack" type="button">
-                        BACK
+                        BACKs
                     </a>
                 </div>
             </div>
