@@ -90,7 +90,7 @@ import { Sub } from './subs';
                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList">INFORMATION</div>
                 </div>
                 <div *ngFor="#information of informations">
-                  <a [routerLink]="['DetailInformation', {id: information._id}]">
+                  <a [routerLink]="['Detailinformation', {id: information._id}]">
                       <div class="row subInfo fontWeight300">
                           <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ information.date }}</a></span></div>
                           <div class="col-sm-7 invoiceList"><span><a class="grey333">{{ information.subject }}</a></span></div>
