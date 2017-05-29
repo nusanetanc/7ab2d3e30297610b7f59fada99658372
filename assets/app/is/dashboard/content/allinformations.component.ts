@@ -34,7 +34,7 @@ import { Information } from './allinformation';
                 <div class="col-sm-12" *ngFor="#information of informations">
                 <a [routerLink]="['DetailInformation', {id: information._id}]">
                     <div class="row subInfo fontWeight300">
-                        <div class="col-sm-3 invoiceId"><span><a href="" class="grey333">{{ information.date }}</a></span></div>
+                        <div class="col-sm-3 invoiceId"><span><a href="" class="grey333">{{ stringAsDate(information.date) | date }}</a></span></div>
                         <div class="col-sm-7 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                     </div>
@@ -84,6 +84,10 @@ export class ContentAllInformationComponent {
         this.getAllInformation();
         this.getAcountEmp();
       }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
     // Get all users from the API
     getAllInformation() {
