@@ -140,8 +140,9 @@ import {Streetname} from "./street_name";
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
+                                        <div class="g-recaptcha" data-sitekey="6Ldx_BsTAAAAAOYrQegHLVhslSvd6z78zAr-4Knc"></div>
                                         <!-- Small modal -->
-                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right marginT125" data-toggle="modal" data-target="#success">REGISTER</button>
+                                        <button type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value)" class="btn btn-default buttonOrange right" data-toggle="modal" data-target="#success">REGISTER</button>
                                     </div>
                                 </div>
                             </div>
