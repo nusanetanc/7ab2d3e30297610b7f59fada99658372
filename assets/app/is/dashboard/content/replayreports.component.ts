@@ -107,6 +107,7 @@ getChatReport() {
     })
 }
 addReport(message) {
+alert('Edit Stock Success');
     var body = `message=${message}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
