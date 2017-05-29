@@ -73,10 +73,6 @@ export class ContentAllReportsComponent {
         this.clickedItem = {name: "regOpen"};
     }
 
-    onItemClicked1(solved) {
-        this.clickedItem = {name: "regSolved"};
-    }
-
     onItemClicked2(done) {
         this.clickedItem = {name: "regDone"};
     }
@@ -84,7 +80,8 @@ export class ContentAllReportsComponent {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
-    complaints: any[] = [];
+    opencomplaints: any[] = [];
+    closecomplaints: any[] = [];
 
     constructor(private http: Http) {}
 
