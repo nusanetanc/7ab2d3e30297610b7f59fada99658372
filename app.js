@@ -8,6 +8,13 @@ var nodemailer = require("nodemailer");
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/groovy');
 
+reCAPTCHA=require('recaptcha2')
+
+recaptcha=new reCAPTCHA({
+    siteKey:'6Ld3RSMUAAAAAPv1Xt2HB1ruXyKvYpZ4q9m9Sk4T',
+    secretKey:'6Ld3RSMUAAAAAJKJzVntMYq4PPODnG6OB9r2rL-B'
+});
+
 var index = require('./routes/index');
 var subscribe = require('./routes/subs');
 var employee = require('./routes/employee');
@@ -34,13 +41,6 @@ var streetname = require('./routes/street_name');
 var finnet = require('./routes/finnet');
 
 var app = express();
-
-reCAPTCHA=require('recaptcha2')
-
-recaptcha=new reCAPTCHA({
-    siteKey:'6Ld3RSMUAAAAAPv1Xt2HB1ruXyKvYpZ4q9m9Sk4T',
-    secretKey:'6Ld3RSMUAAAAAJKJzVntMYq4PPODnG6OB9r2rL-B'
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
