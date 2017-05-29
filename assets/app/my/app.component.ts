@@ -59,7 +59,7 @@ import {TestComponent} from "./dashboard/content/test";
   { path: '/my/reports', component:ContentReportComponent, name:'Reports'},
   { path: '/my/newreport', component:ContentNewReportComponent, name:'Newreport'},
   { path: '/my/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
-  { path: '/my/detailinformation', component:ContentDetailInformationComponent, name:'Detailinformation'},
+  { path: '/my/detailinformation/:id', component:ContentDetailInformationComponent, name:'Detailinformation'},
   { path: '/my/detailreport/:id', component:ContentDetailReportComponent, name:'Detailreport'},
   { path: '/my/account', component:ContentAccountComponent, name:'Account'},
   { path: '/my/test', component:TestComponent, name:'Test'},

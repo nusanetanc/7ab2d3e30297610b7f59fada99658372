@@ -71,17 +71,6 @@ import { Sub } from './subs';
                                      {{ subs.status}}
                                   </div>
                                </div>
-                               <div class="row marginBL10">
-                                  <div class="col-xs-6 col-sm-5">
-                                     Next Billing Date
-                                  </div>
-                                  <div class="col-xs-6 col-sm-1">
-                                     :
-                                  </div>
-                                  <div class="col-xs-6 col-sm-5">
-                                     March, 12 2017
-                                  </div>
-                               </div>
                                <div class="row marginB10">
                                   <div class="col-sm-12">
                                      <h4 class="text-center fontWeight300">SUBSCRIPTION PLAN</h4>
@@ -101,14 +90,13 @@ import { Sub } from './subs';
                    <div class="col-sm-12 paddingT20 paddingL35 headerSubList">INFORMATION</div>
                 </div>
                 <div *ngFor="#information of informations">
-                   <a [routerLink]="['Detailinformation']">
-                      <div class="row subInfo">
-                         <div class="col-sm-2 invoiceId"><span>
-                   <a class="grey333">{{ information.date }}</a></span></div>
-                   <div class="col-sm-8 invoiceList"><span><a href="information-detail.html" class="grey333">{{ information.subject }}</a></span></div>
-                   <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
-                   </div>
-                   </a>
+                  <a [routerLink]="['DetailInformation', {id: information._id}]">
+                      <div class="row subInfo fontWeight300">
+                          <div class="col-sm-3 invoiceId"><span><a href="" class="grey333">{{ stringAsDate(information.date) | date }}</a></span></div>
+                          <div class="col-sm-7 invoiceList"><span><a href="" class="grey333">{{ information.subject }}</a></span></div>
+                          <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
+                      </div>
+                  </a>
                 </div>
                 <div class="row subInfo">
                    <div class="col-sm-12 invoiceId"><span><a [routerLink]="['Information']" class="linkViewAll"><b>View all informaiton</b></a></span></div>
