@@ -122,7 +122,7 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                     </div>
-                                </div>
+                                </div> <!--
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
@@ -137,7 +137,7 @@ import {Streetname} from "./street_name";
                                           </select><br/>
                                         </div>
                                     </div>
-                                </div> 
+                                </div> -->
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <div class="g-recaptcha" data-sitekey="6Ld3RSMUAAAAAPv1Xt2HB1ruXyKvYpZ4q9m9Sk4T"></div>
@@ -196,8 +196,15 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
+        this.detailclusters = this.getAllClusterByProperty(){
+            this.http.get(`${this.API}/cluster/cluster/${_id}`)
+                .map(res => res.json())
+                .subscribe(detailclusters => {
+                    this.detailclusters = detailclusters
+                })
+        }
         this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/A`)
+            this.http.get(`${this.API}/package/cluster/${detailclusters['level']}`)
                 .map(res => res.json())
                 .subscribe(packages => {
                     this.packages = packages
