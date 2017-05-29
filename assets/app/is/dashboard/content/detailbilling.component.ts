@@ -734,12 +734,12 @@ export class ContentDetailBillingComponent implements OnInit {
         return new Date(dateStr);
     }
 
-    stringAsDate2(dateStr: string) {
-        return new Date(dateStr);
+    stringAsDate2(dateStr2: string) {
+        return new Date(dateStr2);
     }
 
-    stringAsDate3(dateStr: string) {
-        return new Date(dateStr);
+    stringAsDate3(dateStr3: string) {
+        return new Date(dateStr3);
     }
 
     getBills(){
