@@ -39,7 +39,7 @@ import { City } from './cities';
                                             <form>
                                                 <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
-                                                <div class="g-recaptcha" data-sitekey="6Ld3RSMUAAAAAPv1Xt2HB1ruXyKvYpZ4q9m9Sk4T">test</div>
+                                                <div class="g-recaptcha" data-sitekey="6LdPRiMUAAAAAOzE3U9Wgkw62GgY3ru6JdkKIcMH">test</div>
                                                 <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                     SEND
                                                 </button>
@@ -124,4 +124,5 @@ emps: any[] = [];
           }
         )
   }
+
 }
