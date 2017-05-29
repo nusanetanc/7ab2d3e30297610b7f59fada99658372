@@ -39,7 +39,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
                     </div>
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
-                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by
+                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ stringAsDate(chat.date) | date:'dd MM yy HH:mm:ss' }}</b> by
                           <a *ngIf="chat.userStatus == 'Subscribe'" [routerLink]="['Subscribe', {id: chat.userId}]">
                               <b class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
                           </a>
@@ -87,6 +87,10 @@ emps: any[] = [];
     this.getChatReport();
     this.getAcountEmp();
   }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
 getDetailReport() {
   this.http.get(`${this.API}/complaint/complaint/${this._routeParams.get('id')}`)
