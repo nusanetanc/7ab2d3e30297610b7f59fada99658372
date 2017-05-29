@@ -21,7 +21,7 @@ import { Complaint } from './complaints';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['Newreport']" class="btn btn-default buttonOrange">
+                    <a *ngIf="opencomplaints._id != null" [routerLink]="['Newreport']" class="btn btn-default buttonOrange">
                         NEW REPORT
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
@@ -58,12 +58,14 @@ export class ContentReportComponent {
 
   complaints: any[] = [];
   subs: any[] = [];
+  opencomplaints: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllComplaint();
     this.getAcountSub();
+    this.getComplaintOpen();
   }
 
 getAllComplaint() {
@@ -71,6 +73,14 @@ getAllComplaint() {
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
+    })
+}
+
+getComplaintOpen() {
+  this.http.get(`${this.API}/subscribe/complaint/open`)
+    .map(res => res.json())
+    .subscribe(opencomplaints => {
+      this.opencomplaints = opencomplaints
     })
 }
 

@@ -82,6 +82,13 @@ router.get('/listcomplaint', function(req, res, next) {
         res.json(complaints);
     });
 });
+router.get('/complaint/open', function(req, res, next) {
+  var sessionSubId = req.session.subs;
+    Complaint.findOne({sub: sessionSubId, status: open}, function(err, complaints) {
+        console.log(complaints);
+        res.json(complaints);
+    });
+});
 
 /* GET detail sub. */
 router.get('/id/:id', function(req, res, next) {
