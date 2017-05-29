@@ -17,6 +17,7 @@ var Cluster = require('../models/cluster');
 var nodemailer = require("nodemailer");
 var Emp = require('../models/employee');
 var Complaint = require('../models/complaint');
+var Chat = require('../models/chatcomplaint');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -89,6 +90,37 @@ router.get('/complaint/open', function(req, res, next) {
         res.json(complaints);
     });
 });
+
+var dnow = new Date();
+/* Add chat */
+router.post('/addchat/subs/:id', function(req, res, next) {
+  var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= dnow;
+    chat.complaintId= req.params.id;
+    chat.userId = req.session.subs;
+    chat.userStatus ="Subscribe";
+    chat.save(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
+/* Add chat */
+router.post('/addchat/helpdesk/:id', function(req, res, next) {
+  var chat = new Chat();
+    chat.message= req.body.message;
+    chat.date= dnow;
+    chat.complaintId= req.params.id;
+    chat.userId = req.session.emp;
+    chat.userStatus ="Helpdesk";
+    chat.save(function(err) {
+      if (err)
+          res.send(err);
+      res.json({ message: 'Data created!' });
+  });
+});
+
 
 /* GET detail sub. */
 router.get('/id/:id', function(req, res, next) {

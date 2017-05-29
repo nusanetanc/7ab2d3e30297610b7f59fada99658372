@@ -99,7 +99,7 @@ addReport(message) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
-        .post(`${this.API}/chatcomplaint/addchat/subs/${this._routeParams.get('id')}`,
+        .post(`${this.API}/subscribe/addchat/subs/${this._routeParams.get('id')}`,
             body, {
                 headers: headers
             })
