@@ -129,7 +129,7 @@ declare let kendo;
                                                     <div class="col-sm-12 billInfoDateList">
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>{{ stringAsDate(bills.duedate) | date }}</span>
+                                                            <span>{{ bills.duedate }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
