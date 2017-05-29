@@ -122,7 +122,7 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                     </div>
-                                </div> <!--
+                                </div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <h4 class="titleH4">SUBSCRIPTION PLAN</h4>
@@ -137,7 +137,7 @@ import {Streetname} from "./street_name";
                                           </select><br/>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div> 
                                 <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <div class="g-recaptcha" data-sitekey="6Ld3RSMUAAAAAPv1Xt2HB1ruXyKvYpZ4q9m9Sk4T"></div>
