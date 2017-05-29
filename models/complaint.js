@@ -6,7 +6,7 @@ var ComplaintSchema   = new Schema({
   subject: String,
   category: String,
   subcategory: String,
-  dateopen: String,
+  dateopen: Date,
   dateclose: Date,
   status: String,
   lastchat: [String],
