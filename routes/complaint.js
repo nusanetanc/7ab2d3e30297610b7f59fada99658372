@@ -12,6 +12,22 @@ router.get('/listcomplaint', function(req, res, next) {
    });
 });
 
+/* GET complaintloye listing. */
+router.get('/listcomplaint/open', function(req, res, next) {
+     Complaint.find({status:open}, function(err, complaints) {
+       console.log( complaints );
+       res.json(complaints);
+   });
+});
+
+/* GET complaintloye listing. */
+router.get('/listcomplaint/close', function(req, res, next) {
+     Complaint.find({status:close}, function(err, complaints) {
+       console.log( complaints );
+       res.json(complaints);
+   });
+});
+
 /* GET detail complaint. */
 router.get('/complaint/:id', function(req, res, next) {
 Complaint.findOne({complaintId: req.params.id}, function(err, complaints) {

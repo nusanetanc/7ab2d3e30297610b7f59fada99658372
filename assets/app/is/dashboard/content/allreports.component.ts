@@ -25,7 +25,6 @@ import {ContentSubsNameComponent} from './subsname.component';
                       <button class="buttonDrop buttonSort">REPORT &nbsp; <span href="" class="glyphicon glyphicon-chevron-down"></span></button>
                       <div class="dropdown-content">
                         <a (click)="onItemClicked0(open)">OPEN</a>
-                        <a (click)="onItemClicked1(solved)">SOLVED</a>
                         <a (click)="onItemClicked2(done)">DONE</a>
                       </div>
                     </div>
@@ -36,27 +35,12 @@ import {ContentSubsNameComponent} from './subsname.component';
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>OPEN</strong></div>
                     </div>
-                    <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                        <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                            <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
-                            <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
-                            <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row" *ngIf="clickedItem.name == 'regSolved'">
-                <div class="col-sm-12">
-                    <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>SOLVED</strong></div>
-                    </div>
-                    <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                        <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                          <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
-                          <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
-                          <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                          <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                    <div class="row subInfo fontWeight300" *ngFor="#opencomplaint of opencomplaints">
+                        <a class="grey333" [routerLink]="['ReplyReport', {id: opencomplaint.complaintId}]">
+                            <div class="col-sm-4 invoiceId"><span>{{stringAsDate(opencomplaint.dateopen) | date}}</span></div>
+                            <div class="col-sm-3 invoiceList"><form-subs [idsubs]=opencomplaint.sub></form-subs></div>
+                            <div class="col-sm-4 invoiceList"><span>{{opencomplaint.subcategory}}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">{{opencomplaint.status}}</span></div>
                         </a>
                     </div>
                 </div>
@@ -66,12 +50,12 @@ import {ContentSubsNameComponent} from './subsname.component';
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>DONE</strong></div>
                     </div>
-                    <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                        <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                          <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
-                          <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
-                          <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                          <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                    <div class="row subInfo fontWeight300" *ngFor="#closecomplaint of closecomplaints">
+                        <a class="grey333" [routerLink]="['ReplyReport', {id: closecomplaint.complaintId}]">
+                          <div class="col-sm-4 invoiceId"><span>{{stringAsDate(closecomplaint.dateopen) | date}}</span></div>
+                          <div class="col-sm-3 invoiceList"><form-subs [idsubs]=closecomplaint.sub></form-subs></div>
+                          <div class="col-sm-4 invoiceList"><span>{{closecomplaint.subcategory}}</span></div>
+                          <div class="col-sm-1 invoiceList"><span class="red">{{closecomplaint.status}}</span></div>
                         </a>
                     </div>
                 </div>
@@ -113,11 +97,19 @@ export class ContentAllReportsComponent {
     }
 
     // Get all users from the API
-    getAllReport() {
-        this.http.get(`${this.API}/complaint/listcomplaint`)
+    getAllReportOpen() {
+        this.http.get(`${this.API}/complaint/listcomplaint/open`)
             .map(res => res.json())
-            .subscribe(complaints => {
-                this.complaints = complaints
+            .subscribe(opencomplaints => {
+                this.opencomplaints = opencomplaints
+            })
+    }
+    // Get all users from the API
+    getAllReportClose() {
+        this.http.get(`${this.API}/complaint/listcomplaint/close`)
+            .map(res => res.json())
+            .subscribe(closecomplaints => {
+                this.closecomplaints = closecomplaints
             })
     }
 }
