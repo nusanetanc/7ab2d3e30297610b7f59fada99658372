@@ -240,11 +240,13 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>{{ jobs.status }}</span>
                                 </div>
                             </div>
-                            <div class="formNewReport marginLR20">
-                                <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
-                                <button type="submit" (click)="editJob(reportjob.value)" class="btn btn-default buttonOrange">
-                                    JOB DONE
-                                </button>
+                            <div *ngIf="jobs.status != 'done'">
+                              <div class="formNewReport marginLR20">
+                                  <textarea #reportjob id="reporttjob" placeholder="Input Job Report" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
+                                  <button type="submit" (click)="editJob(reportjob.value)" class="btn btn-default buttonOrange">
+                                      JOB DONE
+                                  </button>
+                              </div>
                             </div>
                         </div>
                     </div>
