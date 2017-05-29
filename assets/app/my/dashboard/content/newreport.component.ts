@@ -8,7 +8,7 @@ import { Problem } from './problem';
 @Component({
     selector: 'form-newreport',
     template: `
-    <div id="page-content-wrapper">
+    <div *ngIf="opencomplaints._id == null" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -147,6 +147,7 @@ export class ContentNewReportComponent implements OnInit {
   descproblems: any[] = [];
   subs: any[] = [];
   chats: any[] = [];
+  opencomplaints: any[] = [];
 
   constructor(private http: Http) {}
 
@@ -154,6 +155,7 @@ export class ContentNewReportComponent implements OnInit {
     this.getAllComplaint();
     this.getAcountSub();
       this.newGuid();
+      this.getComplaintOpen();
   }
 
   getAllComplaint() {
@@ -207,6 +209,17 @@ export class ContentNewReportComponent implements OnInit {
         this.descproblems = descproblems
       })
   }*/
+
+  getComplaintOpen() {
+    this.http.get(`${this.API}/subscribe/complaint/open`)
+      .map(res => res.json())
+      .subscribe(opencomplaints => {
+        this.opencomplaints = opencomplaints
+        if(opencomplaints['id'] == null){
+          window.location.href = `/my/reports`;
+        }
+      })
+  }
 
     newGuid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
