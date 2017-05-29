@@ -179,7 +179,7 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ stringAsDate(jobs.date) | date }}</span>
+                                    <span>{{ jobs.date }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -319,10 +319,6 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllGoods();
         this.getAllStocks();
         this.getStocksForJobs();
-    }
-
-    stringAsDate(dateStr: string) {
-        return new Date(dateStr);
     }
 
     // Get all users from the API
