@@ -38,7 +38,7 @@ import {ContentSubsNameComponent} from './subsname.component';
                     </div>
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                            <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                            <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
                             <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
                             <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
@@ -53,7 +53,7 @@ import {ContentSubsNameComponent} from './subsname.component';
                     </div>
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                          <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                          <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
                           <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
                           <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                           <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
@@ -68,7 +68,7 @@ import {ContentSubsNameComponent} from './subsname.component';
                     </div>
                     <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
                         <a class="grey333" [routerLink]="['ReplyReport', {id: complaint.complaintId}]">
-                          <div class="col-sm-4 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                          <div class="col-sm-4 invoiceId"><span>{{stringAsDate(complaint.dateopen) | date}}</span></div>
                           <div class="col-sm-3 invoiceList"><form-subs [idsubs]=complaint.sub></form-subs></div>
                           <div class="col-sm-4 invoiceList"><span>{{complaint.subcategory}}</span></div>
                           <div class="col-sm-1 invoiceList"><span class="red">{{complaint.status}}</span></div>
@@ -106,6 +106,10 @@ export class ContentAllReportsComponent {
 
     ngOnInit() {
         this.getAllReport();
+    }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
     }
 
     // Get all users from the API
