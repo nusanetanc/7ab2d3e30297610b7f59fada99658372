@@ -129,15 +129,15 @@ declare let kendo;
                                                     <div class="col-sm-12 billInfoDateList">
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>{{ bills.duedate }}</span>
+                                                            <span>{{ stringAsDate(bills.duedate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>{{ bills.billdate }}</span>
+                                                            <span>{{ stringAsDate(bills.billdate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ bills.paydate }}</span>
+                                                            <span>{{ {{ stringAsDate(bills.paydate) | date }} }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
@@ -728,6 +728,10 @@ export class ContentDetailBillingComponent implements OnInit {
     ngOnInit() {
         this.getBills();
         this.getAcountEmp();
+    }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
     }
 
     getBills(){
