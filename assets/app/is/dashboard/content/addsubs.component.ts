@@ -196,20 +196,7 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-        this.clusters = this.getAllClusterByProperty(){
-            this.http.get(`${this.API}/cluster/cluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(detailclusters => {
-                    this.detailclusters = detailclusters
-                })
-        }
-        this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/${detailclusters['level']}`)
-                .map(res => res.json())
-                .subscribe(packages => {
-                    this.packages = packages
-                })
-        }
+
     }
 
     onSelectBlok(_id) {
@@ -336,7 +323,7 @@ export class ContentAddSubsComponent implements OnInit {
             })
     }
     getAllPackagesByCluster(){
-        this.http.get(`${this.API}/package/cluster/B`)
+        this.http.get(`${this.API}/package/cluster/A`)
             .map(res => res.json())
             .subscribe(packages => {
                 this.packages = packages
