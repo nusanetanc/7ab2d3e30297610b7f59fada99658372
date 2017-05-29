@@ -48,20 +48,6 @@ import { Bill } from './bills';
                                         <span style="color: #92C889;">{{ subs.status }}</span>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xs-6 col-sm-4">
-                                        Next Billing Date
-                                    </div>
-                                    <div class="col-xs-6 col-sm-1">
-                                        :
-                                    </div>
-                                    <div class="col-xs-6 col-sm-7">
-                                        April, 5 2017
-                                    </div>
-                                </div>
-                                <a href="#" class="next btn btn-default">
-                                    UPGRADE
-                                </a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -119,7 +105,7 @@ import { Bill } from './bills';
                             <div class="row">
                                 <div class="col-sm-3 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
                                 <div class="col-sm-3 invoiceList"><span>{{ bill.billdate }}</span></div>
-                                <div class="col-sm-3 invoiceList"><span>Rp. {{ bill.totalpay }}</span></div>
+                                <div class="col-sm-3 invoiceList"><span>Rp. {{ bill.totalpay | number:'2.2-4' }}</span></div>
                                 <div class="col-sm-3 invoiceList"><span class="red">{{ bill.status }}</span></div>
                             </div>
                             </a>
