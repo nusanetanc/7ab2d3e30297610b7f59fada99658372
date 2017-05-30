@@ -37,7 +37,7 @@ import { Information } from './informations';
                 <div class="col-sm-12" *ngFor="#information of informations">
                 <a [routerLink]="['Detailinformation', {id: information._id}]">
                   <div class="row subInfo">
-                      <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ information.date }}</span></div>
+                      <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information.date) | date }}</span></div>
                       <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.subject }}</span></div>
                       <div class="col-sm- invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.status }}</span></div>
                   </div>
@@ -52,6 +52,10 @@ import { Information } from './informations';
 export class ContentInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
   informations: any[] = [];
 
