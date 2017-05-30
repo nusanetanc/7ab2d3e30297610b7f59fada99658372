@@ -418,7 +418,7 @@ router.get('/activationid/:id', function(req, res, next) {
 /* GET detail sub. */
 router.get('/logout', function(req, res) {
     req.session.emp = null;
-    res.redirect('/login');
+    res.send('logout');
 });
 
 router.put('/activationemail/:id', function(req, res, next) {
