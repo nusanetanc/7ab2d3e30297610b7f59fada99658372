@@ -28,8 +28,8 @@ import {Emp} from "./emp";
                                        <span class="caret"></span>
                                     </div>
                                     <div class="dropdown-content" style="margin-top: 20px;">
-                                        <button type="submit" (click)="Logout()">Account</button>
-                                        <a >Logout</a>
+                                      <a>Account</a>
+                                      <button type="submit" (click)="Logout()">Logout</button>
                                     </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
