@@ -8,9 +8,9 @@ var nodemailer = require("nodemailer");
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/groovy');
 
-reCAPTCHA=require('recaptcha2');
+var reCAPTCHA=require('recaptcha2');
 
-recaptcha=new reCAPTCHA({
+var recaptcha=new reCAPTCHA({
     siteKey:'6LdPRiMUAAAAAOzE3U9Wgkw62GgY3ru6JdkKIcMH',
     secretKey:'6LdPRiMUAAAAAKNPAd0H0gsgh-2b7YE-vzOF3n-d',
 });
