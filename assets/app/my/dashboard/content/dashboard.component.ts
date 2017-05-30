@@ -92,7 +92,7 @@ import { Sub } from './subs';
                 <div *ngFor="#information of informations">
                   <a [routerLink]="['Detailinformation', {id: information._id}]">
                       <div class="row subInfo fontWeight300">
-                          <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ information.date }}</a></span></div>
+                          <div class="col-sm-3 invoiceId"><span><a class="grey333">{{ stringAsDate(information.date) | date }}</a></span></div>
                           <div class="col-sm-7 invoiceList"><span><a class="grey333">{{ information.subject }}</a></span></div>
                           <div class="col-sm-2 invoiceList"><span class="red">{{ information.status }}</span></div>
                       </div>
@@ -113,6 +113,10 @@ import { Sub } from './subs';
 export class ContentDashboardComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
   informations: any[] = [];
 subs: any[] = [];
