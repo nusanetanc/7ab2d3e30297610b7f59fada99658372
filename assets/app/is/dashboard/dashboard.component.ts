@@ -122,7 +122,7 @@ Logout(){
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
   this.http
-      .post(`${this.API}/subscribe/logout`,
+      .post(`${this.API}/subscribe/is/logout`,
           body, {
               headers: headers
           })

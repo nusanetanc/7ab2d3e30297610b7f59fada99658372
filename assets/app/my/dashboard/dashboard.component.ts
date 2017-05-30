@@ -27,7 +27,7 @@ import { Sub } from './content/subs';
                                     </div>
                                     <div class="dropdown-content" style="margin-top: 20px;">
                                         <a [routerLink]="['Account']">Account</a>
-                                        <a (click)="onLogout()">Logout</a>
+                                      <a type="submit" (click)="Logout()">Logout</a>
                                     </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
@@ -99,6 +99,21 @@ subs: any[] = [];
   ngOnInit() {
     this.getAcountSub();
   }
+
+  Logout(){
+    var body = `account='emps'`;
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http
+        .post(`${this.API}/subscribe/my/logout`,
+            body, {
+                headers: headers
+            })
+        .subscribe(
+            data => {
+              this.getAcountSub();
+            });
+      }
 
 getAcountSub() {
   this.http.get(`${this.API}/subscribe/detailsub`)

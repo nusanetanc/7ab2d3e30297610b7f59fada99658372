@@ -416,17 +416,14 @@ router.get('/activationid/:id', function(req, res, next) {
 });
 
 /* GET detail sub. */
-router.post('/logout', function(req, res, next) {
-  if(req.body.account == 'emps'){
-    req.session.emp = null;
-    res.json({ message: 'logout' });
-  }
-  if(req.body.account == 'subs'){
-    req.session.sub = null;
-    res.json({ message: 'logout' });
-  }
+router.post('/is/logout', function(req, res, next) {
+  req.session.emp = null;
 });
 
+/* GET detail sub. */
+router.post('/my/logout', function(req, res, next) {
+  req.session.subs = null;
+});
 router.put('/activationemail/:id', function(req, res, next) {
 
         Sub.findOne({codeactivation: req.params.id}, function(err, sub) {
