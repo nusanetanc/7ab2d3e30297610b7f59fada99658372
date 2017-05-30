@@ -29,7 +29,7 @@ import {Emp} from "./emp";
                                     </div>
                                     <div class="dropdown-content" style="margin-top: 20px;">
                                       <a>Account</a>
-                                      <button type="submit" (click)="Logout()">Logout</button>
+                                      <a (click)="Logout()">Logout</a>
                                     </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">

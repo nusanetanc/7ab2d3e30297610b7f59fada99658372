@@ -420,7 +420,11 @@ router.get('/logout', function(req, res, next) {
   if(req.session.emp){
       req.session.emp = null;
       req.session.level = null;
+      res.status(200).json({
+          message: 'Success',
+      })
     }
+
 });
 
 router.put('/activationemail/:id', function(req, res, next) {
