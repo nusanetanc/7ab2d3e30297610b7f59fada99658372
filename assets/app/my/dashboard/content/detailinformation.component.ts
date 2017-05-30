@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -33,7 +33,7 @@ import { Emp } from './emp';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{ dateinformations.date | date }}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{informations.date}}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
@@ -51,17 +51,11 @@ export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-    stringAsDate(dateStr: string) {
-        return new Date(dateStr);
-    }
-
-    informations: any[] = [];
-    dateinformations: any[] = [];
+informations: any[] = [];
   constructor(private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailInformation();
-    this.getDateInformation();
   }
 
 getDetailInformation() {
@@ -69,14 +63,6 @@ getDetailInformation() {
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations
-    })
-}
-
-getDateInformation() {
-  this.http.get(`${this.API}/information/date/${this._routeParams.get('id')}`)
-    .map(res => res.json())
-    .subscribe(dateinformations => {
-      this.dateinformations = dateinformations
     })
 }
 }
