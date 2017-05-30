@@ -37,6 +37,14 @@ Information.findById(req.params.id, function(err, informations) {
    });
 });
 
+/* GET time information. */
+router.get('/date/:id', function(req, res, next) {
+Information.findById(req.params.id, function(err, informations) {
+    console.log( informations );
+    res.json(informations);
+   });
+});
+
 /* Add sub */
 router.post('/addinformation', function(req, res, next) {
   var information = new Information();
