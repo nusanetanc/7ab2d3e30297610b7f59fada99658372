@@ -417,7 +417,6 @@ router.get('/activationid/:id', function(req, res, next) {
 
 /* GET detail sub. */
 router.get('/logout', function(req, res) {
-    req.logout();
     req.session.emp = null;
     res.redirect('/login');
 });
