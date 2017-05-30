@@ -127,11 +127,7 @@ alert('test');
           body, {
               headers: headers
           })
-          alert('test1');
-      .subscribe(
-          data => {
-              window.location.href = `/login`;
-          });
+          window.location.href = `/login`;
     }
 
     getAcountEmp() {
