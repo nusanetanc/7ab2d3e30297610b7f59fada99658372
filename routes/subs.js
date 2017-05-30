@@ -416,9 +416,15 @@ router.get('/activationid/:id', function(req, res, next) {
 });
 
 /* GET detail sub. */
-router.get('/logout', function(req, res) {
+router.post('/logout', function(req, res) {
+  if(req.body.account == 'emps'){
     req.session.emp = null;
-    res.send('logout');
+    res.json({ message: 'logout' });
+  }
+  if(req.body.account == 'subs'){
+    req.session.sub = null;
+    res.json({ message: 'logout' });
+  }
 });
 
 router.put('/activationemail/:id', function(req, res, next) {

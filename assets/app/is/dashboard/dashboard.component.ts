@@ -2,7 +2,7 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
-import {Http} from 'angular2/http';
+import {Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Emp} from "./emp";
 //import {Menu} from "./menu";
@@ -118,7 +118,18 @@ constructor(private http: Http) {}
     }
 
 Logout(){
-    this.http.get(`${this.API}/subscribe/logout`)
+  var body = `account='emps'`;
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/x-www-form-urlencoded');
+  this.http
+      .post(`${this.API}/subscribe/logout`,
+          body, {
+              headers: headers
+          })
+      .subscribe(
+          data => {
+              window.location.href = `/login`;
+          });
     }
 
     getAcountEmp() {
