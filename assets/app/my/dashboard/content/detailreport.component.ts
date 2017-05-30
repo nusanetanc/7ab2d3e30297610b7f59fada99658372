@@ -33,7 +33,6 @@ import { PushNotificationComponent } from './ng2-notifications'
                 <div class="col-sm-12">
                     <div class="row marginB20">
                         <div class="col-sm-10 "><span><b class="grey333">{{ complaints.subcategory }}</b></span></div>
-                        <div class="col-sm-2 "><span class="grey333">Status : <span class="red">{{ complaints.status }}</span></span></div>
                     </div>
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
