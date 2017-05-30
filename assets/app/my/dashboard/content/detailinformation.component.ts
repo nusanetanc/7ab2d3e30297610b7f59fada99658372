@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -33,7 +33,7 @@ import { Emp } from './emp';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div *ngFor="#dateinformation of dateinformations" class="col-sm-12 invoiceId grey333"><span>Posted <b>{{stringAsDate(dateinformation.date) | date:'dd MM yy HH:mm:ss'}}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{ stringAsDate(dateinformations.date) | date }}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
