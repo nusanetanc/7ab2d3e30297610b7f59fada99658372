@@ -80,6 +80,10 @@ chats: any[] = [];
     this.getChatReport();
   }
 
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
+
 getDetailReport() {
   this.http.get(`${this.API}/complaint/complaint/${this._routeParams.get('id')}`)
     .map(res => res.json())
