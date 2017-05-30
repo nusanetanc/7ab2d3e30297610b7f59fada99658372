@@ -104,7 +104,7 @@ import { Bill } from './bills';
                             <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="row">
                                 <div class="col-sm-3 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
-                                <div class="col-sm-3 invoiceList"><span>{{ bill.billdate }}</span></div>
+                                <div class="col-sm-3 invoiceList"><span>{{ stringAsDate(bill.billdate) | date }}</span></div>
                                 <div class="col-sm-3 invoiceList"><span>Rp. {{ bill.totalpay | number:'2.2-4' }}</span></div>
                                 <div class="col-sm-3 invoiceList"><span class="red">{{ bill.status }}</span></div>
                             </div>
@@ -163,6 +163,10 @@ export class ContentBillingComponent {
     this.getAllBills();
     this.getAcountSub();
   }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
 // Get all users from the API
 getAllBills() {
