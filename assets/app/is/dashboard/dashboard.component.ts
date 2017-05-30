@@ -119,7 +119,6 @@ constructor(private http: Http) {}
 
 Logout(){
     this.http.get(`${this.API}/subscribe/logout`)
-          window.location.href = `/login`;
     }
 
     getAcountEmp() {
