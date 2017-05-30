@@ -118,6 +118,7 @@ constructor(private http: Http) {}
     }
 
 Logout(){
+alert('test');
   var body = `account='emps'`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
