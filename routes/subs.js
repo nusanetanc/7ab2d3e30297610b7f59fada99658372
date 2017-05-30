@@ -416,7 +416,7 @@ router.get('/activationid/:id', function(req, res, next) {
 });
 
 /* GET detail sub. */
-router.post('/logout', function(req, res) {
+router.post('/logout', function(req, res, next) {
   if(req.body.account == 'emps'){
     req.session.emp = null;
     res.json({ message: 'logout' });
