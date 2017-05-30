@@ -415,6 +415,14 @@ router.get('/activationid/:id', function(req, res, next) {
 });
 });
 
+/* GET detail sub. */
+router.get('/logout', function(req, res, next) {
+  if(req.session.emp){
+      req.session.emp = null;
+      req.session.level = null;
+    }
+});
+
 router.put('/activationemail/:id', function(req, res, next) {
 
         Sub.findOne({codeactivation: req.params.id}, function(err, sub) {

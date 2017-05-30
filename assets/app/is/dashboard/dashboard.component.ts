@@ -28,7 +28,7 @@ import {Emp} from "./emp";
                                        <span class="caret"></span>
                                     </div>
                                     <div class="dropdown-content" style="margin-top: 20px;">
-                                        <a >Account</a>
+                                        <button type="submit" (click)="Logout()">Account</button>
                                         <a >Logout</a>
                                     </div>
                                  </div>
@@ -117,6 +117,10 @@ constructor(private http: Http) {}
         this.getAcountEmp();
     }
 
+Logout(){
+    this.http.get(`${this.API}/subscribe/logout`)
+          window.location.href = `/login`;
+    }
 
     getAcountEmp() {
         this.http.get(`${this.API}/subscribe/detailemp`)
