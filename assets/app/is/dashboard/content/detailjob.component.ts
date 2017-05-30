@@ -312,6 +312,7 @@ export class ContentDetailJobComponent implements OnInit {
     jobs: any[] = [];
     goods: any[] = [];
     stocks: any[] = [];
+    emps: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -321,6 +322,7 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllGoods();
         this.getAllStocks();
         this.getStocksForJobs();
+        this.getAcountEmp();
     }
 
     stringAsDate(dateStr: string) {
@@ -361,4 +363,13 @@ export class ContentDetailJobComponent implements OnInit {
               this.usestocks = usestocks
           })
         }
+        getAcountEmp() {
+            this.http.get(`${this.API}/subscribe/detailemp`)
+                .map(res => res.json())
+                .subscribe(emps => {
+                    this.emps = emps
+                }
+              )
+        }
+
 }
