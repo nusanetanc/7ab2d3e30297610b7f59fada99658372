@@ -417,9 +417,8 @@ router.get('/activationid/:id', function(req, res, next) {
 
 /* GET detail sub. */
 router.post('/logout', function(req, res, next) {
-  req.session.sub = null;
+  req.session.emp = null;
   res.json({ message: 'logout' });
-
 });
 
 router.put('/activationemail/:id', function(req, res, next) {
