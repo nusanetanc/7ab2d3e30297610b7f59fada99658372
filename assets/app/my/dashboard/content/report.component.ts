@@ -40,7 +40,7 @@ import { Complaint } from './complaints';
                 <div class="col-sm-12" *ngFor="#complaint of complaints">
                 <a [routerLink]="['Detailreport', {id: complaint.complaintId}]">
                     <div class="row subInfo">
-                        <div class="col-sm-4 invoiceId"><span>{{ stringAsDate(complaint.dateopen) | date }}</span></div>
+                        <div class="col-sm-4 invoiceId"><span>{{ stringAsDate(complaint.dateopen) }}</span></div>
                         <div class="col-sm-6 invoiceList"><span>{{ complaint.subcategory }}</span></div>
                         <div class="col-sm-2 invoiceList"><span class="red">{{ complaint.status }}</span></div>
                     </div>
