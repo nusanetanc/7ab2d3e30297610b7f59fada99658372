@@ -128,7 +128,7 @@ Logout(){
           })
       .subscribe(
           data => {
-            getAcountEmp();
+            this.getAcountEmp();
           });
     }
 
