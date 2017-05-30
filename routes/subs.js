@@ -418,13 +418,13 @@ router.get('/activationid/:id', function(req, res, next) {
 /* GET detail sub. */
 router.post('/is/logout', function(req, res, next) {
   req.session.emp = null;
-  res.json({ message: 'Data updated!' });
+  res.json({ message: 'logout' });
 });
 
 /* GET detail sub. */
 router.post('/my/logout', function(req, res, next) {
   req.session.subs = null;
-  res.json({ message: 'Data updated!' });
+  res.json({ message: 'logout' });
 });
 router.put('/activationemail/:id', function(req, res, next) {
 
