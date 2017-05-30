@@ -33,11 +33,10 @@ import { PushNotificationComponent } from './ng2-notifications'
                 <div class="col-sm-12">
                     <div class="row marginB20">
                         <div class="col-sm-10 "><span><b class="grey333">{{ complaints.subcategory }}</b></span></div>
-                        <div class="col-sm-2 "><span class="grey333">Status : <span class="red">{{ complaints.status }}</span></span></div>
                     </div>
                     <div class="row" *ngFor="#chat of chats">
                         <div class="col-sm-1 col-xs-12"><img class="ava" src="./images/ava.png" alt="ava"></div>
-                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ chat.date }}</b> by
+                        <div class="col-sm-10 col-xs-12 postBy marginT10"><span>Posted <b class="grey333">{{ stringAsDate(chat.date) | date:'medium' }}</b> by
                               <b *ngIf="chat.userStatus == 'Subscribe'" class="grey333"><form-subs [idsubs]=chat.userId></form-subs></b>
                               <b *ngIf="chat.userStatus == 'Helpdesk'" class="grey333"><form-emps [idemps]=chat.userId></form-emps></b>
                           <u>{{ chat.userStatus }}</u><br><br>{{ chat.message }}</span></div>
@@ -79,6 +78,10 @@ chats: any[] = [];
     this.getDetailReport();
     this.getChatReport();
   }
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
 getDetailReport() {
   this.http.get(`${this.API}/complaint/complaint/${this._routeParams.get('id')}`)
