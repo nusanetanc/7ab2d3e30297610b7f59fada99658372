@@ -127,7 +127,7 @@ alert('test');
           body, {
               headers: headers
           })
-          alert('test');
+          alert('test1');
       .subscribe(
           data => {
               window.location.href = `/login`;
