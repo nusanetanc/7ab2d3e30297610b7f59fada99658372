@@ -33,7 +33,7 @@ import { Emp } from './emp';
                          <div class="col-sm-2 invoiceList"><span class="grey333"> Status : <span style="color: red;">{{ informations.status }}</span></span></div>
                      </div>
                      <div class="row">
-                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{informations.date}}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
+                         <div class="col-sm-12 invoiceId grey333"><span>Posted <b>{{stringAsDate(informations.date)}}</b> by <b>{{ informations.nameusercretae }} ({{ informations.jabusercretae }})</b></span></div>
                      </div>
                      <div class="row">
                          <div class="col-sm-11 infoDetail">
@@ -50,6 +50,10 @@ import { Emp } from './emp';
 export class ContentDetailInformationComponent {
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
 informations: any[] = [];
   constructor(private http: Http, private _routeParams: RouteParams) {}
