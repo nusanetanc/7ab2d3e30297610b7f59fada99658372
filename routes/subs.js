@@ -416,15 +416,10 @@ router.get('/activationid/:id', function(req, res, next) {
 });
 
 /* GET detail sub. */
-router.get('/logout', function(req, res, next) {
-  if(req.session.emp){
-      req.session.emp = null;
-      req.session.level = null;
-      res.status(200).json({
-          message: 'Success',
-      })
-    }
-
+router.get('/logout', function(req, res) {
+    req.logout();
+    req.session.emp = null;
+    res.redirect('/login');
 });
 
 router.put('/activationemail/:id', function(req, res, next) {
