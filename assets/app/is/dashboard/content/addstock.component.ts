@@ -39,6 +39,7 @@ import { Goods } from './goods';
                                     </select><br/>
                                 </form>
                                 <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
+                                <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                 <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
                                     SUBMIT
                                 </button>
