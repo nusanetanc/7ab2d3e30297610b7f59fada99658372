@@ -67,14 +67,14 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
             </div>
         </div>
     </div>
-    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+   <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="alert alert-success alert-dismissible fade in" role=alert>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4>Berhasil !!!</h4>
             </div>
         </div>
-    </div>
+   </div>
 
    </div>
    <style *ngIf="emps.accessrole == null">
