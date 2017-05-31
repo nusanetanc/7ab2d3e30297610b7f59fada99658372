@@ -27,7 +27,6 @@ import {Employee} from './employee';
                       <button class="buttonDrop buttonSort">SORT BY</button>
                       <div class="dropdown-content">
                         <a (click)="sortByName()">NAME</a>
-                        <a (click)="sortByDep()">DEPARMENT</a>
                         <a (click)="sortByTit()">TITLE JOB</a>
                       </div>
                     </div>
@@ -105,7 +104,7 @@ export class ContentAllMarketingComponent {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    departement = 'technical';
+    departement = 'Sales';
 
     // Declare empty list of people
     emps: any[] = [];

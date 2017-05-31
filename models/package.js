@@ -5,7 +5,8 @@ var PackageSchema   = new Schema({
   level: Number,
   price: Number,
   detail: String,
-  clusterlevel: String,
+  cluster: String,
+  type: String,
 });
 
 module.exports = mongoose.model('Package', PackageSchema);

@@ -34,7 +34,6 @@ import { Http } from 'angular2/http';
                     <a [routerLink]="['InfoStock', {id: good._id}]">
                       <div class="row subInfo fontWeight300">
                           <div class="col-sm-11 invoiceId"><span>{{ good.name }}</span></div>
-                          <div class="col-sm-1 invoiceList"><span>{{ good.stock }}</span></div>
                       </div>
                     </a>
                 </div>
