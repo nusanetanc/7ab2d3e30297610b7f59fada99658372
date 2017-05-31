@@ -33,7 +33,8 @@ router.post('/addpackage', function(req, res, next) {
     package.level= req.body.level;
     package.price= req.body.price;
     package.detail= req.body.detail;
-    package.clusterlevel= req.body.clusterlevel;
+    package.cluster= req.body.cluster;
+    package.type= req.body.type;
 
     package.save(function(err) {
       if (err)
@@ -52,7 +53,7 @@ router.put('/putpackage/:id', function(req, res, next) {
                 package.level= req.body.level;
                 package.price= req.body.price;
                 package.detail= req.body.detail;
-                package.clusterlevel= req.body.clusterlevel;
+                package.cluster= req.body.cluster;
               if (err)
                 res.send(err);
 

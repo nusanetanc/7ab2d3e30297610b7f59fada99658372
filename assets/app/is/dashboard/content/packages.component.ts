@@ -31,10 +31,9 @@ import 'rxjs/add/operator/map';
                                             <form>
                                                 <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                                 <br/>
-                                                <select #clusterlevel id="clusterlevel" name="package">
-                                                    <option disabled="true" selected="true">-- Select Cluster Level --</option>
-                                                    <option value="A">A</option>
-                                                    <option value="B">B</option>
+                                                <select #cluster id="cluster" [(ngModel)]="selectedCluster._id">
+                                                    <option value="0">-- Select Clusters --</option>
+                                                    <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                                 </select><br/><br/>
                                                 <select #detail id="detail" name="package">
                                                     <option disabled="true" selected="true">-- Select Detail --</option>
@@ -93,12 +92,14 @@ export class ContentPackagesComponent implements OnInit {
 
 API = 'http://202.162.207.164:3000';
 emps: any[] = [];
+clusters: any[] = [];
 constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllPackages();
     this.getAcountEmp();
+    this.getAllCluster()
 }
 // Get all Property by city from the API
 getAllPackages() {
@@ -106,6 +107,13 @@ getAllPackages() {
         .map(res => res.json())
         .subscribe(packages => {
             this.packages = packages
+        })
+}
+getAllCluster() {
+    this.http.get(`${this.API}/cluster/listcluster`)
+        .map(res => res.json())
+        .subscribe(clusters => {
+            this.clusters = clusters
         })
 }
     addPackage(level, clusterlevel, detail, price) {
