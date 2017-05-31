@@ -83,7 +83,7 @@ import { City } from './cities';
                                                 <br/>
                                             </form>
                                             <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                            <button type="submit" (click)="addEmp(empid.value, empcity.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empaccess.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empcity.value, empaccess.value)" class="btn btn-default buttonOrange">
                                                 CREATE
                                             </button>
                                         </div>
@@ -159,8 +159,8 @@ export class ContentAddEmpComponent implements OnInit {
             {name: "Helpdesk", level: "8", sublevel: "801"},
         ];
 
-        addEmp(empid, empname, empemail, empphone, empcity, empdepartement, emptitlejob, empaccess) {
-            var body = `accessrole=${empaccess}&city=${empcity}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
+        addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empcity, empaccess) {
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&departement=${empdepartement}&titlejob=${emptitlejob}&city=${empcity}&empaccess=${empaccess}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
