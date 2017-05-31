@@ -57,6 +57,7 @@ import { Blokfloor } from './blokfloor';
                                             </select><br/>
                                         </form>
                                         <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
+                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
