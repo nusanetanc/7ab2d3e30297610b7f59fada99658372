@@ -105,7 +105,7 @@ export class ContentAllMarketingComponent {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-    departement = 'technical';
+    departement = 'Sales';
 
     // Declare empty list of people
     emps: any[] = [];
