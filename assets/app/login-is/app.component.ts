@@ -10,7 +10,7 @@ import {LoginComponent} from "./login.component";
     selector: 'my-app',
     template: `
             <router-outlet></router-outlet>
-`,
+    `,
     directives: [LoginComponent, ROUTER_DIRECTIVES]
 })
 
