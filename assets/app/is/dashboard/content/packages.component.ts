@@ -41,7 +41,7 @@ import 'rxjs/add/operator/map';
                                                     <option value="Internet + T">Internet + TV</option>
                                                     <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                                 </select><br/><br/>
-                                                <select #type id="type" name="package">
+                                                <select #detail id="detail" name="package">
                                                     <option disabled="true" selected="true">-- Select Type --</option>
                                                     <option value="Promo">Promo</option>
                                                     <option value="Default">Default</option>
@@ -57,8 +57,6 @@ import 'rxjs/add/operator/map';
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12">
                             <div class="row headerList paddingLR30">
                                 <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Packages</strong></div>
                             </div>
@@ -80,7 +78,7 @@ import 'rxjs/add/operator/map';
                                                         <option value="Internet + T">Internet + TV</option>
                                                         <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                                     </select><br/><br/>
-                                                    <select #type id="type" name="package">
+                                                    <select #detail id="detail" name="package">
                                                         <option disabled="true" selected="true">-- Select Type --</option>
                                                         <option value="Promo">Promo</option>
                                                         <option value="Default">Default</option>
@@ -96,7 +94,7 @@ import 'rxjs/add/operator/map';
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
                 <br/>
