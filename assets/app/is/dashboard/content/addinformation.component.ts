@@ -73,6 +73,7 @@ import { Street } from './street';
                                 </form>
                                 <input #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                 <textarea id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea>
+                                <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                 <button type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
                                     SHARE
                                 </button>
