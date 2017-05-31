@@ -32,7 +32,7 @@ import 'rxjs/add/operator/map';
                                                 <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                                 <br/>
                                                 <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)">
-                                                    <option value="0">-- Select Clusters --</option>
+                                                    <option value="All">-- All Clusters --</option>
                                                     <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                                 </select><br/><br/>
                                                 <select #detail id="detail" name="package">
@@ -40,6 +40,11 @@ import 'rxjs/add/operator/map';
                                                     <option value="Internet">Internet</option>
                                                     <option value="Internet + T">Internet + TV</option>
                                                     <option value="Internet + TV + Voice">Internet + TV + Voice</option>
+                                                </select><br/><br/>
+                                                <select #type id="type" name="package">
+                                                    <option disabled="true" selected="true">-- Select Type --</option>
+                                                    <option value="Promo">Promo</option>
+                                                    <option value="Default">Default</option>
                                                 </select><br/><br/>
                                                 <input #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                                 <br/>
