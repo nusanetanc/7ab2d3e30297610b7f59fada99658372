@@ -15,10 +15,27 @@ import { Sub } from './subs';
                     <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
                     <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
-                 <button type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                 <button id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
               </form>
            </div>
+        </div>
+        <!-- Modal -->
+        <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4>'User could not be found'</h4>
+                </div>
+            </div>
+        </div>
+        <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="alert alert-success alert-dismissible fade in" role=alert>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4>'Success'</h4>
+                </div>
+            </div>
         </div>
     `,
     directives: [ROUTER_DIRECTIVES]
@@ -61,12 +78,12 @@ getAllSub() {
           })
     .subscribe(
             data => {
-              window.location.href = `/my`;
+                $('#success').modal('show');
+                window.location.href = `/my`;
 
             },
             error => {
-              alert(error.text());
-              console.log(error.text());
+                $('#failed').modal('show');
             }
           );
   }
