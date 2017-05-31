@@ -44,6 +44,7 @@ import { Property } from './property';
                                             </select><br/>
                                         </form>
                                         <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
+                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
