@@ -33,6 +33,24 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
+            <!-- Modal -->
+            <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4>Gagal, coba lagi !!!</h4>
+                    </div>
+                </div>
+            </div>
+            <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="alert alert-success alert-dismissible fade in" role=alert>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4>Berhasil !!!</h4>
+                    </div>
+                </div>
+            </div>
+
         </div>
     `,
     directives: [ROUTER_DIRECTIVES]
@@ -77,7 +95,7 @@ export class LoginComponent implements OnInit {
                 },
                 error => {
                     alert(error.text());
-                    console.log(error.text());
+                    console.log($('#failed').modal('show'));
                 }
             );
     }
