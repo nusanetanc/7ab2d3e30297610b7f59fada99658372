@@ -27,7 +27,6 @@ import {Employee} from './employee';
                       <button class="buttonDrop buttonSort">SORT BY</button>
                       <div class="dropdown-content">
                         <a (click)="sortByName()">NAME</a>
-                        <a (click)="sortByDep()">DEPARMENT</a>
                         <a (click)="sortByTit()">TITLE JOB</a>
                       </div>
                     </div>

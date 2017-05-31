@@ -50,6 +50,12 @@ import { City } from './cities';
                                                   <option disabled="true" value="0">-- Select Title Job --</option>
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
+                                                <br/>
+                                                <select #empcity id="empcity">
+                                                  <option disabled="true" value="0">-- Select City Job --</option>
+                                                  <option>Jakarta</option>
+                                                  <option>Bandung</option>
+                                                </select>
                                                 <br/><br/>
                                                 <select #empaccess id="empaccess">
                                                   <option>-- Select Acces Role --</option>
@@ -153,8 +159,8 @@ export class ContentAddEmpComponent implements OnInit {
             {name: "Helpdesk", level: "8", sublevel: "801"},
         ];
 
-        addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empaccess) {
-            var body = `accessrole=${empaccess}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
+        addEmp(empid, empname, empemail, empphone, empcity, empdepartement, emptitlejob, empaccess) {
+            var body = `accessrole=${empaccess}&city=${empcity}&titlejob=${emptitlejob}&departement=${empdepartement}&email=${empemail}&idemployee=${empid}&name=${empname}&empaccess=${empaccess}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http

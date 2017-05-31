@@ -75,6 +75,7 @@ router.post('/addemp', function(req, res, next) {
     emp.name= req.body.name;
     emp.email= req.body.email;
     emp.handphone= req.body.handphone;
+    emp.city= req.body.city;
     emp.password= passwordHash.generate(createpass);
     emp.departement= req.body.departement;
     emp.titlejob= req.body.titlejob;
@@ -115,6 +116,7 @@ router.put('/putemp/:id', function(req, res, next) {
                 emp.name= req.body.name;
                 emp.email= req.body.email;
                 emp.handphone= req.body.handphone;
+                emp.city= req.body.city;
                 emp.password= passwordHash.generate(req.body.password);
                 emp.departement= req.body.departement;
                 emp.titlejob= req.body.titlejob;
