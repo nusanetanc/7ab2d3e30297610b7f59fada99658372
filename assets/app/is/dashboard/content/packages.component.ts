@@ -31,7 +31,7 @@ import 'rxjs/add/operator/map';
                                             <form>
                                                 <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                                 <br/>
-                                                <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)" [(ngModel)]="selectedClusters._id">
+                                                <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)">
                                                     <option value="0">-- Select Clusters --</option>
                                                     <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                                 </select><br/><br/>
