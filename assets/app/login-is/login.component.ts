@@ -26,7 +26,7 @@ import { Sub } from './subs';
                                 </div><br>
                                 <div class="form-group form-forgot">
                                     <a href="" class="orange-text">I forgot password</a>
-                                    <button type="submit" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
+                                    <button type="submit" id="logins" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
                         </div>
