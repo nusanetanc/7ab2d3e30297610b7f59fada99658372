@@ -38,7 +38,7 @@ import { Sub } from './subs';
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="alert alert-danger alert-dismissible fade in" role=alert>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4>Gagal, coba lagi !!!</h4>
+                        <h4>'User could not be found'</h4>
                     </div>
                 </div>
             </div>
