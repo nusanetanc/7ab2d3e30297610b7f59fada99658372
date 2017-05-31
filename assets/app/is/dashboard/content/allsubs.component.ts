@@ -22,7 +22,7 @@ import { Sub } from './subs';
           <div class="row marginB20 marginR0">
               <div class="col-sm-12">
                   <a *ngIf="emps.accessrole == '0' || emps.accessrole == '202' || emps.accessrole == '601'" [routerLink]="['AddSubs']" class="btn btn-default buttonOrange">
-                      NEW SUBSCRIBER {{subs.length}}
+                      NEW SUBSCRIBER
                   </a>
                   <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                   <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
