@@ -94,8 +94,7 @@ export class LoginComponent implements OnInit {
                     window.location.href = `/is`;
                 },
                 error => {
-                    alert(error.text());
-                    console.log($('#failed').modal('show'));
+                    $('#failed').modal('show')
                 }
             );
     }
