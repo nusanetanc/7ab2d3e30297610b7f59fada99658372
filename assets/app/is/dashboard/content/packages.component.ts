@@ -45,6 +45,7 @@ import 'rxjs/add/operator/map';
                                                 <input #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                                 <br/>
                                             </form>
+                                            <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                             <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, price.value)" class="btn btn-default buttonOrange">
                                                 SEND
                                             </button>
