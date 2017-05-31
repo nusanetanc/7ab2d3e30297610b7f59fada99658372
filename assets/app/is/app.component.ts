@@ -14,6 +14,7 @@ import {ContentAddInformationComponent} from "./dashboard/content/addinformation
 import {ContentAddReportComponent} from "./dashboard/content/addreport.component";
 import {ContentAllEmployeeComponent} from "./dashboard/content/allemployee.component";
 import {ContentAllEngineerComponent} from "./dashboard/content/allengineer.component";
+import {ContentAllMarketingComponent} from "./dashboard/content/allmarketing.component";
 import {ContentAllReportsComponent} from "./dashboard/content/allreports.component";
 import {ContentAllStocksComponent} from "./dashboard/content/allstock.component";
 import {ContentDetailInformationComponent} from "./dashboard/content/detailinformation.component";
@@ -139,6 +140,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
         ContentDashboardManagerComponent,
         ContentDashboardTechComponent,
         ContentNotFoundComponent,
+        ContentAllMarketingComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -159,6 +161,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
     { path: '/is/allbill', component:ContentAllBillsComponent, name:'AllBill'},
     { path: '/is/allemployee', component:ContentAllEmployeeComponent, name:'AllEmployee'},
     { path: '/is/allengineer', component:ContentAllEngineerComponent, name:'AllEngineer'},
+    { path: '/is/allmarketing', component:ContentAllMarketingComponent, name:'AllMarketing'},
     { path: '/is/allreport', component:ContentAllReportsComponent, name:'AllReport'},
     { path: '/is/allstock', component:ContentAllStocksComponent, name:'AllStock'},
     { path: '/is/detailinformation/:id', component:ContentDetailInformationComponent, name:'DetailInformation'},
