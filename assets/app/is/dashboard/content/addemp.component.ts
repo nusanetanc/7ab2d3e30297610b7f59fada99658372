@@ -52,7 +52,7 @@ import { City } from './cities';
                                                 </select>
                                                 <br/>
                                                 <select #empcity id="empcity">
-                                                  <option disabled="true" value="0">-- Select City Job --</option>
+                                                  <option disabled="true" selected="true">-- Select City Job --</option>
                                                   <option>Jakarta</option>
                                                   <option>Bandung</option>
                                                 </select>
