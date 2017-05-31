@@ -50,7 +50,7 @@ import { City } from './cities';
                                                   <option disabled="true" value="0">-- Select Title Job --</option>
                                                   <option *ngFor="#job of jobs">{{ job.name }}</option>
                                                 </select>
-                                                <br/>
+                                                <br/><br/>
                                                 <select #empcity id="empcity">
                                                   <option disabled="true" selected="true">-- Select City Job --</option>
                                                   <option>Jakarta</option>
