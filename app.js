@@ -11,8 +11,8 @@ mongoose.connect('mongodb://localhost/groovy');
 var reCAPTCHA=require('recaptcha2');
 
 var recaptcha=new reCAPTCHA({
-    siteKey:'6LdPRiMUAAAAAOzE3U9Wgkw62GgY3ru6JdkKIcMH',
-    secretKey:'6LdPRiMUAAAAAKNPAd0H0gsgh-2b7YE-vzOF3n-d',
+    siteKey:'6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv',
+    secretKey:'6LdqYiMUAAAAADiBZESZfpnSGZudxygd-FvC1tA2',
 });
 
 var index = require('./routes/index');
