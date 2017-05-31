@@ -95,7 +95,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
 `,
     directives: [
         DashboardComponent,
-        ContentAddSubsComponent
+        ContentAddSubsComponent,
         ContentDashboardHelpdeskComponent,
         ContentDashboardBillingComponent,
         ContentAllSubsComponent,
