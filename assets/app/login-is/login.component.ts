@@ -46,7 +46,7 @@ import { Sub } from './subs';
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="alert alert-success alert-dismissible fade in" role=alert>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4>Berhasil !!!</h4>
+                        <h4>'Success'</h4>
                     </div>
                 </div>
             </div>
@@ -91,10 +91,11 @@ export class LoginComponent implements OnInit {
                 })
             .subscribe(
                 data => {
+                    $('#success').modal('show');
                     window.location.href = `/is`;
                 },
                 error => {
-                    $('#failed').modal('show')
+                    $('#failed').modal('show');
                 }
             );
     }
