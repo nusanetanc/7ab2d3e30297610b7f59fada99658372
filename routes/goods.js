@@ -23,7 +23,6 @@ router.post('/add', function(req, res, next) {
   var goods = new Goods();
 
     goods.name= req.body.name;
-    goods.stock= req.body.stock;
 
     goods.save(function(err) {
       if (err)
