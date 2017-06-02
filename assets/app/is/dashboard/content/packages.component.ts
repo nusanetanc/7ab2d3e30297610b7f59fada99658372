@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Cluster } from './clusters';
 
 @Component({
     selector: 'form-cpackages',
@@ -30,9 +31,9 @@ import 'rxjs/add/operator/map';
                                         <form>
                                             <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                             <br/>
-                                            <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)">
+                                            <select #cluster id="cluster" [(ngModel)]="selectedClusters._id" (change)="onSelectClusters($event.target.value)">
                                                 <option value="All">-- All Clusters --</option>
-                                                <option *ngFor="#cluster of clusters" value=cluster._id>{{ cluster.name }}</option>
+                                                <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                             </select><br/><br/>
                                             <select #detail id="detail" name="package">
                                                 <option disabled="true" selected="true">-- Select Detail --</option>
@@ -124,6 +125,7 @@ ngOnInit() {
     this.getAcountEmp();
     this.getAllCluster()
 }
+selectedClusters: Cluster = new Cluster(0, 'dummy');
 // Get all Property by city from the API
 getAllPackages() {
     this.http.get(`${this.API}/package/listpackage`)
