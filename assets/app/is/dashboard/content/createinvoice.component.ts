@@ -381,6 +381,23 @@ import { Sub } from './subs';
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>'An error occured'</h4>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-success alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>'Create New Invoice Success'</h4>
+            </div>
+        </div>
+    </div>
     <!-- END CONTENT   -->`,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -428,10 +445,11 @@ total:number;
             headers: headers
           })
           .subscribe(data => {
-                alert('Create New Invoice Success');
-                this.getAllBill();
+            $('#success').modal('show');
+            this.getAllBill();
           }, error => {
-              console.log(JSON.stringify(error.json()));
+            $('#success').modal('show');
+            //console.log(JSON.stringify(error.json()));
           });
   }
 

@@ -167,7 +167,7 @@ import {Streetname} from "./street_name";
             <div class="modal-dialog modal-lg" role="document">
                 <div class="alert alert-success alert-dismissible fade in" role=alert>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4>'Success'</h4>
+                    <h4>'Add New Subscribe Success'</h4>
                 </div>
             </div>
         </div>
