@@ -132,7 +132,7 @@ router.get('/id/:id', function(req, res, next) {
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
 Sub.findById(req.params.id, function(err, subs) {
-  if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+  if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
     subs.groovyid = "591916077a149b7469259903";
   }
   Home.findById(subs.groovyid, function(err, homes) {

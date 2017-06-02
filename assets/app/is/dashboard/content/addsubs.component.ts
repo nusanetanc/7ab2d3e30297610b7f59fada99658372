@@ -365,7 +365,7 @@ export class ContentAddSubsComponent implements OnInit {
             })
     }
     getAllPackagesPromo(){
-        this.http.get(`${this.API}/package/list/Promo/${this.cluster_id}`)
+        this.http.get(`${this.API}/package/list/Promo/59152634f2c0f31ac56ada67`)
             .map(res => res.json())
             .subscribe(promopackages => {
                 this.promopackages = promopackages
