@@ -131,10 +131,10 @@ import {Streetname} from "./street_name";
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
-                                          <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                                          <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
-                                              <option *ngFor="#package of packages">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                                <option *ngFor="#package of packages">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                              <option *ngFor="#package of packages" [value]=package._id>Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                                <option *ngFor="#package of packages" [value]=package._id>Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
                                         </div>
                                     </div>
