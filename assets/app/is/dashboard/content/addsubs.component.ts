@@ -214,9 +214,15 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
+        this.defaultpackages = this.getAllPackagesPromo(){
+            this.http.get(`${this.API}/package/package/list/Default`)
+                .map(res => res.json())
+                .subscribe(defaultpackages => {
+                    this.defaultpackages = defaultpackages
+                })
+        }
 
-
-        this.promopackages = getAllPackagesPromo(){
+        this.promopackages = this.getAllPackagesPromo(){
             this.http.get(`${this.API}/package/list/Promo/59152634f2c0f31ac56ada67`)
                 .map(res => res.json())
                 .subscribe(promopackages => {
@@ -269,7 +275,6 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllSub();
         this.getAllCity();
         this.getAcountEmp();
-        this.getAllPackagesPromo();
     }
 
 
