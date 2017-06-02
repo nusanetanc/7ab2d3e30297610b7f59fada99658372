@@ -133,8 +133,8 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                           <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
-                                              <option *ngFor="#package of packages" [value]=package._id>Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                                <option *ngFor="#package of packages" [value]=package._id>Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                              <option *ngFor="#package of defaultpackages" [value]=package._id>Level {{package.level}} Promo - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                                <option *ngFor="#package of promopackages" [value]=package._id>Level {{package.level}} Regular - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
                                         </div>
                                     </div>
@@ -214,11 +214,19 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-        this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/listpackage`)
+        this.defaultpackages = this.getAllPackagesDefault(){
+            this.http.get(`${this.API}/package/list/Default`)
                 .map(res => res.json())
-                .subscribe(packages => {
-                    this.packages = packages
+                .subscribe(defaultpackages => {
+                    this.defaultpackages = defaultpackages
+                })
+        }
+
+        this.promopackages = getAllPackagesPromo(){
+            this.http.get(`${this.API}/package/list/Promo/${_id}`)
+                .map(res => res.json())
+                .subscribe(promopackages => {
+                    this.promopackages = promopackages
                 })
         }
     }
@@ -257,6 +265,8 @@ export class ContentAddSubsComponent implements OnInit {
     streetnames: any[] = [];
     detailclusters: any[] = [];
     emps: any[] = [];
+    defaultpackages: any[] = [];
+    promopackages: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -347,11 +357,18 @@ export class ContentAddSubsComponent implements OnInit {
                 this.blokfloors = blokfloors
             })
     }
-    getAllPackagesByCluster(){
-        this.http.get(`${this.API}/package/cluster/A`)
+    getAllPackagesDefault(){
+        this.http.get(`${this.API}/package/list/Default`)
             .map(res => res.json())
-            .subscribe(packages => {
-                this.packages = packages
+            .subscribe(defaultpackages => {
+                this.defaultpackages = defaultpackages
+            })
+    }
+    getAllPackagesPromo(){
+        this.http.get(`${this.API}/package/list/Promo/${this.cluster_id}`)
+            .map(res => res.json())
+            .subscribe(promopackages => {
+                this.promopackages = promopackages
             })
     }
     getAcountEmp() {

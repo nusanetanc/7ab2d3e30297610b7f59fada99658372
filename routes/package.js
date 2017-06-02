@@ -19,8 +19,15 @@ Package.findById(req.params.id, function(err, packages) {
 });
 
 /* GET detail package. */
-router.get('/cluster/:id', function(req, res, next) {
-Package.find({clusterlevel: req.params.id}, function(err, packages) {
+router.get('/list/Default', function(req, res, next) {
+Package.find({type: 'Default'}, function(err, packages) {
+       console.log( packages );
+       res.json(packages);
+   });
+});
+/* GET detail package. */
+router.get('/list/Promo/:id', function(req, res, next) {
+Package.find({type: 'Promo', cluster: req.params.id}, function(err, packages) {
        console.log( packages );
        res.json(packages);
    });
