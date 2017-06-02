@@ -214,8 +214,8 @@ export class ContentAddSubsComponent implements OnInit {
                     this.blokfloors = blokfloors
                 })
         }
-        this.defaultpackages = this.getAllPackagesPromo(){
-            this.http.get(`${this.API}/package/package/list/Default`)
+        this.defaultpackages = this.getAllPackagesDefault(){
+            this.http.get(`${this.API}/package/list/Default`)
                 .map(res => res.json())
                 .subscribe(defaultpackages => {
                     this.defaultpackages = defaultpackages
