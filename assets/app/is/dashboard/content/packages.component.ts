@@ -32,7 +32,7 @@ import 'rxjs/add/operator/map';
                                             <br/>
                                             <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)">
                                                 <option value="All">-- All Clusters --</option>
-                                                <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
+                                                <option *ngFor="#cluster of clusters" value=cluster._id>{{ cluster.name }}</option>
                                             </select><br/><br/>
                                             <select #detail id="detail" name="package">
                                                 <option disabled="true" selected="true">-- Select Detail --</option>
