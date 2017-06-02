@@ -37,10 +37,10 @@ import 'rxjs/add/operator/map';
                                             <select #detail id="detail" name="package">
                                                 <option disabled="true" selected="true">-- Select Detail --</option>
                                                 <option value="Internet">Internet</option>
-                                                <option value="Internet + T">Internet + TV</option>
+                                                <option value="Internet + TV">Internet + TV</option>
                                                 <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                             </select><br/><br/>
-                                            <select #detail id="detail" name="package">
+                                            <select #type id="type" name="package">
                                                 <option disabled="true" selected="true">-- Select Type --</option>
                                                 <option value="Promo">Promo</option>
                                                 <option value="Default">Default</option>
@@ -49,50 +49,13 @@ import 'rxjs/add/operator/map';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, price.value)" class="btn btn-default buttonOrange">
+                                        <button type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row headerList paddingLR30">
-                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Packages</strong></div>
-                        </div>
-                        <div class="row subInfo">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="formNewReport marginLR20">
-                                            <form>
-                                                <input style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
-                                                <br/>
-                                                <select #cluster id="cluster" (change)="onSelectClusters($event.target.value)">
-                                                    <option value="All">-- All Clusters --</option>
-                                                    <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
-                                                </select><br/><br/>
-                                                <select #detail id="detail" name="package">
-                                                    <option disabled="true" selected="true">-- Select Detail --</option>
-                                                    <option value="Internet">Internet</option>
-                                                    <option value="Internet + T">Internet + TV</option>
-                                                    <option value="Internet + TV + Voice">Internet + TV + Voice</option>
-                                                </select><br/><br/>
-                                                <select #detail id="detail" name="package">
-                                                    <option disabled="true" selected="true">-- Select Type --</option>
-                                                    <option value="Promo">Promo</option>
-                                                    <option value="Default">Default</option>
-                                                </select><br/><br/>
-                                                <input #price type="text" class="form-control inputForm" id="price" placeholder="Price">
-                                                <br/>
-                                            </form>
-                                            <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                            <button type="submit" (click)="addPackage(level.value, clusterlevel.value, detail.value, price.value)" class="btn btn-default buttonOrange">
-                                                SEND
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -175,9 +138,9 @@ getAllCluster() {
             this.clusters = clusters
         })
 }
-    addPackage(level, clusterlevel, detail, price) {
+    addPackage(level, cluster, detail, type, price) {
 
-        var body = `level=${level}&clusterlevel=${clusterlevel}&detail=${detail}&price=${price}`;
+        var body = `level=${level}&cluster=${cluster}&detail=${detail}&type=${type}&price=${price}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -186,15 +149,10 @@ getAllCluster() {
                     headers: headers
                 })
             .subscribe(data => {
-<<<<<<< HEAD
-                $('#success').modal('show');
-=======
-            alert('tes');
->>>>>>> 29e448f093477efe639eb4fe4dd6c91d9d2517a4
                 this.getAllPackages();
             }, error => {
-                //$('#failed').modal('show');
-                console.log(JSON.stringify(error.json()));
+                $('#failed').modal('show');
+                //console.log(JSON.stringify(error.json()));
             });
     }
     getAcountEmp() {
