@@ -50,6 +50,15 @@ import { Goods } from './goods';
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>An error occured</h4>
+            </div>
+        </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -106,7 +115,8 @@ export class ContentAddStocksComponent implements OnInit {
                 alert('Add Stock Success');
                 this.getAllStock();
             }, error => {
-                console.log(JSON.stringify(error.json()));
+                $('#failed').modal('show');
+                //console.log(JSON.stringify(error.json()));
             });
     }
 }
