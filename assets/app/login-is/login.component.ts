@@ -42,14 +42,6 @@ import { Sub } from './subs';
                     </div>
                 </div>
             </div>
-            <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="alert alert-success alert-dismissible fade in" role=alert>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4>'Success'</h4>
-                    </div>
-                </div>
-            </div>
         </div>
     `,
     directives: [ROUTER_DIRECTIVES]
@@ -90,7 +82,6 @@ export class LoginComponent implements OnInit {
                 })
             .subscribe(
                 data => {
-                    $('#success').modal('show');
                     window.location.href = `/is`;
                 },
                 error => {
