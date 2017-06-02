@@ -133,8 +133,8 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                           <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
                                               <option value="0">-- Select Package --</option>
-                                              <option *ngFor="#package of defaultpackages" [value]=package._id>Level {{package.level}} Promo - Monthly - {{package.price | currency:'IDR':true}}</option>
-                                                <option *ngFor="#package of promopackages" [value]=package._id>Level {{package.level}} Regular - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                              <option *ngFor="#package of defaultpackages" [value]=package._id>Level {{package.level}} Regular - Monthly - {{package.price | currency:'IDR':true}}</option>
+                                                <option *ngFor="#package of promopackages" [value]=package._id>Level {{package.level}} Promo - Monthly - {{package.price | currency:'IDR':true}}</option>
                                           </select><br/>
                                         </div>
                                     </div>
