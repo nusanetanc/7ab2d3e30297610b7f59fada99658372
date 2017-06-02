@@ -72,9 +72,10 @@ import 'rxjs/add/operator/map';
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#package of packages">
                                             <div class="row subInfo">
-                                                <div class="col-sm-6 invoiceList"><span>Level {{package.level}} - Cluster {{package.clusterlevel}}</span></div>
-                                                <div class="col-sm-3 invoiceList"><span>{{package.price}}</span></div>
+                                                <div class="col-sm-4 invoiceList"><span>Level {{package.level}} - {{package.type}}</span></div>
+                                                <div class="col-sm-2 invoiceList"><span>{{package.price}}</span></div>
                                                 <div class="col-sm-3 invoiceList"><span>{{package.detail}}</span></div>
+                                                <div class="col-sm-3 invoiceList"><span>{{package.cluster}}</span></div>
                                             </div>
                                         </div>
                                     </div>
