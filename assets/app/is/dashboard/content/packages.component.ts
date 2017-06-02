@@ -186,11 +186,15 @@ getAllCluster() {
                     headers: headers
                 })
             .subscribe(data => {
+<<<<<<< HEAD
                 $('#success').modal('show');
+=======
+            alert('tes');
+>>>>>>> 29e448f093477efe639eb4fe4dd6c91d9d2517a4
                 this.getAllPackages();
             }, error => {
-                $('#failed').modal('show');
-                //console.log(JSON.stringify(error.json()));
+                //$('#failed').modal('show');
+                console.log(JSON.stringify(error.json()));
             });
     }
     getAcountEmp() {
