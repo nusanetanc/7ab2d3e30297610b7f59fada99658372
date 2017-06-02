@@ -8,97 +8,106 @@ import { City } from './cities';
     selector: 'form-dashboard',
     template: `
     <!-- Page content -->
-        <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '702'" id="page-content-wrapper">
-            <div class="content-header">
-                <h3 id="home" class="fontWeight300">
-                    <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+    <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '702'" id="page-content-wrapper">
+        <div class="content-header">
+            <h3 id="home" class="fontWeight300">
+                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                </a>
+                &nbsp; Add Employee Groovy
+            </h3>
+
+        </div>
+
+        <div class="page-content inset" data-spy="scroll" data-target="#spy">
+            <div class="row marginB20 marginR0">
+                <div class="col-sm-12">
+                    <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
+                        BACK
                     </a>
-                    &nbsp; Add Employee Groovy
-                </h3>
-
-            </div>
-
-            <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                <div class="row marginB20 marginR0">
-                    <div class="col-sm-12">
-                        <a [routerLink]="['AllEmployee']" class="btn btn-default buttonBack" type="button">
-                            BACK
-                        </a>
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row headerList paddingLR30">
-                            <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Employee</strong></div>
-                        </div>
-                        <div class="row subInfo">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="formNewReport marginLR20">
-                                            <form>
-                                                <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee ID">
-                                                <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
-                                                <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
-                                                <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                                <select #empdepartement class="form-control inputForm" id="empdepartement">
-                                                  <option disabled="true" value="0">-- Select Departement --</option>
-                                                  <option *ngFor="#dep of deps">{{ dep.name }}</option>
-                                                </select>
-                                                <br/>
-                                                <select #emptitlejob id="emptitlejob">
-                                                  <option disabled="true" value="0">-- Select Title Job --</option>
-                                                  <option *ngFor="#job of jobs">{{ job.name }}</option>
-                                                </select>
-                                                <br/><br/>
-                                                <select #empcity id="empcity">
-                                                  <option disabled="true" selected="true">-- Select City Job --</option>
-                                                  <option>Jakarta</option>
-                                                  <option>Bandung</option>
-                                                </select>
-                                                <br/><br/>
-                                                <select #empaccess id="empaccess">
-                                                  <option>-- Select Acces Role --</option>
-                                                  <option value="0">Admin Web</option>
-                                                  <option value="1">Direktur</option>
-                                                  <option value="2">Sales Manager</option>
-                                                  <option value="201">Sales Spv</option>
-                                                  <option value="202">Sales</option>
-                                                  <option value="3">Teknis Spv</option>
-                                                  <option value="301">Field Engineer</option>
-                                                  <option value="4">Network Spv</option>
-                                                  <option value="401">Network Staff</option>
-                                                  <option value="402">System Administator</option>
-                                                  <option value="5">Finnace Controler</option>
-                                                  <option value="501">Billing</option>
-                                                  <option value="502">Acounting - Tax</option>
-                                                  <option value="6">CRO Spv</option>
-                                                  <option value="601">CRO Staff</option>
-                                                  <option value="7">HR & GA Spv</option>
-                                                  <option value="701">HR</option>
-                                                  <option value="702">GA</option>
-                                                  <option value="8">Helpdesk Spv</option>
-                                                  <option value="801">Helpdesk Staff</option>
-                                                </select>
-                                                <br/>
-                                            </form>
-                                            <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                            <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empcity.value, empaccess.value)" class="btn btn-default buttonOrange">
-                                                CREATE
-                                            </button>
-                                        </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row headerList paddingLR30">
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Employee</strong></div>
+                    </div>
+                    <div class="row subInfo">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="formNewReport marginLR20">
+                                        <form>
+                                            <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee ID">
+                                            <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
+                                            <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
+                                            <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
+                                            <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                              <option disabled="true" value="0">-- Select Departement --</option>
+                                              <option *ngFor="#dep of deps">{{ dep.name }}</option>
+                                            </select>
+                                            <br/>
+                                            <select #emptitlejob id="emptitlejob">
+                                              <option disabled="true" value="0">-- Select Title Job --</option>
+                                              <option *ngFor="#job of jobs">{{ job.name }}</option>
+                                            </select>
+                                            <br/><br/>
+                                            <select #empcity id="empcity">
+                                              <option disabled="true" selected="true">-- Select City Job --</option>
+                                              <option>Jakarta</option>
+                                              <option>Bandung</option>
+                                            </select>
+                                            <br/><br/>
+                                            <select #empaccess id="empaccess">
+                                              <option>-- Select Acces Role --</option>
+                                              <option value="0">Admin Web</option>
+                                              <option value="1">Direktur</option>
+                                              <option value="2">Sales Manager</option>
+                                              <option value="201">Sales Spv</option>
+                                              <option value="202">Sales</option>
+                                              <option value="3">Teknis Spv</option>
+                                              <option value="301">Field Engineer</option>
+                                              <option value="4">Network Spv</option>
+                                              <option value="401">Network Staff</option>
+                                              <option value="402">System Administator</option>
+                                              <option value="5">Finnace Controler</option>
+                                              <option value="501">Billing</option>
+                                              <option value="502">Acounting - Tax</option>
+                                              <option value="6">CRO Spv</option>
+                                              <option value="601">CRO Staff</option>
+                                              <option value="7">HR & GA Spv</option>
+                                              <option value="701">HR</option>
+                                              <option value="702">GA</option>
+                                              <option value="8">Helpdesk Spv</option>
+                                              <option value="801">Helpdesk Staff</option>
+                                            </select>
+                                            <br/>
+                                        </form>
+                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
+                                        <button type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empcity.value, empaccess.value)" class="btn btn-default buttonOrange">
+                                            CREATE
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                  </div>
-                  <br/>
                 </div>
-        </div><!-- END CONTENT -->
-        <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601' || accountemps.accessrole == '701' || accountemps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || accountemps.accessrole == '8' || accountemps.accessrole == '801'">
-            <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+            </div>
+            <br/>
         </div>
+    </div><!-- END CONTENT -->
+    <div *ngIf="accountemps.accessrole == '2' || accountemps.accessrole == '201' || accountemps.accessrole == '202' || accountemps.accessrole == '3' || accountemps.accessrole == '301' || accountemps.accessrole == '4' || accountemps.accessrole == '401' || accountemps.accessrole == '402' || accountemps.accessrole == '6' || accountemps.accessrole == '601' || accountemps.accessrole == '701' || accountemps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || accountemps.accessrole == '8' || accountemps.accessrole == '801'">
+        <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
+    <!-- Modal -->
+    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>An error occured</h4>
+            </div>
+        </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -172,7 +181,8 @@ export class ContentAddEmpComponent implements OnInit {
                     alert('Add Employee Success');
                     this.getAllEmployee();
                 }, error => {
-                console.log(JSON.stringify(error.json()));
+                    $('#failed').modal('show');
+                    //console.log(JSON.stringify(error.json()));
             });
         }
         getAcountEmp() {
