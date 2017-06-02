@@ -83,6 +83,23 @@ import { Property } from './property';
     <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8' || emps.accessrole == '801'">
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
+    <!-- Modal -->
+    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>An error occured</h4>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-success alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>Add Property Success</h4>
+            </div>
+        </div>
+    </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
@@ -143,10 +160,11 @@ onSelectCity(_id) {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Property Success');
+                $('#success').modal('show');
                 this.getAllProperty();
             }, error => {
-                console.log(JSON.stringify(error.json()));
+                $('#failed').modal('show');
+                //console.log(JSON.stringify(error.json()));
             });
     }
     getAcountEmp() {
