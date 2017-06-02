@@ -206,25 +206,18 @@ export class ContentAddSubsComponent implements OnInit {
     }
 
     onSelectCluster(_id) {
-        this.detailclusters = this.getAllClusterByProperty(){
-            this.http.get(`${this.API}/cluster/cluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(detailclusters => {
-                    this.detailclusters = detailclusters
-                })
-        }
-        this.packages = this.getAllPackagesByCluster(){
-            this.http.get(`${this.API}/package/cluster/${detailclusters['level']}`)
-                .map(res => res.json())
-                .subscribe(packages => {
-                    this.packages = packages
-                })
-        }
         this.blokfloors = this.getAllBLokfloorByCluster(){
             this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
                 .map(res => res.json())
                 .subscribe(blokfloors => {
                     this.blokfloors = blokfloors
+                })
+        }
+        this.packages = this.getAllPackagesByCluster(){
+            this.http.get(`${this.API}/package/listpackage`)
+                .map(res => res.json())
+                .subscribe(packages => {
+                    this.packages = packages
                 })
         }
     }
