@@ -149,10 +149,11 @@ getAllCluster() {
                     headers: headers
                 })
             .subscribe(data => {
+            alert('tes');
                 this.getAllPackages();
             }, error => {
-                $('#failed').modal('show');
-                //console.log(JSON.stringify(error.json()));
+                //$('#failed').modal('show');
+                console.log(JSON.stringify(error.json()));
             });
     }
     getAcountEmp() {
