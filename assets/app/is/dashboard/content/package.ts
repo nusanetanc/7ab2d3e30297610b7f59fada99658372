@@ -1,8 +1,9 @@
 export class Package {
     constructor(
-        public level: Number,
+        public level: String,
         public price: Number,
         public detail: String,
-        public clusterlevel: String,
+        public type String,
+        public cluster String,
     ) {  }
 }
