@@ -186,7 +186,6 @@ getAllCluster() {
                     headers: headers
                 })
             .subscribe(data => {
-                $('#success').modal('show');
                 this.getAllPackages();
             }, error => {
                 $('#failed').modal('show');
