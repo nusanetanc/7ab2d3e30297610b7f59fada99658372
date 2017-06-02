@@ -448,7 +448,7 @@ total:number;
             $('#success').modal('show');
             this.getAllBill();
           }, error => {
-            $('#success').modal('show');
+            $('#failed').modal('show');
             //console.log(JSON.stringify(error.json()));
           });
   }

@@ -19,7 +19,6 @@ import { Street } from './street';
                 </a>
                 &nbsp; Add Coverage Area
             </h3>
-
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
@@ -64,45 +63,62 @@ import { Street } from './street';
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                     </select><br/>
                                     </form>
-                                        <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
-                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
-                                            SEND
-                                        </button>
-                                    </div>
+                                    <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
+                                    <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
+                                    <button type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
+                                        SEND
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
             <br/>
-              <div class="row">
+        <div class="row">
+          <div class="col-sm-12">
+              <div class="row headerList paddingLR30">
+                  <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Street</strong></div>
+              </div>
+              <div class="row subInfo">
                   <div class="col-sm-12">
-                      <div class="row headerList paddingLR30">
-                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Street</strong></div>
-                      </div>
-                      <div class="row subInfo">
+                      <div class="row">
                           <div class="col-sm-12">
-                              <div class="row">
-                                  <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-sm-12" *ngFor="#street of streetnames">
-                                            <div class="row subInfo">
-                                                <div class="col-sm-8 invoiceList"><span>{{street.name}}</span></div>
-                                            </div>
-                                        </div>
+                            <div class="row">
+                                <div class="col-sm-12" *ngFor="#street of streetnames">
+                                    <div class="row subInfo">
+                                        <div class="col-sm-8 invoiceList"><span>{{street.name}}</span></div>
                                     </div>
-                                  </div>
-                              </div>
+                                </div>
+                            </div>
                           </div>
                       </div>
                   </div>
               </div>
+          </div>
         </div>
+    </div>
     <!-- Page content -->
     <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8' || emps.accessrole == '801'">
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
+    </div>
+    <!-- Modal -->
+    <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-danger alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>An error occured</h4>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-success alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>Add Street Success</h4>
+            </div>
+        </div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -233,10 +249,11 @@ getAllBLokfloorByCluster() {
                     headers: headers
                 })
             .subscribe(data => {
-                alert('Add Street Success');
+                $('#success').modal('show');
                 this.getAllStreet();
             }, error => {
-                console.log(JSON.stringify(error.json()));
+                $('#failed').modal('show');
+                //console.log(JSON.stringify(error.json()));
             });
     }
     getAcountEmp() {
