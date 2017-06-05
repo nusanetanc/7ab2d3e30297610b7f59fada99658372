@@ -344,6 +344,7 @@ router.post('/addsubs', function(req, res, next) {
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
     sub.codeactivation = codeactivation;
+    sub.package= req.body.package;
     sub.save(function(err) {
       if (err)
           res.send(err);
@@ -376,6 +377,7 @@ router.put('/putsub/:id', function(req, res, next) {
                 sub.datebirth= req.body.datebirth;
                 sub.activedate= req.body.activedate;
                 sub.promo= req.body.promo;
+                sub.package= req.body.package;
               if (err)
                 res.send(err);
 
