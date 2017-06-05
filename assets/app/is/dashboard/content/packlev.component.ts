@@ -21,7 +21,7 @@ packages: any[] = [];
   constructor(private http: Http) {}
   // Get all Subs from the API
       getPackages() {
-          this.http.get(`${this.API}/package/package/${this.idpackage}`)
+          this.http.get(`${this.API}/package/package/5931180e5333b051cfa8f6c4`)
               .map(res => res.json())
               .subscribe(packages => {
                   this.packages = packages
