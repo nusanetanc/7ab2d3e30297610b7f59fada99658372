@@ -7,13 +7,13 @@ import { Package } from './package';
 @Component({
     selector: 'form-packlev',
     template: `
+    {{idpackage}}
       <span>Level {{packages.level}} - {{packages.type}} - {{packages.price}} - {{packages.detail}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentPackLevComponent implements OnInit {
-//@Input() idpackage: string;
-idpackage = '5931180e5333b051cfa8f6c4';
+@Input() idpackage: string;
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
