@@ -9,6 +9,7 @@ import { Package } from './package';
     template: `
     {{idpackage}}
       <span>Level {{packages.level}} - {{packages.type}} - {{packages.price}} - {{packages.detail}}</span>
+      {{idpackage}}
     `,
     directives: [ROUTER_DIRECTIVES],
 })
