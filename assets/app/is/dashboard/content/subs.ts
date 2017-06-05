@@ -18,7 +18,7 @@ export class Sub {
   public idnumber: Number,
   public packprice: Number,
   public pinaltypay: Number,
-  public package: String,
+
   public billing: String,
   public history: String
   ) {  }
