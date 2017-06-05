@@ -182,12 +182,12 @@ export class ContentAddSubsComponent implements OnInit {
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
     selectedPackage: Package = new Package(0, 'dummy');
-    selectedHome: Home = new home(0, 'dummy');
+    selectedHome: Home = new Home(0, 'dummy');
 
     onSelectPackage(level) {
         console.log(level)
     }
-    onSelectHome(nohome) {
+    onSelectHome(_id) {
         console.log(nohome)
     }
     onSelectCity(_id) {
