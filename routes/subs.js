@@ -219,7 +219,7 @@ router.get('/detailsub', function(req, res, next) {
                 address: homes.address,
                 nohome: homes.nohome,
                 cluster: clusters.name,
-                city: cities.name
+                city: cities.name,
                 idpackage: subs.idpackage
               });
             });
