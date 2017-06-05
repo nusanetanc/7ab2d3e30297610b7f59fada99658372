@@ -7,9 +7,7 @@ import { Package } from './package';
 @Component({
     selector: 'form-packlev',
     template: `
-    {{idpackage}}
       <span>Level {{packages.level}} - {{packages.type}} - {{packages.price}} - {{packages.detail}}</span>
-      {{idpackage}}
     `,
     directives: [ROUTER_DIRECTIVES],
 })
