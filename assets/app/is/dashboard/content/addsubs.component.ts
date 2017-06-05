@@ -118,7 +118,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                                 <option value="0">-- Select Home Number --</option>
-                                                <option *ngFor="#home of homes" value="{{home._id}}">{{ home.nohome }}</option>
+                                                <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
                                             </select><br/>
                                         </div>
                                     </div>
