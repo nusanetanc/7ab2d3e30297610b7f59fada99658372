@@ -18,6 +18,7 @@ export class Sub {
   idnumber: Number,
   packprice: Number,
   pinaltypay: Number,
+  package: String,
   public billing: String,
   public history: String
   ) {  }
