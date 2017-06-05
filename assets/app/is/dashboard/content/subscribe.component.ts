@@ -143,6 +143,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <form-packlev [idpackage]=subs.package></form-packlev>
                                 </div>
                             </div>
+                            {{subs.package}}
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Status</span>
