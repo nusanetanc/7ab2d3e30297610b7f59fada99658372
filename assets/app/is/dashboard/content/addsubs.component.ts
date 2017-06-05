@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                             </select><br/>
                                         </div>
                                         <div class="marginT20 paddingR30">
-                                            <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
+                                            <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                                 <option value="0">-- Select Home Number --</option>
                                                 <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
                                             </select><br/>
@@ -182,9 +182,13 @@ export class ContentAddSubsComponent implements OnInit {
     selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
     selectedPackage: Package = new Package(0, 'dummy');
+    selectedHome: Home = new home(0, 'dummy');
 
     onSelectPackage(level) {
         console.log(level)
+    }
+    onSelectHome(nohome) {
+        console.log(nohome)
     }
     onSelectCity(_id) {
         this.properties = this.getAllPropertyByCity(){
