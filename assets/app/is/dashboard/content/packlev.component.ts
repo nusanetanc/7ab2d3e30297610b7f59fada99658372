@@ -12,7 +12,7 @@ import { Package } from './package';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentPackLevComponent implements OnInit {
-@Input() idpackage: string;
+@Input() packid: string;
 API = 'http://202.162.207.164:3000';
 packages: any[] = [];
   ngOnInit() {
