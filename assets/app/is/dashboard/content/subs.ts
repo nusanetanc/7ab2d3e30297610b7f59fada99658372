@@ -5,6 +5,7 @@ export class Sub {
   public name: String,
   public phone: String,
   public email: String,
+  public package: Number,
   public dateinst: Date,
   public timeinst: String,
   public password: String,
@@ -18,7 +19,6 @@ export class Sub {
   public idnumber: Number,
   public packprice: Number,
   public pinaltypay: Number,
-
   public billing: String,
   public history: String
   ) {  }
