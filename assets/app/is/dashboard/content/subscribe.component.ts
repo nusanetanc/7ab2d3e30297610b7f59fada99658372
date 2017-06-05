@@ -140,7 +140,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <form-packlev [idpackage]=subs.package></form-packlev>
+                                    <form-packlev [idpackage]=subs.idpackage></form-packlev>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">

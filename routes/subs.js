@@ -167,7 +167,8 @@ Sub.findById(req.params.id, function(err, subs) {
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
-              city: cities.name
+              city: cities.name,
+              idpackage: subs.idpackage
             });
           });
         });
@@ -219,6 +220,7 @@ router.get('/detailsub', function(req, res, next) {
                 nohome: homes.nohome,
                 cluster: clusters.name,
                 city: cities.name
+                idpackage: subs.idpackage
               });
             });
           });
@@ -344,7 +346,7 @@ router.post('/addsubs', function(req, res, next) {
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
     sub.codeactivation = codeactivation;
-    sub.package= req.body.package;
+    sub.idpackage= req.body.package;
     sub.save(function(err) {
       if (err)
           res.send(err);

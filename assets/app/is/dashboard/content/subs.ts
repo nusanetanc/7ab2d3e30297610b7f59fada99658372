@@ -5,7 +5,7 @@ export class Sub {
   public name: String,
   public phone: String,
   public email: String,
-  public package: String,
+  public idpackage: String,
   public dateinst: Date,
   public timeinst: String,
   public password: String,
