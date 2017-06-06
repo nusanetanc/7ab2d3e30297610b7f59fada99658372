@@ -151,7 +151,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input #editemail type="text" class="form-control inputForm" id="editemail" placeholder="Example : John Doe">
+                                    <input value={{subs.email}} #editemail type="text" class="form-control inputForm" id="editemail" placeholder="Example : John Doe">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -162,7 +162,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input #editphone type="text" class="form-control inputForm" id="editphone" placeholder="Example : 0123456789">
+                                    <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" placeholder="Example : 0123456789">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -184,7 +184,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input #editid type="text" class="form-control inputForm" id="editid" placeholder="New City">
+                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -195,7 +195,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                    <input value={{subs.datebrith}} #cityname type="date" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="col-sm-12">
