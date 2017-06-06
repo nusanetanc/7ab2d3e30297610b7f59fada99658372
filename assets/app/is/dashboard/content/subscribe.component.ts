@@ -43,7 +43,7 @@ import { ContentPackLevComponent } from './packlev.component';
                             <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
-                            <h4>PERSONAL INFORMATION</h4><h6><a>Edit</a></h6>
+                            <h4>PERSONAL INFORMATION</h4>
                         </div>
                     </div>
 
@@ -114,6 +114,11 @@ import { ContentPackLevComponent } from './packlev.component';
                                 <div class="col-xs-12 col-md-7">
                                     <span>{{ subs.datebrith }}</span>
                                 </div>
+                            </div>
+                            <div class="col-sm-12">
+                              <button type="submit" (click)="editPackages(subpackage.value)" class="btn btn-default buttonOrange">
+                                  UPDATE
+                              </button>
                             </div>
                         </div>
                         <div class="col-sm-6">
