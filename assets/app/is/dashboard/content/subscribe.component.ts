@@ -173,6 +173,27 @@ import { ContentPackLevComponent } from './packlev.component';
                 <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
+                            <h4>UPDATE PACKAGE</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="formNewReport marginLR20">
+                                <form>
+                                  <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
+                                      <option value="0">-- Select Package --</option>
+                                      <option *ngFor="#listpackage of listpackages" [value]=listpackage._id>Level {{listpackage.level}} {{listpackage.type}} - Monthly - {{listpackage.price | currency:'IDR':true}}</option>
+                                  </select><br/>
+                                </form>
+                                <button type="submit" (click)="editPackages(subpackage.value)" class="btn btn-default buttonOrange">
+                                    UPDATE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <h4>EDIT STATUS</h4>
                         </div>
                     </div>
@@ -194,27 +215,6 @@ import { ContentPackLevComponent } from './packlev.component';
                         </div>
                     </div>
                 </div>
-                <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4>UPDATE PACKAGE</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="formNewReport marginLR20">
-                                <form>
-                                  <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
-                                      <option value="0">-- Select Package --</option>
-                                      <option *ngFor="#listpackage of listpackages" [value]=listpackage._id>Level {{listpackage.level}} {{listpackage.type}} - Monthly - {{listpackage.price | currency:'IDR':true}}</option>
-                                  </select><br/>
-                                </form>
-                                <button type="submit" (click)="editPackages(subpackage.value)" class="btn btn-default buttonOrange">
-                                    UPDATE
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
                     <div class="row">
@@ -296,6 +296,7 @@ onSelectEmp2(_id) {
     emps: any[] = [];
     jobs: any[] = [];
     sessionemps: any[] = [];
+    listpackages: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -303,6 +304,7 @@ onSelectEmp2(_id) {
       this.getSubs();
       this.getAllJob();
       this.getAcountEmp();
+      this.getAllPackages();
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
@@ -368,5 +370,12 @@ onSelectEmp2(_id) {
               this.sessionemps = sessionemps
           }
         )
+  }
+  getAllPackages(){
+      this.http.get(`${this.API}/package/listpackage`)
+          .map(res => res.json())
+          .subscribe(listpackages => {
+              this.listpackages = listpackages
+          })
   }
 }
