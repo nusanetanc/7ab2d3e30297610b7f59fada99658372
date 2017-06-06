@@ -47,7 +47,7 @@ import { ContentPackLevComponent } from './packlev.component';
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div *ngIf="clickedItem.name == 'View'" class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
@@ -121,7 +121,7 @@ import { ContentPackLevComponent } from './packlev.component';
                               </button>
                             </div>
                         </div>
-                        <div *ngIf="clickedItem.name == 'regArea' && sessionemps.accessrole == '601'" class="row">
+                        <div *ngIf="clickedItem.name == 'Edit' && sessionemps.accessrole == '601'" class="row">
                             <div class="col-sm-6">
                                 <div class="row marginTB10 marginL5">
                                     <div class="col-xs-6 col-sm-4">
@@ -353,6 +353,8 @@ import { ContentPackLevComponent } from './packlev.component';
     directives: [ContentPackLevComponent, ROUTER_DIRECTIVES],
 })
 export class ContentSubscribeComponent implements OnInit {
+
+public clickedItem = {name: "View"};
 
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
