@@ -116,9 +116,9 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                              <a (click)="onItemClicked(Edit)">
+                              <button (click)="onItemClicked(Edit)" type="submit" class="btn btn-default buttonOrange">
                                   UPDATE
-                              </a>
+                              </button>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -140,7 +140,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.name }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -151,7 +151,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.email }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -162,7 +162,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.phone }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -173,7 +173,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -184,7 +184,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.idnumber }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -195,12 +195,12 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
+                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                 </div>
                             </div>
                             <div class="col-sm-12">
                               <button type="submit" class="btn btn-default buttonOrange">
-                                  UPDATE
+                                  SUBMIT
                               </button>
                             </div>
                         </div>
