@@ -116,6 +116,9 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                             </div>
                         </div>
+                        <button type="submit" (click)="editPackages(subpackage.value)" class="btn btn-default buttonOrange">
+                            UPDATE
+                        </button>
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-xs-6 col-md-3">
