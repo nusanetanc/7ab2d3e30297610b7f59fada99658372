@@ -195,6 +195,9 @@ import { ContentPackLevComponent } from './packlev.component';
                               <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
+                              <button (click)="onItemClicked(Cancel)" type="submit" class="btn btn-default">
+                                  CANCEL
+                              </button>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -362,9 +365,11 @@ onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
 onItemClicked(EditAddress) {
-   this.clickedItem = {name: "EditData"};
+   this.clickedItem = {name: "EditAddress"};
 }
-
+onItemClicked(Cancel){
+  this.clickedItem = {name: "View"};
+}
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
