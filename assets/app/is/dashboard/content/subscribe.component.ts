@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
 import { Sub } from './subs';
 import { Job } from './job';
+import { Employee } from './employee';
 import { ContentPackLevComponent } from './packlev.component';
 
 @Component({
@@ -215,17 +216,17 @@ import { ContentPackLevComponent } from './packlev.component';
                                 <div class="row">
                                     <div class="col-sm-6">
                                       <form>
-                                          <select #empjob2 id="empjob2" class="form-control inputForm">
+                                          <select  [(ngModel)]="selectedEmp2.level" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
                                               <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                              <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
+                                              <option *ngFor="#emp of emps" class="option" [value]={{ emp._id }}>{{ emp.name }}</option>
                                           </select><br/>
                                       </form>
                                     </div>
                                     <div class="col-sm-6">
                                       <form>
-                                        <select #empjob1 id="empjob1" class="form-control inputForm">
+                                        <select  [(ngModel)]="selectedEmp1.level" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
                                             <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
-                                            <option *ngFor="#emp of emps" class="option" value="58f586a8ad9c9c427bb6321c">{{ emp.name }}</option>
+                                            <option *ngFor="#emp of emps" class="option" [value]={{ emp._id }}>{{ emp.name }}</option>
                                         </select><br/><br/>
                                       </form>
                                     </div>
@@ -250,6 +251,16 @@ import { ContentPackLevComponent } from './packlev.component';
     directives: [ContentPackLevComponent, ROUTER_DIRECTIVES],
 })
 export class ContentSubscribeComponent implements OnInit {
+
+selectedEmp1: Employee = new Employee(0, 'dummy');
+selectedEmp2: Employee = new Employee(0, 'dummy');
+
+onSelectEmp1(_id) {
+    console.log(_id)
+}
+onSelectEmp2(_id) {
+    console.log(_id)
+}
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
