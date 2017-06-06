@@ -121,7 +121,7 @@ import { ContentPackLevComponent } from './packlev.component';
                               </button>
                             </div>
                         </div>
-                        <div class="row">
+                        <div *ngIf="clickedItem.name == 'regArea' && sessionemps.accessrole == '601'" class="row">
                             <div class="col-sm-6">
                                 <div class="row marginTB10 marginL5">
                                     <div class="col-xs-6 col-sm-4">
