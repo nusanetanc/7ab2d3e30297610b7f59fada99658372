@@ -165,17 +165,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Address</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
-                                </div>
-                            </div>
+                            
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>National Identy Card No.</span>
