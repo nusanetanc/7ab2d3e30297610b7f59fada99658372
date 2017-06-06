@@ -140,7 +140,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{ subs.name }} #editname type="text" class="form-control inputForm" id="editname" placeholder="Example : John Doe">
+                                    <input value={{subs.name}} #editname type="text" class="form-control inputForm" id="editname" placeholder="Example : John Doe">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
