@@ -162,7 +162,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" placeholder="Example : 0123456789">
+                                    <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -184,7 +184,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="New City">
+                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -195,11 +195,11 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.datebrith}} #cityname type="date" class="form-control inputForm" id="cityname" placeholder="New City">
+                                    <input value={{subs.datebrith}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                              <button type="submit" class="btn btn-default buttonOrange">
+                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
                             </div>
@@ -445,6 +445,23 @@ onSelectEmp2(_id) {
             .subscribe(data => {
                 alert('Edit Package Succses');
                 this.getSubs();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+    editSubs(editname, editemail, editphone, editid, editbrithdate) {
+        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&brithdate=${editbrithdate}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/subscribe/updatesubs/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Edit Data Succses');
+                this.getSubs();
+                this.clickedItem = {name: "View"};
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });

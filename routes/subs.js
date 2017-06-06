@@ -488,6 +488,29 @@ router.put('/updatepackage/:id', function(req, res, next) {
         });
 });
 
+router.put('/updatesubs/:id', function(req, res, next) {
+
+        Sub.findOne({_id: req.params.id}, function(err, sub) {
+
+            if (err)
+                res.send(err);
+                sub.name= req.body.name;
+                sub.email= req.body.email;
+                sub.phone= req.body.phone;
+                sub.idnumber= req.body.idnumber;
+                sub.datebirth= req.body.datebirth;
+              if (err)
+                res.send(err);
+
+            sub.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 router.delete('/delsub/:id', function(req, res, next) {
         Sub.remove({
             _id: req.params.id
