@@ -475,7 +475,7 @@ router.put('/updatepackage/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                sub.package= req.body.package;
+                sub.idpackage= req.body.idpackage;
               if (err)
                 res.send(err);
 
