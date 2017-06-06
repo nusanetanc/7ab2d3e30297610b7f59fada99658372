@@ -339,6 +339,22 @@ onSelectEmp2(_id) {
                 console.log(JSON.stringify(error.json()));
             });
     }
+    editPackages(subpackage) {
+        var body = `idpackage=${subpackage}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/subscribe/updatepackage/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Edit Package Succses');
+                this.getSubs();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
   getSubs() {
     this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
       .map(res => res.json())
