@@ -196,6 +196,28 @@ import { ContentPackLevComponent } from './packlev.component';
                 <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
+                            <h4>UPDATE PACKAGE</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="formNewReport marginLR20">
+                                <form>
+                                  <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpackage id="subpackage" name="package" class="inputForm">
+                                      <option value="0">-- Select Package --</option>
+                                      <option *ngFor="#listpackage of listpackages" [value]=listpackage._id>Level {{listpackage.level}} {{listpackage.type}} - Monthly - {{listpackage.price | currency:'IDR':true}}</option>
+                                  </select><br/>
+                                </form>
+                                <button type="submit" (click)="editPackages(subpackage.value)" class="btn btn-default buttonOrange">
+                                    UPDATE
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <h4>ADD  TECHNICIAN JOB</h4>
                         </div>
                     </div>
@@ -254,7 +276,11 @@ export class ContentSubscribeComponent implements OnInit {
 
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
+selectedPackage: Package = new Package(0, 'dummy');
 
+onSelectPackage(level) {
+    console.log(level)
+}
 onSelectEmp1(_id) {
     console.log(_id)
 }
