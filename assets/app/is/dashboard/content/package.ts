@@ -3,7 +3,7 @@ export class Package {
         public level: String,
         public price: Number,
         public detail: String,
-        public type String,
-        public cluster String,
+        public type: String,
+        public cluster: String
     ) {  }
 }
