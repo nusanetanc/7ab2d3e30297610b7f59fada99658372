@@ -43,7 +43,7 @@ import { ContentPackLevComponent } from './packlev.component';
                             <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
                         </div>
                         <div class="col-sm-12">
-                            <h4>PERSONAL INFORMATION <a>Edit</a></h4>
+                            <h4>PERSONAL INFORMATION</h4><h6><a>Edit</a></h6>
                         </div>
                     </div>
 
