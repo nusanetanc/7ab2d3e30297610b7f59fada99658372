@@ -121,26 +121,6 @@ import { ContentPackLevComponent } from './packlev.component';
                               </button>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row subInfo">
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4 style="color:#FC592E;">#{{ subs.subid }}</h4>
-                            </div>
-                            <div class="col-sm-12">
-                                <h4>PERSONAL INFORMATION</h4>
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="row marginTB10 marginL5">
@@ -215,15 +195,15 @@ import { ContentPackLevComponent } from './packlev.component';
                                   </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-3">
-                                        <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
-                                    </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
