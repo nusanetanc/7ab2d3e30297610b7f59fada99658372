@@ -362,7 +362,7 @@ onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
 onItemClicked(EditAddress) {
-   this.clickedItem = {name: "EditAddress"};
+   this.clickedItem = {name: "EditData"};
 }
 
 selectedEmp1: Employee = new Employee(0, 'dummy');
