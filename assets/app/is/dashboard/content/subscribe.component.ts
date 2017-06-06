@@ -112,7 +112,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.datebrith }}</span>
+                                    <span>{{ subs.datebirth }}</span>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -165,7 +165,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
                                 </div>
                             </div>
-                            
+
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>National Identy Card No.</span>
@@ -185,7 +185,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.datebrith}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
+                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -440,7 +440,7 @@ onSelectEmp2(_id) {
             });
     }
     editSubs(editname, editemail, editphone, editid, editbrithdate) {
-        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&brithdate=${editbrithdate}`;
+        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&datebirth=${editbrithdate}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
