@@ -6,6 +6,7 @@ import {Subscription} from "rxjs/Rx";
 import { Sub } from './subs';
 import { Job } from './job';
 import { Employee } from './employee';
+import {Package} from "./package";
 import { ContentPackLevComponent } from './packlev.component';
 
 @Component({
