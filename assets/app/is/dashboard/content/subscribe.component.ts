@@ -364,6 +364,9 @@ public clickedItem = {name: "View"};
 onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
+onItemClicked(View) {
+   this.clickedItem = {name: "View"};
+}
 onItemClicked(EditAddress) {
    this.clickedItem = {name: "EditAddress"};
 }
