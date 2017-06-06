@@ -8,7 +8,7 @@ declare let kendo;
 @Component({
     selector: 'form-packlev',
     template: `
-      <span>Level {{packages.level}}({{packages.detail}}) - ({{packages.type}} - Rp. {{packages.price | number:'2.2-4'}}) - </span>
+      <span>Level {{packages.level}}({{packages.detail}}) - ({{packages.type}} - Rp. {{packages.price | number:'2.2-4'}})</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
