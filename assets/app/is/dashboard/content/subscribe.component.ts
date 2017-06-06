@@ -141,7 +141,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <form-packlev [packid]=subs.idpackage></form-packlev>
+                                    <form-packlev *ngIf="subs.idpackage" [packid]=subs.idpackage></form-packlev>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -217,7 +217,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <div class="col-sm-6">
                                       <form>
                                           <select  [(ngModel)]="selectedEmp2._id" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
-                                              <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                              <option class="option" value="0" selected="true">-- Select Field Engineer --</option>
                                               <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
                                           </select><br/>
                                       </form>
@@ -225,7 +225,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <div class="col-sm-6">
                                       <form>
                                         <select  [(ngModel)]="selectedEmp1._id" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
-                                            <option class="option" disabled="true" value="0" selected="true">-- Select Field Engineer --</option>
+                                            <option class="option" value="0" selected="true">-- Select Field Engineer --</option>
                                             <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
                                         </select><br/><br/>
                                       </form>
