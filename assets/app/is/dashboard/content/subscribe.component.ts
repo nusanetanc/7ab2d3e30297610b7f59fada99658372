@@ -119,7 +119,9 @@ import { ContentPackLevComponent } from './packlev.component';
                               <button (click)="onItemClicked(EditData)" type="submit" class="btn btn-default buttonOrange">
                                   UPDATE PERSONAL DATA
                               </button>
-
+                              <button (click)="onItemClicked(EditAddress)" type="submit" class="btn btn-default buttonOrange">
+                                  UPDATE ADDRESS
+                              </button>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -193,7 +195,6 @@ import { ContentPackLevComponent } from './packlev.component';
                               <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
-
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -359,9 +360,6 @@ public clickedItem = {name: "View"};
 
 onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
-}
-onItemClicked(View) {
-   this.clickedItem = {name: "View"};
 }
 onItemClicked(EditAddress) {
    this.clickedItem = {name: "EditAddress"};
