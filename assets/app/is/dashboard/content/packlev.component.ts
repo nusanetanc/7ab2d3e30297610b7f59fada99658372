@@ -3,11 +3,12 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Package } from './package';
+declare let kendo;
 
 @Component({
     selector: 'form-packlev',
     template: `
-      <span>Level {{packages.level}} - {{packages.type}} - {{packages.price}} - {{packages.detail}}</span>
+      <span>Level {{packages.level}}({{packages.detail}}) - ({{packages.type}} - Rp. {{packages.price | number:'2.2-4'}}) - </span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
