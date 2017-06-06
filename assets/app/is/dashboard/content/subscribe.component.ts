@@ -84,17 +84,6 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Address</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
                                     <span>National Identy Card No.</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -115,9 +104,23 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>{{ subs.datebirth }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Address</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+                                </div>
+                            </div>
                             <div class="col-sm-12">
-                              <button (click)="onItemClicked(Edit)" type="submit" class="btn btn-default buttonOrange">
-                                  UPDATE
+                              <button (click)="onItemClicked(EditData)" type="submit" class="btn btn-default buttonOrange">
+                                  UPDATE PERSONAL DATA
+                              </button>
+                              <button (click)="onItemClicked(EditAddress)" type="submit" class="btn btn-default buttonOrange">
+                                  UPDATE ADDRESS
                               </button>
                             </div>
                         </div>
@@ -130,7 +133,7 @@ import { ContentPackLevComponent } from './packlev.component';
                         </div>
                     </div>
 
-                    <div *ngIf="clickedItem.name == 'Edit' && sessionemps.accessrole == '601'" class="row">
+                    <div *ngIf="clickedItem.name == 'EditData' && sessionemps.accessrole == '601'" class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
@@ -191,6 +194,9 @@ import { ContentPackLevComponent } from './packlev.component';
                             <div class="col-sm-12">
                               <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
+                              </button>
+                              <button (click)="onItemClicked(View)" type="submit" class="btn btn-default buttonOrange">
+                                  CANCEL
                               </button>
                             </div>
                         </div>
@@ -355,8 +361,11 @@ export class ContentSubscribeComponent implements OnInit {
 
 public clickedItem = {name: "View"};
 
-onItemClicked(Edit) {
-   this.clickedItem = {name: "Edit"};
+onItemClicked(EditData) {
+   this.clickedItem = {name: "EditData"};
+}
+onItemClicked(EditAddress) {
+   this.clickedItem = {name: "EditAddress"};
 }
 
 selectedEmp1: Employee = new Employee(0, 'dummy');
