@@ -360,12 +360,7 @@ public clickedItem = {name: "View"};
 onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
-onItemClicked(EditAddress) {
-   this.clickedItem = {name: "EditAddress"};
-}
-onItemClicked(Cancel){
-  this.clickedItem = {name: "View"};
-}
+
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
