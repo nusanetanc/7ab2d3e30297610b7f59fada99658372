@@ -193,7 +193,9 @@ import { ContentPackLevComponent } from './packlev.component';
                               <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
-
+                              <button (click)="onItemClicked(Cancel)" class="btn btn-default buttonOrange">
+                                  CANCEL
+                              </button>
                             </div>
                         </div>
                         <div class="col-sm-6">
