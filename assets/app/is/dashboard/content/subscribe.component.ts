@@ -363,8 +363,8 @@ onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
 
-onItemClicked(Cancel) {
-   this.clickedItem = {name: "View"};
+onItemClicked(EditData) {
+   this.clickedItem = {name: "EditData"};
 }
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
