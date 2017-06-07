@@ -360,6 +360,9 @@ public clickedItem = {name: "View"};
 onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
 }
+onItemClicked(EditAddress) {
+   this.clickedItem = {name: "EditAddress"};
+}
 
 selectedEmp1: Employee = new Employee(0, 'dummy');
 selectedEmp2: Employee = new Employee(0, 'dummy');
