@@ -116,7 +116,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                              <button (click)="onItemClicked(EditData)" type="submit" class="btn btn-default buttonOrange">
+                              <button (click)="onItemClicked(EditData)" class="btn btn-default buttonOrange">
                                   UPDATE PERSONAL DATA
                               </button>
 
@@ -355,7 +355,7 @@ import { ContentPackLevComponent } from './packlev.component';
 })
 export class ContentSubscribeComponent implements OnInit {
 
-public clickedItem = {name: "EditData"};
+public clickedItem = {name: "View"};
 
 onItemClicked(EditData) {
    this.clickedItem = {name: "EditData"};
