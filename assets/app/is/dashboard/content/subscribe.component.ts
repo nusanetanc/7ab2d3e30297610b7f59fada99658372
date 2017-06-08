@@ -7,6 +7,12 @@ import { Sub } from './subs';
 import { Job } from './job';
 import { Employee } from './employee';
 import {Package} from "./package";
+import { City } from './cities';
+import { Property } from './property';
+import { Type } from './type';
+import { Cluster } from './cluster';
+import { Blokfloor } from './blokfloor';
+import { Home } from './home';
 import { ContentPackLevComponent } from './packlev.component';
 
 @Component({
@@ -530,6 +536,7 @@ onSelectStreet(_id) {
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
+      this.getAllCity();
       this.getSubs();
       this.getAllJob();
       this.getAcountEmp();
