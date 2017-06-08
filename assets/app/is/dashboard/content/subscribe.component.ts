@@ -212,56 +212,52 @@ import { ContentPackLevComponent } from './packlev.component';
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                               <div class="col-xs-12 col-sm-12">
-                                <select  class="inputForm">
+                                <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                                     <option value="0">-- Select City --</option>
                                     <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                 </select>
                               </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Email</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.email}} #editemail type="text" class="form-control inputForm" id="editemail" placeholder="Example : John Doe">
-                                </div>
+                              <div class="col-xs-12 col-sm-12">
+                                <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" class="inputForm" name="cars">
+                                    <option value="0">-- Select Property --</option>
+                                    <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                </select>
+                              </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Handphone</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
-                                </div>
+                              <div class="col-xs-12 col-sm-12">
+                                <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
+                                    <option value="0">-- Select Clusters --</option>
+                                    <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }} - {{ cluster.level }}</option>
+                                </select>
+                              </div>
                             </div>
 
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>National Identy Card No.</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
+                                <div class="col-xs-12 col-sm-12">
+                                  <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" class="inputForm" name="cars">
+                                      <option value="0">-- Select Blok or Floor --</option>
+                                      <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
+                                  </select>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Date of Birth</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
-                                </div>
+                              <div class="col-xs-12 col-sm-12">
+                                <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
+                                    <option value="0">-- Select Street Name --</option>
+                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                              <div class="col-xs-12 col-sm-12">
+                                <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
+                                    <option value="0">-- Select Home Number --</option>
+                                    <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
+                                </select>
+                              </div>
                             </div>
                             <div class="col-sm-12">
                               <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
@@ -432,6 +428,13 @@ import { ContentPackLevComponent } from './packlev.component';
 })
 export class ContentSubscribeComponent implements OnInit {
 
+    selectedCity: City = new City(0, 'dummy');
+    selectedProperty: City = new City(0, 'dummy');
+    selectedCluster: City = new City(0, 'dummy');
+    selectedBlok: City = new City(0, 'dummy');
+    selectedStreet: City = new City(0, 'dummy');
+    selectedHome: Home = new Home(0, 'dummy');
+
 public clickedItem = {name: "View"};
 
 onItemClicked(EditData) {
@@ -456,6 +459,58 @@ onSelectEmp1(_id) {
 onSelectEmp2(_id) {
     console.log(_id)
 }
+onSelectHome(_id) {
+    console.log(nohome)
+}
+onSelectCity(_id) {
+    this.properties = this.getAllPropertyByCity(){
+        this.http.get(`${this.API}/property/propertybycity/${_id}`)
+            .map(res => res.json())
+            .subscribe(properties => {
+                this.properties = properties
+            })
+    }
+}
+
+onSelectProperty(_id) {
+    this.clusters = this.getAllClusterByProperty(){
+        this.http.get(`${this.API}/cluster/clusterbyproperty/${_id}`)
+            .map(res => res.json())
+            .subscribe(clusters => {
+                this.clusters = clusters
+            })
+    }
+}
+
+onSelectCluster(_id) {
+    this.blokfloors = this.getAllBLokfloorByCluster(){
+        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+            .map(res => res.json())
+            .subscribe(blokfloors => {
+                this.blokfloors = blokfloors
+            })
+    }
+}
+
+onSelectBlok(_id) {
+    this.streetnames = this.getAllStreetByBlok(){
+        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
+            })
+    }
+}
+
+onSelectStreet(_id) {
+    this.homes = this.getAllHomeByStreet(){
+        this.http.get(`${this.API}/home/homebystreet/${_id}`)
+            .map(res => res.json())
+            .subscribe(homes => {
+                this.homes = homes
+            })
+    }
+}
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
@@ -465,6 +520,12 @@ onSelectEmp2(_id) {
     jobs: any[] = [];
     sessionemps: any[] = [];
     listpackages: any[] = [];
+    cities: any[] = [];
+    properties: any[] = [];
+    clusters: any[] = [];
+    blokfloors: any[] = [];
+    homes: any[] = [];
+    streetnames: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -556,6 +617,58 @@ onSelectEmp2(_id) {
               this.emps = emps
           })
   }
+  // Get all City from the API
+      getAllCity() {
+          this.http.get(`${this.API}/city/listcity`)
+              .map(res => res.json())
+              .subscribe(cities => {
+                  this.cities = cities
+              })
+      }
+
+      // Get all Property by city from the API
+      getAllPropertyByCity() {
+          this.http.get(`${this.API}/property/propertybycity/${this.city_id}`)
+              .map(res => res.json())
+              .subscribe(properties => {
+                  this.properties = properties
+              })
+      }
+      // Get all Type from the API
+      getAllClusterByProperty() {
+          this.http.get(`${this.API}/cluster/clusterbyproperty/${this.property_id}`)
+              .map(res => res.json())
+              .subscribe(clusters => {
+                  this.clusters = clusters
+              })
+      }
+
+      // Get all Home from the API
+      getAllHomeByStreet() {
+          this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
+              .map(res => res.json())
+              .subscribe(homes => {
+                  this.homes = homes
+              })
+      }
+
+      // Get all Street from the API
+      getAllStreetByBlok() {
+          this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+              .map(res => res.json())
+              .subscribe(streetnames => {
+                  this.streetnames = streetnames
+              })
+      }
+
+      // Get all BLokfloor from the API
+      getAllBLokfloorByCluster() {
+          this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
+              .map(res => res.json())
+              .subscribe(blokfloors => {
+                  this.blokfloors = blokfloors
+              })
+      }
   // Get all users from the API
   getAllJob() {
       this.http.get(`${this.API}/job/listjob`)
