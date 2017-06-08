@@ -5,6 +5,7 @@ import {MomentModule} from 'angular2-moment';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
+import { ContentPackLevComponent } from './packlev.component';
 
 @Component({
     selector: 'form-crateinvoice',
@@ -117,18 +118,7 @@ import { Sub } from './subs';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>Level {{ subs.packlev }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Price Package</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.packprice }}</span>
+                                    <form-packlev *ngIf="subs.idpackage" [packid]=subs.idpackage></form-packlev>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -162,17 +152,6 @@ import { Sub } from './subs';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <span>{{ subs.nova }}</span>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Promo</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.promo }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -399,7 +378,7 @@ import { Sub } from './subs';
         </div>
     </div>
     <!-- END CONTENT   -->`,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentPackLevComponent, ROUTER_DIRECTIVES],
 })
 
 export class ContentCreateInvoiceComponent implements OnInit {
