@@ -211,7 +211,7 @@ import { ContentPackLevComponent } from './packlev.component';
                     <div *ngIf="clickedItem.name == 'EditAdd' && sessionemps.accessrole == '601'" class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
-                              <div class="col-xs-6 col-sm-6">
+                              <div class="col-xs-12 col-sm-12">
                                 <select  class="inputForm">
                                     <option value="0">-- Select City --</option>
                                     <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
