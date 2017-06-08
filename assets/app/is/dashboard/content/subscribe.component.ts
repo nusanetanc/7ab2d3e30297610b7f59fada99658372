@@ -208,83 +208,83 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                         </div>
                     </div>
-                </div>
-                <div *ngIf="clickedItem.name == 'EditAdd' && sessionemps.accessrole == '601'" class="row">
-                    <div class="col-sm-6">
-                        <div class="row marginTB10 marginL5">
-                            <div class="col-xs-6 col-sm-4">
-                                <span>Full Name</span>
+                    <div *ngIf="clickedItem.name == 'EditData' && sessionemps.accessrole == '601'" class="row">
+                        <div class="col-sm-6">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Full Name</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.name}} #editname type="text" class="form-control inputForm" id="editname" placeholder="Example : John Doe">
+                                </div>
                             </div>
-                            <div class="col-xs-6 col-sm-1">
-                                <span>:</span>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Email</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.email}} #editemail type="text" class="form-control inputForm" id="editemail" placeholder="Example : John Doe">
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-md-7">
-                                <input value={{subs.name}} #editname type="text" class="form-control inputForm" id="editname" placeholder="Example : John Doe">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Handphone</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row marginTB10 marginL5">
-                            <div class="col-xs-6 col-sm-4">
-                                <span>Email</span>
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                <span>:</span>
-                            </div>
-                            <div class="col-xs-12 col-md-7">
-                                <input value={{subs.email}} #editemail type="text" class="form-control inputForm" id="editemail" placeholder="Example : John Doe">
-                            </div>
-                        </div>
-                        <div class="row marginTB10 marginL5">
-                            <div class="col-xs-6 col-sm-4">
-                                <span>Handphone</span>
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                <span>:</span>
-                            </div>
-                            <div class="col-xs-12 col-md-7">
-                                <input value={{subs.phone}} #editphone type="text" class="form-control inputForm" id="editphone" idnumber>
-                            </div>
-                        </div>
 
-                        <div class="row marginTB10 marginL5">
-                            <div class="col-xs-6 col-sm-4">
-                                <span>National Identy Card No.</span>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>National Identy Card No.</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
+                                </div>
                             </div>
-                            <div class="col-xs-6 col-sm-1">
-                                <span>:</span>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Date of Birth</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-md-7">
-                                <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
+                            <div class="col-sm-12">
+                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
+                                  SUBMIT
+                              </button>
+                              <button (click)="onItemClicked1(Cancel)" class="btn btn-default buttonOrange">
+                                  CANCEL
+                              </button>
                             </div>
                         </div>
-                        <div class="row marginTB10 marginL5">
-                            <div class="col-xs-6 col-sm-4">
-                                <span>Date of Birth</span>
-                            </div>
-                            <div class="col-xs-6 col-sm-1">
-                                <span>:</span>
-                            </div>
-                            <div class="col-xs-12 col-md-7">
-                                <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                          <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
-                              SUBMIT
-                          </button>
-                          <button (click)="onItemClicked1(Cancel)" class="btn btn-default buttonOrange">
-                              CANCEL
-                          </button>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-3">
-                                <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
