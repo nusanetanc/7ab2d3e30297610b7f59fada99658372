@@ -211,15 +211,10 @@ import { ContentPackLevComponent } from './packlev.component';
                     <div *ngIf="clickedItem.name == 'EditAdd' && sessionemps.accessrole == '601'" class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Full Name</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.name}} #editname type="text" class="form-control inputForm" id="editname" placeholder="Example : John Doe">
-                                </div>
+                                <select  class="inputForm">
+                                    <option value="0">-- Select City --</option>
+                                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                </select>
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
