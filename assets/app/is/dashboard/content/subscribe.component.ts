@@ -266,7 +266,7 @@ import { ContentPackLevComponent } from './packlev.component';
                               </div>
                             </div>
                             <div class="col-sm-12">
-                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
+                              <button (click)="editHome(subgroovyid.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
                               <button (click)="onItemClicked1(Cancel)" class="btn btn-default buttonOrange">
@@ -571,6 +571,23 @@ onSelectStreet(_id) {
             .subscribe(data => {
                 alert('Edit Status Succses');
                 this.getSubs();
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            });
+    }
+    editHome(subgroovyid) {
+        var body = `groovyid=${subgroovyid}`;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        this.http
+            .put(`${this.API}/subscribe/editgroovyid/${this._routeParams.get('id')}`,
+                body, {
+                    headers: headers
+                })
+            .subscribe(data => {
+                alert('Edit Address Succses');
+                this.getSubs();
+                this.clickedItem = {name: "View"};
             }, error => {
                 console.log(JSON.stringify(error.json()));
             });
