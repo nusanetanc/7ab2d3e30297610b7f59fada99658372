@@ -208,7 +208,7 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="clickedItem.name == 'EditData' && sessionemps.accessrole == '601'" class="row">
+                    <div *ngIf="clickedItem.name == 'EditAdd' && sessionemps.accessrole == '601'" class="row">
                         <div class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
