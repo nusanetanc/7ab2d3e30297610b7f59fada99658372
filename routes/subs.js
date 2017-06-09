@@ -243,10 +243,10 @@ router.get('/subsaddress', function(req, res, next) {
     //  blokfloor: homes.blokfloor,
     //  streetname: homes.streetname,
       //homeid: homes._id
-    });
+        });
       });
     }
-
+  });
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
