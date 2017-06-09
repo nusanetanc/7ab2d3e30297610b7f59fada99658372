@@ -18,6 +18,7 @@ var nodemailer = require("nodemailer");
 var Emp = require('../models/employee');
 var Complaint = require('../models/complaint');
 var Chat = require('../models/chatcomplaint');
+var Home = require('../models/home');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
