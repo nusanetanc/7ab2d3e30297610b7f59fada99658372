@@ -245,7 +245,6 @@ router.get('/subsaddress', function(req, res, next) {
       //homeid: homes._id
         });
       });
-    }
   });
 
 /* GET detail bill one account. */
