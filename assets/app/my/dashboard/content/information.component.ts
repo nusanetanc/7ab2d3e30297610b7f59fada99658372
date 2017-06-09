@@ -14,7 +14,7 @@ import { Sub } from './subs';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Information
+                &nbsp; Information {{ subs.city }}
             </h3>
 
         </div>
