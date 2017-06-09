@@ -248,11 +248,11 @@ export class ContentAddSubsComponent implements OnInit {
         }
     }
 
-    $(document).ready(function(){
+    /*$(document).ready(function(){
         $("#submit").click(function(){
             $("#label-success").css({ display: "block" });
         });
-    });
+    });*/
 
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
