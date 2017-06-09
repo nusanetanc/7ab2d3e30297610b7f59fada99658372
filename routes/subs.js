@@ -237,12 +237,12 @@ router.get('/subsaddress', function(req, res, next) {
       subs.groovyid = "591916077a149b7469259903";
     }
     Home.findOne({_id: subs.groovyid}, function(err, homes) {
-      city: homes.city
-    //  property: homes.property,
-    //  cluster: homes.cluster,
-    //  blokfloor: homes.blokfloor,
-    //  streetname: homes.streetname,
-      //homeid: homes._id
+      city: homes.city,
+      property: homes.property,
+      cluster: homes.cluster,
+      blokfloor: homes.blokfloor,
+      streetname: homes.streetname,
+      homeid: homes._id
         });
       });
   });
