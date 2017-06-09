@@ -65,7 +65,7 @@ export class ContentInformationComponent implements OnInit {
 
   ngOnInit() {
     this.getAllInformation();
-    this.getSubsAddress();
+    this.getSubs();
   }
 
 // Get all users from the API
@@ -76,8 +76,8 @@ getAllInformation() {
       this.informations = informations
     })
 }
-getSubsAddress() {
-  this.http.get(`${this.API}/subscribe/subsaddress`)
+getSubs() {
+  this.http.get(`${this.API}/subscribe/detailsub`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
