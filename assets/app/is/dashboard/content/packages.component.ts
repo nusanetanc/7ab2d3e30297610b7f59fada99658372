@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Cluster } from './cluster';
+import { ContentClusterNameComponent } from './clustername.component';
 
 @Component({
     selector: 'form-cpackages',
@@ -76,7 +77,7 @@ import { Cluster } from './cluster';
                                                 <div class="col-sm-4 invoiceList"><span>Level {{package.level}} - {{package.type}}</span></div>
                                                 <div class="col-sm-2 invoiceList"><span>{{package.price}}</span></div>
                                                 <div class="col-sm-3 invoiceList"><span>{{package.detail}}</span></div>
-                                                <div class="col-sm-3 invoiceList"><span>{{package.cluster}}</span></div>
+                                                <form-cluster [idcluster]=package.cluster></form-cluster>
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +111,7 @@ import { Cluster } from './cluster';
     </div>
     <!-- END CONTENT -->
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentClusterNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentPackagesComponent implements OnInit {
 
