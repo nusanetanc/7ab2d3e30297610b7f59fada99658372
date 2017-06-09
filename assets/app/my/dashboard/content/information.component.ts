@@ -35,12 +35,12 @@ import { Sub } from './subs';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#information of informations" *ngIf="subs.city == information.to || subs.property == information.to || subs.cluster == information.to || subs.blokfloor == information.to || subs.streetname == information.to || subs.homeid == information.to">
+                <div class="col-sm-12" *ngFor="#information of informations">
                 <a [routerLink]="['Detailinformation', {id: information._id}]">
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information.date) | date }}</span></div>
                       <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.subject }}</span></div>
-                      <div class="col-sm- invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.status }}</span></div>
+                      <div class="col-sm- invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information.status }}/{{ information.to }}</span></div>
                   </div>
                 </a>
                 </div>
