@@ -242,7 +242,7 @@ router.get('/subsaddress', function(req, res, next) {
       //property: homes.property,
       //cluster: homes.cluster,
       //blokfloor: homes.blokfloor,
-      streetname: homes.streetname,
+      //streetname: homes.streetname,
       homeid: homes._id
         });
       });
