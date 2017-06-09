@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-allinformations',
@@ -34,7 +35,7 @@ import { Information } from './informations';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#information of informations">
+                <div class="col-sm-12" *ngFor="#information of informations" *ngIf="subs.city == information.to || subs.property == information.to || subs.cluster == information.to || subs.blokfloor == information.to || subs.streetname == information.to || || subs.homeid == information.to">
                 <a [routerLink]="['Detailinformation', {id: information._id}]">
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information.date) | date }}</span></div>
@@ -58,11 +59,13 @@ export class ContentInformationComponent {
     }
 
   informations: any[] = [];
+  subs: any[] = [];
 
   constructor(private http: Http) {}
 
   ngOnInit() {
     this.getAllInformation();
+    this.getSubsAddress();
   }
 
 // Get all users from the API
@@ -71,6 +74,13 @@ getAllInformation() {
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations
+    })
+}
+getSubsAddress() {
+  this.http.get(`${this.API}/subscribe/subsaddress`)
+    .map(res => res.json())
+    .subscribe(subs => {
+      this.subs = subs
     })
 }
 }

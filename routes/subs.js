@@ -229,6 +229,24 @@ router.get('/detailsub', function(req, res, next) {
       }
 });
 
+/* GET address sub. */
+router.get('/subsaddress', function(req, res, next) {
+  Sub.findOne({_id: sessionSubId}, function(err, subs) {
+    if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+      subs.groovyid = "591916077a149b7469259903";
+    }
+    Home.findOne({_id: subs.groovyid}, function(err, homes) {
+      city: homes.city,
+      property: homes.property,
+      cluster: homes.cluster,
+      blokfloor: homes.blokfloor,
+      streetname: homes.streetname,
+      homeid: homes._id
+    });o
+      });
+    }
+
+
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
 var sessionSubId = "58b3cdac45912d052e2c85a5";
