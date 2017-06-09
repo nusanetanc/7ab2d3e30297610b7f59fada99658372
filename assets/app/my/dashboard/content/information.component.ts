@@ -14,7 +14,7 @@ import { Sub } from './subs';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Information {{ subs.city }}
+                &nbsp; Information {{ subs.idcity }}
             </h3>
 
         </div>
@@ -35,7 +35,7 @@ import { Sub } from './subs';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#information of informations" *ngIf="subs.city == information?.to">
+                <div class="col-sm-12" *ngFor="#information of informations" *ngIf="subs.idcity == information?.to">
                 <a [routerLink]="['Detailinformation', {id: information?._id}]">
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
