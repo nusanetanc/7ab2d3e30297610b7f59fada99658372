@@ -220,7 +220,6 @@ router.get('/detailsub', function(req, res, next) {
                 address: homes.address,
                 nohome: homes.nohome,
                 idcity: homes.city,
-                idproperty: homes.property,
                 idcluster: homes.cluster,
                 idblokfloor: homes.blokfloor,
                 idstreetname: homes.streetname,
@@ -235,24 +234,6 @@ router.get('/detailsub', function(req, res, next) {
   });
       }
 });
-
-/* GET address sub. */
-router.get('/subsaddress', function(req, res, next) {
-  var sessionSubId = req.session.subs;
-  Sub.findOne({_id: sessionSubId}, function(err, subs) {
-    if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-      subs.groovyid = "591916077a149b7469259903";
-    }
-    Home.findOne({_id: subs.groovyid}, function(err, homes) {
-      city: homes.city,
-      property: homes.property
-      //cluster: homes.cluster,
-      //blokfloor: homes.blokfloor,
-      //streetname: homes.streetname,
-      //homeid: homes._id
-        });
-      });
-  });
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
