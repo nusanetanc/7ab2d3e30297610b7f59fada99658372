@@ -220,7 +220,6 @@ router.get('/detailsub', function(req, res, next) {
                 address: homes.address,
                 nohome: homes.nohome,
                 idcity: homes.city,
-                idproperty: homes.property,
                 idcluster: homes.cluster,
                 idblokfloor: homes.blokfloor,
                 idstreetname: homes.streetname,
