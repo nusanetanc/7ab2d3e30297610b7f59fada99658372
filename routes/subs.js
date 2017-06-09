@@ -219,6 +219,12 @@ router.get('/detailsub', function(req, res, next) {
                 groovyid: homes.groovyid,
                 address: homes.address,
                 nohome: homes.nohome,
+                idcity: homes.city,
+                idproperty: homes.property,
+                idcluster: homes.cluster,
+                idblokfloor: homes.blokfloor,
+                idstreetname: homes.streetname,
+                idhomeid: homes._id,
                 cluster: clusters.name,
                 city: cities.name,
                 idpackage: subs.idpackage
