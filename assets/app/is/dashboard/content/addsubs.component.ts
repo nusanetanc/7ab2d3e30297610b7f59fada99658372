@@ -292,9 +292,7 @@ export class ContentAddSubsComponent implements OnInit {
                     headers: headers
                 })
             .subscribe(data => {
-                $("#submit").click(function(){
-                    $("#label-success").css({ display: "block" });
-                });
+                alert('Add New Subscribe Success');
                 this.getAllSub();
             }, error => {
                 $('#failed').modal('show');
