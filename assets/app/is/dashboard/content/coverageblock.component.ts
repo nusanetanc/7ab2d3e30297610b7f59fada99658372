@@ -105,14 +105,6 @@ import { Blokfloor } from './blokfloor';
             </div>
         </div>
     </div>
-    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="alert alert-success alert-dismissible fade in" role=alert>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4>Add Block Success</h4>
-            </div>
-        </div>
-    </div>
     <!-- Page content -->
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -230,7 +222,7 @@ getAllBLokfloorByCluster() {
                     headers: headers
                 })
             .subscribe(data => {
-                $('#success').modal('show');
+                alert('Add Block Success');
                 this.getAllBlock();
             }, error => {
                 $('#failed').modal('show');
