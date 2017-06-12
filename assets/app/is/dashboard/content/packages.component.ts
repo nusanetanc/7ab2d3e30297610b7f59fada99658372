@@ -101,14 +101,6 @@ import { ContentClusterNameComponent } from './clustername.component';
             </div>
         </div>
     </div>
-    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="alert alert-success alert-dismissible fade in" role=alert>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4>Add Packages Success</h4>
-            </div>
-        </div>
-    </div>
     <!-- END CONTENT -->
     `,
     directives: [ContentClusterNameComponent, ROUTER_DIRECTIVES],
@@ -153,6 +145,7 @@ getAllCluster() {
                     headers: headers
                 })
             .subscribe(data => {
+                alert('Add Packages Success');
                 this.getAllPackages();
             }, error => {
                 $('#failed').modal('show');
