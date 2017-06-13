@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
 import { ContentPackLevComponent } from './packlev.component';
+import { ContentInputPackComponent } from './inputpack.component';
 
 @Component({
     selector: 'form-crateinvoice',
@@ -200,28 +201,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Package Level</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packlev" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Package Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
-                                </div>
-                            </div>
+                            <input-pack *ngIf="subs.idpackage" [packid]=subs.idpackage></input-pack>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Prorate Price</span>
@@ -278,29 +258,6 @@ import { ContentPackLevComponent } from './packlev.component';
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
                                     <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
-                                </div>
-                            </div>
-                            <!-- <input #key_val (keyup)=0 type="number"> -->
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Name</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                  <input [(ngModel)]="subs.promo" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -378,7 +335,7 @@ import { ContentPackLevComponent } from './packlev.component';
         </div>
     </div>
     <!-- END CONTENT   -->`,
-    directives: [ContentPackLevComponent, ROUTER_DIRECTIVES],
+    directives: [ContentPackLevComponent, ContentInputPackComponent, ROUTER_DIRECTIVES],
 })
 
 export class ContentCreateInvoiceComponent implements OnInit {
