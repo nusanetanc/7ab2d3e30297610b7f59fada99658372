@@ -212,7 +212,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 <div class="col-xs-12 col-md-7">
                                     <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #namepackage id="namepackage" name="package" class="inputForm">
                                         <option value="0">-- Select Package --</option>
-                                        <option *ngFor="#package of packages" [value]=package.level>Level {{package.level}} Promo</option>
+                                        <option *ngFor="#package of packages" [value]=package.level>Level {{package.level}} - {{package.type}}</option>
                                     </select>
                                 </div>
                             </div>
