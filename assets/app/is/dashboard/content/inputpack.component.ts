@@ -39,6 +39,9 @@ import { Package } from './package';
         <div *ngIf="packages.type == 'Default'" class="col-xs-12 col-md-7">
           <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
         </div>
+        <div *ngIf="packages.type == 'Promo'" class="col-xs-12 col-md-7">
+          <input [(ngModel)]="promo" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
+        </div>
     </div>
     `,
     directives: [ROUTER_DIRECTIVES],
