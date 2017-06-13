@@ -40,7 +40,7 @@ import { Sub } from './subs';
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
                       <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
-                      <div class="col-sm- invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.to }} / {{ subs.city }}</span></div>
+                      <div class="col-sm- invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.to }} / {{ subs.idcity }}</span></div>
                   </div>
                 </a>
                 </div>
