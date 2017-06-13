@@ -149,7 +149,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
     { path: '/is/allsubs', component:ContentAllSubsComponent, name:'AllSubs'},
     { path: '/is/addproperty', component:ContentCoveragePropertyComponent, name:'AddProperty'},
     { path: '/is/addemp', component:ContentAddEmpComponent, name:'AddEmp'},
-    { path: '/is/createinvoice/:id', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
+    { path: '/is/createinvoice/:id/:package', component:ContentCreateInvoiceComponent, name:'Createinvoice'},
     { path: '/is/detailbilling/:id', component:ContentDetailBillingComponent, name:'Detailbilling'},
     { path: '/is/addsubs', component:ContentAddSubsComponent, name:'AddSubs'},
     { path: '/is', component:ContentDashboardComponent, name:'Dashboard'},

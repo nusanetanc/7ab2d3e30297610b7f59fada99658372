@@ -25,7 +25,7 @@ import { Sub } from './subs';
                         BACK
                     </a>
                     <div class="right">
-                      <a [routerLink]="['Createinvoice', {id: subs._id}]" class="btn btn-default buttonOrange" type="button">
+                      <a [routerLink]="['Createinvoice', {id: subs._id, package: subs.idpackage}]" class="btn btn-default buttonOrange" type="button">
                           CREATE INVOICE
                       </a>
                     </div>
