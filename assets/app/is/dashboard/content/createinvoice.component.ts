@@ -201,7 +201,31 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
                                 </div>
                             </div>
-                            <input-pack *ngIf="subs.idpackage" [packid]=subs.idpackage></input-pack>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Package Level</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #namepackage id="namepackage" name="package" class="inputForm">
+                                        <option value="0">-- Select Package --</option>
+                                        <option *ngFor="#package of packages" [value]=promopackage.level>Level {{promopackage.level}} Promo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Package Price</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                </div>
+                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Prorate Price</span>
@@ -232,8 +256,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev == '4' || subs.packlev == '5' || subs.packlev == '6'" value="45000" type="number" class="form-control inputForm" #stbprice1 id="stbprice1" placeholder="STB Rent" disabled/>
-                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice2 id="stbprice2" placeholder="STB Rent" disabled/>
+                                    <input value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -311,7 +334,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(namepackage.value, invoicedate.value, duedate.value, routerprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, subtotal.value, promoname.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -339,7 +362,12 @@ import { ContentInputPackComponent } from './inputpack.component';
 })
 
 export class ContentCreateInvoiceComponent implements OnInit {
+selectedPackage: Package = new Package(0, 'dummy');
 today : Date = new Date();
+
+onSelectPackage(level) {
+    console.log(level)
+}
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -348,6 +376,7 @@ today : Date = new Date();
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
+    this.getAllPackages();
   }
 
 // Declare empty list of people
@@ -359,6 +388,7 @@ totalharga: number;
 tax: number;
 totalbayar: number;
 total:number;
+packages:  any[] = [];
 
       constructor(private http: Http, private _routeParams: RouteParams) {
       }
@@ -369,8 +399,9 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(namepackage, invoicedate, duedate, routerprice, subtotal, taxprice, totalprice) {
-  var body = `namepack=${namepackage}&pricerouter=${routerprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, taxprice, totalprice) {
+  var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
+  promoname=${promoname}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
   billdate=${invoicedate}&duedate=${duedate}&status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -397,7 +428,13 @@ total:number;
         this.bills = bills
       })
   }
-
+  getAllPackages(){
+      this.http.get(`${this.API}/package/listpackage`)
+          .map(res => res.json())
+          .subscribe(packages => {
+              this.packages = packages
+          })
+  }
   getSubs() {
   this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
     .map(res => res.json())
