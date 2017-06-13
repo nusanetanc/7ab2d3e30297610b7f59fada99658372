@@ -311,7 +311,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, subtotal.value, promoname.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -369,9 +369,9 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, taxprice, totalprice) {
   var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
-  promoname=${promoname}&pricepromo=${promoprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
+  promoname=${promoname}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
   billdate=${invoicedate}&duedate=${duedate}&status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
