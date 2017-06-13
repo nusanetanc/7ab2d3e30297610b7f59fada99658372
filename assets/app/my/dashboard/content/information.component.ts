@@ -36,7 +36,7 @@ import { Sub } from './subs';
             </div>
             <div class="row">
                 <div class="col-sm-12" *ngFor="#information of informations">
-                <a [routerLink]="['Detailinformation', {id: information?._id}]">
+                <a [routerLink]="['Detailinformation', {id: information?._id}]" *ngIf="information?.to == subs.idcity">
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
                       <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
