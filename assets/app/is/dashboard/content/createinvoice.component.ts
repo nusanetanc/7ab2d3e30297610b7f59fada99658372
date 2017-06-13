@@ -5,7 +5,6 @@ import {MomentModule} from 'angular2-moment';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
-import {Package} from "./package";
 import { ContentPackLevComponent } from './packlev.component';
 import { ContentInputPackComponent } from './inputpack.component';
 
@@ -210,12 +209,9 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #namepackage id="namepackage" name="package" class="inputForm">
-                                        <option value="0">-- Select Package --</option>
-                                        <option *ngFor="#package of packages" [value]=package.level>Level {{package.level}}({{package.detail}}) - {{package.type}}</option>
-                                    </select>
+                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
                                 </div>
-                            </div>{{detailpackages.type}}
+                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Package Price</span>
@@ -224,7 +220,21 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Promo Name</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div *ngIf="packages.type == 'Default'" class="col-xs-12 col-md-7">
+                                  <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
+                                </div>
+                                <div *ngIf="packages.type == 'Promo'" class="col-xs-12 col-md-7">
+                                  <input [(ngModel)]="promo" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -363,9 +373,7 @@ import { ContentInputPackComponent } from './inputpack.component';
 })
 
 export class ContentCreateInvoiceComponent implements OnInit {
-selectedPackage: Package = new Package(0, 'dummy');
 today : Date = new Date();
-
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
@@ -374,7 +382,6 @@ today : Date = new Date();
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
-    this.getAllPackages();
   }
 
 // Declare empty list of people
@@ -386,8 +393,6 @@ totalharga: number;
 tax: number;
 totalbayar: number;
 total:number;
-packages:  any[] = [];
-detailpackages:  any[] = [];
 
       constructor(private http: Http, private _routeParams: RouteParams) {
       }
@@ -396,15 +401,6 @@ detailpackages:  any[] = [];
       {name:"Potongan 100 Ribu", harga:100000}
    ];
 
-   onSelectPackage(_id) {
-       this.detailpackages = this.getDetailPackages(){
-           this.http.get(`${this.API}/package/package/${_id}`)
-               .map(res => res.json())
-               .subscribe(detailpackages => {
-                   this.detailpackages = detailpackages
-               })
-       }
-   }
 
 // Add one person to the API
   createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, taxprice, totalprice) {
@@ -436,19 +432,26 @@ detailpackages:  any[] = [];
         this.bills = bills
       })
   }
-  getAllPackages(){
-      this.http.get(`${this.API}/package/listpackage`)
-          .map(res => res.json())
-          .subscribe(packages => {
-              this.packages = packages
-          })
-  }
+
   getSubs() {
   this.http.get(`${this.API}/subscribe/subs/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-
+      if(subs['packlev'] == '1' || subs['packlev'] == '2' || subs['packlev'] == '3'){
+          this.total = subs['packprice'];
+          this.totalharga = this.total + 40000;
+      }
+      if(subs['packlev'] == '4' || subs['packlev'] == '5' || subs['packlev'] == '6'){
+          this.total = subs['packprice'];
+          this.totalharga = this.total + 40000 + 45000;
+      }
+      if(subs['status'] =! 'registrasi'){
+        this.totalharga = this.totalharga + 75000;
+      }
+      this.totalharga = this.totalharga + subs['pinaltypay'];
+      this.tax = this.totalharga * 0.1;
+      this.totalbayar = this.totalharga + this.tax;
     })
     }
 
