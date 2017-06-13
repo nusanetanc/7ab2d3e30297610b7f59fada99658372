@@ -5,6 +5,7 @@ import {MomentModule} from 'angular2-moment';
 import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
+import {Package} from "./package";
 import { ContentPackLevComponent } from './packlev.component';
 import { ContentInputPackComponent } from './inputpack.component';
 
