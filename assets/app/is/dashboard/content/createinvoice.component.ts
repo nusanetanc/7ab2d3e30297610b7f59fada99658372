@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Billing } from './billing';
 import { Sub } from './subs';
 import { ContentPackLevComponent } from './packlev.component';
+import { ContentInputPackComponent } from './inputpack.component';
 
 @Component({
     selector: 'form-crateinvoice',
@@ -200,28 +201,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
                                 </div>
                             </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Package Level</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packlev" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Package Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
-                                </div>
-                            </div>
+                            <input-pack *ngIf="subs.idpackage" [packid]=subs.idpackage></input-pack>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Prorate Price</span>
@@ -280,29 +260,6 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
                                 </div>
                             </div>
-                            <!-- <input #key_val (keyup)=0 type="number"> -->
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Name</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                  <input [(ngModel)]="subs.promo" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
-                                </div>
-                            </div>
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Price</span>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <span>:</span>
-                                </div>
-                                <div class="col-xs-12 col-md-7">
-                                    <input type="number" class="form-control inputForm" #promoprice id="promoprice" placeholder="Promo Price" disabled/>
-                                </div>
-                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Pinalty Price</span>
@@ -354,7 +311,7 @@ import { ContentPackLevComponent } from './packlev.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, subtotal.value, promoname.value, promoprice.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, routerprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -370,7 +327,7 @@ import { ContentPackLevComponent } from './packlev.component';
         </div>
     </div>
     <!-- END CONTENT   -->`,
-    directives: [ContentPackLevComponent, ROUTER_DIRECTIVES],
+    directives: [ContentPackLevComponent, ContentInputPackComponent, ROUTER_DIRECTIVES],
 })
 
 export class ContentCreateInvoiceComponent implements OnInit {
@@ -404,9 +361,9 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, promoprice, taxprice, totalprice) {
+  createInvoice(invoicedate, duedate, routerprice, subtotal, taxprice, totalprice) {
   var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
-  promoname=${promoname}&pricepromo=${promoprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
+  promoname=${promoname}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
   billdate=${invoicedate}&duedate=${duedate}&status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');

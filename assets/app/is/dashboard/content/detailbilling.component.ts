@@ -113,33 +113,33 @@ declare let kendo;
                                                 </div>
                                                 <div class="row rowBillinfoDate">
                                                     <div class="col-sm-12 hid">
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.duedate != null" class="col-sm-3">
                                                             <span>Billing Due Date</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.billdate != null" class="col-sm-3">
                                                             <span>Billing Date</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.paydate != null" class="col-sm-3">
                                                             <span>Pay Date</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.noinvoice != null" class="col-sm-3">
                                                             <span>Billing Number</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 billInfoDateList">
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.duedate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>{{ bills.duedate }}</span>
+                                                            <span>{{stringAsDate(bills.duedate) | date}}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.billdate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>{{ bills.billdate }}</span>
+                                                            <span>{{ stringAsDate(bills.billdate) | date }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.paydate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ bills.paydate }}</span>
+                                                            <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.noinvoice != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
                                                             <span>{{ bills.noinvoice }}</span>
                                                         </div>
@@ -719,6 +719,10 @@ export class ContentDetailBillingComponent implements OnInit {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
     bills: any[] = [];
     emps: any[] = [];
