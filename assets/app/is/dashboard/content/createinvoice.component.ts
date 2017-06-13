@@ -215,7 +215,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                         <option *ngFor="#package of packages" [value]=package.level>Level {{package.level}} - {{package.type}}</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div>{{detailpackages.type}}
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Package Price</span>
@@ -390,6 +390,7 @@ tax: number;
 totalbayar: number;
 total:number;
 packages:  any[] = [];
+detailpackages:  any[] = [];
 
       constructor(private http: Http, private _routeParams: RouteParams) {
       }
@@ -398,6 +399,15 @@ packages:  any[] = [];
       {name:"Potongan 100 Ribu", harga:100000}
    ];
 
+   onSelectPackage(_id) {
+       this.detailpackages = this.getDetailPackages(){
+           this.http.get(`${this.API}/package/package/${_id}`)
+               .map(res => res.json())
+               .subscribe(detailpackages => {
+                   this.detailpackages = detailpackages
+               })
+       }
+   }
 
 // Add one person to the API
   createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, subtotal, promoname, taxprice, totalprice) {
