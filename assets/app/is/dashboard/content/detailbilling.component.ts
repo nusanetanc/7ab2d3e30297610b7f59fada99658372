@@ -127,19 +127,19 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 billInfoDateList">
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.duedate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
                                                             <span>{{ bills.duedate }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.billdate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
                                                             <span>{{ bills.billdate }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.paydate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
                                                             <span>{{ bills.paydate }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.noinvoice != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
                                                             <span>{{ bills.noinvoice }}</span>
                                                         </div>
