@@ -137,7 +137,7 @@ declare let kendo;
                                                         </div>
                                                         <div *ngIf="bills.paydate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ bills.paydate }}</span>
+                                                            <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
                                                         <div *ngIf="bills.noinvoice != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
