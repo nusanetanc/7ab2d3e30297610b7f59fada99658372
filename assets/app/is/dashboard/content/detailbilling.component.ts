@@ -129,7 +129,7 @@ declare let kendo;
                                                     <div class="col-sm-12 billInfoDateList">
                                                         <div *ngIf="bills.duedate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>{{ bills.duedate }}</span>
+                                                            <span>{{stringAsDate(bills.duedate) | date}}</span>
                                                         </div>
                                                         <div *ngIf="bills.billdate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
@@ -719,6 +719,10 @@ export class ContentDetailBillingComponent implements OnInit {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
     bills: any[] = [];
     emps: any[] = [];
