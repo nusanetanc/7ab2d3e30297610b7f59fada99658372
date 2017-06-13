@@ -322,7 +322,15 @@ import { ContentInputPackComponent } from './inputpack.component';
         <div class="modal-dialog modal-lg" role="document">
             <div class="alert alert-danger alert-dismissible fade in" role=alert>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4>An error occured</h4>
+                <h4>'An error occured'</h4>
+            </div>
+        </div>
+    </div>
+    <div id="success" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="alert alert-success alert-dismissible fade in" role=alert>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>'Create New Invoice Success'</h4>
             </div>
         </div>
     </div>
@@ -362,8 +370,7 @@ total:number;
 
 // Add one person to the API
   createInvoice(invoicedate, duedate, routerprice, subtotal, taxprice, totalprice) {
-  var body = `namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
-  promoname=${promoname}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
+  var body = `pricerouter=${routerprice}&changetax=${taxprice}&totalprice=${subtotal}&totalpay=${totalprice}&
   billdate=${invoicedate}&duedate=${duedate}&status='Waiting For Payment'&sub=${this._routeParams.get('id')}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -373,8 +380,9 @@ total:number;
             headers: headers
           })
           .subscribe(data => {
-            alert('Create New Invoice Success');
+            //$('#success').modal('show');
             this.getAllBill();
+
           }, error => {
             $('#failed').modal('show');
             //console.log(JSON.stringify(error.json()));
