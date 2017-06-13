@@ -366,9 +366,6 @@ export class ContentCreateInvoiceComponent implements OnInit {
 selectedPackage: Package = new Package(0, 'dummy');
 today : Date = new Date();
 
-onSelectPackage(level) {
-    console.log(level)
-}
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
