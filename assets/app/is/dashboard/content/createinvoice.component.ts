@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input  type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
+                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,18 +220,18 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input  type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Promo Name</span>
+                                    <span>Promo</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
-                                  <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
+                                  <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -379,12 +379,14 @@ today : Date = new Date();
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
+    this.getPackages();
   }
 
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
 prices: any[] = [];
+packages: any[] = [];
 routerrent: number;
 totalharga: number;
 tax: number;
@@ -437,5 +439,11 @@ total:number;
       this.subs = subs
     })
     }
-
+    getPackages() {
+    this.http.get(`${this.API}/package/package/${this._routeParams.get('package')}`)
+      .map(res => res.json())
+      .subscribe(packages => {
+        this.packages = packages
+      })
+      }
 }
