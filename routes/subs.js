@@ -170,8 +170,8 @@ Sub.findById(req.params.id, function(err, subs) {
               cluster: clusters.name,
               city: cities.name,
               idpackage: subs.idpackage,
-              packlev: packages.level
-              packprice: packages.price
+              packlev: packages.level,
+              packprice: packages.price,
               packtype: packages.type
             });
           });
