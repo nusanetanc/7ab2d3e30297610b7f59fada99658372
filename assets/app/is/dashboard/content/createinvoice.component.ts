@@ -438,20 +438,6 @@ total:number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      if(subs['packlev'] == '1' || subs['packlev'] == '2' || subs['packlev'] == '3'){
-          this.total = subs['packprice'];
-          this.totalharga = this.total + 40000;
-      }
-      if(subs['packlev'] == '4' || subs['packlev'] == '5' || subs['packlev'] == '6'){
-          this.total = subs['packprice'];
-          this.totalharga = this.total + 40000 + 45000;
-      }
-      if(subs['status'] =! 'registrasi'){
-        this.totalharga = this.totalharga + 75000;
-      }
-      this.totalharga = this.totalharga + subs['pinaltypay'];
-      this.tax = this.totalharga * 0.1;
-      this.totalbayar = this.totalharga + this.tax;
     })
     }
 
