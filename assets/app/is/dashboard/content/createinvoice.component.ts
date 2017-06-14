@@ -187,7 +187,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today | date: 'dd'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" disabled/>
+                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today | date: 'dd'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" disabled/>
+                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -231,7 +231,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
-                                  <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no" disabled/>
+                                  <input *ngIf="packages.type == 'Promo'" value="yes" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <input *ngIf="packages.type == 'Default'" value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -253,7 +254,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" disabled/>
+                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -264,7 +265,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" disabled/>
+                                    <input value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -275,8 +276,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice1 id="instalationprice1" placeholder="Instalation Price" disabled/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice2 id="instalationprice2" placeholder="Instalation Price" disabled/>
+                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice1 id="instalationprice1" placeholder="Instalation Price" />
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice2 id="instalationprice2" placeholder="Instalation Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -288,7 +289,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" disabled/>
+                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -299,7 +300,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="subs.pinaltypay" type="number" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" disabled/>
+                                    <input [(ngModel)]="subs.pinaltypay" type="number" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -310,7 +311,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" disabled/>
+                                    <input [(ngModel)]= "totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -321,7 +322,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" disabled/>
+                                    <input [(ngModel)]="tax"  type="number" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,7 +333,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" disabled/>
+                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
                                 </div>
                             </div>
                         </div>
