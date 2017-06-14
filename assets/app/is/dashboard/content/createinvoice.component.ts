@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
+                                    <input  type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Name" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
+                                    <input  type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" disabled/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
