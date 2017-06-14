@@ -19,6 +19,7 @@ var Emp = require('../models/employee');
 var Complaint = require('../models/complaint');
 var Chat = require('../models/chatcomplaint');
 var Home = require('../models/home');
+var Package = require('../models/package');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -145,13 +146,12 @@ Sub.findById(req.params.id, function(err, subs) {
         homes.city = "58d3492416d72b7e166dd977";
       }
      City.findById(homes.city, function(err, cities) {
+       Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
               email: subs.email,
               name: subs.name,
               nova: subs.nova,
-              packlev: subs.packlev,
-              packprice: subs.packprice,
               phone: subs.phone,
               status: subs.status,
               datebirth: subs.datebirth,
@@ -169,12 +169,16 @@ Sub.findById(req.params.id, function(err, subs) {
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
               city: cities.name,
-              idpackage: subs.idpackage
+              idpackage: subs.idpackage,
+              packlev: packages.level
+              packprice: packages.price
+              packtype: packages.type
             });
           });
         });
       });
     });
+  });
 });
 
 /* GET detail sub. */

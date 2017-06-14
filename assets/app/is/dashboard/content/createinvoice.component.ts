@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.level" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
+                                    <input [(ngModel)]="subs.packlev" type="number" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="packages.price" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
+                                    <input [(ngModel)]="subs.packprice" type="number" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -231,8 +231,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
-                                  <input *ngIf="packages.type == 'Promo'" value="yes" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
-                                  <input *ngIf="packages.type == 'Default'" value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <input *ngIf="subs.packtype == 'Promo'" value="yes" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <input *ngIf="subs.packtype == 'Default'" value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
