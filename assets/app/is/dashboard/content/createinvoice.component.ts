@@ -229,14 +229,11 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
-                                </div> <!--
-                                <div *ngIf="packages.type == 'Default'" class="col-xs-12 col-md-7">
+                                </div>
+                                <div  class="col-xs-12 col-md-7">
                                   <input [(ngModel)]="default" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
                                 </div>
-                                <div *ngIf="packages.type == 'Promo'" class="col-xs-12 col-md-7">
-                                  <input [(ngModel)]="promo" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name" disabled/>
-                                </div>
-                            </div> -->
+                            </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Prorate Price</span>
