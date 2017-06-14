@@ -288,8 +288,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.status == 'registrasi'" value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
-                                    <input *ngIf="subs.status != 'registrasi'" value="" type="number" class="form-control inputForm" #cablerj45price2 id="cablerj45price2" placeholder="Cable/Rj45 Price" />
+                                    <input value="0" type="number" class="form-control inputForm" #cablerj45price1 id="cablerj45price1" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -311,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "totalharga" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
+                                    <input [(ngModel)]= "subs.pinaltypay + subs.pinaltypay" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
