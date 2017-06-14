@@ -141,7 +141,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.activedate }}</span>
+                                    <span>{{ stringAsDate(subs.activedate) | date }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -372,6 +372,10 @@ import { ContentInputPackComponent } from './inputpack.component';
 
 export class ContentCreateInvoiceComponent implements OnInit {
 today : Date = new Date();
+
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
