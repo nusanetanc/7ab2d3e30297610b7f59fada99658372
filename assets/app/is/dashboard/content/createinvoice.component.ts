@@ -254,7 +254,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value=4000 type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
+                                    <input value=40000 type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -310,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]= "subs.pinaltypay + packages.price + routerprice.value" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
+                                    <input [(ngModel)]= "+subs.pinaltypay + +packages.price + +routerprice.value" type="number" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
