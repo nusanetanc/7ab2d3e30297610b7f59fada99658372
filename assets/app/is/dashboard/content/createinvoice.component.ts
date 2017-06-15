@@ -343,7 +343,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -407,8 +407,8 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate) {
-  var body = `billdate=${invoicedate}`;
+  createInvoice(invoicedate, duedate, namepackage, packageprice) {
+  var body = `billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
