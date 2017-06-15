@@ -265,8 +265,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
-                                    <input *ngIf="subs.packlev == '6' || subs.packlev == '4' || subs.packlev == '5'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
+                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" />
+                                    <input *ngIf="subs.packlev == '6' || subs.packlev == '4' || subs.packlev == '5'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
