@@ -449,8 +449,8 @@ total:number;
       if (subs['status'] == 'registrasi' || subs['status'] == 'Account Active'){
         this.totalharga = this.totalharga + 75000
       }
-      if (subs['pinaltypay'] != '0' || subs['pinaltypay'] != '' || subs['pinaltypay'] != null){
-        this.totalharga = this.totalharga + subs['pinaltypay']
+      if (subs['pinaltypay'] == '25000'){
+        this.totalharga = this.totalharga + 25000
       }
       this.tax = this.totalharga*0.1
       this.total = this.totalharga+this.tax
