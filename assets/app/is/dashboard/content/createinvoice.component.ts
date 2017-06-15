@@ -442,7 +442,7 @@ total:number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.totalharga = subs['packprice'] + 40000 + subs['pinaltypay']
+      this.totalharga = subs['packprice'] + 40000
       if(subs['packlev'] == '6' || subs['packlev'] == '4' || subs['packlev'] == '5'){
         this.totalharga = this.totalharga +45000
       }
