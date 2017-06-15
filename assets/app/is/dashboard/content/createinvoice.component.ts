@@ -342,7 +342,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, prorateprice.value, routerprice.value, stbprice.value, instalationprice.value, cablerj45price.value, pinaltyprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, routerprice.value, stbprice.value, instalationprice.value, cablerj45price.value, pinaltyprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -406,8 +406,8 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, prorateprice, routerprice, stbprice, instalationprice, cablerj45price, pinaltyprice, subtotal, taxprice, totalprice) {
-  var body = `sub=${this._routeParams.get('id')}&billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}&prorateprice=${prorateprice}&pricerouter=${routerprice}&
+  createInvoice(invoicedate, duedate, namepackage, packageprice, routerprice, stbprice, instalationprice, cablerj45price, pinaltyprice, subtotal, taxprice, totalprice) {
+  var body = `sub=${this._routeParams.get('id')}&billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&priceinstal=${instalationprice}&pricerj45cable=${cablerj45price}&pinalty=${pinaltyprice}&totalprice=${subtotal}&changetax=${taxprice}&totalpay=${totalprice}&status='Waiting For Payment'`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
