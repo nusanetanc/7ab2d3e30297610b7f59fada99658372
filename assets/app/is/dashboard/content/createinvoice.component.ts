@@ -265,7 +265,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
+                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
+                                    <input *ngIf="subs.packlev == '6' || subs.packlev == '4' || subs.packlev == '5'" value="45000" type="number" class="form-control inputForm" #stbprice id="stbprice1" placeholder="STB Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -276,8 +277,8 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice1 id="instalationprice1" placeholder="Instalation Price" />
-                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice2 id="instalationprice2" placeholder="Instalation Price" />
+                                    <input *ngIf="subs.status == 'registrasi'" value="75000" type="number" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" />
+                                    <input *ngIf="subs.status != 'registrasi'" value="0" type="number" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -442,6 +443,9 @@ total:number;
     .subscribe(subs => {
       this.subs = subs
       this.totalharga = subs['packprice'] + 40000
+      if(subs['packlev'] == '6' || subs['packlev'] == '4' || subs['packlev'] == '5'){
+        this.totalharga = this.totalharga +45000
+      }
       this.tax = this.totalharga*0.1
       this.total = this.totalharga+this.tax
     })
