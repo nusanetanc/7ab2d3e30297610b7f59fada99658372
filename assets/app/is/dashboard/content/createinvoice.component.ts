@@ -418,7 +418,7 @@ total:number;
             headers: headers
           })
           .subscribe(data => {
-            //$('#success').modal('show');
+            alert('Sukses');
             this.getAllBill();
 
           }, error => {
