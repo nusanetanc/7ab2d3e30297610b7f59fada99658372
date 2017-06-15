@@ -146,6 +146,9 @@ Sub.findById(req.params.id, function(err, subs) {
         homes.city = "58d3492416d72b7e166dd977";
       }
      City.findById(homes.city, function(err, cities) {
+       if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
+         subs.idpackage = "594223755fa50f316014b792";
+       }
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
