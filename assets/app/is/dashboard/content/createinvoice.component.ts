@@ -442,7 +442,7 @@ total:number;
     .subscribe(subs => {
       this.subs = subs
       this.totalharga = subs['packprice'] + 40000
-      this.tax = totalharga*0.1
+      this.tax = this.totalharga*0.1
     })
     }
 }
