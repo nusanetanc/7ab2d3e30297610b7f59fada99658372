@@ -332,7 +332,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input [(ngModel)]="totalbayar"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
+                                    <input [(ngModel)]="total"  type="number" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
                                 </div>
                             </div>
                         </div>
@@ -443,6 +443,7 @@ total:number;
       this.subs = subs
       this.totalharga = subs['packprice'] + 40000
       this.tax = this.totalharga*0.1
+      this.total = this.totalharga*this.tax
     })
     }
 }
