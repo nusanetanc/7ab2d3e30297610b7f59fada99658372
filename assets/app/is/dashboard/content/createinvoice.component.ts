@@ -231,7 +231,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
-                                  <input *ngIf="subs.packtype == 'Promo'" value="yes" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <!-- <input *ngIf="subs.packtype == 'Promo'" value="yes" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/> -->
                                   <input *ngIf="subs.packtype == 'Default'" value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
                                 </div>
                             </div>
