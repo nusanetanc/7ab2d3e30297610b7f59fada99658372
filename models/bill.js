@@ -6,6 +6,7 @@ var BillSchema   = new Schema({
   noinvoice: Number,
   namepack: String,
   pricepack: Number,
+  prorateprice: Number,
   priceinstal: Number,
   pricerouter: Number,
   pricestb: Number,

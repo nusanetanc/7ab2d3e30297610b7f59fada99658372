@@ -76,6 +76,7 @@ router.post('/addbill', function(req, res, next) {
     bill.noinvoice= randomInt(100000000, 9999999999);
     bill.namepack= req.body.namepack;
     bill.pricepack= req.body.pricepack;
+    bill.prorateprice= req.body.prorateprice;
     bill.priceinstal= req.body.priceinstal;
     bill.pricerouter= req.body.pricerouter;
     bill.pricestb= req.body.pricestb;
