@@ -383,14 +383,14 @@ today : Date = new Date();
   ngOnInit() {
     this.getAllBill();
     this.getSubs();
-    this.getPackages();
+  //  this.getPackages();
   }
 
 // Declare empty list of people
 bills: any[] = [];
 subs: any[] = [];
 prices: any[] = [];
-packages: any[] = [];
+//packages: any[] = [];
 routerrent: number;
 totalharga: number;
 tax: number;
@@ -443,11 +443,4 @@ total:number;
       this.subs = subs
     })
     }
-    getPackages() {
-    this.http.get(`${this.API}/package/package/${this._routeParams.get('package')}`)
-      .map(res => res.json())
-      .subscribe(packages => {
-        this.packages = packages
-      })
-      }
 }
