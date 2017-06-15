@@ -443,7 +443,7 @@ total:number;
       this.subs = subs
       this.totalharga = subs['packprice'] + 40000
       this.tax = this.totalharga*0.1
-      this.total = this.totalharga*this.tax
+      this.total = this.totalharga+this.tax
     })
     }
 }
