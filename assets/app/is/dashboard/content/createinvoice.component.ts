@@ -441,7 +441,8 @@ total:number;
     .map(res => res.json())
     .subscribe(subs => {
       this.subs = subs
-      this.totalharga = subs['packprice'] + 400000
+      this.totalharga = subs['packprice'] + 40000
+      this.tax = totalharga*0.1
     })
     }
 }
