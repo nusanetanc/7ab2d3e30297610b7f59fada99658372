@@ -254,7 +254,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value=40000 type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
+                                    <input value="40000" type="number" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -342,7 +342,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, promoname.value, prorateprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, promoname.value, prorateprice.value, routerprice.value, stbprice.value, instalationprice.value, cablerj45price.value, pinaltyprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -406,8 +406,9 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, promoname, prorateprice) {
-  var body = `sub=${this._routeParams.get('id')}&billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}&promoname=${promoname}&prorateprice=${prorateprice}`;
+  createInvoice(invoicedate, duedate, namepackage, packageprice, promoname, prorateprice, routerprice, stbprice, instalationprice, cablerj45price, pinaltyprice, subtotal, taxprice, totalprice) {
+  var body = `sub=${this._routeParams.get('id')}&billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}&promoname=${promoname}&prorateprice=${prorateprice}&pricerouter=${routerprice}&
+  pricestb=${stbprice}&priceinstal=${instalationprice}&pricerj45cable=${cablerj45price}&pinalty=${pinaltyprice}&totalprice=${subtotal}&changetax=${taxprice}&totalpay=${totalprice}&status='Waiting For Payment'`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
