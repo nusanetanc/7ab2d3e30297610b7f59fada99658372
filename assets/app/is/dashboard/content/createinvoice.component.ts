@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
+                                    <input type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -288,7 +288,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
+                                    <input type="text" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/RJ45" value="0">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
