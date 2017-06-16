@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="subs.packlev" type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
+                                    <input value=subs.packlev type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
