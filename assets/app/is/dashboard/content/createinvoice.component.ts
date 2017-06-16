@@ -178,7 +178,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div  class="col-sm-6">
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
                                     <span>Invoice Date</span>
@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev" [(ngModel)]="subs.packlev" type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
+                                    <input [(ngModel)]="subs.packlev" type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packprice" [(ngModel)]="subs.packprice" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
+                                    <input [(ngModel)]="subs.packprice" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -299,7 +299,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.pinaltypay" [(ngModel)]="subs.pinaltypay" type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
+                                    <input [(ngModel)]="subs.pinaltypay" type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -310,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="totalharga" [(ngModel)]="totalharga" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
+                                    <input [(ngModel)]="totalharga" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -321,7 +321,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="tax" [(ngModel)]="tax"  type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
+                                    <input [(ngModel)]="tax"  type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,7 +332,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="total" [(ngModel)]="total"  type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
+                                    <input [(ngModel)]="total"  type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
                                 </div>
                             </div>
                         </div>
