@@ -310,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total">
+                                    <input value="{{totalharga}}" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -321,7 +321,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax">
+                                    <input value="{{tax}}" type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,7 +332,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total">
+                                    <input value="{{total}}" type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total">
                                 </div>
                             </div>
                         </div>
