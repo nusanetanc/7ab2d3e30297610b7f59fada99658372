@@ -232,7 +232,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
 
-                                  <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
+                                  <input value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -243,7 +243,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price">
+                                    <input value="0" type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -299,7 +299,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price">
+                                    <input value="{{subs.pinaltypay}}" type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
