@@ -208,7 +208,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row"  *ngIf="bills.priceinstal != null || bills.priceinstal != '0'">
+                                                <div class="row"  *ngIf="bills.priceinstal != null" *ngIf="bills.priceinstal != '0'">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Instalation Charge</span>
@@ -218,7 +218,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pinaltypay != '0' || bills.pinaltypay != null" class="row">
+                                                <div *ngIf="bills.pinaltypay != '0'" *ngIf="bills.pinaltypay != null" class="row">
                                                     <div  class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Pinalty Charge</span>
