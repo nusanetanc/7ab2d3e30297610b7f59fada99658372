@@ -187,7 +187,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today | date: 'dd'}}" class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" />
+                                    <input class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -198,7 +198,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today.getDate()+3}}" class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
+                                    <input class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -209,7 +209,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
+                                    <input type="text" class="form-control inputForm" #namepackage id="namepackage" placeholder="Package Level" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
+                                    <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -232,7 +232,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
 
-                                  <input *ngIf="subs.packtype == 'Default'" value="no" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <input *ngIf="subs.packtype == 'Default'" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -243,7 +243,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
+                                    <input type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -254,7 +254,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="40000" type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
+                                    <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -265,7 +265,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" value="0" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" />
+                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" />
 
                                 </div>
                             </div>
@@ -277,7 +277,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="75000" type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" />
+                                    <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -288,7 +288,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
+                                    <input type="text" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -299,7 +299,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
+                                    <input type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -310,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
+                                    <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -321,7 +321,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0"  type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
+                                    <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,7 +332,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value="0" type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
+                                    <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
                                 </div>
                             </div>
                         </div>
