@@ -187,7 +187,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
+                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today | date: 'dd'}}" type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -198,7 +198,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
+                                    <input value="{{today | date: 'yyyy'}}/{{today | date: 'MM'}}/{{today.getDate()+3}}" type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
