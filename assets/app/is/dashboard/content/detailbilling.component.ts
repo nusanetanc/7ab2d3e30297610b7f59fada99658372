@@ -188,7 +188,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pricestb != null || bills.pricestb != '0'" class="row">
+                                                <div *ngIf="bills.pricestb != null" *ngIf="bills.pricestb != '0'" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>STB Rent</span>
@@ -228,7 +228,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- /List --> 
+                                                <!-- /List -->
 
                                                 <!-- TotalList -->
                                                 <div class="row">
