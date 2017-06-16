@@ -228,7 +228,7 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- /List -->
+                                                <!-- /List --> 
 
                                                 <!-- TotalList -->
                                                 <div class="row">
