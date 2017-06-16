@@ -187,7 +187,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input class="form-control inputForm" #invoicedate id="invoicedate" placeholder="Invoice Date" />
+                                    <input type="text" class="form-control inputForm" #billingdate id="billingdate" placeholder="Billing Date">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -198,7 +198,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input class="form-control inputForm" #duedate id="duedate" placeholder="Due Date"/>
+                                    <input type="text" class="form-control inputForm" #billingduedate id="billingduedate" placeholder="Billing Due Date">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -220,7 +220,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price" />
+                                    <input type="text" class="form-control inputForm" #packageprice id="packageprice" placeholder="Package Price">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -232,7 +232,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                 </div>
                                 <div  class="col-xs-12 col-md-7">
 
-                                  <input *ngIf="subs.packtype == 'Default'" type="text" class="form-control inputForm" #promoname id="promoname" placeholder="yes/no"/>
+                                  <input type="text" class="form-control inputForm" #promoname id="promoname" placeholder="Promo Name">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -243,7 +243,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price"/>
+                                    <input type="text" class="form-control inputForm" #prorateprice id="prorateprice" placeholder="Prorate Price">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -254,7 +254,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent" />
+                                    <input type="text" class="form-control inputForm" #routerprice id="routerprice" placeholder="Router Rent Fee" value="40000">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5" >
@@ -265,7 +265,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input *ngIf="subs.packlev == '1' || subs.packlev == '2' || subs.packlev == '3'" type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent" />
+                                    <input type="text" class="form-control inputForm" #stbprice id="stbprice" placeholder="STB Rent Fee" value="0">
 
                                 </div>
                             </div>
@@ -277,7 +277,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Price" />
+                                    <input type="text" class="form-control inputForm" #instalationprice id="instalationprice" placeholder="Instalation Fee" value="0">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -288,7 +288,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #cablerj45price id="cablerj45price" placeholder="Cable/Rj45 Price"/>
+                                    <input type="text" class="form-control inputForm" #cablej45price id="cablej45price" placeholder="Cable/RJ45" value="0">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -299,7 +299,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price" />
+                                    <input type="text" class="form-control inputForm" #pinaltyprice id="pinaltyprice" placeholder="Pinalty Price">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -310,7 +310,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total" />
+                                    <input type="text" class="form-control inputForm" #subtotal id="subtotal" placeholder="Sub Total">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -321,7 +321,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax" />
+                                    <input type="text" class="form-control inputForm" #taxprice id="taxprice" placeholder="Tax">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -332,7 +332,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total" />
+                                    <input type="text" class="form-control inputForm" #totalprice id="totalprice" placeholder="Sub Total">
                                 </div>
                             </div>
                         </div>
@@ -342,7 +342,7 @@ import { ContentInputPackComponent } from './inputpack.component';
                     <div class="col-sm-12">
                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                         <!-- Small modal -->
-                        <button type="submit" (click)="createInvoice(invoicedate.value, duedate.value, namepackage.value, packageprice.value, promoname.value, prorateprice.value, routerprice.value, stbprice.value, instalationprice.value, cablerj45price.value, pinaltyprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
+                        <button type="submit" (click)="createInvoice(billingdate.value, billingduedate.value, namepackage.value, packageprice.value, promoname.value, prorateprice.value, routerprice.value, stbprice.value, instalationprice.value, cablerj45price.value, pinaltyprice.value, subtotal.value, taxprice.value, totalprice.value)" class="btn btn-default buttonOrange marginT20 marginL20 paddingL10">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -406,8 +406,8 @@ total:number;
 
 
 // Add one person to the API
-  createInvoice(invoicedate, duedate, namepackage, packageprice, promoname, prorateprice, routerprice, stbprice, instalationprice, cablerj45price, pinaltyprice, subtotal, taxprice, totalprice) {
-  var body = `sub=${this._routeParams.get('id')}&billdate=${invoicedate}&duedate=${duedate}&namepack=${namepackage}&pricepack=${packageprice}&promoname=${promoname}&prorateprice=${prorateprice}&pricerouter=${routerprice}&
+  createInvoice(billingdate, billingduedate, namepackage, packageprice, promoname, prorateprice, routerprice, stbprice, instalationprice, cablerj45price, pinaltyprice, subtotal, taxprice, totalprice) {
+  var body = `sub=${this._routeParams.get('id')}&billdate=${billingdate}&duedate=${billingduedate}&namepack=${namepackage}&pricepack=${packageprice}&promoname=${promoname}&prorateprice=${prorateprice}&pricerouter=${routerprice}&
   pricestb=${stbprice}&priceinstal=${instalationprice}&pricerj45cable=${cablerj45price}&pinalty=${pinaltyprice}&totalprice=${subtotal}&changetax=${taxprice}&totalpay=${totalprice}&status='Waiting For Payment'`;
   var headers = new Headers();
   headers.append('Content-Type', 'application/x-www-form-urlencoded');
