@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up - {{selectedHome._id}}</h3>
+                <h3>Sign Up - {{selectedHome._id}} - {{subgroovyid.value}}</h3>
              </div>
              <!-- .header SignUp -->
           </div>
