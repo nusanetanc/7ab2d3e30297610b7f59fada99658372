@@ -620,7 +620,7 @@ declare let kendo;
                                                       </div>
                                                       <div *ngIf="bills.billdate == null" class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">{{ stringAsDate(bills.billdate) | date }}</span>
+                                                            <span style="font-size:16px;">-</span>
                                                          </div>
                                                       </div>
                                                       <div *ngIf="bills.billdate != null" class="row">
