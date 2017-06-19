@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up - Home {{selectedHome._id}} - Package {{selectedPackage._id}} - Install {{subdateinst}}</h3>
+                <h3>Sign Up - Home {{selectedHome._id}} - Package {{selectedPackage._id}} </h3>
              </div>
              <!-- .header SignUp -->
           </div>
