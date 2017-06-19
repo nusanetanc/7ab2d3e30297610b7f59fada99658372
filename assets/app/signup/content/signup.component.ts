@@ -68,10 +68,10 @@ import {Streetname} from "./street_name";
              </div>
              <div class="col-md-4 col-md-offset-4">
                 <form>
-                   <select #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                      <option value="0">-- Select your no home --</option>
-                      <option *ngFor="#home of homes" value="{{home.nohome}}">{{ home.nohome }}</option>
-                   </select>
+                    <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
+                        <option value="0">-- Select Home Number --</option>
+                        <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
+                    </select><br/>
                    <br/>
                 </form>
              </div>
