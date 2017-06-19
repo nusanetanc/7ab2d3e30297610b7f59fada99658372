@@ -236,7 +236,7 @@ import { ContentPackLevComponent } from './packlev.component';
                               <div class="col-xs-12 col-sm-12">
                                 <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
                                     <option value="0">-- Select Clusters --</option>
-                                    <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }} - {{ cluster.level }}</option>
+                                    <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }}</option>
                                 </select>
                               </div>
                             </div>

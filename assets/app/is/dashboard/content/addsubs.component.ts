@@ -100,7 +100,7 @@ import {Streetname} from "./street_name";
                                         <div class="marginT20 paddingR30">
                                             <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)" class="inputForm" name="cars">
                                                 <option value="0">-- Select Clusters --</option>
-                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }} - {{ cluster.level }}</option>
+                                                <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }}</option>
                                             </select><br/>
                                         </div>{{detailclusters.level}}
                                         <div class="marginT20 paddingR30">
