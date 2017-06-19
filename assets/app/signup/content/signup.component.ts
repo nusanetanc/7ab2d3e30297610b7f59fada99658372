@@ -21,14 +21,14 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up</h3>
+                <h3>Sign Up - {{RegisCity.value}}</h3>
              </div>
              <!-- .header SignUp -->
           </div>
           <div class="row" *ngIf="clickedItemSignUp.name == 'regArea'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
-                   <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
+                   <select id="RegisCity" #RegisCity [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
                    <option value="0">-- Select your city --</option>
                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                    </select><br/>
