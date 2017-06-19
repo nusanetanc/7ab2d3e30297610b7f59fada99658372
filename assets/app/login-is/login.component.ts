@@ -26,7 +26,7 @@ import { Sub } from './subs';
                                 </div><br>
                                 <div class="form-group form-forgot">
                                     <a href="" class="orange-text">I forgot password</a>
-                                    <button type="submit" id="logins" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)" data-backdrop="static" data-keyboard="false">LOGIN</button>
+                                    <button type="submit" id="logins" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
                         </div>
@@ -34,10 +34,10 @@ import { Sub } from './subs';
                 </div>
             </div>
             <!-- Modal -->
-            <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" width="80%">
               <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content text-center" style="padding: 5px;">
-                  <h5>User could not be found</h5>
+                <div class="text-center" style="padding: 5px; background-color: #FC592E; border-radius: 10px;">
+                  <h5 style="color: #FFF;">User could not be found</h5>
                 </div>
               </div>
             </div>
