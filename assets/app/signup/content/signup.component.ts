@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up - {{selectedHome._id}}</h3>
+                <h3>Sign Up - Home {{selectedHome._id}} - Package {{selectedPackage._id}}</h3>
              </div>
              <!-- .header SignUp -->
           </div>
@@ -79,9 +79,9 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItemSignUp.name == 'regPack'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
-                   <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
+                   <select [(ngModel)]="selectedPackage._id" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
                    <option value="0">-- Select Package --</option>
-                   <option *ngFor="#package of packages" value="{{ package.level }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
+                   <option *ngFor="#package of packages" value="{{ package._id }}">Level {{package.level}} - Monthly - {{package.price | currency:'IDR':true}}</option>
                    </select><br/>
                 </form>
              </div>
@@ -187,8 +187,8 @@ selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
 selectedHome: Home = new Home(0, 'dummy');
 
-onSelectPackage(level) {
-    console.log(level)
+onSelectPackage(_id) {
+    console.log(_id)
 }
 onSelectHome(_id) {
     console.log(nohome)
