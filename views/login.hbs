@@ -102,6 +102,11 @@
     });
 </script>
 <script>
+    $('#login').on('bs-example-modal-sm', function () {
+        $(".modal-backdrop.in").hide();
+    })
+</script>
+<script>
     System.import('boot')
             .then(null, console.error.bind(console));
 </script>
