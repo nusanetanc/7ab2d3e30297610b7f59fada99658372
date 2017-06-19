@@ -25,7 +25,7 @@ import {Streetname} from "./street_name";
              </div>
              <!-- .header SignUp -->
           </div>
-          <div class="row" *ngIf="clickedItem.name == 'regArea'">
+          <div class="row" *ngIf="clickedItemSignUp.name == 'regArea'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
@@ -76,7 +76,7 @@ import {Streetname} from "./street_name";
                 </form>
              </div>
           </div>
-          <div class="row" *ngIf="clickedItem.name == 'regPack'">
+          <div class="row" *ngIf="clickedItemSignUp.name == 'regPack'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedPackage.level" (change)="onSelectPackage($event.target.value)" #subpacklev id="subpacklev" name="package" class="inputForm">
@@ -86,7 +86,7 @@ import {Streetname} from "./street_name";
                 </form>
              </div>
           </div>
-          <div class="row" *ngIf="clickedItem.name == 'regInst'">
+          <div class="row" *ngIf="clickedItemSignUp.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
                 <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
@@ -107,7 +107,7 @@ import {Streetname} from "./street_name";
                 </div>
              </div>
           </div>
-          <div class="row" *ngIf="clickedItem.name == 'regData'">
+          <div class="row" *ngIf="clickedItemSignUp.name == 'regData'">
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <div class="form-group">
@@ -116,10 +116,10 @@ import {Streetname} from "./street_name";
                       <input #subemail id="subemail" type="email" class="form-control" placeholder="Email">
                       <input #subdatebirth id="subdatebirth" type="date" class="form-control inputForm" placeholder="Date of Birth">
                       <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Id Card Number">
-                      <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regData'">
+                      <button (click)="onItemClicked2(Inst)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regData'">
                           CANCEL
                       </button>
-                      <button *ngIf="clickedItem.name == 'regData'" type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
+                      <button *ngIf="clickedItemSignUp.name == 'regData'" type="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdatebirth.value, subidnumber.value)" class="buttonNext btn btn-default dropdown-toggle" data-toggle="modal" data-target="#success">
                       REGISTER
                       </button>
                    </div>
@@ -127,7 +127,7 @@ import {Streetname} from "./street_name";
                 </form>
              </div>
           </div>
-          <div class="row" *ngIf="clickedItem.name == 'regDone'">
+          <div class="row" *ngIf="clickedItemSignUp.name == 'regDone'">
              <div class="col-md-12">
                 <div class="row" style="margin-bottom: 10px; text-align: center;">
                    All Set! We Will See You At The Date And Time You Chose
@@ -137,19 +137,19 @@ import {Streetname} from "./street_name";
           </div>
           <div class="row">
              <div class="col-md-4 col-md-offset-4">
-                <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regArea'">
+                <button (click)="onItemClicked1(Area)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regArea'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked0(early)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
+                <button (click)="onItemClicked0(early)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regInst'">
                     BACK
                 </button>
-                <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regInst'">
+                <button (click)="onItemClicked2(Inst)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regInst'">
                 NEXT
                 </button>
-                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                <button (click)="onItemClicked1(Area)" class="back btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regPack'">
                     BACK
                 </button>
-                <button (click)="onItemClicked3(Pack)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItem.name == 'regPack'">
+                <button (click)="onItemClicked3(Pack)" class="buttonNext btn btn-default dropdown-toggle" *ngIf="clickedItemSignUp.name == 'regPack'">
                 NEXT
                 </button>
              </div>
@@ -162,21 +162,21 @@ import {Streetname} from "./street_name";
 })
 export class SignupComponent implements OnInit{
 
-public clickedItem = {name: "regArea"};
+public clickedItemSignUp = {name: "regArea"};
 
 onItemClicked0(early) {
-   this.clickedItem = {name: "regArea"};
+   this.clickedItemSignUp = {name: "regArea"};
 }
 onItemClicked1(Area) {
-   this.clickedItem = {name: "regInst"};
+   this.clickedItemSignUp = {name: "regInst"};
 }
 
 onItemClicked2(Inst) {
-   this.clickedItem = {name: "regPack"};
+   this.clickedItemSignUp = {name: "regPack"};
 }
 
 onItemClicked3(Pack) {
-   this.clickedItem = {name: "regData"};
+   this.clickedItemSignUp = {name: "regData"};
 }
 
 selectedCity: City = new City(0, 'dummy');
@@ -275,7 +275,7 @@ addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
                 headers: headers
             })
         .subscribe(data => {
-            this.clickedItem = {name: "regDone"};;
+            this.clickedItemSignUp = {name: "regDone"};;
             this.getAllSub();
         }, error => {
             console.log(JSON.stringify(error.json()));
