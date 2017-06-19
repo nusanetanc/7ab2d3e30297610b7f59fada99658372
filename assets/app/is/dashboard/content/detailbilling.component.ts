@@ -353,7 +353,7 @@ declare let kendo;
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">09 April 2017</span>
+                                                            <span style="font-size:16px;">{{stringAsDate(bills.duedate) | date}}</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -365,7 +365,7 @@ declare let kendo;
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">06 April 2017</span>
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.billdate) | date }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -579,7 +579,7 @@ declare let kendo;
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">09 April 2017</span>
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.paydate) | date }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -591,7 +591,7 @@ declare let kendo;
                                                       </div>
                                                       <div class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">06 April 2017</span>
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.billdate) | date }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
