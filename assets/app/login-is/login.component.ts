@@ -84,6 +84,8 @@ export class LoginComponent implements OnInit {
                     window.location.href = `/is`;
                 },
                 error => {
+                    //alert(error.text());
+                    //console.log(JSON.stringify(error.json()));
                     $('#failed').modal('show');
                     $('.modal-backdrop').removeClass("modal-backdrop");
                 }
