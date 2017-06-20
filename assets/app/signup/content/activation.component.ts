@@ -18,7 +18,7 @@ import 'rxjs/add/operator/map';
                     <button type="submit" (click)="Activation(password.value, repassword.value)" class="btn button-submit">SUBMIT</button>
                 </div>
             </div>
-            <div class="top-margin text-center" *ngIf="subs.status == 'Email Activation'">
+            <div class="top-margin text-center" *ngIf="subs.status == 'Email Activation'" style="color: #FFF;">
               <h4>You have successfully set your Groovy Password.</h4>
               <h5>Please wait for our customer service to confirm your phone number</h5>
             </div>
