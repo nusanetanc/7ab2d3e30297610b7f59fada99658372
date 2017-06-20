@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
+import {mongoose} from 'mongoose';
 import { Sub } from './subs';
 
 @Component({
@@ -85,9 +86,12 @@ export class LoginComponent implements OnInit {
                 },
                 error => {
                     //alert(error.text());
-                    console.log(JSON.stringify(error.json()));
-                    $('#failed').modal('show');
-                    $('.modal-backdrop').removeClass("modal-backdrop");
+                    //console.log(JSON.stringify(error.json()));
+
+                    if (!doc) {
+                        $('#failed').modal('show');
+                        $('.modal-backdrop').removeClass("modal-backdrop");
+                    }
                 }
             );
     }

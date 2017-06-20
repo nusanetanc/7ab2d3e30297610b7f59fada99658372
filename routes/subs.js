@@ -583,23 +583,28 @@ router.post('/login', function(req, res, next){
                 error: err
             });
         }
+
         if (!doc) {
             return res.status(404).json({
                 title: 'No user found',
                 error: {message: 'User could not be found'}
             });
         }
+
         if (!passwordHash.verify(req.body.password, doc.password)){
             return res.status(404).json({
                 title: 'Could not sign you in',
                 error: {message: 'Invalid password'}
             });
         }
+
         var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
+
         if(!req.session.emp){
             req.session.emp = doc.id;
             req.session.level = doc.id;
-      }
+        }
+
         res.status(200).json({
             message: 'Success',
             token: token,
