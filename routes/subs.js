@@ -536,6 +536,7 @@ router.delete('/delsub/:id', function(req, res, next) {
             res.json({ message: 'Successfully deleted' });
    });
 });
+
 router.post('/signin', function(req, res){
     Sub.findOne({email: req.body.email}, function(err, doc){
         if (err) {
@@ -549,27 +550,30 @@ router.post('/signin', function(req, res){
          title: "No user found",
          error: {message: 'User could not be found.'}
        });
-     }
+    }
 
-     if (!passwordHash.verify(req.body.password, doc.password)) {
-       if (err) {
-         return res.status(404).json({
-           title: "Could not sign user in",
-           error: {message: 'Invalid Password'}
-         });
-       }
-     }
+        if (!passwordHash.verify(req.body.password, doc.password)) {
+            if (err) {
+                return res.status(404).json({
+                    title: "Could not sign user in",
+                    error: {message: 'Invalid Password'}
+                });
+            }
+        }
+
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
+
         if(!req.session.subs){
             req.session.subs = doc.id;
-      }
+        }
+
         res.status(200).json({
             message: 'Success',
             token: req.session.accesssub,
             sessionId: doc.id
         })
     })
-})
+});
 
 router.post('/login', function(req, res, next){
     Emp.findOne({email: req.body.email}, function(err, doc){
