@@ -269,7 +269,7 @@ ngOnInit() {
 
 
 // Add one person to the API
-addSub(subname, subphone, subemail, subdatebirth, subidnumber, subpacklev.value) {
+addSub(subname, subphone, subemail, subdatebirth, subidnumber, subpacklev) {
     var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${subpacklev}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
