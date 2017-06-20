@@ -287,7 +287,8 @@ router.post('/addsub', function(req, res, next) {
       var mailOptions={
       to: req.body.email,
       subject : "Activate Your Groovy Account",
-      html : `<body style="font-family:Arial;font-size:15px;">
+      html : `
+        <body style="font-family:Arial;font-size:15px;">
         <div style="max-width:600px;margin:0 auto;margin-top:30px;">
             <div style="height:76px;width:100%;background-color:#fff;">
                 <img src="http://202.162.207.164:3000/images/logo-groovy.png" height="37px" style="margin:20px 0 0 30px"/>
@@ -306,7 +307,7 @@ router.post('/addsub', function(req, res, next) {
                 </div>
                 <p style="line-height:1.5;margin-top:40px;">
                 Then our customer service will be contact your phone number to
-validate the data, then your Groovy account will be activated.<br/><br/>
+                validate the data, then your Groovy account will be activated.<br/><br/>
                 Thanks.</p>
             </div>
         </div>
@@ -319,7 +320,11 @@ validate the data, then your Groovy account will be activated.<br/><br/>
                         Groovy - PT Media Andalan Nusa<br/>
                         Cyber Building 7th Floor, Jl Kuningan Barat 8<br/>
                         Jakarta 12710, Indonesia
-    </body>`
+                    </div>
+                </div>
+             </div>
+        </div>
+        </body>`
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
@@ -546,10 +551,10 @@ router.post('/signin', function(req, res){
             });
         }
         if (!doc) {
-       return res.status(404).json({
-         title: "No user found",
-         error: {message: 'User could not be found.'}
-       });
+           return res.status(404).json({
+           title: "No user found",
+           error: {message: 'User could not be found.'}
+        });
     }
 
         if (!passwordHash.verify(req.body.password, doc.password)) {
