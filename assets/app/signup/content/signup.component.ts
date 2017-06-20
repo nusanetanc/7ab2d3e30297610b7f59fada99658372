@@ -90,7 +90,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
                 <input [(ngModel)]='subdateinst' (input)="subdateinst=$event.target.value" #subdateinst id="subdateinst" type="date" class="form-control formInput" />
-             </div> {{subdateinst}}
+             </div> 
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
