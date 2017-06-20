@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up - Home {{selectedHome._id}} - Package {{selectedPackage._id}} </h3>
+                <h3>Sign Up</h3>
              </div>
              <!-- .header SignUp -->
           </div>
@@ -89,8 +89,8 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItemSignUp.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
-                <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
-             </div>
+                <input (keyup)="0" #subdateinst id="subdateinst" type="date" class="form-control formInput" />
+             </div>{{subdateinst.value}}
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
