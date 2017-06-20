@@ -192,7 +192,7 @@ onSelectPackage(_id) {
 }
 onSelectHome(_id) {
     console.log(nohome)
-    packagechange = ${_id}
+    packagechange = nohome
 }
 
 onSelectCity(_id) {
