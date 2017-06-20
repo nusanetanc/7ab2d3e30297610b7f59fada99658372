@@ -6,25 +6,27 @@ import 'rxjs/add/operator/map';
 @Component({
     selector: 'form-signin',
     template: `
-    <div class="container container-auth-client">
-    <div class="top-margin text-center" *ngIf="subs.status == 'Registration'">
-        <h4>Enter new password for your Groovy Account</h4>
-        <div class="form">
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" #password placeholder="New Password">
-                <input type="password" class="form-control" id="repassword" #repassword placeholder="Re-Type Password">
+    <div class="form-auth-is">
+        <div class="container container-auth-client">
+            <div class="top-margin text-center" *ngIf="subs.status == 'Registration'">
+                <h4>Enter new password for your Groovy Account</h4>
+                <div class="form">
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" #password placeholder="New Password">
+                        <input type="password" class="form-control" id="repassword" #repassword placeholder="Re-Type Password">
+                    </div>
+                    <button type="submit" (click)="Activation(password.value, repassword.value)" class="btn button-submit">SUBMIT</button>
+                </div>
             </div>
-            <button type="submit" (click)="Activation(password.value, repassword.value)" class="btn button-submit">SUBMIT</button>
+            <div class="top-margin text-center" *ngIf="subs.status == 'Email Activation'">
+              <h4>You have successfully set your Groovy Password.</h4>
+              <h5>Please wait for our customer service to confirm your phone number</h5>
+            </div>
+            <div class="top-margin text-center" *ngIf="subs.status == 'Aktif'">
+              <h4>Your Groovy account is active.</h4>
+            </div>
         </div>
     </div>
-    <div class="top-margin text-center" *ngIf="subs.status == 'Email Activation'">
-      <h4>You have successfully set your Groovy Password.</h4>
-      <h5>Please wait for our customer service to confirm your phone number</h5>
-    </div>
-    <div class="top-margin text-center" *ngIf="subs.status == 'Aktif'">
-      <h4>Your Groovy account is active.</h4>
-    </div>
-</div>
 `,
     directives: [ROUTER_DIRECTIVES],
 })
