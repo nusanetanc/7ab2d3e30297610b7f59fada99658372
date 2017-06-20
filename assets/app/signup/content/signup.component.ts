@@ -29,7 +29,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" class="inputForm">
-                   <option value="0">-- Select your city --</option>
+                   <option value="0" disabled>-- Select your city --</option>
                    <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                    </select><br/>
                 </form>
@@ -37,7 +37,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                   <option value="0">-- Select your property --</option>
+                   <option value="0" disabled>-- Select your property --</option>
                    <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                    </select><br/>
                 </form>
@@ -45,7 +45,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
-                   <option value="0">-- Select your clusters --</option>
+                   <option value="0" disabled>-- Select your clusters --</option>
                    <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                    </select><br/>
                 </form>
@@ -53,7 +53,7 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                   <option value="0">-- Select your blok or floor --</option>
+                   <option value="0" disabled>-- Select your blok or floor --</option>
                    <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                    </select><br/>
                 </form>
@@ -61,15 +61,15 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                   <option value="0">-- Select your street name --</option>
-                   <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                     <option value="0" disabled>-- Select your street name --</option>
+                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                    </select><br/>
                 </form>
              </div>
              <div class="col-md-4 col-md-offset-4">
                 <form>
                     <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
-                        <option value="0">-- Select Home Number --</option>
+                        <option value="0" disabled>-- Select Home Number --</option>
                         <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
                     </select><br/>
                    <br/>
@@ -95,14 +95,14 @@ import {Streetname} from "./street_name";
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
                    <form action="">
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
                    </form>
                 </div>
              </div>
@@ -185,7 +185,7 @@ selectedCluster: City = new City(0, 'dummy');
 selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
-selectedHome: Home = new Home(0, 'dummy');
+selectedHome: City = new City(0, 'dummy');
 
 packagechange:string;
 onSelectPackage(_id) {
@@ -201,6 +201,11 @@ dateinschange:string;
 onSelectDateIns(_id) {
     console.log(_id)
     this.dateinschange = _id
+}
+timeinschange:string;
+onSelectTimeIns(_id) {
+    console.log(_id)
+    this.timeinschange = _id
 }
 
 onSelectCity(_id) {
@@ -279,7 +284,7 @@ ngOnInit() {
 
 // Add one person to the API
 addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}&groovyid=${this.homechange}&dateinst=${this.dateinschange}`;
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}&groovyid=${this.homechange}&dateinst=${this.dateinschange}&timeinst=${this.timeinschange}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
