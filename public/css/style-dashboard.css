@@ -1198,7 +1198,9 @@ button.active{
     display: block;
 }
 
-
+.modal {
+    background-color: red !important;
+}
 
 /*--- Dropdown ---*/
 .buttonDrop {
