@@ -596,6 +596,12 @@ router.post('/login', function(req, res, next){
             );
         }
 
+        if (!passwordHash.verify(req.body.password, doc.password)){
+            return res.status(404).json(
+                'Invalid password'
+            );
+        }
+
         /*if (!doc) {
             return res.status(404).json({
                 title: 'No user found',
@@ -603,12 +609,12 @@ router.post('/login', function(req, res, next){
             });
         }*/
 
-        if (!passwordHash.verify(req.body.password, doc.password)){
+        /*if (!passwordHash.verify(req.body.password, doc.password)){
             return res.status(404).json({
                 title: 'Could not sign you in',
                 error: {message: 'Invalid password'}
             });
-        }
+        }*/
 
         var token = jwt.sign({emp:doc}, 'secret', {expiresIn: 7200});
 
