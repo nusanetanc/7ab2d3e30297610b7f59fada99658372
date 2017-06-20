@@ -95,14 +95,14 @@ import {Streetname} from "./street_name";
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
                    <form action="">
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
-                      <input type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="9:00 am" /> 9:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="10:00 am" /> 10:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="11:00 am" /> 11:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="12:00 am" /> 12:00 am<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="1:00 pm" /> 1:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="2:00 pm" /> 2:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="3:00 pm" /> 3:00 pm<br>
+                      <input (change)="onSelectTimeIns($event.target.value)" type="radio" name="subtimeinst" id="subtimeinst" #subtimeinst value="4:00 pm" /> 4:00 pm
                    </form>
                 </div>
              </div>
@@ -201,6 +201,11 @@ dateinschange:string;
 onSelectDateIns(_id) {
     console.log(_id)
     this.dateinschange = _id
+}
+timeinschange:string;
+onSelectTimeIns(_id) {
+    console.log(_id)
+    this.timeinschange = _id
 }
 
 onSelectCity(_id) {
