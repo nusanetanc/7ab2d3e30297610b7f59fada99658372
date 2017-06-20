@@ -1190,11 +1190,6 @@ button.buttonOrange:focus {
 
 /*----- /New Class ------*/
 
-
-.modal-backdrop {
-    background-color: red !important;
-}
-
 .print {
     display: block;
 }
