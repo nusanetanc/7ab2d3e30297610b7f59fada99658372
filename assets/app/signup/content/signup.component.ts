@@ -89,8 +89,8 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItemSignUp.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
-                <input (keyup)="0" #subdateinst id="subdateinst" type="date" class="form-control formInput" />
-             </div>{{subdateinst.value}}
+                <input (change)="onSelectDateIns($event.target.value)" #subdateinst id="subdateinst" type="date" class="form-control formInput" />
+             </div>
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
@@ -196,6 +196,9 @@ homechange:string;
 onSelectHome(_id) {
     console.log(_id)
     this.homechange = _id
+}
+onSelectDateIns(_id) {
+    console.log(_id)
 }
 
 onSelectCity(_id) {
