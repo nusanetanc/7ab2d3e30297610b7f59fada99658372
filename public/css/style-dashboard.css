@@ -1,4 +1,4 @@
-/*--- Body ---*/
+2/*--- Body ---*/
 html, body {
     background-color: #F0F0F0;
     font-family: 'Roboto', sans-serif;
@@ -1192,7 +1192,7 @@ button.buttonOrange:focus {
 
 
 .modal-backdrop {
-    opacity: 0.5 !important;
+    background-color: red !important;
 }
 
 .print {
