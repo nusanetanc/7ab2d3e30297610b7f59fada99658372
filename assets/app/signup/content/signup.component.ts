@@ -186,14 +186,16 @@ selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
 selectedHome: Home = new Home(0, 'dummy');
+
 packagechange:string;
 onSelectPackage(_id) {
     console.log(_id)
     this.packagechange = _id
 }
-
+homechange:string;
 onSelectHome(_id) {
-    console.log(nohome)
+    console.log(_id)
+    this.homechange = _id
 }
 
 onSelectCity(_id) {
@@ -272,7 +274,7 @@ ngOnInit() {
 
 // Add one person to the API
 addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}`;
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}&groovyid=${this.homechange}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
