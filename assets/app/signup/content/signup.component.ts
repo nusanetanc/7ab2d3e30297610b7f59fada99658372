@@ -192,6 +192,7 @@ onSelectPackage(_id) {
 }
 onSelectHome(_id) {
     console.log(nohome)
+    packagechange = ${_id}
 }
 
 onSelectCity(_id) {
@@ -270,7 +271,7 @@ ngOnInit() {
 
 // Add one person to the API
 addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${selectedPackage._id}`;
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
