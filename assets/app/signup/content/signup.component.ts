@@ -61,8 +61,8 @@ import {Streetname} from "./street_name";
              <div class="col-md-4 col-md-offset-4">
                 <form>
                    <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                   <option value="0" disabled>-- Select your street name --</option>
-                   <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                     <option value="0" disabled>-- Select your street name --</option>
+                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
                    </select><br/>
                 </form>
              </div>
@@ -185,7 +185,7 @@ selectedCluster: City = new City(0, 'dummy');
 selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
-selectedHome: Home = new Home(0, 'dummy');
+selectedHome: City = new City(0, 'dummy');
 
 packagechange:string;
 onSelectPackage(_id) {
