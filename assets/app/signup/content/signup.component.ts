@@ -186,13 +186,14 @@ selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
 selectedHome: Home = new Home(0, 'dummy');
-
+packagechange:string;
 onSelectPackage(_id) {
     console.log(_id)
+    this.packagechange = _id
 }
+
 onSelectHome(_id) {
     console.log(nohome)
-    packagechange = nohome
 }
 
 onSelectCity(_id) {
