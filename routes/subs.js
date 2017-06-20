@@ -280,6 +280,7 @@ router.post('/addsub', function(req, res, next) {
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
     sub.codeactivation = codeactivation;
+    sub.idpackage= req.body.package;
     sub.save(function(err) {
       if (err)
           res.send(err);
