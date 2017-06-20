@@ -89,8 +89,8 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItemSignUp.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
-                <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
-             </div>
+                <input [(ngModel)]='subdateinst' #subdateinst id="subdateinst" type="date" class="form-control formInput" />
+             </div> {{subdateinst}}
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
                 <div class="col-sm-6 col-sm-offset-4">
