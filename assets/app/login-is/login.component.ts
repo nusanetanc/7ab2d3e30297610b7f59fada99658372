@@ -35,8 +35,8 @@ import { Sub } from './subs';
             </div>
             <!-- Modal -->
             <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-              <div class="modal-dialog" role="document" style="float: left; padding-left: 50%;">
-                <div class="text-center" style="padding: 5px; background-color: #FC592E; width: 200px; float: left; margin-top: 15px;">
+              <div class="modal-dialog" role="document" style="float: left; padding-left: 50.2%;">
+                <div class="text-center" style="padding: 5px; background-color: #FC592E; width: 200px; float: left; margin-top: 18px;">
                   <h5 style="color: #FFF;">User could not be found</h5>
                 </div>
               </div>
