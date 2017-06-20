@@ -81,12 +81,11 @@ import { City } from './cities';
         </div>
         <!-- Modal -->
         <div id="failed" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="alert alert-danger alert-dismissible fade in" role=alert>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4>An error occured</h4>
-                </div>
+          <div class="modal-dialog" role="document" style="float: left; padding-left: 44%;">
+            <div class="text-center" style="padding: 5px; background-color: #FC592E; width: 200px; float: left; box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0);">
+              <h5 id="message" style="color: #FFF;"></h5>
             </div>
+          </div>
         </div>
     `,
     directives: [ROUTER_DIRECTIVES],
@@ -122,7 +121,9 @@ emps: any[] = [];
               alert('Add City Success');
               this.getAllCity();
           }, error => {
+              document.getElementById("message").innerHTML = error.text();
               $('#failed').modal('show');
+              $('.modal-backdrop').removeClass("modal-backdrop");
               //console.log(JSON.stringify(error.json()));
           });
   }
