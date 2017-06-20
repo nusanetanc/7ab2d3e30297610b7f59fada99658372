@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
                 error => {
                     //alert(error.text());
                     //console.log(JSON.stringify(error.json()));
-                    document.getElementById("message").innerHTML = error.title;
+                    document.getElementById("message").innerHTML = error.error;
                     $('#failed').modal('show');
                     $('.modal-backdrop').removeClass("modal-backdrop");
                 }
