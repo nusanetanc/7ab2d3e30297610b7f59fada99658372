@@ -21,7 +21,7 @@ import {Streetname} from "./street_name";
           <div class="row">
              <div class="col-md-12">
                 <!-- header SignUp -->
-                <h3>Sign Up - Home {{selectedHome._id}} - Package {{selectedPackage._id}} </h3>
+                <h3>Sign Up</h3>
              </div>
              <!-- .header SignUp -->
           </div>
@@ -89,7 +89,7 @@ import {Streetname} from "./street_name";
           <div class="row" *ngIf="clickedItemSignUp.name == 'regInst'">
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a installation date</p>
-                <input #subdateinst id="subdateinst" type="date" class="form-control formInput" />
+                <input (change)="onSelectDateIns($event.target.value)" #subdateinst id="subdateinst" type="date" class="form-control formInput" />
              </div>
              <div class="col-md-4 col-md-offset-4">
                 <p>Please select a available timeslot for that date</p>
@@ -187,11 +187,18 @@ selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
 selectedHome: Home = new Home(0, 'dummy');
 
+packagechange:string;
 onSelectPackage(_id) {
     console.log(_id)
+    this.packagechange = _id
 }
+homechange:string;
 onSelectHome(_id) {
-    console.log(nohome)
+    console.log(_id)
+    this.homechange = _id
+}
+onSelectDateIns(_id) {
+    console.log(_id)
 }
 
 onSelectCity(_id) {
@@ -270,7 +277,7 @@ ngOnInit() {
 
 // Add one person to the API
 addSub(subname, subphone, subemail, subdatebirth, subidnumber) {
-    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${selectedPackage._id}`;
+    var body = `name=${subname}&phone=${subphone}&email=${subemail}&datebirth=${subdatebirth}&idnumber=${subidnumber}&package=${this.packagechange}&groovyid=${this.homechange}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
     this.http
