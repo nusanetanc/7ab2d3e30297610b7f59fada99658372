@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
     <div class="form-auth-is">
         <div class="container container-auth-client">
             <div class="top-margin text-center" *ngIf="subs.status == 'Registration'">
-                <h4>Enter new password for your Groovy Account</h4>
+                <h4 style="color: #FFF;">Enter new password for your Groovy Account</h4>
                 <div class="form">
                     <div class="form-group">
                         <input type="password" class="form-control" id="password" #password placeholder="New Password">
