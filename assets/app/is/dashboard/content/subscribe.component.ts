@@ -121,6 +121,17 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
                                 </div>
                             </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Registration</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>By {{ subs.regisref }}, Ref {{ subs.regisref }}, Sales {{ subs.sales }}</span>
+                                </div>
+                            </div>
                             <div *ngIf="sessionemps.accessrole == '601'" class="col-sm-12">
                               <button (click)="onItemClicked(EditData)" class="btn btn-default buttonOrange">
                                   UPDATE PERSONAL DATA
