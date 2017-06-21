@@ -90,7 +90,7 @@
 </head>
 <body>
 
-<a onClick="menuToggle()">a</a>
+<a href="#" id="menu-toggle" onClick="menuToggle()">Click</a>
 
 <is-app>
     <style>
@@ -156,10 +156,10 @@
 
       };
 
-    /*$("#menu").click(function(e) {
+    $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
-    });*/
+    });
 
     $(window).load(function(){
         var w = $(window).width();
