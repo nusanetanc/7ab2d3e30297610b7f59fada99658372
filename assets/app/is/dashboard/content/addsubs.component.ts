@@ -158,6 +158,16 @@ import {Streetname} from "./street_name";
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col-sm-12 paddingL35">
+                                        <div class="marginT20 paddingR30">
+                                          <select  class="inputForm">
+                                              <option value="0" disabled selected>-- Select Sales --</option>
+                                              <option *ngFor="#sale of sales">{{sale.name}}</option>
+                                          </select><br/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-sm-12 paddingR45">
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <!-- Small modal -->
@@ -287,6 +297,7 @@ export class ContentAddSubsComponent implements OnInit {
     emps: any[] = [];
     defaultpackages: any[] = [];
     promopackages: any[] = [];
+    sales: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -295,6 +306,7 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllSub();
         this.getAllCity();
         this.getAcountEmp();
+        this.getSales();
     }
 
 
@@ -400,5 +412,12 @@ export class ContentAddSubsComponent implements OnInit {
                 this.emps = emps
             }
           )
+    }
+    getSales() {
+        this.http.get(`${this.API}/employee/list/Sales`)
+            .map(res => res.json())
+            .subscribe(sales => {
+                this.sales = sales
+            })
     }
 }
