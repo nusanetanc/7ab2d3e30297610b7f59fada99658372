@@ -90,6 +90,8 @@
 </head>
 <body>
 
+<a onClick="menuToggle()">a</a>
+
 <is-app>
     <style>
         .load > img {
@@ -138,19 +140,21 @@
             kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
-    }
+    };
 
 </script>
 
 <!-- Collaps JS -->
-<script type="text/javascript">
+<script>
 
   /*Menu-toggle*/
 
-    function menuToggle(){
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    };
+      var menuToggle = function() {
+
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+
+      };
 
     /*$("#menu").click(function(e) {
         e.preventDefault();
