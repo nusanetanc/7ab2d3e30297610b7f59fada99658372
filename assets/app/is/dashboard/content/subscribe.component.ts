@@ -129,7 +129,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>By {{ subs.regisby }}, Ref {{ subs.regisref }}, Sales {{ subs.sales }}</span>
+                                    <span>By {{ subs.regisby }},,<br> Ref {{ subs.regisref }},<br> Sales {{ subs.sales }}</span>
                                 </div>
                             </div>
                             <div *ngIf="sessionemps.accessrole == '601'" class="col-sm-12">
