@@ -147,10 +147,15 @@
 
   /*Menu-toggle*/
 
-    $("#menu").click(function(e) {
+    function menuToggle(){
         e.preventDefault();
         $("#wrapper").toggleClass("active");
-    });
+    };
+
+    /*$("#menu").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });*/
 
     $(window).load(function(){
         var w = $(window).width();
