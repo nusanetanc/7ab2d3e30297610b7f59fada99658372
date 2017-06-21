@@ -148,11 +148,11 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="marginT20 paddingR30">
                                           <select  class="inputForm">
-                                              <option value="0">-- Select Reference --</option>
-                                              <option value="Media Sosial">-- Media Sosial --</option>
-                                              <option value="Website">-- Website --</option>
-                                              <option value="Event">-- Event --</option>
-                                              <option value="Sales">-- Sales --</option>
+                                              <option value="0" disabled selected>-- Select Reference --</option>
+                                              <option value="Media Sosial">Media Sosial</option>
+                                              <option value="Website">Website</option>
+                                              <option value="Event">Event</option>
+                                              <option value="Sales">Sales</option>
                                           </select><br/>
                                         </div>
                                     </div>
