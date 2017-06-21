@@ -129,7 +129,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>By {{ subs.regisby }},,<br> Ref {{ subs.regisref }},<br> Sales {{ subs.sales }}</span>
+                                    <span>By {{ subs.regisby }},<br> Ref {{ subs.regisref }},<br> Sales {{ subs.sales }}</span>
                                 </div>
                             </div>
                             <div *ngIf="sessionemps.accessrole == '601'" class="col-sm-12">
@@ -205,6 +205,19 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Date of Birth</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31"><br/>
+                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31"><br/>
                                     <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
                                 </div>
                             </div>
