@@ -19,6 +19,7 @@ var SubSchema   = new Schema({
     status: String,
     regisby: String,
     regisref: String,
+    sales: String,
     idnumber: Number,
     packprice: Number,
     activedate: Date,

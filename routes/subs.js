@@ -274,8 +274,9 @@ router.post('/addsub', function(req, res, next) {
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
     sub.status= 'Registration';
-    sub.regisby= req.body.regisby;
+    sub.regisby= 'Personal';
     sub.regisref= req.body.regisref;
+    sub.sales= 'No';
     sub.groovyid= req.body.groovyid;
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
@@ -361,8 +362,9 @@ router.post('/addsubs', function(req, res, next) {
     sub.cardid= req.body.cardid;
     sub.nova= req.body.nova;
     sub.status= 'Registration';
-    sub.regisby= req.body.regisby;
+    sub.regisby= 'CS/Sales';
     sub.regisref= req.body.regisref;
+    sub.sales= req.body.sales;
     sub.groovyid= req.body.groovyid;
     sub.idnumber= req.body.idnumber;
     sub.datebirth= req.body.datebirth;
