@@ -131,7 +131,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                 <div class="col-xs-12 col-md-7">
                                     <span>{{ subs.regisby }} - {{ subs.regisref }} - {{ subs.sales }}</span>
                                 </div>
-                            </div>{{ subs.sales }}
+                            </div>
                             <div *ngIf="sessionemps.accessrole == '601'" class="col-sm-12">
                               <button (click)="onItemClicked(EditData)" class="btn btn-default buttonOrange">
                                   UPDATE PERSONAL DATA
