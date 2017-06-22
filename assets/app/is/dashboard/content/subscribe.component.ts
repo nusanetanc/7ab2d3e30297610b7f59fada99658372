@@ -216,9 +216,18 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31"><br/>
-                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31"><br/>
                                     <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
+                                    <select  class="inputForm">
+                                        <option value="0" disabled selected>-- Select Reference --</option>
+                                        <option value="Media Sosial">Media Sosial</option>
+                                        <option value="Website">Website</option>
+                                        <option value="Event">Event</option>
+                                        <option value="Sales">Sales</option>
+                                    </select><br/>
+                                    <select  class="inputForm">
+                                        <option value="0" disabled selected>-- Select Sales --</option>
+                                        <option *ngFor="#sale of sales">{{sale.name}}</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -556,6 +565,7 @@ onSelectStreet(_id) {
     blokfloors: any[] = [];
     homes: any[] = [];
     streetnames: any[] = [];
+    sales: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
@@ -565,6 +575,7 @@ onSelectStreet(_id) {
       this.getAllJob();
       this.getAcountEmp();
       this.getAllPackages();
+      this.getSales();
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
@@ -738,6 +749,13 @@ onSelectStreet(_id) {
           .map(res => res.json())
           .subscribe(listpackages => {
               this.listpackages = listpackages
+          })
+  }
+  getSales() {
+      this.http.get(`${this.API}/employee/list/Sales`)
+          .map(res => res.json())
+          .subscribe(sales => {
+              this.sales = sales
           })
   }
 }
