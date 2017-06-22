@@ -175,7 +175,8 @@ Sub.findById(req.params.id, function(err, subs) {
               idpackage: subs.idpackage,
               packlev: packages.level,
               packprice: packages.price,
-              packtype: packages.type
+              packtype: packages.type,
+              sales: subs.sales
             });
           });
         });
@@ -234,7 +235,8 @@ router.get('/detailsub', function(req, res, next) {
                 idhomeid: homes._id,
                 cluster: clusters.name,
                 city: cities.name,
-                idpackage: subs.idpackage
+                idpackage: subs.idpackage,
+                sales: subs.sales
               });
             });
           });
