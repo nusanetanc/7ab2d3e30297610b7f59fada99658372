@@ -226,7 +226,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     </select><br/>
                                     <select  class="inputForm" #editregissales id="editregissales">
                                         <option value="0" disabled selected>-- Select Sales --</option>
-                                        <option *ngFor="#sale of sales" [value]=sale._id>{{sale.name}}</option>
+                                        <option *ngFor="#sale of sales" value={{sale._id}}>{{sale.name}}</option>
                                     </select>
                                 </div>
                             </div>
