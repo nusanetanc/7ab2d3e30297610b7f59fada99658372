@@ -216,22 +216,22 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input value={{subs.datebirth}} #editbrithdate type="date" class="form-control inputForm" id="editbrithdate" placeholder="Example : 2017/12/31">
-                                    <select  class="inputForm">
+                                    <input value={{subs.regisby}} #editregisby type="text" class="form-control inputForm" id="editregisby" placeholder="Example : Personal/CS/Sales">
+                                    <select  class="inputForm" #editregisref id="editregisref">
                                         <option value="0" disabled selected>-- Select Reference --</option>
                                         <option value="Media Sosial">Media Sosial</option>
                                         <option value="Website">Website</option>
                                         <option value="Event">Event</option>
                                         <option value="Sales">Sales</option>
                                     </select><br/>
-                                    <select  class="inputForm">
+                                    <select  class="inputForm" #editregissales id="editregissales">
                                         <option value="0" disabled selected>-- Select Sales --</option>
                                         <option *ngFor="#sale of sales">{{sale.name}}</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value)" type="submit" class="btn btn-default buttonOrange">
+                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editbrithdate.value, editregisby.value, editregisref.value, editregissales.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
                               <button (click)="onItemClicked1(Cancel)" class="btn btn-default buttonOrange">
@@ -643,8 +643,8 @@ onSelectStreet(_id) {
                 console.log(JSON.stringify(error.json()));
             });
     }
-    editSubs(editname, editemail, editphone, editid, editbrithdate) {
-        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&datebirth=${editbrithdate}`;
+    editSubs(editname, editemail, editphone, editid, editbrithdate, editregisby, editregisref, editregissales) {
+        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&datebirth=${editbrithdate}&regisby=${editregisby}&regisref=${editregisref}&sales=${editregissales}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http

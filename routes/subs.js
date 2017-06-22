@@ -522,6 +522,9 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 sub.phone= req.body.phone;
                 sub.idnumber= req.body.idnumber;
                 sub.datebirth= req.body.datebirth;
+                sub.regisby= req.body.regisby;
+                sub.regisref= req.body.regisref;
+                sub.sales= req.body.sales;
               if (err)
                 res.send(err);
 
