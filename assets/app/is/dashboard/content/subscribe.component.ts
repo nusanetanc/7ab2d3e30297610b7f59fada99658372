@@ -224,7 +224,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                         <option value="Event">Event</option>
                                         <option value="Sales">Sales</option>
                                     </select><br/>
-                                    <select  class="inputForm" #editregissales id="editregissales">
+                                    <select (change)="onSelectSales($event.target.value)" class="inputForm" #editregissales id="editregissales">
                                         <option value="0" disabled selected>-- Select Sales --</option>
                                         <option *ngFor="#sale of sales" value={{sale._id}}>{{sale.name}}</option>
                                     </select>
@@ -500,6 +500,9 @@ onSelectEmp2(_id) {
 }
 onSelectHome(_id) {
     console.log(nohome)
+}
+onSelectSales(_id){
+  console.log(_id)
 }
 onSelectCity(_id) {
     this.properties = this.getAllPropertyByCity(){
