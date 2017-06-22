@@ -210,7 +210,7 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
-                                    <span>Date of Birth</span>
+                                    <span>Reference Registration</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
                                     <span>:</span>
