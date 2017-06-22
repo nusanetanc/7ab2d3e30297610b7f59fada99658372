@@ -138,16 +138,23 @@
             kendo.drawing.pdf.saveAs(group, "Payment" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
-    }
+    };
 
 </script>
 
 <!-- Collaps JS -->
-<script type="text/javascript">
+<script>
 
   /*Menu-toggle*/
 
-    $("#menu").click(function(e) {
+      var menuToggle = function() {
+
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+
+      };
+
+    $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
