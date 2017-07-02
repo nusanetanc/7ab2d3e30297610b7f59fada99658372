@@ -50,6 +50,7 @@ import { Cluster } from './cluster';
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/>
                                         </form>
+                                        <!--
                                         <form>
                                             <select  #clusterlevel id="clusterlevel">
                                                 <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
@@ -57,6 +58,7 @@ import { Cluster } from './cluster';
                                                 <option value="B">B</option>
                                             </select><br/>
                                         </form>
+                                        -->
                                         <form>
                                             <select  #clusterbuilding id="clusterbuilding">
                                                 <option class="option" disabled="true"  selected="true" value="0">-- Select Building Cluster --</option>
