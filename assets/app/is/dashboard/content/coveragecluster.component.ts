@@ -71,7 +71,7 @@ import { Cluster } from './cluster';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterlevel.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
+                                        <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
@@ -189,7 +189,7 @@ getAllClusterByProperty() {
 }
     addCluster(clusterproperty, clustername, clusterlevel, clusterbuilding) {
 
-        var body = `name=${clustername}&property=${clusterproperty}&level=${clusterlevel}&building=${clusterbuilding}`;
+        var body = `name=${clustername}&property=${clusterproperty}&building=${clusterbuilding}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
