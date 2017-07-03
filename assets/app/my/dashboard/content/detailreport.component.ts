@@ -92,16 +92,11 @@ getDetailReport() {
     })
 }
 getChatReport() {
-return Observable
-     .interval(1000)
-     .flatMap(() => {
-       return
   this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(chats => {
       this.chats = chats
     })
-  });
 }
 addReport(message) {
     var body = `message=${message}`;
