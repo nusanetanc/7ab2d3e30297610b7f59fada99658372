@@ -85,23 +85,23 @@ chats: any[] = [];
     }
 
 getDetailReport() {
-return Observable
-     .interval(1000)
-     .flatMap(() => {
-       return
   this.http.get(`${this.API}/complaint/complaint/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
     })
-  });
 }
 getChatReport() {
+return Observable
+     .interval(1000)
+     .flatMap(() => {
+       return
   this.http.get(`${this.API}/chatcomplaint/chat/${this._routeParams.get('id')}`)
     .map(res => res.json())
     .subscribe(chats => {
       this.chats = chats
     })
+  });
 }
 addReport(message) {
     var body = `message=${message}`;
