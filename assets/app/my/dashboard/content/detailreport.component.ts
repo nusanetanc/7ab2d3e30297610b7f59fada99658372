@@ -87,19 +87,21 @@ chats: any[] = [];
   ngOnInit() {
     this.getDetailReport();
     this.getChatReport();
-    this.data = new Observable(observer => {
-        setTimeout(() => {
-            observer.next(42);
-        }, 1000);
+  }
+  init() {
+      this.data = new Observable(observer => {
+          setTimeout(() => {
+              observer.next(42);
+          }, 1000);
 
-        setTimeout(() => {
-            observer.next(43);
-        }, 2000);
+          setTimeout(() => {
+              observer.next(43);
+          }, 2000);
 
-        setTimeout(() => {
-            observer.complete();
-        }, 3000);
-    });
+          setTimeout(() => {
+              observer.complete();
+          }, 3000);
+      });
 
       let subscription = this.data.subscribe(
           value => this.values.push(value),
@@ -107,7 +109,6 @@ chats: any[] = [];
           () => this.finished = true
       );
   }
-
     stringAsDate(dateStr: string) {
         return new Date(dateStr);
     }
