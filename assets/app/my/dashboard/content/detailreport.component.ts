@@ -1,9 +1,8 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {Component, OnInit, OnDestroy, NgZone} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
-import {Observable} from 'rxjs/Observable';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
 import { PushNotificationComponent } from './ng2-notifications'
@@ -79,6 +78,8 @@ chats: any[] = [];
   ngOnInit() {
     this.getDetailReport();
     this.getChatReport();
+    let timer = Observable.timer(2000, 5000);
+    timer.subscribe(() => this.getChatReport());
   }
     stringAsDate(dateStr: string) {
         return new Date(dateStr);
