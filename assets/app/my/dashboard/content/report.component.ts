@@ -29,10 +29,6 @@ import { Complaint } from './complaints';
                         <a class="btn btn-default dropdown-toggle buttonSort" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             DATE
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">NAME</a></li>
-                            <li><a href="#">ID</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -77,14 +73,6 @@ getAllComplaint() {
     .map(res => res.json())
     .subscribe(complaints => {
       this.complaints = complaints
-    })
-}
-
-getComplaintOpen() {
-  this.http.get(`${this.API}/subscribe/complaint/open`)
-    .map(res => res.json())
-    .subscribe(opencomplaints => {
-      this.opencomplaints = opencomplaints
     })
 }
 
