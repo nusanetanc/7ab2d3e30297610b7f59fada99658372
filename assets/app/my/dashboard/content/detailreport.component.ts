@@ -64,10 +64,19 @@ import { PushNotificationComponent } from './ng2-notifications'
             </div>
         </div>
     </div>
+    <h6 style="margin-bottom: 0">VALUES:</h6>
+	  <div *ngFor="let value of values">- {{ value }}</div>
+    <button style="margin-top: 2rem;" (click)="init()">Init</button>
     `,
     directives: [ContentSubsNameComponent, PushNotificationComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentDetailReportComponent implements OnInit {
+
+private data: Observable<Array<number>>;
+private values: Array<number> = [];
+private anyErrors: boolean;
+private finished: boolean;
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 complaints: any[] = [];
@@ -78,6 +87,25 @@ chats: any[] = [];
   ngOnInit() {
     this.getDetailReport();
     this.getChatReport();
+    this.data = new Observable(observer => {
+        setTimeout(() => {
+            observer.next(42);
+        }, 1000);
+
+        setTimeout(() => {
+            observer.next(43);
+        }, 2000);
+
+        setTimeout(() => {
+            observer.complete();
+        }, 3000);
+    });
+
+      let subscription = this.data.subscribe(
+          value => this.values.push(value),
+          error => this.anyErrors = true,
+          () => this.finished = true
+      );
   }
 
     stringAsDate(dateStr: string) {
