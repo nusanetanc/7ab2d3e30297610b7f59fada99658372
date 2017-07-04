@@ -89,10 +89,10 @@ import {Emp} from "./emp";
                             <div class="col-sm-6 col-xs-6" style="padding: 15px 25px 15px 0px;text-decoration: none;">
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-6">
-                                        <a href="http://www.groovy.id/privacy-policy" style="color: #FFF;font-weight: 300;">Privacy</a>
+                                        <a href="privacy-policy" style="color: #FFF;font-weight: 300;">Privacy</a>
                                     </div>
                                     <div class="col-sm-6 col-xs-6">
-                                        <a href="http://www.groovy.id/terms-of-use" style="color: #FFF;font-weight: 300;">Terms</a>
+                                        <a href="terms-of-use" style="color: #FFF;font-weight: 300;">Terms</a>
                                     </div>
                                 </div>
                             </div>

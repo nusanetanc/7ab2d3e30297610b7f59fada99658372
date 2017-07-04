@@ -739,9 +739,9 @@ declare let kendo;
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
                               </div>
-                              <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;">
+                              <!-- <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Pembayaran
-                                </button>
+                              </button> -->
                               <!-- /Content List -->
                            </div>
                         </div>
