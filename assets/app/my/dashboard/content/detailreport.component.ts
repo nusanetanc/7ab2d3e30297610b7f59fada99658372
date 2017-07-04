@@ -1,6 +1,7 @@
 import {Component, OnInit, OnDestroy, NgZone} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
+import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
