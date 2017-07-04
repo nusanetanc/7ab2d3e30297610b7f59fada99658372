@@ -76,6 +76,14 @@ getAllComplaint() {
     })
 }
 
+getComplaintOpen() {
+  this.http.get(`${this.API}/subscribe/complaint/open`)
+    .map(res => res.json())
+    .subscribe(opencomplaints => {
+      this.opencomplaints = opencomplaints
+    })
+}
+
     getAcountSub() {
         this.http.get(`${this.API}/subscribe/detailsub`)
             .map(res => res.json())

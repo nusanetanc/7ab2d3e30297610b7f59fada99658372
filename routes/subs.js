@@ -87,7 +87,7 @@ router.get('/listcomplaint', function(req, res, next) {
 });
 router.get('/complaint/open', function(req, res, next) {
   var sessionSubId = req.session.subs;
-    Complaint.findOne({sub: sessionSubId, status: open}, function(err, complaints) {
+    Complaint.findOne({sub: sessionSubId, status: 'open'}, function(err, complaints) {
         console.log(complaints);
         res.json(complaints);
     });
