@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
@@ -10,12 +10,12 @@ import { Sub } from './subs';
     template: `
         <div class="container container-auth-client">
            <div class="top-margin text-center">
-              <form class="form" name="myForm">
+              <form class="form" [ngFormModel]="myForm">
                  <div class="form-group">
-                    <input ng-model="mytext" type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
+                    <input [ngFormControl]="myForm.find('signEmail')" type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
                     <input required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
-                 <button ng-disabled="myForm.$invalid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                 <button [disabled]="!myForm.valid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
               </form>
            </div>
@@ -33,6 +33,8 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES]
 })
 export class SigninComponent implements OnInit {
+
+myForm: ControlGroup;
 
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
