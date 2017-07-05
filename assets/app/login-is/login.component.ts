@@ -56,8 +56,7 @@ import { Sub } from './subs';
             }
         </style>
         <div *ngIf="sessionemps.accessrole != null" class="load">
-            <img src="images/logo-groovy.png"><br/>
-            <h5><b>Session found</b></h5>
+            <img src="images/logo-groovy.png">
         </div>
     `,
     directives: [ROUTER_DIRECTIVES]
@@ -70,7 +69,6 @@ export class LoginComponent implements OnInit {
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-      this.getAllEmp();
       this.getAcountEmp();
     }
 
