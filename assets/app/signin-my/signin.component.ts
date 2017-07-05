@@ -10,12 +10,12 @@ import { Sub } from './subs';
     template: `
         <div class="container container-auth-client">
            <div class="top-margin text-center">
-              <form class="form" #formCtrl="ngForm">
+              <form class="form" name="myForm">
                  <div class="form-group">
-                    <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                    <input ngControl="passwordCtrl" required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                    <input ng-model="mytext" type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
+                    <input required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
-                 <button [disabled]="!formCtrl.form.valid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                 <button ng-disabled="myForm.$invalid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
               </form>
            </div>
