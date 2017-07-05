@@ -99,9 +99,7 @@ export class LoginComponent implements OnInit {
             .map(res => res.json())
             .subscribe(sessionemps => {
                 this.sessionemps = sessionemps
-            },
-            error => {
-              window.location.href = `/is`;
+                window.location.href = `/is`;
             }
           )
     }
