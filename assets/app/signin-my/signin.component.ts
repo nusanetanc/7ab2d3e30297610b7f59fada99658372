@@ -13,7 +13,7 @@ import { Sub } from './subs';
               <form class="form" #formCtrl="ngForm">
                  <div class="form-group">
                     <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                    <input ngControl="passwordCtrl" type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                    <input ngControl="passwordCtrl" required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
                  <button [disabled]="!formCtrl.form.valid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
