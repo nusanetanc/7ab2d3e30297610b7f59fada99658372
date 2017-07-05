@@ -39,12 +39,12 @@ import {Streetname} from "./street_name";
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
                                                 <input #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
-                                                <input #subphone id="subphone" type="text" maxlength="14" minlength="10" class="form-control inputForm" placeholder="Handphone" required>
-                                                <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
+                                                <input #subphone id="subphone" type="text" maxlength="14" class="form-control inputForm" placeholder="Handphone" required>
+                                                <input #subemail id="subemail" type="email" maxlength="50" class="form-control inputForm" placeholder="Email" required>
                                                 <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
                                                 <!--<p>Upload your National Identity Card</p>
-                                                <input #subcardid id="subcardid" class="inputForm" type="file" placeholder="Upload file..." />-->
+                                                <input #subcardid id="subcardid" class="inputForm" maxlength="20" type="file" placeholder="Upload file..." />-->
 
                                                 <!-- komen -->
 
