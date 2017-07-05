@@ -41,10 +41,7 @@ export class AppComponent{
       .subscribe(
         subs => {
             this.subs = subs
-      },
-      error => {
-        window.location.href = `/signin`;
-      }
-      );
+              window.location.href = `/my`;
+      });
   }
 }
