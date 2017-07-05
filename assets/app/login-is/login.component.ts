@@ -9,7 +9,7 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-login',
     template: `
-        <div class="container">
+        <div *ngIf="sessionemps.accessrole == null" class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
       this.getAllEmp();
+      this.getAcountEmp();
     }
 
   // Declare empty list of people
@@ -92,5 +93,16 @@ export class LoginComponent implements OnInit {
                     $('.modal-backdrop').removeClass("modal-backdrop");
                 }
             );
+    }
+    getAcountEmp() {
+        this.http.get(`${this.API}/subscribe/detailemp`)
+            .map(res => res.json())
+            .subscribe(sessionemps => {
+                this.sessionemps = sessionemps
+            },
+            error => {
+              window.location.href = `/is`;
+            }
+          )
     }
 }
