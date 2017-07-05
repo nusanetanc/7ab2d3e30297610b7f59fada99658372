@@ -11,9 +11,24 @@ import {SigninComponent} from "./signin.component";
 @Component({
     selector: 'my-app',
     template: `
-            <my-header></my-header><br>
-            <router-outlet></router-outlet>
-            <my-footer></my-footer>
+            <my-header *ngIf="subs._id != null" ></my-header><br>
+            <router-outlet *ngIf="subs._id != null"></router-outlet>
+            <my-footer *ngIf="subs._id != null" ></my-footer>
+            <style *ngIf="subs._id == null">
+                .load > img {
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height:159px;
+                    width:500px;
+                }
+            </style>
+            <div *ngIf="subs._id == null" class="load">
+                <img src="images/logo-groovy.png">
+            </div>
 `,
     directives: [HeaderComponent, FooterComponent, SigninComponent, ROUTER_DIRECTIVES]
 })
