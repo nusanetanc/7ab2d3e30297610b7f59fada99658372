@@ -38,8 +38,8 @@ import {Streetname} from "./street_name";
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
-                                                <input #subname id="subname" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
-                                                <input #subphone id="subphone" type="text" class="form-control inputForm" placeholder="Handphone" required>
+                                                <input #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
+                                                <input #subphone id="subphone" type="text" maxlength="14" minlength="10" class="form-control inputForm" placeholder="Handphone" required>
                                                 <input #subemail id="subemail" type="email" class="form-control inputForm" placeholder="Email" required>
                                                 <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
                                                 <input #subidnumber id="subidnumber" type="text" class="form-control inputForm" placeholder="National Identity Card Number" required>
