@@ -9,7 +9,7 @@ import { Sub } from './subs';
 @Component({
     selector: 'form-login',
     template: `
-        <div class="container">
+        <div *ngIf="sessionemps.accessrole == null" class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
@@ -43,6 +43,9 @@ import { Sub } from './subs';
             </div>
           </div>
         </div>
+        <div *ngIf="sessionemps.accessrole != null" class="load">
+            <img src="images/logo-groovy.png">
+        </div>
     `,
     directives: [ROUTER_DIRECTIVES]
 })
@@ -60,6 +63,7 @@ export class LoginComponent implements OnInit {
 
   // Declare empty list of people
   emps: any[] = [];
+  sessionemps: any[] = [];
 
   // Get all Sub from the API
   getAllEmp() {
