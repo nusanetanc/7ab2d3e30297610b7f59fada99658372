@@ -319,11 +319,10 @@ myForm: ControlGroup;
             Validators.required,
             this.isEmail
           ])],
-          subname: ['', Validators.required]
-          subphone: ['', Validators.required]
-          subdatebirth: ['', Validators.required]
+          subname: ['', Validators.required],
+          subphone: ['', Validators.required],
+          subdatebirth: ['', Validators.required],
           subidnumber: ['', Validators.required]
-          subpackage: ['0', Validators.required]
         })
     }
 
