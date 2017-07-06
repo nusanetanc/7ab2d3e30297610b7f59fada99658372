@@ -603,7 +603,7 @@ router.post('/login', function(req, res, next){
 
         if (!passwordHash.verify(req.body.password, doc.password)){
             return res.status(404).json(
-                'Invalid password',
+                'Invalid password'
             );
         }
 
