@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import {mongoose} from 'mongoose';
@@ -14,20 +14,20 @@ import { Sub } from './subs';
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-4 card-login">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" [ngFormModel]="myForm">
                                 <center><img src="images/logo-groovy.png" alt="Logo Groovy" width="40%">
                                 <h6 class="grey-text">INFORMATION SYSTEM</h6></center><br><br>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="control-label orange-text">Email</label><br>
-                                    <input type="email" class="form-login" id="signEmail" #signEmail placeholder="Type your mail"><br>
+                                    <input [ngFormControl]="myForm.find('signEmail')" type="email" class="form-login" id="signEmail" #signEmail placeholder="Type your mail"><br>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword3" class="control-label orange-text">Password</label><br>
-                                    <input type="password" class="form-login" id="signPassword" #signPassword placeholder="Type your password"><br>
+                                    <input [ngFormControl]="myForm.find('signPassword')" type="password" class="form-login" id="signPassword" #signPassword placeholder="Type your password"><br>
                                 </div><br>
                                 <div class="form-group form-forgot">
                                     <a href="" class="orange-text">I forgot password</a>
-                                    <button type="submit" id="logins" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
+                                    <button [disabled]="!myForm.valid" type="submit" id="logins" class="btn btn-login" (click)="signEmp(signEmail.value, signPassword.value)">LOGIN</button>
                                 </div>
                             </form>
                         </div>
@@ -62,10 +62,11 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES]
 })
 export class LoginComponent implements OnInit {
+myForm: ControlGroup;
 // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
-    constructor(private http: Http) {}
+    constructor(private _fb:FormBuilder, private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -117,5 +118,21 @@ export class LoginComponent implements OnInit {
                 window.location.href = `/is`;
             }
           )
+    }
+    ngOnInit() {
+      this.myForm = this._fb.group({
+        signEmail: ['', Validators.compose([
+          Validators.required,
+          this.isEmail
+        ])],
+        signPassword: ['', Validators.required]
+      })
+    }
+    private isEmail(control: Control): { [s: string]: boolean} {
+      var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|id|ida|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+      if(!control.value.match(re)){
+        console.log(control.value);
+        return {invalidEmail: true};
+      }
     }
 }
