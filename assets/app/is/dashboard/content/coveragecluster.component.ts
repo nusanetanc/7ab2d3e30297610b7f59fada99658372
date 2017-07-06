@@ -39,12 +39,12 @@ import { Cluster } from './cluster';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                        <form>
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
+                                        <form [ngFormModel]="myForm">
+                                            <select [ngFormControl]="myForm.find('clustercity')" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/><br/>
-                                            <select  #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                            <select [ngFormControl]="myForm.find('clusterproperty')" #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
                                                 <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/><br/>
@@ -55,12 +55,12 @@ import { Cluster } from './cluster';
                                                 <option value="B">B</option>
                                             </select><br/><br/>
                                         -->
-                                            <select  #clusterbuilding id="clusterbuilding">
+                                            <select [ngFormControl]="myForm.find('clusterbuilding')" #clusterbuilding id="clusterbuilding">
                                                 <option class="option" disabled="true"  selected="true" value="0">-- Select Building Cluster --</option>
                                                 <option value="Land House">Land House</option>
                                                 <option value="Apartment">Apartment</option>
                                             </select><br/><br/>
-                                            <input #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
+                                            <input [ngFormControl]="myForm.find('clustername')" #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
                                             <br/><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
