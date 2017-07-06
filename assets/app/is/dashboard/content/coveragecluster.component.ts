@@ -63,7 +63,7 @@ import { Cluster } from './cluster';
                                             <input [ngFormControl]="myForm.find('clustername')" #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
                                             <br/><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                         </form>
