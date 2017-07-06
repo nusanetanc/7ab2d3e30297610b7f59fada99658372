@@ -39,35 +39,29 @@ import { Street } from './street';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                    <form>
+                                    <form [ngFormModel]="myForm">
                                       <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #streetcity id="streetcity">
                                           <option value="0" disabled="true">-- Select City --</option>
                                           <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                                      </select><br/>
-                                    </form>
-                                    <form>
+                                      </select><br/><br/>
                                       <select #streetproperty id="streetproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
                                           <option value="0" disabled="true">-- Select Property --</option>
                                           <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                                      </select><br/>
-                                    </form>
-                                    <form>
+                                      </select><br/><br/>
                                       <select #streetcluster id="streetcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
-                                      </select><br/>
-                                    </form>
-                                    <form>
+                                      </select><br/><br/>
                                     <select #streetblok id="streetblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
                                         <option value="0" disabled="true">-- Select Block or Floor --</option>
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                    </select><br/>
-                                    </form>
+                                    </select><br/><br/>
                                     <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                     <button type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
