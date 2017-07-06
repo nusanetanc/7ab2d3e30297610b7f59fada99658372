@@ -559,16 +559,16 @@ router.post('/signin', function(req, res){
             });
         }
         if (!doc) {
-           return res.status(404).json({
+           return res.status(404).json(
                 'User could not be found'
-        });
+        );
     }
 
         if (!passwordHash.verify(req.body.password, doc.password)) {
             if (err) {
-                return res.status(404).json({
+                return res.status(404).json(
                     'Invalid Password'
-                });
+                );
             }
         }
 
