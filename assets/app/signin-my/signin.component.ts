@@ -9,7 +9,7 @@ import { Sub } from './subs';
     selector: 'form-signin',
     template: `
 
-        <div class="container container-auth-client">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row">
