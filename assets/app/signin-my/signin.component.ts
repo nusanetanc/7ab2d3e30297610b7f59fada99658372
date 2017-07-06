@@ -39,7 +39,7 @@ myForm: ControlGroup;
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Add one person to the API
   signSub(signEmail, signPassword) {
