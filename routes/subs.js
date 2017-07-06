@@ -560,16 +560,14 @@ router.post('/signin', function(req, res){
         }
         if (!doc) {
            return res.status(404).json({
-           title: "No user found",
-           error: {message: 'User could not be found.'}
+                'User could not be found'
         });
     }
 
         if (!passwordHash.verify(req.body.password, doc.password)) {
             if (err) {
                 return res.status(404).json({
-                    title: "Could not sign user in",
-                    error: {message: 'Invalid Password'}
+                    'Invalid Password'
                 });
             }
         }
