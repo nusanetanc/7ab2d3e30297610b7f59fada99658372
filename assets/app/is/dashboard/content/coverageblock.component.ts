@@ -135,8 +135,8 @@ ngOnInit() {
     this.getAllBLokfloorByCluster();
     this.getAcountEmp();
     this.myForm = this._fb.group({
-      blockname: ['0', Validators.required],
-      blockcluster: ['', Validators.required]
+      blockname: ['', Validators.required],
+      blockcluster: ['0', Validators.required]
     })
 }
 
