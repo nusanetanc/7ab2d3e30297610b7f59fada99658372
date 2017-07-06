@@ -64,7 +64,7 @@ import { Street } from './street';
                                     </select><br/><br/>
                                         <input [ngFormControl]="myForm.find('homeno')" type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number"><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                       </form>
