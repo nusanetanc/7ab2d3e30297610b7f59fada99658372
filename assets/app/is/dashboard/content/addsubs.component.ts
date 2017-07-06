@@ -315,11 +315,15 @@ myForm: ControlGroup;
         this.getAcountEmp();
         this.getSales();
         this.myForm = this._fb.group({
-          signEmail: ['', Validators.compose([
+          subemail: ['', Validators.compose([
             Validators.required,
             this.isEmail
           ])],
-          signPassword: ['', Validators.required]
+          subname: ['', Validators.required]
+          subphone: ['', Validators.required]
+          subdatebirth: ['', Validators.required]
+          subidnumber: ['', Validators.required]
+          subpackage: ['0', Validators.required]
         })
     }
 
