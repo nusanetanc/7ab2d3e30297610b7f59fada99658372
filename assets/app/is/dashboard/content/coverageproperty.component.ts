@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -37,15 +38,15 @@ import { Property } from './property';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                        <form>
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
-                                                <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                        <form [ngFormModel]="myForm">
+                                            <select [ngFormControl]="myForm.find('propertycity')" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
+                                                <option class="option" disabled="true" value="">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/>
                                         </form>
-                                        <input #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
+                                        <input [ngFormControl]="myForm.find('propertyname')" #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
@@ -95,6 +96,9 @@ import { Property } from './property';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoveragePropertyComponent implements OnInit {
+
+myForm: ControlGroup;
+
 API = 'http://202.162.207.164:3000';
 
 // Declare empty list of people
@@ -102,13 +106,17 @@ cities: any[] = [];
 propertys: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
     this.getAllCity();
     this.getAllPropertyByCity();
     this.getAcountEmp();
+    this.myForm = this._fb.group({
+      propertycity: ['0', Validators.required],
+      propertyname: ['', Validators.required]
+    })
 }
 selectedCity: City = new City(0, 'dummy');
 onSelectCity(_id) {
