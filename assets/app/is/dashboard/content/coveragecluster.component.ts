@@ -48,13 +48,6 @@ import { Cluster } from './cluster';
                                                 <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/><br/>
-                                        <!--
-                                            <select  #clusterlevel id="clusterlevel">
-                                                <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                            </select><br/><br/>
-                                        -->
                                             <select [ngFormControl]="myForm.find('clusterbuilding')" #clusterbuilding id="clusterbuilding">
                                                 <option class="option" disabled="true"  selected="true" value="0">-- Select Building Cluster --</option>
                                                 <option value="Land House">Land House</option>
@@ -159,7 +152,7 @@ ngOnInit() {
     this.myForm = this._fb.group({
       clusterproperty: ['0', Validators.required],
       clustername: ['', Validators.required],
-      clusterbuilding: ['', Validators.required]
+      clusterbuilding: ['0', Validators.required]
     })
 }
 // Get all City from the API

@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -39,28 +40,25 @@ import { Blokfloor } from './blokfloor';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form>
-                                            <select #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
+                                            <select [ngFormControl]="myForm.find('blockcity')" #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                                            </select><br/>
-                                        </form>
-                                        <form>
-                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
+                                            </select><br/><br/>
+                                            <select [ngFormControl]="myForm.find('blockproperty')" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
                                                 <option class="option" disabled="true" value="0">-- Select Property Name --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                                            </select><br/>
-                                        </form>
-                                        <form>
-                                            <select #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                            </select><br/><br/>
+                                            <select [ngFormControl]="myForm.find('blockcluster')" #blockcluster id="blockcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
                                                 <option value="0">-- Select Clusters --</option>
                                                 <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
-                                            </select><br/>
-                                        </form>
-                                        <input type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name">
+                                            </select><br/><br/>
+
+                                        <input [ngFormControl]="myForm.find('blockname')" type="text" class="form-control inputForm" id="blockname" #blockname placeholder="Block / Floor Name"><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(blockname.value, blockcluster.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -110,6 +108,8 @@ import { Blokfloor } from './blokfloor';
 })
 export class ContentCoverageBlockComponent implements OnInit {
 
+myForm: ControlGroup;
+
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 selectedCluster: City = new City(0, 'dummy');
@@ -125,7 +125,7 @@ subs: any[] = [];
 blokfloors: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -134,6 +134,10 @@ ngOnInit() {
     this.getAllClusterByProperty();
     this.getAllBLokfloorByCluster();
     this.getAcountEmp();
+    this.myForm = this._fb.group({
+      blockname: ['0', Validators.required],
+      blockcluster: ['', Validators.required]
+    })
 }
 
 onSelectCity(_id) {
