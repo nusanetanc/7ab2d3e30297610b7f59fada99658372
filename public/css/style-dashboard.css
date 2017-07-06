@@ -291,10 +291,18 @@ img.img-nav-profile {
     color:#666C6E;
 }
 
+.form-group input {
+    box-shadow: none !important;
+}
+
 .form-group > div > input {
     border: none;
     border-radius: 0px;
     height: 60px;
+}
+
+#subtimeinst {
+    box-shadow: none !important;
 }
 
 .sort-down {
