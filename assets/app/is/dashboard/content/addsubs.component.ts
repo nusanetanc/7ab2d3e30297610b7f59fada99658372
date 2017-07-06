@@ -1,5 +1,6 @@
-import {Component, OnInit, Input} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Sub } from './subs';
@@ -34,11 +35,12 @@ import {Streetname} from "./street_name";
                                         <h4 class="titleH4">PERSONAL INFORMATION</h4>
                                     </div>
                                 </div>
+                                <form class="form" [ngFormModel]="myForm">
                                 <div class="row">
                                     <div class="col-sm-12 paddingL35">
                                         <div class="paddingTB20 paddingR30">
                                             <div class="form-group">
-                                                <input #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
+                                                <input [ngFormControl]="myForm.find('subname')" #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
                                                 <input #subphone id="subphone" type="text" maxlength="14" class="form-control inputForm" placeholder="Handphone" required>
                                                 <input #subemail id="subemail" type="email" maxlength="50" class="form-control inputForm" placeholder="Email" required>
                                                 <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
@@ -172,9 +174,10 @@ import {Streetname} from "./street_name";
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <!-- Small modal -->
                                         <span id="label-success" class="label label-success right" style="display: none;">Success</span>
-                                        <button type="submit" id="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value, subpackage.value)" class="btn btn-default buttonOrange right" data-toggle="modal">REGISTER</button>
+                                        <button [disabled]="!myForm.valid" type="submit" id="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value, subpackage.value)" class="btn btn-default buttonOrange right" data-toggle="modal">REGISTER</button>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -196,6 +199,9 @@ import {Streetname} from "./street_name";
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddSubsComponent implements OnInit {
+
+myForm: ControlGroup;
+
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
@@ -299,7 +305,7 @@ export class ContentAddSubsComponent implements OnInit {
     promopackages: any[] = [];
     sales: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private _fb:FormBuilder, private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -307,6 +313,13 @@ export class ContentAddSubsComponent implements OnInit {
         this.getAllCity();
         this.getAcountEmp();
         this.getSales();
+        this.myForm = this._fb.group({
+          signEmail: ['', Validators.compose([
+            Validators.required,
+            this.isEmail
+          ])],
+          signPassword: ['', Validators.required]
+        })
     }
 
 
@@ -419,5 +432,12 @@ export class ContentAddSubsComponent implements OnInit {
             .subscribe(sales => {
                 this.sales = sales
             })
+    }
+    private isEmail(control: Control): { [s: string]: boolean} {
+      var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|id|ida|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+      if(!control.value.match(re)){
+        console.log(control.value);
+        return {invalidEmail: true};
+      }
     }
 }
