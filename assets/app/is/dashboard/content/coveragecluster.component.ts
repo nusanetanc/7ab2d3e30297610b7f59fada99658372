@@ -40,7 +40,7 @@ import { Cluster } from './cluster';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form [ngFormModel]="myForm">
-                                            <select [ngFormControl]="myForm.find('clustercity')" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
+                                            <select  [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/><br/>
