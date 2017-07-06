@@ -40,11 +40,11 @@ import { Blokfloor } from './blokfloor';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form [ngFormModel]="myForm">
-                                            <select [ngFormControl]="myForm.find('blockcity')" #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
+                                            <select #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/><br/>
-                                            <select [ngFormControl]="myForm.find('blockproperty')" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
+                                            <select [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)" #blockproperty id="blockproperty">
                                                 <option class="option" disabled="true" value="0">-- Select Property Name --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
                                             </select><br/><br/>
