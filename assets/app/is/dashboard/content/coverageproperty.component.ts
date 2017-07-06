@@ -114,7 +114,7 @@ ngOnInit() {
     this.getAllPropertyByCity();
     this.getAcountEmp();
     this.myForm = this._fb.group({
-      propertycity: ['0', Validators.required],
+      propertycity: ['', Validators.required],
       propertyname: ['', Validators.required]
     })
 }
