@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -52,13 +53,13 @@ import { Street } from './street';
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                       </select><br/><br/>
-                                    <select #streetblok id="streetblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                                    <select [ngFormControl]="myForm.find('streetblok')" #streetblok id="streetblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
                                         <option value="0" disabled="true">-- Select Block or Floor --</option>
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                     </select><br/><br/>
-                                    <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
+                                    <input [ngFormControl]="myForm.find('streetname')" type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                    <button type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
+                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
                                     </form>
@@ -109,6 +110,9 @@ import { Street } from './street';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentCoverageStreetComponent implements OnInit {
+
+myForm: ControlGroup;
+
 API = 'http://202.162.207.164:3000';
 
 selectedCity: City = new City(0, 'dummy');
@@ -170,7 +174,7 @@ blokfloors: any[] = [];
 streetnames: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -180,6 +184,10 @@ this.getAllClusterByProperty();
 this.getAllBLokfloorByCluster();
 this.getAllStreetByBlok();
 this.getAcountEmp();
+this.myForm = this._fb.group({
+  streetname: ['', Validators.required],
+  streetblok: ['0', Validators.required]
+})
 }
 // Get all City from the API
 getAllCity() {
