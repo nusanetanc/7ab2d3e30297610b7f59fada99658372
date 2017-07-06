@@ -315,14 +315,7 @@ myForm: ControlGroup;
         this.getAcountEmp();
         this.getSales();
         this.myForm = this._fb.group({
-          subemail: ['', Validators.compose([
-            Validators.required,
-            this.isEmail
-          ])],
-          subname: ['', Validators.required],
-          subphone: ['', Validators.required],
-          subdatebirth: ['', Validators.required],
-          subidnumber: ['', Validators.required]
+          subname: ['', Validators.required]
         })
     }
 
