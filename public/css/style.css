@@ -1209,3 +1209,10 @@ body.body-login {
 
 /*--- /Login Page ---*/
 
+
+.btnd:focus, .btnd:active, .btnd.active, .btnd:focus:active {
+    background-image: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
