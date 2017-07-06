@@ -13,7 +13,7 @@ import { Sub } from './subs';
               <form class="form" [ngFormModel]="myForm">
                  <div class="form-group">
                     <input [ngFormControl]="myForm.find('signEmail')" type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                    <input required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                    <input [ngFormControl]="myForm.find('signPassword')" required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
                  <button [disabled]="!myForm.valid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
@@ -64,11 +64,11 @@ constructor(private _fb:FormBuilder, private http: Http) {}
   }
   ngOnInit() {
     this.myForm = this._fb.group({
-      email: ['', Validators.compose([
+      signEmail: ['', Validators.compose([
         Validators.required,
         this.isEmail
       ])],
-      password: ['', Validators.required]
+      signPassword: ['', Validators.required]
     })
   }
   private isEmail(control: Control): { [s: string]: boolean} {
