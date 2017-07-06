@@ -115,6 +115,8 @@ import { Cluster } from './cluster';
 })
 export class ContentCoverageClusterComponent implements OnInit {
 
+myForm: ControlGroup;
+
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 
@@ -126,7 +128,7 @@ properties: any[] = [];
 clusters: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 onSelectCity(_id) {
     this.properties = this.getAllPropertyByCity(){
@@ -154,6 +156,11 @@ ngOnInit() {
     this.getAllPropertyByCity();
     this.getAllClusterByProperty();
     this.getAcountEmp();
+    this.myForm = this._fb.group({
+      clusterproperty: ['0', Validators.required],
+      clustername: ['', Validators.required],
+      clusterbuilding: ['', Validators.required]
+    })
 }
 // Get all City from the API
 getAllCity() {
@@ -180,7 +187,7 @@ getAllClusterByProperty() {
             this.clusters = clusters
         })
 }
-    addCluster(clusterproperty, clustername, clusterlevel, clusterbuilding) {
+    addCluster(clusterproperty, clustername, clusterbuilding) {
 
         var body = `name=${clustername}&property=${clusterproperty}&building=${clusterbuilding}`;
         var headers = new Headers();
