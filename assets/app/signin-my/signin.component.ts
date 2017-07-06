@@ -1,6 +1,6 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import 'rxjs/add/operator/map';
 import { Http, Headers} from 'angular2/http';
 import { Sub } from './subs';
@@ -47,12 +47,12 @@ import { Sub } from './subs';
 
         <div class="container container-auth-client">
            <div class="top-margin text-center">
-              <form class="form">
+              <form class="form" [ngFormModel]="myForm">
                  <div class="form-group">
-                    <input type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
-                    <input type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
+                    <input [ngFormControl]="myForm.find('signEmail')" type="text" class="form-control" id="signEmail" #signEmail placeholder="Email">
+                    <input [ngFormControl]="myForm.find('signPassword')" required type="password" class="form-control" id="signPassword" #signPassword placeholder="Password">
                  </div>
-                 <button id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
+                 <button [disabled]="!myForm.valid" id="signin" type="submit" (click)="signSub(signEmail.value, signPassword.value)" class="btn button-submit">SIGN IN</button>
                  <div class="text text-other"><a href="isforgot.html">I forgot password</a></div>
               </form>
            </div>
@@ -71,28 +71,12 @@ import { Sub } from './subs';
 })
 export class SigninComponent implements OnInit {
 
+myForm: ControlGroup;
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
-constructor(private http: Http) {}
-
-
-  // Angular 2 Life Cycle event when component has been initialized
-  ngOnInit() {
-    this.getAllSub();
-  }
-
-// Declare empty list of people
-subs: any[] = [];
-
-// Get all Sub from the API
-getAllSub() {
-  this.http.get(`${this.API}/subscribe/listsub`)
-    .map(res => res.json())
-    .subscribe(subs => {
-      this.subs = subs
-    })
-}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Add one person to the API
   signSub(signEmail, signPassword) {
@@ -114,5 +98,21 @@ getAllSub() {
                 $('#failed').modal('show');
             }
           );
+  }
+  ngOnInit() {
+    this.myForm = this._fb.group({
+      signEmail: ['', Validators.compose([
+        Validators.required,
+        this.isEmail
+      ])],
+      signPassword: ['', Validators.required]
+    })
+  }
+  private isEmail(control: Control): { [s: string]: boolean} {
+    var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|id|ida|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+    if(!control.value.match(re)){
+      console.log(control.value);
+      return {invalidEmail: true};
+    }
   }
 }

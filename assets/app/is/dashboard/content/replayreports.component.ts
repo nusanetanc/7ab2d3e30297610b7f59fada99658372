@@ -1,6 +1,7 @@
-import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {Component, OnInit, OnDestroy, NgZone} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
+import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
@@ -87,6 +88,8 @@ emps: any[] = [];
     this.getDetailReport();
     this.getChatReport();
     this.getAcountEmp();
+    let timer = Observable.timer(2000, 5000);
+    timer.subscribe(() => this.getChatReport());
   }
 
     stringAsDate(dateStr: string) {
