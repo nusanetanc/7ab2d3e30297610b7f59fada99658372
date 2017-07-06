@@ -39,7 +39,7 @@ import { Blokfloor } from './blokfloor';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                        <form>
+                                        <form [ngFormModel]="myForm">
                                             <select [ngFormControl]="myForm.find('blockcity')" #blockcity id="blockcity" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
