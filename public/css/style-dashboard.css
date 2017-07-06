@@ -301,6 +301,10 @@ img.img-nav-profile {
     height: 60px;
 }
 
+#subtimeinst {
+    box-shadow: none !important;
+}
+
 .sort-down {
     background-color: #E2E2E2;
     border: none;
