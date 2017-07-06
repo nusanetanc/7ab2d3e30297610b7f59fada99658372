@@ -564,10 +564,12 @@ router.post('/signin', function(req, res){
         );
     }
 
-        if (!passwordHash.verify(req.body.password, doc.password)){
-            return res.status(404).json(
-                'Invalid password'
-            );
+        if (!passwordHash.verify(req.body.password, doc.password)) {
+            if (err) {
+                return res.status(404).json(
+                    'Invalid Password'
+                );
+            }
         }
 
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
