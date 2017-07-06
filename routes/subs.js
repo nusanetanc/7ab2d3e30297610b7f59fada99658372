@@ -558,26 +558,21 @@ router.post('/signin', function(req, res){
                 error: err
             });
         }
-
         if (!doc) {
-           return res.status(404).json(
-                'User could not be found'
-            );
-        }
+           return res.status(404).json({
+           title: "No user found",
+           error: {message: 'User could not be found.'}
+        });
+    }
 
-        if (!passwordHash.verify(req.body.password, doc.password)){
-            return res.status(404).json(
-                'Invalid password'
-            );
-        }
-
-        /*if (!passwordHash.verify(req.body.password, doc.password)) {
+        if (!passwordHash.verify(req.body.password, doc.password)) {
             if (err) {
-                return res.status(404).json(
-                    'Invalid Password'
-                );
+                return res.status(404).json({
+                    title: "Could not sign user in",
+                    error: {message: 'Invalid Password'}
+                });
             }
-        }*/
+        }
 
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
 
