@@ -54,19 +54,21 @@ import {ContentEmpsNameComponent} from './empsname.component';
                         </div>
                     </div>
                     <div *ngIf="emps.accessrole == '1' && complaints.status == 'open'">
+                    <form class="form" [ngFormModel]="myForm">
                       <div class="row">
                           <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                            <div class="col-sm-10 col-xs-12">
-                              <textarea id="message" #message class="input width100" rows="10" placeholder="*Type message here"></textarea>
+                              <textarea [ngFormControl]="myForm.find('message')" id="message" #message class="input width100" rows="10" placeholder="*Type message here"></textarea>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-sm-10 col-sm-offset-1 marginB20">
-                              <button type="submit" (click)="addReport(message.value)" class="btn btn-default buttonOrange">
+                              <button [disabled]="!myForm.valid" type="submit" (click)="addReport(message.value)" class="btn btn-default buttonOrange">
                                   SEND
                               </button>
                           </div>
                       </div>
+                    </form>
                   </div>
                 </div>
             </div>
