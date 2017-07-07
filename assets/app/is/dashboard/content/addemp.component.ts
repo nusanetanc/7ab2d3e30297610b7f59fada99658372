@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -36,29 +37,29 @@ import { City } from './cities';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                        <form>
-                                            <input #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee ID">
-                                            <input #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
-                                            <input #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
-                                            <input #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                            <select #empdepartement class="form-control inputForm" id="empdepartement">
+                                        <form [ngFormModel]="myForm">
+                                            <input [ngFormControl]="myForm.find('empid')" #empid type="text" class="form-control inputForm" id="empid" placeholder="Employee ID">
+                                            <input [ngFormControl]="myForm.find('empname')" #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
+                                            <input [ngFormControl]="myForm.find('empemail')" #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
+                                            <input [ngFormControl]="myForm.find('empphone')" #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
+                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement">
                                               <option disabled="true" value="0">-- Select Departement --</option>
                                               <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                             </select>
                                             <br/>
-                                            <select #emptitlejob id="emptitlejob">
+                                            <select [ngFormControl]="myForm.find('emptitlejob')" #emptitlejob id="emptitlejob">
                                               <option disabled="true" value="0">-- Select Title Job --</option>
                                               <option *ngFor="#job of jobs">{{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                            <select #empcity id="empcity">
+                                            <select [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
                                               <option disabled="true" selected="true">-- Select City Job --</option>
                                               <option>Jakarta</option>
                                               <option>Bandung</option>
                                             </select>
                                             <br/><br/>
-                                            <select #empaccess id="empaccess">
-                                              <option>-- Select Acces Role --</option>
+                                            <select [ngFormControl]="myForm.find('empaccess')" #empaccess id="empaccess">
+                                              <option value="none">-- Select Acces Role --</option>
                                               <option value="0">Admin Web</option>
                                               <option value="1">Direktur</option>
                                               <option value="2">Sales Manager</option>
@@ -112,6 +113,8 @@ import { City } from './cities';
 })
 export class ContentAddEmpComponent implements OnInit {
 
+myForm: ControlGroup;
+
         // Link to our api, pointing to localhost
         API = 'http://202.162.207.164:3000';
 
@@ -119,13 +122,23 @@ export class ContentAddEmpComponent implements OnInit {
         emps: any[] = [];
         accountemps: any[] = [];
 
-        constructor(private http: Http) {}
+        constructor(private _fb:FormBuilder, private http: Http) {}
 
         // Angular 2 Life Cycle event when component has been initialized
         ngOnInit() {
 
             this.getAllEmployee();
             this.getAcountEmp();
+            this.myForm = this._fb.group({
+              empid: ['', Validators.required],
+              empname: ['', Validators.required],
+              empemail: ['', Validators.required],
+              empphone: ['', Validators.required],
+              empdepartement: ['', Validators.required],
+              emptitlejob: ['', Validators.required],
+              empcity: ['', Validators.required],
+              empaccess: ['', Validators.required]
+            })
         }
 
         // Get all users from the API
