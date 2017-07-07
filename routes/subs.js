@@ -457,11 +457,11 @@ router.post('/my/logout', function(req, res, next) {
 });
 router.put('/activationemail/:id', function(req, res, next) {
 
-        Sub.findOne({codeactivation: req.params.id}, function(err, sub) {
+        Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
                 res.send(err);
-                sub.status= 'Email Activation';
+                //sub.status= 'Email Activation';
                 sub.password= passwordHash.generate(req.body.password);
               if (err)
                 res.send(err);
