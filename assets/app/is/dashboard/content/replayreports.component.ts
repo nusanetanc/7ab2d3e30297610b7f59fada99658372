@@ -1,6 +1,5 @@
 import {Component, OnInit, OnDestroy, NgZone} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
+import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
