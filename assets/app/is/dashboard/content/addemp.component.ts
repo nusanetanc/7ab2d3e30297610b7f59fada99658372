@@ -53,7 +53,7 @@ import { City } from './cities';
                                             </select>
                                             <br/><br/>
                                             <select [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
-                                              <option disabled="true" selected="true">-- Select City Job --</option>
+                                              <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                               <option>Jakarta</option>
                                               <option>Bandung</option>
                                             </select>
@@ -130,10 +130,10 @@ myForm: ControlGroup;
             this.getAllEmployee();
             this.getAcountEmp();
             this.myForm = this._fb.group({
-              empid: ['0', Validators.required],
-              empname: ['0', Validators.required],
-              empemail: ['0', Validators.required],
-              empphone: ['0', Validators.required],
+              empid: ['', Validators.required],
+              empname: ['', Validators.required],
+              empemail: ['', Validators.required],
+              empphone: ['', Validators.required],
               empdepartement: ['0', Validators.required],
               emptitlejob: ['0', Validators.required],
               empcity: ['0', Validators.required],
