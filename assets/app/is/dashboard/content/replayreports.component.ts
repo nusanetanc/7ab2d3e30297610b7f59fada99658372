@@ -87,7 +87,7 @@ complaints: any[] = [];
 chats: any[] = [];
 emps: any[] = [];
 
-  constructor(private http: Http, private _routeParams: RouteParams) {}
+  constructor(private _fb:FormBuilder, private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailReport();
