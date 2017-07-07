@@ -48,7 +48,7 @@ import { Complaint } from './complaints';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentReportComponent {
+export class ContentReportComponent implements OnInit{
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
