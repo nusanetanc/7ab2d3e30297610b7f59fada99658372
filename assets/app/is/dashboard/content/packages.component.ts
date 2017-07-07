@@ -38,13 +38,13 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                             </select><br/><br/>
                                             <select [ngFormControl]="myForm.find('detail')" #detail id="detail" name="package">
-                                                <option disabled="true" selected="true">-- Select Detail --</option>
+                                                <option disabled="true" selected="true" value="0">-- Select Detail --</option>
                                                 <option value="Internet">Internet</option>
                                                 <option value="Internet + TV">Internet + TV</option>
                                                 <option value="Internet + TV + Voice">Internet + TV + Voice</option>
                                             </select><br/><br/>
                                             <select [ngFormControl]="myForm.find('type')" #type id="type" name="package">
-                                                <option disabled="true" selected="true">-- Select Type --</option>
+                                                <option disabled="true" selected="true" value="0">-- Select Type --</option>
                                                 <option value="Promo">Promo</option>
                                                 <option value="Default">Default</option>
                                             </select><br/><br/>
@@ -120,10 +120,10 @@ ngOnInit() {
     this.getAllCluster();
     this.myForm = this._fb.group({
       level: ['', Validators.required],
-      cluster: ['0', Validators.required]
+      cluster: ['All', Validators.required]
       detail: ['0', Validators.required]
       type: ['0', Validators.required]
-      price: ['0', Validators.required]
+      price: ['', Validators.required]
     })
 }
 selectedClusters: Cluster = new Cluster(0, 'dummy');
