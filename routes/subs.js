@@ -248,7 +248,7 @@ router.get('/detailsub', function(req, res, next) {
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
-var sessionSubId = "58b3cdac45912d052e2c85a5";
+var sessionSubId = req.session.subs;
 Bill.find({sub: sessionSubId}, function(err, bills) {
        console.log( bills );
        res.json(bills);
@@ -558,12 +558,12 @@ router.post('/signin', function(req, res){
                 error: err
             });
         }
-        
-        
+
+
         if (!doc) {
            return res.status(404).json('User could not be found');
         }
-        
+
         /*if (!doc) {
            return res.status(404).json({
                title: "No user found",
