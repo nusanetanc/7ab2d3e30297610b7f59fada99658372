@@ -130,14 +130,14 @@ myForm: ControlGroup;
             this.getAllEmployee();
             this.getAcountEmp();
             this.myForm = this._fb.group({
-              empid: ['', Validators.required],
-              empname: ['', Validators.required],
-              empemail: ['', Validators.required],
-              empphone: ['', Validators.required],
-              empdepartement: ['', Validators.required],
-              emptitlejob: ['', Validators.required],
-              empcity: ['', Validators.required],
-              empaccess: ['', Validators.required]
+              empid: ['0', Validators.required],
+              empname: ['0', Validators.required],
+              empemail: ['0', Validators.required],
+              empphone: ['0', Validators.required],
+              empdepartement: ['0', Validators.required],
+              emptitlejob: ['0', Validators.required],
+              empcity: ['0', Validators.required],
+              empaccess: ['none', Validators.required]
             })
         }
 
