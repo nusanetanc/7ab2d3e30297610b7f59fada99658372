@@ -1,5 +1,6 @@
 import {Component, OnInit, OnDestroy, NgZone} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -75,6 +76,9 @@ import {ContentEmpsNameComponent} from './empsname.component';
     directives: [ContentSubsNameComponent, ContentEmpsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentReplayReportComponent implements OnInit {
+
+myForm: ControlGroup;
+
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 
@@ -82,7 +86,7 @@ complaints: any[] = [];
 chats: any[] = [];
 emps: any[] = [];
 
-  constructor(private http: Http, private _routeParams: RouteParams) {}
+  constructor(private _fb:FormBuilder, private http: Http, private _routeParams: RouteParams) {}
 
   ngOnInit() {
     this.getDetailReport();
@@ -90,6 +94,9 @@ emps: any[] = [];
     this.getAcountEmp();
     let timer = Observable.timer(2000, 5000);
     timer.subscribe(() => this.getChatReport());
+    this.myForm = this._fb.group({
+      message: ['', Validators.required]
+    })
   }
 
     stringAsDate(dateStr: string) {
@@ -111,7 +118,6 @@ getChatReport() {
     })
 }
 addReport(message) {
-alert('Edit Stock Success');
     var body = `message=${message}`;
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
