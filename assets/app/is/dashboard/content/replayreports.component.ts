@@ -52,7 +52,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
                             <hr class="hr-report">
                         </div>
                     </div>
-                    <div *ngIf="emps.accessrole == '801' && complaints.status == 'open'">
+                    <div *ngIf="emps.accessrole == '1' && complaints.status == 'open'">
                       <div class="row">
                           <div class="col-sm-1 col-xs-12"><img class="ava marginB10" src="./images/ava.png" alt="ava"></div>
                            <div class="col-sm-10 col-xs-12">
