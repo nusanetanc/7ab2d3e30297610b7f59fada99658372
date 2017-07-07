@@ -52,7 +52,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                     </div>
