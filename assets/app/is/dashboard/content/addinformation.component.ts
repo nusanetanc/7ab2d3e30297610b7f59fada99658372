@@ -186,7 +186,7 @@ myForm: ControlGroup;
     this.getAcountEmp();
     this.myForm = this._fb.group({
       subject: ['', Validators.required],
-      subject: ['', Validators.required],
+      message: ['', Validators.required],
     })
     }
     // Get all City from the API
