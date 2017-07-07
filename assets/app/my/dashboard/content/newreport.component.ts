@@ -8,7 +8,7 @@ import { Problem } from './problem';
 @Component({
     selector: 'form-newreport',
     template: `
-    <div *ngIf="opencomplaints.id" id="page-content-wrapper">
+    <div *ngIf="!opencomplaints" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
