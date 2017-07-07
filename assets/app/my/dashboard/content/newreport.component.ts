@@ -78,7 +78,7 @@ import { Problem } from './problem';
             </div>
         </div>
     </div>
-    <div *ngIf="opencomplaints._id == null">
+    <div *ngIf="opencomplaints">
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"> Can not Create Report</span><br><hr class="hr1"></div>
     </div>
     `,
