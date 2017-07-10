@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Stock } from './stocks';
@@ -32,15 +33,15 @@ import { Goods } from './goods';
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
-                                <form>
-                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
+                                <form [ngFormModel]="myForm">
+                                    <select [ngFormControl]="myForm.find('inputGoods')" [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)" #inputGoods id="inputGoods">
                                         <option class="option" disabled="true" value="0">-- Select Goods Name --</option>
                                         <option *ngFor="#good of goods" [value]=good._id>{{ good.name }}</option>
                                     </select><br/>
                                 </form>
-                                <input #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
+                                <input [ngFormControl]="myForm.find('idbarcode')" #idbarcode type="number" class="form-control inputForm" id="idbarcode" placeholder="Barcode">
                                 <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                <button type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
+                                <button [disabled]="!myForm.valid" type="submit" (click)="addStock(inputGoods.value, idbarcode.value)" class="btn btn-default buttonOrange">
                                     SUBMIT
                                 </button>
                             </div>
@@ -62,6 +63,7 @@ import { Goods } from './goods';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddStocksComponent implements OnInit {
+myForm: ControlGroup;
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
 
@@ -73,6 +75,10 @@ export class ContentAddStocksComponent implements OnInit {
       ngOnInit() {
         this.getAllGoods();
         this.getAllStock();
+        this.myForm = this._fb.group({
+          inputGoods: ['0', Validators.required],
+          idbarcode: ['', Validators.required]
+        })
       }
       selectedGoods: Goods = new Goods(0, 'dummy');
       onSelectGoods(_id) {
