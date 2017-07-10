@@ -70,7 +70,7 @@ myForm: ControlGroup;
       goods: any[] = [];
       stocks: any[] = [];
 
-      constructor(private http: Http) {}
+      constructor(private _fb:FormBuilder, private http: Http) {}
 
       ngOnInit() {
         this.getAllGoods();
