@@ -95,18 +95,16 @@ import { Bill } from './bills';
                     <div class="row contList">
                         <div class="col-md-12">
                             <div class="row hid">
-                                <div class="col-sm-3 invoiceIdHeader"><strong>Invoice ID</strong></div>
-                                <div class="col-sm-3 invoiceListHeader"><strong>Invoice Date</strong></div>
-                                <div class="col-sm-3 invoiceListHeader"><strong>Total</strong></div>
-                                <div class="col-sm-3 invoiceListHeader"><strong>Status</strong></div>
+                                <div class="col-sm-4 invoiceIdHeader"><strong>Invoice ID</strong></div>
+                                <div class="col-sm-4 invoiceListHeader"><strong>Total</strong></div>
+                                <div class="col-sm-4 invoiceListHeader"><strong>Status</strong></div>
                             </div>
                             <div *ngFor="#bill of bills">
                             <a [routerLink]="['Detailbilling', {id: bill._id}]">
                             <div class="row">
-                                <div class="col-sm-3 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
-                                <div class="col-sm-3 invoiceList"><span>{{ bill.billdate }}</span></div>
-                                <div class="col-sm-3 invoiceList"><span>Rp. {{ bill.totalpay | number:'2.2-4' }}</span></div>
-                                <div class="col-sm-3 invoiceList"><span class="red">{{ bill.status }}</span></div>
+                                <div class="col-sm-4 invoiceList paddingL35"><span>{{ bill.noinvoice }}</span></div>
+                                <div class="col-sm-4 invoiceList"><span>Rp. {{ bill.totalpay | number:'2.2-4' }}</span></div>
+                                <div class="col-sm-4 invoiceList"><span class="red">{{ bill.status }}</span></div>
                             </div>
                             </a>
                             </div>
