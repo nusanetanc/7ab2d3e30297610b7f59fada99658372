@@ -157,13 +157,24 @@ router.post('/addchat/helpdesk/:id', function(req, res, next) {
 
 /* GET detail sub. */
 router.get('/id/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   Sub.findById(req.params.id, function(err, subs) {
   console.log( subs );
   res.json(subs);
 });
+}
 });
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
     subs.groovyid = "591916077a149b7469259903";
@@ -214,6 +225,7 @@ Sub.findById(req.params.id, function(err, subs) {
       });
     });
   });
+}
 });
 
 /* GET detail sub. */
@@ -279,11 +291,17 @@ router.get('/detailsub', function(req, res, next) {
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "No user Please Signin"
+    });
+  } else {
 var sessionSubId = req.session.subs;
 Bill.find({sub: sessionSubId}, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
+ }
 });
 
 /* Add sub */
@@ -376,6 +394,11 @@ router.post('/addsub', function(req, res, next) {
 
 /* Add sub */
 router.post('/addsubs', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   var sub = new Sub();
   var codeactivation = require('node-sid')({
  seed:'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -408,10 +431,15 @@ router.post('/addsubs', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 
 router.put('/putsub/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findById(req.params.id, function(err, sub) {
 
             if (err)
@@ -446,10 +474,15 @@ router.put('/putsub/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.put('/editgroovyid/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findById(req.params.id, function(err, sub) {
 
             if (err)
@@ -465,6 +498,7 @@ router.put('/editgroovyid/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+      }
 });
 
 /* GET detail sub. */
@@ -507,7 +541,11 @@ router.put('/activationemail/:id', function(req, res, next) {
 });
 
 router.put('/activationaccount/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -523,10 +561,15 @@ router.put('/activationaccount/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.put('/updatepackage/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -542,10 +585,15 @@ router.put('/updatepackage/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+      }
 });
 
 router.put('/updatesubs/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -568,9 +616,15 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.delete('/delsub/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.remove({
             _id: req.params.id
         }, function(err, bear) {
@@ -579,6 +633,7 @@ router.delete('/delsub/:id', function(req, res, next) {
 
             res.json({ message: 'Successfully deleted' });
    });
+ }
 });
 
 router.post('/signin', function(req, res){
