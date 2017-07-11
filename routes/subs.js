@@ -359,11 +359,6 @@ router.get('/listbill/sub/:id', function(req, res, next) {
 
 /* GET detail bill. */
 router.get('/idbill/:id', function(req, res, next) {
-  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0" || req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
-    return res.status(404).json({
-      title: "Access not found"
-    });
-  } else {
 Bill.findOne({_id: req.params.id}, function(err, bills) {
   Sub.findById(bills.sub, function(err, subs) {
     Home.findById(subs.groovyid, function(err, homes) {
@@ -405,7 +400,6 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
       });
     });
   });
-}
 });
 
 
