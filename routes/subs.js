@@ -61,7 +61,7 @@ router.use(session({
 router.get('/listsub', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
-      title: "Access not foundn"
+      title: "Access not found"
     });
   } else {
      Sub.find(function(err, subs) {
