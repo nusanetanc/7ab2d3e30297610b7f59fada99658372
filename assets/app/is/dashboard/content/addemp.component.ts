@@ -143,7 +143,7 @@ myForm: ControlGroup;
 
         // Get all users from the API
         getAllEmployee() {
-            this.http.get(`${this.API}/employee/listemp`)
+            this.http.get(`${this.API}/subscribe/listemp`)
                 .map(res => res.json())
                 .subscribe(emps => {
                     this.emps = emps

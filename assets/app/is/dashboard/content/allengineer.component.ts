@@ -121,7 +121,7 @@ export class ContentAllEngineerComponent {
 
     // Get all users from the API
     getAllEmployee() {
-        this.http.get(`${this.API}/employee/list/${this.departement}`)
+        this.http.get(`${this.API}/subscribe/list/${this.departement}`)
             .map(res => res.json())
             .subscribe(emps => {
                 this.emps = emps
