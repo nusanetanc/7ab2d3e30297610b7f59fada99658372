@@ -84,7 +84,33 @@ router.get('/detailemp', function(req, res, next) {
    });
  }
 });
+/* GET employe listing. */
+router.get('/listemp', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "No user Please Signin"
+    });
+  } else {
+     Emp.find(function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
 
+/* GET employe listing. */
+router.get('/list/:departement', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "No user Please Signin"
+    });
+  } else {
+     Emp.find({departement:  req.params.departement}, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
 router.get('/listcomplaint', function(req, res, next) {
   if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
     return res.status(404).json({
