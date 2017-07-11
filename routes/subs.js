@@ -345,7 +345,7 @@ Bill.find({sub: sessionSubId}, function(err, bills) {
 
 /* GET billloye listing. */
 router.get('/listbill/sub/:id', function(req, res, next) {
-  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
       title: "Access not found"
     });
@@ -359,7 +359,7 @@ router.get('/listbill/sub/:id', function(req, res, next) {
 
 /* GET detail bill. */
 router.get('/idbill/:id', function(req, res, next) {
-  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0" || req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
       title: "Access not found"
     });
