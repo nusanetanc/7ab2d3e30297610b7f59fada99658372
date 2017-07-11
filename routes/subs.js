@@ -198,7 +198,7 @@ router.post('/addchat/helpdesk/:id', function(req, res, next) {
 router.get('/id/:id', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
-      title: "Session not found"
+      title: "Access not found"
     });
   } else {
   Sub.findById(req.params.id, function(err, subs) {
@@ -211,7 +211,7 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/subs/:id', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
-      title: "Session not found"
+      title: "Access not found"
     });
   } else {
 Sub.findById(req.params.id, function(err, subs) {
@@ -332,7 +332,7 @@ router.get('/detailsub', function(req, res, next) {
 router.get('/bill', function(req, res, next) {
   if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
     return res.status(404).json({
-      title: "No user Please Signin"
+      title: "Access not found"
     });
   } else {
 var sessionSubId = req.session.subs;
@@ -342,6 +342,72 @@ Bill.find({sub: sessionSubId}, function(err, bills) {
    });
  }
 });
+
+/* GET billloye listing. */
+router.get('/listbill/sub/:id', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+     Bill.find({sub: req.params.id}, function(err, bills) {
+       console.log( bills );
+       res.json(bills);
+   });
+ }
+});
+
+/* GET detail bill. */
+router.get('/idbill/:id', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+Bill.findOne({_id: req.params.id}, function(err, bills) {
+  Sub.findById(bills.sub, function(err, subs) {
+    Home.findById(subs.groovyid, function(err, homes) {
+      Cluster.findById(homes.cluster, function(err, clusters) {
+       City.findById(homes.city, function(err, cities) {
+            res.json({
+              _id: subs._id,
+              noinvoice: bills.noinvoice,
+              namepack: bills.namepack,
+              pricepack: bills.pricepack,
+              priceinstal: bills.priceinstal,
+              pricerouter: bills.pricerouter,
+              pricestb: bills.pricestb,
+              noinvoice: bills.noinvoice,
+              promoname: bills.promoname,
+              pricepromo: bills.pricepromo,
+              pricerj45cable: bills.pricerj45cable,
+              pinalty: bills.pinalty,
+              changetax: bills.changetax,
+              totalprice: bills.totalprice,
+              totalpay: bills.totalpay,
+              billdate: bills.billdate,
+              duedate: bills.duedate,
+              paydate: bills.paydate,
+              status: bills.status,
+              desc: bills.desc,
+              name: subs.name,
+              subid: subs.subid,
+              nova: subs.nova,
+              statussub: subs.status,
+              pinaltypay: subs.pinaltypay,
+              address: homes.address,
+              nohome: homes.nohome,
+              cluster: clusters.name,
+              city: cities.name
+            });
+          });
+        });
+      });
+    });
+  });
+}
+});
+
 
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
