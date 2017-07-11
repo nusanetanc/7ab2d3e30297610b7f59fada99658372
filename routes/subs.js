@@ -88,7 +88,7 @@ router.get('/detailemp', function(req, res, next) {
 router.get('/listemp', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
-      title: "No user Please Signin"
+      title: "Access not found"
     });
   } else {
      Emp.find(function(err, emps) {
@@ -102,10 +102,23 @@ router.get('/listemp', function(req, res, next) {
 router.get('/list/:departement', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
     return res.status(404).json({
-      title: "No user Please Signin"
+      title: "Access not found"
     });
   } else {
      Emp.find({departement:  req.params.departement}, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
+/* GET detail employe. */
+router.get('/emp/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+Emp.findById(req.params.id, function(err, emps) {
        console.log( emps );
        res.json(emps);
    });

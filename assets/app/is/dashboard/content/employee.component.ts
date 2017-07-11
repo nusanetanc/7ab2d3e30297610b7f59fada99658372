@@ -105,7 +105,7 @@ export class ContentEmployeeComponent {
     }
 
     getEmp(){
-    this.http.get(`${this.API}/employee/emp/${this._routeParams.get('id')}`)
+    this.http.get(`${this.API}/subscribe/emp/${this._routeParams.get('id')}`)
         .map(res => res.json())
         .subscribe(emps => {
             this.emps = emps
