@@ -135,6 +135,11 @@ router.post('/addchat/subs/:id', function(req, res, next) {
 });
 /* Add chat */
 router.post('/addchat/helpdesk/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   var chat = new Chat();
     chat.message= req.body.message;
     chat.date= dnow;
@@ -146,6 +151,7 @@ router.post('/addchat/helpdesk/:id', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 
 
