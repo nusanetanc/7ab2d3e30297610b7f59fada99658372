@@ -115,6 +115,11 @@ router.get('/complaint/open', function(req, res, next) {
 var dnow = new Date();
 /* Add chat */
 router.post('/addchat/subs/:id', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
   var chat = new Chat();
     chat.message= req.body.message;
     chat.date= dnow;
@@ -126,6 +131,7 @@ router.post('/addchat/subs/:id', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 /* Add chat */
 router.post('/addchat/helpdesk/:id', function(req, res, next) {
