@@ -56,12 +56,19 @@ router.use(session({
   maxAge: 99999999999999999999
 }));
 
+
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not foundn"
+    });
+  } else {
      Sub.find(function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
+ }
 });
 
 router.get('/detailemp', function(req, res, next) {
