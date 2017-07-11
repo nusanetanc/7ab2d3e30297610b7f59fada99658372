@@ -86,11 +86,17 @@ router.get('/detailemp', function(req, res, next) {
 });
 
 router.get('/listcomplaint', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
   var sessionSubId = req.session.subs;
     Complaint.find({sub: sessionSubId}, function(err, complaints) {
         console.log(complaints);
         res.json(complaints);
     });
+  }
 });
 router.get('/complaint/open', function(req, res, next) {
   var sessionSubId = req.session.subs;
