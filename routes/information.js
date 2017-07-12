@@ -5,7 +5,12 @@ var Information = require('../models/information');
 var Emp = require('../models/employee');
 var session = require('express-session');
 var localStorage = require('localStorage');
-
+router.use(session({
+  secret: 'Your secret key',
+  saveUninitialized: false,
+  resave: false,
+  maxAge: 99999999999999999999
+}));
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
      Information.find(function(err, informations) {
