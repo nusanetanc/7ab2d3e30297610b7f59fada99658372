@@ -14,7 +14,7 @@ router.use(cookieParser());
 router.use(session({
   secret: 'Your secret key',
   saveUninitialized: false,
-  resave: false,
+  resave: true,
   maxAge: 99999999999999999999
 }));
 /* GET subloye listing. */
