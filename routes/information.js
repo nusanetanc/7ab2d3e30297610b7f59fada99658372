@@ -9,7 +9,7 @@ router.get('/listinformation', function(req, res, next) {
   session=req.session;
      Information.find(function(err, informations) {
        console.log( informations );
-       console.log(session['emp']);
+       console.log(req.session.emp);
        res.json(informations);
    });
 });
