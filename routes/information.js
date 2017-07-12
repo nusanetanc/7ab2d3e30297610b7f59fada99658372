@@ -1,10 +1,16 @@
 var express = require('express');
 var passwordHash = require('password-hash');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var router = express.Router();
 var Information = require('../models/information');
 var Emp = require('../models/employee');
 var session = require('express-session');
 var localStorage = require('localStorage');
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+//router.use(upload.array());
+router.use(cookieParser());
 router.use(session({
   secret: 'Your secret key',
   saveUninitialized: false,
