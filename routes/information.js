@@ -4,9 +4,9 @@ var router = express.Router();
 var Information = require('../models/information');
 var Emp = require('../models/employee');
 
-var session=req.session;
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
+  var session=req.session;
      Information.find(function(err, informations) {
        console.log( informations );
        console.log(session.emp);
