@@ -21,14 +21,14 @@ router.use(session({
     secret: 'Your secret key',
     saveUninitialized: false,
     resave: true,
-    maxAge: 99999999999999999999
+    maxAge: 999
 }));
 
 /* GET jobs listing. */
 router.get('/list', function(req, res, next) {
      Stock.find(function(err, stocks) {
        console.log( stocks );
-       console.log(req.session.emp);
+       console.log(req.session.stocks);
        res.json(stocks);
    });
 });
