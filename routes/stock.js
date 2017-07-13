@@ -28,6 +28,7 @@ router.use(session({
 router.get('/list', function(req, res, next) {
      Stock.find(function(err, stocks) {
        console.log( stocks );
+       console.log(req.session.emp);
        res.json(stocks);
    });
 });
