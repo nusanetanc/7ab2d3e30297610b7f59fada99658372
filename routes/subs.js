@@ -51,7 +51,7 @@ router.use(upload.array());
 router.use(cookieParser());
 router.use(session({
   secret: 'Your secret key',
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true,
   maxAge: 99999999999999999999
 }));
