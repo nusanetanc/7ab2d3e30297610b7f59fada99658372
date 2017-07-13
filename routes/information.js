@@ -18,7 +18,7 @@ router.use(session({
   maxAge: 99999999999999999999
 }));
 /* GET subloye listing. */
-router.get('/listinformation', function(req, res, next) {
+router.get('/listinformation', session, function(req, res, next) {
      Information.find(function(err, informations) {
        console.log( informations );
        console.log(req.session.emp);
