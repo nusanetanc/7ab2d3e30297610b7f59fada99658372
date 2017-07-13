@@ -23,7 +23,6 @@ router.get('/listinformation', function(req, res, next) {
        console.log( informations );
        console.log(req.session.emp);
        res.json(informations);
-       res.json(req.session.emp);
    });
 });
 
