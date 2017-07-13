@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var Stock = require('../models/stock');
 var City = require('../models/city');
 var Cluster = require('../models/cluster');
@@ -8,6 +11,18 @@ var Sub = require('../models/subs');
 var Home = require('../models/home');
 var Goods = require('../models/goods');
 var Emp = require('../models/employee');
+
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(upload.array());
+router.use(cookieParser());
+router.use(session({
+    secret: 'Your secret key',
+    saveUninitialized: false,
+    resave: true,
+    maxAge: 99999999999999999999
+}));
 
 /* GET jobs listing. */
 router.get('/list', function(req, res, next) {
