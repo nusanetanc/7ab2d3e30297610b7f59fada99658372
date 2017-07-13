@@ -21,7 +21,7 @@ router.use(session({
     secret: 'Your secret key',
     saveUninitialized: false,
     resave: true,
-    maxAge: 99999999999999999999
+    maxAge: 999
 }));
 
 /* GET jobs listing. */
