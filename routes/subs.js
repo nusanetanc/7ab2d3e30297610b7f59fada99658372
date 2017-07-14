@@ -139,6 +139,7 @@ router.get('/listinformation', function(req, res, next) {
       //if(informations.to == homes._id || informations.to == homes.city || informations.to == homes.property || informations.to == homes.cluster || informations.to == homes.blokfloor || informations.to == homes.streetname){
        console.log( informations );
        res.json(informations);
+       res.json(homes);
     // }
    });
  });
