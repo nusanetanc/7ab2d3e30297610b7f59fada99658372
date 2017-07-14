@@ -128,10 +128,22 @@ Emp.findById(req.params.id, function(err, emps) {
 
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
-     Information.find(function(err, informations) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+    Sub.findById(req.session.subs, function(err, subs) {
+      Home.findById(subs.groovyid, function(err, homes) {
+    Information.find(function(err, informations) {
+      if(informations.to == homes._id || informations.to == homes.city || informations.to == homes.property || informations.to == homes.cluster || informations.to == homes.blokfloor || informations.to == homes.streetname){
        console.log( informations );
        res.json(informations);
+     }
    });
+ });
+});
+ }
 });
 
 router.get('/listcomplaint', function(req, res, next) {
