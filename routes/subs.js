@@ -20,6 +20,7 @@ var Complaint = require('../models/complaint');
 var Chat = require('../models/chatcomplaint');
 var Home = require('../models/home');
 var Package = require('../models/package');
+var Information = require('../models/information');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
