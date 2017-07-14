@@ -137,12 +137,14 @@ router.get('/listinformation', function(req, res, next) {
       Home.findById(subs.groovyid, function(err, homes) {
     Information.find(function(err, informations) {
       //if(informations.to == homes._id || informations.to == homes.city || informations.to == homes.property || informations.to == homes.cluster || informations.to == homes.blokfloor || informations.to == homes.streetname){
-       //console.log( informations );
+      console.log( informations );
        res.json({
          _id: informations._id,
-         subject: informations.subject
+         to: informations.to,
+         date: informations.date,
+         subject: informations.subject,
+         desc: informations.desc
        });
-       //console.log(homes);
     // }
    });
  });
