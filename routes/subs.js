@@ -138,7 +138,10 @@ router.get('/listinformation', function(req, res, next) {
     Information.find(function(err, informations) {
       //if(informations.to == homes._id || informations.to == homes.city || informations.to == homes.property || informations.to == homes.cluster || informations.to == homes.blokfloor || informations.to == homes.streetname){
        console.log( informations );
-       res.json(informations);
+       res.json({
+         _id: subs._id,
+         subject: informations.subject
+       });
        console.log(homes);
     // }
    });
