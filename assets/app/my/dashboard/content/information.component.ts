@@ -69,7 +69,7 @@ export class ContentInformationComponent implements OnInit {
 
 // Get all users from the API
 getAllInformation() {
-  this.http.get(`${this.API}/information/listinformation`)
+  this.http.get(`${this.API}/subscribe/listinformation`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations

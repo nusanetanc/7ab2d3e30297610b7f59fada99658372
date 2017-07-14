@@ -124,6 +124,15 @@ Emp.findById(req.params.id, function(err, emps) {
    });
  }
 });
+
+/* GET subloye listing. */
+router.get('/listinformation', function(req, res, next) {
+     Information.find(function(err, informations) {
+       console.log( informations );
+       res.json(informations);
+   });
+});
+
 router.get('/listcomplaint', function(req, res, next) {
   if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
     return res.status(404).json({
