@@ -45,7 +45,7 @@ import {ContentClustersNameComponent} from './clustername.component';
                       <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
                       <div *ngIf="information?.to == subs.idcity" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-cities [idto]=information?.to></form-cities></div>
                       <div *ngIf="information?.to == subs.idproperty" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-properties [idto]=information?.to></form-properties></div>
-                      <div *ngIf="information?.to == subs.idcluster" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-clusters [idto]=information?.to></form-cities></div>
+                      <div *ngIf="information?.to == subs.idcluster" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-clusters [idto]=information?.to></form-clusters></div>
                       <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admin</span></div>
                   </div>
                 </a>
