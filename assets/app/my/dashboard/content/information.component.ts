@@ -22,7 +22,17 @@ import { Sub } from './subs';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                <div class="dropdown">
+                  <div class="dropdown right">
+                    <button href="" class="glyphicon glyphicon-chevron-down sort-down" data-toggle="dropdown"></button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          <li><a href="">For Your</a></li>
+                          <li><a href="">For City</a></li>
+                          <li><a href="">For Property</a></li>
+                          <li><a href="">For Cluster</a></li>
+                          <li><a href="">For All Subscribe</a></li>
+                      </ul>
+                  </div>
+                  <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
                     <span class="caret"></span></button>
                     <ul class="dropdown-menu">
