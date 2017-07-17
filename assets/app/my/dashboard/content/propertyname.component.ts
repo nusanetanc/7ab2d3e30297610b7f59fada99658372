@@ -11,7 +11,7 @@ import { Property } from './property';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentCitiesNameComponent implements OnInit {
+export class ContentPropertiesNameComponent implements OnInit {
 @Input() idto: string;
 API = 'http://202.162.207.164:3000';
 properties: any[] = [];

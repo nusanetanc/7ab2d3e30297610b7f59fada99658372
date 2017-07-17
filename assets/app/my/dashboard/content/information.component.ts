@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import { Information } from './informations';
 import { Sub } from './subs';
 import {ContentCitiesNameComponent} from './cityname.component';
+import {ContentPropertiesNameComponent} from './propertyname.component';
+
 @Component({
     selector: 'form-allinformations',
     template: `
@@ -41,7 +43,7 @@ import {ContentCitiesNameComponent} from './cityname.component';
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
                       <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
                       <div *ngIf="information?.to == subs.idcity" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-cities [idto]=information?.to></form-cities></div>
-                      <div *ngIf="information?.to == subs.idproperty" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-properties [idto]=information?.to></form-cities></div>
+                      <div *ngIf="information?.to == subs.idproperty" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-properties [idto]=information?.to></form-properties></div>
 
                       <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admin</span></div>
                   </div>
@@ -51,7 +53,7 @@ import {ContentCitiesNameComponent} from './cityname.component';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ContentCitiesNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent implements OnInit {
 // Link to our api, pointing to localhost
