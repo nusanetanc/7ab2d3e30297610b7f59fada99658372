@@ -21,7 +21,7 @@ cities: any[] = [];
   constructor(private http: Http) {}
   // Get all Cities from the API
       getCities() {
-          this.http.get(`${this.API}/city/city/${this.idcities}`)
+          this.http.get(`${this.API}/city/city/${this.idto}`)
               .map(res => res.json())
               .subscribe(cities => {
                   this.cities = cities
