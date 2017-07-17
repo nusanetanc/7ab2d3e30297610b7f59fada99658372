@@ -4,7 +4,7 @@ import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
 import { Sub } from './subs';
-
+import {ContentCitiesNameComponent} from './cityname.component';
 @Component({
     selector: 'form-allinformations',
     template: `
@@ -40,7 +40,7 @@ import { Sub } from './subs';
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
                       <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
-                      <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.to }}</span></div>
+                      <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-cities [idcities]=information?.to></form-cities></div>
                   </div>
                 </a>
                 </div>
@@ -48,7 +48,7 @@ import { Sub } from './subs';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentCitiesNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent implements OnInit {
 // Link to our api, pointing to localhost
