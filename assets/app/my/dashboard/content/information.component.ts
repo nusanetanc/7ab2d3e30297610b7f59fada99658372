@@ -40,6 +40,7 @@ import { Sub } from './subs';
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
                       <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
+                      <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.to }}</span></div>
                   </div>
                 </a>
                 </div>
@@ -69,7 +70,7 @@ export class ContentInformationComponent implements OnInit {
 
 // Get all users from the API
 getAllInformation() {
-  this.http.get(`${this.API}/information/listinformation`)
+  this.http.get(`${this.API}/subscribe/listinformation`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations
