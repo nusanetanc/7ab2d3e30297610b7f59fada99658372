@@ -24,7 +24,7 @@ import { Sub } from './subs';
                 <div class="col-sm-12">
                   <div class="dropdown">
                     <button href="" class="glyphicon glyphicon-chevron-down sort-down" data-toggle="dropdown">Select Information</button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <ul class="dropdown-menu">
                           <li><a href="">For Your</a></li>
                           <li><a href="">For City</a></li>
                           <li><a href="">For Property</a></li>
