@@ -135,10 +135,10 @@ router.get('/listinformation', function(req, res, next) {
   } else {
     Sub.findById(req.session.subs, function(err, subs) {
       Home.findById(subs.groovyid, function(err, homes) {
-    Information.find({to: homes._id, to: homes.city, to: homes.property, to: homes.cluster, to: homes.blokfloor, to: homes.streetname}, function(err, informations) {
+    Information.find(function(err, informations) {
       //if(informations.to === homes._id || informations.to === homes.city || informations.to === homes.property || informations.to === homes.cluster || informations.to === homes.blokfloor || informations.to === homes.streetname){
       console.log( informations );
-       res.json(informations);
+       res.json({_id: informations._id});
      //}
    });
  });
