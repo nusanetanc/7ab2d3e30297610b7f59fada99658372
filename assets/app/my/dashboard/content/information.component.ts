@@ -28,8 +28,11 @@ import { Sub } from './subs';
                           DATE
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li><a href="#">NAME</a></li>
-                          <li><a href="#">ID</a></li>
+                          <li><a href="">For Your</a></li>
+                          <li><a href="">For City</a></li>
+                          <li><a href="">For Property</a></li>
+                          <li><a href="">For Cluster</a></li>
+                          <li><a href="">For All Subscribe</a></li>
                       </ul>
                   </div>
                 </div>
