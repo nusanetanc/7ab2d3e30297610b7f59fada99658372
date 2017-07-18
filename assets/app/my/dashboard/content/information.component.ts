@@ -8,6 +8,7 @@ import {ContentCitiesNameComponent} from './cityname.component';
 import {ContentPropertiesNameComponent} from './propertyname.component';
 import {ContentClustersNameComponent} from './clustername.component';
 import {ContentBlokfloorsNameComponent} from './blokfloorname.component';
+import {ContentStreetsNameComponent} from './streetname.component';
 
 @Component({
     selector: 'form-allinformations',
@@ -57,7 +58,7 @@ import {ContentBlokfloorsNameComponent} from './blokfloorname.component';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ContentBlokfloorsNameComponent, ContentClustersNameComponent, ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentStreetsNameComponent, ContentBlokfloorsNameComponent, ContentClustersNameComponent, ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent implements OnInit {
 // Link to our api, pointing to localhost
