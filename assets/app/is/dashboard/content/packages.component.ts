@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Cluster } from './cluster';
 import { ContentClusterNameComponent } from './clustername.component';
 
+declare let kendo;
 @Component({
     selector: 'form-cpackages',
     template: `
@@ -46,9 +47,9 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             <select [ngFormControl]="myForm.find('type')" #type id="type" name="package">
                                                 <option disabled="true" selected="true" value="0">-- Select Type --</option>
                                                 <option value="Promo">Promo</option>
-                                                <option value="Default">Default</option>
+                                                <option value="Reguler">Reguler</option>
                                             </select><br/><br/>
-                                            <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
+                                            <input [ngFormControl]="myForm.find('price')" [ngModel]="item.value | useMyPipeToFormatThatValue" (ngModelChange)="item.value=$event" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
