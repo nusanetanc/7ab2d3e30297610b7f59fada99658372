@@ -7,6 +7,7 @@ import { Sub } from './subs';
 import {ContentCitiesNameComponent} from './cityname.component';
 import {ContentPropertiesNameComponent} from './propertyname.component';
 import {ContentClustersNameComponent} from './clustername.component';
+import {ContentBlokfloorsNameComponent} from './{blokfloorname.component';
 
 @Component({
     selector: 'form-allinformations',
@@ -46,6 +47,7 @@ import {ContentClustersNameComponent} from './clustername.component';
                       <div *ngIf="information?.to == subs.idcity" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-cities [idto]=information?.to></form-cities></div>
                       <div *ngIf="information?.to == subs.idproperty" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-properties [idto]=information?.to></form-properties></div>
                       <div *ngIf="information?.to == subs.idcluster" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-clusters [idto]=information?.to></form-clusters></div>
+                      <div *ngIf="information?.to == subs.idblokfloor" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-blokfloors [idto]=information?.to></form-blokfloors></div>
                       <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admin</span></div>
                   </div>
                 </a>
@@ -54,7 +56,7 @@ import {ContentClustersNameComponent} from './clustername.component';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ContentClustersNameComponent, ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
+    directives: [ContentBlokfloorsNameComponent, ContentClustersNameComponent, ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent implements OnInit {
 // Link to our api, pointing to localhost
