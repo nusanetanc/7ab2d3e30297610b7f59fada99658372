@@ -6,7 +6,6 @@ import 'rxjs/add/operator/map';
 import { Cluster } from './cluster';
 import { ContentClusterNameComponent } from './clustername.component';
 
-declare let kendo;
 @Component({
     selector: 'form-cpackages',
     template: `
