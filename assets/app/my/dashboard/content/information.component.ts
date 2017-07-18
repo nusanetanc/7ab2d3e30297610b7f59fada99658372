@@ -50,7 +50,7 @@ import {ContentStreetsNameComponent} from './streetname.component';
                       <div *ngIf="information?.to == subs.idcluster" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-clusters [idto]=information?.to></form-clusters></div>
                       <div *ngIf="information?.to == subs.idblokfloor" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-blokfloors [idto]=information?.to></form-blokfloors></div>
                       <div *ngIf="information?.to == subs.idstreetname" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-streets [idto]=information?.to></form-streets></div>
-                      <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admin</span></div>
+                      <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admina</span></div>
                   </div>
                 </a>
                 </div>
