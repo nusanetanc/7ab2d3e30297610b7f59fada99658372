@@ -49,7 +49,7 @@ declare let kendo;
                                                 <option value="Promo">Promo</option>
                                                 <option value="Reguler">Reguler</option>
                                             </select><br/><br/>
-                                            <input [ngFormControl]="myForm.find('price')" [ngModel]="item.value | useMyPipeToFormatThatValue" (ngModelChange)="item.value=$event" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
+                                            <input [ngFormControl]="myForm.find('price')" id="currency" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
