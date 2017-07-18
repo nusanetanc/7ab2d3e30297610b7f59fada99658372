@@ -426,6 +426,11 @@ import {Report} from './allreports';
                               <!-- /Content List -->
                           </div>
                       </div>
+                      <script>
+                        $(function() {
+                          $('#currency').maskMoney();
+                        })
+                      </script>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
