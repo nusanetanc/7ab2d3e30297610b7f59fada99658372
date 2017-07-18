@@ -7,7 +7,7 @@ import { Sub } from './subs';
 import {ContentCitiesNameComponent} from './cityname.component';
 import {ContentPropertiesNameComponent} from './propertyname.component';
 import {ContentClustersNameComponent} from './clustername.component';
-import {ContentBlokfloorsNameComponent} from './{blokfloorname.component';
+import {ContentBlokfloorsNameComponent} from './blokfloorname.component';
 
 @Component({
     selector: 'form-allinformations',
