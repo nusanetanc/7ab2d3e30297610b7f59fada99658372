@@ -9,6 +9,7 @@ import { ContentClusterNameComponent } from './clustername.component';
 @Component({
     selector: 'form-cpackages',
     template: `
+    <input type="text" id="currency" />
     <!-- Page content -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
