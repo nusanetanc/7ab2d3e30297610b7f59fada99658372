@@ -39,11 +39,11 @@ import { Sub } from './content/subs';
                                 <li class="firstLiSidebar">
                                   <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
-                                <li class="firstLiSidebar">
+                                <li>
                                   <a [routerLink]="['Account']" class="collapse" ><i class="material-icons">perm_identity</i> <span class="fontWeight300">ACCOUNT INFO</span></a>
                                 </li>
                                 <li>
-                                  <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">PAYMENT INFO</span></a>
+                                  <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">credit_card</i> <span class="fontWeight300">PAYMENT INFO</span></a>
                                 </li>
                                 <li>
                                   <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">FEEDBACK</span></a>
