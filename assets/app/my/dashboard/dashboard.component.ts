@@ -22,13 +22,6 @@ import { Sub } from './content/subs';
                                     <div class="col-sm-9">
                                        <span class="nav-name">{{ subs.name }}</span>
                                     </div>
-                                    <div class="col-sm-2 hid">
-                                       <span class="caret"></span>
-                                    </div>
-                                    <div class="dropdown-content" style="margin-top: 20px;">
-                                        <a [routerLink]="['Account']">Account</a>
-                                      <a type="submit" (click)="Logout()">Logout</a>
-                                    </div>
                                  </div>
                                  <div class="row" style="padding: 5px 0px;">
                                     <div class="col-sm-12">
@@ -46,16 +39,21 @@ import { Sub } from './content/subs';
                                 <li class="firstLiSidebar">
                                   <a [routerLink]="['Dashboard']" class="collapse" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
                                 </li>
-                                <li>
-                                  <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">BILLING</span></a>
+                                <li class="firstLiSidebar">
+                                  <a [routerLink]="['Account']" class="collapse" ><i class="material-icons">perm_identity</i> <span class="fontWeight300">ACCOUNT INFO</span></a>
                                 </li>
                                 <li>
-                                  <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
+                                  <a [routerLink]="['Billing']" class="collapse"><i class="material-icons">supervisor_account</i> <span class="fontWeight300">PAYMENT INFO</span></a>
                                 </li>
                                 <li>
-                                  <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">INFORMATION</span></a>
+                                  <a [routerLink]="['Reports']" class="collapse"><i class="material-icons">announcement</i> <span class="fontWeight300">FEEDBACK</span></a>
                                 </li>
-
+                                <li>
+                                  <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFO</span></a>
+                                </li>
+                                <li>
+                                  <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
