@@ -44,7 +44,7 @@ import { City } from './cities';
                                             <input [ngFormControl]="myForm.find('empphone')" #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
                                             <br/>
                                             <select [ngFormControl]="myForm.find('emptitlejob')" #emptitlejob id="emptitlejob">
-                                              <option disabled="true" value="0">-- Select Position Job --</option>
+                                              <option disabled="true" value="none">-- Select Position Job --</option>
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
@@ -56,7 +56,7 @@ import { City } from './cities';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, empdepartement.value, emptitlejob.value, empcity.value, empaccess.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
                                     </div>
@@ -106,10 +106,8 @@ myForm: ControlGroup;
               empname: ['', Validators.required],
               empemail: ['', Validators.required],
               empphone: ['', Validators.required],
-              empdepartement: ['0', Validators.required],
-              emptitlejob: ['0', Validators.required],
-              empcity: ['0', Validators.required],
-              empaccess: ['none', Validators.required]
+              emptitlejob: ['none', Validators.required],
+              empcity: ['0', Validators.required]
             })
         }
 
@@ -123,6 +121,7 @@ myForm: ControlGroup;
         }
 
         public jobs = [
+            {name: "Admin", level: "0", sublevel: "0", divisi:"ANC"},
             {name: "Direktur", level: "1", sublevel: "1", divisi:"Management"},
             {name: "Sales Manager", level: "2", sublevel: "2", divisi:"Sales"},
             {name: "Sales Supervisior", level:"2", sublevel: "201", divisi:"Sales"},
@@ -131,7 +130,7 @@ myForm: ControlGroup;
             {name: "Field Enginner", level: "301", sublevel: "301", divisi:"Technical"},
             {name: "Network Supervisior", level: "4", sublevel: "4", divisi:"NOC"},
             {name: "Network Enginner", level: "4", sublevel: "401", divisi:"NOC"},
-            {name: "Finnace Controller", level: "5", sublevel: "5", divisi:"NOC"},
+            {name: "Finnace Controller", level: "5", sublevel: "5", divisi:"Billing"},
             {name: "Billing", level: "5", sublevel: "501", divisi:"Billing"},
             {name: "Pajak", level: "5", sublevel: "502", divisi:"Billing"},
             {name: "CRO Manager", level: "6", sublevel: "6", divisi:"CRO"},
@@ -143,8 +142,8 @@ myForm: ControlGroup;
             {name: "Helpdesk", level: "8", sublevel: "801", divisi:"Helpdesk"}
         ];
 
-        addEmp(empid, empname, empemail, empphone, empdepartement, emptitlejob, empcity, empaccess) {
-            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&departement=${empdepartement}&titlejob=${emptitlejob}&city=${empcity}&accessrole=${empaccess}`;
+        addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http

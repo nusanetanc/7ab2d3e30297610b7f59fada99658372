@@ -53,13 +53,69 @@ router.post('/addemp', function(req, res, next) {
     emp.email= req.body.email;
     emp.handphone= req.body.handphone;
     emp.password= passwordHash.generate(createpass);
-    emp.departement= req.body.departement;
-    emp.titlejob= req.body.titlejob;
+    emp.accessrole= req.body.titlejob;
     emp.city= req.body.city;
-    emp.accessrole= req.body.accessrole;
     emp.photo= req.body.photo;
     emp.status= 'Enable';
 
+    if (emp.accessrole == '1') {
+      emp.departement= 'Management';
+      emp.titlejob= 'Direktur';
+    } else if (emp.accessrole == '2') {
+      emp.departement= 'Sales';
+      emp.titlejob= 'Sales Manager';
+    } else if (emp.accessrole == '201') {
+      emp.departement= 'Sales';
+      emp.titlejob= 'Sales Supervisior';
+    } else if (emp.accessrole == '202') {
+      emp.departement= 'Sales';
+      emp.titlejob= 'Sales Supervisior';
+    } else if (emp.accessrole == '3') {
+      emp.departement= 'Technical';
+      emp.titlejob= 'Technical Supervisior';
+    } else if (emp.accessrole == '301') {
+      emp.departement= 'Technical';
+      emp.titlejob= 'Field Enginner';
+    } else if (emp.accessrole == '4') {
+      emp.departement= 'NOC';
+      emp.titlejob= 'Network Supervisior';
+    } else if (emp.accessrole == '401') {
+      emp.departement= 'NOC';
+      emp.titlejob= 'Network Enginner';
+    } else if (emp.accessrole == '5') {
+      emp.departement= 'Billing';
+      emp.titlejob= 'Finnace Controller';
+    } else if (emp.accessrole == '501') {
+      emp.departement= 'Billing';
+      emp.titlejob= 'Billing';
+    } else if (emp.accessrole == '502') {
+      emp.departement= 'Billing';
+      emp.titlejob= 'Pajak';
+    } else if (emp.accessrole == '6') {
+      emp.departement= 'CRO';
+      emp.titlejob= 'CRO Manager';
+    } else if (emp.accessrole == '601') {
+      emp.departement= 'CRO';
+      emp.titlejob= 'CRO';
+    } else if (emp.accessrole == '7') {
+      emp.departement= 'HR & GA';
+      emp.titlejob= 'HR & GA Manager';
+    } else if (emp.accessrole == '701') {
+      emp.departement= 'HR & GA';
+      emp.titlejob= 'HR';
+    } else if (emp.accessrole == '702') {
+      emp.departement= 'HR & GA';
+      emp.titlejob= 'GA';
+    } else if (emp.accessrole == '8') {
+      emp.departement= 'Helpdesk';
+      emp.titlejob= 'Helpdesk Spv';
+    } else if (emp.accessrole == '801') {
+      emp.departement= 'Helpdesk';
+      emp.titlejob= 'Helpdesk';
+    }else if (emp.accessrole == '0') {
+      emp.departement= 'ANC';
+      emp.titlejob= 'Admin';
+    }
     emp.save(function(err) {
       if (err)
           res.send(err);
