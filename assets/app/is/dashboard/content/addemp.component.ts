@@ -42,7 +42,7 @@ import { City } from './cities';
                                             <input [ngFormControl]="myForm.find('empname')" #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                             <input [ngFormControl]="myForm.find('empemail')" #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                             <input [ngFormControl]="myForm.find('empphone')" #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement" [(ngModel)]="selectedDep._id" (change)="onSelectDep($event.target.value)">
+                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement">
                                               <option disabled="true" value="0">-- Select Departement --</option>
                                               <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                             </select>
