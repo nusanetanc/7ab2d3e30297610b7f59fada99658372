@@ -93,7 +93,7 @@ emps: any[] = [];
     this.getDetailReport();
     this.getChatReport();
     this.getAcountEmp();
-    let timer = Observable.timer(2000, 5000);
+    let timer = Observable.timer(20000, 50000);
     timer.subscribe(() => this.getChatReport());
     this.myForm = this._fb.group({
       message: ['', Validators.required]

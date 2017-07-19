@@ -13,7 +13,7 @@ import { Problem } from './problem';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Send New Reports
+                &nbsp; Send New Feedback
             </h3>
         </div>
 

@@ -13,7 +13,7 @@ import { Bill } from './bills';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Billing
+                &nbsp; Payment Info
             </h3>
 
         </div>

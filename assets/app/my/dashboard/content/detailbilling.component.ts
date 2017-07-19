@@ -15,7 +15,7 @@ declare let kendo;
                 <h3 id="home" class="fontWeight300">
                     <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                     </a>
-                    &nbsp; Billing
+                    &nbsp; Detail Payment
                 </h3>
 
             </div>

@@ -42,7 +42,7 @@ import { City } from './cities';
                                             <input [ngFormControl]="myForm.find('empname')" #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                             <input [ngFormControl]="myForm.find('empemail')" #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                             <input [ngFormControl]="myForm.find('empphone')" #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement">
+                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement" [(ngModel)]="selectedDep._id" (change)="onSelectDep($event.target.value)">
                                               <option disabled="true" value="0">-- Select Departement --</option>
                                               <option *ngFor="#dep of deps">{{ dep.name }}</option>
                                             </select>
@@ -60,26 +60,7 @@ import { City } from './cities';
                                             <br/><br/>
                                             <select [ngFormControl]="myForm.find('empaccess')" #empaccess id="empaccess">
                                               <option value="none">-- Select Acces Role --</option>
-                                              <option value="0">Admin Web</option>
-                                              <option value="1">Direktur</option>
-                                              <option value="2">Sales Manager</option>
-                                              <option value="201">Sales Spv</option>
-                                              <option value="202">Sales</option>
-                                              <option value="3">Teknis Spv</option>
-                                              <option value="301">Field Engineer</option>
-                                              <option value="4">Network Spv</option>
-                                              <option value="401">Network Staff</option>
-                                              <option value="402">System Administator</option>
-                                              <option value="5">Finnace Controler</option>
-                                              <option value="501">Billing</option>
-                                              <option value="502">Acounting - Tax</option>
-                                              <option value="6">CRO Spv</option>
-                                              <option value="601">CRO Staff</option>
-                                              <option value="7">HR & GA Spv</option>
-                                              <option value="701">HR</option>
-                                              <option value="702">GA</option>
-                                              <option value="8">Helpdesk Spv</option>
-                                              <option value="801">Helpdesk Staff</option>
+                                              <option *ngFor="#job of jobs" >{{ job.name }}</option>
                                             </select>
                                             <br/>
                                         </form>
@@ -151,6 +132,7 @@ myForm: ControlGroup;
         }
 
         public deps = [
+            {name: 'Management', level:"1"},
             {name: "Sales", level: "2"},
             {name: "Technical", level: "3"},
             {name: "Network", level: "4"},
@@ -161,6 +143,8 @@ myForm: ControlGroup;
         ];
 
         public jobs = [
+            {name: "Direktur", level: "1", sublevel: "1"},
+            {name: "Sales Manager", level: "2", sublevel: "2"},
             {name: "Sales Manager", level: "2", sublevel: "2"},
             {name: "Sales Supervisior", level:"2", sublevel: "201"},
             {name: "Sales", level: "2", sublevel:"202"},
@@ -176,7 +160,7 @@ myForm: ControlGroup;
             {name: "HR & GA Manager", level: "7", sublevel: "7"},
             {name: "HR", level: "7", sublevel: "701"},
             {name: "GA", level: "7", sublevel: "702"},
-            {name: "Helpdesk", level: "8", sublevel: "8"},
+            {name: "Helpdesk Spv", level: "8", sublevel: "8"},
             {name: "Helpdesk", level: "8", sublevel: "801"},
         ];
 

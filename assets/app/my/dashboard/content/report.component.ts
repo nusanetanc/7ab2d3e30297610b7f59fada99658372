@@ -13,7 +13,7 @@ import { Complaint } from './complaints';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Reports History
+                &nbsp; Feedback History
             </h3>
 
         </div>

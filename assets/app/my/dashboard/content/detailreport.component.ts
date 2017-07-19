@@ -18,7 +18,7 @@ import { PushNotificationComponent } from './ng2-notifications'
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Report
+                &nbsp; Chat Feedback
             </h3>
 
         </div>
