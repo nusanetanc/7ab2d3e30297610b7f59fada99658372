@@ -1,5 +1,6 @@
-import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit, OnDestroy} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -36,11 +37,11 @@ import { City } from './cities';
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
-                                            <form>
-                                                <input #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                            <form class="form" [ngFormModel]="myForm">
+                                                <input [ngFormControl]="myForm.find('cityname')" #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
                                                 <br/>
                                                 <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                                <button type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
+                                                <button [disabled]="!myForm.valid" type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
                                                     SEND
                                                 </button>
                                             </form>
@@ -91,14 +92,20 @@ import { City } from './cities';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddCityComponent implements OnInit {
+
+myForm: ControlGroup;
+
 API = 'http://202.162.207.164:3000';
 cities: City[];
 emps: any[] = [];
   ngOnInit() {
       this.getAllCity();
       this.getAcountEmp();
+      this.myForm = this._fb.group({
+        cityname: ['', Validators.required]
+      })
   }
-  constructor(private http: Http) {}
+  constructor(private _fb:FormBuilder, private http: Http) {}
   // Get all City from the API
       getAllCity() {
           this.http.get(`${this.API}/city/listcity`)

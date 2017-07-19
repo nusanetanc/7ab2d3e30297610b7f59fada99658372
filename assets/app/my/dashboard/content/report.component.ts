@@ -13,7 +13,7 @@ import { Complaint } from './complaints';
             <h3 id="home">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Reports History
+                &nbsp; Feedback History
             </h3>
 
         </div>
@@ -21,7 +21,7 @@ import { Complaint } from './complaints';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a *ngIf="opencomplaints._id == null" [routerLink]="['Newreport']" class="btn btn-default buttonOrange">
+                    <a *ngIf="!opencomplaints" [routerLink]="['Newreport']" class="btn btn-default buttonOrange">
                         NEW REPORT
                     </a>
                     <a href="" class="glyphicon glyphicon-chevron-down sort-down"></a>
@@ -48,7 +48,7 @@ import { Complaint } from './complaints';
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentReportComponent {
+export class ContentReportComponent implements OnInit{
 // Link to our api, pointing to localhost
   API = 'http://202.162.207.164:3000';
 

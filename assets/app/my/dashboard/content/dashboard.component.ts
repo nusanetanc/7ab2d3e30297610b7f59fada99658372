@@ -27,7 +27,7 @@ import { Sub } from './subs';
                             <div class="row marginB10">
                                <div class="col-sm-12 text-center">
                                   <i class="material-icons font100Margin30">announcement</i>
-                                  <h4 class="fontWeight300">REPORT PROBLEM</h4>
+                                  <h4 class="fontWeight300">FEEDBACK</h4>
                                </div>
                             </div>
                          </div>
@@ -39,7 +39,7 @@ import { Sub } from './subs';
                             <div class="row marginB10">
                                <div class="col-sm-12 text-center">
                                   <i class="material-icons font100Margin30">credit_card</i>
-                                  <h4 class="fontWeight300">BILLING</h4>
+                                  <h4 class="fontWeight300">PAYMENT</h4>
                                </div>
                             </div>
                          </div>

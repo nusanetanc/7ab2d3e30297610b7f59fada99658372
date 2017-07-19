@@ -41,7 +41,7 @@ import {Streetname} from "./street_name";
                                 <div class="col-sm-12 paddingL35">
                                     <div class="paddingTB20 paddingR30">
                                         <div class="form-group">
-                                            <input [ngFormControl]="myForm.find('subname')" #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
+                                            <input #subname id="subname" maxlength="50" type="text" minlength="10" class="form-control inputForm" placeholder="Full Name" required>
                                             <input #subphone id="subphone" type="text" maxlength="14" class="form-control inputForm" placeholder="Handphone" required>
                                             <input #subemail id="subemail" type="email" maxlength="50" class="form-control inputForm" placeholder="Email" required>
                                             <input #subdatebirth id="subdatebirth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="form-control inputForm" placeholder="Date Of Birth" required>
@@ -175,7 +175,7 @@ import {Streetname} from "./street_name";
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                     <!-- Small modal -->
                                     <span id="label-success" class="label label-success right" style="display: none;">Success</span>
-                                    <button [disabled]="!myForm.valid" type="submit" id="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value, subpackage.value)" class="btn btn-default buttonOrange right" data-toggle="modal">REGISTER</button>
+                                    <button type="submit" id="submit" (click)="addSub(subname.value, subphone.value, subemail.value, subdateinst.value, subtimeinst.value, subgroovyid.value, subdatebirth.value, subidnumber.value, subpackage.value)" class="btn btn-default buttonOrange right" data-toggle="modal">REGISTER</button>
                                 </div>
                             </div>
                         </div>
@@ -315,15 +315,7 @@ myForm: ControlGroup;
         this.getAcountEmp();
         this.getSales();
         this.myForm = this._fb.group({
-          subemail: ['', Validators.compose([
-            Validators.required,
-            this.isEmail
-          ])],
           subname: ['', Validators.required]
-          subphone: ['', Validators.required]
-          subdatebirth: ['', Validators.required]
-          subidnumber: ['', Validators.required]
-          subpackage: ['0', Validators.required]
         })
     }
 

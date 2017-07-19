@@ -2,29 +2,29 @@ import {Component, Input, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
-import { Employee } from './employee';
+import { City } from './cities';
 
 @Component({
-    selector: 'form-emps',
+    selector: 'form-cities',
     template: `
-      <span>{{emps.name}}</span>
+      <span>{{cities.name}}</span>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
-export class ContentEmpsNameComponent implements OnInit {
-@Input() idemps: string;
+export class ContentCitiesNameComponent implements OnInit {
+@Input() idto: string;
 API = 'http://202.162.207.164:3000';
-emps: any[] = [];
+cities: any[] = [];
   ngOnInit() {
-      this.getEmps();
+      this.getCities();
   }
   constructor(private http: Http) {}
-  // Get all Subs from the API
-      getEmps() {
-          this.http.get(`${this.API}/subscribe/emp/${this.idemps}`)
+  // Get all Cities from the API
+      getCities() {
+          this.http.get(`${this.API}/city/city/${this.idto}`)
               .map(res => res.json())
-              .subscribe(emps => {
-                  this.emps = emps
+              .subscribe(cities => {
+                  this.cities = cities
               })
       }
 }

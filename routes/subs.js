@@ -20,6 +20,7 @@ var Complaint = require('../models/complaint');
 var Chat = require('../models/chatcomplaint');
 var Home = require('../models/home');
 var Package = require('../models/package');
+var Information = require('../models/information');
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -51,17 +52,24 @@ router.use(upload.array());
 router.use(cookieParser());
 router.use(session({
   secret: 'Your secret key',
-  saveUninitialized: true,
+  saveUninitialized: false,
   resave: true,
   maxAge: 99999999999999999999
 }));
 
+
 /* GET subloye listing. */
 router.get('/listsub', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
      Sub.find(function(err, subs) {
        console.log( subs );
        res.json(subs);
    });
+ }
 });
 
 router.get('/detailemp', function(req, res, next) {
@@ -77,25 +85,103 @@ router.get('/detailemp', function(req, res, next) {
    });
  }
 });
+/* GET employe listing. */
+router.get('/listemp', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+     Emp.find(function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
+
+/* GET employe listing. */
+router.get('/list/:departement', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+     Emp.find({departement:  req.params.departement}, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
+/* GET detail employe. */
+router.get('/emp/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+Emp.findById(req.params.id, function(err, emps) {
+       console.log( emps );
+       res.json(emps);
+   });
+ }
+});
+
+/* GET subloye listing. */
+router.get('/listinformation', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+    Sub.findById(req.session.subs, function(err, subs) {
+      Home.findById(subs.groovyid, function(err, homes) {
+    Information.find(function(err, informations) {
+      //if(informations.to === homes._id || informations.to === homes.city || informations.to === homes.property || informations.to === homes.cluster || informations.to === homes.blokfloor || informations.to === homes.streetname){
+      console.log( informations );
+       res.json(informations);
+     //}
+   });
+ });
+});
+ }
+
+});
 
 router.get('/listcomplaint', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
   var sessionSubId = req.session.subs;
     Complaint.find({sub: sessionSubId}, function(err, complaints) {
         console.log(complaints);
         res.json(complaints);
     });
+  }
 });
 router.get('/complaint/open', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
   var sessionSubId = req.session.subs;
     Complaint.findOne({sub: sessionSubId, status: 'open'}, function(err, complaints) {
         console.log(complaints);
         res.json(complaints);
     });
+  }
 });
 
 var dnow = new Date();
 /* Add chat */
 router.post('/addchat/subs/:id', function(req, res, next) {
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   var chat = new Chat();
     chat.message= req.body.message;
     chat.date= dnow;
@@ -107,9 +193,15 @@ router.post('/addchat/subs/:id', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 /* Add chat */
 router.post('/addchat/helpdesk/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   var chat = new Chat();
     chat.message= req.body.message;
     chat.date= dnow;
@@ -121,18 +213,30 @@ router.post('/addchat/helpdesk/:id', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 
 
 /* GET detail sub. */
 router.get('/id/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
   Sub.findById(req.params.id, function(err, subs) {
   console.log( subs );
   res.json(subs);
 });
+}
 });
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
     subs.groovyid = "591916077a149b7469259903";
@@ -183,6 +287,7 @@ Sub.findById(req.params.id, function(err, subs) {
       });
     });
   });
+}
 });
 
 /* GET detail sub. */
@@ -248,12 +353,78 @@ router.get('/detailsub', function(req, res, next) {
 
 /* GET detail bill one account. */
 router.get('/bill', function(req, res, next) {
-var sessionSubId = "58b3cdac45912d052e2c85a5";
+  if(req.session.subs == "" || req.session.subs == null || req.session.subs == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+var sessionSubId = req.session.subs;
 Bill.find({sub: sessionSubId}, function(err, bills) {
        console.log( bills );
        res.json(bills);
    });
+ }
 });
+
+/* GET billloye listing. */
+router.get('/listbill/sub/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+     Bill.find({sub: req.params.id}, function(err, bills) {
+       console.log( bills );
+       res.json(bills);
+   });
+ }
+});
+
+/* GET detail bill. */
+router.get('/idbill/:id', function(req, res, next) {
+Bill.findOne({_id: req.params.id}, function(err, bills) {
+  Sub.findById(bills.sub, function(err, subs) {
+    Home.findById(subs.groovyid, function(err, homes) {
+      Cluster.findById(homes.cluster, function(err, clusters) {
+       City.findById(homes.city, function(err, cities) {
+            res.json({
+              _id: subs._id,
+              noinvoice: bills.noinvoice,
+              namepack: bills.namepack,
+              pricepack: bills.pricepack,
+              priceinstal: bills.priceinstal,
+              pricerouter: bills.pricerouter,
+              pricestb: bills.pricestb,
+              noinvoice: bills.noinvoice,
+              promoname: bills.promoname,
+              pricepromo: bills.pricepromo,
+              pricerj45cable: bills.pricerj45cable,
+              pinalty: bills.pinalty,
+              changetax: bills.changetax,
+              totalprice: bills.totalprice,
+              totalpay: bills.totalpay,
+              billdate: bills.billdate,
+              duedate: bills.duedate,
+              paydate: bills.paydate,
+              status: bills.status,
+              desc: bills.desc,
+              name: subs.name,
+              subid: subs.subid,
+              nova: subs.nova,
+              statussub: subs.status,
+              pinaltypay: subs.pinaltypay,
+              address: homes.address,
+              nohome: homes.nohome,
+              cluster: clusters.name,
+              city: cities.name
+            });
+          });
+        });
+      });
+    });
+  });
+});
+
 
 /* Add sub */
 router.post('/addsub', function(req, res, next) {
@@ -345,6 +516,11 @@ router.post('/addsub', function(req, res, next) {
 
 /* Add sub */
 router.post('/addsubs', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
   var sub = new Sub();
   var codeactivation = require('node-sid')({
  seed:'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -377,10 +553,15 @@ router.post('/addsubs', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
+}
 });
 
 router.put('/putsub/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findById(req.params.id, function(err, sub) {
 
             if (err)
@@ -415,10 +596,15 @@ router.put('/putsub/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.put('/editgroovyid/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findById(req.params.id, function(err, sub) {
 
             if (err)
@@ -434,6 +620,7 @@ router.put('/editgroovyid/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+      }
 });
 
 /* GET detail sub. */
@@ -476,7 +663,11 @@ router.put('/activationemail/:id', function(req, res, next) {
 });
 
 router.put('/activationaccount/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -492,10 +683,15 @@ router.put('/activationaccount/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.put('/updatepackage/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -511,10 +707,15 @@ router.put('/updatepackage/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+      }
 });
 
 router.put('/updatesubs/:id', function(req, res, next) {
-
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.findOne({_id: req.params.id}, function(err, sub) {
 
             if (err)
@@ -537,9 +738,15 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 res.json({ message: 'Data updated!' });
             });
         });
+    }
 });
 
 router.delete('/delsub/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Session not found"
+    });
+  } else {
         Sub.remove({
             _id: req.params.id
         }, function(err, bear) {
@@ -548,6 +755,7 @@ router.delete('/delsub/:id', function(req, res, next) {
 
             res.json({ message: 'Successfully deleted' });
    });
+ }
 });
 
 router.post('/signin', function(req, res){
@@ -558,21 +766,31 @@ router.post('/signin', function(req, res){
                 error: err
             });
         }
-        if (!doc) {
-           return res.status(404).json({
-           title: "No user found",
-           error: {message: 'User could not be found.'}
-        });
-    }
 
-        if (!passwordHash.verify(req.body.password, doc.password)) {
+
+        if (!doc) {
+           return res.status(404).json('User could not be found');
+        }
+
+        /*if (!doc) {
+           return res.status(404).json({
+               title: "No user found",
+               error: {message: 'User could not be found.'}
+            });
+        }*/
+
+        if (!passwordHash.verify(req.body.password, doc.password)){
+            return res.status(404).json('Invalid password');
+        }
+
+        /*if (!passwordHash.verify(req.body.password, doc.password)) {
             if (err) {
                 return res.status(404).json({
                     title: "Could not sign user in",
                     error: {message: 'Invalid Password'}
                 });
             }
-        }
+        }*/
 
         var token = jwt.sign({sub:doc}, 'secret', {expiresIn: 7200});
 

@@ -7,7 +7,7 @@ var City = require('../models/city');
 var Cluster = require('../models/cluster');
 var Home = require('../models/home');
 
-/* GET billloye listing. */
+/* GET billloye listing.
 router.get('/listbill', function(req, res, next) {
      Bill.find(function(err, bills) {
        console.log( bills );
@@ -15,7 +15,7 @@ router.get('/listbill', function(req, res, next) {
 
    });
 });
-
+*/
 /* GET billloye listing. */
 router.get('/listbill/sub/:id', function(req, res, next) {
      Bill.find({sub: req.params.id}, function(err, bills) {

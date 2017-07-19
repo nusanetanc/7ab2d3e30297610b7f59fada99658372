@@ -4,6 +4,11 @@ import { Http } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Information } from './informations';
 import { Sub } from './subs';
+import {ContentCitiesNameComponent} from './cityname.component';
+import {ContentPropertiesNameComponent} from './propertyname.component';
+import {ContentClustersNameComponent} from './clustername.component';
+import {ContentBlokfloorsNameComponent} from './blokfloorname.component';
+import {ContentStreetsNameComponent} from './streetname.component';
 
 @Component({
     selector: 'form-allinformations',
@@ -39,7 +44,13 @@ import { Sub } from './subs';
                 <a [routerLink]="['Detailinformation', {id: information?._id}]" *ngIf="information?.to == subs.idcity || information?.to == subs.idproperty || information?.to == subs.idcluster || information?.to == subs.idblokfloor || information?.to == subs.idstreetname || information?.to == subs.idhomeid">
                   <div class="row subInfo">
                       <div class="col-sm-4 invoiceId" style="padding: 20px 0px 20px 35px;"><span>{{ stringAsDate(information?.date) | date }}</span></div>
-                      <div class="col-sm-6 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
+                      <div class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>{{ information?.subject }}</span></div>
+                      <div *ngIf="information?.to == subs.idcity" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-cities [idto]=information?.to></form-cities></div>
+                      <div *ngIf="information?.to == subs.idproperty" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-properties [idto]=information?.to></form-properties></div>
+                      <div *ngIf="information?.to == subs.idcluster" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-clusters [idto]=information?.to></form-clusters></div>
+                      <div *ngIf="information?.to == subs.idblokfloor" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-blokfloors [idto]=information?.to></form-blokfloors></div>
+                      <div *ngIf="information?.to == subs.idstreetname" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><form-streets [idto]=information?.to></form-streets></div>
+                      <div *ngIf="information?.to == subs.idhomeid" class="col-sm-4 invoiceList" style="padding: 20px 0px 20px 0px;"><span>Tes Admina</span></div>
                   </div>
                 </a>
                 </div>
@@ -47,7 +58,7 @@ import { Sub } from './subs';
         </div>
     </div><!-- Page content -->
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentStreetsNameComponent, ContentBlokfloorsNameComponent, ContentClustersNameComponent, ContentCitiesNameComponent, ContentPropertiesNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentInformationComponent implements OnInit {
 // Link to our api, pointing to localhost
@@ -69,7 +80,7 @@ export class ContentInformationComponent implements OnInit {
 
 // Get all users from the API
 getAllInformation() {
-  this.http.get(`${this.API}/information/listinformation`)
+  this.http.get(`${this.API}/subscribe/listinformation`)
     .map(res => res.json())
     .subscribe(informations => {
       this.informations = informations

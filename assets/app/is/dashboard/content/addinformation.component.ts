@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Subscription} from "rxjs/Rx";
@@ -41,42 +42,34 @@ import { Street } from './street';
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
-                                <form>
-                                  <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #infocity id="infocity">
-                                      <option value="0" disabled="true">-- All City --</option>
-                                      <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                                  </select><br/>
-                                </form>
-                                <form>
-                                  <select #infoproperty id="infoproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
-                                      <option value="0" disabled="true">-- All Property --</option>
-                                      <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                                  </select><br/>
-                                </form>
-                                <form>
-                                  <select #infocluster id="infocluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
-                                      <option value="0" disabled="true">-- All Clusters --</option>
-                                      <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
-                                  </select><br/>
-                                </form>
-                                <form>
-                                <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                    <option value="0" disabled="true">-- All Block or Floor --</option>
-                                    <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                </select><br/>
-                                </form>
-                                <form>
-                                <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
-                                    <option value="0" disabled="true">-- All Street --</option>
-                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
-                                </select><br/>
-                                </form>
-                                <input #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
-                                <textarea id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea>
-                                <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                <button type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
-                                    SHARE
-                                </button>
+                                <form [ngFormModel]="myForm">
+                                    <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #infocity id="infocity">
+                                        <option value="0" disabled="true">-- All City --</option>
+                                        <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                    </select><br/><br/>
+                                    <select #infoproperty id="infoproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                        <option value="0" disabled="true">-- All Property --</option>
+                                        <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                    </select><br/><br/>
+                                    <select #infocluster id="infocluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                        <option value="0" disabled="true">-- All Clusters --</option>
+                                        <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                                    </select><br/><br/>
+                                  <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
+                                      <option value="0" disabled="true">-- All Block or Floor --</option>
+                                      <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
+                                  </select><br/><br/>
+                                  <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
+                                      <option value="0" disabled="true">-- All Street --</option>
+                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                  </select><br/><br/>
+                                  <input [ngFormControl]="myForm.find('subject')" #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
+                                  <textarea [ngFormControl]="myForm.find('message')" id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea><br/>
+                                  <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
+                                  <button [disabled]="!myForm.valid" type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
+                                      SHARE
+                                  </button>
+                              </form>
                             </div>
                         </div>
                     </div>
@@ -100,6 +93,9 @@ import { Street } from './street';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAddInformationComponent implements OnInit {
+
+myForm: ControlGroup;
+
     API = 'http://202.162.207.164:3000';
     USER = '58b6a0d77dfd7052a9fe53c9';
     toInfo = 'All Subsricbe';
@@ -177,7 +173,7 @@ export class ContentAddInformationComponent implements OnInit {
     streetnames: any[] = [];
     emps: any[] = [];
 
-    constructor(private http: Http) {}
+    constructor(private _fb:FormBuilder, private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
@@ -188,6 +184,10 @@ export class ContentAddInformationComponent implements OnInit {
     this.getAllStreetByBlok();
     this.getAllHomeByStreet();
     this.getAcountEmp();
+    this.myForm = this._fb.group({
+      subject: ['', Validators.required],
+      message: ['', Validators.required],
+    })
     }
     // Get all City from the API
     getAllCity() {

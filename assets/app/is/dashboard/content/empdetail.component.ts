@@ -21,7 +21,7 @@ emps: any[] = [];
   constructor(private http: Http) {}
   // Get all Subs from the API
       getEmps() {
-          this.http.get(`${this.API}/employee/emp/${this.idemps}`)
+          this.http.get(`${this.API}/subscribe/emp/${this.idemps}`)
               .map(res => res.json())
               .subscribe(emps => {
                   this.emps = emps

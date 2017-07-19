@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { City } from './cities';
@@ -38,42 +39,27 @@ import { Cluster } from './cluster';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                        <form>
-                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
+                                        <form [ngFormModel]="myForm">
+                                            <select  [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                                            </select><br/>
-                                        </form>
-                                        <form>
-                                            <select  #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                            </select><br/><br/>
+                                            <select [ngFormControl]="myForm.find('clusterproperty')" #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
                                                 <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
                                                 <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
-                                            </select><br/>
-                                        </form>
-                                        <!--
-                                        <form>
-                                            <select  #clusterlevel id="clusterlevel">
-                                                <option class="option" disabled="true"  selected="true" value="0">-- Select Level Cluster --</option>
-                                                <option value="A">A</option>
-                                                <option value="B">B</option>
-                                            </select><br/>
-                                        </form>
-                                        -->
-                                        <form>
-                                            <select  #clusterbuilding id="clusterbuilding">
+                                            </select><br/><br/>
+                                            <select [ngFormControl]="myForm.find('clusterbuilding')" #clusterbuilding id="clusterbuilding">
                                                 <option class="option" disabled="true"  selected="true" value="0">-- Select Building Cluster --</option>
                                                 <option value="Land House">Land House</option>
                                                 <option value="Apartment">Apartment</option>
-                                            </select><br/>
-                                        </form>
-                                        <form>
-                                            <input #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
-                                            <br/>
-                                        </form>
+                                            </select><br/><br/>
+                                            <input [ngFormControl]="myForm.find('clustername')" #clustername type="text" class="form-control inputForm" id="clustername" placeholder="New Cluster">
+                                            <br/><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addCluster(clusterproperty.value, clustername.value, clusterbuilding.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -122,6 +108,8 @@ import { Cluster } from './cluster';
 })
 export class ContentCoverageClusterComponent implements OnInit {
 
+myForm: ControlGroup;
+
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 
@@ -133,7 +121,7 @@ properties: any[] = [];
 clusters: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 onSelectCity(_id) {
     this.properties = this.getAllPropertyByCity(){
@@ -161,6 +149,11 @@ ngOnInit() {
     this.getAllPropertyByCity();
     this.getAllClusterByProperty();
     this.getAcountEmp();
+    this.myForm = this._fb.group({
+      clusterproperty: ['0', Validators.required],
+      clustername: ['', Validators.required],
+      clusterbuilding: ['0', Validators.required]
+    })
 }
 // Get all City from the API
 getAllCity() {
@@ -187,7 +180,7 @@ getAllClusterByProperty() {
             this.clusters = clusters
         })
 }
-    addCluster(clusterproperty, clustername, clusterlevel, clusterbuilding) {
+    addCluster(clusterproperty, clustername, clusterbuilding) {
 
         var body = `name=${clustername}&property=${clusterproperty}&building=${clusterbuilding}`;
         var headers = new Headers();

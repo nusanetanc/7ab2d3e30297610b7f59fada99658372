@@ -223,7 +223,7 @@ export class ContentBillSubscribeComponent {
 
     // Get all users from the API
     getAllBill() {
-        this.http.get(`${this.API}/bill/listbill/sub/${this._routeParams.get('id')}`)
+        this.http.get(`${this.API}/subscribe/listbill/sub/${this._routeParams.get('id')}`)
             .map(res => res.json())
             .subscribe(bills => {
                 this.bills = bills
