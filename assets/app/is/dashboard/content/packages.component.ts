@@ -9,13 +9,6 @@ import { ContentClusterNameComponent } from './clustername.component';
 @Component({
     selector: 'form-cpackages',
     template: `
-    <script>
-        webshims.setOptions('forms-ext', {
-            replaceUI: 'auto',
-            types: 'number'
-        });
-        webshims.polyfill('forms forms-ext');
-    </script>
     <!-- Page content -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
@@ -58,7 +51,14 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             <input type="text" #currency class="form-control inputForm" id="currency" placeholder="Price">
                                             <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                             <input type="number" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" /><br/>
-                                        </form>
+                                            <script>
+                                                webshims.setOptions('forms-ext', {
+                                                    replaceUI: 'auto',
+                                                    types: 'number'
+                                                });
+                                                webshims.polyfill('forms forms-ext');
+                                            </script>
+                                            </form>                                     
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
                                             SEND
