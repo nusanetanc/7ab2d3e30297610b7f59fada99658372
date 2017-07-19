@@ -148,7 +148,7 @@ img.img-nav-profile {
 
 .nav-name {
     color: #FFF;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .nav-tit {
@@ -1200,7 +1200,7 @@ button.buttonOrange:focus {
 
 .hover-disable {
     font-size:11px;
-    opacity:0.2;
+    opacity:0.8;
     pointer-events:none;
 }
 
