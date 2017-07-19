@@ -60,7 +60,7 @@ import {Emp} from "./emp";
                           <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                         </li>
                         
-                        <li style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;margin-top:30px;font-weight:500;">
+                        <li style="border-top: 0.3px solid #B3B3B3;margin-top:30px;font-weight:500;">
                             <a class="hover-disable"><span>ADMINISTRATION</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701'">

@@ -48,9 +48,8 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
-                                            <input id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" type="number" class="form-control inputForm" placeholder="Price" [ngFormControl]="myForm.find('price')">
-                                            </form>                                     
-                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
+                                            <input type="number" placeholder="Price" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm">
+                                            </form>
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
@@ -75,7 +74,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                         <div class="col-sm-12" *ngFor="#package of packages">
                                             <div class="row subInfo">
                                                 <div class="col-sm-4 invoiceList"><span>Level {{package.level}} - {{package.type}}</span></div>
-                                                <div class="col-sm-2 invoiceList"><span>{{package.price}}</span></div>
+                                                <div class="col-sm-2 invoiceList"><span>Rp. {{package.price | number:'2.2-4'}}</span></div>
                                                 <div class="col-sm-3 invoiceList"><span>{{package.detail}}</span></div>
                                                 <form-cluster [idcluster]=package.cluster></form-cluster>
                                             </div>
@@ -122,7 +121,6 @@ ngOnInit() {
       cluster: ['All', Validators.required]
       detail: ['0', Validators.required]
       type: ['0', Validators.required]
-      price: ['', Validators.required]
     })
 }
 selectedClusters: Cluster = new Cluster(0, 'dummy');
