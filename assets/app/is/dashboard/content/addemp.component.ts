@@ -14,7 +14,7 @@ import { City } from './cities';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Add Employee Groovy
+                &nbsp; Add User Groovy
             </h3>
 
         </div>
