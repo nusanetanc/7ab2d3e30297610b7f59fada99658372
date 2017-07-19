@@ -64,14 +64,6 @@
 
     </script>
 
-    <script>
-        webshims.setOptions('forms-ext', {
-            replaceUI: 'auto',
-            types: 'number'
-        });
-        webshims.polyfill('forms forms-ext');
-    </script>
-
     <style>
       .loader {
         border: 16px solid #fff;
@@ -200,6 +192,13 @@
     $(function() {
         $('#currency').maskMoney();
     })
+</script>
+<script>
+    webshims.setOptions('forms-ext', {
+        replaceUI: 'auto',
+        types: 'number'
+    });
+    webshims.polyfill('forms forms-ext');
 </script>
 
 </body>
