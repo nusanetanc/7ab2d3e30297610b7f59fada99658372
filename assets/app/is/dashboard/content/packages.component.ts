@@ -115,20 +115,6 @@ myForm: ControlGroup;
 API = 'http://202.162.207.164:3000';
 emps: any[] = [];
 clusters: any[] = [];
-
-    document.getElementById("userinput").onblur =function (){
-
-    //number-format the user input
-    this.value = parseFloat(this.value.replace(/,/g, ""))
-        .toFixed(2)
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-    //set the numeric value to a number input
-    document.getElementById("number").value = this.value.replace(/,/g, "")
-
-}
-
 constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
