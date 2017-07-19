@@ -28,10 +28,10 @@ import { Sub } from './subs';
                   <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     NAME
                   </button>
-                  <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <button (click)="sortJkt()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     JAKARTA
                   </button>
-                  <button (click)="sortByName()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <button (click)="sortBdg()" class="btn btn-default dropdown-toggle buttonSort right" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     BANDUNG
                   </button>
               </div>
@@ -56,6 +56,30 @@ export class ContentAllSubsComponent {
 
     // Sort By
     sortByName(){
+        this.subs.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return -1;
+            }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+    
+    sortBdg(){
+        this.subs.sort( function(name1, name2) {
+            if ( name1.name < name2.name ){
+                return -1;
+            }else if( name1.name > name2.name ){
+                return 1;
+            }else{
+                return 0;
+            }
+        });
+    }
+    
+    sortJkt(){
         this.subs.sort( function(name1, name2) {
             if ( name1.name < name2.name ){
                 return -1;
