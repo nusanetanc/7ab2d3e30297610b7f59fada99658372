@@ -56,12 +56,12 @@ import {Emp} from "./emp";
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '501' || emps.accessrole == '601' || emps.accessrole == '801' || emps.accessrole == '8' || emps.accessrole == '301' || emps.accessrole == '3'">
                             <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
                         </li>
-                        <li>
+                        <li style="cursor:pointer">
                           <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                         </li>
                         
                         <li style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;margin-top:30px;">
-                            <a><span>ADMINISTRATION</span></a>
+                            <span>ADMINISTRATION</span>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701'">
                             <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">USER</span></a>
