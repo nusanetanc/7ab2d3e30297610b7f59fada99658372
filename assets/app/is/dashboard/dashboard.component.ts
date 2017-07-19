@@ -24,13 +24,6 @@ import {Emp} from "./emp";
                                 <div class="col-sm-9">
                                    <span class="nav-name">{{emps.name}}</span>
                                 </div>
-                                <div class="col-sm-2 hid">
-                                   <span class="caret"></span>
-                                </div>
-                                <div class="dropdown-content" style="margin-top: 20px;">
-                                  <a>Account</a>
-                                  <a type="submit" (click)="Logout()">Logout</a>
-                                </div>
                              </div>
                              <div class="row" style="padding: 5px 0px;">
                                 <div class="col-sm-12">
@@ -62,6 +55,9 @@ import {Emp} from "./emp";
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '501' || emps.accessrole == '601' || emps.accessrole == '801' || emps.accessrole == '8' || emps.accessrole == '301' || emps.accessrole == '3'">
                             <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
+                        </li>
+                        <li>
+                          <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                         </li>
                         
                         <li style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;margin-top:30px;">
