@@ -48,8 +48,9 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
-                                            <input [ngModel]="price | number:'2.2-4'" (ngModelChange)="price = $event" type="number" #price class="form-control inputForm" id="price" placeholder="Price">
+                                            <input type="text" #currency class="form-control inputForm" id="currency" placeholder="Price">
                                             <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
+                                            <input type="text" id="currency" /><br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
