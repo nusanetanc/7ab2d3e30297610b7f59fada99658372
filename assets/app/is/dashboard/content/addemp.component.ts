@@ -42,14 +42,14 @@ import { City } from './cities';
                                             <input [ngFormControl]="myForm.find('empname')" #empname type="text" class="form-control inputForm" id="empname" placeholder="Employe Name">
                                             <input [ngFormControl]="myForm.find('empemail')" #empemail type="text" class="form-control inputForm" id="empemail" placeholder="Employee Email">
                                             <input [ngFormControl]="myForm.find('empphone')" #empphone type="text" class="form-control inputForm" id="empphone" placeholder="Employee Phone">
-                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement">
+                                            <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement" >
                                               <option disabled="true" value="0">-- Select Departement --</option>
-                                              <option *ngFor="#dep of deps" [level]={{dep.level}}>{{ dep.name }}</option>
+                                              <option *ngFor="#dep of deps" [value]={{dep.level}}>{{ dep.name }}</option>
                                             </select>{{empdepartement.level}}
                                             <br/>
                                             <select [ngFormControl]="myForm.find('emptitlejob')" #emptitlejob id="emptitlejob">
                                               <option disabled="true" value="0">-- Select Title Job --</option>
-                                              <option *ngFor="#job of jobs">{{ job.name }}</option>
+                                              <option *ngFor="#job of jobs" *ngIf="job.level == '2'">{{ job.name }}</option>
                                             </select>
                                             <br/><br/>
                                             <select [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
