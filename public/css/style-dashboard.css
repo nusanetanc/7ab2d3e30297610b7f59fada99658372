@@ -1198,6 +1198,12 @@ button.buttonOrange:focus {
 
 /*----- /New Class ------*/
 
+.hover-disable {
+    font-size:11px;
+    opacity:0.2;
+    pointer-events:none;
+}
+
 .print {
     display: block;
 }
