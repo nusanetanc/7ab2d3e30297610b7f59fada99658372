@@ -48,7 +48,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
-                                            <input type="number" value="1000" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" #price class="form-control inputForm" id="price" placeholder="Price">
+                                            <input type="text" #currency class="form-control inputForm" id="currency" placeholder="Price">
                                             <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                             <br/>
                                         </form>
