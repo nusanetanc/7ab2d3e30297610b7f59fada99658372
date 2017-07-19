@@ -47,7 +47,7 @@ import {Emp} from "./emp";
                             <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                         </li>
                         <li>
-                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFORMATION</span></a>
+                            <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFO</span></a>
                         </li>
                         
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '702'">
@@ -61,7 +61,7 @@ import {Emp} from "./emp";
                         </li>
                         
                         <li style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;margin-top:30px;">
-                            <a style="pointer-events:none;"><span>ADMINISTRATION</span></a>
+                            <a style="pointer-events:none;"><span class="fontWeight300" style="font-size:10px;">ADMINISTRATION</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701'">
                             <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">USER</span></a>
