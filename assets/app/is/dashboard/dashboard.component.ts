@@ -21,7 +21,7 @@ import {Emp} from "./emp";
                           </div>
                           <div class="col-sm-8 col-xs-6" style="padding: 10px;">
                              <div class="row" style="padding: 3px 0px;">
-                                <div class="col-sm-9">
+                                <div class="col-sm-12">
                                    <span class="nav-name">{{emps.name}}</span>
                                 </div>
                              </div>
