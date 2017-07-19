@@ -45,22 +45,17 @@ import { City } from './cities';
                                             <select [ngFormControl]="myForm.find('empdepartement')" #empdepartement class="form-control inputForm" id="empdepartement">
                                               <option disabled="true" value="0">-- Select Departement --</option>
                                               <option *ngFor="#dep of deps" value={{dep.level}}>{{ dep.name }}</option>
-                                            </select>{{empdepartement.value}}
+                                            </select>
                                             <br/>
                                             <select [ngFormControl]="myForm.find('emptitlejob')" #emptitlejob id="emptitlejob">
                                               <option disabled="true" value="0">-- Select Title Job --</option>
-                                              <option *ngFor="#job of jobs">{{ job.name }}</option>
+                                              <option *ngFor="#job of jobs" value={{job.sublevel}}>{{ job.name }}</option>
                                             </select>
                                             <br/><br/>
                                             <select [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
                                               <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                               <option>Jakarta</option>
                                               <option>Bandung</option>
-                                            </select>
-                                            <br/><br/>
-                                            <select [ngFormControl]="myForm.find('empaccess')" #empaccess id="empaccess">
-                                              <option value="none">-- Select Acces Role --</option>
-                                              <option *ngFor="#job of jobs" >{{ job.name }}</option>
                                             </select>
                                             <br/>
                                         </form>
@@ -131,20 +126,8 @@ myForm: ControlGroup;
                 })
         }
 
-        public deps = [
-            {name: 'Management', level:"1"},
-            {name: "Sales", level: "2"},
-            {name: "Technical", level: "3"},
-            {name: "Network", level: "4"},
-            {name: "Finnace", level: "5"},
-            {name: "CRO", level: "6"},
-            {name: "HR & GA", level: "7"},
-            {name: "Helpdesk", level: "8"},
-        ];
-
         public jobs = [
             {name: "Direktur", level: "1", sublevel: "1"},
-            {name: "Sales Manager", level: "2", sublevel: "2"},
             {name: "Sales Manager", level: "2", sublevel: "2"},
             {name: "Sales Supervisior", level:"2", sublevel: "201"},
             {name: "Sales", level: "2", sublevel:"202"},
