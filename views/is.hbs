@@ -35,6 +35,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+    <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
     <!-- Add the router library -->
     <script src="https://code.angularjs.org/2.0.0-beta.14/router.dev.js"></script>
     <script src="/js/app/is/bundle.js"></script>
@@ -60,6 +61,7 @@
                 $('#subdatebirth').datepicker();
             })
         }
+
     </script>
 
     <style>
@@ -90,6 +92,7 @@
 </head>
 <body>
 <input type="text" id="currency" />
+<input type="number" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" />
 <is-app>
     <style>
         .load > img {
@@ -189,6 +192,13 @@
     $(function() {
         $('#currency').maskMoney();
     })
+</script>
+<script>
+    webshims.setOptions('forms-ext', {
+        replaceUI: 'auto',
+        types: 'number'
+    });
+    webshims.polyfill('forms forms-ext');
 </script>
 
 </body>
