@@ -47,7 +47,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Default">Default</option>
                                             </select><br/><br/>
-                                            <input #price type="text" class="form-control inputForm" id="price" placeholder="Price">
+                                            <input type="number" value="1000" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" #price class="form-control inputForm" id="price" placeholder="Price">
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
