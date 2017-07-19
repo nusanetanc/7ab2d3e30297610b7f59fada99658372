@@ -108,9 +108,6 @@ import { ContentClusterNameComponent } from './clustername.component';
     directives: [ContentClusterNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentPackagesComponent implements OnInit {
-    $(function() {
-        $('#currency').maskMoney();
-    })
 myForm: ControlGroup;
 API = 'http://202.162.207.164:3000';
 emps: any[] = [];
