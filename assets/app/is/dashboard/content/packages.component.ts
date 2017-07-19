@@ -51,9 +51,6 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             <input type="number" value="1000" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" #price class="form-control inputForm" id="price" placeholder="Price">
                                             <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                             <br/>
-                                            <input type="text" id="userinput" pattern="[0-9]*">
-                                            <br>
-                                            <input type="number" id="number">
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
