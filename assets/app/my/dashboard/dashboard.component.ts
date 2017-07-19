@@ -54,6 +54,7 @@ import { Sub } from './content/subs';
                                 <li>
                                   <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                                 </li>
+                                <hr style="border-top: 1px solid #FFF;">
                             </ul>
                         </div>
                     </div>
