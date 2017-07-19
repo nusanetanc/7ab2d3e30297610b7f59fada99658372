@@ -61,7 +61,7 @@ import {Emp} from "./emp";
                         </li>
                         
                         <li style="border-top: 0.3px solid #B3B3B3;margin-right:-15px;margin-top:30px;">
-                            <a style="pointer-events:none;"><span class="fontWeight300" style="font-size:12px;">ADMINISTRATION</span></a>
+                            <a style="pointer-events:none;"><span class="fontWeight300" style="font-size:11px;">ADMINISTRATION</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '701'">
                             <a [routerLink]="['AllEmployee']" ><i class="material-icons">contacts</i> <span class="fontWeight300">USER</span></a>
