@@ -1,6 +1,6 @@
-import {Component, OnInit, Directive, Output, EventEmitter} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
-import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators, NgControl} from 'angular2/common';
+import {FormBuilder, FORM_PROVIDERS, FORM_DIRECTIVES, Control, ControlGroup, Validators} from 'angular2/common';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import { Cluster } from './cluster';
@@ -48,7 +48,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
-                                            <input currency formControlName="cost" (rawChange)="rawCurrency=$event" type="text" #price class="form-control inputForm" id="price" placeholder="Price">
+                                            <input type="text" #price class="form-control inputForm" id="price" placeholder="Price">
                                             <input [ngFormControl]="myForm.find('price')" #price type="text" class="form-control inputForm" id="price" placeholder="Price">
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
@@ -111,28 +111,7 @@ myForm: ControlGroup;
 API = 'http://202.162.207.164:3000';
 emps: any[] = [];
 clusters: any[] = [];
-constructor(public model: NgControl, private _fb:FormBuilder, private http: Http) {}
-
-    @Output() rawChange:EventEmitter<string> = new EventEmitter<string>();
-
-    onInputChange(event: any, backspace: any) {
-        var newVal = (parseInt(event.replace(/[^0-9]/g, ''))/100).toLocaleString('en-US', { minimumFractionDigits: 2 });
-        var rawValue = newVal;
-
-        if(backspace) {
-            newVal = newVal.substring(0, newVal.length - 1);
-        }
-
-        if(newVal.length == 0) {
-            newVal = '';
-        }
-        else  {
-            newVal = newVal;
-        }
-        // set the new value
-        this.model.valueAccessor.writeValue(newVal);
-        this.rawChange.emit(rawValue)
-    }
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
