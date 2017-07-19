@@ -48,7 +48,7 @@ import { City } from './cities';
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                            <select *ngIf="emptitlejob.value == '0'" [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
+                                            <select *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
                                               <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                               <option>Jakarta</option>
                                               <option>Bandung</option>
