@@ -49,7 +49,7 @@ import { City } from './cities';
                                             <br/>
                                             <select [ngFormControl]="myForm.find('emptitlejob')" #emptitlejob id="emptitlejob">
                                               <option disabled="true" value="0">-- Select Title Job --</option>
-                                              <option *ngFor="#job of jobs" *ngIf="job.level == 2">{{ job.name }}</option>
+                                              <option *ngFor="#job of jobs">{{ job.name }}</option>
                                             </select>
                                             <br/><br/>
                                             <select [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
