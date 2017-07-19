@@ -13,7 +13,7 @@ import {Employee} from './employee';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; All Employee
+                &nbsp; All User Groovy
             </h3>
 
         </div>
@@ -22,7 +22,7 @@ import {Employee} from './employee';
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
                     <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange">
-                        ADD NEW EMPLOYEE
+                        ADD NEW USER
                     </a>
                     <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
                     <div class="dropdown right">
