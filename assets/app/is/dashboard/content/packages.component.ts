@@ -25,13 +25,11 @@ import { ContentClusterNameComponent } from './clustername.component';
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Packages</strong></div>
                     </div>
-                    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
                     <div class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
                                         <form [ngFormModel]="myForm">
                                             <input [ngFormControl]="myForm.find('level')" style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                             <br/>
@@ -50,7 +48,8 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Promo">Promo</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
-                                            
+                                            <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+                                            <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
                                         </form>                                     
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div> 
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">

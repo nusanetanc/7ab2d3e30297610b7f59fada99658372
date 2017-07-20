@@ -10,7 +10,6 @@ import {Emp} from "./emp";
 @Component({
     selector: 'dashboard',
     template: `
-    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
         <!-- Sidebar -->
         <div *ngIf="emps.accessrole != null" id="sidebar-wrapper">
             <nav id="spy">
@@ -37,7 +36,6 @@ import {Emp} from "./emp";
                 </div>
                 <div class="row" style="margin-right: 0px;">
                     <div class="col-sm-12">
-                    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
                     <ul class="sidebar-nav nav" style="margin-right: -15px">
                         <li class="firstLiSidebar">
                             <a [routerLink]="['Dashboard']" ><i class="material-icons">dashboard</i> <span class="fontWeight300">DASHBOARD</span></a>
