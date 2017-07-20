@@ -119,7 +119,7 @@ export class ContentCreateInvoiceComponent1 implements OnInit {
 
   // Get all Sub from the API
   getAllBill() {
-    this.http.get(`${this.API}/bill/listbill`)
+    this.http.get(`${this.API}/subscribe/listbill/sub/${this._routeParams.get('id')}`)
       .map(res => res.json())
       .subscribe(bills => {
         this.bills = bills
