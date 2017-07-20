@@ -9,6 +9,8 @@ import { ContentClusterNameComponent } from './clustername.component';
 @Component({
     selector: 'form-cpackages',
     template: `
+    <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+                                            <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
     <!-- Page content -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
