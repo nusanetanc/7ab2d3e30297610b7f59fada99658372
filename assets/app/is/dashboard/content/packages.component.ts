@@ -49,13 +49,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
                                             <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
-                                            <script>
-                                            webshims.setOptions('forms-ext', {
-                                                    replaceUI: 'auto',
-                                                    types: 'number'
-                                                });
-                                                webshims.polyfill('forms forms-ext');
-                                            </script>
+                                            <input class="ws-number ws-inputreplace form-control inputForm wsshadow-1500512085340 has-input-buttons user-success" type="text" placeholder="Price" value="" aria-required="false" inputmode="numeric" aria-labelledby="" style="margin-left: 0px; margin-right: 0px; padding-right: 15px; width: 444.2px;">
                                             </form>                                     
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div> 
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
