@@ -62,8 +62,9 @@
                 $('#subdatebirth').datepicker();
             })
         }
+
         webshims.setOptions('forms-ext', {
-            replaceUI: 'auto',
+            replaceUI: 'true',
             types: 'number'
         });
         webshims.polyfill('forms forms-ext');
@@ -197,8 +198,9 @@
     })
 </script>
 <script>
+    $.webshims.polyfill('es5 forms forms-ext');
     webshims.setOptions('forms-ext', {
-        replaceUI: 'auto',
+        replaceUI: 'true',
         types: 'number'
     });
     webshims.polyfill('forms forms-ext');
