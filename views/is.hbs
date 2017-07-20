@@ -63,7 +63,6 @@
             })
         }
 
-        $.webshims.polyfill('es5 forms forms-ext');
         webshims.setOptions('forms-ext', {
             replaceUI: 'true',
             types: 'number'
@@ -199,6 +198,7 @@
     })
 </script>
 <script>
+    $.webshims.polyfill('es5 forms forms-ext');
     webshims.setOptions('forms-ext', {
         replaceUI: 'true',
         types: 'number'
