@@ -22,10 +22,14 @@ var Home = require('../models/home');
 var Package = require('../models/package');
 var Information = require('../models/information');
 var http = require('http');
-//var socketio = require('socket.io');
+var socketio = require('socket.io');
 
-//var server = http.createServer(express);
-//var io = socketio.listen(server);
+var server = http.createServer(express);
+var io = socketio.listen(server);
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
