@@ -24,12 +24,12 @@ var Information = require('../models/information');
 var http = require('http');
 var socketio = require('socket.io');
 
-var server = http.createServer(express);
-var io = socketio.listen(server);
+//var server = http.createServer(express);
+//var io = socketio.listen(server);
 
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
+//io.on('connection', function(socket){
+//  console.log('a user connected');
+//});
 
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
@@ -200,7 +200,11 @@ router.post('/addchat/subs/:id', function(req, res, next) {
     chat.save(function(err) {
       if (err)
           res.send(err);
-      res.json({ message: 'Data created!' });
+      //res.json({ message: 'Data created!' });
+      Chat.find({complaintId: req.params.id}, function(err, chats) {
+          console.log( chats );
+          res.json(chats);
+      });
   });
 }
 });
