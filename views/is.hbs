@@ -191,6 +191,13 @@
         $('#currency').maskMoney();
     })
 </script>
+<script>
+    webshims.setOptions('forms-ext', {
+        replaceUI: 'auto',
+        id: 'price'
+    });
+    webshims.polyfill('forms forms-ext');
+</script>
 
 </body>
 </html>
