@@ -10,7 +10,7 @@ import {Emp} from "./emp";
 @Component({
     selector: 'dashboard',
     template: `
-    <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
         <!-- Sidebar -->
         <div *ngIf="emps.accessrole != null" id="sidebar-wrapper">
             <nav id="spy">
