@@ -10,6 +10,7 @@ import {Emp} from "./emp";
 @Component({
     selector: 'dashboard',
     template: `
+    <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
         <!-- Sidebar -->
         <div *ngIf="emps.accessrole != null" id="sidebar-wrapper">
             <nav id="spy">
