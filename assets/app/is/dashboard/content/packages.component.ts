@@ -105,6 +105,8 @@ import { ContentClusterNameComponent } from './clustername.component';
         </div>
     </div>
     <!-- END CONTENT -->
+    <script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+                                            <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
     `,
     directives: [ContentClusterNameComponent, ROUTER_DIRECTIVES],
 })
