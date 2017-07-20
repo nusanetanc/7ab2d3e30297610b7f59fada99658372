@@ -62,6 +62,8 @@
                 $('#subdatebirth').datepicker();
             })
         }
+
+        $.webshims.polyfill('es5 forms forms-ext');
         webshims.setOptions('forms-ext', {
             replaceUI: 'true',
             types: 'number'
