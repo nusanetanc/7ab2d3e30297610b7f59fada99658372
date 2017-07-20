@@ -20,7 +20,8 @@ import { ContentClusterNameComponent } from './clustername.component';
                 &nbsp; Add Packages
             </h3>
         </div>
-
+<script src="http://afarkas.github.io/webshim/js-webshim/minified/polyfiller.js"></script>
+                                            <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row">
                 <div class="col-sm-12">
