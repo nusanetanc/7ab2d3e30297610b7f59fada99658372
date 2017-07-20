@@ -49,8 +49,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
                                             <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
-                                            <input type="number" [ngModel]="value | number:'2.2-4'" (ngModelChange)="value=$event">
-                                        </form>                                     
+                                            </form>                                     
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div> 
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addPackage(level.value, cluster.value, detail.value, type.value, price.value)" class="btn btn-default buttonOrange">
                                             SEND
