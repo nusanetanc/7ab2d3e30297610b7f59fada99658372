@@ -25,6 +25,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Packages</strong></div>
                     </div>
+                    <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
                     <div class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row">
