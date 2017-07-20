@@ -62,7 +62,11 @@
                 $('#subdatebirth').datepicker();
             })
         }
-
+        webshims.setOptions('forms-ext', {
+            replaceUI: 'auto',
+            types: 'number'
+        });
+        webshims.polyfill('forms forms-ext');
     </script>
 
     <style>
@@ -92,6 +96,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+<input type="number" placeholder="placeholder" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" id="c1" />
 <is-app>
     <style>
         .load > img {
@@ -109,7 +114,6 @@
         <img src="images/logo-groovy.png">
     </div>
 </is-app>
-
 <script>
     System.import('boot')
             .then(null, console.error.bind(console));
