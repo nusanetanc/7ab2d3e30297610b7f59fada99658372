@@ -70,7 +70,7 @@ import {Emp} from "./emp";
                             <a [routerLink]="['Coverage']" ><i class="material-icons">room</i> <span class="fontWeight300">COVERAGE AREA</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'">
-                            <a href="/is/package" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
+                            <a href="/is/packages" ><i class="material-icons">view_list</i> <span class="fontWeight300">PACKAGES</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402' || emps.accessrole == '6' || emps.accessrole == '601'">
                             <a [routerLink]="['AllEngineer']"><i class="material-icons">contacts</i> <span class="fontWeight300">ENGINEER</span></a>
