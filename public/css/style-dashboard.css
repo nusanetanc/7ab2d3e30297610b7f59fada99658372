@@ -1302,6 +1302,16 @@ hr.hr1 {
 }
 /*--- /Not Found ---*/
 
+input[type=text]::-webkit-outer-spin-button,
+input[type=text]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
