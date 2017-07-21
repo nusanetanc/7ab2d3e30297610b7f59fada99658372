@@ -1302,22 +1302,6 @@ hr.hr1 {
 }
 /*--- /Not Found ---*/
 
-input[type=text]::-webkit-outer-spin-button,
-input[type=text]::-webkit-inner-spin-button {
-    -webkit-appearance: none !important;
-    margin: 0 !important;
-}
-
-input[type=number] {
-    -moz-appearance: textfield  !important;
-}
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none !important;
-    margin: 0 !important;
-}
-
-input[type=number] {
-    -moz-appearance: textfield  !important;
+.step-controls {
+    display: none;
 }
