@@ -58,9 +58,10 @@ import { Street } from './street';
                                         <option value="0" disabled="true">-- Select Block or Floor --</option>
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
                                     </select><br/><br/> -->
+                                    <input [ngFormControl]="myForm.find('streetblok')" type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok"><br/>
                                     <input [ngFormControl]="myForm.find('streetname')" type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
+                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
                                     </form>
@@ -232,9 +233,9 @@ getAllBLokfloorByCluster() {
             this.blokfloors = blokfloors
         })
 }
-    addBlock(streetname, streetblok) {
+    addBlock(streetname, streetblok, streetcluster) {
 
-        var body = `name=${streetname}&blokfloor=${streetblok}`;
+        var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
