@@ -30,6 +30,8 @@ router.get('/streetnamebyblok/:id', function(req, res, next) {
 router.post('/addstreetname', function(req, res, next) {
     var streetname = new Streetname();
     streetname.name= req.body.name;
+    streetname.blok= req.body.blok;
+    blokfloor.cluster= req.body.cluster;
     streetname.blokfloor= req.body.blokfloor;
 
     streetname.save(function(err) {
