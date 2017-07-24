@@ -184,7 +184,7 @@ this.getAllCity();
 this.getAllPropertyByCity();
 this.getAllClusterByProperty();
 //this.getAllBLokfloorByCluster();
-this.getAllStreetByBlok();
+//this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
   streetname: ['', Validators.required],
