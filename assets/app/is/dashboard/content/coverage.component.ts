@@ -59,7 +59,7 @@ import {Emp} from "./emp";
                         </div>
                     </div>
                     <div class="row marginLR15">
-                        <div class="col-sm-4">
+                        <!-- <div class="col-sm-4">
                             <a [routerLink]="['AddBlock']">
                                 <div class="cardDashboardCover">
                                     <div class="row white">
@@ -70,7 +70,7 @@ import {Emp} from "./emp";
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="col-sm-4">
                         <a [routerLink]="['AddStreet']">
                             <div class="cardDashboardCover">
