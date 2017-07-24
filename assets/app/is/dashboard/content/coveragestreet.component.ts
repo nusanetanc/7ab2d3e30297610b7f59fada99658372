@@ -53,10 +53,11 @@ import { Street } from './street';
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                       </select><br/><br/>
+                                    <!--
                                     <select [ngFormControl]="myForm.find('streetblok')" #streetblok id="streetblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
                                         <option value="0" disabled="true">-- Select Block or Floor --</option>
                                         <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                    </select><br/><br/>
+                                    </select><br/><br/> -->
                                     <input [ngFormControl]="myForm.find('streetname')" type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                     <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
