@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map';
 import { Complaint } from './complaints';
 import {ContentSubsNameComponent} from './subsname.component';
 import {ContentEmpsNameComponent} from './empsname.component';
-import * as io from 'socket.io-clinet';
 
 @Component({
     selector: 'form-dashboard',
