@@ -183,7 +183,7 @@ ngOnInit() {
 this.getAllCity();
 this.getAllPropertyByCity();
 this.getAllClusterByProperty();
-this.getAllBLokfloorByCluster();
+//this.getAllBLokfloorByCluster();
 this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
