@@ -217,22 +217,22 @@ getAllClusterByProperty() {
 }
 
 // Get all Street from the API
-getAllStreetByBlok() {
-    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
-        .map(res => res.json())
-        .subscribe(streetnames => {
-            this.streetnames = streetnames
-        })
-}
+// getAllStreetByBlok() {
+//    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+//        .map(res => res.json())
+//        .subscribe(streetnames => {
+//            this.streetnames = streetnames
+//        })
+// }
 
 // Get all BLokfloor from the API
-getAllBLokfloorByCluster() {
-    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-        .map(res => res.json())
-        .subscribe(blokfloors => {
-            this.blokfloors = blokfloors
-        })
-}
+// getAllBLokfloorByCluster() {
+//    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
+//        .map(res => res.json())
+//        .subscribe(blokfloors => {
+//            this.blokfloors = blokfloors
+//        })
+// }
     addBlock(streetname, streetblok, streetcluster) {
 
         var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
@@ -245,7 +245,7 @@ getAllBLokfloorByCluster() {
                 })
             .subscribe(data => {
                 alert('Add Street Success');
-                this.getAllStreet();
+                //this.getAllStreet();
             }, error => {
                 document.getElementById("message").innerHTML = error.text();
                 $('#failed').modal('show');
