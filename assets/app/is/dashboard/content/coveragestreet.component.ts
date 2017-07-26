@@ -210,7 +210,7 @@ getAllClusterByProperty() {
         })
  }
     addBlock(streetname, streetblok, streetcluster) {
-
+    alert('tes');
         var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
