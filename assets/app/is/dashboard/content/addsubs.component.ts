@@ -109,7 +109,7 @@ import {Streetname} from "./street_name";
                                     <div class="marginT20 paddingR30">
                                         <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
                                             <option value="0">-- Select Street Name --</option>
-                                            <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                            <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{streetname.blok}}</option>
                                         </select><br/>
                                     </div>
                                     <div class="marginT20 paddingR30">
