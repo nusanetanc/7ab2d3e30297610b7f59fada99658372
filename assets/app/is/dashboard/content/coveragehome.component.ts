@@ -147,7 +147,7 @@ onSelectProperty(_id) {
 }
 
 onSelectCluster(_id) {
-    this.blokfloors = this.getAllBLokfloorByCluster(){
+    this.streetnames = this.getAllStreetByCluster(){
         this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
