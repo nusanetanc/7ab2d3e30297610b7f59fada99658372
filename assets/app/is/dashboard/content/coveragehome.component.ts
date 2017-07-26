@@ -56,7 +56,7 @@ import { Street } from './street';
                                       </select><br/><br/>
                                     <select [ngFormControl]="myForm.find('homestreet')" #homestreet id="homestreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                         <option value="0" disabled="true">-- Select Street --</option>
-                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{streetname.blok}}</option>
                                     </select><br/><br/>
                                         <input [ngFormControl]="myForm.find('homeno')" type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number"><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
