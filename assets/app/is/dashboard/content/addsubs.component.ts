@@ -232,13 +232,14 @@ myForm: ControlGroup;
     }
 
     onSelectCluster(_id) {
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+        this.streetnames = this.getAllStreetByCluster(){
+            this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
                 .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
                 })
         }
+    }
         this.defaultpackages = this.getAllPackagesDefault(){
             this.http.get(`${this.API}/package/list/Default`)
                 .map(res => res.json())
@@ -359,6 +360,15 @@ myForm: ControlGroup;
             })
     }
 
+    // Get all Street from the API
+    getAllStreetByCluster() {
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
+            })
+    }
+
     // Get all Home from the API
     getAllHomeByStreet() {
         this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
@@ -368,14 +378,6 @@ myForm: ControlGroup;
             })
     }
 
-    // Get all Street from the API
-    getAllStreetByBlok() {
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
-            .map(res => res.json())
-            .subscribe(streetnames => {
-                this.streetnames = streetnames
-            })
-    }
 
     getAllPackagesDefault(){
         this.http.get(`${this.API}/package/list/Default`)
