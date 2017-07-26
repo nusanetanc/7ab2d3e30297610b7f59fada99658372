@@ -8,7 +8,6 @@ import { City } from './cities';
 import { Property } from './property';
 import { Type } from './type';
 import { Cluster } from './cluster';
-//import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
