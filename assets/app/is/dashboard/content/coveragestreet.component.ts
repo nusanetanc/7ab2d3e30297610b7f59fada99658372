@@ -201,14 +201,7 @@ getAllClusterByProperty() {
         })
 }
 
-// Get all Street from the API
- getAllStreetByBlok() {
-    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
-        .map(res => res.json())
-        .subscribe(streetnames => {
-            this.streetnames = streetnames
-        })
- }
+
     addBlock(streetname, streetblok, streetcluster) {
 
         var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
