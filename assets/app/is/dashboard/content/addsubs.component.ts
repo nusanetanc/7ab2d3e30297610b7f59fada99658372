@@ -8,7 +8,7 @@ import { City } from './cities';
 import { Property } from './property';
 import { Type } from './type';
 import { Cluster } from './cluster';
-import { Blokfloor } from './blokfloor';
+//import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
@@ -105,12 +105,6 @@ import {Streetname} from "./street_name";
                                             <option value="0">-- Select Clusters --</option>
                                             <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - {{ cluster.building }}</option>
                                         </select><br/>
-                                    </div>{{detailclusters.level}}
-                                    <div class="marginT20 paddingR30">
-                                        <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" class="inputForm" name="cars">
-                                            <option value="0">-- Select Blok or Floor --</option>
-                                            <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                        </select><br/>
                                     </div>
                                     <div class="marginT20 paddingR30">
                                         <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
@@ -206,7 +200,6 @@ myForm: ControlGroup;
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
-    selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
     selectedPackage: Package = new Package(0, 'dummy');
     selectedHome: Home = new Home(0, 'dummy');
@@ -238,13 +231,14 @@ myForm: ControlGroup;
     }
 
     onSelectCluster(_id) {
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+        this.streetnames = this.getAllStreetByCluster(){
+            this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
                 .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
+                .subscribe(streetnames => {
+                    this.streetnames = streetnames
                 })
         }
+    }
         this.defaultpackages = this.getAllPackagesDefault(){
             this.http.get(`${this.API}/package/list/Default`)
                 .map(res => res.json())
@@ -258,16 +252,6 @@ myForm: ControlGroup;
                 .map(res => res.json())
                 .subscribe(promopackages => {
                     this.promopackages = promopackages
-                })
-        }
-    }
-
-    onSelectBlok(_id) {
-        this.streetnames = this.getAllStreetByBlok(){
-            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-                .map(res => res.json())
-                .subscribe(streetnames => {
-                    this.streetnames = streetnames
                 })
         }
     }
@@ -296,7 +280,7 @@ myForm: ControlGroup;
     properties: any[] = [];
     clusters: any[] = [];
     subs: any[] = [];
-    blokfloors: any[] = [];
+    //blokfloors: any[] = [];
     homes: any[] = [];
     packages: any[] = [];
     streetnames: any[] = [];
@@ -385,20 +369,11 @@ myForm: ControlGroup;
     }
 
     // Get all Street from the API
-    getAllStreetByBlok() {
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+    getAllStreetByCluster() {
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
-            })
-    }
-
-    // Get all BLokfloor from the API
-    getAllBLokfloorByCluster() {
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
             })
     }
     getAllPackagesDefault(){
