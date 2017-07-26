@@ -232,13 +232,13 @@ myForm: ControlGroup;
     }
 
     onSelectCluster(_id) {
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
-                })
-        }
+    this.streetnames = this.getAllStreetByCluster(){
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
+            .map(res => res.json())
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
+            })
+    }
         this.defaultpackages = this.getAllPackagesDefault(){
             this.http.get(`${this.API}/package/list/Default`)
                 .map(res => res.json())
