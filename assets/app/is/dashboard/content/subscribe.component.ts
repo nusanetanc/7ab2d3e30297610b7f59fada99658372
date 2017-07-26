@@ -273,20 +273,11 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </select>
                               </div>
                             </div>
-
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-12 col-sm-12">
-                                  <select [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)" class="inputForm" name="cars">
-                                      <option value="0">-- Select Blok or Floor --</option>
-                                      <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                  </select>
-                                </div>
-                            </div>
                             <div class="row marginTB10 marginL5">
                               <div class="col-xs-12 col-sm-12">
                                 <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)" class="inputForm" name="cars">
                                     <option value="0">-- Select Street Name --</option>
-                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                    <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{streetname.blok}}</option>
                                 </select>
                               </div>
                             </div>
@@ -470,7 +461,6 @@ export class ContentSubscribeComponent implements OnInit {
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
-    selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
     selectedHome: Home = new Home(0, 'dummy');
 
@@ -525,23 +515,13 @@ onSelectProperty(_id) {
 }
 
 onSelectCluster(_id) {
-    this.blokfloors = this.getAllBLokfloorByCluster(){
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
+this.streetnames = this.getAllStreetByCluster(){
+    this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
+        .map(res => res.json())
+        .subscribe(streetnames => {
+            this.streetnames = streetnames
+        })
 }
-
-onSelectBlok(_id) {
-    this.streetnames = this.getAllStreetByBlok(){
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-            .map(res => res.json())
-            .subscribe(streetnames => {
-                this.streetnames = streetnames
-            })
-    }
 }
 
 onSelectStreet(_id) {
@@ -565,7 +545,6 @@ onSelectStreet(_id) {
     cities: any[] = [];
     properties: any[] = [];
     clusters: any[] = [];
-    blokfloors: any[] = [];
     homes: any[] = [];
     streetnames: any[] = [];
     sales: any[] = [];
@@ -714,14 +693,14 @@ onSelectStreet(_id) {
               })
       }
 
-      // Get all Street from the API
-      getAllStreetByBlok() {
-          this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
-              .map(res => res.json())
-              .subscribe(streetnames => {
-                  this.streetnames = streetnames
-              })
-      }
+          // Get all Street from the API
+          getAllStreetByCluster() {
+              this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
+                  .map(res => res.json())
+                  .subscribe(streetnames => {
+                      this.streetnames = streetnames
+                  })
+          }
 
       // Get all BLokfloor from the API
       getAllBLokfloorByCluster() {
