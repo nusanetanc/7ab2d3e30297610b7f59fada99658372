@@ -348,7 +348,7 @@ router.get('/detailsub', function(req, res, next) {
                 idcity: homes.city,
                 idproperty: homes.property,
                 idcluster: homes.cluster,
-                idblokfloor: homes.blokfloor,
+                blok: homes.blok,
                 idstreetname: homes.streetname,
                 idhomeid: homes._id,
                 cluster: clusters.name,
