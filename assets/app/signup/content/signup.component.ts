@@ -46,7 +46,7 @@ import {Streetname} from "./street_name";
                 <form>
                    <select [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
                    <option value="0" disabled>-- Select your clusters --</option>
-                   <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }} - Blok {{ cluster.blok }}</option>
+                   <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                    </select><br/>
                 </form>
              </div>
@@ -54,7 +54,7 @@ import {Streetname} from "./street_name";
                 <form>
                    <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                      <option value="0" disabled>-- Select your street name --</option>
-                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}  - Blok {{ cluster.blok }}</option>
                    </select><br/>
                 </form>
              </div>
