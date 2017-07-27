@@ -57,7 +57,7 @@ import { Street } from './street';
                                     </select><br/><br/>
                                   <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                       <option value="0" disabled="true">-- All Street --</option>
-                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{ streetname.name }}</option>
+                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{ streetname.blok }}</option>
                                   </select><br/><br/>
                                   <input [ngFormControl]="myForm.find('subject')" #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                   <textarea [ngFormControl]="myForm.find('message')" id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea><br/>
