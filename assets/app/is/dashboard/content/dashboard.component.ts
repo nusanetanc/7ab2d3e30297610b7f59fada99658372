@@ -366,7 +366,7 @@ import {Report} from './allreports';
 
 
                 <!-- Page content -->
-                      <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
+                      <div *ngIf="emps.accessrole == '801' || emps.accessrole == '8'" id="page-content-wrapper">
                           <div class="content-header">
                               <h3 id="home" class="fontWeight300">
                                   <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
@@ -430,8 +430,8 @@ import {Report} from './allreports';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
-    
-    
+
+
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
