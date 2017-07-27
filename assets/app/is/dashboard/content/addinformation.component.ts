@@ -55,10 +55,6 @@ import { Street } from './street';
                                         <option value="0" disabled="true">-- All Clusters --</option>
                                         <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                     </select><br/><br/>
-                                  <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                      <option value="0" disabled="true">-- All Block or Floor --</option>
-                                      <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                  </select><br/><br/>
                                   <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                       <option value="0" disabled="true">-- All Street --</option>
                                       <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
