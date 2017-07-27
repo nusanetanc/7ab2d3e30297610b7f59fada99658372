@@ -403,40 +403,38 @@ import {Report} from './allreports';
                                                     </div>
                                                   </a>
                                                 </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <p class="text-center font70MarginT35"><b>{{opencomplaints.length}}</b></p>
+                                                                <h4 class="marginLR20 fontWeight300">OPEN REPORTS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Content List -->
-                                    <div class="row paddingLR15Margin20">
-                                        <div class="col-sm-12">
-                                            <div class="row headerList paddingLR30">
-                                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
-                                            </div>
-                                            <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                                                <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                                                <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                                                <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                                            </div>
-                                            <div class="row subInfo">
-                                                <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /Content List -->
                                 </div>
                             </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4d061d22a422704f3a79ab97494d978cfbbe79de
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     complaints: any[] = [];
     subs: any[] = [];
     emps: any[] = [];
+    opencomplaints: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -444,6 +442,7 @@ export class ContentDashboardComponent {
         this.getAllReport();
         this.getAllSub();
         this.getAcountEmp();
+        this.getAllReportOpen();
     }
 
     stringAsDate(dateStr: string) {
@@ -477,6 +476,14 @@ export class ContentDashboardComponent {
               window.location.href = `/login`;
             }
           )
+    }
+    // Get all users from the API
+    getAllReportOpen() {
+        this.http.get(`${this.API}/complaint/listcomplaint/open`)
+            .map(res => res.json())
+            .subscribe(opencomplaints => {
+                this.opencomplaints = opencomplaints
+            })
     }
 
 }
