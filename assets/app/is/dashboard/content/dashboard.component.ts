@@ -430,52 +430,7 @@ import {Report} from './allreports';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
-<<<<<<< HEAD
-    
-=======
 
-
-    /*Menu-toggle*/
-
-      var menuToggle = function() {
-
-          e.preventDefault();
-          $("#wrapper").toggleClass("active");
-
-      };
-
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-
-    $(window).load(function(){
-        var w = $(window).width();
-        if(w < 700) {
-            $("#wrapper").toggleClass("active");
-        }
-    });
-
-
-    /*Scroll Spy*/
-    $('body').scrollspy({ target: '#spy', offset:80});
-
-    /*Smooth link animation*/
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-              $('html,body').animate({
-                  scrollTop: target.offset().top
-              }, 1000);
-              return false;
-          }
-        }
-    });
-
->>>>>>> b86fa6ef4bdff8a5ac96628f6fb9ca62dbf837ab
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
