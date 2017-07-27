@@ -17,6 +17,7 @@ router.use(session({
   resave: true,
   maxAge: 99999999999999999999
 }));
+var dnow = new Date();
 /* GET subloye listing. */
 router.get('/listinformation', function(req, res, next) {
      Information.find(function(err, informations) {
@@ -63,7 +64,7 @@ Information.findById(req.params.id, function(err, informations) {
 router.post('/addinformation', function(req, res, next) {
   var information = new Information();
     information.to= req.body.to;
-    information.date= req.body.date;
+    information.date= dnow
     information.subject= req.body.subject;
     information.desc= req.body.desc;
     information.usercreate= req.body.usercreate;
@@ -73,29 +74,6 @@ router.post('/addinformation', function(req, res, next) {
           res.send(err);
       res.json({ message: 'Data created!' });
   });
-});
-
-router.put('/putinformation/:id', function(req, res, next) {
-
-        Information.findById(req.params.id, function(err, information) {
-
-            if (err)
-                res.send(err);
-                information.to= req.body.to;
-                information.date= req.body.date;
-                information.subject= req.body.subject;
-                information.desc= req.body.desc;
-                information.usercreate= req.body.usercreate;
-              if (err)
-                res.send(err);
-
-            information.save(function(err) {
-                if (err)
-                    res.send(err);
-
-                res.json({ message: 'Data updated!' });
-            });
-        });
 });
 
 router.delete('/delinformation/:id', function(req, res, next) {

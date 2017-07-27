@@ -215,7 +215,7 @@ myForm: ControlGroup;
     }
     addInfo(infocity, infoproperty, infocluster, infostreet, subject, message){
 
-        var body = `to=${this.toInfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate=${this.USER}`;
+        var body = `to=${this.toInfo}&subject=${subject}&desc=${message}&usercreate=${this.USER}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
