@@ -78,7 +78,7 @@ import { Street } from './street';
         </div>
     </div>
     <!-- Page content -->
-    <div *ngIf="emps.accessrole == '1' || emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '5' || emps.accessrole == '502' || emps.accessrole == '6' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '801' || emps.accessrole == '8'" class='fullscreenDiv'>
+    <div *ngIf="emps.accessrole == '1' || emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '5' || emps.accessrole == '502' || emps.accessrole == '6' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8'" class='fullscreenDiv'>
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     <!-- Modal -->
