@@ -6,7 +6,7 @@ import {Report} from './allreports';
 @Component({
     selector: 'form-dashboard',
     template: `
-
+    {{emps.accessrole}}
     <!-- START CONTENT -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1'" id="page-content-wrapper">
        <div class="content-header">
@@ -206,6 +206,7 @@ import {Report} from './allreports';
           </div>
           <!-- END CONTENT -->
 
+
           <!-- Page content -->
                 <div id="page-content-wrapper" *ngIf="emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
                     <div class="content-header">
@@ -311,6 +312,8 @@ import {Report} from './allreports';
                             </div>
                          </div>
                       </div>
+                    </div>
+                 </div>
 
                       <!-- START CONTENT -->
                       <div *ngIf="emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702'" id="page-content-wrapper">
@@ -363,73 +366,72 @@ import {Report} from './allreports';
                          </div>
                       </div>
                       <!-- END CONTENT -->
+                      <!-- Page content -->
+                            <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
+                                <div class="content-header">
+                                    <h3 id="home" class="fontWeight300">
+                                        <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                                        </a>
+                                        &nbsp; Dashboard
+                                    </h3>
+                                </div>
 
+                                <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row marginLR15">
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['AddInformation']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">mode_edit</i>
+                                                                <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                <!-- Page content -->
-                      <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
-                          <div class="content-header">
-                              <h3 id="home" class="fontWeight300">
-                                  <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                                  </a>
-                                  &nbsp; Dashboard
-                              </h3>
-                          </div>
-
-                          <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                              <div class="row">
-                                  <div class="col-sm-12">
-                                      <div class="row marginLR15">
-                                          <div class="col-sm-4">
-                                            <a [routerLink]="['AddInformation']">
-                                              <div class="cardDashboardSub">
-                                                  <div class="row marginB10">
-                                                      <div class="col-sm-12 text-center">
-                                                          <i class="material-icons font100Margin30">mode_edit</i>
-                                                          <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                          <div class="col-sm-4">
-                                            <a [routerLink]="['Information']">
-                                              <div class="cardDashboardSub">
-                                                  <div class="row marginB10">
-                                                      <div class="col-sm-12 text-center">
-                                                          <i class="material-icons font100Margin30">info</i>
-                                                          <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <!-- Content List -->
-                              <div class="row paddingLR15Margin20">
-                                  <div class="col-sm-12">
-                                      <div class="row headerList paddingLR30">
-                                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
-                                      </div>
-                                      <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                                          <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                                          <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                                          <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                                      </div>
-                                      <div class="row subInfo">
-                                          <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!-- /Content List -->
-                          </div>
-                      </div>
+                                    <!-- Content List -->
+                                    <div class="row paddingLR15Margin20">
+                                        <div class="col-sm-12">
+                                            <div class="row headerList paddingLR30">
+                                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
+                                            </div>
+                                            <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
+                                                <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
+                                                <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
+                                                <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
+                                            </div>
+                                            <div class="row subInfo">
+                                                <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Content List -->
+                                </div>
+                            </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
+<<<<<<< HEAD
     
     
     /*Menu-toggle*/
@@ -472,6 +474,10 @@ export class ContentDashboardComponent {
         }
     });
     
+=======
+
+
+>>>>>>> 3fabd69261bb464f9a4cd1bd417e4d2c626e32c1
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
