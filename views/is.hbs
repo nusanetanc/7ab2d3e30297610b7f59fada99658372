@@ -115,19 +115,19 @@
         var menuToggle = function() {
 
           event.preventDefault();
-          $("#sidebar-wrapper").toggleClass("active");
+          $("#wrapper").toggleClass("active");
 
         };
 
         $("#menu-toggle").click(function(event) {
             event.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
+            $("#wrapper").toggleClass("active");
         });
 
         $(window).load(function(){
             var w = $(window).width();
             if(w < 700) {
-                $("#sidebar-wrapper").toggleClass("active");
+                $("#wrapper").toggleClass("active");
             }
         });
 
