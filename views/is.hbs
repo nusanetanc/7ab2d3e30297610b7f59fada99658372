@@ -41,6 +41,48 @@
     <script src="https://code.angularjs.org/2.0.0-beta.14/router.dev.js"></script>
     <script src="/js/app/is/bundle.js"></script>
 
+    <!-- Collaps JS -->
+    <script type="text/javascript">
+      /*Menu-toggle*/
+        var menuToggle = function() {
+        
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+        
+        };
+    
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+    
+        $(window).load(function(){
+            var w = $(window).width();
+            if(w < 700) {
+                $("#wrapper").toggleClass("active");
+            }
+        });
+    
+    
+      /*Scroll Spy*/
+      $('body').scrollspy({ target: '#spy', offset:80});
+    
+      /*Smooth link animation*/
+      $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+    
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('html,body').animate({
+                      scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+    </script>
+
     <script type="text/javascript">
         var datefield=document.createElement("input")
         datefield.setAttribute("type", "date")
@@ -142,49 +184,7 @@
 
 </script>
 
-<!-- Collaps JS -->
-<script>
 
-  /*Menu-toggle*/
-
-      var menuToggle = function() {
-
-          e.preventDefault();
-          $("#wrapper").toggleClass("active");
-
-      };
-
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-
-    $(window).load(function(){
-        var w = $(window).width();
-        if(w < 700) {
-            $("#wrapper").toggleClass("active");
-        }
-    });
-
-
-  /*Scroll Spy*/
-  $('body').scrollspy({ target: '#spy', offset:80});
-
-  /*Smooth link animation*/
-  $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-              $('html,body').animate({
-                  scrollTop: target.offset().top
-              }, 1000);
-              return false;
-          }
-      }
-  });
-</script>
 <script>
     $(function() {
         $('#currency').maskMoney();
