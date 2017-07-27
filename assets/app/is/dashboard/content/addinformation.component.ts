@@ -57,7 +57,7 @@ import { Street } from './street';
                                     </select><br/><br/>
                                   <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                       <option value="0" disabled="true">-- All Street --</option>
-                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{ streetname.name }}</option>
                                   </select><br/><br/>
                                   <input [ngFormControl]="myForm.find('subject')" #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                   <textarea [ngFormControl]="myForm.find('message')" id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea><br/>
@@ -98,7 +98,6 @@ myForm: ControlGroup;
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
-    selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
 
     onSelectPackage(level) {
@@ -176,8 +175,7 @@ myForm: ControlGroup;
     this.getAllCity();
     this.getAllPropertyByCity();
     this.getAllClusterByProperty();
-    this.getAllBLokfloorByCluster();
-    this.getAllStreetByBlok();
+    this.getAllStreetByCluster();
     this.getAllHomeByStreet();
     this.getAcountEmp();
     this.myForm = this._fb.group({
@@ -211,22 +209,14 @@ myForm: ControlGroup;
     }
 
     // Get all Street from the API
-    getAllStreetByBlok() {
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+    getAllStreetByCluster() {
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
             })
     }
 
-    // Get all BLokfloor from the API
-    getAllBLokfloorByCluster() {
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
 
     // Get all Home from the API
     getAllHomeByStreet() {
