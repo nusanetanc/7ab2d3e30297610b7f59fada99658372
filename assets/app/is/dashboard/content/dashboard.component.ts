@@ -409,31 +409,7 @@ import {Report} from './allreports';
                                                         <div class="row marginB10">
                                                             <div class="col-sm-12 text-center">
                                                                 <i class="material-icons font100Margin30">info</i>
-                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                  </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                  <a [routerLink]="['Information']">
-                                                    <div class="cardDashboardSub">
-                                                        <div class="row marginB10">
-                                                            <div class="col-sm-12 text-center">
-                                                                <i class="material-icons font100Margin30">info</i>
-                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                  </a>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                  <a [routerLink]="['Information']">
-                                                    <div class="cardDashboardSub">
-                                                        <div class="row marginB10">
-                                                            <div class="col-sm-12 text-center">
-                                                                <i class="material-icons font100Margin30">info</i>
-                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                                <h4 class="marginLR20 fontWeight300">OPEN REPORTS</h4>
                                                             </div>
                                                         </div>
                                                     </div>
