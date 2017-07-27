@@ -128,7 +128,7 @@ myForm: ControlGroup;
 
     onSelectCluster(_id) {
       this.toInfo = _id;
-      this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
+      this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
           .map(res => res.json())
           .subscribe(streetnames => {
               this.streetnames = streetnames
