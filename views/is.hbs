@@ -108,6 +108,49 @@
         <img src="images/logo-groovy.png">
     </div>
 </is-app>
+
+<!-- Collaps JS -->
+    <script type="text/javascript">
+      /*Menu-toggle*/
+        var menuToggle = function() {
+        
+          event.preventDefault();
+          $("#wrapper").toggleClass("active");
+        
+        };
+    
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("active");
+        });
+    
+        $(window).load(function(){
+            var w = $(window).width();
+            if(w < 700) {
+                $("#wrapper").toggleClass("active");
+            }
+        });
+    
+    
+      /*Scroll Spy*/
+      $('body').scrollspy({ target: '#spy', offset:80});
+    
+      /*Smooth link animation*/
+      $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+    
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('html,body').animate({
+                      scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+    </script>
+
 <script>
     System.import('boot')
             .then(null, console.error.bind(console));
@@ -142,49 +185,6 @@
 
 </script>
 
-<!-- Collaps JS -->
-<script>
-
-  /*Menu-toggle*/
-
-      var menuToggle = function() {
-
-          e.preventDefault();
-          $("#wrapper").toggleClass("active");
-
-      };
-
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-
-    $(window).load(function(){
-        var w = $(window).width();
-        if(w < 700) {
-            $("#wrapper").toggleClass("active");
-        }
-    });
-
-
-  /*Scroll Spy*/
-  $('body').scrollspy({ target: '#spy', offset:80});
-
-  /*Smooth link animation*/
-  $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-              $('html,body').animate({
-                  scrollTop: target.offset().top
-              }, 1000);
-              return false;
-          }
-      }
-  });
-</script>
 <script>
     $(function() {
         $('#currency').maskMoney();

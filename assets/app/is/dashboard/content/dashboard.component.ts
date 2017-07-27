@@ -430,6 +430,8 @@ import {Report} from './allreports';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
+    
+    
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
