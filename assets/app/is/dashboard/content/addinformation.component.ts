@@ -128,24 +128,11 @@ myForm: ControlGroup;
 
     onSelectCluster(_id) {
       this.toInfo = _id;
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
-                })
-        }
-    }
-
-    onSelectBlok(_id) {
-      this.toInfo = _id;
-        this.streetnames = this.getAllStreetByBlok(){
-            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-                .map(res => res.json())
-                .subscribe(streetnames => {
-                    this.streetnames = streetnames
-                })
-        }
+      this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
+          .map(res => res.json())
+          .subscribe(streetnames => {
+              this.streetnames = streetnames
+          })
     }
 
     onSelectStreet(_id) {
