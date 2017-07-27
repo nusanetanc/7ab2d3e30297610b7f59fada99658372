@@ -90,7 +90,7 @@
     <!-- Google Captcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body id="body">
 <is-app>
     <style>
         .load > img {
@@ -110,46 +110,46 @@
 </is-app>
 
 <!-- Collaps JS -->
-    <script type="text/javascript">
-      /*Menu-toggle*/
-        var menuToggle = function() {
-        
-          event.preventDefault();
-          $("#wrapper").toggleClass("active");
-        
-        };
+<script type="text/javascript">
+  /*Menu-toggle*/
+    var menuToggle = function() {
     
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
+      event.preventDefault();
+      $("#wrapper").toggleClass("active");
+    
+    };
+
+    $("#menu-toggle").click(function(event) {
+        event.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    $(window).load(function(){
+        var width = $(window).width();
+        if(width < 700) {
             $("#wrapper").toggleClass("active");
-        });
-    
-        $(window).load(function(){
-            var w = $(window).width();
-            if(w < 700) {
-                $("#wrapper").toggleClass("active");
-            }
-        });
-    
-    
-      /*Scroll Spy*/
-      $('body').scrollspy({ target: '#spy', offset:80});
-    
-      /*Smooth link animation*/
-      $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-    
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-              if (target.length) {
-                  $('html,body').animate({
-                      scrollTop: target.offset().top
-                  }, 1000);
-                  return false;
-              }
+        }
+    });
+
+
+  /*Scroll Spy*/
+  document.getElementById('body').scrollspy({ target: '#spy', offset:80});
+
+  /*Smooth link animation*/
+  $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          if (target.length) {
+              $('html,body').animate({
+                  scrollTop: target.offset().top
+              }, 1000);
+              return false;
           }
-      });
-    </script>
+      }
+  });
+</script>
 
 <script>
     System.import('boot')
