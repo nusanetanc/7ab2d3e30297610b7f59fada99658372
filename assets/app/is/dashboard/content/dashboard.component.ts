@@ -272,8 +272,100 @@ import {Report} from './allreports';
                 </div>
 
 
+                <!-- START CONTENT -->
+                <div *ngIf="emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
+                   <div class="content-header">
+                      <h3 id="home">
+                         <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                         </a>
+                         &nbsp; Dashboard
+                      </h3>
+                   </div>
+                   <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                      <div class="row">
+                         <div class="col-sm-12">
+                            <div class="row marginLR15">
+                                <div class="col-sm-4">
+                                    <a [routerLink]="['AllSubs']">
+                                        <div class="cardDashboardSub">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
+                                                    <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                  <div class="col-sm-4">
+                                    <a [routerLink]="['Information']">
+                                      <div class="cardDashboardSub">
+                                          <div class="row marginB10">
+                                              <div class="col-sm-12 text-center">
+                                                  <i class="material-icons font100Margin30">info</i>
+                                                  <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                              </div>
+                                          </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+                 </div>
 
-
+                      <!-- START CONTENT -->
+                      <div *ngIf="emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702'" id="page-content-wrapper">
+                         <div class="content-header">
+                            <h3 id="home">
+                               <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                               </a>
+                               &nbsp; Dashboard
+                            </h3>
+                         </div>
+                         <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                            <div class="row">
+                               <div class="col-sm-12">
+                                  <div class="row marginLR15">
+                                     <div class="col-sm-4">
+                                          <a [routerLink]="['AllSubs']">
+                                              <div class="cardDashboardSub">
+                                                  <div class="row">
+                                                      <div class="col-sm-12">
+                                                          <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
+                                                          <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </a>
+                                      </div>
+                                     <div class="col-sm-4">
+                                          <a [routerLink]="['Information']">
+                                            <div class="cardDashboardSub">
+                                                <div class="row marginB10">
+                                                    <div class="col-sm-12 text-center">
+                                                        <i class="material-icons font100Margin30">info</i>
+                                                        <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          </a>
+                                     </div>
+                                     <div class="col-sm-4">
+                                        <div class="cardDashboardSub">
+                                           <div class="row margin10White">
+                                              <div class="col-sm-12 text-center">
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!-- END CONTENT -->
                       <!-- Page content -->
                             <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
                                 <div class="content-header">
@@ -335,58 +427,6 @@ import {Report} from './allreports';
                                     <!-- /Content List -->
                                 </div>
                             </div>
-
-                      <!-- START CONTENT -->
-                      <div *ngIf="emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702'" id="page-content-wrapper">
-                         <div class="content-header">
-                            <h3 id="home">
-                               <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                               </a>
-                               &nbsp; Dashboard
-                            </h3>
-                         </div>
-                         <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                            <div class="row">
-                               <div class="col-sm-12">
-                                  <div class="row marginLR15">
-                                     <div class="col-sm-4">
-                                          <a [routerLink]="['AllSubs']">
-                                              <div class="cardDashboardSub">
-                                                  <div class="row">
-                                                      <div class="col-sm-12">
-                                                          <p class="text-center font70MarginT35"><b>{{subs.length}}</b></p>
-                                                          <h4 class="text-center fontWeight300">SUBSCRIBERS</h4>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </a>
-                                      </div>
-                                     <div class="col-sm-4">
-                                          <a [routerLink]="['Information']">
-                                            <div class="cardDashboardSub">
-                                                <div class="row marginB10">
-                                                    <div class="col-sm-12 text-center">
-                                                        <i class="material-icons font100Margin30">info</i>
-                                                        <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                          </a>
-                                     </div>
-                                     <div class="col-sm-4">
-                                        <div class="cardDashboardSub">
-                                           <div class="row margin10White">
-                                              <div class="col-sm-12 text-center">
-                                              </div>
-                                           </div>
-                                        </div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <!-- END CONTENT -->
     `,
     directives: [ROUTER_DIRECTIVES],
 })
