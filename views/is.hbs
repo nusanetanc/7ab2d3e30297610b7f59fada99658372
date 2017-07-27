@@ -153,11 +153,10 @@
 
 <script>
     System.import('boot')
-            .then(null, console.error.bind(console));
+    .then(null, console.error.bind(console));
 </script>
 
 <script>
-
     var todaysDate = new Date();
     document = todaysDate.toDateString();
 
@@ -167,11 +166,9 @@
             kendo.drawing.pdf.saveAs(group, "Invoice" + " " + "-" + " " + todaysDate + ".pdf");
         });
 
-    }
-
+    };
 </script>
 <script>
-
     var todaysDate = new Date();
     document = todaysDate.toDateString();
 
@@ -182,7 +179,6 @@
         });
 
     };
-
 </script>
 
 <script>
