@@ -54,7 +54,7 @@ import {Streetname} from "./street_name";
                 <form>
                    <select [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                      <option value="0" disabled>-- Select your street name --</option>
-                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}  - Blok {{ cluster.blok }}</option>
+                     <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}  - Blok {{ streetname.blok }}</option>
                    </select><br/>
                 </form>
              </div>
