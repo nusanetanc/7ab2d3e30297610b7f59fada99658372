@@ -408,7 +408,7 @@ import {Report} from './allreports';
                                                     <div class="cardDashboardSub">
                                                         <div class="row marginB10">
                                                             <div class="col-sm-12 text-center">
-                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <p class="text-center font70MarginT35"><b>{{opencomplaints.length}}</b></p>
                                                                 <h4 class="marginLR20 fontWeight300">OPEN REPORTS</h4>
                                                             </div>
                                                         </div>
@@ -424,58 +424,13 @@ import {Report} from './allreports';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
-<<<<<<< HEAD
-
-=======
-
-
-    /*Menu-toggle*/
-
-      var menuToggle = function() {
-
-          e.preventDefault();
-          $("#wrapper").toggleClass("active");
-
-      };
-
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("active");
-    });
-
-    $(window).load(function(){
-        var w = $(window).width();
-        if(w < 700) {
-            $("#wrapper").toggleClass("active");
-        }
-    });
-
-
-    /*Scroll Spy*/
-    $('body').scrollspy({ target: '#spy', offset:80});
-
-    /*Smooth link animation*/
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-              $('html,body').animate({
-                  scrollTop: target.offset().top
-              }, 1000);
-              return false;
-          }
-        }
-    });
-
->>>>>>> b86fa6ef4bdff8a5ac96628f6fb9ca62dbf837ab
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     complaints: any[] = [];
     subs: any[] = [];
     emps: any[] = [];
+    opencomplaints: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -483,6 +438,7 @@ export class ContentDashboardComponent {
         this.getAllReport();
         this.getAllSub();
         this.getAcountEmp();
+        this.getAllReportOpen();
     }
 
     stringAsDate(dateStr: string) {
@@ -516,6 +472,14 @@ export class ContentDashboardComponent {
               window.location.href = `/login`;
             }
           )
+    }
+    // Get all users from the API
+    getAllReportOpen() {
+        this.http.get(`${this.API}/complaint/listcomplaint/open`)
+            .map(res => res.json())
+            .subscribe(opencomplaints => {
+                this.opencomplaints = opencomplaints
+            })
     }
 
 }
