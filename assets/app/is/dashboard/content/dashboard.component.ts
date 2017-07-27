@@ -403,27 +403,45 @@ import {Report} from './allreports';
                                                     </div>
                                                   </a>
                                                 </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Content List -->
-                                    <div class="row paddingLR15Margin20">
-                                        <div class="col-sm-12">
-                                            <div class="row headerList paddingLR30">
-                                                <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
-                                            </div>
-                                            <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                                                <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                                                <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                                                <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                                            </div>
-                                            <div class="row subInfo">
-                                                <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /Content List -->
                                 </div>
                             </div>
     `,
@@ -431,7 +449,7 @@ import {Report} from './allreports';
 })
 export class ContentDashboardComponent {
 <<<<<<< HEAD
-    
+
 =======
 
 
