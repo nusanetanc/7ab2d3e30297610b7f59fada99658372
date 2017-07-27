@@ -200,11 +200,7 @@ router.post('/addchat/subs/:id', function(req, res, next) {
     chat.save(function(err) {
       if (err)
           res.send(err);
-      //res.json({ message: 'Data created!' });
-      Chat.find({complaintId: req.params.id}, function(err, chats) {
-          console.log( chats );
-          res.json(chats);
-      });
+      res.json({ message: 'Data created!' });
   });
 }
 });
