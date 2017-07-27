@@ -6,7 +6,7 @@ import {Report} from './allreports';
 @Component({
     selector: 'form-dashboard',
     template: `
-
+    {{emps.accessrole}}
     <!-- START CONTENT -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1'" id="page-content-wrapper">
        <div class="content-header">
