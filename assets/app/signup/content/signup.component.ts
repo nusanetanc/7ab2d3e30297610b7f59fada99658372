@@ -7,7 +7,7 @@ import { City } from './cities';
 import { Property } from './property';
 import { Type } from './type';
 import { Cluster } from './cluster';
-import { Blokfloor } from './blokfloor';
+//import { Blokfloor } from './blokfloor';
 import { Home } from './home';
 import {Package} from "./package";
 import {Streetname} from "./street_name";
@@ -174,7 +174,6 @@ onItemClicked3(Pack) {
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 selectedCluster: City = new City(0, 'dummy');
-selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 selectedPackage: Package = new Package(0, 'dummy');
 selectedHome: City = new City(0, 'dummy');
@@ -221,19 +220,8 @@ onSelectProperty(_id) {
 }
 
 onSelectCluster(_id) {
-    console.log(_id);
-    this.blokfloors = this.getAllBLokfloorByCluster(){
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
-}
-
-onSelectBlok(_id) {
-    this.streetnames = this.getAllStreetByBlok(){
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+    this.streetnames = this.getAllStreetByCluster(){
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
@@ -259,7 +247,6 @@ cities: any[] = [];
 properties: any[] = [];
 clusters: any[] = [];
 subs: any[] = [];
-blokfloors: any[] = [];
 homes: any[] = [];
 packages: any[] = [];
 streetnames: any[] = [];
@@ -326,6 +313,15 @@ getAllClusterByProperty() {
         })
 }
 
+// Get all Street from the API
+getAllStreetByCluster() {
+    this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
+        .map(res => res.json())
+        .subscribe(streetnames => {
+            this.streetnames = streetnames
+        })
+}
+
 // Get all Home from the API
 getAllHomeByStreet() {
     this.http.get(`${this.API}/home/homebystreet/${this.street_id}`)
@@ -344,21 +340,4 @@ getAllPackage() {
         })
 }
 
-// Get all Street from the API
-getAllStreetByBlok() {
-    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
-        .map(res => res.json())
-        .subscribe(streetnames => {
-            this.streetnames = streetnames
-        })
-}
-
-// Get all BLokfloor from the API
-getAllBLokfloorByCluster() {
-    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-        .map(res => res.json())
-        .subscribe(blokfloors => {
-            this.blokfloors = blokfloors
-        })
-}
 }
