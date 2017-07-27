@@ -62,7 +62,7 @@ import { Street } from './street';
                                   <input [ngFormControl]="myForm.find('subject')" #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                   <textarea [ngFormControl]="myForm.find('message')" id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea><br/>
                                   <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                  <button [disabled]="!myForm.valid" type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
+                                  <button [disabled]="!myForm.valid" type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
                                       SHARE
                                   </button>
                               </form>
@@ -213,7 +213,7 @@ myForm: ControlGroup;
                 this.homes = homes
             })
     }
-    addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
+    addInfo(infocity, infoproperty, infocluster, infostreet, subject, message){
 
         var body = `to=${this.toInfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate=${this.USER}`;
         var headers = new Headers();
