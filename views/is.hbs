@@ -90,7 +90,7 @@
     <!-- Google Captcha -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body id="body">
+<body>
 <is-app>
     <style>
         .load > img {
@@ -133,7 +133,7 @@
 
 
   /*Scroll Spy*/
-  document.getElementById('body').scrollspy({ target: '#spy', offset:80});
+  $('body').scrollspy({ target: '#spy', offset:80});
 
   /*Smooth link animation*/
   $('a[href*=#]:not([href=#])').click(function() {
