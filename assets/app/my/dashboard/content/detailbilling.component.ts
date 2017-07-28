@@ -242,13 +242,23 @@ declare let kendo;
                                             <div class="col-sm-12">
                                                 <h5>Subscriber hightlight information :</h5>
                                                 <ul>
-                                                    <li>1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be.</li>
-                                                    <li>2. added to your next month's invoice.</li>
-                                                    <li>3. Payment is addressed to Bank Mandiri, Citra Garden Jak-Bar branch, account number 118 000 58977 97.</li>
-                                                    <li>4. beneficiary PT. Media Andalan Nusa.</li>
-                                                    <li>5. Please quote your Subscriber ID during payment</li>
-                                                    <li>6. Payment confirmation by sending an email to billing@groovy.id or contact number 021-5276616.</li>
-                                                    <li>7. Payment will be recognized after confirmation is acknowledged.</li>
+                                                    <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
+                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750181597 a/n GROOVY {{ bills.name }}.</li>
+                                                    <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
+                                                    <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
+                                                    <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row rowBillInfoP2">
+                                            <div class="col-sm-12">
+                                                <h5>Subscriber hightlight information :</h5>
+                                                <ul>
+                                                    <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
+                                                    <li style="margin-bottom: 10px;">2. Payment BCA customers or giro (another bank and BCA) is addressed to BCA Virtual Account No. 02750181597 on behalf of GROOVY {{ bills.name }} (confirmation not required).</li>
+                                                    <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
+                                                    <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
+                                                    <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -445,7 +455,7 @@ declare let kendo;
                                              <p><u>Info Penting Pelanggan :</u></p>
                                              <ul style="list-style-type:none;">
                                                 <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                                <li style="margin-bottom: 10px;">2. Pembayaran ditujukan ke Bank mandiri Cabang Citra garden Jak-Bar No. Rek 118 000 58977 97 a/n PT. Media Andalan Nusa.</li>
+                                                <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750181597 a/n GROOVY {{ bills.name }}.</li>
                                                 <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                 <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                 <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
@@ -457,7 +467,7 @@ declare let kendo;
                                              <p><u>Subscriber hightlight information :</u></p>
                                              <ul style="list-style-type:none;">
                                                 <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
-                                                <li style="margin-bottom: 10px;">2. Payment is addressed to Bank Mandiri, Citra Garden Jak-Bar branch, account number 118 000 58977 97 beneficiary PT. Media Andalan Nusa.</li>
+                                                <li style="margin-bottom: 10px;">2. Payment BCA customers or giro (another bank and BCA) is addressed to BCA Virtual Account No. 02750181597 on behalf of GROOVY {{ bills.name }} (confirmation not required).</li>
                                                 <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
                                                 <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
                                                 <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
