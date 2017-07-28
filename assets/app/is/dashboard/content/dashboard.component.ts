@@ -80,7 +80,7 @@ import {Report} from './allreports';
           <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202'" id="page-content-wrapper">
               <div class="content-header">
                   <h3 id="home" class="fontWeight300">
-                      <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                      <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
                       &nbsp; Dashboard
                   </h3>
@@ -133,7 +133,7 @@ import {Report} from './allreports';
           <div *ngIf="emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402'" id="page-content-wrapper" >
              <div class="content-header">
                 <h3 id="home">
-                   <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                   <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                    </a>
                    &nbsp; Dashboard
                 </h3>
@@ -210,7 +210,7 @@ import {Report} from './allreports';
                 <div id="page-content-wrapper" *ngIf="emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
                     <div class="content-header">
                         <h3 id="home" class="fontWeight300">
-                            <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                           <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                             </a>
                             &nbsp; Dashboard
                         </h3>
@@ -275,7 +275,7 @@ import {Report} from './allreports';
                 <div *ngIf="emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
                    <div class="content-header">
                       <h3 id="home">
-                         <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                         <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                          </a>
                          &nbsp; Dashboard
                       </h3>
@@ -318,7 +318,7 @@ import {Report} from './allreports';
                       <div *ngIf="emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702'" id="page-content-wrapper">
                          <div class="content-header">
                             <h3 id="home">
-                               <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                               <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                                </a>
                                &nbsp; Dashboard
                             </h3>
@@ -369,7 +369,7 @@ import {Report} from './allreports';
                             <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
                                 <div class="content-header">
                                     <h3 id="home" class="fontWeight300">
-                                        <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                                        <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                                         </a>
                                         &nbsp; Dashboard
                                     </h3>
@@ -424,10 +424,7 @@ import {Report} from './allreports';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
-<<<<<<< HEAD
 
-=======
->>>>>>> 4d061d22a422704f3a79ab97494d978cfbbe79de
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
