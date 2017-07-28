@@ -93,7 +93,7 @@ declare let kendo;
                                                         <div class="row">
                                                             <div class="col-sm-5">
                                                                 <span>{{ bills.cluster }}</span><br>
-                                                                <span>{{ bills.streetname }} No.{{ bills.nohome }}</span>
+                                                                <span>{{ bills.streetname }} No.{{ bills.nohome }}</span><br>
                                                                 <span>{{ bills.city }}</span>
                                                             </div>
                                                         </div>
