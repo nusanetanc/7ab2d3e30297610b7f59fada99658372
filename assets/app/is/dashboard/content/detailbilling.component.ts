@@ -93,7 +93,7 @@ declare let kendo;
                                                         <div class="row">
                                                             <div class="col-sm-5">
                                                                 <span>{{ bills.cluster }}</span><br>
-                                                                <span>{{ bills.address }} No.{{ bills.nohome }}</span>
+                                                                <span>{{ bills.streetname }} No.{{ bills.nohome }}</span><br>
                                                                 <span>{{ bills.city }}</span>
                                                             </div>
                                                         </div>
@@ -362,7 +362,7 @@ declare let kendo;
                                              <div class="row" style="font-size: 20px;">
                                                 <div class="col-sm-6" >
                                                    <div class="col-sm-6" style="padding: 5px;">
-                                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
+                                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.streetname }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
                                                    </div>
                                                    <div class="col-sm-6" style="padding: 5px;">
                                                    </div>
@@ -598,7 +598,7 @@ declare let kendo;
                                              <div class="row" style="font-size: 20px;">
                                                 <div class="col-sm-6" >
                                                    <div class="col-sm-6" style="padding: 5px;">
-                                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.address }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
+                                                      <span><b>{{ bills.name }}</b> <br> {{ bills.cluster }} <br> {{ bills.streetname }} No.{{ bills.nohome }} <br> {{ bills.city }}</span>
                                                    </div>
                                                    <div class="col-sm-6" style="padding: 5px;">
                                                    </div>
