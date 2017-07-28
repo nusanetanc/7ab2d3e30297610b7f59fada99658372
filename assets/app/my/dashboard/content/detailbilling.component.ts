@@ -737,6 +737,10 @@ export class ContentDetailBillingComponent implements OnInit {
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
+    stringAsDate(dateStr: string) {
+        return new Date(dateStr);
+    }
+    
     bills: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
