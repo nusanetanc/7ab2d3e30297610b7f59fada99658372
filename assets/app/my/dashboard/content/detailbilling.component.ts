@@ -101,21 +101,34 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12 billInfoDateList">
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.duedate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
-                                                            <span>{{ bills.duedate }}</span>
+                                                            <span>{{stringAsDate(bills.duedate) | date}}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.billdate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Date</b></span><br>
-                                                            <span>{{ bills.billdate }}</span>
+                                                            <span>{{ stringAsDate(bills.billdate) | date }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
+                                                        <div *ngIf="bills.paydate != null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
-                                                            <span>{{ bills.paydate }}</span>
+                                                            <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <span class="bildate"><b>Billing Number</b></span><br>
                                                             <span>{{ bills.noinvoice }}</span>
+                                                        </div>
+
+                                                        <div *ngIf="bills.duedate == null" class="col-sm-3">
+                                                            <span class="bildate"><b>Billing Due Date</b></span><br>
+                                                            <span>-</span>
+                                                        </div>
+                                                        <div *ngIf="bills.billdate == null" class="col-sm-3">
+                                                            <span class="bildate"><b>Billing Date</b></span><br>
+                                                            <span>-</span>
+                                                        </div>
+                                                        <div *ngIf="bills.paydate == null" class="col-sm-3">
+                                                            <span class="bildate"><b>Pay Date</b></span><br>
+                                                            <span>-</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -327,9 +340,14 @@ declare let kendo;
                                                             <span style="font-size:16px;">Tgl. Jatuh Tempo<br>/<i>Billing Due Date</i></span>
                                                          </div>
                                                       </div>
-                                                      <div class="row">
+                                                      <div class="row" *ngIf="bills.duedate != null">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">{{ bills.duedate }}</span>
+                                                            <span style="font-size:16px;">{{stringAsDate(bills.duedate) | date}}</span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row" *ngIf="bills.duedate == null">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">-</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -339,9 +357,14 @@ declare let kendo;
                                                             <span style="font-size:16px;">Tanggal Cetak<br>/<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
-                                                      <div class="row">
+                                                      <div class="row" *ngIf="bills.billdate != null">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">{{ bills.billdate }}</span>
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.billdate) | date }}</span>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row" *ngIf="bills.billdate == null">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">-</span>
                                                          </div>
                                                       </div>
                                                    </div>
@@ -542,11 +565,17 @@ declare let kendo;
                                                             <span style="font-size:16px;">Tgl. Pembayaran<br> /<i>Payment Date</i></span>
                                                          </div>
                                                       </div>
-                                                      <div class="row">
+                                                      <div *ngIf="bills.paydate == null" class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">{{ bills.paydate }}</span>
+                                                            <span style="font-size:16px;">-</span>
                                                          </div>
                                                       </div>
+                                                      <div *ngIf="bills.paydate != null" class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.paydate) | date }}</span>
+                                                         </div>
+                                                      </div>
+
                                                    </div>
                                                    <div class="col-sm-4">
                                                       <div class="row">
@@ -554,9 +583,14 @@ declare let kendo;
                                                             <span style="font-size:16px;">Tanggal Cetak<br> /<i>Billing Date</i></span>
                                                          </div>
                                                       </div>
-                                                      <div class="row">
+                                                      <div *ngIf="bills.billdate == null" class="row">
                                                          <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
-                                                            <span style="font-size:16px;">{{ bills.billdate }}</span>
+                                                            <span style="font-size:16px;">-</span>
+                                                         </div>
+                                                      </div>
+                                                      <div *ngIf="bills.billdate != null" class="row">
+                                                         <div class="col-sm-12 text-center" style="border: 1px solid orangered; padding: 5px; background-color: #e2e2e2;">
+                                                            <span style="font-size:16px;">{{ stringAsDate(bills.billdate) | date }}</span>
                                                          </div>
                                                       </div>
                                                    </div>
