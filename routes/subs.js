@@ -21,6 +21,7 @@ var Chat = require('../models/chatcomplaint');
 var Home = require('../models/home');
 var Package = require('../models/package');
 var Information = require('../models/information');
+var Streetname = require('../models/street_name');
 var http = require('http');
 var socketio = require('socket.io');
 
@@ -395,6 +396,7 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
   Sub.findById(bills.sub, function(err, subs) {
     Home.findById(subs.groovyid, function(err, homes) {
       Cluster.findById(homes.cluster, function(err, clusters) {
+      Streetname.findById(homes.streetname, function(err, streetnames) {
        City.findById(homes.city, function(err, cities) {
             res.json({
               _id: subs._id,
@@ -423,12 +425,14 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               statussub: subs.status,
               pinaltypay: subs.pinaltypay,
               address: homes.address,
+              streetname: streetnames.name,
               nohome: homes.nohome,
               cluster: clusters.name,
               city: cities.name
             });
           });
         });
+      });
       });
     });
   });
