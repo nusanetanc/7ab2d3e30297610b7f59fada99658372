@@ -77,8 +77,7 @@ declare let kendo;
                         
                         
                         
-                        
-                        
+
                         <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
                             <div class="col-md-12">
                                 <div class="row headerList">
@@ -88,7 +87,7 @@ declare let kendo;
                                     <div class="col-sm-12">
                                         <div class="row c1">
                                             <div class="col-sm-6">
-                                                <div class="row rowBillInfoAddr">
+                                                <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="row">
                                                             <div class="col-sm-12">
@@ -126,8 +125,6 @@ declare let kendo;
                         
                         
                         
-                        
-
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
