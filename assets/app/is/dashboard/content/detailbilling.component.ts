@@ -49,8 +49,8 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
-                            <div class="col-sm-12">
+                        <!-- <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
+                            <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
@@ -72,10 +72,7 @@ declare let kendo;
                                     </div>
                                 </div>
                             </div>
-                        </div><br />
-                        
-                        
-                        
+                        </div><br /> -->
                         
 
                         <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
@@ -121,8 +118,6 @@ declare let kendo;
                                 </div>
                             </div>
                         </div>
-                        
-                        
                         
                         
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
