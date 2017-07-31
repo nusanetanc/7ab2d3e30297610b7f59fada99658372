@@ -99,7 +99,7 @@ declare let kendo;
                                                         <div class="row">
                                                             <div class="col-sm-12">
                                                                 <form style="margin: 0; padding: 10px 0px 10px 0px; width: 100%;">
-                                                                    <select #pinaltyInput id="pinaltyInput">
+                                                                    <select #pinaltyInput id="pinaltyInput" style="background-color: #f0f0f0; border: 0px; font-size: 14px; height: 45px; margin: 0; padding: 0px 0px 0px 5px; width: 100%;">
                                                                         <option class="option" value="0">0</option>
                                                                         <option value="25000">25.000</option>
                                                                     </select><br/>
