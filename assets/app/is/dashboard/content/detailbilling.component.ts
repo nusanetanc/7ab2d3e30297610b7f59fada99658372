@@ -53,7 +53,7 @@ declare let kendo;
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="formNewReport marginLR20">
+                                        <div class="marginLR20">
                                             <span>Payment Date</span>
                                             <form>
                                                 <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
