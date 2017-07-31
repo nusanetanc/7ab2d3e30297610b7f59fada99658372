@@ -98,14 +98,12 @@ declare let kendo;
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-12">
-                                                                <div class="formNewReport">
-                                                                    <form>
-                                                                        <select #pinaltyInput id="pinaltyInput">
-                                                                            <option class="option" value="0">0</option>
-                                                                            <option value="25000">25.000</option>
-                                                                        </select><br/>
-                                                                    </form>
-                                                                </div>
+                                                                <form style="margin: 0; padding: 10px 0px 10px 0px; width: 100%;">
+                                                                    <select #pinaltyInput id="pinaltyInput">
+                                                                        <option class="option" value="0">0</option>
+                                                                        <option value="25000">25.000</option>
+                                                                    </select><br/>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                         <div class="row">
