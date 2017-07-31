@@ -12,7 +12,7 @@ import {ContentEmpsNameComponent} from './empsname.component';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '702'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Information Stock
             </h3>

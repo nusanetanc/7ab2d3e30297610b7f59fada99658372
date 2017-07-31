@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import { City } from './cities';
 import { Property } from './property';
 import { Cluster } from './cluster';
-import { Blokfloor } from './blokfloor';
+//import { Blokfloor } from './blokfloor';
 import { Street } from './street';
 
 @Component({
@@ -16,7 +16,7 @@ import { Street } from './street';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Add Coverage Area
             </h3>
@@ -54,17 +54,13 @@ import { Street } from './street';
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                       </select><br/><br/>
-                                    <select #homeblok id="homeblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                        <option value="0" disabled="true">-- Select Block or Floor --</option>
-                                        <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                    </select><br/><br/>
                                     <select [ngFormControl]="myForm.find('homestreet')" #homestreet id="homestreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                         <option value="0" disabled="true">-- Select Street --</option>
-                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                        <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{streetname.blok}}</option>
                                     </select><br/><br/>
                                         <input [ngFormControl]="myForm.find('homeno')" type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number"><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homeblok.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
                                             SEND
                                         </button>
                                       </form>
@@ -124,7 +120,6 @@ API = 'http://202.162.207.164:3000';
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 selectedCluster: City = new City(0, 'dummy');
-selectedBlok: City = new City(0, 'dummy');
 selectedStreet: City = new City(0, 'dummy');
 
 onSelectPackage(level) {
@@ -152,19 +147,8 @@ onSelectProperty(_id) {
 }
 
 onSelectCluster(_id) {
-    console.log(_id);
-    this.blokfloors = this.getAllBLokfloorByCluster(){
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
-}
-
-onSelectBlok(_id) {
-    this.streetnames = this.getAllStreetByBlok(){
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
+    this.streetnames = this.getAllStreetByCluster(){
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
@@ -187,7 +171,7 @@ onSelectStreet(_id) {
 cities: any[] = [];
 properties: any[] = [];
 clusters: any[] = [];
-blokfloors: any[] = [];
+//blokfloors: any[] = [];
 streetnames: any[] = [];
 emps: any[] = [];
 
@@ -198,8 +182,7 @@ ngOnInit() {
 this.getAllCity();
 this.getAllPropertyByCity();
 this.getAllClusterByProperty();
-this.getAllBLokfloorByCluster();
-this.getAllStreetByBlok();
+this.getAllStreetByCluster();
 this.getAllHomeByStreet();
 this.getAcountEmp();
 this.myForm = this._fb.group({
@@ -233,20 +216,11 @@ getAllClusterByProperty() {
 }
 
 // Get all Street from the API
-getAllStreetByBlok() {
-    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+getAllStreetByCluster() {
+    this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
         .map(res => res.json())
         .subscribe(streetnames => {
             this.streetnames = streetnames
-        })
-}
-
-// Get all BLokfloor from the API
-getAllBLokfloorByCluster() {
-    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-        .map(res => res.json())
-        .subscribe(blokfloors => {
-            this.blokfloors = blokfloors
         })
 }
 
@@ -259,8 +233,8 @@ getAllHomeByStreet() {
         })
 }
 
-    addBlock(homecity, homeproperty, homecluster, homeblok, homestreet, homeno) {
-        var body = `city=${homecity}&property=${homeproperty}&cluster=${homecluster}&blokfloor=${homeblok}&streetname=${homestreet}&nohome=${homeno}`;
+    addBlock(homecity, homeproperty, homecluster, homestreet, homeno) {
+        var body = `city=${homecity}&property=${homeproperty}&cluster=${homecluster}&streetname=${homestreet}&nohome=${homeno}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http

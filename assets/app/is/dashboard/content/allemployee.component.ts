@@ -11,7 +11,7 @@ import {Employee} from './employee';
     <div *ngIf="accountemps.accessrole == '0' || accountemps.accessrole == '1' || accountemps.accessrole == '7' || accountemps.accessrole == '701'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; All User Groovy
             </h3>

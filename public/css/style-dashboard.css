@@ -1301,3 +1301,7 @@ hr.hr1 {
     background-image: -o-linear-gradient(left, #f0f0f0, #c1c1c1, #f0f0f0);
 }
 /*--- /Not Found ---*/
+
+.step-controls {
+    display: none;
+}

@@ -17,7 +17,7 @@ import { Street } from './street';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '801' || emps.accessrole == '501' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" onClick="menuToggle()"  style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; New Information
             </h3>
@@ -55,18 +55,14 @@ import { Street } from './street';
                                         <option value="0" disabled="true">-- All Clusters --</option>
                                         <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                     </select><br/><br/>
-                                  <select #infoblok id="infoblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                      <option value="0" disabled="true">-- All Block or Floor --</option>
-                                      <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                  </select><br/><br/>
                                   <select #infostreet id="infostreet" [(ngModel)]="selectedStreet._id" (change)="onSelectStreet($event.target.value)">
                                       <option value="0" disabled="true">-- All Street --</option>
-                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }}</option>
+                                      <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{ streetname.blok }}</option>
                                   </select><br/><br/>
                                   <input [ngFormControl]="myForm.find('subject')" #subject id="subject" type="text" class="form-control inputForm" placeholder="Subject Information"><br/>
                                   <textarea [ngFormControl]="myForm.find('message')" id="message" class="input width100" #message rows="10" placeholder="*Message"></textarea><br/>
                                   <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                  <button [disabled]="!myForm.valid" type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infoblok.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
+                                  <button [disabled]="!myForm.valid" type="submit" (click)="addInfo(infocity.value, infoproperty.value, infocluster.value, infostreet.value, subject.value, message.value)" class="btn btn-default buttonOrange">
                                       SHARE
                                   </button>
                               </form>
@@ -78,7 +74,7 @@ import { Street } from './street';
         </div>
     </div>
     <!-- Page content -->
-    <div *ngIf="emps.accessrole == '1' || emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '5' || emps.accessrole == '502' || emps.accessrole == '6' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '801' || emps.accessrole == '8'" class='fullscreenDiv'>
+    <div *ngIf="emps.accessrole == '1' || emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202' || emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '5' || emps.accessrole == '502' || emps.accessrole == '6' || emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702' || emps.accessrole == '8'" class='fullscreenDiv'>
         <div class="center"><span style="font-size: 72px; font-weight: 700; color: #c1c1c1;"><center>404</center> PAGE NOT FOUND</span><br><hr class="hr1"></div>
     </div>
     <!-- Modal -->
@@ -102,7 +98,6 @@ myForm: ControlGroup;
     selectedCity: City = new City(0, 'dummy');
     selectedProperty: City = new City(0, 'dummy');
     selectedCluster: City = new City(0, 'dummy');
-    selectedBlok: City = new City(0, 'dummy');
     selectedStreet: City = new City(0, 'dummy');
 
     onSelectPackage(level) {
@@ -133,24 +128,11 @@ myForm: ControlGroup;
 
     onSelectCluster(_id) {
       this.toInfo = _id;
-        this.blokfloors = this.getAllBLokfloorByCluster(){
-            this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
-                .map(res => res.json())
-                .subscribe(blokfloors => {
-                    this.blokfloors = blokfloors
-                })
-        }
-    }
-
-    onSelectBlok(_id) {
-      this.toInfo = _id;
-        this.streetnames = this.getAllStreetByBlok(){
-            this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-                .map(res => res.json())
-                .subscribe(streetnames => {
-                    this.streetnames = streetnames
-                })
-        }
+      this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
+          .map(res => res.json())
+          .subscribe(streetnames => {
+              this.streetnames = streetnames
+          })
     }
 
     onSelectStreet(_id) {
@@ -180,8 +162,7 @@ myForm: ControlGroup;
     this.getAllCity();
     this.getAllPropertyByCity();
     this.getAllClusterByProperty();
-    this.getAllBLokfloorByCluster();
-    this.getAllStreetByBlok();
+    this.getAllStreetByCluster();
     this.getAllHomeByStreet();
     this.getAcountEmp();
     this.myForm = this._fb.group({
@@ -215,22 +196,14 @@ myForm: ControlGroup;
     }
 
     // Get all Street from the API
-    getAllStreetByBlok() {
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+    getAllStreetByCluster() {
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
             .map(res => res.json())
             .subscribe(streetnames => {
                 this.streetnames = streetnames
             })
     }
 
-    // Get all BLokfloor from the API
-    getAllBLokfloorByCluster() {
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-            .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
-            })
-    }
 
     // Get all Home from the API
     getAllHomeByStreet() {
@@ -240,9 +213,9 @@ myForm: ControlGroup;
                 this.homes = homes
             })
     }
-    addInfo(infocity, infoproperty, infocluster, infoblok, infostreet, subject, message){
+    addInfo(infocity, infoproperty, infocluster, infostreet, subject, message){
 
-        var body = `to=${this.toInfo}&date='2017/04/25'&subject=${subject}&desc=${message}&usercreate=${this.USER}`;
+        var body = `to=${this.toInfo}&subject=${subject}&desc=${message}&usercreate=${this.USER}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http

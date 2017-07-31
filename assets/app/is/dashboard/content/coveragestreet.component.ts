@@ -16,7 +16,7 @@ import { Street } from './street';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Add Coverage Area
             </h3>
@@ -53,13 +53,10 @@ import { Street } from './street';
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                       </select><br/><br/>
-                                    <select [ngFormControl]="myForm.find('streetblok')" #streetblok id="streetblok" [(ngModel)]="selectedBlok._id" (change)="onSelectBlok($event.target.value)">
-                                        <option value="0" disabled="true">-- Select Block or Floor --</option>
-                                        <option *ngFor="#blokfloor of blokfloors" value={{blokfloor._id}}>{{ blokfloor.name }}</option>
-                                    </select><br/><br/>
+                                    <input type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok">
                                     <input [ngFormControl]="myForm.find('streetname')" type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value)" class="btn btn-default buttonOrange">
+                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
                                     </form>
@@ -155,16 +152,6 @@ onSelectCluster(_id) {
     }
 }
 
-onSelectBlok(_id) {
-    this.streetnames = this.getAllStreetByBlok(){
-        this.http.get(`${this.API}/streetname/streetnamebyblok/${_id}`)
-            .map(res => res.json())
-            .subscribe(streetnames => {
-                this.streetnames = streetnames
-            })
-    }
-}
-
 
 // Declare empty list of people
 cities: any[] = [];
@@ -181,8 +168,8 @@ ngOnInit() {
 this.getAllCity();
 this.getAllPropertyByCity();
 this.getAllClusterByProperty();
-this.getAllBLokfloorByCluster();
-this.getAllStreetByBlok();
+//this.getAllBLokfloorByCluster();
+//this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
   streetname: ['', Validators.required],
@@ -215,25 +202,16 @@ getAllClusterByProperty() {
 }
 
 // Get all Street from the API
-getAllStreetByBlok() {
+ getAllStreetByBlok() {
     this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
         .map(res => res.json())
         .subscribe(streetnames => {
             this.streetnames = streetnames
         })
-}
-
-// Get all BLokfloor from the API
-getAllBLokfloorByCluster() {
-    this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${this.cluster_id}`)
-        .map(res => res.json())
-        .subscribe(blokfloors => {
-            this.blokfloors = blokfloors
-        })
-}
-    addBlock(streetname, streetblok) {
-
-        var body = `name=${streetname}&blokfloor=${streetblok}`;
+ }
+    addBlock(streetname, streetblok, streetcluster) {
+    alert('tes');
+        var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
@@ -243,7 +221,7 @@ getAllBLokfloorByCluster() {
                 })
             .subscribe(data => {
                 alert('Add Street Success');
-                this.getAllStreet();
+                //this.getAllStreet();
             }, error => {
                 document.getElementById("message").innerHTML = error.text();
                 $('#failed').modal('show');

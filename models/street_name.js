@@ -1,9 +1,12 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
-var BlokfloorSchema = require('../models/blokfloor');
+var Cluster = require('../models/cluster');
+//var BlokfloorSchema = require('../models/blokfloor');
 
 var StreetnameSchema   = new Schema({
     name: String,
-    blokfloor: {type: Schema.Types.ObjectId, ref: 'BlokfloorSchema'}
+    blok: String,
+    cluster: {type: Schema.Types.ObjectId, ref: 'Cluster'},
+    //blokfloor: {type: Schema.Types.ObjectId, ref: 'BlokfloorSchema'}
 });
 module.exports = mongoose.model('Streetname', StreetnameSchema)

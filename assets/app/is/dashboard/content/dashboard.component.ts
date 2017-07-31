@@ -6,7 +6,6 @@ import {Report} from './allreports';
 @Component({
     selector: 'form-dashboard',
     template: `
-
     <!-- START CONTENT -->
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1'" id="page-content-wrapper">
        <div class="content-header">
@@ -81,7 +80,7 @@ import {Report} from './allreports';
           <div *ngIf="emps.accessrole == '2' || emps.accessrole == '201' || emps.accessrole == '202'" id="page-content-wrapper">
               <div class="content-header">
                   <h3 id="home" class="fontWeight300">
-                      <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                      <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                       </a>
                       &nbsp; Dashboard
                   </h3>
@@ -134,7 +133,7 @@ import {Report} from './allreports';
           <div *ngIf="emps.accessrole == '3' || emps.accessrole == '301' || emps.accessrole == '4' || emps.accessrole == '401' || emps.accessrole == '402'" id="page-content-wrapper" >
              <div class="content-header">
                 <h3 id="home">
-                   <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                   <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                    </a>
                    &nbsp; Dashboard
                 </h3>
@@ -206,11 +205,12 @@ import {Report} from './allreports';
           </div>
           <!-- END CONTENT -->
 
+
           <!-- Page content -->
                 <div id="page-content-wrapper" *ngIf="emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
                     <div class="content-header">
                         <h3 id="home" class="fontWeight300">
-                            <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                           <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                             </a>
                             &nbsp; Dashboard
                         </h3>
@@ -275,7 +275,7 @@ import {Report} from './allreports';
                 <div *ngIf="emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
                    <div class="content-header">
                       <h3 id="home">
-                         <a id="menu-toggle" href="#" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                         <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                          </a>
                          &nbsp; Dashboard
                       </h3>
@@ -311,12 +311,14 @@ import {Report} from './allreports';
                             </div>
                          </div>
                       </div>
+                    </div>
+                 </div>
 
                       <!-- START CONTENT -->
                       <div *ngIf="emps.accessrole == '7' || emps.accessrole == '701' || emps.accessrole == '702'" id="page-content-wrapper">
                          <div class="content-header">
                             <h3 id="home">
-                               <a id="menu-toggle" href="" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                               <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                                </a>
                                &nbsp; Dashboard
                             </h3>
@@ -363,79 +365,73 @@ import {Report} from './allreports';
                          </div>
                       </div>
                       <!-- END CONTENT -->
+                      <!-- Page content -->
+                            <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
+                                <div class="content-header">
+                                    <h3 id="home" class="fontWeight300">
+                                        <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                                        </a>
+                                        &nbsp; Dashboard
+                                    </h3>
+                                </div>
 
-
-                <!-- Page content -->
-                      <div *ngIf="emps.accessrole == '8' || emps.accessrole == '801'" id="page-content-wrapper">
-                          <div class="content-header">
-                              <h3 id="home" class="fontWeight300">
-                                  <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
-                                  </a>
-                                  &nbsp; Dashboard
-                              </h3>
-                          </div>
-
-                          <div class="page-content inset" data-spy="scroll" data-target="#spy">
-                              <div class="row">
-                                  <div class="col-sm-12">
-                                      <div class="row marginLR15">
-                                          <div class="col-sm-4">
-                                            <a [routerLink]="['AddInformation']">
-                                              <div class="cardDashboardSub">
-                                                  <div class="row marginB10">
-                                                      <div class="col-sm-12 text-center">
-                                                          <i class="material-icons font100Margin30">mode_edit</i>
-                                                          <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                          <div class="col-sm-4">
-                                            <a [routerLink]="['Information']">
-                                              <div class="cardDashboardSub">
-                                                  <div class="row marginB10">
-                                                      <div class="col-sm-12 text-center">
-                                                          <i class="material-icons font100Margin30">info</i>
-                                                          <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                            </a>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <!-- Content List -->
-                              <div class="row paddingLR15Margin20">
-                                  <div class="col-sm-12">
-                                      <div class="row headerList paddingLR30">
-                                          <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>LATEST USER REPORT</strong></div>
-                                      </div>
-                                      <div class="row subInfo fontWeight300" *ngFor="#complaint of complaints">
-                                          <div class="col-sm-3 invoiceId"><span>{{complaint.dateopen}}</span></div>
-                                          <div class="col-sm-7 invoiceList"><span>{{complaint.subcategory}}</span></div>
-                                          <div class="col-sm-2 invoiceList"><span class="red">{{complaint.status}}</span></div>
-                                      </div>
-                                      <div class="row subInfo">
-                                          <div class="col-sm-12 invoiceId"><span><a class="linkViewAll fontWeight300" [routerLink]="['AllReport']">View all reports</a></span></div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!-- /Content List -->
-                          </div>
-                      </div>
+                                <div class="page-content inset" data-spy="scroll" data-target="#spy">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row marginLR15">
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['AddInformation']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">mode_edit</i>
+                                                                <h4 class="marginLR20 fontWeight300">POST MAINTENANCE INFORMATION</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <i class="material-icons font100Margin30">info</i>
+                                                                <h4 class="marginLR20 fontWeight300">VIEW ALL INFORMATIONS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                  <a [routerLink]="['Information']">
+                                                    <div class="cardDashboardSub">
+                                                        <div class="row marginB10">
+                                                            <div class="col-sm-12 text-center">
+                                                                <p class="text-center font70MarginT35"><b>{{opencomplaints.length}}</b></p>
+                                                                <h4 class="marginLR20 fontWeight300">OPEN REPORTS</h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
     `,
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentDashboardComponent {
+
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
 
     complaints: any[] = [];
     subs: any[] = [];
     emps: any[] = [];
+    opencomplaints: any[] = [];
 
     constructor(private http: Http) {}
 
@@ -443,6 +439,7 @@ export class ContentDashboardComponent {
         this.getAllReport();
         this.getAllSub();
         this.getAcountEmp();
+        this.getAllReportOpen();
     }
 
     stringAsDate(dateStr: string) {
@@ -476,6 +473,14 @@ export class ContentDashboardComponent {
               window.location.href = `/login`;
             }
           )
+    }
+    // Get all users from the API
+    getAllReportOpen() {
+        this.http.get(`${this.API}/complaint/listcomplaint/open`)
+            .map(res => res.json())
+            .subscribe(opencomplaints => {
+                this.opencomplaints = opencomplaints
+            })
     }
 
 }

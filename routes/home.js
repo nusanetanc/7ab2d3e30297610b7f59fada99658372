@@ -38,7 +38,7 @@ router.post('/addhome', function(req, res, next) {
     home.city= req.body.city;
     home.property= req.body.property;
     home.cluster= req.body.cluster;
-    home.blokfloor= req.body.blokfloor;
+    //home.blokfloor= req.body.blokfloor;
     home.streetname= req.body.streetname;
     home.nohome= req.body.nohome;
     home.address= req.body.address;
@@ -62,7 +62,7 @@ router.put('/puthome/:id', function(req, res, next) {
                 home.city= req.body.city;
                 home.property= req.body.property;
                 home.cluster= req.body.cluster;
-                home.blokfloor= req.body.blokfloor;
+                //home.blokfloor= req.body.blokfloor;
                 home.streetname= req.body.streetname;
                 home.nohome= req.body.nohome;
                 home.address= req.body.address;
