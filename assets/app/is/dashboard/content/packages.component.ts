@@ -13,7 +13,7 @@ import { ContentClusterNameComponent } from './clustername.component';
     <div *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '6' || emps.accessrole == '601'" id="page-content-wrapper">
         <div class="content-header">
             <h3 id="home" class="fontWeight300">
-                <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+                <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
                 &nbsp; Add Packages
             </h3>
@@ -33,8 +33,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                         <form [ngFormModel]="myForm">
                                             <input [ngFormControl]="myForm.find('level')" style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                             <br/>
-                                            <select #cluster id="cluster" [(ngModel)]="selectedClusters._id" (change)="onSelectClusters($event.target.value)">
-                                                <option disabled="true" selected="true" value="0">-- Select Cluster --</option>
+                                            <select [ngFormControl]="myForm.find('cluster')" #cluster id="cluster" [(ngModel)]="selectedClusters._id" (change)="onSelectClusters($event.target.value)">
                                                 <option value="All">-- All Clusters --</option>
                                                 <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                             </select><br/><br/>
