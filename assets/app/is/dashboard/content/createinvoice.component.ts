@@ -22,7 +22,6 @@ import { ContentInputPackComponent } from './inputpack.component';
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
-            
             <div class="row subInfo">
                 <div class="col-sm-12">
                     <div class="row">
