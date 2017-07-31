@@ -34,6 +34,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             <input [ngFormControl]="myForm.find('level')" style="margin:0px !important" #level type="text" class="form-control inputForm" id="level" placeholder="Level">
                                             <br/>
                                             <select [ngFormControl]="myForm.find('cluster')" #cluster id="cluster" [(ngModel)]="selectedClusters._id" (change)="onSelectClusters($event.target.value)">
+                                                <option disabled="true" selected="true" value="0">-- Select Cluster --</option>
                                                 <option value="All">-- All Clusters --</option>
                                                 <option *ngFor="#cluster of clusters" [value]=cluster._id>{{ cluster.name }}</option>
                                             </select><br/><br/>
