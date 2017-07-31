@@ -49,11 +49,11 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
+                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="marginLR20">
+                                        <div class="formNewReport marginLR20">
                                             <span>Payment Date</span>
                                             <form>
                                                 <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
