@@ -89,7 +89,7 @@ declare let kendo;
                                                         <div class="row">
                                                             <div class="col-sm-12">
                                                                 <form>
-                                                                    <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
+                                                                    <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date" style="width: 100% !important;">
                                                                 </form>
                                                             </div>
                                                         </div>
