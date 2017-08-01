@@ -344,7 +344,7 @@ declare let kendo;
                                                 <h5>Subscriber hightlight information :</h5>
                                                 <ul>
                                                     <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750181597 a/n GROOVY {{ bills.name }}.</li>
+                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750{{bills.subid | slice:2:8}} a/n GROOVY {{ bills.name }}.</li>
                                                     <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                     <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                     <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
