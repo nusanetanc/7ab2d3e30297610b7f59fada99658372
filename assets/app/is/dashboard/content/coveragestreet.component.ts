@@ -161,7 +161,7 @@ blokfloors: any[] = [];
 streetnames: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -171,6 +171,9 @@ this.getAllClusterByProperty();
 //this.getAllBLokfloorByCluster();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
+this.myForm = this._fb.group({
+  streetblok: ['', Validators.required]
+})
 }
 // Get all City from the API
 getAllCity() {
