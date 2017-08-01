@@ -4,13 +4,6 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
-@NgModule({
-    declarations: [COMMON_DIRECTIVES, COMMON_PIPES],
-    exports: [COMMON_DIRECTIVES, COMMON_PIPES],
-    providers: [
-        {provide: NgLocalization, useClass: NgLocaleLocalization},
-})
-
 @Component({
     selector: 'form-detailbilling',
     template: `
