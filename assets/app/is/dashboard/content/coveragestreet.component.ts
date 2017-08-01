@@ -53,8 +53,8 @@ import { Street } from './street';
                                           <option value="0" disabled="true">-- Select Cluster --</option>
                                           <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
                                       </select><br/><br/>
-                                    <input [ngFormControl]="myForm.find('streetblok')" type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok">
-                                    <input [ngFormControl]="myForm.find('streetname')" type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
+                                    <input [ngFormControl]="myForm.find('blokname')" type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok">
+                                    <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                     <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
@@ -173,7 +173,7 @@ this.getAllClusterByProperty();
 this.getAcountEmp();
 this.myForm = this._fb.group({
   streetname: ['', Validators.required],
-  streetblok: ['0', Validators.required]
+  streetblok: ['', Validators.required]
 })
 }
 // Get all City from the API
