@@ -56,7 +56,7 @@ import { Street } from './street';
                                     <input type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok">
                                     <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
+                                    <button type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
                                     </form>
