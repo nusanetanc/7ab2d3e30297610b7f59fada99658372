@@ -171,9 +171,9 @@ this.getAllClusterByProperty();
 //this.getAllBLokfloorByCluster();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
-/*this.myForm = this._fb.group({
+this.myForm = this._fb.group({
   streetblok: ['', Validators.required]
-})*/
+})
 }
 // Get all City from the API
 getAllCity() {
