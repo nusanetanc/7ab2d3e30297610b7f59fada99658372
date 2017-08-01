@@ -172,7 +172,6 @@ this.getAllClusterByProperty();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
-  streetname: ['', Validators.required],
   streetblok: ['', Validators.required]
 })
 }
