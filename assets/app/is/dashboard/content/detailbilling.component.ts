@@ -73,6 +73,60 @@ declare let kendo;
                                 </div>
                             </div>
                         </div><br />
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
+                            <div class="col-md-12">
+                                <div class="row headerList">
+                                    <div class="col-sm-12 invoiceId"><strong>PAYMENT DATE</strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row c1">
+                                            <div class="col-sm-6">
+                                                <div class="row rowBillInfoAddr">
+                                                    <div class="col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <form>
+                                                                    <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <form>
+                                                                    <select #pinaltyInput id="pinaltyInput">
+                                                                        <option class="option" value="0">0</option>
+                                                                        <option value="25000">25.000</option>
+                                                                    </select><br/>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value)" class="btn btn-default buttonOrange">
+                                                                    CONFRIM
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
 
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
@@ -290,7 +344,7 @@ declare let kendo;
                                                 <h5>Subscriber hightlight information :</h5>
                                                 <ul>
                                                     <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750181597 a/n GROOVY {{ bills.name }}.</li>
+                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750<script>var subs_id={{bills.subid}}; echo"subs_id.substring(2,8)";</script> a/n GROOVY {{ bills.name }}.</li>
                                                     <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                     <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                     <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
