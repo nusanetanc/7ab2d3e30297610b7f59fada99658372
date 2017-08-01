@@ -73,17 +73,8 @@ declare let kendo;
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
                         </div><br />
-
-
-
-
-
-=======
                         </div><br /> -->
-
->>>>>>> 8c309df9e6f02730e20e67d49b1041b91c85deff
 
                         <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
                             <div class="col-md-12">
@@ -576,11 +567,8 @@ declare let kendo;
                                              <p><u>Info Penting Pelanggan :</u></p>
                                              <ul style="list-style-type:none;">
                                                 <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-<<<<<<< HEAD
                                                 <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750{{ bills.subid }} a/n GROOVY {{ bills.name }}.</li>
-=======
                                                 <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750{{bills.subid | slice:2:8}} a/n GROOVY {{ bills.name }}.</li>
->>>>>>> 8c309df9e6f02730e20e67d49b1041b91c85deff
                                                 <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                 <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                 <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
