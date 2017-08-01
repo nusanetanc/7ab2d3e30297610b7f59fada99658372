@@ -1,4 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
+import { SlicePipe } from 'angular2/common';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
@@ -49,7 +50,7 @@ declare let kendo;
                         </div>
                         <!-- /Row Button -->
 
-                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
+                        <!-- <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -72,13 +73,9 @@ declare let kendo;
                                     </div>
                                 </div>
                             </div>
-                        </div><br />
+                        </div><br /> -->
                         
-                        
-                        
-                        
-                        
-                        
+
                         <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
                             <div class="col-md-12">
                                 <div class="row headerList">
@@ -88,19 +85,19 @@ declare let kendo;
                                     <div class="col-sm-12">
                                         <div class="row c1">
                                             <div class="col-sm-6">
-                                                <div class="row rowBillInfoAddr">
+                                                <div class="row">
                                                     <div class="col-sm-12">
                                                         <div class="row">
                                                             <div class="col-sm-12">
                                                                 <form>
-                                                                    <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
+                                                                    <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date" style="width: 100% !important;">
                                                                 </form>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-12">
-                                                                <form>
-                                                                    <select #pinaltyInput id="pinaltyInput">
+                                                                <form style="margin: 0; padding: 10px 0px 10px 0px; width: 100%;">
+                                                                    <select #pinaltyInput id="pinaltyInput" style="background-color: #f0f0f0; border: 0px; font-size: 14px; height: 45px; margin: 0; padding: 0px 0px 0px 5px; width: 100%;">
                                                                         <option class="option" value="0">0</option>
                                                                         <option value="25000">25.000</option>
                                                                     </select><br/>
@@ -124,10 +121,6 @@ declare let kendo;
                         </div>
                         
                         
-                        
-                        
-                        
-
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
@@ -344,7 +337,7 @@ declare let kendo;
                                                 <h5>Subscriber hightlight information :</h5>
                                                 <ul>
                                                     <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750181597 a/n GROOVY {{ bills.name }}.</li>
+                                                    <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750{{bills.subid | slice:2:8}} a/n GROOVY {{ bills.name }}.</li>
                                                     <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                     <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                     <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
