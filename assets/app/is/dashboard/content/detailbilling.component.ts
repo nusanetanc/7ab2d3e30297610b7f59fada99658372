@@ -810,7 +810,7 @@ import 'rxjs/add/operator/map';
         <!-- Page Content -->
 
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES, SlicePipe],
 })
 export class ContentDetailBillingComponent implements OnInit {
 
