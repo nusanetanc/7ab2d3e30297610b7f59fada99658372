@@ -128,17 +128,6 @@ declare let kendo;
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
-
-
->>>>>>> 8c309df9e6f02730e20e67d49b1041b91c85deff
                         <div class="row rowBillInfoContList" *ngIf="clickedItem.name == 'regBill'">
                             <div class="col-md-12">
                                 <div class="row headerList">
