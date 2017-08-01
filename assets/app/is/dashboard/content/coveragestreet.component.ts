@@ -161,7 +161,7 @@ blokfloors: any[] = [];
 streetnames: any[] = [];
 emps: any[] = [];
 
-constructor(private _fb:FormBuilder, private http: Http) {}
+constructor(private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
