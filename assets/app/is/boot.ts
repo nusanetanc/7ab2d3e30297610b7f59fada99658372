@@ -7,4 +7,4 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 //import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ROUTER_PROVIDERS} from "angular2/router"
 
-bootstrap(AppComponent, [ROUTER_PROVIDERS, HTTP_PROVIDERS]);
+bootstrap(AppComponent, [SlicePipe, ROUTER_PROVIDERS, HTTP_PROVIDERS]);
