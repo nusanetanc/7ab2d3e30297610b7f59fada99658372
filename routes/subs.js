@@ -421,7 +421,7 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               desc: bills.desc,
               name: subs.name,
               subid: subs.subid,
-              nova: '02750'+subs.subid.substring(1,2),
+              nova: '02750'+subs.subid.substring(2,8),
               statussub: subs.status,
               pinaltypay: subs.pinaltypay,
               address: homes.address,
