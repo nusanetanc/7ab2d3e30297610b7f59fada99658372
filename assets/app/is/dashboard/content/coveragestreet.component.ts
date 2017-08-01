@@ -172,12 +172,8 @@ this.getAllClusterByProperty();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
-<<<<<<< HEAD
-  streetblok: ['', Validators.required]
-=======
   streetname: ['', Validators.required],
   streetblok: ['0', Validators.required]
->>>>>>> 1c585ea4c7538ce3e9e55b6fb7193e40bc703643
 })
 }
 // Get all City from the API
