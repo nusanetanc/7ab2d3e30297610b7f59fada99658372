@@ -4,8 +4,6 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
 
-declare let kendo;
-
 @Component({
     selector: 'form-detailbilling',
     template: `
