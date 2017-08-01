@@ -40,7 +40,7 @@ import { Street } from './street';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                    <form [ngFormModel]="myForm">
+                                    <form>
                                       <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #streetcity id="streetcity">
                                           <option value="0" disabled="true">-- Select City --</option>
                                           <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
@@ -56,7 +56,7 @@ import { Street } from './street';
                                     <input type="text" class="form-control inputForm" #streetblok id="streetblok" placeholder="Blok">
                                     <input type="text" class="form-control inputForm" #streetname id="streetname" placeholder="Street Name">
                                     <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                    <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
+                                    <button type="submit" (click)="addBlock(streetname.value, streetblok.value, streetcluster.value)" class="btn btn-default buttonOrange">
                                         SEND
                                     </button>
                                     </form>
@@ -172,7 +172,12 @@ this.getAllClusterByProperty();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
 this.myForm = this._fb.group({
+<<<<<<< HEAD
   streetblok: ['', Validators.required]
+=======
+  streetname: ['', Validators.required],
+  streetblok: ['0', Validators.required]
+>>>>>>> 1c585ea4c7538ce3e9e55b6fb7193e40bc703643
 })
 }
 // Get all City from the API
