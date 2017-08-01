@@ -1,7 +1,6 @@
 import {Component, OnInit, OnDestroy} from 'angular2/core';
-import { SlicePipe } from 'angular2/common';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, provideRouter} from 'angular2/router';
-import {FORM_PROVIDERS, FORM_DIRECTIVES, Control} from 'angular2/common';
+import {FORM_PROVIDERS, FORM_DIRECTIVES, Control, SlicePipe} from 'angular2/common';
 import {Http} from 'angular2/http';
 import {AuthenticationComponent} from "./authentication/authentication.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
