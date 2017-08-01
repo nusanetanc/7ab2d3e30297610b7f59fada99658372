@@ -40,7 +40,7 @@ import { Street } from './street';
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
-                                    <form [ngFormModel]="myForm">
+                                    <form>
                                       <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #streetcity id="streetcity">
                                           <option value="0" disabled="true">-- Select City --</option>
                                           <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
@@ -161,7 +161,7 @@ blokfloors: any[] = [];
 streetnames: any[] = [];
 emps: any[] = [];
 
-constructor(private http: Http) {}
+constructor(private _fb:FormBuilder, private http: Http) {}
 
 // Angular 2 Life Cycle event when component has been initialized
 ngOnInit() {
@@ -171,6 +171,10 @@ this.getAllClusterByProperty();
 //this.getAllBLokfloorByCluster();
 //this.getAllStreetByBlok();
 this.getAcountEmp();
+this.myForm = this._fb.group({
+  streetname: ['', Validators.required],
+  streetblok: ['0', Validators.required]
+})
 }
 // Get all City from the API
 getAllCity() {
