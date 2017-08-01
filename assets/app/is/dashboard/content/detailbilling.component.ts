@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import { SlicePipe } from 'angular2/common';
+import { NgFor } from 'angular2/common';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers } from 'angular2/http';
 import 'rxjs/add/operator/map';
