@@ -38,7 +38,7 @@ import { City } from './cities';
                                     <div class="col-sm-6">
                                         <div class="formNewReport marginLR20">
                                             <form class="form" [ngFormModel]="myForm">
-                                                <input [ngFormControl]="myForm.find('cityname')" #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City">
+                                                <input [ngFormControl]="myForm.find('cityname')" #cityname type="text" class="form-control inputForm" id="cityname" placeholder="New City" style="box-shadow:none;">
                                                 <br/>
                                                 <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                                 <button [disabled]="!myForm.valid" type="submit" (click)="addCity(cityname.value)" class="btn btn-default buttonOrange">
