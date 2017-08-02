@@ -221,6 +221,33 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
+                                    <span>Wifi Id</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input  value={{subs.wifiid}} #editwifiid type="text" class="form-control inputForm" id="editwifiid" placeholder="Example : 674576457*******">
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Vendor</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                  <select  class="inputForm" #editvendor id="editvendor">
+                                      <option value="0" disabled selected>-- Select Vendor --</option>
+                                      <option value="Bitek">Bitek</option>
+                                      <option value="Fiberstar">Fiberstar</option>
+                                      <option value="Telkom">Telkom</option>
+                                  </select><br/>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Date of Birth</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
