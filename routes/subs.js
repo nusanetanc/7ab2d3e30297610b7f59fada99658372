@@ -259,10 +259,14 @@ Sub.findById(req.params.id, function(err, subs) {
       if(homes.city == "" || homes.city == null){
         homes.city = "58d3492416d72b7e166dd977";
       }
+      if(homes.streetname == "" || homes.streetname == null){
+        homes.streetname = "59190de7134bc17157d13944";
+      }
      City.findById(homes.city, function(err, cities) {
        if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
          subs.idpackage = "594223755fa50f316014b792";
        }
+    Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
@@ -282,7 +286,7 @@ Sub.findById(req.params.id, function(err, subs) {
               promo: subs.promo,
               groovyid: homes.groovyid,
               address: homes.address,
-              blok:
+              blok: streetnames.blok,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
@@ -294,6 +298,7 @@ Sub.findById(req.params.id, function(err, subs) {
               sales: subs.sales
             });
           });
+        });
         });
       });
     });
