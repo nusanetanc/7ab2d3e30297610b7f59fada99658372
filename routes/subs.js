@@ -282,6 +282,7 @@ Sub.findById(req.params.id, function(err, subs) {
               promo: subs.promo,
               groovyid: homes.groovyid,
               address: homes.address,
+              blok:
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
@@ -320,6 +321,10 @@ router.get('/detailsub', function(req, res, next) {
         if(homes.city == "" || homes.city == null){
           homes.city = "58d3492416d72b7e166dd977";
         }
+        if(homes.streetname == "" || homes.streetname == null){
+          homes.streetname = "59190de7134bc17157d13944";
+        }
+        Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
        City.findOne({_id:homes.city}, function(err, cities) {
               res.json({
                 _id: subs._id,
@@ -345,7 +350,7 @@ router.get('/detailsub', function(req, res, next) {
                 idcity: homes.city,
                 idproperty: homes.property,
                 idcluster: homes.cluster,
-                blok: homes.blok,
+                blok: streetnames.blok,
                 idstreetname: homes.streetname,
                 idhomeid: homes._id,
                 cluster: clusters.name,
@@ -356,6 +361,7 @@ router.get('/detailsub', function(req, res, next) {
             });
           });
         });
+      });
   });
       }
 });
