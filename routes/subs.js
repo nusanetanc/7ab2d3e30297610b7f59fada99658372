@@ -285,7 +285,7 @@ Sub.findById(req.params.id, function(err, subs) {
               activedate: subs.activedate,
               promo: subs.promo,
               groovyid: homes.groovyid,
-              address: homes.address,
+              address: streetnames.name,
               blok: streetnames.blok,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
