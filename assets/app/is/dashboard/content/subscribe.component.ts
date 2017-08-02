@@ -118,7 +118,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <span>{{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}</span>
+                                    <span>{{ subs.address }} <br>No. {{ subs.nohome }}, Blok {{ subs.blok }}<br>{{ subs.cluster }}, {{ subs.city }}</span>
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
