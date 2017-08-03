@@ -287,6 +287,8 @@ Sub.findById(req.params.id, function(err, subs) {
               groovyid: homes.groovyid,
             address: streetnames.name,
             blok: streetnames.blok,
+            vendorfo: subs.vendorfo,
+            wifiid: subs.wifiid,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
