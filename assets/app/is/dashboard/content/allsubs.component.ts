@@ -31,11 +31,6 @@ import { Sub } from './subs';
               </div>
           </div>
           <div *ngIf="emps.accessrole != '202'" class="row">
-            <div class="row hid">
-                <div class="col-sm-4 invoiceIdHeader"><strong>Invoice ID</strong></div>
-                <div class="col-sm-4 invoiceListHeader"><strong>Total</strong></div>
-                <div class="col-sm-4 invoiceListHeader"><strong>Status</strong></div>
-            </div>
             <div class="col-sm-12" *ngFor="#sub of subs">
               <a [routerLink]="['Subscribe', {id: sub._id}]">
                   <div class="row subInfo fontWeight300">
@@ -47,11 +42,6 @@ import { Sub } from './subs';
               </div>
           </div>
           <div *ngIf="emps.accessrole == '202'" class="row">
-            <div class="row hid">
-                <div class="col-sm-4 invoiceIdHeader"><strong>Invoice ID</strong></div>
-                <div class="col-sm-4 invoiceListHeader"><strong>Total</strong></div>
-                <div class="col-sm-4 invoiceListHeader"><strong>Status</strong></div>
-            </div>
             <div class="col-sm-12" *ngFor="#sub of subs">
               <a [routerLink]="['Subscribe', {id: sub._id}]">
                   <div class="row subInfo fontWeight300">
