@@ -316,18 +316,18 @@ router.get('/detailsub', function(req, res, next) {
         var sessionSubId = req.session.subs;
   Sub.findOne({_id: sessionSubId}, function(err, subs) {
     if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
-      subs.groovyid = "591916077a149b7469259903";
+      subs.groovyid = "59829c352e5e891b9254d04b";
     }
     Home.findOne({_id: subs.groovyid}, function(err, homes) {
       if(homes.cluster == "" || homes.cluster == null){
-        homes.cluster = "59152634f2c0f31ac56ada67";
+        homes.cluster = "5941f06583603e78bb546b36";
       }
       Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
         if(homes.city == "" || homes.city == null){
-          homes.city = "58d3492416d72b7e166dd977";
+          homes.city = "5982a3b12e5e891b9254d04c";
         }
         if(homes.streetname == "" || homes.streetname == null){
-          homes.streetname = "59190de7134bc17157d13944";
+          homes.streetname = "59818844bc915b4f6d02157f";
         }
         Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
        City.findOne({_id:homes.city}, function(err, cities) {
