@@ -81,6 +81,25 @@ router.put('/puthome/:id', function(req, res, next) {
         });
 });
 
+router.put('/putcity/:id', function(req, res, next) {
+
+        Home.findById(req.params.id, function(err, home) {
+
+            if (err)
+                res.send(err);
+                home.city= req.body.city;
+              if (err)
+                res.send(err);
+
+            home.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json({ message: 'Data updated!' });
+            });
+        });
+});
+
 router.delete('/delhome/:id', function(req, res, next) {
         Home.remove({
             _id: req.params.id
