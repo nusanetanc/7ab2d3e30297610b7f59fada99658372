@@ -266,6 +266,9 @@ Sub.findById(req.params.id, function(err, subs) {
        if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
          subs.idpackage = "594223755fa50f316014b792";
        }
+       if(homes.streetname == "" || homes.streetname == null){
+         homes.streetname = "59190de7134bc17157d13944";
+       }
     Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
