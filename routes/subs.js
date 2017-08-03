@@ -249,18 +249,18 @@ router.get('/subs/:id', function(req, res, next) {
   } else {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
-    subs.groovyid = "591916077a149b7469259903";
+    subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findById(subs.groovyid, function(err, homes) {
     if(homes.cluster == "" || homes.cluster == null){
-      homes.cluster = "59152634f2c0f31ac56ada67";
+      homes.cluster = "5941f06583603e78bb546b36";
     }
     Cluster.findById(homes.cluster, function(err, clusters) {
       if(homes.city == "" || homes.city == null){
-        homes.city = "58d3492416d72b7e166dd977";
+        homes.city = "5982a3b12e5e891b9254d04c";
       }
       if(homes.streetname == "" || homes.streetname == null){
-        homes.streetname = "59190de7134bc17157d13944";
+        homes.streetname = "59818844bc915b4f6d02157f";
       }
      City.findById(homes.city, function(err, cities) {
        if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
@@ -285,8 +285,8 @@ Sub.findById(req.params.id, function(err, subs) {
               activedate: subs.activedate,
               promo: subs.promo,
               groovyid: homes.groovyid,
-            //  address: streetnames.name,
-            //  blok: streetnames.blok,
+            address: streetnames.name,
+            blok: streetnames.blok,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
