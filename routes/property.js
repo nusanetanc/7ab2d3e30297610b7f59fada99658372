@@ -46,7 +46,7 @@ router.put('/putproperty/:id', function(req, res, next) {
 
             if (err)
                 res.send(err);
-                property.cityid= req.body.cityid;
+                property.city= req.body.city;
               if (err)
                 res.send(err);
 
