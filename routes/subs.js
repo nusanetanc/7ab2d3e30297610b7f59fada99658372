@@ -753,7 +753,7 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 sub.regisref= req.body.regisref;
                 sub.sales= req.body.sales;
                 sub.vendorfo = req.body.vendorfo;
-                sub.wifiid = req.body.vendorfo;
+                sub.wifiid = req.body.wifiid;
               if (err)
                 res.send(err);
 

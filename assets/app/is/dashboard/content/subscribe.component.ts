@@ -675,7 +675,7 @@ onSelectStreet(_id) {
             });
     }
     editSubs(editname, editemail, editphone, editid, editwifiid, editvendor, editbrithdate, editregisby, editregisref, editregissales) {
-        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&wifiid=${editwifiid}&vendor=${editvendor}&datebirth=${editbrithdate}&regisby=${editregisby}&regisref=${editregisref}&sales=${editregissales}`;
+        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&wifiid=${editwifiid}&vendorfo=${editvendor}&datebirth=${editbrithdate}&regisby=${editregisby}&regisref=${editregisref}&sales=${editregissales}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
