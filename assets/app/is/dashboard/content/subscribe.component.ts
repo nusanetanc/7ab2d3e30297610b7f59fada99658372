@@ -763,8 +763,8 @@ onSelectStreet(_id) {
   getAllJob() {
       this.http.get(`${this.API}/job/listjob`)
           .map(res => res.json())
-          .subscribe(emps => {
-              this.emps = emps
+          .subscribe(jobs => {
+              this.jobs = jobs
           })
   }
   getAcountEmp() {
