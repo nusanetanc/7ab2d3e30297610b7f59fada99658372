@@ -453,7 +453,7 @@ import { ContentPackLevComponent } from './packlev.component';
                         <div class="col-sm-12">
                             <h4>TECHNICIAN JOB</h4>
                         </div>
-                    </div>
+                    </div><br/>
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
@@ -467,7 +467,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><br/>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="formNewReport marginLR20">
