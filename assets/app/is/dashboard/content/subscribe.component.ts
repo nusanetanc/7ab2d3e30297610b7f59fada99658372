@@ -473,7 +473,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <form>
                                         <select  [(ngModel)]="selectedEmp2._id" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
                                             <option class="option" value="0" selected="true">-- Select Field Engineer 1 --</option>
-                                            <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
+                                            <option *ngFor="#city of cities" class="option" [value]=city._id>{{ city.name }}</option>
                                         </select><br/>
                                     </form>
                                   </div>
@@ -697,7 +697,6 @@ onSelectStreet(_id) {
       .map(res => res.json())
       .subscribe(subs => {
         this.subs = subs
-        this.getAllEmployee();
       })
     }
   // Get all users from the API
