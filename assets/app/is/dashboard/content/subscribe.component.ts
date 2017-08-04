@@ -761,7 +761,7 @@ onSelectStreet(_id) {
       }
   // Get all users from the API
   getAllJob() {
-      this.http.get(`${this.API}/job/listjob`)
+      this.http.get(`${this.API}/job/jobssubs/${this._routeParams.get('id')}`)
           .map(res => res.json())
           .subscribe(jobs => {
               this.jobs = jobs
