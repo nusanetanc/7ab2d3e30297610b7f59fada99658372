@@ -449,23 +449,23 @@ import { ContentPackLevComponent } from './packlev.component';
                 </div>
                 </div>
                 <div *ngIf="sessionemps.accessrole == '0' || sessionemps.accessrole == '601'" class="col-sm-12">
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-6 col-sm-4">
-                                    <span>Current Package</span>
-                                </div>
-                                <div class="col-xs-12 col-md-4">
-                                    <span>Current Package</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>ADD  TECHNICIAN JOB</h4>
+                            <h4>TECHNICIAN JOB</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row marginTB10 marginL5">
+                                    <div class="col-xs-6 col-sm-4">
+                                        <span>Current Package</span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4">
+                                        <span>Current Package</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
