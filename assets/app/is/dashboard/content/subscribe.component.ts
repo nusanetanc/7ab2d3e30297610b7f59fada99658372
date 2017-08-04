@@ -459,7 +459,9 @@ import { ContentPackLevComponent } from './packlev.component';
                             <div class="col-sm-6">
                                 <div *ngFor="#job of jobs" class="row">
                                     <div class="col-xs-6 col-sm-4">
+                                        <a [routerLink]="['DetailJob', {id: job._id}]">
                                         <span>{{ job.name }}</span>
+                                      </a>
                                     </div>
                                     <div class="col-xs-12 col-md-4">
                                         <span>{{ job.status }}</span>
