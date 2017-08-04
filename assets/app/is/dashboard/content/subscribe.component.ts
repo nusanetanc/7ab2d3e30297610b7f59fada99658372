@@ -607,6 +607,7 @@ onSelectStreet(_id) {
       this.getAcountEmp();
       this.getAllPackages();
       this.getSales();
+      this.getAllEmployee();
     }
 
     addJob(datejob, detailjob, typejob, empjob1, empjob2) {
