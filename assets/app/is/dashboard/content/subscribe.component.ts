@@ -472,7 +472,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <div class="col-sm-6">
                                       <form>
                                           <select  [(ngModel)]="selectedEmp2._id" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
-                                              <option class="option" value="0" selected="true">-- Select Field Engineer --</option>
+                                              <option class="option" value="0" selected="true">-- Select Field Engineer 1 --</option>
                                               <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
                                           </select><br/>
                                       </form>
@@ -480,7 +480,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <div class="col-sm-6">
                                       <form>
                                         <select  [(ngModel)]="selectedEmp1._id" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
-                                            <option class="option" value="0" selected="true">-- Select Field Engineer --</option>
+                                            <option class="option" value="0" selected="true">-- Select Field Engineer 2 --</option>
                                             <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
                                         </select><br/><br/>
                                       </form>
