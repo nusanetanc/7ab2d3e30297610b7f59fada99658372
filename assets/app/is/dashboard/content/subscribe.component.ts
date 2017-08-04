@@ -701,7 +701,7 @@ onSelectStreet(_id) {
     }
   // Get all users from the API
   getAllEmployee() {
-      this.http.get(`${this.API}/employee/list/technical`)
+      this.http.get(`${this.API}/subscribe/list/technical`)
           .map(res => res.json())
           .subscribe(emps => {
               this.emps = emps
@@ -783,7 +783,7 @@ onSelectStreet(_id) {
           })
   }
   getSales() {
-      this.http.get(`${this.API}/employee/list/Sales`)
+      this.http.get(`${this.API}/subscribe/list/sales`)
           .map(res => res.json())
           .subscribe(sales => {
               this.sales = sales
