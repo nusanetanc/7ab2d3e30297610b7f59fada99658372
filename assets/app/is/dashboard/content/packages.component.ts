@@ -45,7 +45,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                             </select><br/><br/>
                                             <select [ngFormControl]="myForm.find('type')" #type id="type" name="package">
                                                 <option disabled="true" selected="true" value="0">-- Select Type --</option>
-                                                <option value="Promo Butttom">Promo Butttom</option>
+                                                <option value="Promo Buttom">Promo Buttom</option>
                                                 <option value="Promo Special Price">Promo Special Price</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
