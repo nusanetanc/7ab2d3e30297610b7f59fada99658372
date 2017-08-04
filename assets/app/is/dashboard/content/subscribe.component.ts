@@ -457,7 +457,7 @@ import { ContentPackLevComponent } from './packlev.component';
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="row marginTB10 marginL5">
+                                <div class="row">
                                     <div class="col-xs-6 col-sm-4">
                                         <span>Current Package</span>
                                     </div>
