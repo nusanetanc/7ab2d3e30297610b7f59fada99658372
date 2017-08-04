@@ -73,7 +73,7 @@ Job.find({emp1: req.params.emp}, function(err, jobs) {
 
 /* GET detail jobs. */
 router.get('/jobssubs/:subs', function(req, res, next) {
-Job.find({subs: req.params.emp}, function(err, jobs) {
+Job.find({subs: req.params.subs}, function(err, jobs) {
        console.log( jobs );
        res.json(jobs);
    });
