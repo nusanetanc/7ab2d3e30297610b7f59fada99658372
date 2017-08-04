@@ -457,12 +457,12 @@ import { ContentPackLevComponent } from './packlev.component';
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="row">
+                                <div *ngFor="#job of jobs" class="row">
                                     <div class="col-xs-6 col-sm-4">
-                                        <span>Current Package</span>
+                                        <span>{{ job.name }}</span>
                                     </div>
                                     <div class="col-xs-12 col-md-4">
-                                        <span>Current Package</span>
+                                        <span>{{ job.status }}</span>
                                     </div>
                                 </div>
                             </div>
