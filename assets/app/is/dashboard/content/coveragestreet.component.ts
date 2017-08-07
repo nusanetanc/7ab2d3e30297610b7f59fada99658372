@@ -139,7 +139,7 @@ API = 'http://202.162.207.164:3000';
 selectedCity: City = new City(0, 'dummy');
 selectedProperty: City = new City(0, 'dummy');
 selectedCluster: City = new City(0, 'dummy');
-selectedBlok: City = new City(0, 'dummy');
+//selectedBlok: City = new City(0, 'dummy');
 
 onSelectPackage(level) {
     console.log(level)
@@ -167,11 +167,11 @@ onSelectProperty(_id) {
 
 onSelectCluster(_id) {
     console.log(_id);
-    this.blokfloors = this.getAllBLokfloorByCluster(){
-        this.http.get(`${this.API}/blokfloor/blokfloorbycluster/${_id}`)
+    this.streetnames = this.getAllStreetByCluster(){
+        this.http.get(`${this.API}/streetname/streetnamebycluster/${_id}`)
             .map(res => res.json())
-            .subscribe(blokfloors => {
-                this.blokfloors = blokfloors
+            .subscribe(streetnames => {
+                this.streetnames = streetnames
             })
     }
 }
@@ -193,11 +193,10 @@ this.getAllCity();
 this.getAllPropertyByCity();
 this.getAllClusterByProperty();
 //this.getAllBLokfloorByCluster();
-//this.getAllStreetByBlok();
+this.getAllStreetByCluster();
 this.getAcountEmp();
 this.myForm = this._fb.group({
-  streetname: ['', Validators.required],
-  streetblok: ['0', Validators.required]
+  streetname: ['', Validators.required]
 })
 }
 // Get all City from the API
@@ -226,13 +225,13 @@ getAllClusterByProperty() {
 }
 
 // Get all Street from the API
- getAllStreetByBlok() {
-    this.http.get(`${this.API}/streetname/streetnamebyblok/${this.blok_id}`)
+getAllStreetByCluster() {
+    this.http.get(`${this.API}/streetname/streetnamebycluster/${this.cluster_id}`)
         .map(res => res.json())
         .subscribe(streetnames => {
             this.streetnames = streetnames
         })
- }
+}
     addBlock(streetname, streetblok, streetcluster) {
     alert('tes');
         var body = `name=${streetname}&blok=${streetblok}&cluster=${streetcluster}`;
