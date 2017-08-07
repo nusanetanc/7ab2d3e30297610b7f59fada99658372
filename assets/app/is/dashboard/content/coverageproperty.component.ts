@@ -62,7 +62,7 @@ import { Property } from './property';
                       <div class="row headerList paddingLR30">
                           <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Existing Property Data</strong></div>
                       </div>
-                      <div class="row subInfo">
+                      <div *ngIf="emps.accessrole == '1'" class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-6">
