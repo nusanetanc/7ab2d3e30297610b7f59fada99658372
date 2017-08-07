@@ -68,16 +68,10 @@ import { Property } from './property';
                                 <div class="col-sm-6">
                                     <div class="formNewReport marginLR20">
                                         <form [ngFormModel]="myForm">
-                                            <select [ngFormControl]="myForm.find('propertycity')" [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
+                                            <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/><br/>
-                                        <input [ngFormControl]="myForm.find('propertyname')" #propertyname type="text" class="form-control inputForm" id="propertyname" placeholder="Property Name">
-                                        <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addProperty(propertyname.value, propertycity.value)" class="btn btn-default buttonOrange">
-                                            SEND
-                                        </button>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -87,10 +81,6 @@ import { Property } from './property';
                           <div class="col-sm-12">
                               <div class="row">
                                   <div class="col-sm-12">
-                                  <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
-                                      <option class="option" disabled="true" value="0">-- Select City Name --</option>
-                                      <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
-                                  </select><br/><br/>
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#property of properties">
                                             <div class="row subInfo">
