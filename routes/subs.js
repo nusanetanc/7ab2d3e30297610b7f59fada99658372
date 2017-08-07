@@ -409,6 +409,9 @@ router.get('/listbill/sub/:id', function(req, res, next) {
 router.get('/idbill/:id', function(req, res, next) {
 Bill.findOne({_id: req.params.id}, function(err, bills) {
   Sub.findById(bills.sub, function(err, subs) {
+    if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0"){
+      subs.groovyid = "59829c352e5e891b9254d04b";
+    }
     Home.findById(subs.groovyid, function(err, homes) {
       Cluster.findById(homes.cluster, function(err, clusters) {
       Streetname.findById(homes.streetname, function(err, streetnames) {
