@@ -104,7 +104,7 @@ import { Street } from './street';
                             <div class="row">
                                 <div class="col-sm-12" *ngFor="#street of streetnames">
                                     <div class="row subInfo">
-                                        <div class="col-sm-8 invoiceList"><span>{{street.name}}</span></div>
+                                        <div class="col-sm-8 invoiceList"><span><b>Street</b> {{street.name}} - <b>Blok</b> {{street.blok}}</span></div>
                                     </div>
                                 </div>
                             </div>
