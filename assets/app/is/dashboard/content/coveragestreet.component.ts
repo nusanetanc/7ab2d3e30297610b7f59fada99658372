@@ -33,7 +33,7 @@ import { Street } from './street';
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
-                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Street</strong></div>
+                        <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Street - Blok</strong></div>
                     </div>
                     <div class="row subInfo">
                         <div class="col-sm-12">
@@ -73,6 +73,30 @@ import { Street } from './street';
               <div class="row headerList paddingLR30">
                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Street</strong></div>
               </div>
+              <div class="row subInfo">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="formNewReport marginLR20">
+                                    <form>
+                                      <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #streetcity id="streetcity">
+                                          <option value="0" disabled="true">-- Select City --</option>
+                                          <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                      </select><br/><br/>
+                                      <select #streetproperty id="streetproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                          <option value="0" disabled="true">-- Select Property --</option>
+                                          <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                      </select><br/><br/>
+                                      <select #streetcluster id="streetcluster" [(ngModel)]="selectedCluster._id" (change)="onSelectCluster($event.target.value)">
+                                          <option value="0" disabled="true">-- Select Cluster --</option>
+                                          <option *ngFor="#cluster of clusters" value={{cluster._id}}>{{ cluster.name }}</option>
+                                      </select><br/><br/>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               <div class="row subInfo">
                   <div class="col-sm-12">
                       <div class="row">
