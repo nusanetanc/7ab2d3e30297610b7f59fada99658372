@@ -240,6 +240,23 @@ router.get('/id/:id', function(req, res, next) {
 });
 }
 });
+
+/* GET detail sub. */
+router.get('/cekgroovyid/:id', function(req, res, next) {
+  if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){
+    return res.status(404).json({
+      title: "Access not found"
+    });
+  } else {
+  Sub.findOne({groovyid: req.params.id}, function(err, subs) {
+  res.json({
+    namasubs : subs.name,
+    idsubs : subs.subid
+  });
+});
+}
+});
+
 /* GET detail sub. */
 router.get('/subs/:id', function(req, res, next) {
   if(req.session.emp == "" || req.session.emp == null || req.session.emp == "0"){

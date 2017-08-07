@@ -266,7 +266,7 @@ myForm: ControlGroup;
         }
     }
     onSelectHome(_id) {
-      alert(_id);
+      
     }
     /*$(document).ready(function(){
         $("#submit").click(function(){
