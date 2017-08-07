@@ -257,8 +257,7 @@ router.get('/cekgroovyid/:id', function(req, res, next) {
         });
     }
   res.json({
-    namasubs : subs.name,
-    idsubs : subs.subid
+    subsaktif : 'Home already used by '+subs.name,
   });
 });
 }
