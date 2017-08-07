@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                         <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                             <option value="0">-- Select Home Number --</option>
                                             <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
-                                        </select><br/>
+                                        </select><br/> {{existsubs.namasubs}}
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +266,11 @@ myForm: ControlGroup;
         }
     }
     onSelectHome(_id) {
-      
+        this.http.get(`${this.API}/subscribe/cekgroovyid/${_id}`)
+            .map(res => res.json())
+            .subscribe(existsubs => {
+                this.existsubs = existsubs
+            })
     }
     /*$(document).ready(function(){
         $("#submit").click(function(){
