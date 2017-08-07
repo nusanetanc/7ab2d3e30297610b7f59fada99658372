@@ -74,7 +74,7 @@ import 'rxjs/add/operator/map';
                         </div><br />
                         </div><br /> -->
 
-                        <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid'">
+                        <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid' && emps.accessrole == '501'">
                             <div class="col-md-12">
                                 <div class="row headerList">
                                     <div class="col-sm-12 invoiceId"><strong>PAYMENT DATE</strong></div>
