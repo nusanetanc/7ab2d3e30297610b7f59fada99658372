@@ -295,6 +295,7 @@ myForm: ControlGroup;
     defaultpackages: any[] = [];
     promopackages: any[] = [];
     sales: any[] = [];
+    existsubs: any[] = [];
 
     constructor(private _fb:FormBuilder, private http: Http) {}
 
