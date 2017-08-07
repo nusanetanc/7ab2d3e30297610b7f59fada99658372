@@ -18,7 +18,7 @@ import { Http } from 'angular2/http';
         </div>
 
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
-        <div class="row marginB20 marginR0">
+        <div *ngIf="emps.accessrole == '702'" class="row marginB20 marginR0">
             <div class="col-sm-12">
                 <a [routerLink]="['AddStock']" class="btn btn-default buttonOrange">
                     ADD NEW STOCK
