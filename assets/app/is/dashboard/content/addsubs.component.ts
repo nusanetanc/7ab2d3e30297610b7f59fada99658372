@@ -270,6 +270,8 @@ myForm: ControlGroup;
             .map(res => res.json())
             .subscribe(existsubs => {
                 this.existsubs = existsubs
+            }, error => {
+                this.msgnosubs = error.message
             })
     }
     /*$(document).ready(function(){

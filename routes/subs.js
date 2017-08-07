@@ -249,6 +249,13 @@ router.get('/cekgroovyid/:id', function(req, res, next) {
     });
   } else {
   Sub.findOne({groovyid: req.params.id}, function(err, subs) {
+    if (!subs) {
+        return res.status(404).json({
+            title: 'No Subs',
+            respcode: '98',
+            error: {message: 'Subs could not be found'}
+        });
+    }
   res.json({
     namasubs : subs.name,
     idsubs : subs.subid
