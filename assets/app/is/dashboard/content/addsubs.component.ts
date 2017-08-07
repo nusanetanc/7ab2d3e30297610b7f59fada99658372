@@ -116,7 +116,7 @@ import {Streetname} from "./street_name";
                                         <select [(ngModel)]="selectedHome._id" (change)="onSelectHome($event.target.value)" #subgroovyid id="subgroovyid" class="inputForm" name="cars">
                                             <option value="0">-- Select Home Number --</option>
                                             <option *ngFor="#home of homes" [value]=home._id>{{ home.nohome }}</option>
-                                        </select><br/> {{variabletest}}
+                                        </select><br/>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@ myForm: ControlGroup;
         }
     }
     onSelectHome(_id) {
-      variabletest = 'test';
+      alert(_id);
     }
     /*$(document).ready(function(){
         $("#submit").click(function(){
