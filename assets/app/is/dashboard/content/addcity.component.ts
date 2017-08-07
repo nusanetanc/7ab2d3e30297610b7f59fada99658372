@@ -27,7 +27,7 @@ import { City } from './cities';
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <div *ngIf="emps.accessrole == '0' || emps.accessrole == '6' || emps.accessrole == '601'" class="row">
                     <div class="col-sm-12">
                         <div class="row headerList paddingLR30">
                             <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add City</strong></div>
