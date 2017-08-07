@@ -66,6 +66,10 @@ import { Property } from './property';
                           <div class="col-sm-12">
                               <div class="row">
                                   <div class="col-sm-12">
+                                  <select [(ngModel)]="selectedCity._id" (change)="onSelectCity($event.target.value)" #propertycity id="propertycity">
+                                      <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                      <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                  </select><br/><br/>
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#property of properties">
                                             <div class="row subInfo">
