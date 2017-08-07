@@ -21,7 +21,7 @@ import {Employee} from './employee';
         <div class="page-content inset" data-spy="scroll" data-target="#spy">
             <div class="row marginB20 marginR0">
                 <div class="col-sm-12">
-                    <a [routerLink]="['AddEmp']" class="btn btn-default buttonOrange">
+                    <a *ngIf="accountemps.accessrole == '0'" [routerLink]="['AddEmp']" class="btn btn-default buttonOrange">
                         ADD NEW USER
                     </a>
                     <a (click)="sortRev()" style="cursor: pointer;" class="glyphicon glyphicon-chevron-down sort-down"></a>
