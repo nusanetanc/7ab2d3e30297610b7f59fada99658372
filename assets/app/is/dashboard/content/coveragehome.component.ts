@@ -18,7 +18,7 @@ import { Street } from './street';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                &nbsp; Add Coverage Area
+                &nbsp; Coverage Area <b>Home</b>
             </h3>
 
         </div>
