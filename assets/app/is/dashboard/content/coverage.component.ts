@@ -27,7 +27,7 @@ import {Emp} from "./emp";
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <img class="imageCoverage" src="./images/city.png" alt="city">
-                                            <h4 class="text-center grey333 fontWeight300">ADD CITY</h4>
+                                            <h4 class="text-center grey333 fontWeight300">CITY</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@ import {Emp} from "./emp";
                                 <div class="row white">
                                     <div class="col-sm-12 paddingT15">
                                         <img class="imageCoverage" src="./images/property.png" alt="property">
-                                        <h4 class="text-center grey333 fontWeight300">ADD PROPERTY</h4>
+                                        <h4 class="text-center grey333 fontWeight300">PROPERTY</h4>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ import {Emp} from "./emp";
                                     <div class="row white">
                                         <div class="col-sm-12 paddingT30">
                                             <img class="imageCoverage" src="./images/cluster.png" alt="cluster">
-                                            <h4 class="text-center grey333 fontWeight300">ADD CLUSTER</h4>
+                                            <h4 class="text-center grey333 fontWeight300">CLUSTER</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ import {Emp} from "./emp";
                                 <div class="row white">
                                     <div class="col-sm-12  paddingT15">
                                         <img class="imageCoverage" src="./images/street.png" alt="street">
-                                        <h4 class="text-center grey333 fontWeight300">ADD STREET</h4>
+                                        <h4 class="text-center grey333 fontWeight300">STREET</h4>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ import {Emp} from "./emp";
                                     <div class="row white">
                                         <div class="col-sm-12 paddingT15">
                                             <img class="imageCoverage" src="./images/home.png" alt="home">
-                                            <h4 class="text-center grey333 fontWeight300">ADD HOME NUMBER</h4>
+                                            <h4 class="text-center grey333 fontWeight300">HOME NUMBER</h4>
                                         </div>
                                     </div>
                                 </div>

@@ -76,6 +76,26 @@ import { Cluster } from './cluster';
                     <div class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="formNewReport marginLR20">
+                                        <form>
+                                            <select (change)="onSelectCity($event.target.value)" #clustercity id="clustercity">
+                                                <option class="option" disabled="true" value="0">-- Select City Name --</option>
+                                                <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                            </select><br/><br/>
+                                            <select #clusterproperty id="clusterproperty" [(ngModel)]="selectedProperty._id" (change)="onSelectProperty($event.target.value)">
+                                                <option class="option" disabled="true"  value="0">-- Select Property Name --</option>
+                                                <option *ngFor="#property of properties" value={{property._id}}>{{ property.name }}</option>
+                                            </select><br/><br/>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row subInfo">
+                        <div class="col-sm-12">
+                            <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-sm-12" *ngFor="#cluster of clusters">
