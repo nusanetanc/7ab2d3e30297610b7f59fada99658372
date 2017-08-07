@@ -30,7 +30,7 @@ import { Street } from './street';
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div *ngIf="emps.accessrole == '0' || emps.accessrole == '6' || emps.accessrole == '601'" class="row">
                 <div class="col-sm-12">
                     <div class="row headerList paddingLR30">
                         <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Street - Blok</strong></div>
@@ -73,7 +73,7 @@ import { Street } from './street';
               <div class="row headerList paddingLR30">
                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Street</strong></div>
               </div>
-              <div class="row subInfo">
+              <div *ngIf="emps.accessrole == '1'" class="row subInfo">
                         <div class="col-sm-12">
                             <div class="row">
                                 <div class="col-sm-6">
