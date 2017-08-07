@@ -72,6 +72,7 @@ import { Property } from './property';
                                                 <option class="option" disabled="true" value="0">-- Select City Name --</option>
                                                 <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select><br/><br/>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
