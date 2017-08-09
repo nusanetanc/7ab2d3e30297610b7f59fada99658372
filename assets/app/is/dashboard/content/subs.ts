@@ -21,6 +21,7 @@ export class Sub {
   public pinaltypay: Number,
   public billing: String,
   public history: String,
-  public sales: String
+  public sales: String,
+  public ipaddr: Number
   ) {  }
 }
