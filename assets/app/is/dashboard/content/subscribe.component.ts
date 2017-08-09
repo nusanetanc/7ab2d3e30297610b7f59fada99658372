@@ -101,6 +101,17 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
+                                    <span>Ip Address</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <span>{{ subs.ipaddr }}</span>
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Wifi Id</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
@@ -228,6 +239,17 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                                 <div class="col-xs-12 col-md-7">
                                     <input  value={{subs.wifiid}} #editwifiid type="text" class="form-control inputForm" id="editwifiid" placeholder="Example : 674576457*******">
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
+                                    <span>Ip Address</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input  value={{subs.ipaddr}} #editipaddr type="text" class="form-control inputForm" id="editipaddr" placeholder="Example : 192.168.0.1">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">

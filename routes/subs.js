@@ -313,6 +313,7 @@ Sub.findById(req.params.id, function(err, subs) {
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
+            ipaddr: subs.ipaddr,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
               cluster: clusters.name,
@@ -784,6 +785,7 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 sub.sales= req.body.sales;
                 sub.vendorfo = req.body.vendorfo;
                 sub.wifiid = req.body.wifiid;
+                sub.ipaddr = req.body.ipaddr;
               if (err)
                 res.send(err);
 

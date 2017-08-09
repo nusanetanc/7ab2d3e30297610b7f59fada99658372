@@ -26,6 +26,7 @@ var SubSchema   = new Schema({
     pinaltypay: Number,
     vendorfo: String,
     wifiid: String,
+    ipaddr: Number,
     idpackage: String,
     billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}],
     history: [{type: Schema.Types.ObjectId, ref: 'History'}]
