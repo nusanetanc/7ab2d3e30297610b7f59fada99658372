@@ -22,6 +22,6 @@ export class Sub {
   public billing: String,
   public history: String,
   public sales: String,
-  public ipaddr: Number
+  public ipaddr: String
   ) {  }
 }
