@@ -302,7 +302,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editwifiid.value, editvendor.value,  editbrithdate.value, editregisby.value, editregisref.value, editregissales.value)" type="submit" class="btn btn-default buttonOrange">
+                              <button (click)="editSubs(editname.value, editemail.value, editphone.value, editid.value, editwifiid.value, editvendor.value,  editipaddr.value, editbrithdate.value, editregisby.value, editregisref.value, editregissales.value)" type="submit" class="btn btn-default buttonOrange">
                                   SUBMIT
                               </button>
                               <button (click)="onItemClicked1(Cancel)" class="btn btn-default buttonOrange">
@@ -713,8 +713,8 @@ onSelectStreet(_id) {
                 console.log(JSON.stringify(error.json()));
             });
     }
-    editSubs(editname, editemail, editphone, editid, editwifiid, editvendor, editbrithdate, editregisby, editregisref, editregissales) {
-        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&wifiid=${editwifiid}&vendorfo=${editvendor}&datebirth=${editbrithdate}&regisby=${editregisby}&regisref=${editregisref}&sales=${editregissales}`;
+    editSubs(editname, editemail, editphone, editid, editwifiid, editvendor, editipaddr, editbrithdate, editregisby, editregisref, editregissales) {
+        var body = `name=${editname}&email=${editemail}&phone=${editphone}&idnumber=${editid}&wifiid=${editwifiid}&vendorfo=${editvendor}&ipaddr=${editipaddr}&datebirth=${editbrithdate}&regisby=${editregisby}&regisref=${editregisref}&sales=${editregissales}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
