@@ -380,15 +380,15 @@ router.get('/detailsub', function(req, res, next) {
                 groovyid: homes.groovyid,
                 address: homes.address,
                 nohome: homes.nohome,
-                idcity: homes.city,
-                idproperty: homes.property,
-                idcluster: homes.cluster,
+                //idcity: homes.city,
+                //idproperty: homes.property,
+                //idcluster: homes.cluster,
                 blok: streetnames.blok,
-                idstreetname: homes.streetname,
-                idhomeid: homes._id,
+                //idstreetname: homes.streetname,
+                //idhomeid: homes._id,
                 cluster: clusters.name,
                 city: cities.name,
-                idpackage: subs.idpackage,
+                //idpackage: subs.idpackage,
                 sales: subs.sales
               });
             });
