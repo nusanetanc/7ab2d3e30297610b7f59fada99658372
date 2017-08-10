@@ -66,9 +66,7 @@ declare let kendo;
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span>{{ bills.cluster }}</span><br>
-                                                                <span>{{ bills.streetname }} No.{{ bills.nohome }}</span>
-                                                                <span>{{ bills.city }}</span>
+                                                              {{ subs.street }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, Blok. {{ subs.blok }}, <br/> {{ subs.city }}, Indonesia
                                                             </div>
                                                         </div>
                                                     </div>
