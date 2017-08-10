@@ -52,7 +52,7 @@ import { Sub } from './content/subs';
                                   <a [routerLink]="['Information']" class="collapse"><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFO</span></a>
                                 </li>
                                 <li>
-                                  <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
+                                  <a type="submit" (click)="Logout()" class="collapse" style="cursor:pointer"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                                 </li>
                                 
                             </ul>
