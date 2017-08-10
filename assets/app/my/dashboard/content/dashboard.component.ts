@@ -12,7 +12,7 @@ import { Sub } from './subs';
     <div id="page-content-wrapper">
        <div class="content-header">
           <h3 id="home">
-             <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
+             <a id="menu-toggle" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
              </a>
              &nbsp; Dashboard
           </h3>
@@ -50,7 +50,7 @@ import { Sub } from './subs';
                          <div class="row">
                             <div class="col-sm-12">
                                <div class="row marginBL10">
-                                  <div class="col-xs-6 col-sm-3">
+                                  <div class="col-xs-6 col-sm-5">
                                      Current Plan
                                   </div>
                                   <div class="col-xs-6 col-sm-1">
@@ -73,13 +73,13 @@ import { Sub } from './subs';
                                </div>
                                <div class="row marginBL10">
                                   <div class="col-xs-6 col-sm-5">
-                                     Address
+                                     Subscribe Id
                                   </div>
                                   <div class="col-xs-6 col-sm-1">
                                      :
                                   </div>
                                   <div class="col-xs-6 col-sm-5">
-                                     {{ subs.street }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, Blok. {{ subs.blok }}, <br/> {{ subs.city }}, Indonesia
+                                     <b>{{ subs.subid }}</b>
                                   </div>
                                </div>
                                <div class="row marginB10">
