@@ -57,7 +57,7 @@ import {Emp} from "./emp";
                             <a [routerLink]="['AllReport']" ><i class="material-icons">announcement</i> <span class="fontWeight300">REPORTS</span></a>
                         </li>
                         <li style="cursor:pointer">
-                          <a type="submit" (click)="Logout()" class="collapse"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
+                          <a type="submit" (click)="Logout()" class="collapse" style="cursor:pointer"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                         </li>
                         
                         <li style="border-top: 0.3px solid #B3B3B3;margin-top:30px;font-weight:500;">

@@ -117,17 +117,25 @@
 <!-- Collaps JS -->
 <script type="text/javascript">
   /*Menu-toggle*/
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
-  });
+    var menuToggle = function() {
 
-  $(window).load(function(){
-      var w = $(window).width();
-      if(w < 700) {
-          $("#wrapper").toggleClass("active");
-      }
-  });
+      event.preventDefault();
+      $("#wrapper").toggleClass("active");
+
+    };
+
+    $("#menu-toggle").click(function(event) {
+        event.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+
+    $(window).load(function(){
+        var w = $(window).width();
+        if(w < 700) {
+            $("#wrapper").toggleClass("active");
+        }
+    });
+
 
   /*Scroll Spy*/
   $('body').scrollspy({ target: '#spy', offset:80});
