@@ -83,7 +83,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-8">
-                                        {{ subs.address }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, {{ subs.city }}, Indonesia
+                                        {{ subs.street }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, Blok. {{ subs.blok }}, <br/> {{ subs.city }}, Indonesia
                                     </div>
                                 </div>
                             </div>
