@@ -71,6 +71,17 @@ import { Sub } from './subs';
                                      {{ subs.status}}
                                   </div>
                                </div>
+                               <div class="row marginBL10">
+                                  <div class="col-xs-6 col-sm-5">
+                                     Address
+                                  </div>
+                                  <div class="col-xs-6 col-sm-1">
+                                     :
+                                  </div>
+                                  <div class="col-xs-6 col-sm-5">
+                                     {{ subs.street }} No. {{ subs.nohome }},<br>{{ subs.cluster }}, Blok. {{ subs.blok }}, <br/> {{ subs.city }}, Indonesia
+                                  </div>
+                               </div>
                                <div class="row marginB10">
                                   <div class="col-sm-12">
                                      <h4 class="text-center fontWeight300">SUBSCRIPTION PLAN</h4>
