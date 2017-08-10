@@ -50,7 +50,7 @@ import { Sub } from './subs';
                          <div class="row">
                             <div class="col-sm-12">
                                <div class="row marginBL10">
-                                  <div class="col-xs-6 col-sm-5">
+                                  <div class="col-xs-6 col-sm-3">
                                      Current Plan
                                   </div>
                                   <div class="col-xs-6 col-sm-1">
