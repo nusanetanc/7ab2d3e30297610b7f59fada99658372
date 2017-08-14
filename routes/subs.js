@@ -313,16 +313,16 @@ Sub.findById(req.params.id, function(err, subs) {
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
-            ipaddr: subs.ipaddr,
+            /*ipaddr: subs.ipaddr,
               nohome: homes.nohome,
               pinaltypay: subs.pinaltypay,
-              cluster: clusters.name,
-              city: cities.name,
+              //cluster: clusters.name,
+              //city: cities.name,
               idpackage: subs.idpackage,
               packlev: packages.level,
               packprice: packages.price,
               packtype: packages.type,
-              sales: subs.sales
+              sales: subs.sales*/
             });
           });
         });
