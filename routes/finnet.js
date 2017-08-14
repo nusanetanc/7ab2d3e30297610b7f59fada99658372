@@ -147,7 +147,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
            finnet.trxid= finnet.trxid;
            finnet.trxdate= finnet.trxdate;
            finnet.amount= req.body.message;
-           finnet.namechanel= finnet.chanelname,;
+           finnet.namechanel= finnet.chanelname;
            finnet.invoiceid= bill.noinvoice;
            finnet.bill= bill._id;
            finnet.save(function(err) {
