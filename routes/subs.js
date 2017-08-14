@@ -290,7 +290,7 @@ Sub.findById(req.params.id, function(err, subs) {
          subs.idpackage = "594223755fa50f316014b792";
        }
     Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
-      if(!streetnames){
+      if(streetnames.name  == null){
         streetnames.name = 'No';
         streetnames.blok = 'No';
       }
