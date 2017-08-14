@@ -127,7 +127,21 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
             error: {message: 'User could not be found'}
         });
     }
-    Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
+    Bill.findOne({sub: doc._id, status: "'Waiting For Payment'"}, function(err1, bill) {
+      if (err1) {
+          return res.status(404).json({
+              title: 'An error occured',
+              respcode: '94',
+              error: {message: 'Time Out'}
+          });
+      }
+      if (!bill) {
+          return res.status(404).json({
+              title: 'No bills',
+              respcode: '98',
+              error: {message: 'Bills could not be found'}
+          });
+      }
       if(finnet.amount !== bill.totalpay){
         return res.status(404).json({
             title: 'Invalid Amount',
