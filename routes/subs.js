@@ -271,7 +271,7 @@ router.get('/subs/:id', function(req, res, next) {
     });
   } else {
 Sub.findById(req.params.id, function(err, subs) {
-  if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
+  if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --" || subs.groovyid == "5898330cc0d0992a46465109" || subs.groovyid == "593a1d62848e4f4d855aecb2"){
     subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findById(subs.groovyid, function(err, homes) {
