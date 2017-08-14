@@ -52,6 +52,20 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
       });
   }
   Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
+    if (err) {
+        return res.status(404).json({
+            title: 'An error occured',
+            respcode: '94',
+            error: {message: 'Time Out'}
+        });
+    }
+    if (!doc) {
+        return res.status(404).json({
+            title: 'No bills',
+            respcode: '98',
+            error: {message: 'Bills could not be found'}
+        });
+    }
        res.json({
          typedata: 'inq_res',
          trxid: finnet.trxid,
