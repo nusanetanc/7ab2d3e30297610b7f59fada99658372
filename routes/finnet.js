@@ -52,8 +52,8 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
           error: {message: 'User could not be found'}
       });
   }
-  Bill.findOne({sub: doc._id, status: stsnopay}, function(err1, bill) {
-    if (err) {
+  Bill.findOne({sub: doc._id, status: "'Waiting For Payment'"}, function(err1, bill) {
+    if (err1) {
         return res.status(404).json({
             title: 'An error occured',
             respcode: '94',
