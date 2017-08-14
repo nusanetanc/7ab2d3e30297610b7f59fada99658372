@@ -20,6 +20,7 @@ var BillSchema   = new Schema({
   billdate: Date,
   duedate: Date,
   paydate: Date,
+  payby:String,
   status: String,
   desc: String,
   sub: {type: Schema.Types.ObjectId, ref: 'Sub'}

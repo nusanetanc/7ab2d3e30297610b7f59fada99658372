@@ -142,6 +142,19 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
            namechanel: finnet.chanelname,
            respcode: '96'
          });
+         var finnet = new Finnet();
+           finnet.sub= doc._id;
+           finnet.trxid= finnet.trxid;
+           finnet.trxdate= finnet.trxdate;
+           finnet.amount= req.body.message;
+           finnet.namechanel= finnet.chanelname,;
+           finnet.invoiceid= bill.noinvoice;
+           finnet.bill= bill._id;
+           finnet.save(function(err) {
+             if (err)
+                 res.send(err);
+             res.json({ message: 'Data created!' });
+         });
        });
       });
     });
