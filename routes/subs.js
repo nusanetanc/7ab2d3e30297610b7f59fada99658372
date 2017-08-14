@@ -291,8 +291,8 @@ Sub.findById(req.params.id, function(err, subs) {
        }
     Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
       if(!streetnames){
-        streetnames.name = '';
-        streetnames.blok = '';
+        streetnames.name = 'No';
+        streetnames.blok = 'No';
       }
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
