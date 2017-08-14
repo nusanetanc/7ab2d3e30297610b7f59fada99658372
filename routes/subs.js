@@ -290,6 +290,10 @@ Sub.findById(req.params.id, function(err, subs) {
          subs.idpackage = "594223755fa50f316014b792";
        }
     Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
+      if(!streetnames){
+        streetnames.name = '';
+        streetnames.blok = '';
+      }
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
@@ -308,10 +312,8 @@ Sub.findById(req.params.id, function(err, subs) {
               activedate: subs.activedate,
               promo: subs.promo,
               groovyid: homes.groovyid,
-          if(!streetnames){
             address: streetnames.name,
             blok: streetnames.blok,
-          }
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
