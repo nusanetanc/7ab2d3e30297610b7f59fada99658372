@@ -59,7 +59,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
             error: {message: 'Time Out'}
         });
     }
-    if (!doc) {
+    if (!bill) {
         return res.status(404).json({
             title: 'No bills',
             respcode: '98',
