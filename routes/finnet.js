@@ -15,6 +15,7 @@ router.post('/inqreq', function(req, res, next) {
    finnet.signature= req.body.signature;
    finnet.secretkey= req.body.secretkey;
    hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.secretkey);
+   stsnopay='Waiting For Payment';
    if (finnet.typedata !== 'inq_req'){
      return res.status(404).json({
          title: 'Type Data Not Valid',
@@ -51,7 +52,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
           error: {message: 'User could not be found'}
       });
   }
-  Bill.findOne({sub: doc._id, status: 'Waiting For Payment'}, function(err1, bill) {
+  Bill.findOne({sub: doc._id, status: stsnopay}, function(err1, bill) {
     if (err) {
         return res.status(404).json({
             title: 'An error occured',
