@@ -305,6 +305,17 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
         var streetnames_blok = "-";
       }
        Package.findById(subs.idpackage, function(err, packages) {
+         if (packages) {
+            var packages_level = packages.level;
+            var packages_price = packages.price;
+            var packages_type = packages.type;
+          }
+        if (!packages) {
+           var packages_level = "-";
+           var packages_price = "-";
+           var packages_type = "-";
+         }
+
             res.json({
               _id: subs._id,
               email: subs.email,
@@ -334,11 +345,9 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             city: citiesname,
             address: streetnames_name,
             blok: streetnames_blok
-            /*
               packlev: packages.level,
               packprice: packages.price,
               packtype: packages.type,
-              */
           });
           });
         });
