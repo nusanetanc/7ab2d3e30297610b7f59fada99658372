@@ -485,9 +485,35 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
       subs.groovyid = "59829c352e5e891b9254d04b";
     }
     Home.findById(subs.groovyid, function(err, homes) {
+      if (homes) {
+          var numbhome = homes.nohome;
+      }
+      if (!homes) {
+          var numbhome = "-";
+      }
       Cluster.findById(homes.cluster, function(err, clusters) {
+        if (clusters) {
+            var clustername = clusters.name;
+        }
+        if (!clusters) {
+            var clustername = "-";
+        }
       Streetname.findById(homes.streetname, function(err, streetnames) {
+        if (streetnames) {
+              var streetnames_name = streetnames.name;
+              var streetnames_blok = streetnames.blok;
+          }
+          if (!streetnames) {
+            var streetnames_name = "-";
+            var streetnames_blok = "-";
+          }
        City.findById(homes.city, function(err, cities) {
+         if (cities) {
+             var citiesname = cities.name;
+         }
+         if (!cities) {
+             var citiesname = "-";
+         }
             res.json({
               _id: subs._id,
               noinvoice: bills.noinvoice,
@@ -514,11 +540,11 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               nova: '02750'+subs.subid.substring(2,8),
               statussub: subs.status,
               pinaltypay: subs.pinaltypay,
-              address: homes.address,
-              streetname: streetnames.name,
-              nohome: homes.nohome,
-              cluster: clusters.name,
-              city: cities.name
+              address: streetnames_name,
+              blok: streetnames_blok,
+              nohome: numbhome,
+              cluster: clustersname,
+              city: citiesname
             });
           });
         });
