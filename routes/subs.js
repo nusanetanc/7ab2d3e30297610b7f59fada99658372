@@ -316,13 +316,13 @@ Sub.findById(req.params.id, function(err, subs) {
               pinaltypay: subs.pinaltypay,
               idpackage: subs.idpackage,
               sales: subs.sales,
-            //address: streetnames.name,
-            //blok: streetnames.blok,
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
-            nova: '02750'+subs.subid.substring(2,8)
+            nova: '02750'+subs.subid.substring(2,8),
+            nohome: homes.nohome
             /*
-              nohome: homes.nohome,
+            //address: streetnames.name,
+            //blok: streetnames.blok,
               //cluster: clusters.name,
               //city: cities.name,
               packlev: packages.level,
