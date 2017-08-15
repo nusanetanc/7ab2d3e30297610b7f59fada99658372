@@ -543,7 +543,7 @@ Bill.findOne({_id: req.params.id}, function(err, bills) {
               address: streetnames_name,
               blok: streetnames_blok,
               nohome: numbhome,
-              cluster: clustersname,
+              cluster: clustername,
               city: citiesname
             });
           });
