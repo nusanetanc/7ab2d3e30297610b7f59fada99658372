@@ -272,12 +272,12 @@ router.get('/subs/:id', function(req, res, next) {
   } else {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
-    subs.groovyid = '59829c352e5e891b9254d04b';
+    subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findById(subs.groovyid, function(err, homes) {
     Cluster.findById(homes.cluster, function(err, clusters) {
       if(clusters.name  == null || clusters.name  == '' || clusters.name  == '0'){
-         clusters.name = 'No Found';
+         clusters.name = "No Found";
       }
      City.findById(homes.city, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
@@ -311,8 +311,8 @@ Sub.findById(req.params.id, function(err, subs) {
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
             nohome: homes.nohome,
-            subs: subs.groovyid
-            cluster: clusters.name,
+            subs: subs.groovyid,
+            cluster: clusters.name
           //  city: cities.name
             /*
             //address: streetnames.name,
