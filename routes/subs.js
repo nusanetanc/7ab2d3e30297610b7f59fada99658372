@@ -276,8 +276,15 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
   }
   Home.findOne({_id: subs.groovyid}, function(err, homes) {
     Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
-      if(clusters.name == "" || clusters.name == null || clusters.name == "0" ){
-         clusters.name = "No Found";
+      if (err) {
+          return res.status(404).json({
+              title: 'An error occured',
+              respcode: '94',
+              error: {message: 'Time Out'}
+          });
+      }
+      if (!clusters) {
+          clusters.name = 'Not Found';
       }
      City.findOne({_id: homes.city}, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
