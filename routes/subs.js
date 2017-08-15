@@ -275,20 +275,8 @@ Sub.findById(req.params.id, function(err, subs) {
     subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findById(subs.groovyid, function(err, homes) {
-    if(homes.cluster == "" || homes.cluster == null){
-      homes.cluster = "5941f06583603e78bb546b36";
-    }
     Cluster.findById(homes.cluster, function(err, clusters) {
-      if(homes.city == "" || homes.city == null){
-        homes.city = "5982a3b12e5e891b9254d04c";
-      }
-      if(homes.streetname == "" || homes.streetname == null){
-        homes.streetname = "59818844bc915b4f6d02157f";
-      }
      City.findById(homes.city, function(err, cities) {
-       if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
-         subs.idpackage = "594223755fa50f316014b792";
-       }
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
     //  if(streetnames.name  == null || streetnames.name  == ''){
       //  streetnames.name = 'No';
@@ -319,12 +307,12 @@ Sub.findById(req.params.id, function(err, subs) {
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
-            nohome: homes.nohome
+            nohome: homes.nohome,
+            cluster: clusters.name,
+            city: cities.name
             /*
             //address: streetnames.name,
             //blok: streetnames.blok,
-              //cluster: clusters.name,
-              //city: cities.name,
               packlev: packages.level,
               packprice: packages.price,
               packtype: packages.type,
