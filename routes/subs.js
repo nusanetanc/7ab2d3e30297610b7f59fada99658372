@@ -270,16 +270,16 @@ router.get('/subs/:id', function(req, res, next) {
       title: "Access not found"
     });
   } else {
-Sub.findById(req.params.id, function(err, subs) {
+Sub.findOne({_id: req.params.id}, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
     subs.groovyid = "59829c352e5e891b9254d04b";
   }
-  Home.findById(subs.groovyid, function(err, homes) {
-    Cluster.findById(homes.cluster, function(err, clusters) {
+  Home.findOne({_id: subs.groovyid}, function(err, homes) {
+    Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
       if(clusters.name == "" || clusters.name == null || clusters.name == "0" ){
          clusters.name = "No Found";
       }
-     City.findById(homes.city, function(err, cities) {
+     City.findOne({_id: homes.city}, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
     //  if(streetnames.name  == null || streetnames.name  == ''){
       //  streetnames.name = 'No';
