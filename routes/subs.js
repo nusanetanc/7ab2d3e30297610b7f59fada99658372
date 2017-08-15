@@ -344,10 +344,10 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             cluster: clustername,
             city: citiesname,
             address: streetnames_name,
-            blok: streetnames_blok
+            blok: streetnames_blok,
               packlev: packages.level,
               packprice: packages.price,
-              packtype: packages.type,
+              packtype: packages.type
           });
           });
         });
