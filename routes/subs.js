@@ -275,6 +275,12 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
     subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findOne({_id: subs.groovyid}, function(err, homes) {
+    if (clusters) {
+        var numbhome = homes.nohome;
+    }
+    if (!clusters) {
+        var numbhome = "Not Found Home Number";
+    }
     Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
       if (clusters) {
           var clustername = clusters.name;
@@ -283,6 +289,12 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
           var clustername = "Not Found Cluster";
       }
      City.findOne({_id: homes.city}, function(err, cities) {
+       if (cities) {
+           var citiesname = cities.name;
+       }
+       if (!cities) {
+           var citiesname = "Not Found City";
+       }
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
     //  if(streetnames.name  == null || streetnames.name  == ''){
       //  streetnames.name = 'No';
@@ -313,10 +325,9 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
-            nohome: homes.nohome,
-            subs: subs.groovyid,
-            cluster: clustername
-          //  city: cities.name
+            nohome: numbhome,
+            cluster: clustername,
+            city: citiesname
             /*
             //address: streetnames.name,
             //blok: streetnames.blok,
