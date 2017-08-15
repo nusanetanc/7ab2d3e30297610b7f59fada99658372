@@ -284,7 +284,11 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
           });
       }
       if (!clusters) {
-          clusters.name = 'Not Found';
+          return res.status(404).json({
+              title: 'No user found',
+              respcode: '98',
+              error: {message: 'clusters could not be found'}
+          });
       }
      City.findOne({_id: homes.city}, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
