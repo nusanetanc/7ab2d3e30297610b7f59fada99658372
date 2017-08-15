@@ -276,19 +276,11 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
   }
   Home.findOne({_id: subs.groovyid}, function(err, homes) {
     Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
-      if (err) {
-          return res.status(404).json({
-              title: 'An error occured',
-              respcode: '94',
-              error: {message: 'Time Out'}
-          });
+      if (clusters) {
+          var clustername = clusters.name;
       }
       if (!clusters) {
-          return res.status(404).json({
-              title: 'No user found',
-              respcode: '98',
-              error: {message: 'clusters could not be found'}
-          });
+          var clustername = "Not Found Cluster";
       }
      City.findOne({_id: homes.city}, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
@@ -323,7 +315,7 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             nova: '02750'+subs.subid.substring(2,8),
             nohome: homes.nohome,
             subs: subs.groovyid,
-            cluster: clusters.name
+            cluster: clustername
           //  city: cities.name
             /*
             //address: streetnames.name,
