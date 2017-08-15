@@ -182,10 +182,6 @@ import 'rxjs/add/operator/map';
                                                             <span class="bildate"><b>Pay Date</b></span><br>
                                                             <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
-                                                            <span class="bildate"><b>Billing Number</b></span><br>
-                                                            <span>{{ bills.noinvoice }}</span>
-                                                        </div>
 
                                                         <div *ngIf="bills.duedate == null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
@@ -198,6 +194,10 @@ import 'rxjs/add/operator/map';
                                                         <div *ngIf="bills.paydate == null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
                                                             <span>-</span>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="bildate"><b>Billing Number</b></span><br>
+                                                            <span>{{ bills.noinvoice }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
