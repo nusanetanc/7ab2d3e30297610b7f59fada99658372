@@ -272,7 +272,7 @@ router.get('/subs/:id', function(req, res, next) {
   } else {
 Sub.findById(req.params.id, function(err, subs) {
   if(subs.groovyid == "" || subs.groovyid == null || subs.groovyid == "0" || subs.groovyid == "-- Select your no home --"){
-    subs.groovyid = "59829c352e5e891b9254d04b";
+    subs.groovyid = '59829c352e5e891b9254d04b';
   }
   Home.findById(subs.groovyid, function(err, homes) {
     Cluster.findById(homes.cluster, function(err, clusters) {
