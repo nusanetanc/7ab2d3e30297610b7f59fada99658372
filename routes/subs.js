@@ -345,9 +345,9 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             city: citiesname,
             address: streetnames_name,
             blok: streetnames_blok,
-              packlev: packages.level,
-              packprice: packages.price,
-              packtype: packages.type
+              packlev: packages_level,
+              packprice: packages_price,
+              packtype: packages_type
           });
           });
         });
