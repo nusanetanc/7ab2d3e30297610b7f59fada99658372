@@ -289,11 +289,11 @@ Sub.findById(req.params.id, function(err, subs) {
        if(subs.idpackage == "" || subs.idpackage == null || subs.idpackage == '0'){
          subs.idpackage = "594223755fa50f316014b792";
        }
-    Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
-      if(streetnames.name  == null || streetnames.name  == ''){
-        streetnames.name = 'No';
-        streetnames.blok = 'No';
-      }
+    //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
+    //  if(streetnames.name  == null || streetnames.name  == ''){
+      //  streetnames.name = 'No';
+      //  streetnames.blok = 'No';
+    //  }
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
@@ -312,8 +312,8 @@ Sub.findById(req.params.id, function(err, subs) {
               activedate: subs.activedate,
               promo: subs.promo,
               groovyid: homes.groovyid,
-            address: streetnames.name,
-            blok: streetnames.blok,
+            //address: streetnames.name,
+            //blok: streetnames.blok,
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
@@ -327,7 +327,7 @@ Sub.findById(req.params.id, function(err, subs) {
               packprice: packages.price,
               packtype: packages.type,
               sales: subs.sales*/
-            });
+          //  });
           });
         });
         });
