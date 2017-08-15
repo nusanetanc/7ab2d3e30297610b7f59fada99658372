@@ -312,21 +312,23 @@ Sub.findById(req.params.id, function(err, subs) {
               activedate: subs.activedate,
               promo: subs.promo,
               groovyid: homes.groovyid,
+              ipaddr: subs.ipaddr,
+              pinaltypay: subs.pinaltypay,
+              idpackage: subs.idpackage,
+              sales: subs.sales,
             //address: streetnames.name,
             //blok: streetnames.blok,
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
-            nova: '02750'+subs.subid.substring(2,8),
-            /*ipaddr: subs.ipaddr,
+            nova: '02750'+subs.subid.substring(2,8)
+            /*
               nohome: homes.nohome,
-              pinaltypay: subs.pinaltypay,
               //cluster: clusters.name,
               //city: cities.name,
-              idpackage: subs.idpackage,
               packlev: packages.level,
               packprice: packages.price,
               packtype: packages.type,
-              sales: subs.sales*/
+              */
           //  });
           });
         });
