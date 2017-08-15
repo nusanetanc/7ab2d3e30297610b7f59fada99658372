@@ -276,6 +276,9 @@ Sub.findById(req.params.id, function(err, subs) {
   }
   Home.findById(subs.groovyid, function(err, homes) {
     Cluster.findById(homes.cluster, function(err, clusters) {
+      if(clusters.name  == null || clusters.name  == '' || clusters.name  == '0'){
+         clusters.name = 'No Found';
+      }
      City.findById(homes.city, function(err, cities) {
     //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
     //  if(streetnames.name  == null || streetnames.name  == ''){
@@ -309,7 +312,7 @@ Sub.findById(req.params.id, function(err, subs) {
             nova: '02750'+subs.subid.substring(2,8),
             nohome: homes.nohome,
             subs: subs.groovyid
-            //cluster: clusters.name,
+            cluster: clusters.name,
           //  city: cities.name
             /*
             //address: streetnames.name,
