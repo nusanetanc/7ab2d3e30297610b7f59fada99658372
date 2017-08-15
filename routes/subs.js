@@ -275,10 +275,10 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
     subs.groovyid = "59829c352e5e891b9254d04b";
   }
   Home.findOne({_id: subs.groovyid}, function(err, homes) {
-    if (clusters) {
+    if (homes) {
         var numbhome = homes.nohome;
     }
-    if (!clusters) {
+    if (!homes) {
         var numbhome = "Not Found Home Number";
     }
     Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
