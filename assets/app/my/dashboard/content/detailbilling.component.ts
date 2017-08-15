@@ -113,11 +113,6 @@ declare let kendo;
                                                             <span class="bildate"><b>Pay Date</b></span><br>
                                                             <span>{{ stringAsDate(bills.paydate) | date }}</span>
                                                         </div>
-                                                        <div class="col-sm-3">
-                                                            <span class="bildate"><b>Billing Number</b></span><br>
-                                                            <span>{{ bills.noinvoice }}</span>
-                                                        </div>
-
                                                         <div *ngIf="bills.duedate == null" class="col-sm-3">
                                                             <span class="bildate"><b>Billing Due Date</b></span><br>
                                                             <span>-</span>
@@ -129,6 +124,10 @@ declare let kendo;
                                                         <div *ngIf="bills.paydate == null" class="col-sm-3">
                                                             <span class="bildate"><b>Pay Date</b></span><br>
                                                             <span>-</span>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="bildate"><b>Billing Number</b></span><br>
+                                                            <span>{{ bills.noinvoice }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,7 +152,6 @@ declare let kendo;
                                                     </div>
                                                 </div>
                                                 <!-- /HeaderList -->
-
                                                 <!-- List -->
                                                 <div class="row">
                                                     <div class="col-sm-12 listWhite">
@@ -161,7 +159,7 @@ declare let kendo;
                                                             <span>Level {{ bills.namepack }} Package</span>
                                                         </div>
                                                         <div class="col-sm-2">
-                                                            <span class="right">Rp. {{ bills.pricepack | number:'2.2-4' }}</span>
+                                                            <span class="right">Rp. {{ bills.pricepack | number:'2.2-4'}}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -175,7 +173,8 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pricestb != null" class="row">
+                                                <div *ngIf="bills.pricestb != '0'">
+                                                <div *ngIf="bills.pricestb != null"  class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>STB Rent</span>
@@ -185,6 +184,8 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
+                                                <div *ngIf="bills.pricerj45cable != '0'">
                                                 <div *ngIf="bills.pricerj45cable != null" class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
@@ -195,6 +196,8 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
+                                                <div *ngIf="bills.priceinstal != '0'">
                                                 <div class="row"  *ngIf="bills.priceinstal != null">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
@@ -205,7 +208,9 @@ declare let kendo;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div *ngIf="bills.pinaltypay != 0" class="row">
+                                                </div>
+                                                <div *ngIf="bills.pinaltypay != null">
+                                                <div *ngIf="bills.pinaltypay != '0'" class="row">
                                                     <div  class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Pinalty Charge</span>
@@ -214,6 +219,7 @@ declare let kendo;
                                                             <span class="right">Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 </div>
                                                 <!-- /List -->
 
