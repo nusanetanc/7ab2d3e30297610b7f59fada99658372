@@ -276,7 +276,7 @@ Sub.findById(req.params.id, function(err, subs) {
   }
   Home.findById(subs.groovyid, function(err, homes) {
     Cluster.findById(homes.cluster, function(err, clusters) {
-      if(!clusters){
+      if(clusters.name == "" || clusters.name == null || clusters.name == "0" ){
          clusters.name = "No Found";
       }
      City.findById(homes.city, function(err, cities) {
