@@ -371,25 +371,50 @@ router.get('/detailsub', function(req, res, next) {
       subs.groovyid = "59829c352e5e891b9254d04b";
     }
     Home.findOne({_id: subs.groovyid}, function(err, homes) {
-      if(homes.cluster == "" || homes.cluster == null){
-        homes.cluster = "5941f06583603e78bb546b36";
+      if (homes) {
+          var numbhome = homes.nohome;
+      }
+      if (!homes) {
+          var numbhome = "-";
       }
       Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
-        if(homes.city == "" || homes.city == null){
-          homes.city = "5982a3b12e5e891b9254d04c";
+        if (clusters) {
+            var clustername = clusters.name;
         }
-        if(homes.streetname == "" || homes.streetname == null){
-          homes.streetname = "59818844bc915b4f6d02157f";
+        if (!clusters) {
+            var clustername = "-";
         }
         Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
+          if (streetnames) {
+              var streetnames_name = streetnames.name;
+              var streetnames_blok = streetnames.blok;
+          }
+          if (!streetnames) {
+            var streetnames_name = "-";
+            var streetnames_blok = "-";
+          }
        City.findOne({_id:homes.city}, function(err, cities) {
+         if (cities) {
+             var citiesname = cities.name;
+         }
+         if (!cities) {
+             var citiesname = "-";
+         }
+         Package.findById(subs.idpackage, function(err, packages) {
+           if (packages) {
+              var packages_level = packages.level;
+              var packages_price = packages.price;
+              var packages_type = packages.type;
+            }
+          if (!packages) {
+             var packages_level = "-";
+             var packages_price = "-";
+             var packages_type = "-";
+           }
               res.json({
                 _id: subs._id,
                 email: subs.email,
                 name: subs.name,
-                nova: subs.nova,
-                packlev: subs.packlev,
-                packprice: subs.packprice,
                 phone: subs.phone,
                 status: subs.status,
                 datebirth: subs.datebirth,
@@ -402,21 +427,17 @@ router.get('/detailsub', function(req, res, next) {
                 nova: '02750'+subs.subid.substring(2,8),
                 activedate: subs.activedate,
                 promo: subs.promo,
-                //groovyid: homes.groovyid,
-                address: homes.address,
-                nohome: homes.nohome,
                 wifiid: subs.wifiid,
-                //idcity: homes.city,
-                //idproperty: homes.property,
-                //idcluster: homes.cluster,
-                blok: streetnames.blok,
-                street: streetnames.name,
-                //idstreetname: homes.streetname,
-                //idhomeid: homes._id,
-                cluster: clusters.name,
-                city: cities.name,
-                //idpackage: subs.idpackage,
+                nohome: numbhome,
+                cluster: clustername,
+                city: citiesname,
+                address: streetnames_name,
+                blok: streetnames_blok,
+                  packlev: packages_level,
+                  packprice: packages_price,
+                  packtype: packages_type,
                 sales: subs.sales
+                  });
               });
             });
           });
