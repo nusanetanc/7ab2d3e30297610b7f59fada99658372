@@ -279,27 +279,31 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
         var numbhome = homes.nohome;
     }
     if (!homes) {
-        var numbhome = "Not Found Home Number";
+        var numbhome = "-";
     }
     Cluster.findOne({_id: homes.cluster}, function(err, clusters) {
       if (clusters) {
           var clustername = clusters.name;
       }
       if (!clusters) {
-          var clustername = "Not Found Cluster";
+          var clustername = "-";
       }
      City.findOne({_id: homes.city}, function(err, cities) {
        if (cities) {
            var citiesname = cities.name;
        }
        if (!cities) {
-           var citiesname = "Not Found City";
+           var citiesname = "-";
        }
-    //Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
-    //  if(streetnames.name  == null || streetnames.name  == ''){
-      //  streetnames.name = 'No';
-      //  streetnames.blok = 'No';
-    //  }
+    Streetname.findOne({_id: homes.streetname}, function(err, streetnames) {
+      if (streetnames) {
+          var streetnames_name = streetnames.name;
+          var streetnames_blok = streetnames.blok;
+      }
+      if (!streetnames) {
+        var streetnames_name = "-";
+        var streetnames_blok = "-";
+      }
        Package.findById(subs.idpackage, function(err, packages) {
             res.json({
               _id: subs._id,
@@ -327,15 +331,15 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             nova: '02750'+subs.subid.substring(2,8),
             nohome: numbhome,
             cluster: clustername,
-            city: citiesname
+            city: citiesname,
+            address: streetnames_name,
+            blok: streetnames_blok
             /*
-            //address: streetnames.name,
-            //blok: streetnames.blok,
               packlev: packages.level,
               packprice: packages.price,
               packtype: packages.type,
               */
-          //  });
+          });
           });
         });
         });
