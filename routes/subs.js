@@ -308,8 +308,9 @@ Sub.findById(req.params.id, function(err, subs) {
             wifiid: subs.wifiid,
             nova: '02750'+subs.subid.substring(2,8),
             nohome: homes.nohome,
-            cluster: clusters.name,
-            city: cities.name
+            subs: subs.groovyid
+            //cluster: clusters.name,
+          //  city: cities.name
             /*
             //address: streetnames.name,
             //blok: streetnames.blok,
