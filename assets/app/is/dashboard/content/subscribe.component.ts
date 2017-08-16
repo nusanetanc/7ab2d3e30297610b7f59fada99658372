@@ -227,7 +227,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input  value={{subs.idnumber}} #editid type="text" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
+                                    <input  value={{subs.idnumber}} #editid type="number" class="form-control inputForm" id="editid" placeholder="Example : 3243432*******">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">
@@ -238,7 +238,7 @@ import { ContentPackLevComponent } from './packlev.component';
                                     <span>:</span>
                                 </div>
                                 <div class="col-xs-12 col-md-7">
-                                    <input  value={{subs.wifiid}} #editwifiid type="text" class="form-control inputForm" id="editwifiid" placeholder="Example : 674576457*******">
+                                    <input  value={{subs.wifiid}} #editwifiid type="number" class="form-control inputForm" id="editwifiid" placeholder="Example : 674576457*******">
                                 </div>
                             </div>
                             <div class="row marginTB10 marginL5">

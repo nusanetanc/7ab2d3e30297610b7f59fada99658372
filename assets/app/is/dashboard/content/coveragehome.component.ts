@@ -58,7 +58,7 @@ import { Street } from './street';
                                         <option value="0" disabled="true">-- Select Street --</option>
                                         <option *ngFor="#streetname of streetnames" value={{streetname._id}}>{{ streetname.name }} - Blok {{streetname.blok}}</option>
                                     </select><br/><br/>
-                                        <input [ngFormControl]="myForm.find('homeno')" type="text" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number"><br/>
+                                        <input [ngFormControl]="myForm.find('homeno')" type="number" class="form-control inputForm" id="homeno" #homeno placeholder="Home Number"><br/>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button [disabled]="!myForm.valid" type="submit" (click)="addBlock(homecity.value, homeproperty.value, homecluster.value, homestreet.value, homeno.value)" class="btn btn-default buttonOrange">
                                             SEND
