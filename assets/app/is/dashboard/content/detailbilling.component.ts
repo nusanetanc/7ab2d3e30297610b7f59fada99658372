@@ -836,7 +836,7 @@ export class ContentDetailBillingComponent implements OnInit {
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
-
+    secret = '4b0b09d8941d66b5bbcb3a4ca3eaa296';
     stringAsDate(dateStr: string) {
         return new Date(dateStr);
     }
@@ -859,7 +859,7 @@ export class ContentDetailBillingComponent implements OnInit {
             })
     }
     AddPay(pinaltyInput, paydateInput, pinaltyBy) {
-        var body = `paydate=${paydateInput}&pinaltypay=${pinaltyInput}&payby=${pinaltyBy}&secretkey='4b0b09d8941d66b5bbcb3a4ca3eaa296'`;
+        var body = `paydate=${paydateInput}&pinaltypay=${pinaltyInput}&payby=${pinaltyBy}&secretkey=${this.secret}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
