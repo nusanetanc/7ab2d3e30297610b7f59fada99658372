@@ -142,7 +142,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
               error: {message: 'Bills could not be found'}
           });
       }
-      if(finnet.amount !== bill.totalpay){
+      if(finnet.amount != bill.totalpay){
         return res.status(404).json({
             title: 'Invalid Amount',
             respcode: '97',
