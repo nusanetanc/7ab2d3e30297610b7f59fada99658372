@@ -169,7 +169,7 @@ if(req.body.amount != bill.totalpay){
            finnet.amount= req.body.amount;
            finnet.namechanel= req.body.chanelname;
            finnet.invoiceid= bill.noinvoice;
-           //finnet.bill= bill._id;
+           finnet.bill= bill._id;
            finnet.save(function(err) {
              if (err)
                  res.send(err);
