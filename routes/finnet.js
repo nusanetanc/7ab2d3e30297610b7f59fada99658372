@@ -162,12 +162,12 @@ if(req.body.amount != bill.totalpay){
       }
          res.json({
            typedata: 'pay_res',
-           trxid: finnet.trxid,
-           trxdate: finnet.trxdate,
+           trxid: req.body.trxid,
+           trxdate: req.body.trxdate,
            subid: doc.subid,
            subname: doc.name,
            noinvoice: bill.noinvoice,
-           chanelpayment: finnet.chanelpayment,
+           chanelpayment: req.body.chanelpayment,
            namechanel: chanelname,
            respcode: '96'
          });
@@ -175,7 +175,7 @@ if(req.body.amount != bill.totalpay){
            finnet.sub= doc._id;
            finnet.trxid= req.body.trxid;
            finnet.trxdate= req.body.trxdate;
-           finnet.amount= req.body.message;
+           finnet.amount= req.body.amount;
            finnet.namechanel= req.body.chanelname;
            finnet.invoiceid= bill.noinvoice;
            finnet.bill= bill._id;
