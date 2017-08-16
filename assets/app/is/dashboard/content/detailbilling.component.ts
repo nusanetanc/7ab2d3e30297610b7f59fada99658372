@@ -240,7 +240,8 @@ import 'rxjs/add/operator/map';
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div *ngIf="bills.pricerouter != '0'">
+                                                <div *ngIf="bills.pricerouter != null"  class="row">
                                                     <div class="col-sm-12 listWhite">
                                                         <div class="col-sm-10">
                                                             <span>Router rent</span>
@@ -249,7 +250,7 @@ import 'rxjs/add/operator/map';
                                                             <span class="right">Rp. {{ bills.pricerouter | number:'2.2-4' }}</span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div></div>
                                                 <div *ngIf="bills.pricestb != '0'">
                                                 <div *ngIf="bills.pricestb != null"  class="row">
                                                     <div class="col-sm-12 listWhite">
@@ -490,14 +491,15 @@ import 'rxjs/add/operator/map';
                                                    <span>Rp. {{ bills.pricepack | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
-                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             <div *ngIf="bills.pricerouter != '0'">
+                                             <div *ngIf="bills.pricerouter != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pricerouter | number:'2.2-4' }}</span>
                                                 </div>
-                                             </div>
+                                             </div></div>
                                              <div *ngIf="bills.pricestb != '0'">
                                              <div *ngIf="bills.pricestb != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
@@ -727,14 +729,15 @@ import 'rxjs/add/operator/map';
                                                    <span>Rp. {{ bills.pricepack  | number:'2.2-4'}}</span>
                                                 </div>
                                              </div>
-                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             <div *ngIf="bills.pricerouter != '0'">
+                                             <div *ngIf="bills.pricerouter != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pricerouter  | number:'2.2-4'}}</span>
                                                 </div>
-                                             </div>
+                                             </div></div>
                                              <div *ngIf="bills.pricestb != '0'">
                                              <div *ngIf="bills.pricestb != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
