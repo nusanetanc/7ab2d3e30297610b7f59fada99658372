@@ -150,9 +150,9 @@ if(req.body.amount != bill.totalpay){
      });
    }
       if(req.body.chanelpayment == "01"){
-        finnet.chanelname= 'Indomaret';
+        var chanelname= 'Indomaret';
       } else if (req.body.chanelpayment == "02") {
-        finnet.chanelname= 'Alfamart';
+        var chanelname= 'Alfamart';
       } else {
         return res.status(404).json({
             title: 'Invalid Chanel Payment',
@@ -168,7 +168,7 @@ if(req.body.amount != bill.totalpay){
            subname: doc.name,
            noinvoice: bill.noinvoice,
            chanelpayment: finnet.chanelpayment,
-           namechanel: finnet.chanelname,
+           namechanel: chanelname,
            respcode: '96'
          });
          var finnet = new Finnet();
