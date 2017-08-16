@@ -47,6 +47,7 @@ import { ContentClusterNameComponent } from './clustername.component';
                                                 <option disabled="true" selected="true" value="0">-- Select Type --</option>
                                                 <option value="Promo Buttom">Promo Buttom</option>
                                                 <option value="Promo Special Price">Promo Special Price</option>
+                                                <option value="Promo Upgrade Level">Promo Upgrade Level</option>
                                                 <option value="Regular">Regular</option>
                                             </select><br/><br/>
                                             <input type="number" id="price" #price min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control inputForm" placeholder="Price">
