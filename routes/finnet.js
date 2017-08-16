@@ -81,6 +81,14 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
 
   /* GET detail bill one account. */
   router.post('/payreq', function(req, res, next) {
+    var finnet = new Finnet();
+      finnet.sub= doc._id;
+      finnet.trxid= req.body.trxid;
+      finnet.trxdate= req.body.trxdate;
+      finnet.amount= req.body.amount;
+      finnet.namechanel= req.body.chanelname;
+      finnet.invoiceid= bill.noinvoice;
+      finnet.bill= bill._id;
     hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.amount+req.body.secretkey);
     if (req.body.typedata !== 'pay_req'){
       return res.status(404).json({
@@ -151,29 +159,20 @@ if(req.body.amount != bill.totalpay){
             error: {message: 'chanel payment is not found'}
         });
       }
-         res.json({
-           typedata: 'pay_res',
-           trxid: req.body.trxid,
-           trxdate: req.body.trxdate,
-           subid: doc.subid,
-           subname: doc.name,
-           noinvoice: bill.noinvoice,
-           chanelpayment: req.body.chanelpayment,
-           namechanel: chanelname,
-           respcode: '96'
-         });
-         var finnet = new Finnet();
-           //finnet.sub= doc._id;
-           //finnet.trxid= req.body.trxid;
-           //finnet.trxdate= req.body.trxdate;
-           //finnet.amount= req.body.amount;
-           //finnet.namechanel= req.body.chanelname;
-           //finnet.invoiceid= bill.noinvoice;
-           finnet.bill= bill._id;
            finnet.save(function(err) {
              if (err)
                  res.send(err);
-             res.json({ message: 'Data created!' });
+                 res.json({
+                   typedata: 'pay_res',
+                   trxid: req.body.trxid,
+                   trxdate: req.body.trxdate,
+                   subid: doc.subid,
+                   subname: doc.name,
+                   noinvoice: bill.noinvoice,
+                   chanelpayment: req.body.chanelpayment,
+                   namechanel: chanelname,
+                   respcode: '96'
+                 });
          });
        });
       });
