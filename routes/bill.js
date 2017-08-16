@@ -149,7 +149,16 @@ router.put('/paymentconfrim/:id', function(req, res, next) {
                 res.send(err);
                 subs.pinaltypay= req.body.pinaltypay;
                 bill.paydate= req.body.paydate;
+                bill.payby= req.body.payby;
                 bill.status= 'Paid';
+                bill.secretkey = req.body.secretkey;
+  if (bill.secretkey !== '4b0b09d8941d66b5bbcb3a4ca3eaa296'){
+    return res.status(404).json({
+        title: 'Secret Key Not Valid',
+        respcode: '93',
+        error: {message: 'Secret Key Not Valid'}
+    });
+  }
               if (err)
                 res.send(err);
 

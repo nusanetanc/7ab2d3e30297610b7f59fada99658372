@@ -57,7 +57,7 @@ import 'rxjs/add/operator/map';
                                             <form>
                                                 <input #paydateInput type="date" class="form-control inputForm" id="paydateInput" placeholder="Payment Date">
                                             </form>
-                                            <span>Payment Date</span>
+                                            <span>Payment Pinalty</span>
                                             <form>
                                                 <select #pinaltyInput id="pinaltyInput">
                                                     <option class="option" value="0">0</option>
@@ -71,7 +71,7 @@ import 'rxjs/add/operator/map';
                                                     <option value="Finnet">Finnet</option>
                                                 </select><br/>
                                             </form>
-                                            <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value)" class="btn btn-default buttonOrange">
+                                            <button type="submit" (click)="AddPay(pinaltyInput.value, paydateInput.value, pinaltyBy.value)" class="btn btn-default buttonOrange">
                                                 CONFRIM
                                             </button>
                                         </div>
@@ -858,8 +858,8 @@ export class ContentDetailBillingComponent implements OnInit {
                 this.bills = bills
             })
     }
-    AddPay(pinaltyInput, paydateInput) {
-        var body = `paydate=${paydateInput}&pinaltypay=${pinaltyInput}`;
+    AddPay(pinaltyInput, paydateInput, pinaltyBy) {
+        var body = `paydate=${paydateInput}&pinaltypay=${pinaltyInput}&payby=${pinaltyBy}&secretkey="4b0b09d8941d66b5bbcb3a4ca3eaa296"`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http
