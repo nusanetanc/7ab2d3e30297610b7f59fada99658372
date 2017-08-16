@@ -81,31 +81,22 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
 
   /* GET detail bill one account. */
   router.post('/payreq', function(req, res, next) {
-    var finnet = new Finnet()
-    finnet.typedata= req.body.typedata;
-    finnet.trxid= req.body.trxid;
-    finnet.trxdate= req.body.trxdate;
-    finnet.gid= req.body.subid;
-    finnet.amount= req.body.amount;
-    finnet.secretkey= req.body.secretkey;
-    finnet.signature= req.body.signature;
-    finnet.chanelpayment= req.body.chanelpayment;
     hashsignature= md5(req.body.trxid+req.body.trxdate+req.body.subid+req.body.amount+req.body.secretkey);
-    if (finnet.typedata !== 'pay_req'){
+    if (req.body.typedata !== 'pay_req'){
       return res.status(404).json({
           title: 'Type Data Not Valid',
           respcode: '92',
           error: {message: 'Type Data Not Valid'}
       });
     }
-   if (finnet.secretkey !== 'gro0vy'){
+   if (req.body.secretkey !== 'gro0vy'){
      return res.status(404).json({
          title: 'Secret Key Not Valid',
          respcode: '93',
          error: {message: 'Secret Key Not Valid'}
      });
    }
-   if (finnet.signature !== hashsignature){
+   if (req.body.signature !== hashsignature){
      return res.status(404).json({
          title: 'signature Not Valid',
          respcode: '99',
