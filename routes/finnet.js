@@ -173,8 +173,8 @@ if(req.body.amount != bill.totalpay){
          });
          var finnet = new Finnet();
            //finnet.sub= doc._id;
-           finnet.trxid= req.body.trxid;
-           finnet.trxdate= req.body.trxdate;
+           //finnet.trxid= req.body.trxid;
+           //finnet.trxdate= req.body.trxdate;
            finnet.amount= req.body.amount;
            finnet.namechanel= req.body.chanelname;
            finnet.invoiceid= bill.noinvoice;
