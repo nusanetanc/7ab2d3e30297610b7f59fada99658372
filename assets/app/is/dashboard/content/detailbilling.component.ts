@@ -48,7 +48,7 @@ import 'rxjs/add/operator/map';
                         </div>
                         <!-- /Row Button -->
 
-                        <!-- <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
+                        <div class="row" style="background-color: white;" *ngIf="bills.status != 'Paid'">
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -72,7 +72,6 @@ import 'rxjs/add/operator/map';
                                 </div>
                             </div>
                         </div><br />
-                        </div><br /> -->
 
                         <div class="row rowBillInfoContList" *ngIf="bills.status != 'Paid' && emps.accessrole == '501'">
                             <div class="col-md-12">
