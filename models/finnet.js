@@ -8,7 +8,7 @@ var FinnetSchema   = new Schema({
   subid: String,
   subname: String,
   trxid: String,
-  trxdate: Date,
+  trxdate: String,
   signature: String,
   amount: Number,
   respcode: Number,
