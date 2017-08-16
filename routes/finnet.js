@@ -86,7 +86,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
     finnet.trxid= req.body.trxid;
     finnet.trxdate= req.body.trxdate;
     finnet.gid= req.body.subid;
-    //finnet.amount= req.body.amount;
+    finnet.amount= req.body.amount;
     finnet.secretkey= req.body.secretkey;
     finnet.signature= req.body.signature;
     finnet.chanelpayment= req.body.chanelpayment;
@@ -142,16 +142,16 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
               error: {message: 'Bills could not be found'}
           });
       }
-    //  if(finnet.amount != bill.totalpay){
-    //    return res.status(404).json({
-    //        title: 'Invalid Amount',
-      //      respcode: '97',
-      //      error: {message: 'Invalid Amount'}
-    //    });
-  //    }
-      if(finnet.chanelpayment == "01"){
+if(req.body.amount != bill.totalpay){
+  return res.status(404).json({
+         title: 'Invalid Amount',
+        respcode: '97',
+         error: {message: 'Invalid Amount'}
+     });
+   }
+      if(req.body.chanelpayment == "01"){
         finnet.chanelname= 'Indomaret';
-      } else if (finnet.chanelpayment == "02") {
+      } else if (req.body.chanelpayment == "02") {
         finnet.chanelname= 'Alfamart';
       } else {
         return res.status(404).json({
