@@ -46,7 +46,7 @@ import { Sub } from './subs';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <p>{{ subs.name }}</p>
+                                    <p>{{ subs.datebirth }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -57,18 +57,7 @@ import { Sub } from './subs';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <p>{{ subs.name }}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-2">
-                                    <p>Package</p>
-                                </div>
-                                <div class="col-xs-6 col-sm-1">
-                                    <p>:</p>
-                                </div>
-                                <div class="col-xs-12 col-md-5">
-                                    <p>{{ subs.name }}</p>
+                                    <span>{{ subs.address }} <br>No. {{ subs.nohome }}, Blok {{ subs.blok }}<br>{{ subs.cluster }}, {{ subs.city }}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -79,7 +68,7 @@ import { Sub } from './subs';
                                     <p>:</p>
                                 </div>
                                 <div class="col-xs-12 col-md-5">
-                                    <p>{{ subs.name }}</p>
+                                    <p>{{ subs.status }}</p>
                                 </div>
                             </div>
                             <div class="row">
