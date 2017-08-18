@@ -414,14 +414,16 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricepack | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
-                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             <div *ngIf="bills.pricerouter != '0'">
+                                             <div *ngIf="bills.pricerouter != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pricerouter | number:'2.2-4' }}</span>
                                                 </div>
-                                             </div>
+                                             </div></div>
+                                             <div *ngIf="bills.pricestb != '0'">
                                              <div *ngIf="bills.pricestb != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
@@ -430,6 +432,8 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricestb | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
+                                             </div>
+                                             <div *ngIf="bills.pricerj45cable != '0'">
                                              <div *ngIf="bills.pricerj45cable != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
@@ -438,6 +442,8 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricerj45cable | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
+                                             </div>
+                                             <div *ngIf="bills.priceinstal != '0'">
                                              <div *ngIf="bills.priceinstal != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
@@ -446,13 +452,16 @@ declare let kendo;
                                                    <span>Rp. {{ bills.priceinstal | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
-                                             <div *ngIf="bills.pinaltypay != 0" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             </div>
+                                             <div *ngIf="bills.pinaltypay != null">
+                                             <div *ngIf="bills.pinaltypay != '0'" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
                                                 </div>
+                                             </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
@@ -640,14 +649,16 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricepack | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
-                                             <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             <div *ngIf="bills.pricerouter != '0'">
+                                             <div *ngIf="bills.pricerouter != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa Router <i style="color: #999999;"> &nbsp; / &nbsp; Router rent</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pricerouter | number:'2.2-4' }}</span>
                                                 </div>
-                                             </div>
+                                             </div></div>
+                                             <div *ngIf="bills.pricestb != '0'">
                                              <div *ngIf="bills.pricestb != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Sewa STB <i style="color: #999999;"> &nbsp; / &nbsp; STB rent</i></span>
@@ -656,6 +667,8 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricestb | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
+                                             </div>
+                                             <div *ngIf="bills.pricerj45cable != '0'">
                                              <div *ngIf="bills.pricerj45cable != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Kabel dan RJ 45 <i style="color: #999999;"> &nbsp; / &nbsp; Cable and RJ 45</i></span>
@@ -664,6 +677,8 @@ declare let kendo;
                                                    <span>Rp. {{ bills.pricerj45cable | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
+                                             </div>
+                                             <div *ngIf="bills.priceinstal != '0'">
                                              <div *ngIf="bills.priceinstal != null" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Instalasi <i style="color: #999999;"> &nbsp; / &nbsp; Installation charge</i></span>
@@ -672,13 +687,16 @@ declare let kendo;
                                                    <span>Rp. {{ bills.priceinstal | number:'2.2-4' }}</span>
                                                 </div>
                                              </div>
-                                             <div *ngIf="bills.pinaltypay != 0" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
+                                             </div>
+                                             <div *ngIf="bills.pinaltypay != null">
+                                             <div *ngIf="bills.pinaltypay != '0'" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
                                                 </div>
                                                 <div class="col-sm-3 text-right" style="padding: 5px;">
                                                    <span>Rp. {{ bills.pinaltypay | number:'2.2-4' }}</span>
                                                 </div>
+                                             </div>
                                              </div>
                                              <div class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9 text-right" style="border: 1px solid white; padding: 5px; background-color: #e2e2e2;">
