@@ -757,7 +757,7 @@ export class ContentDetailBillingComponent implements OnInit {
     }
 
     getBills(){
-    this.http.get(`${this.API}/bill/idbill/${this._routeParams.get('id')}`)
+    this.http.get(`${this.API}/subscribe/idbill/${this._routeParams.get('id')}`)
         .map(res => res.json())
         .subscribe(bills => {
             this.bills = bills
