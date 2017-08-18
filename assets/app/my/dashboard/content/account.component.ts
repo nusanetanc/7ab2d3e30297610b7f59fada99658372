@@ -40,6 +40,50 @@ import { Sub } from './subs';
                             </div>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-2">
+                                    <p>Date of Brith</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <p>:</p>
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <p>{{ subs.name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-2">
+                                    <p>Address</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <p>:</p>
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <p>{{ subs.name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-2">
+                                    <p>Package</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <p>:</p>
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <p>{{ subs.name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-2">
+                                    <p>Status</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <p>:</p>
+                                </div>
+                                <div class="col-xs-12 col-md-5">
+                                    <p>{{ subs.name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-2">
                                     <p>Email</p>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
