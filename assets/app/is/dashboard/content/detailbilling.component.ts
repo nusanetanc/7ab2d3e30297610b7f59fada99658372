@@ -531,7 +531,7 @@ import 'rxjs/add/operator/map';
                                                 </div>
                                              </div>
                                              </div>
-                                             <div *ngIf="bills.priceinstal != null">
+                                             <div *ngIf="bills.pinaltypay != null">
                                              <div *ngIf="bills.pinaltypay != '0'" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
@@ -769,7 +769,7 @@ import 'rxjs/add/operator/map';
                                                 </div>
                                              </div>
                                              </div>
-                                             <div *ngIf="bills.priceinstal != null">
+                                             <div *ngIf="bills.pinaltypay != null">
                                              <div *ngIf="bills.pinaltypay != '0'" class="row" style="font-size: 20px; padding-left: 15px; padding-right: 15px;">
                                                 <div class="col-sm-9" style="padding: 5px;">
                                                    <span>Biaya Denda <i style="color: #999999;"> &nbsp; / &nbsp; Pinalty Charge</i></span>
