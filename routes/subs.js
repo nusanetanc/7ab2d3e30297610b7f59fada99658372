@@ -309,11 +309,13 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             var packages_level = packages.level;
             var packages_price = packages.price;
             var packages_type = packages.type;
+            var packages_detail = packages.detail;
           }
         if (!packages) {
            var packages_level = "-";
            var packages_price = "-";
            var packages_type = "-";
+           var packages_detail = "-";
          }
 
             res.json({
@@ -347,7 +349,8 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
             blok: streetnames_blok,
               packlev: packages_level,
               packprice: packages_price,
-              packtype: packages_type
+              packtype: packages_type,
+              packdetail: packages_detail
           });
           });
         });
@@ -402,14 +405,16 @@ router.get('/detailsub', function(req, res, next) {
          }
          Package.findById(subs.idpackage, function(err, packages) {
            if (packages) {
-              var packages_level = packages.level;
-              var packages_price = packages.price;
-              var packages_type = packages.type;
+             var packages_level = packages.level;
+             var packages_price = packages.price;
+             var packages_type = packages.type;
+             var packages_detail = packages.detail;
             }
           if (!packages) {
              var packages_level = "-";
              var packages_price = "-";
              var packages_type = "-";
+             var packages_detail = "-";
            }
               res.json({
                 _id: subs._id,
@@ -436,6 +441,7 @@ router.get('/detailsub', function(req, res, next) {
                   packlev: packages_level,
                   packprice: packages_price,
                   packtype: packages_type,
+                  packdetail: packages_detail,
                 sales: subs.sales
                   });
               });
