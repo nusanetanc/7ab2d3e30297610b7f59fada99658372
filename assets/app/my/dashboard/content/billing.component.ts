@@ -34,7 +34,7 @@ import { Bill } from './bills';
                                         :
                                     </div>
                                     <div class="col-xs-6 col-sm-7">
-                                        Level {{ subs.packlev }} ({{ subs.packdetail }}) - {{ subs.packtype }} ({{ subs.packprice }})
+                                        Level {{ subs.packlev }} ({{ subs.packdetail }}) - {{ subs.packtype }} (Rp. {{ subs.packprice | number:'2.2-4' }})
                                     </div>
                                 </div>
                                 <div class="row">
