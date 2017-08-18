@@ -141,9 +141,10 @@ import 'rxjs/add/operator/map';
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-sm-5">
-                                                                <span>{{ bills.cluster }}</span><br>
-                                                                <span>{{ bills.streetname }} No.{{ bills.nohome }}</span>
-                                                                <span>{{ bills.city }}</span>
+                                                                <span>{{ bills.cluster }}</span>
+                                                                <span>Blok. {{bills.blok}}</span><br>
+                                                                <span>{{ bills.address }}, No.{{ bills.nohome }}</span><br>
+                                                                <span>{{ bills.city }}, Indonesia</span>
                                                             </div>
                                                         </div>
                                                     </div>
