@@ -14,7 +14,7 @@ import {Billing} from './allbill';
             <h3 id="home" class="fontWeight300">
                 <a id="menu-toggle" onClick="menuToggle()" style="cursor:pointer" class="glyphicon glyphicon-menu-hamburger btn-menu toggle">
                 </a>
-                All Billing
+                List Payment For Finnet
             </h3>
         </div>
 
@@ -28,13 +28,14 @@ import {Billing} from './allbill';
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" *ngFor="#sub of subs">
-                    <a [routerLink]="['BillSubscribe', {id: sub._id}]">
+                <div class="col-sm-12" *ngFor="#finnet of finnets">
+                    <a [routerLink]="['Detailbilling', {id: finnet.bill}]">
                         <div class="row subInfo fontWeight300">
-                            <div class="col-sm-2 invoiceId"><span>{{ sub.subid }}</span></div>
-                            <div class="col-sm-8 invoiceList"><span><a href="account.html" class="grey333">{{ sub.name }}</a></span></div>
-                            <div class="col-sm-1 invoiceList"><span class="green">{{ sub.status }}</span></div>
-                            <div class="col-sm-1 invoiceList"><span class="red">Not Paid</span></div>
+                            <div class="col-sm-2 invoiceId"><span>{{ finnet.invoiceid }}</span></div>
+                            <div class="col-sm-8 invoiceList"><span>{{ finnet.trxdate }}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">{{ finnet.trxid }}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">{{ finnet.sub }}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="red">{{ finnet.status }}</span></div>
                         </div>
                     </a>
                 </div>
@@ -52,7 +53,7 @@ export class ContentPayFinnetComponent {
 
     // Sort By
     sortByName(){
-        this.subs.sort( function(a, b) {
+        this.finnets.sort( function(a, b) {
             if ( a.name < b.name ){
                 return -1;
             }else if( a.name > b.name ){
@@ -64,7 +65,7 @@ export class ContentPayFinnetComponent {
     }
 
     sortRev(){
-        this.subs.sort( function(name1, name2) {
+        this.finnets.sort( function(name1, name2) {
             if ( name1.name < name2.name ){
                 return 1;
             }else if( name1.name > name2.name ){
@@ -79,23 +80,23 @@ export class ContentPayFinnetComponent {
     API = 'http://202.162.207.164:3000';
 
     // Declare empty list of people
-    subs: any[] = [];
+    finnets: any[] = [];
     emps: any[] = [];
 
     constructor(private http: Http) {}
 
     // Angular 2 Life Cycle event when component has been initialized
     ngOnInit() {
-        this.getAllSub();
+        this.getAllFinnet();
         this.getAcountEmp();
     }
 
     // Get all users from the API
-    getAllSub() {
-        this.http.get(`${this.API}/subscribe/listsub`)
+    getAllFinnet() {
+        this.http.get(`${this.API}/api/finnet/list`)
             .map(res => res.json())
-            .subscribe(subs => {
-                this.subs = subs
+            .subscribe(finnets => {
+                this.finnets = finnets
             })
     }
     getAcountEmp() {
