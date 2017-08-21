@@ -89,6 +89,7 @@ myForm: ControlGroup;
 
         // Link to our api, pointing to localhost
         API = 'http://202.162.207.164:3000';
+        secret = '4b0b09d8941d66b5bbcb3a4ca3eaa296';
 
         // Declare empty list of people
         emps: any[] = [];
@@ -143,7 +144,7 @@ myForm: ControlGroup;
         ];
 
         addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
-            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}`;
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}&secretkey=${this.secret}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
