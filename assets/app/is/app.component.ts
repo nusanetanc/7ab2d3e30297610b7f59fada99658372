@@ -193,7 +193,7 @@ import {ContentPayFinnetComponent} from "./dashboard/content/payfinnet.component
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
     { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
     { path: '/is/not-found', component:ContentNotFoundComponent, name:'NotFound'},
-     path: '/is/finnet', component:ContentPayFinnetComponent, name:'PayFinnet'},
+    { path: '/is/finnet', component:ContentPayFinnetComponent, name:'PayFinnet'},
 ])
 
 export class AppComponent {
