@@ -144,7 +144,7 @@ myForm: ControlGroup;
         ];
 
         addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
-            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}&secretkey=${this.secret}`;
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
