@@ -47,7 +47,7 @@ import {Emp} from "./emp";
                             <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                         </li>
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
-                            <a [routerLink]="['PayFinnet']" ><i class="material-icons">announcement</i> <span class="fontWeight300">FINNET</span></a>
+                            <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">FINNET</span></a>
                         </li>
                         <li>
                             <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFO</span></a>
