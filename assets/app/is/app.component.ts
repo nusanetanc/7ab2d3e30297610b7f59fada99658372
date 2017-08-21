@@ -50,6 +50,7 @@ import {ContentDashboardHrdComponent} from "./dashboard/content/dashboard-hrd.co
 import {ContentDashboardManagerComponent} from "./dashboard/content/dashboard-manager.component";
 import {ContentDashboardTechComponent} from "./dashboard/content/dashboard-technical.component";
 import {ContentNotFoundComponent} from "./dashboard/content/not-found.component";
+import {ContentPayFinnetComponent} from "./dashboard/content/payfinnet.component";
 
 @Component({
    selector: 'is-app',
@@ -141,6 +142,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
         ContentDashboardTechComponent,
         ContentNotFoundComponent,
         ContentAllMarketingComponent,
+        ContentPayFinnetComponent,
         ROUTER_DIRECTIVES
     ],
 })
@@ -191,6 +193,7 @@ import {ContentNotFoundComponent} from "./dashboard/content/not-found.component"
     { path: '/is/manager', component:ContentDashboardManagerComponent, name:'DashboardManager'},
     { path: '/is/technical', component:ContentDashboardTechComponent, name:'DashboardTech'},
     { path: '/is/not-found', component:ContentNotFoundComponent, name:'NotFound'},
+     path: '/is/finnet', component:ContentPayFinnetComponent, name:'PayFinnet'},
 ])
 
 export class AppComponent {

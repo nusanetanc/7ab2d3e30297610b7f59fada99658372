@@ -46,10 +46,13 @@ import {Emp} from "./emp";
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
                             <a [routerLink]="['AllBill']" ><i class="material-icons">announcement</i> <span class="fontWeight300">BILLING</span></a>
                         </li>
+                        <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '5' || emps.accessrole == '501' || emps.accessrole == '502'">
+                            <a [routerLink]="['PayFinnet']" ><i class="material-icons">announcement</i> <span class="fontWeight300">FINNET</span></a>
+                        </li>
                         <li>
                             <a [routerLink]="['Information']" ><i class="material-icons">info</i> <span class="fontWeight300">LATEST INFO</span></a>
                         </li>
-                        
+
                         <li *ngIf="emps.accessrole == '0' || emps.accessrole == '1' || emps.accessrole == '7' || emps.accessrole == '702'">
                             <a [routerLink]="['AllStock']" ><i class="material-icons">widgets</i> <span class="fontWeight300">STOCK</span></a>
                         </li>
@@ -59,7 +62,7 @@ import {Emp} from "./emp";
                         <li style="cursor:pointer">
                           <a type="submit" (click)="Logout()" class="collapse" style="cursor:pointer"><i class="material-icons">power_settings_new</i> <span class="fontWeight300">SIGN OUT</span></a>
                         </li>
-                        
+
                         <li style="border-top: 0.3px solid #B3B3B3;margin-top:30px;font-weight:500;">
                             <a class="hover-disable"><span>ADMINISTRATION</span></a>
                         </li>
