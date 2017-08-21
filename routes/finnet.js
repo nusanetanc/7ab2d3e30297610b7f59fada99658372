@@ -178,4 +178,13 @@ if(req.body.amount != bill.totalpay){
       });
     });
 
+/* GET billloye listing. */
+router.get('/list', function(req, res, next) {
+     Finnet.find(function(err, finnets) {
+       console.log( finnets );
+       res.json(finnets);
+
+   });
+});
+
 module.exports = router;
