@@ -33,8 +33,8 @@ import {Billing} from './allbill';
                         <div class="row subInfo fontWeight300">
                             <div class="col-sm-2 invoiceId"><span>{{ finnet.invoiceid }}</span></div>
                             <div class="col-sm-2 invoiceList"><span>{{ finnet.trxdate }}</span></div>
-                            <div class="col-sm-2 invoiceList"><span class="green">{{ finnet.trxid }}</span></div>
-                            <div class="col-sm-2 invoiceList" style="margin-left:20px;"><span class="green">{{ finnet.sub }}</span></div>
+                            <div class="col-sm-1 invoiceList"><span class="green">{{ finnet.trxid }}</span></div>
+                            <div class="col-sm-3 invoiceList"><span class="green">{{ finnet.sub }}</span></div>
                             <div class="col-sm-2 invoiceList"><span class="green">{{ finnet.namechanel }}</span></div>
                             <div class="col-sm-2 invoiceList"><span class="red">{{ finnet.status }}</span></div>
                         </div>
