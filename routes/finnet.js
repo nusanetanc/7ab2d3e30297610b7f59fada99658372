@@ -63,7 +63,7 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
     if (!bill) {
         return res.status(404).json({
             title: 'No bills',
-            respcode: '98',
+            respcode: '95',
             error: {message: 'Bills could not be found'}
         });
     }
