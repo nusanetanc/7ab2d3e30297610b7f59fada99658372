@@ -865,7 +865,8 @@ router.put('/updatesubs/:id', function(req, res, next) {
                 sub.sales= req.body.sales;
                 sub.vendorfo = req.body.vendorfo;
                 sub.wifiid = req.body.wifiid;
-                sub.ipaddr = req.body.ipaddr;
+                sub.ipaddr = req.body.ipaddr;]
+                sub.bandwidth = req.body.bandwidth;
               if (err)
                 res.send(err);
 

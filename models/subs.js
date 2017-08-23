@@ -28,6 +28,7 @@ var SubSchema   = new Schema({
     wifiid: String,
     ipaddr: String,
     idpackage: String,
+    bandwidth: String,
     billing: [{type: Schema.Types.ObjectId, ref: 'Billing'}],
     history: [{type: Schema.Types.ObjectId, ref: 'History'}]
 

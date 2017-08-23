@@ -254,6 +254,17 @@ import { ContentPackLevComponent } from './packlev.component';
                             </div>
                             <div class="row marginTB10 marginL5">
                                 <div class="col-xs-6 col-sm-4">
+                                    <span>Bandwidth</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-1">
+                                    <span>:</span>
+                                </div>
+                                <div class="col-xs-12 col-md-7">
+                                    <input  value={{subs.editbandwidth}} #editbandwidth type="text" class="form-control inputForm" id="editbandwidth" placeholder="Example : Up 3 - Dw 3">
+                                </div>
+                            </div>
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-6 col-sm-4">
                                     <span>Vendor</span>
                                 </div>
                                 <div class="col-xs-6 col-sm-1">
