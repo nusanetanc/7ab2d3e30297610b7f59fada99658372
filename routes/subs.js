@@ -341,6 +341,7 @@ Sub.findOne({_id: req.params.id}, function(err, subs) {
               sales: subs.sales,
             vendorfo: subs.vendorfo,
             wifiid: subs.wifiid,
+            bandwidth: subs.bandwidth,
             nova: '02750'+subs.subid.substring(2,8),
             nohome: numbhome,
             cluster: clustername,
