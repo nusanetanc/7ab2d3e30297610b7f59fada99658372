@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 import { Http, Response, Headers, Request, RequestOptions, RequestMethod, URLSearchParams } from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Billing} from './allbill';
+import {ContentSubsNameComponent} from './subsname.component';
 
 
 @Component({
@@ -34,7 +35,7 @@ import {Billing} from './allbill';
                             <div class="col-sm-2 invoiceId"><span>{{ finnet.invoiceid }}</span></div>
                             <div class="col-sm-2 invoiceList"><span>{{ finnet.trxdate }}</span></div>
                             <div class="col-sm-2 invoiceList"><span class="green">{{ finnet.trxid }}</span></div>
-                            <div class="col-sm-3 invoiceList"><span class="green">{{ finnet.sub }}</span></div>
+                            <div class="col-sm-3 invoiceList"><form-subs [idsubs]=finnet.sub></form-subs></div>
                             <div class="col-sm-2 invoiceList"><span class="green">{{ finnet.namechanel }}</span></div>
                             <div class="col-sm-1 invoiceList"><span class="red">{{ finnet.status }}</span></div>
                         </div>
@@ -48,7 +49,7 @@ import {Billing} from './allbill';
     </div>
     <!-- END CONTENT -->
     `,
-    directives: [ROUTER_DIRECTIVES],
+    directives: [ContentSubsNameComponent, ROUTER_DIRECTIVES],
 })
 export class ContentPayFinnetComponent {
 
