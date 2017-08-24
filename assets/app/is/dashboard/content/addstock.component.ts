@@ -66,6 +66,7 @@ export class ContentAddStocksComponent implements OnInit {
 myForm: ControlGroup;
     // Link to our api, pointing to localhost
       API = 'http://202.162.207.164:3000';
+    secret = "4b0b09d8941d66b5bbcb3a4ca3eaa296";
 
       goods: any[] = [];
       stocks: any[] = [];
@@ -108,7 +109,7 @@ myForm: ControlGroup;
     }
     addStock(inputGoods, idbarcode) {
 
-        var body = `goods=${inputGoods}&barcode=${idbarcode}`;
+        var body = `goods=${inputGoods}&barcode=${idbarcode}&barcode=${idbarcode}&secretkey=${this.secret}`;
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
         this.http

@@ -96,6 +96,13 @@ router.post('/add', function(req, res, next) {
     stock.goods= req.body.goods;
     stock.barcode= req.body.barcode;
     stock.status= "onstock";
+    stock.secretkey = req.body.secretkey;
+    if (stock.secretkey !== '4b0b09d8941d66b5bbcb3a4ca3eaa296'){
+        return res.status(404).json({
+            title: 'Secret Key Not Valid',
+            respcode: '93',
+            error: {message: 'Secret Key Not Valid'}
+        });
     stock.save(function(err) {
       if (err)
           res.send(err);
@@ -113,6 +120,13 @@ router.put('/put/:id', function(req, res, next) {
                 stock.barcode= req.body.barcode;
                 stock.status= "inuse";
                 stock.jobs= req.body.jobs;
+                stock.secretkey = req.body.secretkey;
+                if (stock.secretkey !== '4b0b09d8941d66b5bbcb3a4ca3eaa296'){
+                    return res.status(404).json({
+                        title: 'Secret Key Not Valid',
+                        respcode: '93',
+                        error: {message: 'Secret Key Not Valid'}
+                    });
               if (err)
                 res.send(err);
 
