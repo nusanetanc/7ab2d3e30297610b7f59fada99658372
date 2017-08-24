@@ -49,11 +49,11 @@ import { City } from './cities';
                                             </select>
                                             <br/><br/>
                                             <div *ngIf="emptitlejob.value == '202'">
-                                              <select #empcity id="empcity">
+                                              <select  [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
                                                 <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                                 <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                               </select>
-                                            </div>  
+                                            </div>
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
