@@ -48,7 +48,7 @@ import { City } from './cities';
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                              <select *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" #empcity id="empcity">
+                                              <select *ngIf="emptitlejob.value == '202'" #empcity id="empcity">
                                                 <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                                 <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                               </select>
@@ -56,10 +56,10 @@ import { City } from './cities';
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
                                         <button *ngIf="emptitlejob.value == '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp1(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
-                                            CREATE
+                                            CREATE1
                                         </button>
-                                        <button *ngIf="emptitlejob.value != '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp2(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value)" class="btn btn-default buttonOrange">
-                                            CREATE
+                                        <button *ngIf="emptitlejob.value !== '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp2(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value)" class="btn btn-default buttonOrange">
+                                            CREATE2
                                         </button>
                                     </div>
                                 </div>
