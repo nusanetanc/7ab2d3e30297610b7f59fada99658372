@@ -48,12 +48,10 @@ import { City } from './cities';
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                            <div *ngIf="emptitlejob.value == '202'">
                                               <select  [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
                                                 <option disabled="true" selected="true" value="0">-- Select City Job --</option>
-                                                <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
+                                                <option *ngIf="emptitlejob.value == '202'" *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                               </select>
-                                            </div>
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
