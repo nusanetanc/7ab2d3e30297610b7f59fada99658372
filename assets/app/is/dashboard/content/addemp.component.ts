@@ -101,6 +101,7 @@ myForm: ControlGroup;
 
             this.getAllEmployee();
             this.getAcountEmp();
+            this.getAllCity();
             this.myForm = this._fb.group({
               empid: ['', Validators.required],
               empname: ['', Validators.required],
