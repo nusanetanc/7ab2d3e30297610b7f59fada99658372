@@ -50,12 +50,12 @@ import { City } from './cities';
                                             <br/><br/>
                                             <select *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" #empcity id="empcity">
                                               <option disabled="true" selected="true" value="0">-- Select City Job --</option>
-                                              <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
+                                              <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                             </select>
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
                                     </div>
@@ -148,9 +148,9 @@ myForm: ControlGroup;
             {name: "Helpdesk Spv", level: "8", sublevel: "8", divisi:"Helpdesk"},
             {name: "Helpdesk", level: "8", sublevel: "801", divisi:"Helpdesk"}
         ];
-        addEmp(empid, empname, empemail, empphone, emptitlejob) {
+        addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
         console.log('tes');
-            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}`;
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
