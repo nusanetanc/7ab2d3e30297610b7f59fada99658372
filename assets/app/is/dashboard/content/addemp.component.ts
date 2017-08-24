@@ -48,10 +48,9 @@ import { City } from './cities';
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                            <select *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" [ngFormControl]="myForm.find('empcity')" #empcity id="empcity">
+                                            <select *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" #empcity id="empcity">
                                               <option disabled="true" selected="true" value="0">-- Select City Job --</option>
-                                              <option>Jakarta</option>
-                                              <option>Bandung</option>
+                                              <option *ngFor="#city of cities" value={{city._id}}>{{ city.name }}</option>
                                             </select>
                                             <br/>
                                         </form>
@@ -92,6 +91,7 @@ myForm: ControlGroup;
 
         // Declare empty list of people
         emps: any[] = [];
+        cities: any[] = [];
         accountemps: any[] = [];
 
         constructor(private _fb:FormBuilder, private http: Http) {}
@@ -119,7 +119,13 @@ myForm: ControlGroup;
                     this.emps = emps
                 })
         }
-
+        getAllCity() {
+            this.http.get(`${this.API}/city/listcity`)
+                .map(res => res.json())
+                .subscribe(cities => {
+                    this.cities = cities
+                })
+        }
         public jobs = [
             {name: "Admin", level: "0", sublevel: "0", divisi:"ANC"},
             {name: "Direktur", level: "1", sublevel: "1", divisi:"Management"},
