@@ -55,10 +55,10 @@ import { City } from './cities';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
+                                        <button *ngIf="emptitlejob.value == '201' || emptitlejob.value == '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp1(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
-                                        <button *ngIf="emptitlejob.value !== '201' || emptitlejob.value !== '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
+                                        <button *ngIf="emptitlejob.value != '201' || emptitlejob.value != '202'" [disabled]="!myForm.valid" type="submit" (click)="addEmp2(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
                                     </div>
@@ -151,9 +151,29 @@ myForm: ControlGroup;
             {name: "Helpdesk Spv", level: "8", sublevel: "8", divisi:"Helpdesk"},
             {name: "Helpdesk", level: "8", sublevel: "801", divisi:"Helpdesk"}
         ];
-        addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
+        addEmp1(empid, empname, empemail, empphone, emptitlejob, empcity) {
         console.log('tes');
             var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}`;
+            var headers = new Headers();
+            headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            this.http
+                .post(`${this.API}/employee/addemp`,
+                    body, {
+                    headers: headers
+                })
+                .subscribe(data => {
+                    alert('Add Employee Success');
+                    this.getAllEmployee();
+                }, error => {
+                    document.getElementById("message").innerHTML = error.text();
+                    $('#failed').modal('show');
+                    $('.modal-backdrop').removeClass("modal-backdrop");
+                    //console.log(JSON.stringify(error.json()));
+            });
+        }
+        addEmp2(empid, empname, empemail, empphone, emptitlejob) {
+        console.log('tes');
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
