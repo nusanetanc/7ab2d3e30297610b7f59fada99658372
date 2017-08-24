@@ -143,6 +143,7 @@ myForm: ControlGroup;
         ];
 
         addEmp(empid, empname, empemail, empphone, emptitlejob) {
+        console.log('tes');
             var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
