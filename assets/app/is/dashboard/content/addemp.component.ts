@@ -48,7 +48,7 @@ import { City } from './cities';
                                               <option *ngFor="#job of jobs" value={{job.sublevel}}><b>{{ job.divisi }}</b> - {{ job.name }}</option>
                                             </select>
                                             <br/><br/>
-                                              <select #empcity id="empcity">
+                                              <select #empcity id="empcity" *ngIf="emptitlejob.value == '202'">
                                                 <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                                 <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                               </select>
