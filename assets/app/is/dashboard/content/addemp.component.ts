@@ -56,7 +56,7 @@ import { City } from './cities';
                                             <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
                                     </div>
