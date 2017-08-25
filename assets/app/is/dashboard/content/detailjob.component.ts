@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Goods} from "./goods";
+import { Sub } from './subs';
 import {ContentGoodsNameComponent} from "./goodsname.component";
 
 @Component({
@@ -364,6 +365,7 @@ export class ContentDetailJobComponent implements OnInit {
     goods: any[] = [];
     stocks: any[] = [];
     emps: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
