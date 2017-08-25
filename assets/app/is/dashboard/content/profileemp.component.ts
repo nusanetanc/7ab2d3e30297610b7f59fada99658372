@@ -199,7 +199,7 @@ import { Sub } from './subs';
 })
 export class ContentProfileEmpComponent implements OnInit {
 
-selectedSubs: Sub = new Sub(0, 'dummy');
+selectedSubs: Sub = new Sub('0');
 
     // Link to our api, pointing to localhost
     API = 'http://202.162.207.164:3000';
