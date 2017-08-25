@@ -103,6 +103,7 @@ router.post('/add', function(req, res, next) {
             respcode: '93',
             error: {message: 'Secret Key Not Valid'}
         });
+      }
     stock.save(function(err) {
       if (err)
           res.send(err);
