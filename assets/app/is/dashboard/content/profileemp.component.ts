@@ -140,7 +140,7 @@ import { Sub } from './subs';
                                  </select><br/><br/>
                              </form>
                              <form>
-                                 <select [(ngModel)]="selectedSubs.level" (change)="onSelectSubs($event.target.value)" class="inputForm" #subsjob id="subsjob">
+                                 <select [(ngModel)]="selectedSubs._id" (change)="onSelectSubs($event.target.value)" class="inputForm" #subsjob id="subsjob">
                                      <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
                                      <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.subid}} - {{sub.name}}</option>
                                  </select><br/><br/>
