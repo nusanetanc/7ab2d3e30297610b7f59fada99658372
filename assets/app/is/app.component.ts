@@ -185,7 +185,7 @@ import {ContentPayFinnetComponent} from "./dashboard/content/payfinnet.component
     { path: '/is/billsubscribe/:id', component:ContentBillSubscribeComponent, name:'BillSubscribe'},
     { path: '/is/updatestock/:id', component:ContentUpdateStocksComponent, name:'UpdateStock'},
     { path: '/is/packages', component:ContentPackagesComponent, name:'Package'},
-    { path: '/is/job/:id', component:ContentDetailJobComponent, name:'DetailJob'},
+    { path: '/is/job/:id/:sub', component:ContentDetailJobComponent, name:'DetailJob'},
     { path: '/is/helpdesk', component:ContentDashboardHelpdeskComponent, name:'DashboardHelpdesk'},
     { path: '/is/billing', component:ContentDashboardBillingComponent, name:'DashboardBilling'},
     { path: '/is/cro', component:ContentDashboardCroComponent, name:'DashboardCro'},
