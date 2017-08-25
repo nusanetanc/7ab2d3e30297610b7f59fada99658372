@@ -140,7 +140,7 @@ import { Sub } from './subs';
                                  </select><br/><br/>
                              </form>
                              <form>
-                                 <select (change)="onSelectSales($event.target.value)" class="inputForm" #subsjob id="subsjob">
+                                 <select (change)="onSelectSubs($event.target.value)" class="inputForm" #subsjob id="subsjob">
                                      <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
                                      <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.subid}} - {{sub.name}}</option>
                                  </select><br/><br/>
@@ -213,7 +213,9 @@ export class ContentProfileEmpComponent implements OnInit {
         this.getJob();
         this.getAllSub();
     }
-
+    onSelectSubs(_id){
+      console.log(_id)
+    }
     getEmp(){
     this.http.get(`${this.API}/subscribe/emp/${this._routeParams.get('id')}`)
         .map(res => res.json())
