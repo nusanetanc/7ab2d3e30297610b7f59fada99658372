@@ -2,6 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteParams} from 'angular2/router';
 import { Http, Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
+import { Sub } from './subs';
 
 @Component({
     selector: 'form-profilemp',
@@ -138,16 +139,14 @@ import 'rxjs/add/operator/map';
                                      <option class="option" value="Take Device">Take Device</option>
                                  </select><br/><br/>
                              </form>
+                             <form>
+                                 <select #typejob id="typejob">
+                                     <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
+                                     <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.nama}} - {{sub.subid}}</option>
+                                 </select><br/><br/>
+                             </form>
                              <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
                              <div class="row">
-                               <div class="col-sm-6">
-                                 <form>
-                                     <select  [(ngModel)]="selectedEmp2._id" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
-                                         <option class="option" value="0" selected="true">-- Select Field Engineer 1 --</option>
-                                         <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
-                                     </select><br/>
-                                 </form>
-                               </div>
                                <div class="col-sm-6">
                                  <form>
                                    <select  [(ngModel)]="selectedEmp1._id" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
@@ -205,12 +204,14 @@ export class ContentProfileEmpComponent implements OnInit {
     API = 'http://202.162.207.164:3000';
 
     emps: any[] = [];
+    subs: any[] = [];
 
     constructor(private http: Http, private _routeParams: RouteParams) {}
 
     ngOnInit() {
         this.getEmp();
         this.getJob();
+        this.getAllSub();
     }
 
     getEmp(){
@@ -225,6 +226,13 @@ export class ContentProfileEmpComponent implements OnInit {
         .map(res => res.json())
         .subscribe(jobs => {
             this.jobs = jobs
+        })
+    }
+    getAllSub() {
+        this.http.get(`${this.API}/subscribe/listsub`)
+            .map(res => res.json())
+            .subscribe(subs => {
+            this.subs = subs
         })
     }
     AccountEnabled() {
