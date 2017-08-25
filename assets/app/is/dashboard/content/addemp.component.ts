@@ -149,7 +149,7 @@ myForm: ControlGroup;
             {name: "Helpdesk", level: "8", sublevel: "801", divisi:"Helpdesk"}
         ];
         addEmp(empid, empname, empemail, empphone, emptitlejob, empcity) {
-            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}&secretkey=${key}`;
+            var body = `idemployee=${empid}&name=${empname}&email=${empemail}&handphone=${empphone}&titlejob=${emptitlejob}&city=${empcity}&secretkey=${this.key}`;
             var headers = new Headers();
             headers.append('Content-Type', 'application/x-www-form-urlencoded');
             this.http
