@@ -157,13 +157,6 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                           </div>
                       </div>
                   </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-3">
-                                    <img class="avaProfile" src="images/{{ jobs._id }}.png" alt="{{ jobs._id }}">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12">
