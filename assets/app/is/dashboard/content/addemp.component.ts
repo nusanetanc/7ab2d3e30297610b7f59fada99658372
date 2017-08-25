@@ -52,14 +52,10 @@ import { City } from './cities';
                                                 <option disabled="true" selected="true" value="0">-- Select City Job --</option>
                                                 <option *ngFor="#city of cities" value={{city.name}}>{{ city.name }}</option>
                                               </select>
-                                            <br/>
-                                            <select  *ngIf="emptitlejob.value ==! '202'" [ngFormControl]="myForm.find('empcity')" #empcity id="empcity" disabled="true">
-                                              <option disabled="true" selected="true" value="0">-- Select City Job --</option>
-                                            </select>
                                           <br/>
                                         </form>
                                         <div class="g-recaptcha" data-sitekey="6LdqYiMUAAAAAG24p30ejQSqeWdvTpD0DK4oj5wv"></div>
-                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp1(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
+                                        <button [disabled]="!myForm.valid" type="submit" (click)="addEmp(empid.value, empname.value, empemail.value, empphone.value, emptitlejob.value, empcity.value)" class="btn btn-default buttonOrange">
                                             CREATE
                                         </button>
                                     </div>
