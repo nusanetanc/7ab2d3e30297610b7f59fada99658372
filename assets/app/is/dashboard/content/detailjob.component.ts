@@ -155,54 +155,6 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>GOODS USED</h4>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div *ngFor="#usestock of usestocks"  class="col-sm-12">
-                            <div class="row marginTB10 marginL5">
-                                <div class="col-xs-12 col-sm-2">
-                                    <span>{{usestock.barcode}}</span>
-                                </div>
-                                <div class="col-xs-12 col-sm-3">
-                                    <form-goods [idgoods]=usestock.goods></form-goods>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4>ADD GOODS</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="formNewReport marginLR20">
-                                <form>
-                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)">
-                                        <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
-                                        <option *ngFor="#good of goods" class="option" value={{good._id}}>{{ good.name }}</option>
-                                    </select><br/>
-                                </form>
-                                <form>
-                                    <select #barcode id="barcode" (change)="onSelectBarcode($event.target.value)">
-                                        <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
-                                        <option *ngFor="#stock of stocks" class="option" value={{stock.barcode}}>{{ stock.barcode }}</option>
-                                    </select><br/>
-                                </form>
-                                <button type="submit" (click)="editStock(jobs._id, barcode.value)" class="btn btn-default buttonOrange">
-                                    ADD
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-sm-12">
                             <h4>TECHNICAL JOB</h4>
                         </div>
                     </div>
@@ -289,6 +241,55 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                         </div>
                     </div>
 
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>GOODS USED</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div *ngFor="#usestock of usestocks"  class="col-sm-12">
+                            <div class="row marginTB10 marginL5">
+                                <div class="col-xs-12 col-sm-2">
+                                    <span>{{usestock.barcode}}</span>
+                                </div>
+                                <div class="col-xs-12 col-sm-3">
+                                    <form-goods [idgoods]=usestock.goods></form-goods>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4>ADD GOODS</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="formNewReport marginLR20">
+                                <form>
+                                    <select [(ngModel)]="selectedGoods._id" (change)="onSelectGoods($event.target.value)">
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Goods Name --</option>
+                                        <option *ngFor="#good of goods" class="option" value={{good._id}}>{{ good.name }}</option>
+                                    </select><br/>
+                                </form>
+                                <form>
+                                    <select #barcode id="barcode" (change)="onSelectBarcode($event.target.value)">
+                                        <option class="option" disabled="true" selected="true" value="0">-- Select Barcode --</option>
+                                        <option *ngFor="#stock of stocks" class="option" value={{stock.barcode}}>{{ stock.barcode }}</option>
+                                    </select><br/>
+                                </form>
+                                <button type="submit" (click)="editStock(jobs._id, barcode.value)" class="btn btn-default buttonOrange">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
