@@ -142,7 +142,7 @@ import { Sub } from './subs';
                              <form>
                                  <select #typejob id="typejob">
                                      <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
-                                     <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.nama}} - {{sub.subid}}</option>
+                                     <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.subid}} - {{sub.name}}</option>
                                  </select><br/><br/>
                              </form>
                              <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
