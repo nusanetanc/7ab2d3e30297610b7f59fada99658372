@@ -58,7 +58,6 @@ import { Sub } from './subs';
     directives: [ROUTER_DIRECTIVES],
 })
 export class ContentAllSubsComponent {
-selectedSubs: Sub = new Sub(0, 'dummy');
     // Sort By
     sortByName(){
         this.subs.sort( function(name1, name2) {
