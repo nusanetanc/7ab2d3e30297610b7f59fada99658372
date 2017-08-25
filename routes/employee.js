@@ -56,8 +56,15 @@ router.post('/addemp', function(req, res, next) {
     emp.accessrole= req.body.titlejob;
     emp.city= req.body.city;
     emp.photo= req.body.photo;
+    emp.secretkey= req.body.secretkey;
     emp.status= 'Enable';
-
+    if (emp.secretkey !== '4b0b09d8941d66b5bbcb3a4ca3eaa296'){
+      return res.status(404).json({
+          title: 'Secret Key Not Valid',
+          respcode: '93',
+          error: {message: 'Secret Key Not Valid'}
+      });
+    }
     if (emp.accessrole == '1') {
       emp.departement= 'Management';
       emp.titlejob= 'Direktur';
