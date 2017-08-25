@@ -149,13 +149,6 @@ import {ContentGoodsNameComponent} from "./goodsname.component";
                                   <span>{{ subs.address }} <br>No. {{ subs.nohome }}, Blok {{ subs.blok }}<br>{{ subs.cluster }}, {{ subs.city }}</span>
                               </div>
                           </div>
-                      <div class="col-sm-6">
-                          <div class="row">
-                              <div class="col-xs-6 col-md-3">
-                                  <img class="avaProfile" src="images/{{ subs._id }}.png" alt="{{ subs._id }}">
-                              </div>
-                          </div>
-                      </div>
                   </div>
                     </div>
                 </div>
