@@ -149,7 +149,7 @@ import { Sub } from './subs';
                              <div class="row">
                                <div class="col-sm-6">
                                  <form>
-                                   <select  [(ngModel)]="selectedEmp1._id" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
+                                   <select  #empjob1 id="empjob1" class="form-control inputForm">
                                        <option class="option" value="0" selected="true">-- Select Field Engineer 2 --</option>
                                        <!-- <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option> -->
                                    </select><br/><br/>
