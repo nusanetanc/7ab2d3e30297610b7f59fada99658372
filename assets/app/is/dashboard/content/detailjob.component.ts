@@ -374,6 +374,7 @@ export class ContentDetailJobComponent implements OnInit {
         this.getAllStocks();
         this.getStocksForJobs();
         this.getAcountEmp();
+        this.getSubs();
     }
 
     stringAsDate(dateStr: string) {
