@@ -121,24 +121,48 @@ import 'rxjs/add/operator/map';
           <div *ngIf="emps.departement == 'Technical'" class="row">
              <div class="col-sm-12">
                 <div class="row headerList paddingLR30">
-                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>List Job</strong></div>
+                   <div class="col-sm-12 paddingT20 paddingL35 headerSubList"><strong>Add Job</strong></div>
                 </div>
                 <div class="row subInfo">
                    <div class="col-sm-12">
-                      <div class="row">
-                         <div class="col-sm-6">
-                            <div class="row">
-                               <div class="col-sm-12" *ngFor="#job of jobs">
-                                  <div class="row subInfo">
-                                  <a [routerLink]="['DetailJob', {id: job._id}]">
-                                     <div class="col-sm-8 invoiceList"><span>{{job.name}}</span></div>
-                                     <div class="col-sm-4 invoiceList"><span>{{job.status}}</span></div>
-                                  </a>
-                                  </div>
+                   <div class="row">
+                     <div class="col-sm-6">
+                         <div class="formNewReport marginLR20">
+                             <input #datejob type="date" class="form-control inputForm" id="datejob" placeholder="Date Job">
+                             <form>
+                                 <select #typejob id="typejob">
+                                     <option class="option" disabled="true" selected="true" value="0">-- Select Job Type --</option>
+                                     <option class="option" value="Installation">Installation</option>
+                                     <option class="option" value="Maintenance">Maintenance</option>
+                                     <option class="option" value="Switch Devices">Switch Devices</option>
+                                     <option class="option" value="Take Device">Take Device</option>
+                                 </select><br/><br/>
+                             </form>
+                             <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
+                             <div class="row">
+                               <div class="col-sm-6">
+                                 <form>
+                                     <select  [(ngModel)]="selectedEmp2._id" (change)="onSelectEmp2($event.target.value)" #empjob2 id="empjob2" class="form-control inputForm">
+                                         <option class="option" value="0" selected="true">-- Select Field Engineer 1 --</option>
+                                         <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
+                                     </select><br/>
+                                 </form>
                                </div>
-                            </div>
+                               <div class="col-sm-6">
+                                 <form>
+                                   <select  [(ngModel)]="selectedEmp1._id" (change)="onSelectEmp1($event.target.value)" #empjob1 id="empjob1" class="form-control inputForm">
+                                       <option class="option" value="0" selected="true">-- Select Field Engineer 2 --</option>
+                                       <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option>
+                                   </select><br/><br/>
+                                 </form>
+                               </div>
+                             </div>
+                             <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
+                                 SEND
+                             </button>
                          </div>
-                      </div>
+                     </div>
+                 </div>
                    </div>
                 </div>
              </div>
