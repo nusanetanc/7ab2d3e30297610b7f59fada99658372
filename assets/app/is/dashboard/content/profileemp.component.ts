@@ -140,23 +140,23 @@ import { Sub } from './subs';
                                  </select><br/><br/>
                              </form>
                              <form>
-                                 <select #typejob id="typejob">
+                                 <select #subsjob id="subsjob">
                                      <option class="option" disabled="true" selected="true" value="0">-- Select Subscribe --</option>
-                                     <option class="option" *ngFor="#sub of subs" value={{sub._id}}>{{sub.subid}} - {{sub.name}}</option>
+                                     <option class="option" *ngFor="#sub of subs" [value]={{sub._id}}>{{sub.subid}} - {{sub.name}}</option>
                                  </select><br/><br/>
                              </form>
                              <textarea #detailjob id="detailjob" placeholder="Input Job Detail" class="form-control inputForm" rows="4" cols="50" style="padding-top: 20px;"></textarea>
                              <div class="row">
                                <div class="col-sm-6">
                                  <form>
-                                   <select  #empjob1 id="empjob1" class="form-control inputForm">
-                                       <option class="option" value="0" selected="true">-- Select Field Engineer 2 --</option>
+                                   <select  #empjob id="empjob" class="form-control inputForm">
+                                       <option class="option" value="0" selected="true">-- Select Another Field Engineer --</option>
                                        <!-- <option *ngFor="#emp of emps" class="option" [value]=emp._id>{{ emp.name }}</option> -->
                                    </select><br/><br/>
                                  </form>
                                </div>
                              </div>
-                             <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob1.value, empjob2.value)" class="btn btn-default buttonOrange">
+                             <button type="submit" (click)="addJob(datejob.value, typejob.value, detailjob.value, typejob.value, empjob.value)" class="btn btn-default buttonOrange">
                                  SEND
                              </button>
                          </div>
