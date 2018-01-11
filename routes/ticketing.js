@@ -6,7 +6,7 @@ var Sub = require('../models/subs');
 
 /* GET detail bill one account. */
 router.post('/search/id', function(req, res, next) {
-  var Sub = new ()
+  var ticketing = new Ticketing()
    finnet.subid= req.body.subid;
 Sub.findOne({subid: req.body.subid}, function(err, doc) {
   if (err) {
