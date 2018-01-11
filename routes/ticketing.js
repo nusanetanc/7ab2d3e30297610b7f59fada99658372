@@ -23,6 +23,10 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
           error: {message: 'User could not be found'}
       });
   }
+      res.json({
+         subid: doc.subid,
+         subname: doc.name,
+       });
     });
   });
 
