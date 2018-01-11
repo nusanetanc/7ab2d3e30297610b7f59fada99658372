@@ -40,6 +40,9 @@ var streetname = require('./routes/street_name');
 // api for finnet
 var finnet = require('./routes/finnet');
 
+// api for ticketing
+var ticketing = require('./routes/ticketing');
+
 var app = express();
 
 // view engine setup
@@ -83,6 +86,7 @@ app.use('/streetname', streetname);
 app.use('/goods', goods);
 app.use('/stock', stock);
 app.use('/api/finnet', finnet);
+app.use('/api/ticketing', ticketing);
 
 
 // catch 404 and forward to error handler
