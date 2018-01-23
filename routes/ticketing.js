@@ -30,4 +30,12 @@ Sub.findOne({subid: req.body.subid}, function(err, doc) {
     });
   });
 
+/* GET subloye listing. */
+router.get('/listsub', function(req, res, next) {
+     Sub.find(function(err, subs) {
+       console.log( subs );
+       res.json(subs);
+   });
+});
+
 module.exports = router;
