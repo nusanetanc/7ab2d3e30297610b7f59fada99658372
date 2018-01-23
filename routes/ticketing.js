@@ -5,10 +5,10 @@ var Ticketing = require('../models/ticketing');
 var Sub = require('../models/subs');
 
 /* GET detail bill one account. */
-router.post('/search/id', function(req, res, next) {
+router.get('/search/:id', function(req, res, next) {
   var ticketing = new Ticketing()
-   ticketing.subid= req.body.subid;
-Sub.findOne({subid: req.body.subid}, function(err, doc) {
+   ticketing.subid= req.params.id;
+Sub.findOne({subid: req.params.id}, function(err, doc) {
   if (err) {
       return res.status(404).json({
           title: 'An error occured',
@@ -37,5 +37,6 @@ router.get('/listsub', function(req, res, next) {
        res.json(subs);
    });
 });
+
 
 module.exports = router;
