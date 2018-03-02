@@ -805,8 +805,7 @@ import 'rxjs/add/operator/map';
                               </div>
                               <!-- <button onclick="printPembayaran()" class="btn btn-default buttonOrange" type="button" style="float:right;">
                                     Print Pembayaran
-                              </button> -->
-                              <!-- /Content List -->
+                              </button>  /Content List -->
                            </div>
                         </div>
                         <!-- /Content Print -->
