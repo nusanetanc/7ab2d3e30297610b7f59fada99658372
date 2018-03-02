@@ -572,7 +572,7 @@ import 'rxjs/add/operator/map';
                                              <p><u>Info Penting Pelanggan :</u></p>
                                              <ul style="list-style-type:none;">
                                                 <li style="margin-bottom: 10px;">1. Mohon melakukan pembayaran sebelum tanggal jatuh tempo untuk menghindari denda keterlambatan sejumlah Rp. 25.000,- (sebelum pajak) yang akan ditambahkan pada tagihan Anda di bulan berikutnya.</li>
-                                                <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening 02750{{ bills.nova }} a/n GROOVY {{ bills.name }}.</li>
+                                                <li style="margin-bottom: 10px;">2. Pembayaran khusus nasabah BCA atau giro (bank lain dan BCA) ditunjukan ke Rekening Virtual BCA No. Rekening {{ bills.nova }} a/n GROOVY {{ bills.name }}.</li>
                                                 <li style="margin-bottom: 10px;">3. Cantumkan Subscriber ID pada saat pembayaran.</li>
                                                 <li style="margin-bottom: 10px;">4. Konfirmasi pembayaran ke email &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; atau telepon ke 021-5276616.</li>
                                                 <li style="margin-bottom: 10px;">5. Pembayaran diterima setelah adanya konfirmasi.</li>
@@ -584,7 +584,7 @@ import 'rxjs/add/operator/map';
                                              <p><u>Subscriber hightlight information :</u></p>
                                              <ul style="list-style-type:none;">
                                                 <li style="margin-bottom: 10px;">1. Please make payment before due date to avoid late payment fee of Rp. 25.000,- (before VAT) which will be added to your next month's invoice.</li>
-                                                <li style="margin-bottom: 10px;">2. Payment BCA customers or giro (another bank and BCA) is streetnameed to BCA Virtual Account No. 02750{{bills.nova}} on behalf of GROOVY {{ bills.name }} (confirmation not required).</li>
+                                                <li style="margin-bottom: 10px;">2. Payment BCA customers or giro (another bank and BCA) is streetnameed to BCA Virtual Account No. {{bills.nova}} on behalf of GROOVY {{ bills.name }} (confirmation not required).</li>
                                                 <li style="margin-bottom: 10px;">3. Please quote your Subscriber ID during payment.</li>
                                                 <li style="margin-bottom: 10px;">4. Payment confirmation by sending an email to &nbsp; <a mailto="billing@groovy.id"><u>billing@groovy.id</u></a> &nbsp; or contact number 021-5276616.</li>
                                                 <li style="margin-bottom: 10px;">5. Payment will be recognized after confirmation is acknowledged.</li>
@@ -595,7 +595,8 @@ import 'rxjs/add/operator/map';
                                  </div>
                                  <div id="footer" style="background: linear-gradient(to right, #ed4224 , #f8d143); background: -webkit-linear-gradient(left, #ed4224 , #f8d143); background: -linear-gradient(right, #ed4224 , #f8d143); background: -moz-linear-gradient(right, #ed4224 , #f8d143);height: 20px;margin: 30px -40px -40px -40px;"></div>
                               </div>
-                              <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;">
+<!--
+                              <button onclick="printPenagihan()" class="btn btn-default buttonOrange" type="button" style="float:right;"> -->
                                     Print Penagihan
                                 </button>
                               <!-- /Content List -->
