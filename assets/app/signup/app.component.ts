@@ -22,7 +22,7 @@ import {ActivationComponent} from "./content/activation.component";
 })
 
 @RouteConfig([
-    {path: '/signup-beta', name: 'Signup', component: SignupComponent, useAsDefault: true},
+    {path: '/signup', name: 'Signup', component: SignupComponent, useAsDefault: true},
     {path: '/activation/:id', name: 'Activation', component: ActivationComponent},
 ])
 

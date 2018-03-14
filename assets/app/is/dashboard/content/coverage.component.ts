@@ -51,7 +51,7 @@ import {Emp} from "./emp";
                                     <div class="row white">
                                         <div class="col-sm-12 paddingT30">
                                             <img class="imageCoverage" src="./images/cluster.png" alt="cluster">
-                                            <h4 class="text-center grey333 fontWeight300">CLUSTER</h4>
+                                            <h4 class="text-center grey333 fontWeight300">CLUSTER/APARTEMENT</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ import {Emp} from "./emp";
                                 <div class="row white">
                                     <div class="col-sm-12  paddingT15">
                                         <img class="imageCoverage" src="./images/street.png" alt="street">
-                                        <h4 class="text-center grey333 fontWeight300">STREET</h4>
+                                        <h4 class="text-center grey333 fontWeight300">STREET/TOWER</h4>
                                     </div>
                                 </div>
                             </div>
